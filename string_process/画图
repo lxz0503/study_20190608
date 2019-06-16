@@ -1,0 +1,9 @@
+# linux ubuntu 下需安装下面三个包：
+  Numpy, Scipy,Matplotlib
+  分别输入下面的代码进行安装：
+pip install numpy
+pip install scipy
+sudo apt-get install python-matplotlib
+
+# windows下直接用pycharm安装以下包:
+numpy,pandas,pillow,matplotlib
