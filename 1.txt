@@ -1,9 +1,0 @@
-lixiaozhan,beijing;jiaotong university.
-lixiaozhan,shanghai,university.
-zhangsan,shanghai,university.
-beijing!! 
-shanghai???
-nanjing&*%
-{nanjing!@#.,;][*&^%$#@!~}
-
-https://regexr.com/----learning regular expression
