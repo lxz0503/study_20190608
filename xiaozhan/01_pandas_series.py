@@ -19,4 +19,7 @@ data = {'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
         'house_price': [50000, 48000, 35000, 30000]}
 data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
-print(data_frame)
+# print(data_frame)
+print(data_frame.values)
+print(data_frame.values[0])
+print(data_frame.values[0][2])
