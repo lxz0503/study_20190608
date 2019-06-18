@@ -11,3 +11,6 @@ https://blog.csdn.net/qq_41479464/article/details/82830605
 
 python实战二：使用CSV数据绘制带数据标志的折线图（matplotlib）
 https://blog.csdn.net/jtscript/article/details/44928535
+
+study pandas
+https://blog.csdn.net/weixin_41521681/article/details/86486574
