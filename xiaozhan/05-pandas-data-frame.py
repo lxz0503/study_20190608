@@ -5,15 +5,29 @@ data = {'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
         'house_price': [50000, 48000, 35000, 30000]
         }    # 每一列数据, 通过字典来创建
-data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
-# print(data_frame)
+data_frame = pd.DataFrame(data, columns=['city', 'year', 'house_price'])
+print(data_frame)
 # print(data_frame.values)
-# print(data_frame.values[0])
+print("the row number is %s" % len(data_frame))
+print("the column size is %s" % data_frame.columns.size)
+print(data_frame.columns)
+for index in data_frame.index:
+    print(data_frame.loc[index].values[:])
+
+for index, row in data_frame.iterrows():
+    # print(type(data_frame.values[index]))
+    # print(data_frame.values[index])
+    print(row['city'], row['year'], row['house_price'])
+# for row in data_frame.itertuples():
+#     for index, colu in data_frame.iteritems():
+#
+#         print(getattr(row, 'city'), getattr(row, 'year'), getattr(row, 'house_price'))
+        # print(getattr(row, index))
 # print(data_frame.values[0][2])
 # print(data_frame.sort_values(by=['house_price'],na_position='first'))  # 依据house_price列排序，并将该列空值放在首位
 # print(data_frame.sort_values(by=['city','house_price'],ascending=False))
 
-x = pd.DataFrame({'x1':[1,2,2,3],'x2':[4,3,2,1],'x3':[3,2,4,1]})
+x = pd.DataFrame({'x1': [1, 2, 2, 3], 'x2': [4, 3, 2, 1], 'x3': [3, 2, 4, 1]})
 # print(x)
 # print(x.sort_values(by=0,ascending=False, axis=1)) # 按照索引值为0的行，即第一行的值来降序排序
 
@@ -28,7 +42,8 @@ frame = pd.DataFrame(np.arange(9).reshape(3, -1),  # -1 means generating columns
 # print(frame[frame.beijing>0]) # get value from column beijing that are greater than 0
 
 #
-fileDf = pd.read_excel(r'F:\xiaozhan_git\study_20190608\xiaozhan\test_data.xlsx','Sheet1')
+# fileDf = pd.read_excel(r'F:\xiaozhan_git\study_20190608\xiaozhan\test_data.xlsx', 'Sheet1')
+fileDf = pd.read_excel(r'D:\xiaozhan_git\study_20190608\xiaozhan\test_data.xlsx', 'Sheet1')
 # print("check the info:")
 # print(fileDf.head())
 # print(fileDf.info())
@@ -66,16 +81,20 @@ df.index=range(1, 13)
 # print(df)
 
 # pandas中索引的使用
-data = pd.DataFrame({'A': [1,2,3], 'B': [4,5,6], 'C': [7,8,9]}, index=["a","b","c"])
+data = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]}, index=["a", "b", "c"])
 print(data)
+# 遍历
+for index, row in data.iterrows():
+    #print(index)
+    print(row)
 # .loc[],中括号里面是先行后列，以逗号分割，行和列分别是行标签和列标签，比如我要得到数字5，那么就就是
 print(data.loc['b', 'B'])
-print(data.at['b','B']) # 只能定位单个元素，但是速度快
+print(data.at['b', 'B'])   # 只能定位单个元素，但是速度快
 # 如果我要选择一个区域呢，比如我要选择5，8，6，9，那么可以这样做
 # print(data.loc['b':'c', 'B':'C'])
 # .iloc[]与loc一样，中括号里面也是先行后列，行列标签用逗号分割，与loc不同的之处是，.iloc 是根据行数与列数来索引的
 # print(data.iloc[1, 1])
-print(data.iat[1,1])  # 只能定位单个元素，但是速度快
+print(data.iat[1, 1])  # 只能定位单个元素，但是速度快
 # print(data.iloc[1:3, 1:3])
 # .ix[]它既可以根据行列标签又可以根据行列数
 # print(data.ix[1, 1])
