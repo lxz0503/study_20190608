@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 cities_prices = {'beijing': 60000, 'shanghai': 59000, 'shenzhen': 58000}  # use dictionary
 list_prices = ['beijing', 'shanghai', 'shenzhen']                 # use list
@@ -11,6 +12,11 @@ result = pd.Series(list_prices)
 # print(result)
 arrySer = pd.Series(np.arange(10, 15), index=['a', 'b', 'c', 'd', 'e'])  # use array
 print(arrySer)
+arrySer.plot.bar()
+# arrySer.plot.line()
+# arrySer.plot.pie()
+plt.show()        # plot
+
 print("the index is %s" % arrySer.index)
 print("the value is %s" % arrySer.values)
 
