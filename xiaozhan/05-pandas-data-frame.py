@@ -1,13 +1,16 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 data = {'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
         'house_price': [50000, 48000, 35000, 30000]
         }    # 每一列数据, 通过字典来创建
-data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
-# print(data_frame)
-# print(data_frame.values)
+# data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
+data_frame = pd.DataFrame.from_dict(data, orient='index',columns=['year', 'city', 'house_price','a'])
+print(data_frame)
+print(data_frame.values)
+print(data_frame.get_values())  # 功能同上，获取所有数值
 # print(data_frame.values[0])
 # print(data_frame.values[0][2])
 # print(data_frame.sort_values(by=['house_price'],na_position='first'))  # 依据house_price列排序，并将该列空值放在首位
@@ -22,7 +25,11 @@ frame = pd.DataFrame(np.arange(9).reshape(3, -1),  # -1 means generating columns
                      index=['a', 'b', 'c'],   # 每行的名字
                      columns=['beijing', 'shanghai', 'hangzhou'] # 每列的名字
                      )
+frame.plot.bar()
+plt.show()
 # print(frame)
+print(frame.index[0])  # 打印第0行的index的名字
+print(frame.columns[0]) # 打印第0列column的名字
 # print(frame.ix['a':'b'])  # get value from index a to index b
 # print(frame.sort_values(by=['beijing'],na_position='first'))
 # print(frame[frame.beijing>0]) # get value from column beijing that are greater than 0
@@ -84,3 +91,23 @@ print(data.iat[1,1])  # 只能定位单个元素，但是速度快
 fecha = pd.date_range('2012-4-10', '2015-1-4', periods=10)
 print(fecha)
 print(type(fecha))
+
+# plot with data frame
+
+speed = [0.1, 17.5, 40, 48, 52, 69, 88]
+lifespan = [2, 8, 70, 1.5, 25, 12, 28]
+index = ['snail', 'pig', 'elephant',
+         'rabbit', 'giraffe', 'coyote', 'horse']
+df = pd.DataFrame({'speed': speed, 'lifespan': lifespan}, index=index)
+ax = df.plot.bar(rot=0, subplots=True)
+plt.savefig(r"F:\xiaozhan_git\study_20190608\xiaozhan\dataframe_bar.jpg")
+plt.show()
+
+# example
+# df = pd.DataFrame(np.random.randn(6, 4),
+#                   index=['one', 'two', 'three', 'four', 'five', 'six'],
+#                   columns=pd.Index(['A', 'B', 'C', 'D'], name='Genus')
+#                   )
+# print(df)
+# df.plot.bar()
+# plt.show()
