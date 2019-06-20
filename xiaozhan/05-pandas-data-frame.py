@@ -88,6 +88,31 @@ print(data.iat[1,1])  # 只能定位单个元素，但是速度快
 # print(data.ix[1, 1])
 # print(data.ix[1:3, 1:3])
 
+#
+df = pd.DataFrame({'AAA': [4, 5, 6, 7],
+                   'BBB': [10, 20, 30, 40],
+                   'CCC': [100, 50, -30, -50]}
+                  )
+df.loc[df.AAA >= 5, 'BBB'] = -1
+print(df)
+#    AAA  BBB  CCC
+# 0    4   10  100
+# 1    5   -1   50
+# 2    6   -1  -30
+# 3    7   -1  -50
+df.loc[df.AAA >= 5, ['BBB', 'CCC']] = 555
+print(df)
+#    AAA  BBB  CCC
+# 0    4   10  100
+# 1    5  555  555
+# 2    6  555  555
+# 3    7  555  555
+r = df.loc[(df.AAA <= 6) & (df.index.isin([0, 2, 3]))]
+print(r)
+#    AAA  BBB  CCC
+# 0    4   10  100
+# 2    6  555  555
+
 fecha = pd.date_range('2012-4-10', '2015-1-4', periods=10)
 print(fecha)
 print(type(fecha))
