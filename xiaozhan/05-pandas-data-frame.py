@@ -112,6 +112,8 @@ print(r)
 #    AAA  BBB  CCC
 # 0    4   10  100
 # 2    6  555  555
+r = df.loc[df.groupby("AAA")["BBB"].idxmin()]
+print(r)
 
 fecha = pd.date_range('2012-4-10', '2015-1-4', periods=10)
 print(fecha)
