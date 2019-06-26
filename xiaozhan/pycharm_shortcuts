@@ -241,3 +241,14 @@ Ctrl + Alt + S 打开设置页
 Ctrl + Shift + A 查找编辑器里所有的动作
 
 Ctrl + Tab 在窗口间进行切换
+#python3----ssh log onto another linux server and run command
+https://blog.csdn.net/lj1404536198/article/details/80320528
+
+# python3 ----log onto other linux server and run multiple commands
+https://blog.csdn.net/only_anan/article/details/80055624
+
+# python3---pexpect4.6
+https://blog.csdn.net/King_818/article/details/82319574
+
+# python3 -- pexpect
+https://zhidao.baidu.com/question/244136518516722244.html
