@@ -6,7 +6,6 @@ import time
 import pandas as pd
 
 
-
 url = 'https://bj.lianjia.com/ershoufang/'  # 设置URL的固定部分
 page = 'pg'    # 设置页面可变部分
 headers = {
@@ -64,7 +63,10 @@ print(house.head())
 #
 house_info_list = pd.DataFrame((x.split('/') for x in house.houseInfo),
                                columns=['name', 'room', 'size', 'orientation', 'deco', 'elevator'])
-print(house_info_list.head())
-
+# print(house_info_list.head())
+# merge
+house = pd.merge(house, house_info_list, right_index=True, left_index=True)
+print(house)
+print(house.iloc[:, 0].max())   #  ----?
 
 
