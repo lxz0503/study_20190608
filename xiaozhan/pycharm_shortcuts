@@ -266,3 +266,8 @@ https://www.cnblogs.com/wupeiqi/
 sudo add-apt-repository ppa:webupd8team/java  
 $ sudo apt-get update  
 $ sudo apt-get install oracle-java8-installer 
+
+用 from pexpect import pxssh，print(s.before())
+[PEXPECT]$ cat /proc/version ---前导符不是我们想的$#之类
+
+https://www.cnblogs.com/beer/p/5418471.html
