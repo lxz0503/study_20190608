@@ -261,3 +261,8 @@ https://www.cnblogs.com/wupeiqi/
 #博客园  xiaoyu53   QQ password
 随笔-----所有人都可以看到
 文章---只有自己可以看到，除非你发送链接给别人
+
+# install pycharm and JDK on ubuntu
+sudo add-apt-repository ppa:webupd8team/java  
+$ sudo apt-get update  
+$ sudo apt-get install oracle-java8-installer 
