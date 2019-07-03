@@ -1,0 +1,8 @@
+#虚拟机三种网络模式 
+https://blog.csdn.net/chichi123137/article/details/82670257
+https://www.jianshu.com/p/bb02b16d99ec
+
+进入系统编辑网卡配置文件，命令为vi /etc/sysconfig/network-scripts/ifcfg-eth0 （这里可能有些不同，找到 ifcfg-eth 开头的文件即可）
+
+Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，
+Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。虚拟机不能和外网通信
