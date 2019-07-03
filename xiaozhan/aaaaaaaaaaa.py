@@ -117,7 +117,16 @@ info = {
 }
 
 for item in info.values():
-    print(item)
+    print(item) # print the value
 
 for item in info:
+    print(item, info[item])  # item is the key
+
+for item in info.items():
     print(item)
+    # print(type(item))   # it is tuple like (True, 300)
+
+for k, v in info.items():
+    print(k, v)  # it is not tuple, but just a 100
+
+#
