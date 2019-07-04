@@ -273,3 +273,8 @@ $ sudo apt-get install oracle-java8-installer
 https://www.cnblogs.com/beer/p/5418471.html
 My 博客园：xiaoyu53 QQmi
 #https://i.cnblogs.com/xiaoyu53
+#直接通过索引修改列表，或者通过切片的方式修改，删除列表元素
+
+sudo chown windriver:windriver release.ini
+
+41,50s/^/$wrenv /g    replace the initial with $wrenv
