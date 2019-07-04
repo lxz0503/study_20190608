@@ -261,6 +261,9 @@ https://www.cnblogs.com/wupeiqi/
 #博客园  xiaoyu53   QQ password
 随笔-----所有人都可以看到
 文章---只有自己可以看到，除非你发送链接给别人
+<<<<<<< HEAD
+日志---只有自己可以看到，给url别人也看不到
+=======
 
 # install pycharm and JDK on ubuntu
 sudo add-apt-repository ppa:webupd8team/java  
@@ -273,8 +276,12 @@ $ sudo apt-get install oracle-java8-installer
 https://www.cnblogs.com/beer/p/5418471.html
 My 博客园：xiaoyu53 QQmi
 #https://i.cnblogs.com/xiaoyu53
+<<<<<<< HEAD
 #直接通过索引修改列表，或者通过切片的方式修改，删除列表元素
 
 sudo chown windriver:windriver release.ini
 
 41,50s/^/$wrenv /g    replace the initial with $wrenv
+=======
+>>>>>>> 7457d11868bef29479d9ce4f7017dbcc5984d59b
+>>>>>>> cd0df50af9490bf5e7186cfd42223ad86da68d3d

@@ -108,7 +108,7 @@ print(l)
 
 # tuple can not be added, removed,modified.
 
-# 字典
+# 字典,key如果设置为1等同于设置为True，键值不能重复
 info = {
     "a": 100,
     "beijing": 200,
@@ -117,7 +117,48 @@ info = {
 }
 
 for item in info.values():
-    print(item)
+    print(item) # print the value
 
 for item in info:
+    print(item, info[item])  # item is the key
+
+for item in info.items():
     print(item)
+    # print(type(item))   # it is tuple like (True, 300)
+
+for k, v in info.items():
+    print(k, v)  # it is not tuple, but just a 100
+#dict   (ctrl+shift+i，可以快速查看dict的实现)
+
+v = info.get("a")
+print(v)
+v = info.get(True)
+print(v)
+v = info.get("aaaaa", 10)    # if this key aaaaa does not exist, then return 10
+print(v)
+
+# info.pop(True)   # True is the key that will be removed
+# print(info)
+
+v = info.pop("aaaaaa", 100)  # if key "aaaaa" is not found, then return 100
+print(info)
+print(v)
+
+# if key "a" is found, return the value in the dictionary. if key "a" is not found, return the value 500
+v = info.setdefault("a", 500)
+print(v)
+
+v = info.setdefault("b", 500)  # if key "b" is not found, add this key-value into the dict
+print(v)
+print(info)    # {'a': 100, 'beijing': 200, 2: 'aaaa', True: 300, 'b': 500}
+
+n = 9
+count = 0
+for i in range(1, n):
+    for k in range(1, n):
+        if i != k:
+            count += 1
+print(count)
+
+#
+print("aa", "bb", "cc",)   # 默认分隔符就是空格  aa bb cc

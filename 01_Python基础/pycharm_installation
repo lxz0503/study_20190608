@@ -1,0 +1,14 @@
+install pycharm in linux ubuntu:
+tar -zxvf pycharm.tar.gz
+sudo mv pychar.tar.gz /opt/
+/opt/pycharm/bin/pycharm.sh
+
+#remove old pycharm edition
+sudo rm -rf /opt/pycharm/
+rm -rf ~/.Pycharm/
+rm -rf /usr/share/jetbrains-pycharm.desktop
+
+# for windows edition, use 2018.2 professional and the patch
+# import commands, this module can get output of linux shell command like:
+# commands.getoutput('shell command')
+output = getoutput('cd %s; git log -1 HEAD' % gitDir)
