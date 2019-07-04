@@ -162,3 +162,9 @@ print(count)
 
 #
 print("aa", "bb", "cc",)   # 默认分隔符就是空格  aa bb cc
+
+#
+li = [1,2,3]
+l = len(li)
+for i in range(1, l):
+    print(i)
