@@ -169,3 +169,57 @@ for x in range(1,100//5):     # 公鸡最多买100//5只
         for z in range(1,100):  # 小鸡最多能买100只
             if x + y + z == 100 and x*5 + y*3 + z/3 == 100:
                 print(x,y,z)
+
+#
+li = ["alex", "rain", 123]
+l = []
+for item in li:
+    l.append(str(item))
+
+print(l)
+v = "_".join(l)
+print(v)
+
+#
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print(len(seasons))
+v = list(enumerate(seasons))
+print(v)
+# [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+v = list(enumerate(seasons, start=1))       # 下标从 1 开始
+print(v)
+# [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+
+seq = ['one', 'two', 'three']
+for i, element in enumerate(seq):
+    print(i, element)
+
+# 0 one
+# 1 two
+# 2 three
+# 下面的元组，第一级元素不能修改，但是可以修改里面的二级元素
+# k2对应的列表可以修改，但是k3对应的元组不能修改
+tu = ("alex",
+      [11, 22,
+       {"k1": 'v1', "k2": ["age","name"], "k3":(11, 22, 33)},
+       44
+       ]
+      )
+print(type(tu))
+tu[1][2]["k2"].append("address")
+print(tu[1][2]["k2"])
+# 找到数组中两个数之和等于目标值对应的元素，放到集合中
+def two_sum(numbers, target):
+    l = []
+    for i in range(len(numbers) - 1):  # 循环到倒数第二位
+        for j in range(i + 1,len(numbers)): # 从i往后开始循环
+            if (numbers[i] + numbers[j]) == target:
+                l.append((numbers[i], numbers[j]))
+    return l
+
+# ret = two_sum([2,7,11,15],18)
+# print(type(ret))
+print(two_sum([1,2,3,4], 5))
+
+
+
