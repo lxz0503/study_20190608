@@ -162,3 +162,10 @@ print(count)
 
 #
 print("aa", "bb", "cc",)   # 默认分隔符就是空格  aa bb cc
+
+# 5,3,3   100，公鸡 母鸡 小鸡，用100文钱，买100只，小鸡是1文钱3只，
+for x in range(1,100//5):     # 公鸡最多买100//5只
+    for y in range(1,100//3):   # 母鸡最多能买100//3
+        for z in range(1,100):  # 小鸡最多能买100只
+            if x + y + z == 100 and x*5 + y*3 + z/3 == 100:
+                print(x,y,z)
