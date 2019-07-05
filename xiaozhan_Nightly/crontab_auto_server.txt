@@ -1,0 +1,8 @@
+
+# m h  dom mon dow   command
+#* 10 * * * python /home/windriver/ANVL/anvl_install_kong.py > /home/windriver/ANVL/nightly.log
+#10 16 * * * /home/windriver/ANVL/buildRTNet.sh > build.log
+#* * * * * echo a >> /home/windriver/ANVL/cron.log
+#* * * * * python /home/windriver/ANVL/test.py >> /home/windriver/ANVL/cron.log
+30 10 * * * python /home/windriver/ANVL/scp_dir_test.py
+30 8 * * * python /home/windriver/ANVL/cp.py
