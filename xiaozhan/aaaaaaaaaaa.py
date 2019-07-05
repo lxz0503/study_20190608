@@ -236,7 +236,69 @@ res = func(1, 2, 3)   # return is tuple
 print("the result is", res)
 print(type(res))
 
+# map() 会根据提供的函数对指定序列做映射。
+# 第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表
 
+def square(x):  # 计算平方
+    return x ** 2
+
+map(square, [1, 2, 3, 4, 5])  # 计算列表各个元素的平方
+# [1, 4, 9, 16, 25]
+map(lambda x: x ** 2, [1, 2, 3, 4, 5])  # 使用 lambda 匿名函数
+#[1, 4, 9, 16, 25]
+
+# 提供了两个列表，对相同位置的列表数据进行相加
+map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
+# [3, 7, 11, 15, 19]
+
+#
+print(abs(-2))
+
+# 三元表达式与列表解析
+l = []
+for i in range(10):
+    l.append("egg%s" % i)
+print(l)
+
+l = ["egg%s" % i for i in range(10)]
+print(l)
+# 三元表达式,生成列表
+# 主体是for循环，二元是"egg%s" % i,3元是判断
+l = ["egg%s" % i for i in range(10) if i > 5]
+print(l)
+
+#如果列表内容特别大，就用生成器表达式，把[]替换为()即可
+
+l = (i for i in range(10))
+print(l)  # <generator object <genexpr> at 0x000000000213F780>
+print(l.__next__())   # 这里输出0
+print(l.__next__())   # 这里输出1
+
+# yield相当于函数里面的return
+
+def test():
+    print("first")
+    yield "the first"
+    print("second")
+    yield 2
+    print("third")
+    yield 3
+res = test()
+print(res.__next__())  # 这里输出1
+print(res.__next__())  # 这里输出2
+
+#
+def product():
+    for i in range(10):
+        print("start to produce")
+        yield "product %s is ok" % i  # 不会显示在输出内容里面
+        print("start to sell product")
+pro = product()
+
+buyer1 = pro.__next__()   # 有人买，就生产
+buyer1 = pro.__next__()
+buyer1 = pro.__next__()
+buyer1 = pro.__next__()
 
 
 
