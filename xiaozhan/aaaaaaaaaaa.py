@@ -292,13 +292,53 @@ def product():
     for i in range(10):
         print("start to produce")
         yield "product %s is ok" % i  # 不会显示在输出内容里面
-        print("start to sell product")
-pro = product()
+        print("start to sell product %s" % i)
+pro = product()  # pro就是一个生成器,generator
+for jidan in pro:
+    print(jidan)
 
-buyer1 = pro.__next__()   # 有人买，就生产
-buyer1 = pro.__next__()
-buyer1 = pro.__next__()
-buyer1 = pro.__next__()
+# buyer1 = pro.__next__()   # 有人买，就生产
+# buyer1 = pro.__next__()
+# buyer1 = pro.__next__()
+# buyer1 = pro.__next__()
+
+l = sum(i for i in range(10))  # 用迭代器求和
+print(l)
+
+l = sum([i for i in range(10)])  # 用普通列表三元表达式解析列表
+print(l)  # 对列表求和
+
+# 使用yield的好处是一次不用读取所有数据，否则会占用很大内存
+
+def get_population():
+    with open("population_statistics", "r") as f:
+        for i in f:
+            yield i  # 类似于readline，但是每次只读一条数据
+
+g = get_population()     # g is a generator
+# print(g)
+#
+# for p in g:
+#     p_dic = eval(p)
+#     print("the population of each city", p_dic["population"])
+# sum
+all_pop = sum(eval(i)['population'] for i in g)   # sum函数，求和，用生成器
+print("the sum is", all_pop)
+#
+for p in g:    # 生成器只能迭代一次,所以这次不生效
+    print("the portion of each city is ", eval(p)['population']/all_pop)
+# population = eval(g.__next__())
+# print(type(g.__next__()))  # it is str
+# print(type(population)) `127  # it is dict
+# print("the population is", population["population"])
+# print(g.__next__())
+# print(g.__next__())
+#
+# eval() 函数用来执行一个字符串表达式，并返回表达式的值
+x = 7
+r = eval('3 * x')
+print(r)   # 21
+
 
 
 
