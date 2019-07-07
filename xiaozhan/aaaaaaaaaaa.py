@@ -380,3 +380,25 @@ print(set(l))     # 用集合去掉了重复元素
 
 print(set(l1)&set(l2))    # 用&操作，取出集合中相同的元素
 
+#
+def func(x,z,y=5):
+    print(x,y,z)
+
+func(1,2,3)
+
+#
+def func(x,*z,**y):
+    print(x,y,z)   # 1 {} (2, 3)
+func(1,2,3)
+
+def func(x,*y,**z):
+    print(x,y,z)   # 1 () {'name': 2, 'age': 3}
+func(1,name=2,age=3)
+
+def func(x,*y,**z):
+    print(x,y,z)   # 1 (2,3,4) {'name': 2, 'age': 3}
+func(1,2,3,4,name=2,age=3)
+
+def func(x=2,*y,**z):
+    print(x,y,z)   # 2 () 'name': 2, 'age': 3}
+func(name=2,age=3)
