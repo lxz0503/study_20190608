@@ -255,6 +255,8 @@ map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
 print(abs(-2))
 
 # 三元表达式与列表解析
+# 三元就是三个运算符
+# 变量 = 值-if条件-else 值二
 l = []
 for i in range(10):
     l.append("egg%s" % i)
@@ -264,6 +266,7 @@ l = ["egg%s" % i for i in range(10)]
 print(l)
 # 三元表达式,生成列表
 # 主体是for循环，二元是"egg%s" % i,3元是判断
+# 其实就是把几行的内容精简一下，写到一行
 l = ["egg%s" % i for i in range(10) if i > 5]
 print(l)
 
@@ -316,7 +319,7 @@ def get_population():
             yield i  # 类似于readline，但是每次只读一条数据
 
 g = get_population()     # g is a generator
-# print(g)
+print(g)    # <generator object get_population at 0x00000000028871A8>
 #
 # for p in g:
 #     p_dic = eval(p)
@@ -339,6 +342,41 @@ x = 7
 r = eval('3 * x')
 print(r)   # 21
 
+# 生产者消费者模型, 模拟了并发
+import time
+def consumer(name):    # this is a generator function
+    print("my name is %s,start to eat baozi" % name)
+    while True:
+        baozi = yield   # 看见yield,就停下，yield能保存函数状态
+        time.sleep(0.1)
+        print("%s 开心的吃%s包子" % (name, baozi))
+def producer():
+    c1 = consumer("zhangsan")    # 获得生成器
+    c1.__next__()
+    c2 = consumer("lisi")    # 获得生成器
+    c2.__next__()              # 触发生成器运行
 
+    for i in range(10):
+        time.sleep(0.1)
+        c1.send("baozi%s" % i)   # 把内容传递给baozi，也就是yield
+        c2.send("baozi%s" % i)   # 把内容传递给baozi，也就是yield
 
+producer()
+
+# 函数传递参数，是引用
+name = "a"
+def show(name):
+    print(id(name))
+print(id(name))
+show(name)
+
+# 使用set集合获取两个列表中相同的元素
+
+l1 = [11, 22, 33]
+l2 = [22, 33, 44,'a']
+l = l1 + l2
+print(l)    # 连个列表拼接在一起
+print(set(l))     # 用集合去掉了重复元素
+
+print(set(l1)&set(l2))    # 用&操作，取出集合中相同的元素
 
