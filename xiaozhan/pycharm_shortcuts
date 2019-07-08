@@ -283,5 +283,4 @@ sudo chown windriver:windriver release.ini
 
 41,50s/^/$wrenv /g    replace the initial with $wrenv
 =======
->>>>>>> 7457d11868bef29479d9ce4f7017dbcc5984d59b
->>>>>>> cd0df50af9490bf5e7186cfd42223ad86da68d3d
+
