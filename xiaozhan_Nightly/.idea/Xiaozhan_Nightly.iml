@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="文本处理" />
+    <orderEntry type="module" module-name="xiaozhan" />
+    <orderEntry type="module" module-name="study_note" />
+    <orderEntry type="module" module-name="01_Python基础" />
+    <orderEntry type="module" module-name="02_card_management" />
+    <orderEntry type="module" module-name="03_面向对象" />
+    <orderEntry type="module" module-name="04_函数" />
+    <orderEntry type="module" module-name="05_模块和包" />
+    <orderEntry type="module" module-name="06_项目实战_飞机大战" />
+    <orderEntry type="module" module-name="01_Python基础" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="Nosetests" />
+    <option name="PROJECT_TEST_RUNNER" value="Nosetests" />
+  </component>
+</module>
