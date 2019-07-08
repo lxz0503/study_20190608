@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10c0882c-8212-43a7-abbe-d248f1cb36fe" name="Default Changelist" comment="04_python函数">
+      <change afterPath="$PROJECT_DIR$/../test_xiaozhan/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_Python基础" beforeDir="false" afterPath="$PROJECT_DIR$/../01_Python基础" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_Python基础/xxxxx/新建文本文档.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../文本处理/01_test.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$hm_16_.coverage" NAME="hm_16_文件操作 Coverage Results" MODIFIED="1560948944902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../01_Python基础" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$03_regular_expression.coverage" NAME="03_regular_expression Coverage Results" MODIFIED="1560005510220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/string_process" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$03_draw_picture.coverage" NAME="03_draw_picture Coverage Results" MODIFIED="1560682359672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/string_process" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$09_pandas_matplotlib_numpy.coverage" NAME="09-pandas-matplotlib-numpy Coverage Results" MODIFIED="1561300698424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$01_pandas_series.coverage" NAME="01_pandas_series Coverage Results" MODIFIED="1561299036852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$hm_04_.coverage" NAME="hm_04_打印九九乘法表 Coverage Results" MODIFIED="1562244836037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/01_Python基础" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$01_test.coverage" NAME="01_test Coverage Results" MODIFIED="1559972478775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../文本处理" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$hm_18_subprocess.coverage" NAME="hm_18_subprocess练习 Coverage Results" MODIFIED="1560948969112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../01_Python基础" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$10_collections_counter.coverage" NAME="10-collections-counter Coverage Results" MODIFIED="1561901292902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$03_pandas_csv_plot.coverage" NAME="03_pandas_csv_plot Coverage Results" MODIFIED="1561298157980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$01_count_word_number.coverage" NAME="01_count_word_number Coverage Results" MODIFIED="1561901952381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/string_process" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$02.coverage" NAME="02 Coverage Results" MODIFIED="1560675129035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/string_process" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$05_pandas_data_frame.coverage" NAME="05-pandas-data-frame Coverage Results" MODIFIED="1561300529604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$02_list.coverage" NAME="02_字典加入list中 Coverage Results" MODIFIED="1559967440351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../文本处理" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$01_.coverage" NAME="01-求重复次数字母的数量 Coverage Results" MODIFIED="1561900946391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/study_note" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$08_pandas_html_xml.coverage" NAME="08-pandas-html-xml Coverage Results" MODIFIED="1561267567960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$aaaaaaaaaaa.coverage" NAME="aaaaaaaaaaa Coverage Results" MODIFIED="1562301719304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$10_cpllections_counter.coverage" NAME="10-cpllections-counter Coverage Results" MODIFIED="1561303371442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$02_pandas_excel_plot.coverage" NAME="02_pandas_excel_plot Coverage Results" MODIFIED="1561294481515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$04_pandas_csv_plot.coverage" NAME="04_pandas_csv_plot Coverage Results" MODIFIED="1561296657172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/xiaozhan" />
+    <SUITE FILE_PATH="coverage/Xiaozhan_Nightly$19_multiply_from.coverage" NAME="19_multiply_from Coverage Results" MODIFIED="1562245309318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/xiaozhan_git/study_20190608/01_Python基础" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1652969435">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="6" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="17" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="aaa" value="1" />
+          <entry key="cfg" value="3" />
+          <entry key="file_test" value="1" />
+          <entry key="git_bisect" value="2" />
+          <entry key="git_note" value="1" />
+          <entry key="graph_steps" value="1" />
+          <entry key="log" value="3" />
+          <entry key="note" value="1" />
+          <entry key="note_文本处理" value="2" />
+          <entry key="py" value="91" />
+          <entry key="pycharm_installation" value="2" />
+          <entry key="pycharm_shortcuts" value="2" />
+          <entry key="pyi" value="1" />
+          <entry key="python_study" value="2" />
+          <entry key="sh" value="1" />
+          <entry key="study_note" value="2" />
+          <entry key="tcl" value="14" />
+          <entry key="test_analyst" value="1" />
+          <entry key="txt" value="6" />
+          <entry key="user_agent" value="1" />
+          <entry key="vm_network" value="1" />
+          <entry key="画图" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Ini" value="3" />
+          <entry key="Markdown" value="9" />
+          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="Python" value="91" />
+          <entry key="PythonStub" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="aaa" value="63" />
+          <entry key="cfg" value="1" />
+          <entry key="dummy" value="47" />
+          <entry key="graph_steps" value="161" />
+          <entry key="note" value="855" />
+          <entry key="note_文本处理" value="19" />
+          <entry key="py" value="8615" />
+          <entry key="pycharm_shortcuts" value="324" />
+          <entry key="study_note" value="3" />
+          <entry key="tcl" value="15" />
+          <entry key="txt" value="31" />
+          <entry key="user_agent" value="54" />
+          <entry key="vm_network" value="31" />
+          <entry key="画图" value="57" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Ini" value="1" />
+          <entry key="Markdown" value="1221" />
+          <entry key="PLAIN_TEXT" value="439" />
+          <entry key="Python" value="8615" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Xiaozhan_Nightly" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_04_打印九九乘法表.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/aaaaaaaaaaa.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="236" column="16" lean-forward="true" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xiaozhan_test_nightly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resultDir.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_11_元组和字典的拆包.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_17_zip函数操作.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_18_subprocess练习.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>FAIL</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="D:/Demo_Canada/MEFA_Sdudy_Arch_Xiaozhan/fileRead.tcl" />
+        <option value="D:/Demo_Canada/MEFA_Sdudy_Arch_Xiaozhan/read_VSB_Config.tcl" />
+        <option value="D:/Demo_Canada/MEFA_Sdudy_Arch_Xiaozhan/build_q35_vx7_smp_4_xiaozhan.cfg" />
+        <option value="D:/Demo_Canada/MEFA_Sdudy_Arch_Xiaozhan/get_cfg.tcl" />
+        <option value="$PROJECT_DIR$/../01_Python基础/aaa" />
+        <option value="$PROJECT_DIR$/../文本处理/02_字典加入list中.py" />
+        <option value="$PROJECT_DIR$/../文本处理/01_test.py" />
+        <option value="$PROJECT_DIR$/../test_xiaozhan/lxz_python/study_note" />
+        <option value="$PROJECT_DIR$/../文本处理/note" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/01_test.py" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/note_文本处理" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/03_regular_expression.py" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/02.py" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/画图" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/03_draw_picture.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/test.txt" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/02_pandas_excel_plot.py" />
+        <option value="$PROJECT_DIR$/../01_Python基础/hm_18_subprocess练习.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/user_agent" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/08-pandas-html-xml.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/04_pandas_csv_plot.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/03_pandas_csv_plot.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/01_pandas_series.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/graph_steps" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/05-pandas-data-frame.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/09-pandas-matplotlib-numpy.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/10-cpllections-counter.py" />
+        <option value="D:/xiaozhan_git/study_20190608/study_note/vm_network" />
+        <option value="D:/xiaozhan_git/study_20190608/study_note/01-求重复次数字母的数量.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/10-collections-counter.py" />
+        <option value="D:/xiaozhan_git/study_20190608/string_process/01_count_word_number.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/pycharm_shortcuts" />
+        <option value="D:/xiaozhan_git/study_20190608/01_Python基础/19_multiply_from.py" />
+        <option value="D:/xiaozhan_git/study_20190608/01_Python基础/hm_04_打印九九乘法表.py" />
+        <option value="D:/xiaozhan_git/study_20190608/xiaozhan/aaaaaaaaaaa.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="2" />
+    <option name="y" value="1" />
+    <option name="width" value="1757" />
+    <option name="height" value="881" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Xiaozhan_Nightly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xiaozhan_Nightly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xiaozhan_Nightly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01_Python基础" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Xiaozhan_Nightly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xiaozhan" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="repository&#10;directory" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/xiaozhan_git/study_20190608/01_Python基础" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.aaaaaaaaaaa">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="01_count_word_number" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="文本处理" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/xiaozhan_git/study_20190608/string_process" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/xiaozhan_git/study_20190608/string_process/01_count_word_number.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="10-collections-counter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xiaozhan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/xiaozhan_git/study_20190608/xiaozhan" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/xiaozhan_git/study_20190608/xiaozhan/10-collections-counter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="19_multiply_from" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="01_Python基础" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/xiaozhan_git/study_20190608/01_Python基础" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/xiaozhan_git/study_20190608/01_Python基础/19_multiply_from.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aaaaaaaaaaa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xiaozhan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/xiaozhan_git/study_20190608/xiaozhan" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/xiaozhan_git/study_20190608/xiaozhan/aaaaaaaaaaa.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hm_04_打印九九乘法表" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="01_Python基础" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/xiaozhan_git/study_20190608/01_Python基础" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/xiaozhan_git/study_20190608/01_Python基础/hm_04_打印九九乘法表.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer" factoryName="Flask server">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="05_模块和包" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.01_count_word_number" />
+      <item itemvalue="Python.10-collections-counter" />
+      <item itemvalue="Python.aaaaaaaaaaa" />
+      <item itemvalue="Python.hm_04_打印九九乘法表" />
+      <item itemvalue="Python.19_multiply_from" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.aaaaaaaaaaa" />
+        <item itemvalue="Python.19_multiply_from" />
+        <item itemvalue="Python.hm_04_打印九九乘法表" />
+        <item itemvalue="Python.01_count_word_number" />
+        <item itemvalue="Python.10-collections-counter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10c0882c-8212-43a7-abbe-d248f1cb36fe" name="Default Changelist" comment="" />
+      <created>1559654363409</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559654363409</updated>
+    </task>
+    <task id="LOCAL-00001" summary="01_python基础">
+      <created>1559994133567</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559994133567</updated>
+    </task>
+    <task id="LOCAL-00002" summary="04_python函数">
+      <created>1559995073018</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559995073018</updated>
+    </task>
+    <task id="LOCAL-00003" summary="04_python函数">
+      <created>1559999855886</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559999855886</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2" y="1" width="1757" height="881" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.17619328" />
+      <window_info id="Structure" order="1" sideWeight="0.50070524" side_tool="true" weight="0.2536023" />
+      <window_info id="Favorites" order="2" sideWeight="0.50070524" side_tool="true" weight="0.2536023" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6216853" visible="true" weight="0.2476573" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4977307" weight="0.3984127" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.37831467" side_tool="true" visible="true" weight="0.2476573" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.31543118" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="01_python基础" />
+    <MESSAGE value="04_python函数" />
+    <option name="LAST_COMMIT_MESSAGE" value="04_python函数" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../04_函数/hm_04_字典.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../04_函数/hm_05_字符串文本对齐.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../03_面向对象/04_super函数练习.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_10_多值参数求和.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_07_函数内部修改可变参数.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_08_加等于（面试）.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_13_异常.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../03_面向对象/hm_01_面向对象.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../03_面向对象/05_在类内部访问类属性.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_16_文件操作.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_09_多值参数.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Python/Lib/urllib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/sqlite3/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/string_process/note_文本处理">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/string_process/画图">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="200">
+            <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/04-pandas-excel-operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="53" lean-forward="true" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/02_pandas_excel_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/08-pandas-html-xml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/04_pandas_csv_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/03_pandas_csv_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/10-cpllections-counter.py" />
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/05-pandas-data-frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3250">
+          <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/01_pandas_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1600">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/graph_steps">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="400">
+            <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conf_xiaozhan_trial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="303" column="40" lean-forward="true" selection-start-line="303" selection-start-column="40" selection-end-line="303" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/study_note/01-求重复次数字母的数量.py" />
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/09-pandas-matplotlib-numpy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/string_process/1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/study_note/vm_network">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="175">
+            <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/10-collections-counter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_18_subprocess练习.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/user_agent">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="500">
+            <caret line="20" selection-start-line="20" selection-end-line="23" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../01_Python基础/hm_11_元组和字典的拆包.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../05_模块和包/hm_02_导入包.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../05_模块和包/hm_01_模块.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-164" />
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/git_bisect">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/get_git_commit.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Python/xiaozhan/anaconda/Lib/site-packages/werkzeug/datastructures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="508" column="12" selection-start-line="508" selection-start-column="12" selection-end-line="508" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/xiaozhan/anaconda/Lib/site-packages/pip/_vendor/requests/packages/urllib3/_collections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="184" column="8" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-643338342/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71225">
+          <caret line="2849" column="76" selection-start-line="2849" selection-start-column="76" selection-end-line="2849" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/string_process/01_count_word_number.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/19_multiply_from.py" />
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/pycharm_shortcuts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_04_打印九九乘法表.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_11_元组和字典的拆包.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_17_zip函数操作.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/01_Python基础/hm_18_subprocess练习.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resultDir.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/xiaozhan_git/study_20190608/xiaozhan/aaaaaaaaaaa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="236" column="16" lean-forward="true" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaozhan_test_nightly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
