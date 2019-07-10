@@ -402,3 +402,74 @@ func(1,2,3,4,name=2,age=3)
 def func(x=2,*y,**z):
     print(x,y,z)   # 2 () 'name': 2, 'age': 3}
 func(name=2,age=3)
+
+def func(*y,**z):
+    print(y,z)   # (1,2,3,4,5){}
+func(1,2,3,4,5)
+
+def func(*y,**z):
+    print(y,z)   # ([1, 2, 3, 4, 5],) {}
+func([1,2,3,4,5])
+
+def func(*y,**z):
+    print(y,z)   # (1, 2, 3, 4, 5) {}
+func(*[1,2,3,4,5])
+
+def func(*y,**z):
+    print(y,z)   # (1, 2, 3, 4, 5, {'name': 'alex', 'age': 19}) {}
+func(*[1,2,3,4,5],{"name":"alex", "age":19})  # 后面的字典作为列表或者元组的一部分, **z没有得到赋值
+
+def func(*y,**z):
+    print(y,z)   # (1, 2, 3, 4, 5) {'name': 'alex', 'age': 19}
+func(*[1,2,3,4,5],**{"name":"alex", "age":19})   # recommend this
+
+def func(*y,**z):
+    print(y,z)   # (1, 2, 3, 4, 5) {'name': 'alex', 'age': 19}
+func(*[1,2,3,4,5],name="alex",age=19)   # recommend this
+
+#
+def func1(x=1,*y,**z):   # default parameter x=1
+    print(x,y,z)  # 1 () {'name': 'aaa'}
+    return y    # end here due to return，y是一个空元组
+    print(x)
+def func2(arg):
+    ret = func1(name=arg)    # pass 键值对 name="aaa" to func1
+    print(ret)      # 这里返回()
+
+result = func2("aaa")
+print(result)       # 这里返回None
+# 1 () {'name': 'aaa'}
+# ()
+# None
+
+#
+def func(arg):
+    arg.append(55)    # 列表添加新元素55
+li = [11,22,33,44]
+func(li)   # 把列表名字li传递给arg
+print(li)  # 此时li已经变化 [11, 22, 33, 44, 55]
+li2 = func(li)  # func函数没有返回值
+print(li)   # 每执行一次func函数，li列表就会变化
+print(li2)    # 所以此处输出None
+#
+def f1(arg):
+    print(arg+100)     # 108
+def f2(arg):
+    ret = f1(arg+1)
+    print(arg)    # 7
+    print(ret)   # None
+
+ret = f2(7)
+print(ret)   # None
+#
+python3中的range不会生成值，只有用的时候才生成
+python2会直接生成一个列表，值已经生成
+
+# 下面俩函数重名，以最后一次为准
+def func(a):     # 定义函数func
+    return a + 100
+func = lambda a:a+200    # 定义函数func
+ret = func(10)    #
+print(ret)     # 210
+
+#字节，什么编码方式的字节？
