@@ -462,8 +462,8 @@ def f2(arg):
 ret = f2(7)
 print(ret)   # None
 #
-python3中的range不会生成值，只有用的时候才生成
-python2会直接生成一个列表，值已经生成
+#python3中的range不会生成值，只有用的时候才生成
+#python2会直接生成一个列表，值已经生成
 
 # 下面俩函数重名，以最后一次为准
 def func(a):     # 定义函数func
@@ -473,3 +473,30 @@ ret = func(10)    #
 print(ret)     # 210
 
 #字节，什么编码方式的字节？
+
+#
+a = [1,2,3]
+b = [4,5,6]
+c = [7,8,9]
+d = [10,11,12]
+zipped = zip(a,b,c,d)
+print(list(zipped))
+
+#  global and local
+name1 = "root"    # 这是一个全局变量
+def func():    # 注意里面的def相当于一条语句，只有调用才会走进去执行，func里面总共有5条语句
+    name1 = "seven"   # 局部变量
+    def outer(): # 定义一个函数,看看其他地方有没有调用, 这个函数总共有3条语句,把里面的def折叠起来分析
+        name1 = "eric"  # 局部变量
+        def inner():  # 定义一个函数，看看其他地方有没有调用
+            global name1  # 这个针对上面的eric，用global修饰符声明nam1是全局变量的name1后
+            print("the name is %s" % name1)
+            name1 = "aaaaaa"  # 局部
+        print(name1)     # 这里应该输出eric,这是第一个输出
+    o = outer()
+    print(o)    # None
+    print(name1)   # 这里应该是seven
+
+ret = func()
+print(ret)    # None
+print(name1)   # root
