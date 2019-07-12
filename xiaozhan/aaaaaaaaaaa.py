@@ -270,7 +270,7 @@ print(l)
 l = ["egg%s" % i for i in range(10) if i > 5]
 print(l)
 
-#如果列表内容特别大，就用生成器表达式，把[]替换为()即可
+# 如果列表内容特别大，就用生成器表达式，把[]替换为()即可,这样不会真用很大内存
 
 l = (i for i in range(10))
 print(l)  # <generator object <genexpr> at 0x000000000213F780>
@@ -341,6 +341,25 @@ for p in g:    # 生成器只能迭代一次,所以这次不生效
 x = 7
 r = eval('3 * x')
 print(r)   # 21
+# yield 是一个类似 return 的关键字，迭代一次遇到yield时就返回yield后面(右边)的值。
+# 重点是：下一次迭代时，从上一次迭代遇到的yield后面的代码(下一行)开始执行。
+# return 的作用：如果没有 return，则默认执行至函数完毕，返回的值一般是yield的变量
+# yield就是 return 返回一个值，并且记住这个返回的位置，下次迭代就从这个位置后(下一行)开始。
+# 带有yield的函数不仅仅只用于for循环中，而且可用于某个函数的参数，只要这个函数的参数允许迭代参数。
+# 比如array.extend函数，它的原型是array.extend(iterable)。
+# send(msg)与next()的区别在于send可以传递参数给yield表达式，这时传递的参数会作为yield表达式的值，
+# 而yield的参数是返回给调用者的值。——换句话说，就是send可以强行修改上一个yield表达式值。
+# 比如函数中有一个yield赋值，a = yield 5，第一次迭代到这里会返回5，a还没有赋值。
+# 第二次迭代时，使用.send(10)，那么，就是强行修改yield 5表达式的值为10，本来是5的，那么a=10. send(msg)与next()都有返回值，
+# 它们的返回值是当前迭代遇到yield时，yield后面表达式的值，其实就是当前迭代中yield后面的参数。
+# 第一次调用时必须先next()或send(None)，否则会报错，send后之所以为None是因为这时候没有上一个yield(根据第8条)。
+# 可以认为，next()等同于send(None)
+# ---------------------
+# 作者：MXuDong
+# 来源：CSDN
+# 原文：https://blog.csdn.net/qq_33472765/article/details/80839417
+# 版权声明：本文为博主原创文章，转载请附上博文链接！
+# ---------------------
 
 # 生产者消费者模型, 模拟了并发
 import time
@@ -500,3 +519,8 @@ def func():    # 注意里面的def相当于一条语句，只有调用才会走
 ret = func()
 print(ret)    # None
 print(name1)   # root
+
+# 内容输出到屏幕的同时，也保存到文件,用下面的命令
+# cat build.sh | tee test.log 2>&1
+# sh batchjob.sh 2>&1 | tee mylog.log
+
