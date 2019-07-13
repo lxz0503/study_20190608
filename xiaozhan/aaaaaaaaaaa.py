@@ -500,3 +500,6 @@ def func():    # 注意里面的def相当于一条语句，只有调用才会走
 ret = func()
 print(ret)    # None
 print(name1)   # root
+
+#
+
