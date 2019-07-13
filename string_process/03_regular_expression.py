@@ -12,7 +12,7 @@ p = re.compile(r'\d+')
 result = p.findall('one1two2three33four4')
 print(result)
 
-#
+# 注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串
 p = re.compile(r'(\w+) (\w+)')
 s = 'I say, hello han xiaoyang'
 result = p.match(s)
