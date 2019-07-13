@@ -14,11 +14,13 @@ class B(A):
     def add(self, m):
         print('self is {0} @B.add'.format(self))
         #
-        super().add(m)
+        print("self.n is %d" % self.n)
+        super().add(m)  # 这里继承了父类的add方法,相当于执行了self.n += m
+        print("after running parent, the self.n is %d" % self.n)
         print('newb')
         self.n += 3
 
 b = B()
-b.add(2)
-print(b.n)
+b.add(2)    # newb
+print(b.n)  # 输出10
 
