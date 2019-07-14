@@ -1,6 +1,7 @@
 # 带用户名密码验证功能的装饰器
 # use global dict 来存储用户登录状态
 # 这样就不用每次输入用户名和密码
+# 多个装饰器装饰一个函数,其执行顺序是从下往上
 user_list = [
     {"username": "alex1", "passwd": "123"},
     {"username": "alex2", "passwd": "123"},
