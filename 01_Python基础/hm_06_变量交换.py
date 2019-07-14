@@ -16,6 +16,6 @@ b = 20
 
 # 解法3.python专用方法，使用元组给变量赋值即可实现简单的数字交换
 # a, b = (b, a)
-a, b = b, a
+a, b = b, a    # 效果同上
 print(a)
 print(b)
