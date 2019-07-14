@@ -35,13 +35,13 @@ def deco(f):
     return wrapper
 
 @deco
-def f(a,b):
+def f(a, b):
     print("be on")
     time.sleep(1)
     print("result is %d" %(a+b))
 
 @deco
-def f2(a,b,c):
+def f2(a, b, c):
     print("be on")
     time.sleep(1)
     print("result is %d" %(a+b+c))

@@ -6,20 +6,22 @@
 import time
 
 def deco(f):                # 高阶函数，以函数名作为参数, 参数就是要装饰的函数
-    def wrapper(a, b):       # 函数嵌套
+    def wrapper(a, b):       # 函数嵌套,这个函数要和需要装饰的函数参数一致
         start_time = time.time()
-        f(a, b)              # 这里执行要装饰的函数
+        res = f(a, b)              # 这里执行要装饰的函数
         end_time = time.time()
         execution_time = (end_time - start_time)*1000
         print("time is %d ms" % execution_time)
+        return res
     return wrapper          # 返回值是嵌套函数的函数名
 
 @deco
-def f(a,b):
+def f(a, b):
     print("be on")
     time.sleep(1)
     print("result is %d" % (a+b))   # 执行完这一步，跳转到def wrapper(a,b)里面的f(a,b)
-
+    return "f函数返回值"
 
 if __name__ == '__main__':
-    f(3, 4)            # 此处设置断点，查看函数如何执行,顺序是先执行deco()函数，在执行f(a,b)之前跳转到def f(a,b)函数里面
+    res = f(3, 4)            # 此处设置断点，查看函数如何执行,顺序是先执行deco()函数，在执行f(a,b)之前跳转到def f(a,b)函数里面
+    print(res)
