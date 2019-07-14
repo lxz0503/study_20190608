@@ -4,9 +4,9 @@
 
 
 def demo(num, *args, **kwargs):
-    print(num)
-    print(args)
-    print(kwargs)
+    print(num)       # 1
+    print(args)      # (2, 3, 4, 5)
+    print(kwargs)    # {'name': 'xiaoming', 'age': 18, 'gender': True}
 
 
 demo(1, 2, 3, 4, 5, name="xiaoming", age=18, gender=True)
