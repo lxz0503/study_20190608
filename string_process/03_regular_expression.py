@@ -20,6 +20,15 @@ print(result.group(0))
 print(result.group(1))
 print(result.group(2).title())
 
+#  match 是从字符串的起始处开始匹配,而search是搜索整个字符串中模式首次出现的位置
+
+m = re.search('foo', 'seafood')
+if m is not None:
+    print(m.group())    # foo
+
+m = re.match('foo', 'seafood')
+if m is not None:
+    print(m.group())    # nothing
 # sub
 p = re.compile(r'\w+')
 s = 'xy 15 rt 3e,gep'
