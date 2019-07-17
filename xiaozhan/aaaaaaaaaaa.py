@@ -9,7 +9,7 @@ c = s.count('th')
 print(c)
 m = re.search("exception", s)
 if m is not None:
-    print(m.group())
+    print(m.group())    # exception
     print(m.group().upper())
     print(m.group().lower())
 
@@ -520,11 +520,9 @@ ret = func()
 print(ret)    # None
 print(name1)   # root
 
-<<<<<<< HEAD
-#
-=======
+
 # 内容输出到屏幕的同时，也保存到文件,用下面的命令
 # cat build.sh | tee test.log 2>&1
 # sh batchjob.sh 2>&1 | tee mylog.log
->>>>>>> 226493895764286269992b952a5e761c10f708a3
+
 

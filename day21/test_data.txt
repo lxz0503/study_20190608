@@ -1,0 +1,37 @@
+-> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 64 -P 1 -N"
+Task spawned: id = 0xffff800000184d60, name = t5
+value = -140737486762656 = 0xffff800000184d60 = _sysTableEnd + 0xffff7fffffd76d60
+-> Connecting to host 10.0.0.2, port 10000
+[  5] local 10.0.0.1 port 64240 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  sender
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  receiver
+
+iperf Done.
+
+-> 
+-> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 1024 -P 1"
+Task spawned: id = 0xffff800000184d60, name = t6
+value = -140737486762656 = 0xffff800000184d60 = _sysTableEnd + 0xffff7fffffd76d60
+-> Connecting to host 10.0.0.2, port 10000
+[  5] local 10.0.0.1 port 50819 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  receiver
+
+-> sp iperf3,"-c 10.0.0.2 -u -t 20 -p 10000 -i 20  -b 0 -f m -l 1400"
+Task spawned: id = 0xffff800000920860, name = t12
+value = -140737478784928 = 0xffff800000920860 = _sysTableEnd + 0xffff800000512860
+-> Connecting to host 10.0.0.2, port 10000
+[ 17] local 10.0.0.1 port 50677 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[ 17]   0.00-20.00  sec  14.5 GBytes  6241 Mbits/sec  11144130  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[ 17]   0.00-20.00  sec  14.5 GBytes  6241 Mbits/sec  0.932 ms  9132591/11144129 (82%)
