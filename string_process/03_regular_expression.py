@@ -16,9 +16,9 @@ print(result)   # ['1', '2', '33', '4']
 p = re.compile(r'(\w+) (\w+)')
 s = 'I say, hello han xiaoyang'
 result = p.match(s)
-print(result.group(0))
-print(result.group(1))
-print(result.group(2).title())
+print(result.group(0))    # I say
+print(result.group(1))    # I
+print(result.group(2).title())   # Say
 
 #  match 是从字符串的起始处开始匹配,而search是搜索整个字符串中模式首次出现的位置
 
