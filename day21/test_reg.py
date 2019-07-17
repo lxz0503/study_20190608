@@ -4,7 +4,6 @@ def get_throughput(log):
     frame_data = []
     tcp_through_data = []
     udp_through_data = []
-    final_data = []
     pat = re.compile(r'iperf3.*-l\s(\d+)')
     with open(log, 'r') as f:
         for line in f:
