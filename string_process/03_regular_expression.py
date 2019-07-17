@@ -3,14 +3,14 @@ import re
 p = re.compile(r'\d+')
 result = p.split('one1two2three33four4')
 # del result[-1]
-result.pop()
+result.pop()  # ['one', 'two', 'three', 'four']
 print(result)
 
 # find number
 
 p = re.compile(r'\d+')
 result = p.findall('one1two2three33four4')
-print(result)
+print(result)   # ['1', '2', '33', '4']
 
 # 注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串
 p = re.compile(r'(\w+) (\w+)')
