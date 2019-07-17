@@ -1,0 +1,625 @@
+@gei(0,0)host:/tftpboot/vxWorks e=118.1.1.1:0xfffffe00 h=118.1.1.2 g=118.1.1.2 u=windriver pw=windriver
+@gei(0,0)host:/home/windriver/vxWorks e=128.224.162.221:0xfffffe00 h=128.224.163.8 g=128.224.163.8 u=windriver pw=windriver
+
+@gei(0,0)host:/home/windriver/ftp/vxWorks e=10.0.0.1:0xfffffe00 h=10.0.0.2 g=10.0.0.2 u=windriver pw=windriver
+
+sp iperf3,"-c 118.1.1.2 -t 20 -i 20 -f m -l 64 -N"
+
+guest os is  IPNET IA, iperf
+-> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 64 -P 1 -N"
+Task spawned: id = 0xffff800000184d60, name = t5
+value = -140737486762656 = 0xffff800000184d60 = _sysTableEnd + 0xffff7fffffd76d60
+-> Connecting to host 10.0.0.2, port 10000
+[  5] local 10.0.0.1 port 64240 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  sender
+[  5]   0.00-20.00  sec   588 MBytes   247 Mbits/sec                  receiver
+
+iperf Done.
+
+-> 
+-> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 1024 -P 1"
+Task spawned: id = 0xffff800000184d60, name = t6
+value = -140737486762656 = 0xffff800000184d60 = _sysTableEnd + 0xffff7fffffd76d60
+-> Connecting to host 10.0.0.2, port 10000
+[  5] local 10.0.0.1 port 50819 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  2.52 GBytes  1082 Mbits/sec                  receiver
+
+iperf Done.
+
+-> tcp is 940
+udp 1400 is 955
+sp iperf3,"-c 10.0.0.2 -t 20 -p 10000  -f m -l 1024 -P 1"
+> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000  -f m -l 1024 -P 1"
+Task spawned: id = 0xffff800000184d60, name = t9
+value = -140737486762656 = 0xffff800000184d60 = _sysTableEnd + 0xffff7fffffd76d60
+-> Connecting to host 10.0.0.2, port 10000
+[  5] local 10.0.0.1 port 53095 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-1.00   sec   134 MBytes  1123 Mbits/sec                  
+[  5]   1.00-2.00   sec   132 MBytes  1106 Mbits/sec                  
+[  5]   2.00-3.00   sec   135 MBytes  1133 Mbits/sec                  
+[  5]   3.00-4.00   sec   127 MBytes  1068 Mbits/sec                  
+[  5]   4.00-5.00   sec   127 MBytes  1070 Mbits/sec                  
+[  5]   5.00-6.00   sec   125 MBytes  1048 Mbits/sec                  
+[  5]   6.00-7.00   sec   135 MBytes  1128 Mbits/sec                  
+[  5]   7.00-8.00   sec   127 MBytes  1066 Mbits/sec                  
+[  5]   8.00-9.00   sec   134 MBytes  1126 Mbits/sec                  
+[  5]   9.00-10.00  sec   131 MBytes  1103 Mbits/sec                  
+[  5]  10.00-11.00  sec   122 MBytes  1023 Mbits/sec                  
+[  5]  11.00-12.00  sec   132 MBytes  1105 Mbits/sec                  
+[  5]  12.00-13.00  sec   133 MBytes  1116 Mbits/sec                  
+[  5]  13.00-14.00  sec   129 MBytes  1083 Mbits/sec                  
+[  5]  14.00-15.00  sec   128 MBytes  1072 Mbits/sec                  
+[  5]  15.00-16.00  sec   132 MBytes  1110 Mbits/sec                  
+[  5]  16.00-17.00  sec   132 MBytes  1107 Mbits/sec                  
+[  5]  17.00-18.00  sec   129 MBytes  1083 Mbits/sec                  
+[  5]  18.00-19.00  sec   140 MBytes  1175 Mbits/sec                  
+[  5]  19.00-20.00  sec   130 MBytes  1088 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.55 GBytes  1097 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  2.55 GBytes  1097 Mbits/sec                  receiver
+
+iperf Done.
+
+Accepted connection from 10.0.0.1, port 56945
+[  5] local 10.0.0.2 port 10000 connected to 10.0.0.1 port 53095
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   1.00-2.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   2.00-3.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   3.00-4.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   4.00-5.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   5.00-6.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   6.00-7.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   7.00-8.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   8.00-9.00   sec   112 MBytes   940 Mbits/sec                  
+[  5]   9.00-10.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  10.00-11.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  11.00-12.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  12.00-13.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  13.00-14.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  14.00-15.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  15.00-16.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  16.00-17.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  17.00-18.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  18.00-19.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  19.00-20.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  20.00-21.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  21.00-22.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  22.00-23.00  sec   112 MBytes   940 Mbits/sec                  
+[  5]  23.00-23.32  sec  36.2 MBytes   940 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-23.32  sec  2.55 GBytes   940 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+
+
+
+============================================IA guest os is kernel rtnet-----
+
+sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 64 -b 0 -N"
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-24.11  sec  1.04 GBytes   371 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+-----------------------------------------------------------
+
+
+sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 1024 -b 0"
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-23.96  sec  2.63 GBytes   941 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+
+-> sp iperf3,"-c 10.0.0.2 -t 20 -p 10000 -i 20 -f m -l 65536 -b 0"
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-23.89  sec  2.62 GBytes   941 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+-----------------------------------------------------------
+
+for udp
+
+-> sp iperf3,"-c 10.0.0.2 -u -t 20 -p 10000 -i 20  -b 0 -f m -l 1400"
+Task spawned: id = 0xffff800000920860, name = t12
+value = -140737478784928 = 0xffff800000920860 = _sysTableEnd + 0xffff800000512860
+-> Connecting to host 10.0.0.2, port 10000
+[ 17] local 10.0.0.1 port 50677 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[ 17]   0.00-20.00  sec  14.5 GBytes  6241 Mbits/sec  11144130  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[ 17]   0.00-20.00  sec  14.5 GBytes  6241 Mbits/sec  0.932 ms  9132591/11144129 (82%)  
+[ 17] Sent 11144129 datagrams
+
+iperf Done.
+server side result is :
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-24.77  sec  2.62 GBytes   909 Mbits/sec  0.932 ms  9132591/11144129 (82%)  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+================================IA guest os is user space rtnet=====
+
+-> cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 64 -i 20 -N
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff8000000a8320) launched.
+Connecting to host 10.0.0.2, port 10000
+[  7] local 10.0.0.1 port 57858 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   272 MBytes   114 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   272 MBytes   114 Mbits/sec                  sender
+[  7]   0.00-20.00  sec   272 MBytes   114 Mbits/sec                  receiver
+
+iperf Done.
+
+
+cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 1024 -i 20
+
+-> cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 1024 -i 20
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff800000151c90) launched.
+Connecting to host 10.0.0.2, port 10000
+[  7] local 10.0.0.1 port 59589 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  2.50 GBytes  1072 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  2.50 GBytes  1072 Mbits/sec                  sender
+[  7]   0.00-20.00  sec  2.50 GBytes  1072 Mbits/sec                  receiver
+
+iperf Done.
+-> 
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-22.78  sec  2.50 GBytes   941 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 65536 -i 20
+
+-> cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 65536 -i 20
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff800000151c90) launched.
+Connecting to host 10.0.0.2, port 10000
+[  7] local 10.0.0.1 port 61313 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  2.53 GBytes  1086 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  2.53 GBytes  1086 Mbits/sec                  sender
+[  7]   0.00-20.00  sec  2.53 GBytes  1086 Mbits/sec                  receiver
+
+iperf Done.
+-> 
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-23.40  sec  2.53 GBytes   928 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+==for udp
+cmd rtp exec -e RTNET_FILE=/r mfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 1400 -i 20 -u
+-> cmd rtp exec -e RTNET_FILE=/romfs/gei28514.json /romfs/iperf3.vxe -- -c 10.0.0.2 -p 10000 -t 20 -b 0 -f m -l 1400 -i 20 -u
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff800000151c90) launched.
+Connecting to host 10.0.0.2, port 10000
+[  7] local 10.0.0.1 port 56333 connected to 10.0.0.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  7]   0.00-20.00  sec  4.93 GBytes  2117 Mbits/sec  3779540  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  7]   0.00-20.00  sec  4.93 GBytes  2117 Mbits/sec  0.007 ms  1819165/3779531 (48%)  
+[  7] Sent 3779531 datagrams
+
+iperf Done.
+->  ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-22.99  sec  2.56 GBytes   955 Mbits/sec  0.007 ms  1819165/3779531 (48%)  receiver
+-----------------------------------------------------------
+Server listening on 10000
+
+
+
+===========================================================================================================================================
+---------zcu --guest os is ipnet   iperf3
+
+-> tip "dev=/tyCo/17"
+Connected to /tyCo/17.
+Press ~? for the list of available commands.
+[Now listening to session 1 (/tyCo/17)]
+[Input wired to session 1 (/tyCo/17)]
+ERROR: ipcom_drv_eth_init: drvname:, drvunit: 0
+ 
+ _________            _________
+ \77777777\          /77777777/
+  \77777777\        /77777777/
+   \77777777\      /77777777/
+    \77777777\    /77777777/
+     \77777777\   \7777777/
+      \77777777\   \77777/              VxWorks 7 SMP 64-bit
+       \77777777\   \777/
+        \77777777\   \7/     Core Kernel version: 3.1.0.0
+         \77777777\   -      Build date: May 15 2019 16:17:37
+          \77777777\
+           \7777777/         Copyright Wind River Systems, Inc.
+            \77777/   -                 1984-2019
+             \777/   /7\
+              \7/   /777\
+               -   -------
+
+                   Board: Xilinx ZCU102
+               CPU Count: 1
+          OS Memory Size: 1024MB
+        ED&R Policy Mode: Permanently Deployed
+
+
+ Adding 7807 symbols for standalone.
+
+-> ifconfig
+lo0     Link type:Local loopback
+        inet 127.0.0.1  mask 255.255.255.255
+        inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+        inet6 unicast ::1  prefixlen 128
+        UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+        MTU:1500  metric:1  VR:0  ifindex:1
+        RX packets:0 mcast:0 errors:0 dropped:0
+        TX packets:0 mcast:0 errors:0
+        collisions:0 unsupported proto:0
+        RX bytes:0  TX bytes:0
+
+value = 0 = 0x0
+-> ipAttach 0,"gem"
+value = 0 = 0x0
+-> ifconfig
+lo0     Link type:Local loopback
+        inet 127.0.0.1  mask 255.255.255.255
+        inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+        inet6 unicast ::1  prefixlen 128
+        UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+        MTU:1500  metric:1  VR:0  ifindex:1
+        RX packets:0 mcast:0 errors:0 dropped:0
+        TX packets:0 mcast:0 errors:0
+        collisions:0 unsupported proto:0
+        RX bytes:0  TX bytes:0
+
+gem0    Link type:Ethernet  HWaddr 00:0a:35:11:22:36
+        capabilities: TXCSUM VLAN_MTU 
+        SIMPLEX BROADCAST MULTICAST 
+        MTU:1500  metric:1  VR:0  ifindex:2
+        RX packets:0 mcast:0 errors:0 dropped:0
+        TX packets:0 mcast:0 errors:0
+        collisions:0 unsupported proto:0
+        RX bytes:0  TX bytes:0
+
+value = 0 = 0x0
+-> 
+-> ifconfig "gem0 inet 118.1.1.1/24 up"
+value = 0 = 0x0
+-> ifconfig
+lo0     Link type:Local loopback
+        inet 127.0.0.1  mask 255.255.255.255
+        inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+        inet6 unicast ::1  prefixlen 128
+        UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+        MTU:1500  metric:1  VR:0  ifindex:1
+        RX packets:0 mcast:0 errors:0 dropped:0
+        TX packets:0 mcast:0 errors:0
+        collisions:0 unsupported proto:0
+        RX bytes:0  TX bytes:0
+
+gem0    Link type:Ethernet  HWaddr 00:0a:35:11:22:36
+        capabilities: TXCSUM VLAN_MTU 
+        inet 118.1.1.1  mask 255.255.255.0  broadcast 118.1.1.255
+        inet6 unicast fe80::20a:35ff:fe11:2236%gem0  prefixlen 64  automatic
+        UP RUNNING SIMPLEX BROADCAST MULTICAST 
+        MTU:1500  metric:1  VR:0  ifindex:2
+        RX packets:0 mcast:0 errors:0 dropped:0
+        TX packets:5 mcast:4 errors:0
+        collisions:0 unsupported proto:0
+        RX bytes:0  TX bytes:390
+
+value = 0 = 0x0
+-> ping "118.1.1.2"
+
+Pinging 118.1.1.2 (118.1.1.2) with 64 bytes of data:
+Reply from 118.1.1.2 bytes=64 ttl=64 seq=0 time<1ms
+
+--- 118.1.1.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+value = 0 = 0x0
+-> --------------------------------------------------guest os is zcu ipnet========================
+
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 64 -P 1 -N"
+Task spawned: id = 0xffff80000029f650, name = t1
+value = -140737485605296 = 0xffff80000029f650
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 64940 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   119 MBytes  49.9 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   119 MBytes  49.9 Mbits/sec                  sender
+[  5]   0.00-20.00  sec   119 MBytes  49.9 Mbits/sec                  receiver
+
+iperf Done.
+sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 1024 -P 1"
+Task spawned: id = 0xffff8000002d0170, name = t2
+value = -140737485405840 = 0xffff8000002d0170
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 56217 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  1.91 GBytes   819 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  1.91 GBytes   819 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  1.91 GBytes   819 Mbits/sec                  receiver
+
+iperf Done.
+
+> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 65536 -P 1"
+Task spawned: id = 0xffff80000029f650, name = t3
+value = -140737485605296 = 0xffff80000029f650
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 56018 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.18 GBytes   938 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  2.18 GBytes   938 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  2.18 GBytes   938 Mbits/sec                  receiver
+
+iperf Done.
+
+---udp 
+-> sp iperf3,"-c 118.1.1.2 -u -t 20 -p 10000 -i 20 -b 0 -f m -l 1400"
+Task spawned: id = 0xffff80000029f650, name = t1
+value = -140737485605296 = 0xffff80000029f650
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 62710 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  5]   0.00-20.00  sec  2.22 GBytes   955 Mbits/sec  1704860  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  2.22 GBytes   955 Mbits/sec  0.007 ms  24/1704840 (0.0014%)  
+[  5] Sent 1704840 datagrams
+
+iperf Done.
+
+
+------------------guest os is rtnet zcu kernel----
+
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 64 -P 1 -N"
+Task spawned: id = 0xffff800000a9d530, name = t1
+value = -140737477225168 = 0xffff800000a9d530 = rtnetStdin + 0xffff800000a9d514
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 65284 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  47.8 MBytes  20.1 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  47.8 MBytes  20.1 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  47.8 MBytes  20.1 Mbits/sec                  receiver
+
+iperf Done.
+
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 1024 -P 1"
+Task spawned: id = 0xffff800000a9d530, name = t2
+value = -140737477225168 = 0xffff800000a9d530 = rtnetStdin + 0xffff800000a9d514
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 61168 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   852 MBytes   357 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec   852 MBytes   357 Mbits/sec                  sender
+[  5]   0.00-20.00  sec   852 MBytes   357 Mbits/sec                  receiver
+
+iperf Done.
+
+-> 
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 65536 -P 1"
+Task spawned: id = 0xffff800000a9d530, name = t3
+value = -140737477225168 = 0xffff800000a9d530 = rtnetStdin + 0xffff800000a9d514
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 50825 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  1.75 GBytes   752 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.00  sec  1.75 GBytes   752 Mbits/sec                  sender
+[  5]   0.00-20.00  sec  1.75 GBytes   752 Mbits/sec                  receiver
+
+iperf Done.
+
+-> 
+-> sp iperf3,"-c 118.1.1.2 -u -t 20 -p 10000 -i 20 -b 0 -f m -l 1400"
+Task spawned: id = 0xffff800000a9d530, name = t4
+value = -140737477225168 = 0xffff800000a9d530 = rtnetStdin + 0xffff800000a9d514
+-> Connecting to host 118.1.1.2, port 10000
+[  5] local 118.1.1.1 port 64160 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  5]   0.00-20.00  sec  1.12 GBytes   482 Mbits/sec  859840  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  1.12 GBytes   482 Mbits/sec  0.876 ms  12/859834 (0.0014%)  
+[  5] Sent 859834 datagrams
+
+iperf Done.
+
+
+/home/windriver/helix_iperf/vxworks7/system/PerformanceTest/testReport/release/SR0620
+
+
+
+===========================guest os with zcu rtp, iperf===
+
+-> cmd rtp exec -e RTNET_FILE=/romfs/zcu_rtp.json /romfs/netshell.vxe
+Launching process '/romfs/netshell.vxe' ...
+Process '/romfs/netshell.vxe' (process Id = 0xffff800000097630) launched.
+Type help to list available commands
+RTNET> help
+Available commands:
+            help - list available commands
+            quit - exit the shell and/or the RTP
+            exit - exit the shell and/or the RTP
+            args - print the arguments to this command
+         blastee - start blastee
+         blaster - start blaster
+            echo - start echo client or server
+        sockShow - [4 | 6] list active sockets
+          ipShow - [4 | 6] show IP address information
+        linkShow - show link layer information and statistics
+         fibShow - show the FIB (IPv4 routing table)
+       neighShow - [4 | 6] show the ARP or NDP cache
+            ping - send ICMPv4 echo request to specified address
+           ping6 - send ICMPv6 echo request to specified address
+RTNET> ipShow
+lo: <UP,BROADCAST,RUNNING>  ifindex 1  mtu 1500  state UP
+    inet 127.0.0.1/8  brd 127.255.255.255  <permanent>
+gem0: <UP,BROADCAST,RUNNING>  ifindex 2  mtu 1500  state UP
+    inet 118.1.1.1/24  brd 118.1.1.255  <permanent>
+lo: <UP,BROADCAST,RUNNING>  ifindex 1  mtu 1500  state UP
+    inet6 ::1/128  <permanent>
+    inet6 fe80::1/64  <permanent>
+gem0: <UP,BROADCAST,RUNNING>  ifindex 2  mtu 1500  state UP
+    inet6 1::2/64  <permanent>
+    inet6 fe80::20a:35ff:fe00:2201/64  <permanent>
+RTNET> exit
+-> cmd rtp exec -e RTNET_FILE=/romfs/zcu_rtp.json /romfs/iperf3.vxe -- -c 118.1.1.2 -p 10000 -t 20 -l 64 -i 20 -N
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff8000000dcea0) launched.
+Connecting to host 118.1.1.2, port 10000
+[  7] local 118.1.1.1 port 61776 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  6.23 MBytes  2.61 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec  6.23 MBytes  2.61 Mbits/sec                  sender
+[  7]   0.00-20.00  sec  6.23 MBytes  2.61 Mbits/sec                  receiver
+
+iperf Done.
+-> 
+
+-> cmd rtp exec -e RTNET_FILE=/romfs/zcu_rtp.json /romfs/iperf3.vxe -- -c 118.1.1.2 -p 10000 -t 20 -l 1024 -i 20
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff8000000dcea0) launched.
+Connecting to host 118.1.1.2, port 10000
+[  7] local 118.1.1.1 port 62129 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   164 MBytes  68.9 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   164 MBytes  68.9 Mbits/sec                  sender
+[  7]   0.00-20.00  sec   164 MBytes  68.9 Mbits/sec                  receiver
+
+iperf Done.
+-> 
+-> cmd rtp exec -e RTNET_FILE=/romfs/zcu_rtp.json /romfs/iperf3.vxe -- -c 118.1.1.2 -p 10000 -t 20 -l 65536 -i 20
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff8000000dcea0) launched.
+Connecting to host 118.1.1.2, port 10000
+[  7] local 118.1.1.1 port 61448 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   921 MBytes   386 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  7]   0.00-20.00  sec   921 MBytes   386 Mbits/sec                  sender
+[  7]   0.00-20.00  sec   921 MBytes   386 Mbits/sec                  receiver
+
+iperf Done.
+->
+==========for udp=====
+ 
+-> cmd rtp exec -e RTNET_FILE=/romfs/zcu_rtp.json /romfs/iperf3.vxe -- -c 118.1.1.2 -p 10000 -t 20 -b 0 -f m -l 1400 -i 20 -u
+Launching process '/romfs/iperf3.vxe' ...
+Process '/romfs/iperf3.vxe' (process Id = 0xffff8000000dcea0) launched.
+Connecting to host 118.1.1.2, port 10000
+[  7] local 118.1.1.1 port 63465 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  7]   0.00-20.00  sec   330 MBytes   138 Mbits/sec  246840  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  7]   0.00-20.00  sec   330 MBytes   138 Mbits/sec  1.062 ms  0/246840 (0%)  
+[  7] Sent 246840 datagrams
+
+iperf Done.
+-> 
+
+========================================for ARM direct interrupt mode, just one IPNET====
+
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 64 -P 1 -N"
+Task spawned: id = 0xffff8000002d2b30, name = t1
+value = -140737485395152 = 0xffff8000002d2b30
+-> Connecting to host 118.1.1.2, port 10000
+[  8] local 118.1.1.1 port 53426 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec   147 MBytes  61.6 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec   147 MBytes  61.6 Mbits/sec                  sender
+[  8]   0.00-20.00  sec   147 MBytes  61.6 Mbits/sec                  receiver
+
+iperf Done.
+------------------------------------------------------
+
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 1024 -P 1"
+Task spawned: id = 0xffff8000002f2280, name = t2
+value = -140737485266304 = 0xffff8000002f2280
+-> Connecting to host 118.1.1.2, port 10000
+[  8] local 118.1.1.1 port 55053 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec                  sender
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec                  receiver
+
+iperf Done.
+
+->
+
+---------------------------------------------------------------
+-> sp iperf3,"-c 118.1.1.2 -t 20 -p 10000 -i 20 -f m -l 65536 -P 1"
+Task spawned: id = 0xffff8000002f3fa0, name = t3
+value = -140737485258848 = 0xffff8000002f3fa0
+-> Connecting to host 118.1.1.2, port 10000
+[  8] local 118.1.1.1 port 60890 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec                  sender
+[  8]   0.00-20.00  sec  2.19 GBytes   940 Mbits/sec                  receiver
+
+iperf Done.
+-----------------------------------------------------------------------
+
+
+-> sp iperf3,"-c 118.1.1.2 -u -t 20 -p 10000 -i 20 -b 0 -f m -l 1400"
+Task spawned: id = 0xffff8000002f2b20, name = t4
+value = -140737485264096 = 0xffff8000002f2b20
+-> Connecting to host 118.1.1.2, port 10000
+[  8] local 118.1.1.1 port 54000 connected to 118.1.1.2 port 10000
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  8]   0.00-20.00  sec  2.22 GBytes   955 Mbits/sec  1704620
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datas
+[  8]   0.00-20.00  sec  2.22 GBytes   955 Mbits/sec  0.007 ms  0/1704609 (0%)
+[  8] Sent 1704609 datagrams
+
+iperf Done.
+
