@@ -3,22 +3,22 @@ import re
 p = re.compile(r'\d+')
 result = p.split('one1two2three33four4')
 # del result[-1]
-result.pop()
+result.pop()  # ['one', 'two', 'three', 'four']
 print(result)
 
 # find number
 
 p = re.compile(r'\d+')
 result = p.findall('one1two2three33four4')
-print(result)
+print(result)   # ['1', '2', '33', '4']
 
 # 注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串
 p = re.compile(r'(\w+) (\w+)')
 s = 'I say, hello han xiaoyang'
 result = p.match(s)
-print(result.group(0))
-print(result.group(1))
-print(result.group(2).title())
+print(result.group(0))    # I say
+print(result.group(1))    # I
+print(result.group(2).title())   # Say
 
 #  match 是从字符串的起始处开始匹配,而search是搜索整个字符串中模式首次出现的位置
 
