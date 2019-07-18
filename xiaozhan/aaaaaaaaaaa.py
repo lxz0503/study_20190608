@@ -1,5 +1,11 @@
 import os
 import re
+# study python at below site
+# https://github.com/china-testing/python-api-tesing
+# 北漂的雷子
+# 分享前进道路上的经验，分享个人观点， github 地址：https://github.com/liwanlei . qq群：python|测试|技术交流群 194704520
+# python测试开发交流群 683894834
+# python接口测试群：651392041
 
 s = "./IKEMain.log:0xffff8000005b7850 (tLogin55dc70): The task been terminated because it triggered an exception that raised the signal 11"
 
