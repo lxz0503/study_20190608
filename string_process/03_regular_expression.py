@@ -7,7 +7,6 @@ result.pop()  # ['one', 'two', 'three', 'four']
 print(result)
 
 # find number
-
 p = re.compile(r'\d+')
 result = p.findall('one1two2three33four4')
 print(result)   # ['1', '2', '33', '4']
@@ -34,3 +33,13 @@ p = re.compile(r'\w+')
 s = 'xy 15 rt 3e,gep'
 result = p.sub('10', s, 2)  # 10是被替换的内容，s是原来的字符串，2表示只替换匹配的前两个
 print(result)   # 10 10 rt 3e,gep
+
+# findall
+# 在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表。
+# 注意： match 和 search 是匹配一次, findall 匹配所有
+pattern = re.compile(r'\d+')  # 查找数字
+result1 = pattern.findall('runoob 123 google 456')
+result2 = pattern.findall('run88oob123google456', 0, 10)
+
+print(result1)     # ['123', '456']
+print(result2)     # ['88', '12']
