@@ -1,5 +1,5 @@
 # time module practice
-#!/usr/bin/env python3
+
 import time
 import calendar
 
@@ -13,7 +13,7 @@ print(time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()))
 start = time.perf_counter()
 for i in range(10):
     print(i, end="\t")
-    time.sleep(3)
+    time.sleep(1)
 print()
 stop = time.perf_counter()
 print("time interval is %s" % (stop - start))
@@ -24,4 +24,9 @@ print(cal)
 
 # print the calender of year 2019
 cal = calendar.calendar(2019, 2, 1, 6)
-print(cal)
+# print(cal)
+
+#
+import random
+print(random.randint(1, 3))   # 2
+print(random.choice([11, 22, 44]))  # 22
