@@ -1,0 +1,50 @@
+{   
+    "reassembly":{
+     "lifetime":60
+    },
+    "netifs": [
+        {
+            "device": {
+                "name": "gei",
+                "unit": 2
+            },
+            "inet": {
+                "address": "128.224.166.238",
+                "prefixlen": 24,
+                "gateway": "128.224.166.1"
+            },
+			"inet6": {
+                "address": "1::2",
+                "prefixlen": 64
+				}
+        },
+        {
+            "device": {
+                "name": "gei",
+                "unit": 0
+            },
+            "inet": {
+                "address": "30.1.1.5",
+                "prefixlen": 24
+            },
+			"inet6": {
+                "address": "3ffe::1:215:17ff:fec8:9028",
+                "prefixlen": 64
+				}
+        },
+        {
+            "device": {
+                "name": "gei",
+                "unit": 1
+            },
+            "inet": {
+                "address": "40.1.1.5",
+                "prefixlen": 24
+            },
+			"inet6": {
+                "address": "3ffe:2222::9029",
+                "prefixlen": 64
+			}	
+        }
+    ]
+}
