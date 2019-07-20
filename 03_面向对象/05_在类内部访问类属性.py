@@ -20,6 +20,6 @@ class Dog(object):
         self.add_trick(trick)
 
 
-d = Dog('Fido')
+d = Dog('Fido')    # 创建一个实例
 d.test('roll over')
-print(d.tricks)  #
+print(d.tricks)    # 在类外部，实例访问类属性
