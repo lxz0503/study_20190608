@@ -23,3 +23,16 @@ class Dog(object):
 d = Dog('Fido')    # 创建一个实例
 d.test('roll over')
 print(d.tricks)    # 在类外部，实例访问类属性
+# 增加，修改，删除类属性
+Dog.tricks = "aaaa"
+d1 = Dog('Fido')
+print(d.tricks)
+
+# 增加一个类属性
+Dog.age = 10
+d2 = Dog('Fido')
+print(d2.age)
+
+# 删除一个类属性
+del Dog.age
+
