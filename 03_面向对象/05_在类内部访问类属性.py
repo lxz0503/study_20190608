@@ -14,7 +14,7 @@ class Dog(object):
     @classmethod
     def fun(cls, trick):
         cls.add_trick(trick)
-# 在实例方法内部访问类方法，也是直接用 self.类方法名
+# 在其它方法内部访问类方法，也是直接用 self.类方法名
     def test(self, trick):
         self.add_trick(trick)
 
