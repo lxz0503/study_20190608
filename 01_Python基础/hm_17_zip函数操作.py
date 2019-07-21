@@ -14,5 +14,5 @@ for item in zipped:
     print(item)
 # [(1, 'xiaozhan'), (2, 'beijing'), (3, 'shanghai')]
            # 元素个数与最短的列表一致
-l = [(1,2), (3,4),(5,6)]
+l = [(1,2), (3,4), (5,6)]
 print(max(l))
