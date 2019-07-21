@@ -32,6 +32,8 @@ print(d.tricks)     # aaaa
 Dog.age = 10
 d2 = Dog('Fido')
 print(d2.age)       # 10
+print(d2.tricks)    # aaaa
+print("增加一个类属性后", d2.__dict__)  # 只能打印实例属性，不能显示类属性
 
 # 删除一个类属性
 del Dog.age
