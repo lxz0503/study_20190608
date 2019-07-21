@@ -8,6 +8,7 @@ class Tool(object):
         # 类类属性+1
         Tool.count += 1   # 每调用一次，类属性的值就+1
 
+
 # 类定义结束,开始使用类
 tool1 = Tool("刀")         # 每定义一个实例对象，类属性的值就+1
 tool2 = Tool("剑")
