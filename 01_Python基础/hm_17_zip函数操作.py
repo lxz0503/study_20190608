@@ -9,10 +9,7 @@ a = [1, 2, 3]
 b = ["xiaozhan", "beijing", "shanghai"]
 c = [4, 5, 6, 7, 8]
 zipped = zip(a, b)     # 打包为元组的列表
-print(list(zipped))
-for item in zipped:
-    print(item)
-# [(1, 'xiaozhan'), (2, 'beijing'), (3, 'shanghai')]
-           # 元素个数与最短的列表一致
+print("after zip and list", list(zipped))    # [(1, 'xiaozhan'), (2, 'beijing'), (3, 'shanghai')]
+# 元素个数与最短的列表一致
 l = [(1,2), (3,4), (5,6)]
 print(max(l))
