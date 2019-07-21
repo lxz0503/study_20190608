@@ -219,6 +219,7 @@
 #字典的实际应用场景是，将多个字典放在一个列表中，再进行遍历
 #zip可以配对两个序列，zip()
 #统计一个列表中元素出现的次数,用liebiao.count("元素"),
+#查看列表中一个元素的位置即下标，用liebiao.index("元素")
 #统计字符串中子字符串出现的次数，用zifuchuan.count("子字符串")
 #字符串.isdecimal()一般用来判断数字
 #string.startswith("aaa"), string.endswith("aaa")
