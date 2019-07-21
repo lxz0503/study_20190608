@@ -1,10 +1,11 @@
 # 一般使用如下方式,把文件内容读取到列表，然后逐行处理
 # eval() 函数用来执行一个字符串表达式，并返回表达式的值
+# readline() 每次只能读取一行内容或者几个字符
 file_name = "file_test"
 with open(file_name, "r") as f:
-    f_list = f.readlines()
+    f_list = f.readlines()    # ['aaaaa\n', 'bbbbb\n', 'ccccc']
 for line in f_list:
-    print(line.strip("\n"))
+    print(line.strip("\n"))    # 去掉字符串头部和尾部的\n,然后逐行打印
 print(f_list)
 # 如果文件内容少，可以一次性读取
 print("another kind of file operation")
