@@ -77,7 +77,8 @@ def search_card():
         print("没有找到%s" % find_name)
 
 
-def deal_card(find_dict):
+def deal_card(find_dict):    # 传递的参数是字典。是可变类型，所以在deal_card函数内部修改这个字典参数后，
+    # 实际上也修改了原始的字典,参考hm_07函数内部修改可变参数
     """处理查找到的名片
 
     :param find_dict: 查找到的名片
