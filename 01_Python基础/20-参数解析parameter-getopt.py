@@ -16,7 +16,8 @@ def parser(argv):
             print("help:正确的使用方法是.......")
         if name in ("-i", "--ip"):
             print('ip 是:', value)
-            para_dict["ip"] = para_dict.get("ip", value)     # 给字典元素赋值
+            # para_dict["ip"] = para_dict.get("ip", value)     # 给字典元素赋值
+            para_dict["ip"] = para_dict.setdefault("ip", value)     # 给字典元素赋值
         if name in ("-p", "--port"):
             print('port 端口是:', value)
             para_dict["port"] = para_dict.get("port", value)
