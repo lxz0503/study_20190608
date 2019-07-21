@@ -46,7 +46,7 @@ class GetoptTest(object):
             # -p与--profession等价
             elif opt in ("-p", "--profession"):
                 user_profession = arg
-        print("you are {user_profession} {user_name}!")
+        print(f"you are {user_profession}-----{user_name}!")
 
     @staticmethod
     def usage():
