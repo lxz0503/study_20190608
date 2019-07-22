@@ -14,7 +14,7 @@ def set_git_commit(dir,good_commit,bad_commit):
 def set_git_sign(dir,str):
     if str == 'pass':
         os.chdir(dir)
-        r = os.popen('git bisect good').read()
+        r = os.popen('git bisect good').read()    # if test result is pass,run git bisect good, then it will try another commit
         m = re.match("(\w+) is the first bad commit",r)
         if m is not None:
             os.system("git bisect reset")
@@ -23,7 +23,7 @@ def set_git_sign(dir,str):
 
     else:
         os.chdir(dir)
-        r = os.popen('git bisect bad').read()
+        r = os.popen('git bisect bad').read()  # if test result is fail,run git bisect bad, then it will try another commit
         m = re.match("(\w+) is the first bad commit",r)
         if m is not None:
             os.system("git bisect reset")
