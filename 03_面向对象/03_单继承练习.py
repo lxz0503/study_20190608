@@ -22,7 +22,7 @@ class FooChild(FooParent):
 
 
 if __name__ == '__main__':
-    fooChild = FooChild(10)
-    fooChild.bar('HelloWorld')
-    print(fooChild.a)
-    print(fooChild.b)
+    fooChild = FooChild(10)      # Parent   Child
+    fooChild.bar('HelloWorld')   # HelloWorld from Parent     Child bar function
+    print(fooChild.a)   # 10
+    print(fooChild.b)    # 20
