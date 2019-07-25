@@ -3,6 +3,8 @@
 # 2、 __xx 双下划线的表示的是私有类型的变量。
 # 只能允许这个类本身进行访问了，连子类也不可以用于命名一个类属性（类变量），
 # 调用时名字被改变（在类FooBar内部，__boo变成_FooBar__boo,如self._FooBar__boo）
+# 在使用 from somemodule import * 导入模块的情况下，不能导入或使用私有属性和方法
+# 在使用 import somemodule 导入模块的情况下，能导入并使用私有属性和方法
 
 
 class Pub(object):
@@ -20,6 +22,7 @@ class Pub(object):
         return self.__info
 
 a = Pub()
+print(a.__dir__())
 print(a._name)    # 'protected类型的变量'
 a._func()         # 这是一个protected类型的方法"
 print(a.get())
