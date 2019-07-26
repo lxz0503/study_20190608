@@ -22,8 +22,3 @@ except Exception:
     # logger.error('Failed to get result', exc_info=True)
     logging.exception("Exception occurred")
 logger.info('Finished')
-# log
-# logger.info("Start print log")
-# logger.debug("Do something")
-# logger.warning("Something maybe fail.")
-# logger.info("Finish")
