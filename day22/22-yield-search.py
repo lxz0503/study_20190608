@@ -32,7 +32,6 @@ i = 0    # 全局变量记录下标
 for j in res:
     if j != 10:
         i = i + 1
-        continue
     else:
         print("the index of 10 is %d" % i)  # the index is 9
 
@@ -43,8 +42,7 @@ for j in l:
     if j != 10:
         i = i + 1
     else:
-        break
-print("the index is %d" % i)    # the index is 9
+        print("the index is %d" % i)
 # another method
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 print("the index is %d" % l.index(10))	 # 返回列表中第一个值为 x 的元素的索引。如果没有匹配的元素就会返回一个错误
