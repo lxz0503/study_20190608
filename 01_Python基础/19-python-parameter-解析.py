@@ -17,9 +17,11 @@ class GetoptTest(object):
             # 第三个参数[]----用于向getopt注册长格式。
             # 没有等于号= 表示该参数不带值，有等于号= 表示=号后边为其值（如果没有=号就以下一个参数为其值）
             # 第三个参数[]----[]不是可选的意思，这里是代码，[]表示该参数是个数组
-            # opts----以元组形式存放解析出的参数。形如[('-n', 'ls'), ('-p', 'programmer'), ('-h', '')]
-            # args----以数组形式存放按所有注册的格式未能解析的参数
+            # opts----以元组形式存放解析出的参数,是一个列表。形如[('-n', 'ls'), ('-p', 'programmer'), ('-h', '')]
+            # args----以数组形式存放按所有注册的格式未能解析的参数,是一个列表
             opts, args = getopt.getopt(argv, "hn:p:", ["help", "name=", "profession="])
+            t = type(opts)
+            print(f"the type of opts is {t}")    # opts的类型是一个列表
             print(f"parsed argv: opts----{opts} args----{args}")
         except getopt.GetoptError:
             # 参数不符合注册格式要求报错
