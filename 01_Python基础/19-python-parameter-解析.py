@@ -60,7 +60,7 @@ class GetoptTest(object):
 if __name__ == "__main__":
     # 系统参数可通过sys.argv[index]来获取，sys.argv[0]是本身文件名
     argv = sys.argv[1:]
-    print("will parse argv: {argv}")
+    print(f"will parse argv: {argv}")
     # sys.argv[index]武断地以空格来划分参数，并不能区分选项和选项值
     # sys.argv[index]不能乱序，取第一个参数为用户名，就必须在第一个参数输入用户名，
     # 不能在第二个参数或别的地方输
