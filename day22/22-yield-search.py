@@ -34,15 +34,17 @@ for j in res:
         i = i + 1
     else:
         print("the index of 10 is %d" % i)  # the index is 9
+        break
 
 # another method
-l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 i = 0
 for j in l:
     if j != 10:
         i = i + 1
     else:
         print("the index is %d" % i)
+        break
 # another method
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 print("the index is %d" % l.index(10))	 # 返回列表中第一个值为 x 的元素的索引。如果没有匹配的元素就会返回一个错误
