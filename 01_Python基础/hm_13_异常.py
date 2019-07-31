@@ -1,5 +1,7 @@
 # 利用下面的方法可以捕获任何未知错误
 # except Exception as result
+# 尽量少用异常处理,因为会降低代码的可读性
+# 只有在有些异常无法预知的情况下，才会用异常处理
 
 # !usr/bin/env python
 try:
