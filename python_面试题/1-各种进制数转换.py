@@ -10,9 +10,9 @@ print("v的八进制形式是", oct(v))     # 0o22
 print("v的十六进制形式是", hex(v))     # 0x12
 
 # 如果你不想输出 0b , 0o 或者 0x 的前缀的话，可以使用 format() 函数
-print("v的二进制形式", format(v, 'b'))    # 10010
-print("v的八进制形式", format(v, 'o'))    # 22
-print("v的十六进制形式", format(v, 'x'))    # 12
+print("v的二进制形式", format(v, 'b').zfill(8))    # 00010010
+print("v的八进制形式", format(v, 'o').zfill(8))    # 00000022
+print("v的十六进制形式", format(v, 'x').zfill(8))    # 00000012
 
 # 把不同进制的数转换成十进制整数，需要用int()方法
 print("16进制数12转换为整数", int('12', 16))       # 18  int()函数返回一个整型int
