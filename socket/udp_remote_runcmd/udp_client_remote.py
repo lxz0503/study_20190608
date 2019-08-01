@@ -1,3 +1,5 @@
+# this is udp,so you have to input several times for cmd
+# after you input dir for several times, it can show the result
 from socket import *
 ip_port = ('127.0.0.1', 9003)
 bufsize = 1024
