@@ -48,3 +48,9 @@ for j in l:
 # another method
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 print("the index is %d" % l.index(10))	 # 返回列表中第一个值为 x 的元素的索引。如果没有匹配的元素就会返回一个错误
+
+# another method
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+for index, item in enumerate(l):
+    if item == 10:
+        print("10的位置是", index)
