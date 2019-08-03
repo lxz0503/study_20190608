@@ -13,7 +13,7 @@ while True:                       # 新增接收链接循环,可以不停的接�
         msg = conn.recv(BUFSIZE)      # 听消息,听话
         if len(msg) == 0:
             break             # 如果不加,那么正在链接的客户端突然断开,recv便不再阻塞,死循环发生
-        print(msg, type(msg))
+        print(msg, type(msg))   # b'dir' <class 'bytes'>, 只能收发字节
         conn.send(msg.upper())    # 发消息,说话
     conn.close()                   # 挂电话
 s.close()                          # 手机关机
