@@ -9,6 +9,7 @@ while True:                             # 新增通信循环,客户端可以不�
     msg = input('>>: ').strip()
     if len(msg) == 0:
         continue
+    print(type(msg.encode('utf-8')))      # <class 'bytes'>
     s.send(msg.encode('utf-8'))         # 发消息,说话(只能发送字节类型)
 
     feedback = s.recv(BUFSIZE)                           # 收消息,听话
