@@ -1,4 +1,8 @@
 https://www.cnblogs.com/zhangyingai/p/7097922.html      ---参考这个网址
+socket层是一个抽象层，在应用层和传输层之间，它封装了tcp/ip的协议标准
+我们只需要遵循socket编程规范，自然就遵循了tcp/ip标准
+省去了研究复杂的tcp/ip标准
+
 # import socket
 # socket.socket(socket_family,socket_type,protocal=0)
 # socket_family 可以是 AF_UNIX 或 AF_INET。socket_type 可以是 SOCK_STREAM 或 SOCK_DGRAM。protocol 一般不填,默认值为 0。
