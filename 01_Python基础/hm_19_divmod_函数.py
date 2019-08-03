@@ -16,3 +16,16 @@ print('divmod(2, 0.3):', divmod(2, 0.3))
 # divmod(2, 0.3): (6.0, 0.20000000000000007)
 # abs()函数为取绝对值的函数
 print(abs(-5.11))
+#
+list1 = ["beijing", "shanghai", "tianjin"]
+for index, item in enumerate(list1, 2):
+    print(index, item)    # default index是从0开始, 本例子是从2开始
+# 2 beijing
+# 3 shanghai
+# 4 tianjin
+
+# enumerate 可以设置可迭代对象的索引，下面是查找某个元素的index
+list2 = [1, 2, 3, 4, 5, 6]
+for index, item in enumerate(list2):
+    if item == 5:
+        print(index)
