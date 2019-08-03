@@ -13,6 +13,8 @@ while True:                             # 新增通信循环,客户端可以不�
     s.send(msg.encode('utf-8'))         # 发消息,说话(只能发送字节类型)
 
     feedback = s.recv(BUFSIZE)                           # 收消息,听话
-    print(feedback.decode('utf-8'))
+    print("只能接受字节类型", type(feedback))     # 只能接受字节类型 <class 'bytes'>
+    print(feedback.decode('utf-8'))            #
+    print(type(feedback.decode('utf-8')))      # <class 'str'>
 
 s.close()
