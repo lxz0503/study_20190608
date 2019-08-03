@@ -8,8 +8,8 @@ udp_client = socket(AF_INET, SOCK_DGRAM)
 
 
 while True:
-    msg = input('>>: ').strip()
+    msg = input('>>: ').strip()     # COPY udp_server_remote.py D:\
     udp_client.sendto(msg.encode('utf-8'), ip_port)
 
     data, addr = udp_client.recvfrom(bufsize)
-    print(data.decode('GBK'), end='')         # windos is GBK 或者utf-8
+    print(data.decode('GBK'), end='')         # windows7 is GBK 或者utf-8
