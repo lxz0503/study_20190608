@@ -1,4 +1,5 @@
 # 封装ssh类, 用paramiko模块来实现ssh操作
+# https://www.cnblogs.com/zhangxinqi/p/8372774.html   参考这个链接
 #!/usr/bin/env python
 import configparser
 import paramiko
