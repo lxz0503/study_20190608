@@ -14,7 +14,7 @@ while True:                       # 新增接收链接循环,可以不停的接�
         try:      # 在windows上，如果client突然终止，服务端就会出现异常，
                   # 就需要加异常处理，但是在linux机器上不需要加异常处理
             msg = conn.recv(BUFSIZE)      # 听消息,听话,recv是从内核态内存中取字节
-            if len(msg) == 0:
+            if len(msg) == 0:     # 这条break是MAC系统的解决方式,就不需要异常处理
                 break             # 如果不加,那么正在链接的客户端突然断开,recv便不再阻塞,死循环发生
             print(msg, type(msg))   # b'dir' <class 'bytes'>, 只能收发字节
             conn.send(msg.upper())    # 发消息,说话
