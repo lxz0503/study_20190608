@@ -44,3 +44,7 @@ if __name__ == "__main__":
     ssh_config = {'host_name':'128.224.163.8', 'username':'windriver', 'password':'windriver'}
     cmd = ['uname -a', 'cat /proc/version']
     real_ssh_test(ssh_config, cmd)
+
+    # 最终目标是能执行下面的类似命令，即在远端运行某个脚本，而不单单运行系统命令
+    # sshToAnvlServer.s.sendline('./ANVL.py -t %s -c all -s %s -l %s -v %s 2>&1 | tee anvl.log'%(opt['bsp'], suite, AnvlLogFolder, opt['vxworks']))
+    # j = sshToAnvlServer.s.expect([sshToAnvlServer.prompt, 'Press return and reboot DUT:'])
