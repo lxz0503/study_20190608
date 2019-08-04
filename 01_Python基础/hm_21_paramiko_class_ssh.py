@@ -21,8 +21,10 @@ class ParamikoClient(object):
                             username=self.user,
                             password=self.pwd,
                             timeout=float(self.timeout))
-
+        self.log_file = "ssh_record.log"  # 存储日志
+        
     def run_ssh(self, cmd_command):
+        paramiko.util.log_to_file(self.log_file)   # 记录日志
         # 执行命令，输出结果在stdout中，如果是错误则放在stderr中
         stdin, stdout, stderr = self.client.exec_command(cmd_command)
         result = stdout.read()       # read方法读取输出结果
