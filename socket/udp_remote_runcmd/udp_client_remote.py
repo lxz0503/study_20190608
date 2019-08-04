@@ -13,3 +13,13 @@ while True:
 
     data, addr = udp_client.recvfrom(bufsize)
     print(data.decode('GBK'), end='')         # windows7 is GBK 或者utf-8
+
+# 在家里电脑上的演示：
+# >>: python3 D:\xiaozhan_git\study_20190608\01_Python基础\hm_01_hello.py
+# hello
+# 60
+# the scale is 65.87%
+# 10
+# re.compile('\\w+\\d+')
+# your are not our employee
+# aaaa
