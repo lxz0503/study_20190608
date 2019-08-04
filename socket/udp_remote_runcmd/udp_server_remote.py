@@ -12,10 +12,10 @@ udp_server.bind(ip_port)
 while True:
     # 收消息
     cmd, addr = udp_server.recvfrom(bufsize)
-    print('用户命令----->', cmd)
+    print('用户命令----->', cmd)     # 接收到的是二进制形式的码流
 
     # 逻辑处理
-    res = subprocess.Popen(cmd.decode('utf-8'),     # utf-8  或者GBK（windows）
+    res = subprocess.Popen(cmd.decode('utf-8'),     # 解码为字符串，utf-8（公司电脑）或者GBK（家里中文win7）
                            shell=True,
                            stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE,
