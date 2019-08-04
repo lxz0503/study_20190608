@@ -10,10 +10,12 @@ tcp_socket_server.bind(ip_port)
 tcp_socket_server.listen(5)
 
 while True:
-    conn, addr = tcp_socket_server.accept()
+    print("server 开始运行，等待客户端连接")
+    conn, addr = tcp_socket_server.accept()   # 等待连接
     print('客户端', addr)
 
     while True:
+        print("server开始接受消息")
         cmd = conn.recv(BUFSIZE)
         if len(cmd) == 0:
             break
@@ -28,3 +30,4 @@ while True:
         # 把命令的执行结果发送出去
         conn.send(stderr)
         conn.send(stdout)
+        print("server端处理一条消息")

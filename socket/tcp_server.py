@@ -10,7 +10,7 @@ while True:                       # 新增接收链接循环,可以不停的接�
     conn, addr = s.accept()          # 手机接电话
     print('接到来自%s的电话' % addr[0])
     while True:                     # 新增通信循环,可以不断的通信,收发消息
-        msg = conn.recv(BUFSIZE)      # 听消息,听话
+        msg = conn.recv(BUFSIZE)      # 听消息,听话,recv是从内核态内存中取字节
         if len(msg) == 0:
             break             # 如果不加,那么正在链接的客户端突然断开,recv便不再阻塞,死循环发生
         print(msg, type(msg))   # b'dir' <class 'bytes'>, 只能收发字节
