@@ -10,7 +10,7 @@ from email.header import Header
 # 下面的发件人，收件人是用于邮件传输的。
 smtpserver = 'smtp.163.com'
 username = 'lxz_20081025@163.com'
-password = '####'
+password = '######'
 sender = 'lxz_20081025@163.com'
 # receiver='XXX@126.com'
 # 收件人为多个收件人,放在列表里
@@ -36,19 +36,19 @@ text_plain = MIMEText(text, 'plain', 'utf-8')
 msg.attach(text_plain)
 
 # 构造图片链接
-sendimagefile = open(r'D:\Pycharm\err.jpg', 'rb').read()
+sendimagefile = open(r'send_email\err.jpg', 'rb').read()
 image = MIMEImage(sendimagefile)
 image.add_header('Content-ID', '<image1>')
 image["Content-Disposition"] = 'attachment; filename="testimage.png"'   # 附件名字以这个为准
 msg.attach(image)
 
 # 构造html
-text_html = MIMEText(r'D:\Pycharm\test.html', 'html', 'utf-8')
+text_html = MIMEText(r'send_email\test.html', 'html', 'utf-8')
 text_html["Content-Disposition"] = 'attachment; filename="test.html"'   # 附件名字以这个为准
 msg.attach(text_html)
 
 # 构造文本附件
-sendfile = open(r'D:\Pycharm\test.txt', 'rb').read()
+sendfile = open(r'send_email\test.txt', 'rb').read()
 text_att = MIMEText(sendfile, 'base64', 'utf-8')
 text_att["Content-Type"] = 'application/octet-stream'
 # 以下附件可以重命名成aaa.txt
@@ -65,3 +65,9 @@ smtp.connect('smtp.163.com')
 smtp.login(username, password)
 smtp.sendmail(sender, receiver, msg.as_string())
 smtp.quit()
+
+# if use company mail box
+# mailServer = 'prod-webmail.corp.ad.wrs.com'
+# smtp = smtplib.SMTP(mailServer)              # connect, no log-in step
+# smtp.sendmail(sender, receiver, msg.as_string())
+# smtp.quit()
