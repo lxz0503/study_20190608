@@ -1,12 +1,13 @@
 # 封装ssh类, 用paramiko模块来实现ssh操作
+# 把登录的用户名密码信息放在一个配置文件里,作为参数来读取
 # https://www.cnblogs.com/zhangxinqi/p/8372774.html   参考这个链接
 #!/usr/bin/env python
 import configparser
 import paramiko
 
 class ParamikoClient(object):
-    def __init__(self,ini_file):    # 只需要从外界传进来一个参数
-        self.config=configparser.ConfigParser()
+    def __init__(self, ini_file):    # 只需要从外界传进来一个参数
+        self.config = configparser.ConfigParser()
         self.config.read(ini_file)
         self.host = self.config.get('ssh', 'host')
         self.port = self.config.get('ssh', 'port')
@@ -34,10 +35,12 @@ class ParamikoClient(object):
         self.client.close()
 
 if __name__ == '__main__':
-    client_cmd = ParamikoClient('config.ini')
+    client_cmd = ParamikoClient('config.ini')   # 初始化一个类的对象实例
     while True:
-        cmd_input = input('>>>:')
+        cmd_input = input('>>>:')      # 判断输入，如果是空或者quit
         if cmd_input == 'quit':
             client_cmd.close()
-        client_cmd.run_ssh(cmd_input)
+        if cmd_input == ' ':
+            pass
+        client_cmd.run_ssh(cmd_input)     # 其它输入的处理
 
