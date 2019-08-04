@@ -1,4 +1,7 @@
+
 # 字节转化为字符串用下面的两种都可以
+import sys
+print('目前系统的编码为：', sys.getdefaultencoding())
 
 print(str(b'example', encoding='utf-8'))    # example
 print(bytes.decode(b'example'))
@@ -9,15 +12,26 @@ print(str.encode('example'))                  # b'example'
 
 import subprocess
 
+# 最常见的用法如下,获取某个系统命令的输出
+ret = subprocess.getoutput('ls -l')
+print(ret)
+
+retcode, output = subprocess.getstatusoutput('ls -l /test')
+print(retcode)       # 2
+print(output)        # ls: 无法访问/test: 没有那个文件或目录
+
+
+# 复杂用法，执行复杂命令
 def run_cmd(command):
     # ret = subprocess.Popen(bytes(command, encoding='utf-8').decode('utf-8'),   # 字符串参数要转换为字节类型
-    ret = subprocess.Popen(str.encode(command).decode('utf-8'),   # 字符串参数要转换为字节类型
+    # ret = subprocess.Popen(str.encode(command).decode('utf-8'),   # 字符串参数要转换为字节类型
+    ret = subprocess.Popen(command,   # 字符串参数
                            shell=True,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
     stdout = ret.stdout.read()
     stderr = ret.stderr.read()
-    return str(stdout, encoding='utf-8')
+    return str(stdout, encoding='GBK')    # 家里win7系统执行结果
 
 
 result = run_cmd("dir")     # 传入的参数是一个字符串
