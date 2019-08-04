@@ -1,8 +1,8 @@
 # log既显示在console口，又保存在文件li
 import logging
 
-logger = logging.getLogger(__name__)
-logger.setLevel(level = logging.INFO)
+logger = logging.getLogger(__name__)    # __name__可以根据需要设置
+logger.setLevel(level=logging.INFO)
 handler = logging.FileHandler("log.txt")
 handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -19,6 +19,6 @@ logger.warning('Something maybe fail.')
 try:
     result = 10 / 0
 except Exception:
-    # logger.error('Failed to get result', exc_info=True)
-    logging.exception("Exception occurred")
+    logger.error('Failed to get result', exc_info=True)
+    # logging.exception("Exception occurred")
 logger.info('Finished')
