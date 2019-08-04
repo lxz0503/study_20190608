@@ -15,11 +15,12 @@ console.setLevel(logging.INFO)
 logger.addHandler(handler)
 logger.addHandler(console)
 # 具体使用以上方法来记录log,参考logtest.py
-# logger.info('Start')
-# logger.warning('Something maybe fail.')
-# try:
-#     result = 10 / 0
-# except Exception:
-#     logger.error('Failed to get result', exc_info=True)
-#     # logging.exception("Exception occurred")
-# logger.info('Finished')
+if __name__ == "__main__":
+    logger.info('Start')
+    logger.warning('Something maybe fail.')
+    try:
+        result = 10 / 0
+    except Exception:
+        logger.error('Failed to get result', exc_info=True)
+        # logging.exception("Exception occurred")
+    logger.info('Finished')
