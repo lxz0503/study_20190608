@@ -26,8 +26,8 @@ while True:
                                stdin=subprocess.PIPE,
                                stderr=subprocess.PIPE)
         # 解析命令的返回值
-        stderr = res.stderr.read()
-        stdout = res.stdout.read()
+        stderr = res.stderr.read()    # 取出错误信息，例如不能执行的命令
+        stdout = res.stdout.read()    # 取出命令返回值
         # 把命令的执行结果发送出去
         conn.send(stderr)
         conn.send(stdout)
