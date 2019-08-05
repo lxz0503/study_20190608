@@ -31,4 +31,8 @@ while True:
         # 把命令的执行结果发送出去
         conn.send(stderr)
         conn.send(stdout)
+        # 如果命令没有返回值，但是也能执行成功，例如cd ..
+        if not stderr and not stdout:
+            result = "run command successfully"
+            conn.send(result.encode('utf-8'))
         print("server端处理一条消息")
