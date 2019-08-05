@@ -19,6 +19,7 @@ while True:
         cmd = conn.recv(BUFSIZE)
         if len(cmd) == 0:
             break
+        print("接收到", cmd)
         res = subprocess.Popen(cmd.decode('utf-8'),  # 字节解码为字符串
                                shell=True,
                                stdout=subprocess.PIPE,
