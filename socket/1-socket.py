@@ -35,6 +35,12 @@ s.getsockname()     #当前套接字的地址
 s.getsockopt()      #返回指定套接字的参数
 s.setsockopt()      #设置指定套接字的参数
 s.close()           #关闭套接字
+close方法可以释放一个连接的资源，但是不是立即释放，
+如果想立即释放，那么请在close之前使用shutdown方法
+shutdown方法是用来实现通信模式的，模式分三种，
+SHUT_RD 关闭接收消息通道，SHUT_WR 关闭发送消息通道，SHUT_RDWR 两个通道都关闭
+也就是说，想要关闭一个连接，首先把通道全部关闭，然后在release连接，
+以上三个静态变量分别对应数字常量：0,1,2, shutdown(2)即可
 
 面向锁的套接字方法
 s.setblocking()     #设置套接字的阻塞与非阻塞模式

@@ -10,7 +10,10 @@ while True:
     if len(msg) == 0:
         continue
     if msg == 'quit':
-        break        # 会直接进行s.close操作，关闭tcp链接
+        # break        # 会直接进行s.close操作，关闭tcp链接
+        s.shutdown(2)
+        s.close()
+        break
     s.send(msg.encode('utf-8'))    # 电脑只能发送字节，所以要用encode来编码
     act_res = s.recv(BUFSIZE)        # 电脑接受到字节
     print(act_res.decode('GBK'), end='')      # 根据具体环境修改解码方式
