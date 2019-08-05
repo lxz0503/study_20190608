@@ -1,0 +1,125 @@
+1. cat test.txt | sed 's/^/#/g' > new.txt --------用#替代每行的开头，即把#加在每行开头
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat new.txt
+#ssss
+#aaaaa
+#ddddd
+#ffffff
+#--------------------空行
+#cccccc
+#vvvvvv
+
+sed -i 就是直接对文本文件进行操作的
+
+去掉 “行首” 带“@”的首字母@
+
+sed -i 's/^@//' file
+
+sed -i 's/^#//' file---------去掉python注释的时候用
+特定字符串的删除
+
+sed -i '/字符串/d' file----删除所有符合条件的行
+
+cat a b c > file -----把文件a,b,c的内容合并到file里，同时也创建了文件file
+
+
+
+2.Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat test.txt | sed '/^$/d' > new.txt ------------删除空行，保存新文件到new.txt 
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat new.txt
+ssss
+aaaaa
+ddddd
+ffffff
+cccccc
+vvvvvv
+3.$ ps | awk '{print $8}' | sort | uniq -c 
+      2 /usr/bin/bash
+      1 /usr/bin/mintty
+      1 /usr/bin/ps
+      1 COMMAND
+
+4.Li xiaozhan@DESKTOP-JFCIJJF ~
+$ tar -czvf  file.tar.gz  file1  file2 ----tar包，压缩成tar.gz格式
+
+
+tar -xzvf  file.tar.gz  ---------解压缩tar.gz包
+
+
+5.$ gunzip  new.tar.gz
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ ls
+aaa  bbbbb  new.tar  old.txt  rename.txt  test.sh  test.txt
+                                                                                                                                                   
+6. grep -rI "xiaozhan" ./  (在当前目录递归查找所有包含xiaozhan字样的文本)
+
+7. find . -name "*xiaozhan*“ -print (在当前目录查找包含xiaozhan字样的目录)
+
+搜索最近七天内被访问过的所有文件
+find . -type f -atime -7
+find . -type d -atime -7 ------搜索目录
+
+find . -type f -size +10k ---搜索大于10K的文件
+find . -type d -size +10k-----搜索大于10K的目录
+
+find . -type f -name "*.txt" -delete  -----删除当前目录下所有txt后缀的文件
+
+或者rm -rf $(find . -type f -name "*.txt")
+或者find . -type f -name "*.txt" -ok rm {} \;
+
+{} 用于与-exec选项结合使用来匹配所有文件，然后会被替换为相应的文件名，也就是说{}代表着匹配的所有文件名
+
+将30天前的.log文件移动到old目录中
+find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
+
+
+
+8. vi test.txt
+ :set number ----显示行号
+ :10 按回车 ---------表示直接跳转到第10行
+ 
+9：vi test.txt
+:set number
+:10,20y ----表示复制第10到第20行
+在需要粘贴的地方输入P，表示粘贴到此处
+
+:10,20s/#/    /g -----用4个空格替换开头的#
+
+:10,20s/^/    /g----在每行行首添加4个空格
+
+
+二、利用正则表达式删除代码段每行的行号
+
+:%s/^\s*[0-9]*\s*//g
+
+删除多行行尾指定字符串 :%s/#$//g
+
+:%s/^[0-9][0-9]* // 去掉行首的所有数字字符。
+:%s/ */ /g 把一个或者多个空格替换为一个空格。
+:g/^\s*$/d " 删除只有空白的行
+
+
+其中，^表示行首，$表示行尾，\s表示空格，[0-9]表示0~9的数字，*表示0或多个，%s/^\s*[0-9]*\s*//gc的意思是将每行以0或多个空格开始中间包含0或多个数字并以0或多个空格结束的字符串替换为空。
+
+
+10. scp -r a.txt /home/windriver/ ----拷贝文件
+    scp -r a.txt windriver@128.224.166.46:/home/windriver/ ---拷贝文件到此目录下面
+	scp -r a.txt windriver@128.224.166.46:/home/windriver/a.txt.bak ---拷贝文件到此目录下面，并修改名字
+
+11. ssh windriver@128.224.166.46  ---ssh登陆某台服务器
+
+12. telnet 192.168.195.2 2323 ----telnet登陆某台虚拟机，端口号是2323
+
+13. ftp 128.224.167.168 -----ftp登陆某台服务器
+
+14. ls -l >> log.txt (把ls -l的命令输出结果追加到文件log.txt)  ---相当于ls -l | tee log.txt
+
+15. run command & -----后台操作
+
+./test.sh > res2.log 2>&1 ----标准输出，标准错误  这里&相当于等效于标准输出。 
+
+ ./test.sh 2>&1 | tee  res2.log
