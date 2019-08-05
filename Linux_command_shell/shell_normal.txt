@@ -122,4 +122,9 @@ find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 
 ./test.sh > res2.log 2>&1 ----标准输出，标准错误  这里&相当于等效于标准输出。 
 
- ./test.sh 2>&1 | tee  res2.log
+ ./test.sh 2>&1 | tee  res2.log   ------可以把log打印到屏幕上同时也保存到文件里
+
+# 多条命令放一行执行，中间用分号来隔开即可
+# ls -l 2> err.log 
+# ls /etc/aa /tc/b &> all.log   保存所有的信息,重定向所有输出
+#（ls -al;cat /etc/passwd）| less  组合两条命令的输出
