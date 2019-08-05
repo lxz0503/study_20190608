@@ -45,10 +45,19 @@ s.gettimeout()      #得到阻塞套接字操作的超时时间
 s.fileno()          #套接字的文件描述符
 s.makefile()        #创建一个与该套接字相关的文件
 
-recv与recvfrom
+recv与recvfrom 注意区别
+recv()返回的是接收到的数据，
+recvfrom返回的是（数据,客户端地址)，可以用来接收对端的地址信息，
+这个对于udp这种无连接的，可以很方便地进行回复。
+而换过来如果你在udp当中也使用recv，那么就不知道该回复给谁了，如果你不需要回复的话，也是可以使用的。
+另外就是对于tcp是已经知道对端的，就没必要每次接收还多收一个地址，没有意义，
+要取地址信息，在accept当中取得就可以加以记录了。
+https://blog.csdn.net/zj19880814/article/details/84479557
+
 发消息，都是将数据发送到己端的发送缓冲中，收消息都是从己端的缓冲区中收（也就是内核态内存中）。
-tcp：send发消息，recv收消息
-udp：sendto发消息，recvfrom收消息
+
+tcp：send or sendall发消息，recv收消息
+udp：sendto发消息，recvfrom收消息，是带两个参数，一个是数据，一个是对端地址
 
 粘包如何产生
 TCP为了提高网络的利用率，会使用一个叫做Nagle的算法。
@@ -67,3 +76,5 @@ recv里指定的1024意思是从缓存里一次拿出1024个字节的数据
 
 send的字节流是先放入己端缓存，然后由协议控制将缓存内容发往对端，
 如果待发送的字节流大小大于缓存剩余空间，那么数据丢失，用sendall就会循环调用send，数据不会丢失
+
+用python3实现组播的例子：https://www.cnblogs.com/lsdb/p/9408947.html
