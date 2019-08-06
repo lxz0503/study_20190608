@@ -243,3 +243,36 @@ def demo(name,title,gender=True)
 
 python -m unittest web_driver_api.WebTest
 
+========================ssh test with pexpect4.6 and python3===========
+
+run this script on my kong server, refer to below log
+
+you shoulf pur your remote script on another server like my 163.8:
+
+[xli3@pek-sec-kong-02 xiaozhan_python]$ python ssh_class.py
+python parameter-getopt.py -h -i 10.0.0.1 -p 80 2>&1 | tee test.log
+python parameter-getopt.py -h -i 10.0.0.1 -p 80 2>&1 | tee test.log   -----this will be run on remote server
+['-h', '-i', '10.0.0.1', '-p', '80']
+('options:', [('-h', ''), ('-i', '10.0.0.1'), ('-p', '80')])
+('args:', [])
+help:.......
+('ip :', '10.0.0.1')
+('port :', '80')
+('all parameters are', {'ip': '10.0.0.1', 'port': '80'})
+{'ip': '10.0.0.1', 'port': '80'}
+[PEXPECT]$ python parameter-getopt.py -h -i 10.0.0.1 -p 80 2>&1 | tee test.log
+['-h', '-i', '10.0.0.1', '-p', '80']
+('options:', [('-h', ''), ('-i', '10.0.0.1'), ('-p', '80')])
+('args:', [])
+help:.......
+('ip :', '10.0.0.1')
+('port :', '80')
+('all parameters are', {'ip': '10.0.0.1', 'port': '80'})
+{'ip': '10.0.0.1', 'port': '80'}
+
+mv /home/windriver/1.txt /home/windriver/2.txt
+mv /home/windriver/1.txt /home/windriver/2.txt
+[PEXPECT]$ mv /home/windriver/1.txt /home/windriver/2.txt
+
+exit
+exit
