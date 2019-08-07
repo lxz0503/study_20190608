@@ -276,3 +276,48 @@ mv /home/windriver/1.txt /home/windriver/2.txt
 
 exit
 exit
+
+-----------------------use pexpect spawn---
+[xli3@pek-sec-kong-02 xiaozhan_python]$ python ssh_spawn.py
+windriver@128.224.163.8's password: windriver
+
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+New release '16.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+You have new mail.
+Last login: Wed Aug  7 15:12:35 2019 from pek-sec-kong-02.wrs.com
+windriver@PEK-QCAO1-D2:~$ uname -a
+uname -a
+Linux PEK-QCAO1-D2 3.2.0-23-generic #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+windriver@PEK-QCAO1-D2:~$ $ uname -a
+Linux PEK-QCAO1-D2 3.2.0-23-generic #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+
+cat /proc/version
+cat /proc/version
+Linux version 3.2.0-23-generic (buildd@crested) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu4) ) #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012
+windriver@PEK-QCAO1-D2:~$ $ cat /proc/version
+Linux version 3.2.0-23-generic (buildd@crested) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu4) ) #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012
+
+python parameter-getopt.py -h -i 10.0.0.1 -p 80 2>&1 | tee test.log
+$ cat /proc/version
+Linux version 3.2.0-23-generic (buildd@crested) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu4) ) #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012
+
+ tee test.logter-getopt.py -h -i 10.0.0.1 -p 80 2>&1 |
+['-h', '-i', '10.0.0.1', '-p', '80']
+('options:', [('-h', ''), ('-i', '10.0.0.1'), ('-p', '80')])
+('args:', [])
+help:.......
+('ip :', '10.0.0.1')
+('port :', '80')
+('all parameters are', {'ip': '10.0.0.1', 'port': '80'})
+{'ip': '10.0.0.1', 'port': '80'}
+windriver@PEK-QCAO1-D2:~$ mv /home/windriver/1.txt /home/windriver/2.txt
+mv /home/windriver/1.txt /home/windriver/2.txt
+mv: cannot stat `/home/windriver/1.txt': No such file or directory
+windriver@PEK-QCAO1-D2:~$ $ mv /home/windriver/1.txt /home/windriver/2.txt
+mv: cannot stat `/home/windriver/1.txt': No such file or directory
+
