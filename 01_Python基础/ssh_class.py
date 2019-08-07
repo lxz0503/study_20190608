@@ -18,24 +18,17 @@ class SshTest(object):
             s.login(server=self.host_name, username=self.user_name, password=self.password)
             # f = open("logfile.txt",'w')  # record test log to a file
             # s.logfile = f   
-            s.logfile = sys.stdout    
+            s.logfile = sys.stdout    # print your log on the screen
             self.s = s     # 
         except pxssh.ExceptionPxssh as e:
             print(e)
-
+    # remember to run disconnect to release resource like your file descriptor
     def disconnect(self):
         self.s.logout()
 
-    #
+    # send system command and get return value
     def send_cmd(self, runcmd):
         self.s.sendline(runcmd)
-        self.s.prompt()
-        print(self.s.before)
-        return self.s.before
-
-    # 
-    def transfer_file(self, src, dst):
-        self.s.sendline('scp %s %s' % (src, dst))
         self.s.prompt()
         print(self.s.before)
         return self.s.before
