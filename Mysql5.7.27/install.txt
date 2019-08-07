@@ -1,0 +1,35 @@
+https://blog.csdn.net/juncailiao/article/details/82706155
+For my home pc win7, I can only install mysql 5.7.27
+
+mkdir data directory under this dir C:\mysql-5.7.27-winx64
+
+creat a file named my.ini  under this C:\mysql-5.7.27-winx64
+
+
+以管理员身份打开 cmd 命令行工具，切换目录：
+
+cd C:\mysql-5.7.27-winx64\bin
+初始化数据库：
+
+mysqld --initialize --console
+执行完成后，会输出 root 用户的初始默认密码，如：uO=gQ>3Jy/fr
+then:
+mysqld --install
+
+提示 services successfully installed 
+
+net start mysql  ---start your database
+
+mysql -u root -p    -----input your passwd.connect database
+
+update your password:
+
+新安装的mysql，初次使用的时候提示：You must reset your password using ALTER USER statement before executing this statement.
+解决办法：
+mysql->SET PASSWORD = PASSWORD('你的新密码');
+mysql->ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
+mysql->FLUSH PRIVILEGES;
+
+
+
+
