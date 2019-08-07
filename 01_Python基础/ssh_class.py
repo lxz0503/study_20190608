@@ -16,28 +16,27 @@ class SshTest(object):
         try:
             s = pxssh.pxssh(timeout=60*60)
             s.login(server=self.host_name, username=self.user_name, password=self.password)
-            # f = open("logfile.txt",'w')  # record test log to a file
-            # s.logfile = f   
-            s.logfile = sys.stdout    # print your log on the screen
+            #f = open("logfile.txt",'w')  # record test log to a file
+            #s.logfile = f   
+            s.logfile = sys.stdout    
             self.s = s     # 
         except pxssh.ExceptionPxssh as e:
             print(e)
-    # remember to run disconnect to release resource like your file descriptor
+
     def disconnect(self):
         self.s.logout()
 
-    # send system command and get return value
     def send_cmd(self, runcmd):
         self.s.sendline(runcmd)
         self.s.prompt()
         print(self.s.before)
         return self.s.before
-
+    
     def mv_file(self, src, dst):
         self.s.sendline('mv %s %s' % (src, dst))
         self.s.prompt()
         print(self.s.before)
-        return self.s.before
+        #return self.s.before
 
     def set_env(self, dvd_path):
         self.s.sendline("cd %s" % dvd_path)
@@ -54,13 +53,15 @@ class SshTest(object):
 
 if __name__ == "__main__":
     ssh_config = {'host_name':'128.224.163.8', 'username':'windriver', 'password':'windriver'}
-    #cmd = ['uname -a', 'cat /proc/version']
+    cmd = ['uname -a', 'cat /proc/version']
     src_file = "/home/windriver/1.txt"
     dst_file = "/home/windriver/2.txt"
     #cmd = "mv " + src_file + " " + dst_file     # 
     ssh = SshTest(ssh_config['host_name'], ssh_config['username'], ssh_config['password'])
     ssh.connect()
+    for i in cmd:
+        ssh.send_cmd(i)
     ssh.run_script("10.0.0.1", 80)
-    ssh.mv_file(src_file, dst_file)
+    #ssh.mv_file(src_file, dst_file)
     ssh.disconnect()
 
