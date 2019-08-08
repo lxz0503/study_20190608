@@ -128,3 +128,38 @@ find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 # ls -l 2> err.log 
 # ls /etc/aa /tc/b &> all.log   保存所有的信息,重定向所有输出
 #（ls -al;cat /etc/passwd）| less  组合两条命令的输出
+
+Linux：cut命令详解
+1.例如有一个学生报表信息，包含No、Name、Mark、Percent：
+
+复制代码
+cat test.txt
+
+No Name Mark Percent
+01 tom 69 91
+02 jack 71 87
+03 alex 68 98
+
+cut -f2,3 test.txt
+结果：
+Name Mark
+tom 69
+jack 71
+alex 68
+---------------
+使用 -d 选项指定字段分隔符：
+
+复制代码
+cat test2.txt
+
+No;Name;Mark;Percent
+01;tom;69;91
+02;jack;71;87
+03;alex;68;98
+
+cut -f2 -d";" test2.txt
+结果：
+Name
+tom
+jack
+alex
