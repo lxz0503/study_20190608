@@ -1,10 +1,10 @@
+# how to install mysql 5.7.27 on my win7 pc
 https://blog.csdn.net/juncailiao/article/details/82706155
 For my home pc win7, I can only install mysql 5.7.27
 
 mkdir data directory under this dir C:\mysql-5.7.27-winx64
 
-creat a file named my.ini  under this C:\mysql-5.7.27-winx64
-
+create a file named my.ini  under this C:\mysql-5.7.27-winx64
 
 以管理员身份打开 cmd 命令行工具，切换目录：
 
@@ -29,6 +29,56 @@ update your password:
 mysql->SET PASSWORD = PASSWORD('你的新密码');
 mysql->ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
 mysql->FLUSH PRIVILEGES;
+
+For me, the root passwd is 123win
+
+# windows下查看mysql服务是否启动，操作非常简单。
+键盘上按：win（就是那个旗帜图案的按键）+R，弹出框中输入：services.msc
+会弹出服务窗口，在窗口中查找mysql项即可
+
+# show databases;    查看所有的数据库
+# use mysql;         选择mysql这个数据库
+#创建用户，并赋予权限
+create user 'xiaozhan'@'localhost' identified by 'xiaozhan123';
+GRANT ALL ON mysql.* TO 'xiaozhan'@'localhost';            -----所有权限
+grant select,update on mysql.* to "xiaozhan"@"localhost" identified by "xiaozhan123";
+grant select,update,insert,delete on mysql.* to "sam"@"localhost" identified by "sam123";
+flush privileges;   刷新系统权限表
+
+localhost: 只有本机可以访问
+create user 'xiaozhan'@'%' identified by 'xiaozhan123';?     % 表示xiaozhan从任何电脑都可以访问
+
+create user 'xiaozhan'@'9.110.238.211' identified by 'xiaozhan123';?
+
+   9.110.238.211 表示xiaozhan只能从这个ip登录
+
+show grants for 'sam'@'localhost';
+# 修改指定用户密码
+修改指定用户密码
+mysql -u root -p
+update mysql.user set authentication_string=password("新密码") where User="xiaozhan" and Host="localhost";
+flush privileges;
+
+# 删除用户，删除数据库
+mysql -u root -p
+Delete FROM mysql.user Where User="sam" and Host="localhost";
+flush privileges;
+drop database mysql;
+
+删除账户及权限：
+drop user 'xiaozhan'@'localhost';
+
+撤销sam所有的权限
+REVOKE ALL ON mysql.* FROM 'sam'@'localhost';
+REVOKE INSERT,update ON mysql.* FROM 'sam'@'%';
+REVOKE SELECT ON mysql.* FROM 'sam'@'%';
+
+# SHOW TABLES;
+显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库
+# SHOW COLUMNS FROM 数据表:
+显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息
+# SHOW INDEX FROM 数据表:
+显示数据表的详细索引信息，包括PRIMARY KEY（主键）
 
 
 
