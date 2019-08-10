@@ -23,8 +23,6 @@ sed -i '/字符串/d' file----删除所有符合条件的行
 
 cat a b c > file -----把文件a,b,c的内容合并到file里，同时也创建了文件file
 
-
-
 2.Li xiaozhan@DESKTOP-JFCIJJF ~
 $ cat test.txt | sed '/^$/d' > new.txt ------------删除空行，保存新文件到new.txt 
 
@@ -75,8 +73,6 @@ find . -type f -name "*.txt" -delete  -----删除当前目录下所有txt后缀的文件
 
 将30天前的.log文件移动到old目录中
 find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
-
-
 
 8. vi test.txt
  :set number ----显示行号
@@ -140,14 +136,14 @@ No Name Mark Percent
 02 jack 71 87
 03 alex 68 98
 
-cut -f2,3 test.txt
+cut -f 2,3 test.txt
 结果：
 Name Mark
 tom 69
 jack 71
 alex 68
 ---------------
-使用 -d 选项指定字段分隔符：
+
 
 复制代码
 cat test2.txt
@@ -157,9 +153,13 @@ No;Name;Mark;Percent
 02;jack;71;87
 03;alex;68;98
 
-cut -f2 -d";" test2.txt
+使用 -d 选项指定字段分隔符,默认分隔符是 TAB键，
+如果实际文本不是tab键，必须用-d 来指明分隔符，例如空格分隔的话就是用" "
+cut -f 2 -d";" test2.txt
 结果：
 Name
 tom
 jack
 alex
+
+# 利用windows下安装的git来练习linux shell命令

@@ -7,10 +7,23 @@ AND|OR condition
 
 #ALTER TABLE	
 ALTER TABLE table_name 
-ADD column_name datatype
+ADD column_name datatype         #新增加一列
 or
 ALTER TABLE table_name 
-DROP COLUMN column_name
+DROP COLUMN column_name          #删除一列
+## 举例
+ALTER TABLE apps
+ADD birth_date date;      #类型是date
+
+UPDATE apps              #更新某条记录中的某一列
+SET birth_date=Now()     #默认只返回当前日期
+WHERE app_name='wechat APP';    字符串加单引号，int类型不用加 例如 where id=2
+
+#查看当前时间
+select Now();
+select curdate();
+select curtime();
+
 
 #AS (alias)	
 SELECT column_name AS column_alias
@@ -86,10 +99,10 @@ IN (value1,value2,..)
 
 #INSERT INTO	
 INSERT INTO table_name
-VALUES (value1, value2, value3,....)
+VALUES (value1, value2, value3,....)      # 必须和列名一一对应
 or
 INSERT INTO table_name
-(column1, column2, column3,...)
+(column1, column2, column3,...)       # 可以插入指定列
 VALUES (value1, value2, value3,....)
 
 #INNER JOIN	
@@ -134,7 +147,7 @@ FROM table_name
 SELECT *
 FROM table_name
 
-#SELECT DISTINCT	
+#SELECT DISTINCT	  用于返回唯一不同的值,refer to my picture
 SELECT DISTINCT column_name(s)
 FROM table_name
 
@@ -173,3 +186,83 @@ some_column=some_value
 WHERE	SELECT column_name(s)
 FROM table_name
 WHERE column_name operator value
+
+# source 命令导入数据库需要先登录到数库终端：
+
+mysql> create database runoob;      # 创建数据库
+mysql> use runoob;                  # 使用已创建的数据库 
+mysql> set names utf8;           # 设置编码
+mysql> 
+source D:\xiaozhan_git\study_20190608\Mysql5.7.27\websites.sql  
+
+source D:\xiaozhan_git\study_20190608\Mysql5.7.27\apps.sql 
+
+source D:\xiaozhan_git\study_20190608\Mysql5.7.27\access_log.sql
+
+# 单引号，反引号在数据库中的应用
+字符串用单引号 ’ 可提高性能
+
+表名、字段、数据库名等标识符可用反引号 ` 。
+标识符也可以不使用反引号，但如果标识符包含特殊字符或保留字，则必须使用。
+
+标识符包括：数据库、表、索引、列、别名、视图、存储过程、分区、表空间、其他对象名称
+
+# 插入数据
+use runoob;      --选择数据库
+show tables;    ---查看此数据库里的所有表
+select * from apps;   -----查看apps这个表里面的内容
+insert into `apps` values('4','wechat APP', 'http://weixin.com/', 'CN');   --注意反引号的使用
+或者用下面的语句, 注意，每一行后面都有个换行符，sql语句用分号表示结束
+我们并没有提供 id字段 的数据，因为该字段我们在创建表的时候已经设置它为 AUTO_INCREMENT(自动增加) 属性。
+ 所以，该字段会自动递增而不需要我们去设置
+insert into `apps`                 ---有反引号
+(app_name,url,country)            ----columns的名字
+values              
+('wechat APP', 'http://weixin.com/', 'CN');   单引号扩起字符串，以分号结束
+
+# 创建表时候指定时间的一些操作   datetime类型对应着可以用NOW()
+CREATE TABLE Orders
+(
+OrderId int NOT NULL,
+ProductName varchar(50) NOT NULL,
+OrderDate datetime NOT NULL DEFAULT NOW(),   此处用了NOW()
+PRIMARY KEY (OrderId)
+)ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+
+插入数据也用了NOW()日期函数
+INSERT INTO `orders` VALUES ('1', 'Google', NOW()), ('2', '淘宝', NOW());
+
+查询日期的格式
+slect * from orders;          格式 ：2019-08-10  17:51:30
+
+UPDATE orders
+SET orderdate=curdate();       时间格式变为：2019-08-10  00:00:00
+
+#另外一种时间格式,一般下面的就够了
+CREATE TABLE Orders         date类型，不能指定default
+(
+OrderId int NOT NULL,
+ProductName varchar(50) NOT NULL,
+OrderDate date NOT NULL,          此处用date类型，不指定具体时间格式
+PRIMARY KEY (OrderId)
+)ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+
+INSERT INTO `orders` VALUES ('1', 'Google', NOW()), ('2', '淘宝', NOW());
+
+select * from orders;         2019-08-10
+
+UPDATE orders
+SET orderdate=curtime();       2019-08-10
+
+# AVG()函数求某一列数据的平均值
+select avg(alexa) as average_value from websites;
+
+#count()统计某一列数据出现的次数
+select count(country) as country_number from websites
+where country='CN';
+
+
+
+
+
+
