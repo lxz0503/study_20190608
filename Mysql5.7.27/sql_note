@@ -261,8 +261,8 @@ select avg(alexa) as average_value from websites;
 select count(country) as country_number from websites
 where country='CN';
 
-
-
+# https://blog.csdn.net/u010339879/article/details/81623833    
+https://www.cnblogs.com/zeke-python-road/p/8986318.html    --excel
 
 
 
