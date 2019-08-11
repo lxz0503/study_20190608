@@ -48,15 +48,16 @@ class DatabaseInit(object):
             self.disconnect_db()
             print('create database and table ok')
 
-    def insert_data(self, insert_data):
+    def insert_data(self, insert_data, args):
         try:
             self.connect_db()
             self.cur.execute('use test_result')
             # self.conn.select_db('test_result')
-            self.cur.execute(insert_data)
+            # self.cur.execute(insert_data)
+            self.cur.executemany(insert_data, args)
         except Exception as e:
             self.conn.rollback()
-            print(e)
+            print('insert error:', e)
         else:
             self.conn.commit()          # do not forget to commit after modification
             self.disconnect_db()
@@ -85,11 +86,22 @@ class DatabaseInit(object):
             self.cur.execute(update_data)
         except Exception as e:
             self.conn.rollback()
-            print(e)
+            print('update error:', e)
         else:
             self.conn.commit()    # do not forget to commit after modification
             self.disconnect_db()
 
+    def alter_table(self):
+        try:
+            self.connect_db()
+            self.cur.execute('use test_result')
+            self.cur.execute(alter_table)
+        except Exception as e:
+            self.conn.rollback()
+            print('alter error:', e)
+        else:
+            self.conn.commit()    # do not forget to commit after modification
+            self.disconnect_db()
 
 if __name__ == '__main__':
     db = DatabaseInit(host='localhost',
@@ -99,17 +111,22 @@ if __name__ == '__main__':
                       charset='gbk')      # 家里的win7只能用gbk编码
     db.connect_db()
     db.create()
-    db.insert_data(insert_data)
+    db.insert_data(insert_data, args)
     db.search_data()
     # this can put failed cases into a dictionary
     res = db.search_data()
     print(res)
     # after rerun, you need to update test result again
-    time.sleep(5)
+    db.alter_table()   # add date column
     db.update_data()
-    res = db.search_data()     # tuple change to a list
+    time.sleep(5)
+    res = db.search_data()  # tuple change to a list
     if len(res) != 0:
         print('modify not ok, check log')
+
+
+
+
 
 
 

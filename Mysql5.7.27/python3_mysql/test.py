@@ -4,9 +4,10 @@ import pymysql
 # 在数据库中插入数据
 def insertData(db, cursor):
     # 插入数据
-    sql = """INSERT INTO student (id, name, age)VALUES
-                  (1, '小明', 18),
-                  (2, '小兰', 18);"""
+    # sql = """INSERT INTO student (id, name, age)VALUES
+    #     #               (1, '小明', 18),
+    #     #               (2, '小兰', 18);"""
+    sql =
     try:
         # 执行sql语句
         cursor.execute(sql)
