@@ -9,8 +9,10 @@ import psutil   # 这个模块可以监测一些系统信息
 
 logging.basicConfig(filename="test.log",
                     filemode="w",
-                    format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
-                    datefmt="%d-%M-%Y %H:%M:%S", level=logging.DEBUG)
+                    format="%(asctime)s %(filename)s: [line:%(lineno)d] %(levelname)s: %(message)s",  # 这个filename是脚本名字
+                    datefmt="%Y-%m-%d %H:%M:%S",
+                    level=logging.DEBUG)
+# 打印出来的log格式： 2019-08-10 21:46:03 day22-1-logging.py: [line:31] DEBUG: cpu使用率：0.0
 a = 5
 b = 0
 try:
@@ -23,12 +25,12 @@ except Exception as e:
 
 # 下面的不是针对异常log，而是记录普通log
 p1 = psutil.Process(os.getpid())
-cpu_persent = 'cpu使用率：' + (str)(p1.cpu_percent(1))
-mem_persent='memeory usage：'+ (str)(p1.memory_percent)
+cpu_percent = 'cpu使用率：' + str(p1.cpu_percent(1))
+mem_percent = 'memory usage：' + str(p1.memory_percent)
 i = 0
 while i < 5:
-    logging.debug('出纸检测   ' + cpu_persent)    # 记录普通log，一把先要把变量内容提前设置，例如cpu_persent
-    logging.debug('memeory   ' + mem_persent)
+    logging.debug(cpu_percent)    # 记录普通log，一把先要把变量内容提前设置，例如cpu_percent
+    logging.debug(mem_percent)
     i = i + 1
 
 

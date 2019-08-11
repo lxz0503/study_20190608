@@ -233,7 +233,7 @@ PRIMARY KEY (OrderId)
 INSERT INTO `orders` VALUES ('1', 'Google', NOW()), ('2', '淘宝', NOW());
 
 查询日期的格式
-slect * from orders;          格式 ：2019-08-10  17:51:30
+select * from orders;          格式 ：2019-08-10  17:51:30
 
 UPDATE orders
 SET orderdate=curdate();       时间格式变为：2019-08-10  00:00:00
