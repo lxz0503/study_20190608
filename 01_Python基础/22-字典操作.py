@@ -34,3 +34,20 @@ D4 = dict([('name', 'Bob'), ('age', 40)])   # dict函数的参数是一个列表
 D = dict(zip(['name', 'bob'], ['age', 40]))   # zip函数里面的参数是两个列表
 D = dict(zip(('name', 'bob'), ('age', 40)))   # zip函数里面的参数是两个元组
 print(D)
+
+# 字典遍历
+xiaoming_dict = {"name": "小明",
+                 "qq": "123456",
+                 "phone": "10086"}
+for k in xiaoming_dict:
+    print("%s - %s" % (k, xiaoming_dict[k]))
+
+for k in xiaoming_dict.values():      # 只取对应的value值
+    print(k)
+
+# 下面可以获取键值对，存放在元组
+# ('name', '小明')
+# ('qq', '123456')
+# ('phone', '10086')
+for k in xiaoming_dict.items():
+    print(k)
