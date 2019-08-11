@@ -3,7 +3,7 @@ items = list(counts.items())
 print(items)
 # 统计单词出现的次数
 counts = {}
-words = ["aa","aa","bb","bb","c","c","c"]
+words = ["aa", "aa", "bb", "bb", "c", "c", "c"]
 for word in words:
     counts[word] = counts.get(word, 0) + 1
         # 字典中get函数用法,返回指定键的值，如果指定键的值不在字典中返回指定值(本例子中指定值为0)，默认为 None。
