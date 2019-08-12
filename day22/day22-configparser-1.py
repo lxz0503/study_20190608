@@ -49,7 +49,7 @@ config.has_option("section", "option")  # 是否存在该option
 if not config.has_section("default"):  # 检查是否存在section
     config.add_section("default")
 if not config.has_option("default", "db_host"):  # 检查是否存在该option,第一个参数是section,第二个是option
-    config.set("default", "db_host", "1.1.1.1")
+    config.set("default", "db_host", "1.1.1.1")  # 第一个参数是section,第二个是option,第三个是value
 config.write(open("test.ini", "w"))
 
 #
