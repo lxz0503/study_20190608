@@ -22,7 +22,7 @@ class GetoptTest(object):
             opts, args = getopt.getopt(argv, "hn:p:", ["help", "name=", "profession="])
             t = type(opts)
             print(f"the type of opts is {t}")    # opts的类型是一个列表
-            print(f"parsed argv: opts----{opts} args----{args}")
+            print(f"parsed argv: opts----{opts} args----{args}")   # 学会这种格式化的方式，很简洁,前面加个f即可,变量用{}括起来
         except getopt.GetoptError:
             # 参数不符合注册格式要求报错
             print("parameter format error")
