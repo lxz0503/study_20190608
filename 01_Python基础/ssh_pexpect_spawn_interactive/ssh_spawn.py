@@ -23,7 +23,7 @@ class SshTest(object):
             #f = open("spawn.log",'w')
             #sys.stdout = f
             for i in range(2):
-                i = s.expect(['windriver@PEK-QCAO1-D2:~$',
+                i = s.expect(['windriver@PEK-QCAO1-D2:~',
                                  'assword:',
                                  'Are you sure you want to continue connecting',
                                  pexpect.TIMEOUT,
@@ -41,7 +41,7 @@ class SshTest(object):
                     break
         except Exception:
             print("exception")
-        self.s = s
+        self.s = s       # 这个赋值很关键，后续都会用到这个self.s
 
     def disconnect(self):
         self.s.close()
@@ -50,7 +50,8 @@ class SshTest(object):
         self.s.sendline(runcmd)
         self.s.expect("windriver@PEK-QCAO1-D2:~")
         #print(self.s.before)
-    # 
+
+    # ssh到其他server上面再执行一些交互命令，很实用
     def transfer_file(self, src, dst):
         self.s.sendline('scp %s %s' % (src, dst))
         for i in range(2):
@@ -68,6 +69,7 @@ class SshTest(object):
         self.s.sendline('mv %s %s' % (src, dst))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
 
+# ssh到其他server上面去执行脚本，很实用
     def run_script(self, ip, port):
         self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
