@@ -11,7 +11,7 @@ wb = open_workbook(r'D:\xiaozhan_git\study_20190608\xiaozhan\xiaozhan.xls')
 for s in wb.sheets():
     # print('Sheet:', s.name)
     for row in range(s.nrows):
-       #  print('the row is:', row)
+        # print('the row is:', row)
         values = []
         for col in range(s.ncols):
             values.append(s.cell(row, col).value)
