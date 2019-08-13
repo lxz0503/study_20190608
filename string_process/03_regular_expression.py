@@ -94,3 +94,11 @@ print(r)                    # ['alexxx']
 it = re.finditer(r"\d+", "12a32bc43jf3")
 for match in it:
     print(match.group())
+
+#例如用 \w{4}匹配 RegExr was created   结果是RegE crea
+
+line = "RegExr was created"
+m = re.findall(r'\w{4}', line)
+# if m is not None:
+#     print(m.group())
+print(m)    # ['RegE', 'crea']
