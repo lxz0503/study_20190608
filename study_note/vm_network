@@ -6,3 +6,18 @@ https://www.jianshu.com/p/bb02b16d99ec
 
 Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，
 Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。虚拟机不能和外网通信
+
+# vm and docker knowledge
+https://blog.csdn.net/deng624796905/article/details/86493330
+
+host-->hypervisor--->guestos--->docker--->app
+而 Linux 容器是 Linux 发展出了另一种虚拟化技术，简单来讲，
+Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离，相当于是在正常进程的外面套了一个保护层。
+对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。
+
+Docker 将应用程序与该程序的依赖，打包在一个文件里面。
+运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。
+有了 Docker ，就不用担心环境问题
+
+# linux yum 命令
+https://www.cnblogs.com/liaocheng/p/4243589.html
