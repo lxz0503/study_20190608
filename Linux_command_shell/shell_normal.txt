@@ -19,16 +19,25 @@ $ cat new.txt
 
 sed -i 就是直接对文本文件进行操作的,会直接修改文件的内容
 
+cat xiaozhan.txt | sed  '21,24 s/beijing/captical/'    不会修改源文件，只是在内存里修改
+
 去掉 “行首” 带“@”的首字母@
 
 sed -i 's/^@//' file
 
 sed -i 's/^#//' file---------去掉python注释的时候用
 特定字符串的删除
-sed -i '5,6s/^#//g' sub.py      指定删除第5到第6行的开头的#
+sed -i '5,6 s/^#//g' sub.py      指定删除第5到第6行的开头的#
 
 
 sed -i '/字符串/d' file----删除所有符合条件的行
+
+如果是不规则的文件，可以基于关键字来替换,看下面的例子
+表示从遇到aaa那行开始，直到遇见ttt那行，把beijing都替换为capital
+如果遇到aaa后，下面的行没有遇见ttt，但是遇见beijing，依然替换
+
+cat xiaozhan.txt | sed '/aaa/,/ttt/ s/beijing/capital/'
+
 
 cat a b c > file -----把文件a,b,c的内容合并到file里，同时也创建了文件file
 
@@ -172,3 +181,16 @@ jack
 alex
 
 # 利用windows下安装的git来练习linux shell命令
+# 用下面的方法可以编辑一个文本，把里面的多行内容输出到另外一个文件
+cat << ENDOFLINE >> xiaozhan.txt
+>beijing 100000
+>shangahi 20000
+>ENDOFLINE       表示结束符
+------------------------------------
+#  只查看文本的特定行
+cat xiaozhan.txt | head      看前10行   或者直接用  head xiaozhan.txt
+cat xiaozhan.txt | tail      看后10行               tail xiaozhan.txt
+cat xiaozhan.txt | head -n 3  前3行                  head -n 3 xiaozhan.txt
+cat xiaozhan.txt | tail -n 3   后3行                 tail -n 3 xiaozhan.txt
+
+
