@@ -33,5 +33,7 @@ def run_cmd(command):
     return str(output, encoding='GBK')    # 家里win7系统执行结果
 
 
-result = run_cmd("dir")     # 传入的参数是一个字符串
+result = run_cmd("dir")     # 传入的参数是一个字符串,shell 命令可以分号分割传入 uname -a;echo 'hello'
 print("命令执行结果是",  result)
+
+# result = run_cmd("uname -a;echo 'hello'")
