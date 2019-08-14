@@ -23,15 +23,14 @@ print(output)        # ls: 无法访问/test: 没有那个文件或目录
 
 # 复杂用法，执行复杂命令
 def run_cmd(command):
-    # ret = subprocess.Popen(bytes(command, encoding='utf-8').decode('utf-8'),   # 字符串参数要转换为字节类型
-    # ret = subprocess.Popen(str.encode(command).decode('utf-8'),   # 字符串参数要转换为字节类型
-    ret = subprocess.Popen(command,   # 字符串参数
+    # ret = subprocess.Popen(bytes(command, encoding='utf-8').decode('utf-8'),   # 转化为字符串参数
+    # ret = subprocess.Popen(str.encode(command).decode('utf-8'),   # 转化为字符串参数
+    ret = subprocess.Popen(command,   # command是字符串类型参数
                            shell=True,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
-    stdout = ret.stdout.read()
-    stderr = ret.stderr.read()
-    return str(stdout, encoding='GBK')    # 家里win7系统执行结果
+    output = ret.stdout.read() + ret.stdout.read()
+    return str(output, encoding='GBK')    # 家里win7系统执行结果
 
 
 result = run_cmd("dir")     # 传入的参数是一个字符串
