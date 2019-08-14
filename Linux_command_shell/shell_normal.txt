@@ -1,3 +1,10 @@
+echo要支持同C语言一样的\转义功能，只需要加上参数-e，如下所示：
+shell echo打印换行的方法
+
+[~]#echo -e "Hello world.\nHello sea"
+Hello world.
+Hello sea
+
 1. cat test.txt | sed 's/^/#/g' > new.txt --------用#替代每行的开头，即把#加在每行开头
 
 Li xiaozhan@DESKTOP-JFCIJJF ~
