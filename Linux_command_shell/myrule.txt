@@ -1,0 +1,6 @@
+/^#/d
+/^$/d
+s/shanghai/finace/i
+/aaa/,/ttt/ s/beijing/capital/
+
+

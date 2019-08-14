@@ -5,6 +5,21 @@ shell echo´òÓ¡»»ĞĞµÄ·½·¨
 Hello world.
 Hello sea
 
+grep -n xiaozhan.txt
+grep bash$    ²éÕÒÒÔbashÎª½áÎ²µÄĞĞ
+
+vi +20 xiaozhan.txt  ¿ÉÒÔÖ±½ÓÌø×ªµ½ËùÔÚĞĞ
+
+cat xiaozhan.txt | grep ^# -v ±íÊ¾¹ıÂËµôÒÔ#¿ªÊ¼µÄĞĞ
+
+grep -v ^$  ¹ıÂËµô¿ÕĞĞ
+
+cat xiaozhan.txt | grep ^# -v | grep ^$ -v
+Ò²¿ÉÒÔÕâÑù²Ù×÷: cat xiaozhan.txt | grep -Ev  '^(#|$)'
+
+Êµ¼Êµ±ÖĞÒª°ÑÎÄ¼şĞŞ¸Äºó±£´æµ½ÁíÍâÒ»¸öÎÄ¼şµÄ·½·¨£º
+cat xiaozhan.txt | grep -Ev  '^(#|$)' > xiaozhan.tmp; cat xiaozhan.tmp > xiaozhan_2.txt; rm -f xiaozhan.tmp
+
 1. cat test.txt | sed 's/^/#/g' > new.txt --------ÓÃ#Ìæ´úÃ¿ĞĞµÄ¿ªÍ·£¬¼´°Ñ#¼ÓÔÚÃ¿ĞĞ¿ªÍ·
 
 Li xiaozhan@DESKTOP-JFCIJJF ~
@@ -23,6 +38,13 @@ cat xiaozhan.txt | sed  '21,24 s/beijing/captical/'    ²»»áĞŞ¸ÄÔ´ÎÄ¼ş£¬Ö»ÊÇÔÚÄÚ´
 
 È¥µô ¡°ĞĞÊ×¡± ´ø¡°@¡±µÄÊ××ÖÄ¸@
 
+sed -i '/^#/d' xiaozhan.txt
+É¾³ı¿ÕĞĞ   sed -i '/^$/d' xiaozhan.txt
+
+Èç¹ûÒªÖ´ĞĞ¶à¸ösedÃüÁî¿ÉÒÔÓÃsed -e
+sed -e '/^#/d' -e '/^#/d' xiaozhan.txt
+
+
 sed -i 's/^@//' file
 
 sed -i 's/^#//' file---------È¥µôpython×¢ÊÍµÄÊ±ºòÓÃ
@@ -38,6 +60,17 @@ sed -i '/×Ö·û´®/d' file----É¾³ıËùÓĞ·ûºÏÌõ¼şµÄĞĞ
 
 cat xiaozhan.txt | sed '/aaa/,/ttt/ s/beijing/capital/'
 
+# ¿ÉÒÔ°Ñsed¹æÔòĞ´ÔÚÒ»¸öÎÄ¼şÀï  myrule.txt
+/^#/d
+/^$/d
+s/shanghai/finace/i
+/aaa/,/ttt/ s/beijing/capital/
+
+È»ºóÖ´ĞĞsed -f myrule.txt < xiaozhan_1.txt     ²»»áĞŞ¸ÄÔ´ÎÄ¼ş
+
+ÖØ¶¨Ïòµ½ÁíÍâÒ»¸öÎÄ¼ş sed -f myrule.txt < xiaozhan_1.txt > test.txt
+
+
 
 cat a b c > file -----°ÑÎÄ¼şa,b,cµÄÄÚÈİºÏ²¢µ½fileÀï£¬Í¬Ê±Ò²´´½¨ÁËÎÄ¼şfile
 
@@ -52,7 +85,10 @@ ddddd
 ffffff
 cccccc
 vvvvvv
-3.$ ps | awk '{print $8}' | sort | uniq -c 
+3. sort -u ÄÜ¹»ÒÆ³ıÖØ¸´µÄĞĞ
+  sort | uniq -c    ¿ÉÒÔÍ³¼ÆÖØ¸´µÄ´ÎÊı
+
+ps | awk '{print $8}' | sort | uniq -c
       2 /usr/bin/bash
       1 /usr/bin/mintty
       1 /usr/bin/ps
@@ -173,12 +209,15 @@ No;Name;Mark;Percent
 
 Ê¹ÓÃ -d Ñ¡ÏîÖ¸¶¨×Ö¶Î·Ö¸ô·û,Ä¬ÈÏ·Ö¸ô·ûÊÇ TAB¼ü£¬
 Èç¹ûÊµ¼ÊÎÄ±¾²»ÊÇtab¼ü£¬±ØĞëÓÃ-d À´Ö¸Ã÷·Ö¸ô·û£¬ÀıÈç¿Õ¸ñ·Ö¸ôµÄ»°¾ÍÊÇÓÃ" "
-cut -f 2 -d";" test2.txt
+cut -f 2 -d ; test2.txt
 ½á¹û£º
 Name
 tom
 jack
 alex
+
+ÏÂÃæµÄcutÃüÁî¿ÉÒÔÇĞ·Ö³öipµØÖ·
+# ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cur -d " " -f 1
 
 # ÀûÓÃwindowsÏÂ°²×°µÄgitÀ´Á·Ï°linux shellÃüÁî
 # ÓÃÏÂÃæµÄ·½·¨¿ÉÒÔ±à¼­Ò»¸öÎÄ±¾£¬°ÑÀïÃæµÄ¶àĞĞÄÚÈİÊä³öµ½ÁíÍâÒ»¸öÎÄ¼ş
