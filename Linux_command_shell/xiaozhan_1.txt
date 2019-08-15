@@ -1,24 +1,28 @@
 beijing 10000
-finace 20000
+shanghai 20000
 nanjing 333333
-finace 33333
+shanghai 33333
 qinhuangdao 44444444
+
 wuhan 111111
+
 yunnan 5555555
 guangzhou 999999
 haerbin 333333
-aaa capital
-bbbbb  capital
+#shenyang 9000000
+aaa beijing
+#aaaaa  beijing
+bbbbb  beijing
 dddddd
 eeeeeeeee
 333333333333
 ffffff
 rrrrrr
-ttt  capital
-aaa   capital
-capital
-capital
-capital
-canada capital
+ttt  beijing
+aaa   beijing
+beijing
+beijing
+beijing
+canada beijing
 canada
 canada
