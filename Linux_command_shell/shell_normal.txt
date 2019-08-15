@@ -5,6 +5,21 @@ shell echo打印换行的方法
 Hello world.
 Hello sea
 
+grep -n xiaozhan.txt
+grep bash$    查找以bash为结尾的行
+
+vi +20 xiaozhan.txt  可以直接跳转到所在行
+
+cat xiaozhan.txt | grep ^# -v 表示过滤掉以#开始的行
+
+grep -v ^$  过滤掉空行
+
+cat xiaozhan.txt | grep ^# -v | grep ^$ -v
+也可以这样操作: cat xiaozhan.txt | grep -Ev  '^(#|$)'
+
+实际当中要把文件修改后保存到另外一个文件的方法：
+cat xiaozhan.txt | grep -Ev  '^(#|$)' > xiaozhan.tmp; cat xiaozhan.tmp > xiaozhan_2.txt; rm -f xiaozhan.tmp
+
 1. cat test.txt | sed 's/^/#/g' > new.txt --------用#替代每行的开头，即把#加在每行开头
 
 Li xiaozhan@DESKTOP-JFCIJJF ~
@@ -19,16 +34,43 @@ $ cat new.txt
 
 sed -i 就是直接对文本文件进行操作的,会直接修改文件的内容
 
+cat xiaozhan.txt | sed  '21,24 s/beijing/captical/'    不会修改源文件，只是在内存里修改
+
 去掉 “行首” 带“@”的首字母@
+
+sed -i '/^#/d' xiaozhan.txt
+删除空行   sed -i '/^$/d' xiaozhan.txt
+
+如果要执行多个sed命令可以用sed -e
+sed -e '/^#/d' -e '/^#/d' xiaozhan.txt
+
 
 sed -i 's/^@//' file
 
 sed -i 's/^#//' file---------去掉python注释的时候用
 特定字符串的删除
-sed -i '5,6s/^#//g' sub.py      指定删除第5到第6行的开头的#
+sed -i '5,6 s/^#//g' sub.py      指定删除第5到第6行的开头的#
 
 
 sed -i '/字符串/d' file----删除所有符合条件的行
+
+如果是不规则的文件，可以基于关键字来替换,看下面的例子
+表示从遇到aaa那行开始，直到遇见ttt那行，把beijing都替换为capital
+如果遇到aaa后，下面的行没有遇见ttt，但是遇见beijing，依然替换
+
+cat xiaozhan.txt | sed '/aaa/,/ttt/ s/beijing/capital/'
+
+# 可以把sed规则写在一个文件里  myrule.txt
+/^#/d
+/^$/d
+s/shanghai/finace/i
+/aaa/,/ttt/ s/beijing/capital/
+
+然后执行sed -f myrule.txt < xiaozhan_1.txt     不会修改源文件
+
+重定向到另外一个文件 sed -f myrule.txt < xiaozhan_1.txt > test.txt
+
+
 
 cat a b c > file -----把文件a,b,c的内容合并到file里，同时也创建了文件file
 
@@ -43,7 +85,10 @@ ddddd
 ffffff
 cccccc
 vvvvvv
-3.$ ps | awk '{print $8}' | sort | uniq -c 
+3. sort -u 能够移除重复的行
+  sort | uniq -c    可以统计重复的次数
+
+ps | awk '{print $8}' | sort | uniq -c
       2 /usr/bin/bash
       1 /usr/bin/mintty
       1 /usr/bin/ps
@@ -164,11 +209,27 @@ No;Name;Mark;Percent
 
 使用 -d 选项指定字段分隔符,默认分隔符是 TAB键，
 如果实际文本不是tab键，必须用-d 来指明分隔符，例如空格分隔的话就是用" "
-cut -f 2 -d";" test2.txt
+cut -f 2 -d ; test2.txt
 结果：
 Name
 tom
 jack
 alex
 
+下面的cut命令可以切分出ip地址
+# ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cur -d " " -f 1
+
 # 利用windows下安装的git来练习linux shell命令
+# 用下面的方法可以编辑一个文本，把里面的多行内容输出到另外一个文件
+cat << ENDOFLINE >> xiaozhan.txt
+>beijing 100000
+>shangahi 20000
+>ENDOFLINE       表示结束符
+------------------------------------
+#  只查看文本的特定行
+cat xiaozhan.txt | head      看前10行   或者直接用  head xiaozhan.txt
+cat xiaozhan.txt | tail      看后10行               tail xiaozhan.txt
+cat xiaozhan.txt | head -n 3  前3行                  head -n 3 xiaozhan.txt
+cat xiaozhan.txt | tail -n 3   后3行                 tail -n 3 xiaozhan.txt
+
+
