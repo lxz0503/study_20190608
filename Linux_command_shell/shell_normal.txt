@@ -209,7 +209,7 @@ No;Name;Mark;Percent
 
 使用 -d 选项指定字段分隔符,默认分隔符是 TAB键，
 如果实际文本不是tab键，必须用-d 来指明分隔符，例如空格分隔的话就是用" "
-cut -f 2 -d ; test2.txt
+cut  -d ; -f 2 test2.txt
 结果：
 Name
 tom
@@ -231,5 +231,112 @@ cat xiaozhan.txt | head      看前10行   或者直接用  head xiaozhan.txt
 cat xiaozhan.txt | tail      看后10行               tail xiaozhan.txt
 cat xiaozhan.txt | head -n 3  前3行                  head -n 3 xiaozhan.txt
 cat xiaozhan.txt | tail -n 3   后3行                 tail -n 3 xiaozhan.txt
+
+===========================================
+vi 多窗口编辑命令： vi -o file1 file2
+
+纵向显示多个文件，窗口间切快捷键：ctrl+w（需要按两次w）
+
+保存并退出全部窗口：wqa
+
+退出全部窗口：qa
+
+------------------------------------------------------------------
+vim -O file1 file2 横向显示  是大写的字母O
+
+窗口间切快捷键：ctrl+w（需要按两次w）
+
+保存并退出全部窗口：wqa
+
+退出全部窗口：qa
+------------------------------------------------------------------
+切换到root的身份的命令即为：su -root或是直接 su -
+通过命令exit或logout，或者是快捷键Cry+D即可返回原用户身份
+for example:
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ su -
+Password:
+root@PEK-QCAO1-D2:~# exit
+logout
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$
+------------------------------------------------------------------
+Linux下环境变量设置的三种方法：
+
+如想将一个路径加入到$PATH中，可以像下面这样做：
+
+1、控制台中设置，不赞成这种方式，因为他只对当前的shell 起作用，换一个shell设置就无效了：
+
+$PATH="$PATH":/NEW_PATH (关闭shell Path会还原为原来的path)
+
+2、修改 /etc/profile 文件，如果你的计算机仅仅作为开发使用时推存使用这种方法，
+因为所有用户的shell都有权使用这个环境变量，可能会给系统带来安全性问题。这里是针对所有的用户的，所有的shell
+
+在/etc/profile的最下面添加： export PATH="$PATH:/NEW_PATH"
+
+3、修改bashrc文件，这种方法更为安全，它可以把使用这些环境变量的权限控制到用户级别，
+这里是针对某一特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目录下的 .bashrc文件就可以了。
+---------------------------------------
+
+linux中如何设置能使一个脚本在任意目录下都可直接运行，不要非到这个脚本所在目录下运行？
+方法如下3种:    其实安装python或者tcl等后都是这么做的
+
+1.把这个脚本所在目录加入PATH环境变量中。for instance:
+PATH=$PATH:/etc/apache/bin
+使用这种方法,只对当前会话有效，也就是说每当登出或注销系统以后，PATH 设置就会失效
+for example:
+windriver@PEK-QCAO1-D2:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path
+windriver@PEK-QCAO1-D2:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cd pexpect-4.6.0/
+windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$
+
+2.vi /etc/profile
+for example
+在/etc/profile的最下面添加： PATH=$PATH:/home/windriver
+
+如果修改了/etc/profile，那么编辑结束后执行source profile 或 执行点命令 ./profile, PATH的值就会立即生效了
+实测如下：
+一个窗口修改/etc/profile，另外一个窗口：
+windriver@PEK-QCAO1-D2:~$ cd xiaozhan/
+windriver@PEK-QCAO1-D2:~/xiaozhan$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+3.vi ~/.bash_profile
+  it should be vi ~/.bashrc    if you are Ubuntu            ----I did not try this method
+
+修改PATH行,把/etc/apache/bin添加进去
+
+这种方法是针对用户起作用的
+
+注意：想改变PATH，必须重新登陆才能生效，以下方法可以简化工作：
+
+如果修改了/etc/profile，那么编辑结束后执行source profile 或 执行点命令 ./profile, PATH的值就会立即生效了。
+
+这个方法的原理就是再执行一次/etc/profile shell脚本，注意如果用sh /etc/profile是不行的，
+因为sh是在子shell进程中执行的，即使PATH改变了也不会反应到当前环境中，
+但是source是在当前 shell进程中执行的，所以我们能看到PATH的改变。
+
+方法二：
+软连接到/bin目录下
+
+2.编译生成可执行文件，my_cmd
+
+3.复制到/bin/目录下
+
+4.创建软连接：
+
+ln -s my_cmd mycmd1
+
+ln -s my_cmd mycmd2
+
+5.在任意目录中，输入my_cmd1，即可打印"hello,world!cmd1."。
+
+
 
 
