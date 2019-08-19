@@ -338,7 +338,6 @@ ln -s my_cmd mycmd2
 5.在任意目录中，输入my_cmd1，即可打印"hello,world!cmd1."。
 
 实测如下:
-windriver@PEK-QCAO1-D2:/bin$ cp /home/windriver/anyrun.sh .
 
 windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh .
 
