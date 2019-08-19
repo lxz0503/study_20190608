@@ -265,12 +265,12 @@ Linux下环境变量设置的三种方法：
 
 1、控制台中设置，不赞成这种方式，因为他只对当前的shell 起作用，换一个shell设置就无效了：
 
-$PATH="$PATH":/NEW_PATH (关闭shell Path会还原为原来的path)
+$PATH=$PATH:/NEW_PATH (关闭shell Path会还原为原来的path)
 
 2、修改 /etc/profile 文件，如果你的计算机仅仅作为开发使用时推存使用这种方法，
 因为所有用户的shell都有权使用这个环境变量，可能会给系统带来安全性问题。这里是针对所有的用户的，所有的shell
 
-在/etc/profile的最下面添加： export PATH="$PATH:/NEW_PATH"
+在/etc/profile的最下面添加： export PATH=$PATH:/NEW_PATH
 
 3、修改bashrc文件，这种方法更为安全，它可以把使用这些环境变量的权限控制到用户级别，
 这里是针对某一特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目录下的 .bashrc文件就可以了。
@@ -350,6 +350,73 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ anyrun
 + echo 'xiaozhan anywhere'
 xiaozhan anywhere
 windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+hostname ----
+If you are using CentOS, then you can edit this file to change the hostname:
+/etc/sysconfig/network
+For my environment:
+NETWORKING=yes
+NETWORKING_IPV6=yes
+HOSTNAME=pek-xli3-d2.wrs.com
+NISDOMAIN=swamp
+
+修改了hostname后，如何使其立即生效而不用重启操作系统:
+method 1: 使用echo  servername > /proc/sys/kernel/hostname
+method 2: sysctl kernel.hostname=servername
+method 3: hostname servername
+
+====================================================
+Linux系统在向DNS服务器发出域名解析请求之前会查询/etc/hosts文件.if it does not include the hostname,just add it
+For my environment:
+127.0.0.1   localhost
+127.0.0.1   PEK-QCAO1-D2
+128.224.160.17 pek-cc-vb01s
+128.224.166.46 pek-xli3-d2.wrs.com
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+================================================
+=======scp or rsync  without password========
+场景 A主机往B主机传文件
+原文链接：https://blog.csdn.net/u010670151/article/details/86649803
+
+1.A主机下执行 (I did not try this)
+
+ssh-keygen -t rsa
+默认回车跳过即可
+or ssh-keygen   (input 2 enter)
+
+note: root用户名字有的机器是wrsadmin
+这时会在 /root/.ssh/目录下产生两个文件，id_rsa，id_rsa.pub，注意 .ssh/文件为隐藏目录，直接进入即可?
+
+2.将A中生成的id_rsa.pub文件拷贝到B主机的root用户主目录下的.ssh目录下,并且改名为authorized_keys
+
+[xli3@pek-vx-system1 ~]$ ssh-copy-id -i ~/.ssh/id_rsa.pub wrsadmin@128.224.162.222
+or you can use scp -r
+
+for example:
+wrsadmin@pek-xsun1-d2:~$ cd .ssh/
+wrsadmin@pek-xsun1-d2:~/.ssh$ ll
+total 16
+drwx------  2 wrsadmin wrsadmin 4096 Aug 19 15:50 ./
+drwxr-xr-x 25 wrsadmin wrsadmin 4096 Aug 19 15:35 ../
+-rw-------  1 wrsadmin wrsadmin  400 Aug 19 15:50 authorized_keys  ----------this is the new key file,name is auto generated
+-rw-r--r--  1 wrsadmin wrsadmin 1554 Jul 11 12:22 known_hosts
+
+这时候用rsync或者scp 命令移动文件不需要输入密码
+
+实际测试如下，在我的环境，从pek-vx-system1往128.224.162.222上拷贝文件
+
+[xli3@pek-vx-system1 default]$ scp -r xlnx-zcu102-rev-1.1.dtb  wrsadmin@128.224.162.222:/tftpboot
+xlnx-zcu102-rev-1.1.dtb                                                                    100%   19KB  19.3KB/s   00:00
+
+[xli3@pek-vx-system1 default]$ rsync -r xlnx-zcu102-rev-1.1.dtb  wrsadmin@128.224.162.222:/tftpboot
+[xli3@pek-vx-system1 default]$
 
 
 
