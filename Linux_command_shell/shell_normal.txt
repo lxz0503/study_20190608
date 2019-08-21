@@ -417,6 +417,44 @@ xlnx-zcu102-rev-1.1.dtb                                                         
 
 [xli3@pek-vx-system1 default]$ rsync -r xlnx-zcu102-rev-1.1.dtb  wrsadmin@128.224.162.222:/tftpboot
 [xli3@pek-vx-system1 default]$
+=============================================================
+====rsync     without password
+https://www.cnblogs.com/felixzh/p/4950049.html
+
+=================================
+chown can modify the group and user
+
+windriver@PEK-QCAO1-D2:~/test_rsync$ ll a.txt
+-rw-rw-r-- 1 windriver windriver 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 windriver windriver 0 Aug 20 14:05 a.txt
+
+The first windriver is the user, and the second windriver is the user group.
+
+-----change the user-----
+chown可以更改权限用户
+实际测试如下:
+sudo chown windriver a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ sudo chown wrsadmin a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 wrsadmin windriver 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$
+
+chgrp可以更改权限组
+sudo chgrp wrsadmin a.txt
+实际测试如下:
+windriver@PEK-QCAO1-D2:~/test_rsync$ sudo chgrp wrsadmin a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 wrsadmin wrsadmin 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$
+
+
+
+
+
 
 
 
