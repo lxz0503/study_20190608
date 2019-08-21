@@ -10,7 +10,7 @@ from email.header import Header
 # 下面的发件人，收件人是用于邮件传输的。
 smtpserver = 'smtp.163.com'
 username = 'lxz_20081025@163.com'
-password = '######'
+password = 'lxzmm201143'
 sender = 'lxz_20081025@163.com'
 # receiver='XXX@126.com'
 # 收件人为多个收件人,放在列表里
@@ -26,7 +26,7 @@ subject = 'Python email test'
 msg = MIMEMultipart('mixed')
 msg['Subject'] = subject
 msg['From'] = 'lxz_20081025@163.com <lxz_20081025@163.com>'
-# 收件人为多个收件人,通过join将列表转换为以;为间隔的字符串
+# 收件人为多个收件人,通过join将列表转换为以;为间隔的字符串，或者直接用分号分隔所有收件人
 msg['To'] = ";".join(receiver)
 # msg['Date']='2012-3-16'
 
@@ -35,12 +35,11 @@ msg['To'] = ";".join(receiver)
 # text_plain = MIMEText(text, 'plain', 'utf-8')
 # msg.attach(text_plain)
 
-# 构造文字内容，尝试把html文件里面的内容作文邮件正文
-with open(r'send_email\test.html', 'r') as f:
+# 构造文字内容，尝试把html文件里面的内容作文邮件正文,不能和上面那段代码共存
+with open(r'send_email\ltaf_email.html', 'r') as f:
     mail_body = f.read()
-text = mail_body
-text_plain = MIMEText(text, 'plain', 'utf-8')
-msg.attach(text_plain)
+html_content = MIMEText(mail_body, 'html', 'utf-8')
+msg.attach(html_content)
 
 # 构造图片链接
 sendimagefile = open(r'send_email\err.jpg', 'rb').read()
