@@ -10,7 +10,7 @@ from email.header import Header
 # 下面的发件人，收件人是用于邮件传输的。
 smtpserver = 'smtp.163.com'
 username = 'lxz_20081025@163.com'
-password = 'lxzmm201143'
+password = '######'
 sender = 'lxz_20081025@163.com'
 # receiver='XXX@126.com'
 # 收件人为多个收件人,放在列表里
