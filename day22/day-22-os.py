@@ -9,6 +9,8 @@ print(os.path.join('root', 'test', 'runoob.txt'))    # 将目录和文件名合�
 print(os.path.isfile(path_test))    # True
 
 print(os.getcwd())     # D:\xiaozhan_git\study_20190608\day22
+print(os.path.dirname(os.path.realpath(__file__)))   # F:\xiaozhan_git\study_20190608\day22
+print(os.path.realpath(__file__))    # F:\xiaozhan_git\study_20190608\day22\day-22-os.py
 
 # os.chdir()   os.system()   os.popen().read()
 # os.mkdir()    os.remove()
@@ -34,3 +36,4 @@ print(os.getcwd())     # D:\xiaozhan_git\study_20190608\day22
 # os.path.isabs() 是否为绝对路径
 # os.path.isdir() 是否为目录
 # os.path.isfile() 是否为文件
+# os.path.dirname(os.path.realpath(__file__))
