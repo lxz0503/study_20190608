@@ -1,0 +1,202 @@
+3.	git clone http://xli3@vxgit.wrs.com/scm/vx7/vxworks.git
+
+git clone http://xli3@147.11.224.60/scm/vx7/vxworks.git
+
+note:147.11.224.60(vxgit.wrs.com)
+       Enter windows password---不提示就不用输入
+       
+    cd vxworks 
+	
+	if you want to change to a new branch, sometimes you need to git pull under main branch
+
+4.	git checkout vx7-release--------这表示要下载vx7-release，  这是主分支，真正测试还需要知道具体分支的名字，然后执行git checkout 分支名字：
+
+ git checkout fr43-crypto-fips-----it is for fips
+
+ git checkout vx7-ntp-upgrade-------for NTP upgrade
+
+[root@net-performance-srv vxworks]# git checkout vx7-netperf-exp==============SMP的分支
+Checking out files: 100% (2661/2661), done.
+Branch vx7-netperf-exp set up to track remote branch vx7-netperf-exp from origin.
+Switched to a new branch 'vx7-netperf-exp'-------还可以再切换回去，执行git checkout vx7-release
+
+5.	./setup-tools -site  pek====最后一步
+
+ ????
+git pull origin
+( git pull origin vx7 )
+
+   $ ./setup-tools -clean
+   $ ./setup-tools
+
+==============
+vi config---modify ssh xli3
+
+git add NETDRV_ENHANCE/test_case.conf
+
+git commit -m "Add netdrv enhancement feature test cases"
+
+git push
+
+查看分支:git branch -a  
+
+如果以后分支内容更新了，直接用git pull即可下载最新内容
+
+commit 5df8de8041a363557386ca9a46df6fb1ecf53be7
+
+========================================
+	
+	本地修改了许多文件，其中有些是新增的，因为开发需要这些都不要了，想要丢弃掉，可以使用如下命令：
+
+git checkout . #本地所有修改的。没有的提交的，都返回到原来的状态
+git stash #把所有没有提交的修改暂存到stash里面。可用git stash pop回复。
+git reset --hard HASH #返回到某个节点，不保留修改。
+git reset --soft HASH #返回到某个节点。保留修改
+
+git clean -df #返回到某个节点
+git clean 参数
+    -n 显示 将要 删除的 文件 和  目录
+    -f 删除 文件
+    -df 删除 文件 和 目录
+
+也可以使用：
+
+git checkout . && git clean -xdf
+
+rm -rf networking-anvl
+
+git rm -r networking-anvl  --------this can delete test case you do not need
+
+[xli3@test123 wassp_testcases]$ git rm -rf networking-anvl
+rm 'networking-anvl/ICMPV4/test_case.conf'
+[xli3@test123 wassp_testcases]$ git commit -m ""
+
+
+git push
+
+
+===================wassp_testcases
+cd /home/windriver/helix_iperf/vxworks7
+
+windriver@test123:~/helix_iperf/vxworks7$ git config -l
+user.email=haixiao.yan@windriver.com ------------------modify as xiaozhan.li@windriver.com
+user.name=Haixiao Yan
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=ssh://xli3@git.wrs.com/git/projects/wassp-repos/testcases/vxworks7
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+windriver@test123:~/helix_iperf/vxworks7$ git config --
+
+
+============================
+
+
+git reset --hard 5df8de8041a363557386ca9a46df6fb1ecf53be7
+
+
+git更新MEFA，如果遇到问题，可以删除本地目录，直接git pull
+
+Updating 1847d91..13728e9
+error: Untracked working tree file 'mefa_cases/features/TSR/test4.0.cfg' would be overwritten by merge.  Aborting
+windriver@Nightly-testServer08:~/workspace/vxworks_7/mefa_platform$ rm -rf ../mefa_cases/features/TSR
+
+=============================
+git rm -r --cached get_dir        在远端删除某个目录   
+git commit -m "remove dir"
+git push
+
+============================how to code commit with git
+backup my file
+
+cp helix/guests/vxworks-7/pkgs_v2/os/core/kernel/vxTest/src/posix/tmTimerStressTest.c /buildarea1/xli3/
+
+cp /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/tm1588EndIoctlTest.c  /buildarea1/xli3/
+
+cp /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/cdf/01vxTest_NET_END.cdf   /buildarea1/xli3/
+
+cp /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/Makefile             /buildarea1/xli3/
+
+-------------------------restore after you checkout a new branch
+cp /buildarea1/xli3/tmTimerStressTest.c  /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/os/core/kernel/vxTest/src/posix/
+
+cp -rf /buildarea1/xli3/tm1588EndIoctlTest.c  /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/
+
+cp -rf /buildarea1/xli3/01vxTest_NET_END.cdf  /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/cdf/
+
+cp /buildarea1/xli3/Makefile               /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/
+
+=================================
+git checkout -b vxtest_xiaozhan
+
+add your modified file, for example:
+
+git add helix/guests/vxworks-7/pkgs_v2/os/core/kernel/vxTest/src/posix/tmTimerStressTest.c
+git add helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/tm1588EndIoctlTest.c 
+git add helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/cdf/01vxTest_NET_END.cdf
+git add helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/Makefile
+
+git commit -m "VXWEXEC-6765:Test ioctl API in vxtest framework"
+
+git push --set-upstream origin vxtest_xiaozhan         
+
+( 
+   if there is error:      you just need to To delete a remote branch with below command:   and checkout again
+     git push origin --delete branch_name
+   
+   [xli3@pek-vx-nwk1 vxworks]$ git push --set-upstream origin vxtest_xiaozhan
+Password for 'http://xli3@vxgit.wrs.com':
+To http://vxgit.wrs.com/scm/vx7/vxworks.git
+ ! [rejected]                vxtest_xiaozhan -> vxtest_xiaozhan (non-fast-forward)
+error: failed to push some refs to 'http://xli3@vxgit.wrs.com/scm/vx7/vxworks.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[xli3@pek-vx-nwk1 vxworks]$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> vxtest_xiaozhan
+
+
+
+)
+
+--creat a new code review
+/folk/bcao/ccollab-client/ccollab  addgitdiffs new HEAD~1 HEAD              (reiview id 64123) 
+
+http://codereview.wrs.com                          (please use your windows password)
+
+
+---if there are comments, after you modify the comments, then review it again  e946af6148766e13673fa723f6c83007bc42ad4d
+
+/folk/bcao/ccollab-client/ccollab addgitdiffs 64123 HEAD~1 HEAD    (after comments, run this to resubmit)
+
+
+---------------coverity---
+
+http://ctu-coverity-prod.wrs.com:8080/job/vx7_feature/
+
+buildvsb_vsbAllLayerbsp-itl_generic-llvm-VXTEST_BUILD-PROFILE_DEVELOPMENT-y-PD    (based of your bsp, this is for IA, for zcu 102,xlnx_zynqmp)
+
+
+---------------  CI =====
+
+after the code review is done and coverity is done without warning
+
+
+http://vxjenkins.wrs.com:8080/job/vx7_CI_launcher/build?delay=0sec
+
+
+curl -F testfile=@test_case.conf http://pek-lpgtest3.wrs.com/ltaf/upload_test.php
+
+
