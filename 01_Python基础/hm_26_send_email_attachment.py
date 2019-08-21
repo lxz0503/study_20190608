@@ -10,7 +10,7 @@ from email.header import Header
 # 下面的发件人，收件人是用于邮件传输的。
 smtpserver = 'smtp.163.com'
 username = 'lxz_20081025@163.com'
-password = '######'
+password = 'lxzmm201143'
 sender = 'lxz_20081025@163.com'
 # receiver='XXX@126.com'
 # 收件人为多个收件人,放在列表里
@@ -31,7 +31,14 @@ msg['To'] = ";".join(receiver)
 # msg['Date']='2012-3-16'
 
 # 构造文字内容
-text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.baidu.com"
+# text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.baidu.com"
+# text_plain = MIMEText(text, 'plain', 'utf-8')
+# msg.attach(text_plain)
+
+# 构造文字内容，尝试把html文件里面的内容作文邮件正文
+with open(r'send_email\test.html', 'r') as f:
+    mail_body = f.read()
+text = mail_body
 text_plain = MIMEText(text, 'plain', 'utf-8')
 msg.attach(text_plain)
 
