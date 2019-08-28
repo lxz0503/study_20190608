@@ -29,7 +29,7 @@ def run_cmd(command):
                            shell=True,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
-    output = ret.stdout.read() + ret.stdout.read()
+    output = ret.stdout.read() + ret.stderr.read()
     return str(output, encoding='GBK')    # 家里win7系统执行结果
 
 
