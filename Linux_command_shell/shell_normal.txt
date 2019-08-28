@@ -5,8 +5,8 @@ shell echo打印换行的方法
 Hello world.
 Hello sea
 
-grep -n xiaozhan.txt
-grep bash$    查找以bash为结尾的行
+grep -n 'beijing' xiaozhan.txt   输出所在行号
+grep bash$ xiaozhan.txt    查找以bash为结尾的行
 
 vi +20 xiaozhan.txt  可以直接跳转到所在行
 
