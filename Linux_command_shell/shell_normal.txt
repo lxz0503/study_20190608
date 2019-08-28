@@ -389,7 +389,7 @@ ff02::2 ip6-allrouters
 
 ssh-keygen -t rsa
 默认回车跳过即可
-or ssh-keygen   (input 2 enter)
+or ssh-keygen   (input 2 enter)  on this server: pek-vx-system1
 
 note: root用户名字有的机器是wrsadmin
 这时会在 /root/.ssh/目录下产生两个文件，id_rsa，id_rsa.pub，注意 .ssh/文件为隐藏目录，直接进入即可?
