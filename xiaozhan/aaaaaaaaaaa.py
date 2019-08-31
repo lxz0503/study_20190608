@@ -194,18 +194,6 @@ tu = ("alex",
 print(type(tu))
 tu[1][2]["k2"].append("address")
 print(tu[1][2]["k2"])
-# 找到数组中两个数之和等于目标值对应的元素，放到集合中
-def two_sum(numbers, target):
-    l = []
-    for i in range(len(numbers) - 1):  # 循环到倒数第二位
-        for j in range(i + 1,len(numbers)): # 从i往后开始循环
-            if (numbers[i] + numbers[j]) == target:
-                l.append((numbers[i], numbers[j]))
-    return l
-
-# ret = two_sum([2,7,11,15],18)
-# print(type(ret))
-print(two_sum([1,2,3,4], 5))
 
 # lambda
 # x 是形参，冒号后面是函数体
