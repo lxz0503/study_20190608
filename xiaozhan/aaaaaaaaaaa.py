@@ -19,18 +19,6 @@ if m is not None:
     print(m.group().upper())
     print(m.group().lower())
 
-
-config = ' -add '.join(['_WRS_CONFIG_COMPONENT_IPDHCPS=y',
-                            '_WRS_CONFIG_COMPONENT_IPIKE=y',
-                            '_WRS_CONFIG_COMPONENT_IPIPSEC=y',
-                            '_WRS_CONFIG_COMPONENT_IPMCP=y',
-                            '_WRS_CONFIG_COMPONENT_IPRIP=y',
-                            '_WRS_CONFIG_COMPONENT_IPFIREWALL=y',
-                            '_WRS_CONFIG_COMPONENT_FEATURE_IPNET_INET6=y'])
-print(config)
-
-if "IPIKE" in config:
-    print("true")
 # 下面的字符串格式化，{}是占位符，格式化就是将占位符里面的内容替换为其他内容
 #test = "I am {name},age {a}"
 #v = test.format(name="alex", a=19)
