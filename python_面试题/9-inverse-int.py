@@ -34,3 +34,5 @@ print(res)                           # -321
 res = int('-1230')
 res = int('-0123')      # -123,int函数会自动去掉前面的0
 print(res)
+for x in range(11):
+    print(x)
