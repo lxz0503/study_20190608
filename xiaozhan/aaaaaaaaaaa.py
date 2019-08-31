@@ -70,14 +70,6 @@ for item in v:
     print(item,end="#")
 print()
 
-#如果列表里既有数字又有字符串，只能通过for循环来操作，转换成字符串
-#如果只有字符串，就直接用"".join(列表名字)转换成字符串
-s = ""
-l = [1,23,"sss"]
-for i in l:
-    s = s + str(i)
-print(s)
-
 # v = l.clear()
 # print(l)
 

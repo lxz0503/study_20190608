@@ -198,5 +198,10 @@ http://vxjenkins.wrs.com:8080/job/vx7_CI_launcher/build?delay=0sec
 
 
 curl -F testfile=@test_case.conf http://pek-lpgtest3.wrs.com/ltaf/upload_test.php
+# find the latest commit
+head -n 后面跟数字  可以设置显示多少行，如果不设置，head默认显示10行
+git log -1 HEAD | grep commit | head -n 1
+cmd = 'cd %s && git log -1 HEAD | grep "commit" | head -n 1' % gitDir
+
 
 
