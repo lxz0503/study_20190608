@@ -7,8 +7,6 @@ logging.basicConfig(filename="test.log",
                     format="%(asctime)s %(filename)s: [line:%(lineno)d] %(levelname)s: %(message)s",  # 这个filename是脚本名字
                     datefmt="%Y-%m-%d %H:%M:%S",
                     level=logging.DEBUG)
-
-
 class UrlGet(unittest.TestCase):
     def setUp(self):
         self.r = requests.get('https://www.baidu.com/?tn=sitehao123_15')
@@ -34,7 +32,7 @@ class UrlGet(unittest.TestCase):
         result = self.r
         # print(result.text)
         logging.info('response start')
-        self.assertIn('baidu', result.text, 'baidu is not in the text')
+        self.assertTrue('baidu' in result.text)
         logging.info('response end')
 
 
