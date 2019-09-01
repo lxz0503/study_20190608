@@ -8,7 +8,7 @@ class JenkinsGet(unittest.TestCase):
 
 	def test_get_all_job_names(self):
 		result = self.r.text
-		json_result = json.loads(result)
+		json_result = json.loads(result)    # 浏览器获取的是json格式内容，通过loads转化为字典格式
 		print json_result
 		self.assertEqual(json_result['jobs'][0]['name'], 'appium_calc')
 		self.assertEqual(json_result['jobs'][-1]['name'], 'wordpress_test_pyunit')
