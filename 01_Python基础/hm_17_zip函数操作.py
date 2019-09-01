@@ -11,5 +11,12 @@ c = [4, 5, 6, 7, 8]
 zipped = zip(a, b)     # 打包为元组的列表
 print("after zip and list", list(zipped))    # [(1, 'xiaozhan'), (2, 'beijing'), (3, 'shanghai')]
 # 元素个数与最短的列表一致
-l = [(1,2), (3,4), (5,6)]
+l = [(1, 2), (3, 4), (5, 6)]
 print(max(l))
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = [7, 8, 9]
+d = [10, 11, 12]
+zipped = zip(a, b, c, d)
+print(list(zipped))      # [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]
