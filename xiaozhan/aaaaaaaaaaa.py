@@ -195,39 +195,8 @@ print(type(tu))
 tu[1][2]["k2"].append("address")
 print(tu[1][2]["k2"])
 
-# lambda
-# x 是形参，冒号后面是函数体
-func = lambda x: x+1
-print(func(10))
-
-name = "aaaa"
-func = lambda x: x + "_sb"
-res = func(name)
-print("lambda result is", res)
-
-func = lambda x, y, z: (x+1, y+1, z+1)
-res = func(1, 2, 3)   # return is tuple
-print("the result is", res)
-print(type(res))
-
 #
 print(abs(-2))
-
-# 三元表达式与列表解析
-# 三元就是三个运算符
-# 变量 = 值-if条件-else 值二
-l = []
-for i in range(10):
-    l.append("egg%s" % i)
-print(l)
-
-l = ["egg%s" % i for i in range(10)]
-print(l)
-# 三元表达式,生成列表
-# 主体是for循环，二元是"egg%s" % i,3元是判断
-# 其实就是把几行的内容精简一下，写到一行
-l = ["egg%s" % i for i in range(10) if i > 5]
-print(l)
 
 # 如果列表内容特别大，就用生成器表达式，把[]替换为()即可,这样不会真用很大内存
 
@@ -451,14 +420,6 @@ ret = func(10)    #
 print(ret)     # 210
 
 #字节，什么编码方式的字节？
-
-#
-a = [1,2,3]
-b = [4,5,6]
-c = [7,8,9]
-d = [10,11,12]
-zipped = zip(a,b,c,d)
-print(list(zipped))
 
 #  global and local
 name1 = "root"    # 这是一个全局变量
