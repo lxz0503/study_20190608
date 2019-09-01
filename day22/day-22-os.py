@@ -10,6 +10,7 @@ print(os.path.isfile(path_test))    # True
 
 print(os.getcwd())     # D:\xiaozhan_git\study_20190608\day22
 print(os.path.dirname(os.path.realpath(__file__)))   # F:\xiaozhan_git\study_20190608\day22
+print(os.path.dirname(os.path.abspath(__file__)))   # F:\xiaozhan_git\study_20190608\day22
 print(os.path.realpath(__file__))    # F:\xiaozhan_git\study_20190608\day22\day-22-os.py
 
 # os.chdir()   os.system()   os.popen().read()

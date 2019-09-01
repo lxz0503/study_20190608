@@ -99,4 +99,7 @@ print(str + "TEST")  # 输出连接的字符串
 #
 # 将一个整数转换为一个八进制字符串
 
+a = bytes('hello', 'utf-8')    # 将字符串转换为字节序列,按照指定的编码格式
+print(a)                       # b'hello'
+
 
