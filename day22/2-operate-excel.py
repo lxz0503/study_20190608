@@ -27,7 +27,7 @@ class OperationExcel(object):
     def get_cell_value(self, row, col):
         return self.data.cell_value(row, col)
 
-    # 写入数据
+    # 写入数据,实际是修改excel表格
     def write_value(self, row, col, value):
         '''
         写入excel数据
@@ -62,7 +62,7 @@ class OperationExcel(object):
 
     # 获取某一列的内容
     def get_cols_data(self, col_id=None):
-        if col_id != None:
+        if col_id:
             cols = self.data.col_values(col_id)
         else:
             cols = self.data.col_values(0)
