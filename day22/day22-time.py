@@ -4,7 +4,9 @@ import time
 import calendar
 
 # time format: 2019-07-18 20:52:49
-print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+# print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+print(cur_time)
 
 # Thu Jul 18 20:56:29 2019,
 print(time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()))

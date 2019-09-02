@@ -1,7 +1,7 @@
-2019-09-01 22:54:24 connectionpool.py: [line:813] DEBUG: Starting new HTTPS connection (1): www.baidu.com:443
-2019-09-01 22:54:24 connectionpool.py: [line:393] DEBUG: https://www.baidu.com:443 "GET /?tn=sitehao123_15 HTTP/1.1" 200 None
-2019-09-01 22:54:24 1-unittest-assert-1.py: [line:34] INFO: response start
-2019-09-01 22:54:24 1-unittest-assert-1.py: [line:36] INFO: response end
-2019-09-01 22:54:24 connectionpool.py: [line:813] DEBUG: Starting new HTTPS connection (1): www.baidu.com:443
-2019-09-01 22:54:24 connectionpool.py: [line:393] DEBUG: https://www.baidu.com:443 "GET /?tn=sitehao123_15 HTTP/1.1" 200 None
-2019-09-01 22:54:24 1-unittest-assert-1.py: [line:17] INFO: start
+2019-09-02 11:27:15 connectionpool.py: [line:813] DEBUG: Starting new HTTPS connection (1): www.baidu.com:443
+2019-09-02 11:27:17 connectionpool.py: [line:393] DEBUG: https://www.baidu.com:443 "GET /?tn=sitehao123_15 HTTP/1.1" 200 None
+2019-09-02 11:27:17 1-unittest-assert-1.py: [line:34] INFO: response start
+2019-09-02 11:27:17 1-unittest-assert-1.py: [line:36] INFO: response end
+2019-09-02 11:27:17 connectionpool.py: [line:813] DEBUG: Starting new HTTPS connection (1): www.baidu.com:443
+2019-09-02 11:27:19 connectionpool.py: [line:393] DEBUG: https://www.baidu.com:443 "GET /?tn=sitehao123_15 HTTP/1.1" 200 None
+2019-09-02 11:27:19 1-unittest-assert-1.py: [line:17] INFO: start
