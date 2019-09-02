@@ -1,0 +1,20 @@
+
+Feature: Go to baidu                                   # \features\baidu.feature:1
+
+  Scenario: search selenium                            # \features\baidu.feature:3
+    Given I go to "https://www.baidu.com/"             # d:\python27\lib\site-packages\lettuce_webdriver\webdriver.py:76
+    Given I go to "https://www.baidu.com/"             # d:\python27\lib\site-packages\lettuce_webdriver\webdriver.py:76
+    When I fill in field with id "kw" with "selenium"  # \step_definitions\steps.py:21
+    When I fill in field with id "kw" with "selenium"  # \step_definitions\steps.py:21
+    And  I click id "su" with baidu once               # \step_definitions\steps.py:30
+    And  I click id "su" with baidu once               # \step_definitions\steps.py:30
+    Then I should see "seleniumhq.org" within 2 second # d:\python27\lib\site-packages\lettuce_webdriver\webdriver.py:152
+    Then I should see "seleniumhq.org" within 2 second # d:\python27\lib\site-packages\lettuce_webdriver\webdriver.py:152
+    Then I close browser                               # \step_definitions\steps.py:38
+    Then I close browser                               # \step_definitions\steps.py:38
+
+1 feature (1 passed)
+1 scenario (1 passed)
+5 steps (5 passed)
+d:\python27\lib\site-packages\fuzzywuzzy\fuzz.py:11: UserWarning: Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning
+  warnings.warn('Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning')

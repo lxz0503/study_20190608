@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+uname=maizi_test@139.com pwd=aaaa123
+=======
+uname=maizi_test@139.com;pwd=abc123456
+uname=maizi_test@139.com;pwd=abc12345611
+uname=123;pwd=123
+uname= ;pwd=123
+uname=1@163.com;pwd= 
+>>>>>>> 4fc948b851e507ed66ee191ea35dba9b8cee742b
