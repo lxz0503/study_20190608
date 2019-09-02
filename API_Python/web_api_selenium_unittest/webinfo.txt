@@ -1,0 +1,16 @@
+url=http://www.maiziedu.com/
+<<<<<<< HEAD
+text_id='lll'
+user_id=id_account_1
+pwd_id=id_password_1
+login_id=login_btn
+error_id='account error'�
+=======
+text_id=登录
+userid=id_account_l
+pwdid=id_password_l
+loginid=login_btn
+errorid=login-form-tips
+usermenu=dt-username
+logout=注销
+>>>>>>> 4fc948b851e507ed66ee191ea35dba9b8cee742b

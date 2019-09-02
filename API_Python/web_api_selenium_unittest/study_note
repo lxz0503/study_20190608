@@ -1,0 +1,243 @@
+# 如果用自己默认安装的Python3，就用pip安装selenium,并且pycharm的python解释器要设置为python安装目录,即F:\Python\python.exe#
+# 如果用anconda,就要进入到dos下面，C盘即可，上来就敲conda，看是否识别，如果不识别，添加环境变量即可 #
+# conda list, conda install selenium， conda upgrade --all #
+# 进入到anaconda的prompt，在开始菜单，这里就是anaconda对应的python版本，可以sys.path查看环境变量 #
+# 简单理解为anaconda就是另外一套python安装环境 #
+# sys.path.append('/Users/michael/my_py_scripts') #
+# webdriver的API与定位元素 #
+# firefox #
+## 打开http://www.baidu.com ##
+## 右键点击 新闻，然后 点击 查看元素，然后在下面的高亮蓝色行，右键 复制， css选择器，拷贝下这串字母 ##
+## 上面的操作就是 find_element_by_css_selector ##
+# 使用CSS来定位可以使用input 后面选择id,class,type,value任一个元素即可 #
+## find_element_by_css_selector('input[id=\'ww\']') ##
+##  find_element_by_css_selector('input[type=\'button\']') ##
+# 如果是图片可以使用find_element_by_css_selector('img[alt=\'button\']')
+
+#  使用xpath定位元素--推荐使用xpath #
+# 文本定位，一般对应着元素a，find_element_by_xpath('//a[text()="新闻"]') #
+# 单引号里面可以包含双引号 #
+# 斜杠 / slash， dash - 破折号#
+# 反斜杠 \ backslash #
+# 下划线  _ underline #
+# 冒号 ： colon  ['kəʊlən] #
+# 分号 ;  semicolon #
+# 一对单引号 a pair of single quotes, 一对双引号a pair of double quotes #
+# 括号,小括号 bracket（）, square bracket 中括号【】，a pair of curly braces 花括号 {} #
+# indent--动词 缩进, indentation should be four white spaces #
+# 打开本地html文件路径格式 file:///D:/Pycharm/test_xiaozhan/test.html #
+# 通过命令行来执行某个case,进入到脚本所在目录，  python -m unittest web_driver_api.WebTest.test_visitURL #
+# 鼠标事件 #
+# context_click----鼠标右击事件 #
+# double_click 鼠标双击事件 #
+# drag_and_drop 拖动鼠标 #
+# move_to_element（ele).perform() 鼠标悬停在某个元素上#
+# click_and_hold 按下鼠标左键在一个元素上 #
+# 键盘事件 send_keys() #
+# from selenium.webdriver.common.keys import Keys #
+# send_keys(Keys.BACK_SPACE) 退格键 #
+# send_keys(Keys.CONTROL, 'a') --全选拷贝 #
+# send_keys(Keys.CONTROL, 'x')---剪切 #
+# send_keys(Keys.CONTROL, 'v') ---粘贴 #
+
+# 对话框处理与登录，自己写登录邮箱的代码 #
+# 多窗口切换，打开百度首页，搜索麦子学院，跳转到麦子许愿首页，也就是窗口句柄切换 #
+# d.window_handles 返回的是一个列表 #
+# d.switch_to_window(d.window_handles[1])#
+
+# 脚本等待方法 #
+# time.sleep(5),  driver.implicitly_wait(5), #
+# from selenium.webdriver.support.ui import WebDriverWait #
+
+# class WebDriverWait(builtins.object)
+ |  Methods defined here:
+ |  
+ |  __init__(self, driver, timeout, poll_frequency=0.5, ignored_exceptions=None)#
+# WebDriverWait: poll_frequency->check->until->method return not false #
+# until not--return value is False #
+
+# 处理alert对护框 #
+# switch_to_alert(),切到alert.#
+# accept,dismiss--消失, send_keys()--有输入框才能使用，否则报错 #
+
+# 模块化设计用例： openBrowser, loadUrl, findElement, sendVals, checkResults #
+# a = dict(one=1, two=2, three=3) #
+# b = {'one': 1, 'two': 2, 'three': 3} #
+# c = dict(zip(['one', 'two', 'three'], [1, 2, 3])) #
+# d = dict([('two', 2), ('one', 1), ('three', 3)]) , 列表的元素必须是元祖 #
+# e = dict({'three': 3, 'one': 1, 'two': 2}) #
+# a == b == c == d == e #
+# True #
+# find_elements....pop(0).click() #
+
+# 单元测试框架unittest,如果测试用例放在多个子目录，需要在每个子目录下创建一个空的__init__.py，表示这是标准python包 #
+# 用unittest 跑多个case，可以用discover方法来找到所有的case #
+# 如果想跳过某个case，可以在case前面加一个装饰器，即decorator, @unittest.skip() #
+
+# generator 生成器 #
+# g = (x * x for x in range(10)),g就是一个生成器 #
+# g = [x * x for x in range(10)]， g是一个列表 #
+# list、tuple、dict、set、str，generator 这些可以直接作用于for循环的对象统称为可迭代对象：Iterable #
+
+# 迭代器 #
+
+# 把list、dict、str等Iterable变成Iterator可以使用iter()函数，然后就可以用next（）方法 #
+# isinstance('abc', Iterable),判断str是否可迭代 #
+# isinstance([1,2,3], Iterable)，判断list是否可迭代 #
+# 如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身 #
+# for i, value in enumerate(['A', 'B', 'C']): #
+#      print(i, value) #
+
+# 字典的迭代 #
+# 默认情况下，dict迭代的是key。如果要迭代value，可以用for value in d.values()，如果要同时迭代key和value，可以用for k, v in d.items() #
+
+# 切片 #
+
+# 对这种经常取指定索引范围的操作，用循环十分繁琐，因此，Python提供了切片（Slice）操作符 #
+# L[0:3]表示，从索引0开始取，直到索引3为止，但不包括索引3。即索引0，1，2，正好是3个元素 #
+# Python支持L[-1]取倒数第一个元素，那么它同样支持倒数切片 #
+# 前10个数 L[:10],后10个数 L[-10:] #
+
+# 函数调用 #
+# 实际上pass可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个pass，让代码能运行起来 #
+# 函数可以同时返回多个值，但其实就是一个tuple #
+# 必选参数外，还可以使用默认参数、可变参数和关键字参数 #
+# 一是必选参数在前，默认参数在后 #
+# def enroll(name, gender, age=6, city='Beijing')，默认参数要用key=value的使用 #
+# 我们把函数的参数改为可变参数， def calc(*numbers): 可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个*号 #
+# nums = [1, 2, 3]， calc(*nums)，*nums表示把nums这个list的所有元素作为可变参数传进去。这种写法相当有用，而且很常见 #
+# 可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple #
+# 关键字参数 #
+# **extra表示把extra这个dict的所有key-value用关键字参数传入到函数的**kw参数，kw将获得一个dict #
+# 注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra #
+# def real_ssh_test(*cmd, **ssh_config)，必须可变参数在前，关键字参数在后 #
+# 调用 real_ssh_test(*cmd, **ssh_config),可以知道cmd是一个列表，ssh_config是一个字典 #
+
+# map函数用法 #
+# map()函数接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回 #
+# list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))，把这个list所有数字转为字符串 #
+
+# 关于不可变对象和可变对象 #
+# 可变对象有列表和字典，不可变对象有数字，字符串，元组 #
+# 简单来说，可变对象分配的是不同的内存地址，如果改变不可变对象，相当于新分配一块内存 #
+# 先说明一点is 就是判断两个对象的id是否相同， 而 == 判断的则是内容是否相同 #
+# 为什么要设计str、None这样的不变对象呢？因为不变对象一旦创建，对象内部的数据就不能修改，这样就减少了由于修改数据导致的错误。#
+# 此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。#
+# 我们在编写程序时，如果可以设计一个不变对象，那就尽量设计成不变对象 #
+
+# 外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。 #
+# 类似_xxx和__xxx这样的函数或变量就是非公开的（private），不应该被直接引用，比如_abc，__abc #
+
+# 如果要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list #
+# class SSHTiS(SSH): #
+#    def __init__(self, hostName, user, keyFile): #
+        # self.keyFile = keyFile #
+       # self.natServer = '128.224.179.25' #
+       # super(SSHTiS, self).__init__(hostName, user) 继承父类的两个属性hostName 和user #
+
+# 类名使用驼峰(CamelCase)命名风格，首字母大写，私有类可用一个下划线开头,class AnimalFarm(Farm): #
+# 函数名一律小写，如有多个单词，用下划线隔开 def run_with_env() #
+# 变量名尽量小写, 如有多个单词，用下划线隔开 #
+# 常量采用全大写，如有多个单词，使用下划线隔开 MAX_CLIENT = 100 #
+# 模块尽量使用小写命名，首字母保持小写，尽量不要用下划线(除非多个单词，且数量不多的情况) #
+# 导入模块，尽量用绝对路径 from foo.bar import Bar #
+# 不推荐的写法 from ..bar import Bar #
+
+# 异常处理 #
+
+# Python所有的错误都是从BaseException类派生的，常见的错误类型和继承关系看这里 https://docs.python.org/3/library/exceptions.html#exception-hierarchy #
+# 如果不知道具体异常是啥，就用下面这种方式 #
+# except Exception as e: #
+#        print('Error:', e) 或者 logging.exception(e)#
+# Python内置的logging模块可以非常容易地记录错误信息#
+
+# 调用栈 #
+
+# 如果错误没有被捕获，它就会一直往上抛，最后被Python解释器捕获，打印一个错误信息，然后程序退出 #
+# 解读错误信息是定位错误的关键。我们从上往下可以看到整个错误的调用函数链 #
+
+# 调试程序 #
+
+# 第一种方法简单直接粗暴有效，就是用print()把可能有问题的变量打印出来看看 #
+# 第二种 凡是用print()来辅助查看的地方，都可以用断言（assert）来替代 #
+# assert n != 0, 'n is zero!' ，assert的意思是，表达式n != 0应该是True #
+# 如果断言失败，assert语句本身就会抛出AssertionError，即AssertionError: n is zero! #
+# python -O err.py 可以关闭assert，当成pass #
+# 第三种 把print()替换为logging，和assert比，logging不会抛出错误，而且可以输出到文件 #
+
+# assertTrue(expr,msg=None)， assertTrue('a' in 'abc','a is not in abc') #
+
+# PageObject设计模式,在selenium自动化测试中的运用 #
+# 1. Web自动化测试框架（WebTestFramework）是基于Selenium框架且采用PageObject设计模式进行二次开发形成的框架。 #
+# 2. web测试时,建议强烈推荐使用_谷歌或_火狐浏览器。#
+# 3. PageObject设计模式：是将某个页面的所有"元素（包含控件）属性"及"元素操作"封装在1个类(Class)里面 #
+# 4. 目的: 测试代码与被测页面对象代码分离，后期如果有页面元素发生了更改,只需要修改相应页面对象的代码(即对应Class文件),而不需要修改测试代码 #
+# 5. 尽量采用xpath方式来寻找页面元素,而不建议使用name,Link等方法; xpath是基于页面元素所处区域,一般不会发生变化,测试代码基本不受干扰. #
+# 6. 将页面元素属性信息与代码分离，即与被测对象代码分离，目的也是为了进一步降低后续因页面变化带来的维护成本 #
+
+# python2.7.14  and python3.6.5 coexist on windows #
+# first, install python3, set env path like D:\Python;D:\Python\Scripts; #
+# install python2,set env path like D:\Python27;D:\Python27\Scripts; #
+# 修改python27安装目录下的Python.exe和pythonw.exe名字为 python2.exe和pythonw2.exe #
+# 修改python3安装目录下的Python.exe和pythonw.exe名字为 python3.exe和pythonw3.exe #
+
+# 接下来 让pip能共存#
+# 在dos里面执行 python3 -m pip install --upgrade pip --force -reinstall #
+# 在dos里面执行 python2 -m pip install --upgrade pip --force -reinstall #
+# 查询是否成功 pip2 -V, pip3 -V #
+# 以后需要安装第三方包，命令如下 pip2 install lettuce ,pip3 install lettuce #
+
+# Python框架下的 BDD 只能用在python2.7版本，  但是据说在Python3.5中 可以用BDD #
+
+# pip2 install lettuce,pip2 install lettuce_webdriver, pip2 install nose #
+# 没有修改Pycharm的python解释器为Python3，能执行成功， 如果修改为python2.exe也能执行成功 #
+# 总之目前家里的环境安装了python2和python3,然后能运行 lettuce 测试 #
+# 用命令行方式运行保存log，lettuce >> log.txt 2>&1 #
+
+# 表单元素的定位，表单创建的断言，处理富文本框，表格元素的定位 #
+# find_element_by_css_selector('.row-title').text,如果有多个row-title，找到第一个就不再往下进行 #
+#python 变量命名，用小写字母，在 = 两侧分别有一个空格
+#如果需要多个单词，单词之间用下划线来分割，例如  first_price = 10
+#python中代码的缩进，建议使用四个空格
+#ctrl + /，把光标放在所在行，可以注释，再按一次可以取消注释
+#按下tab，注释可以后移，按住shift+tab,注释可以向左回退
+#增加代码阅读性，对多个条件的拆分换行，例如 if (a ==1 ) or (b == 2) or (c == 3): 修改为
+#if ((a ==1 )
+    or (b == 2)
+    or (c == 3)):
+#在使用continue之前，要确认循环计数是否修改，否则就是死循环
+#print函数默认会换行，但是用print("aaa", end=""),就会用end后面的字符串替换换行
+#print("")，表示输出一个换行
+#再用#注释的时候，#后面要有一个空格
+#pycharm调试中F8表示会把当前行当做一行代码执行，如果当前行是函数调用，按F7会进入函数
+#函数注释，在函数定义下方用一对三引号，在调用处按ctrl+Q可以查看注释
+#元祖的应用场景，一个函数可以接收多个参数，或者一次返回多个数据，都是元祖
+#格式化字符串后面的（），本质上就是一个元祖
+#元祖和列表之间的转换，list(元祖)，tuple(列表)
+#字典使用，字典.keys()--所有key列表， 字典.values()---所有value元素列表, 字典.items()---所有(key,value)元祖列表
+#字典的实际应用场景是，将多个字典放在一个列表中，再进行遍历
+#zip可以配对两个序列，zip()
+#统计一个列表中元素出现的次数,用liebiao.count("元素"),
+#统计字符串中子字符串出现的次数，用zifuchuan.count("子字符串")
+#字符串.isdecimal()一般用来判断数字
+#string.startswith("aaa"), string.endswith("aaa")
+#string.rjust(10, " ")，宽度10，右对齐，用空格补齐.string.ljust(10, " ")
+#字符串拆分和连接
+#string.partition(str)，切片操作只针对字符串和列表
+#列表.append("元素")，列表.extend([1,2]),列表1 + 列表2=列表3
+#在pycharm中如果想修改一个变量的名字，就选中它，然后右键-refactor-Rename-Rename Code Occurrences,
+#修改完，然后按下enter即可
+#pycharm技巧，如果一个字符串太长，按下enter，pycharm会自动换行成两个字符串
+#action_str = input("请选择要执行的操作 "
+                       "[1] 修改 [2] 删除 [0] 返回上级菜单")
+#检查一个字符串，列表，字典是否为空，是否有内容，可以用len函数，如果为0，则没内容
+#在pycharm中如何给函数增加注释，选中函数，左键单击，选中小灯泡图标，然后选择第二项stub
+#用 TODO注释来表示代码中未完成的部分
+#如果函数返回类型是元组，即返回多个值，就用多个变量来接收函数返回值,a,b=fun()
+#列表的sort方法可以默认按照升序排序，带参数(reverse = True)就按照降序
+#使用缺省参数，必须保证此参数在参数列表末尾
+def demo(name,title,gender=True)
+#选中代码，按tab会自动缩进， 按tab+shit会取消缩进
+
+python -m unittest web_driver_api.WebTest
+
