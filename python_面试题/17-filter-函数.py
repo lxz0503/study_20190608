@@ -11,3 +11,10 @@ def is_odd(n):
 tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 newlist = list(tmplist)
 print(newlist)              # [1, 3, 5, 7, 9]
+
+
+# 使用filter，lambda,用于去除列表中所有某个特定的元素
+nums = [0, 1, 2, 2, 3, 0, 4, 2]
+f = filter(lambda n: n != 2, nums)
+L = list(f)
+print(L)
