@@ -16,4 +16,5 @@ def removeDuplicates(nums):
 
 nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 res = removeDuplicates(nums)
+print(nums)     # [0, 1, 2, 3, 4]
 print(res)
