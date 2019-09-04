@@ -30,3 +30,9 @@ x = 1
 y = 1
 num1 = eval("x+y")
 print(num1)
+
+#  如果字符串是数字，将它转为数字类型，用eval
+test_str = '-1234588888.8888888899999999999999999999999999'
+out = eval(test_str)
+print(type(out))      # <class 'int'>
+print(out)

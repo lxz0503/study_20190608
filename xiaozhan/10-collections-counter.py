@@ -43,4 +43,4 @@ print(duplicate)
 #
 for key, count in c.items():    # c.items()是可迭代对象，c不行
     if count > 1:
-        print(f"{key}:{count}")
+        print(f"duplicated element {key} occurs {count} times")
