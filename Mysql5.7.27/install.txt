@@ -80,6 +80,14 @@ REVOKE SELECT ON mysql.* FROM 'sam'@'%';
 # SHOW INDEX FROM 数据表:
 显示数据表的详细索引信息，包括PRIMARY KEY（主键）
 
+登录数据库,以管理员身份运行cmd,进入到C:\mysql-5.7.27-winx64\bin
+mysql -u root -p
+输入密码  123win
+show databases;
+use test_result;
+show tables;
+select * from ia_result;
+
 
 
 
