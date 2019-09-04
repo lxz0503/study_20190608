@@ -45,7 +45,7 @@ nums = [0, 1, 2, 2, 3, 0, 4, 2]
 d = {}
 d = d.fromkeys(nums)     # 设置了字典的键
 l = list(d.keys())
-print(l)
+print(l)           # [0, 1, 2, 3, 4]
 
 # method 4: 用for loop来删除，append
 def del_duplicate_list(L):
@@ -61,10 +61,12 @@ print(L)
 
 # method 5: 使用filter，lambda,用于去除列表中所有某个特定的元素
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
-f = filter(lambda n: n != 2, L)
+val = 2    # 要删除的元素
+f = filter(lambda n: n != val, L)
 L = list(f)
 print(L)
 
 
 # 原文链接：https://blog.csdn.net/qq_41551919/article/details/83060738
+
 
