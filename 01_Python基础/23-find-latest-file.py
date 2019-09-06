@@ -3,7 +3,7 @@ import os
 def find_newest_file(path_file):
     lists = os.listdir(path_file)
     # lists.sort(key=lambda fn: os.path.getmtime(path_file + '\\' + fn))  # this is for windows
-    lists.sort(key=lambda fn: os.path.getmtime(path_file + '/' + fn))     # this is for linux
+    lists.sort(key=lambda fn: os.path.getmtime(path_file + '/' + fn))     # this is for linux, fn就是取自于可迭代对象lists
     print('the list of all files', lists)
     file_newest = os.path.join(path_file, lists[-1])
     return file_newest

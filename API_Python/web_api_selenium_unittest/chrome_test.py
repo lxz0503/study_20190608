@@ -10,6 +10,7 @@ if "baidu" not in b.current_url:
     print("The url u opend is not baidu")
 else:
     print("you opened baidu.com")
+assert "baidu" in b.current_url, "baidu is not in current url"
 b.maximize_window()
 b.minimize_window()
 ele = b.find_element_by_link_text('新闻')
