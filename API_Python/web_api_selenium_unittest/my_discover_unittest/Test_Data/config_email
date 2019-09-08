@@ -1,0 +1,11 @@
+EMAIL:
+  smtp_server : qq.smtp.com
+  smtp_sender : 123@qq.com
+  msg_tile : this is a test
+
+DB:
+  host : localhost
+  username : root
+  password : 123win
+  port : 3306
+  database : test

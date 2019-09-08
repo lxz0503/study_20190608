@@ -1,0 +1,5 @@
+#Put common functions and classes into the Common directory
+##in run.py, use discover to find all your test case suites.
+##Under TestCases directory,create sub-directory for each scenario,for example,baidu_cases
+##the name of each test suite is started with test,for example,test_baidu.py
+#Test_Data is used to store the configuration files,like username,password.You can use excel,ini,yaml or mysql
