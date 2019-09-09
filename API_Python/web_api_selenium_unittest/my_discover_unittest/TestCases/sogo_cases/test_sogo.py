@@ -2,6 +2,7 @@ from selenium import webdriver
 import unittest
 import time
 import HTMLTestRunner
+from Common.log_util import *
 
 
 class SogoWebTest(unittest.TestCase):
@@ -16,7 +17,9 @@ class SogoWebTest(unittest.TestCase):
         self.driver.get(url)
         title = self.driver.title
         print(title)
+        logging.debug("start test for sogo")
         assert self.driver.title.find(u"搜狗搜索") >= 0, "assert error"
+        logging.debug("end test for sogo")
 
     def test_visitRecentURL(self):
         first_url = "http://www.sogou.com"
