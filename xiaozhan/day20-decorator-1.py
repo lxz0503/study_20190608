@@ -5,8 +5,8 @@
 # 带固定参数的装饰器
 # import time
 #
-# def deco(f):                # 以函数名作为参数,就是高阶函数
-#     def wrapper(a,b):       # 函数嵌套
+# def deco(f):                # 以函数名作为参数,就是高阶函数  high level function
+#     def wrapper(a,b):       # 函数嵌套       function nesting
 #         start_time = time.time()
 #         f(a,b)
 #         end_time = time.time()

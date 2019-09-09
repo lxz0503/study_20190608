@@ -4,7 +4,7 @@ import random
 print(random.random())             # 用于生成一个0到1的随机符点数: 0 <= n < 1.0
 print(random.randint(1, 1000))     # 用于生成一个指定范围内的整数
 
-# 三元表达式与列表解析
+# 三元表达式与列表解析       ternary operation
 # 三元就是三个运算符
 # 变量 = 值-if条件-else 值二
 l = []
