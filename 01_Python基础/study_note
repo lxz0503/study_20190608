@@ -321,3 +321,6 @@ mv: cannot stat `/home/windriver/1.txt': No such file or directory
 windriver@PEK-QCAO1-D2:~$ $ mv /home/windriver/1.txt /home/windriver/2.txt
 mv: cannot stat `/home/windriver/1.txt': No such file or directory
 
+============================================= guide for python
+http://c.biancheng.net/view/2679.html
+=======================================
