@@ -13,6 +13,7 @@ def read_file(fpath):
 
 
 res = read_file(r'D:\xiaozhan_git\study_20190608\day22\test_result.log')
+print(type(res))        # <class 'generator'>
 # for i in res:
 #     print(i)
 print(next(res))  # 调用一次next函数，每次就会读取1024字节
