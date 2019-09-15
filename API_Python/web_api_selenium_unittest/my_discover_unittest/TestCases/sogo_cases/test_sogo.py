@@ -3,11 +3,17 @@ import unittest
 import time
 import HTMLTestRunner
 from Common.log_util import *
+from selenium.webdriver.chrome.options import Options
+# use below 3 lines to not show browser when running cases
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
 
 
 class SogoWebTest(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(chrome_options=chrome_options)  # this will not show browser when running case
+        # self.driver = webdriver.Chrome(chrome_options=None)    # this will still show browser when running case
 
     def tearDown(self):
         self.driver.quit()
