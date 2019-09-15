@@ -1,0 +1,53 @@
+1.Install mongodb
+https://www.mongodb.com/download-center/community
+2.install urllib, urllib.request, requests,selenium,lxml,beautifulsoup4,pyquery,pymysql,pymongo
+https://www.cnblogs.com/zhangxinqi/p/9210211.html          ---this is for lxml
+
+
+3.如果想运行case的时候不显示浏览器，参考下面的方法，chrome实测通过,firefox还没试验
+
+原来Selenium早就准备不支持PhantomJS了。不过作者也说了，可能是因为Firefox和Chrome都带了无头模式，导致PhantomJS的优势瞬间消失了……
+
+这么一说，PhantomJS其实挺惨的……内有内斗，外有打压，搞得众叛亲离（滑稽）。
+
+替代
+CSDN上的孔天逸从Mozilla上提供了Selenium+Headless Firefox在Python上实现的方法：
+
+from selenium.webdriver import Firefox
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support import expected_conditions as expected
+from selenium.webdriver.support.wait import WebDriverWait
+if __name__ == "__main__":
+options = Options()
+options.add_argument('-headless') # 无头参数
+driver = Firefox(executable_path='geckodriver', firefox_options=options) # 配了环境变量第一个参数就可以省了，不然传绝对路径
+wait = WebDriverWait(driver, timeout=10)
+driver.get('http://www.google.com')
+wait.until(expected.visibility_of_element_located((By.NAME, 'q'))).send_keys('headless firefox' + Keys.ENTER)
+wait.until(expected.visibility_of_element_located((By.CSS_SELECTOR, '#ires a'))).click()
+print(driver.page_source)
+driver.quit()
+作者也说了，本地要有Firefox；本地要有geckodriver，最好再配置一下环境变量；别每下载一个网页实例化一个webdriver（Firefox or Chrome）然后就close()掉，实例化webdriver的时间也是时间~推荐将下载器做成单例类或将webdirver做类变量。
+
+对于Chrome，博客园上的zhuxiaoxi提供了解决方案（需要安装chromedriver）：
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+driver = webdriver.Chrome(chrome_options=chrome_options)
+driver.get("https://cnblogs.com/")
+大家可以按需使用。
+
+结语
+我写这篇文章的目的就是想说一下，该换浏览器了。
+
+目前许多关于Python爬虫的教程都还是使用PhantomJS进行讲解的，现在PhantomJS已死，有事请用Chrome或者是Firefox。
+
+C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb
+http://192.168.3.1/html/wan.html                - for huawei router
+
+4.
