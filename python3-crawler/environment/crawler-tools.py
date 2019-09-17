@@ -38,7 +38,15 @@ print(doc('p').text())
 import pymongo
 
 client = pymongo.MongoClient('localhost')
-db = client['xiaozhan']           # create datbase name is xiaozhan
+db = client['xiaozhan']           # create database name is xiaozhan
 db['performance'].insert({'name': 'tcp'})      # table is performance and insert values
 r = db['performance'].find_one({'name': 'tcp'})   # use xiaozhan, show collections, db.performance.find().pretty()
 print(r)
+#
+# import redis
+# r = redis.Redis('localhost', 6379)
+# r.set('name', 'bob')
+# result = r.get('name')
+# print(result)
+
+#

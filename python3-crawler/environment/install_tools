@@ -47,7 +47,18 @@ driver.get("https://cnblogs.com/")
 
 目前许多关于Python爬虫的教程都还是使用PhantomJS进行讲解的，现在PhantomJS已死，有事请用Chrome或者是Firefox。
 
+4.使用mongodb
+https://blog.csdn.net/qq_35810838/article/details/83548102
 C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb
+新开一个cmd窗口，进入mongodb的bin目录，输入mongo或者mongo.exe
+在查询结果中不显示ID的方法：具体参考截图
+
+db.GPRS_PRODUCT_HIS_FEE.find({"条件字段" : "412171211145135"},{"查询字段1":1,"查询字段2":1,"查询字段3":1,"查询字段4":1,"查询字段5":1,"查询字段6":1},{'_id':0})
+db.runoob.find({"name":"beijing"},{_id:0})
+
+db.users.update({"name":"lecaf"}, {"age":10})    修改name=lecaf的数据为age=10，第一个参数是查找条件，第二个参数是修改内容，除了主键，其他内容会被第二个参数的内容替换，主键不能修改
+
 http://192.168.3.1/html/wan.html                - for huawei router
 
-4.
+5. flask,jinjia2
+http://docs.jinkan.org/docs/flask/
