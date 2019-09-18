@@ -5,3 +5,4 @@
 #Test_Data is used to store the configuration files,like username,password.You can use excel,ini,yaml or mysql
 #https://blog.csdn.net/zhanguang000/article/details/53197600    如何在pycharm里面导入其他子模块
 ##在pycharm里面设置my_discover_unittest为source root,然后就能用from Common.log_util import *来导入其他目录的模块
+https://www.cnblogs.com/helenMemery/p/6230284.html

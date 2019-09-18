@@ -62,3 +62,33 @@ http://192.168.3.1/html/wan.html                - for huawei router
 
 5. flask,jinjia2
 http://docs.jinkan.org/docs/flask/
+
+6. http request, http response
+http request mainly includes get and post.
+get可以直接通过浏览器提交，通常用于获取内容,参数直接放在url中，有长度限制
+post需要构造一个表单，即form data，通常用于输入用户名密码登录这种
+
+HTTP请求，最初设定了八种方法。这八种方法本质上没有任何区别。只是让请求，更加有语义而已。
+
+OPTIONS 返回服务器所支持的请求方法
+GET 向服务器获取指定资源
+HEAD 与GET一致，只不过响应体不返回，只返回响应头
+POST 向服务器提交数据，数据放在请求体里
+PUT 与POST相似，只是具有幂等特性，一般用于更新
+DELETE 删除服务器指定资源
+TRACE 回显服务器端收到的请求，测试的时候会用到这个
+CONNECT 预留，暂无使用
+
+HTTP协议中提供了好多状态码，列举我们常用的：
+
+200 返回正常
+304 服务端资源无变化，可使用缓存资源
+400 请求参数不合法
+401 未认证
+403 服务端禁止访问该资源
+404 服务端未找到该资源
+500 服务端异常
+
+Request headers
+
+https://www.cnblogs.com/helenMemery/p/7346485.html

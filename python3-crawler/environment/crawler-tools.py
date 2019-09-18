@@ -3,13 +3,13 @@ import urllib.request
 import requests
 
 
-with urllib.request.urlopen('https://www.baidu.com') as f:
-    data = f.read()
-    print('Status:', f.status, f.reason)
-    print('Data:', data.decode('utf-8'))
 
 result = requests.get('https://wwww.baidu.com')
 print(result.status_code, result.reason)
+# print(result.text)    # this can get the web content
+# print(result.headers)    # this can get request headers, it is a dictionary
+print(result.request)     # this is a get request
+print(result.url)      #
 
 #
 from lxml import etree
