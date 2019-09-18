@@ -69,3 +69,7 @@ for k in data:
     print("字典数据%s--%s" % (k, data[k]))
 
 
+# json.loads()解码python json格式,参数是json格式的字符串
+# json.load()加载python json格式文件,参数是一个文件句柄
+
+
