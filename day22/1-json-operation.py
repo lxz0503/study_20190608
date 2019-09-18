@@ -1,5 +1,7 @@
 # https://www.cnblogs.com/ailiailan/p/8729544.html
-#coding:utf-8
+# json.loads()解码python json格式,参数是json格式的字符串
+# json.load()加载python json格式文件,参数是一个文件句柄
+
 import json
 class OperateJson(object):
     def __init__(self, file_path=None):
