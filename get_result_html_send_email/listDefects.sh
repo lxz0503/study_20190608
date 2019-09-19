@@ -6,6 +6,7 @@ curl -u "svc-ssp:jiradefect" http://jira.wrs.com/issues/?filter=$2 > $ISSUE_HTML
 START_LINE=`awk '/id="issuetable"/{print NR - 1}' $ISSUE_HTML`
 END_LINE=`awk '/\/table/{print NR - 1}' $ISSUE_HTML`
 let END_LINE+=2
+# delete from line 1 to START_LINE, from END_LINE to the last line
 echo "Crop to get content between lines $START_LINE and $END_LINE of $ISSUE_HTML"
 sed -i "${END_LINE},\$d" $ISSUE_HTML
 sed -i "1,${START_LINE}d" $ISSUE_HTML
