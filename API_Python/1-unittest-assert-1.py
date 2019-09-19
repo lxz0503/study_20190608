@@ -10,6 +10,7 @@ logging.basicConfig(filename="test.log",
 class UrlGet(unittest.TestCase):
     def setUp(self):
         self.r = requests.get('https://www.baidu.com/?tn=sitehao123_15')
+        t = requests.get()
 
     def test_status_code(self):
         result = self.r
