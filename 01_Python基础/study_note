@@ -26,6 +26,7 @@
 # 一对单引号 a pair of single quotes, 一对双引号a pair of double quotes #
 # 括号,小括号 bracket（）, square bracket 中括号【】，a pair of curly braces 花括号 {} #
 # indent--动词 缩进, indentation should be four white spaces #
+# <> angle brackets
 # 打开本地html文件路径格式 file:///D:/Pycharm/test_xiaozhan/test.html #
 # 通过命令行来执行某个case,进入到脚本所在目录，  python -m unittest web_driver_api.WebTest.test_visitURL #
 # 鼠标事件 #
