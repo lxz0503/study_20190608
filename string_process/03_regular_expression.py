@@ -6,6 +6,15 @@
 # \w	匹配包括下划线的任何单词字符
 # [^abc] 匹配除了a,b,c之外的字符
 # [amk] 匹配 'a'，'m'或'k'
+# 用?表示非贪婪匹配，原理是?遇到后面的匹配后马上停止，例如he.*?(\d+)
+# 使用re.S参数以后，正则表达式会将这个字符串作为一个整体，在整体中进行匹配,可以忽略其中的换行符
+# re?    匹配0个或1个由前面的正则表达式定义的片段，非贪婪方式
+# \s	匹配任意空白字符，等价于 [\t\n\r\f]
+# re*	匹配0个或多个的表达式。
+# re+	匹配1个或多个的表达式
+# \s*?  匹配0个多个空白字符，非贪婪，表示有时候有空白字符，有时候没有空白字符
+# 匹配的时候尽量用非贪婪匹配,加上?
+# .*?能匹配好多乱七八糟的东西，除了换行符,参考最下面的例子
 import re
 
 p = re.compile(r'\d+')
@@ -109,7 +118,134 @@ print(m)    # ['RegE', 'crea']
 
 p = re.compile(r'<img src=\"(.*?)\"')
 url = '<img src="/UploadFiles/image/20140304/20140304094318_2971.png" alt=" />'
-# m = re.match(r'<img src=\"(.*?)\"', url)
-# m = p.match(url)
+m = re.match(r'<img src=\"(.*?)\"', url)
+m = p.match(url)
 if m is not None:
     print(m.group(1))                # /UploadFiles/image/20140304/20140304094318_2971.png
+
+# not greedy match
+content = 'hello 1234567 demo'
+result = re.match('^h.*?(\d+).*demo$', content)   # .* will try to match as less characters until meets \d
+print(result.group(1))        # 1234567
+
+# greedy match
+content = 'hello 1234567 demo'
+result = re.match('^h.*(\d+).*?demo$', content)
+print(result.group(1))            # 7
+
+# re.S
+content = 'hello 1234567 demo \
+           this is a world'
+result = re.match('^h.*(\d+).*?world$', content)
+print(result.group(1))       # 7
+
+content = '''hello 1234567 demo
+             this is a world'''
+result = re.match('^h.*(\d+).*?world$', content, re.S)
+print(result.group(1))       # 7
+
+# practise
+html = """ 
+     <div id ="songs-list">
+     <h2 class="title">经典老歌</h2>
+     <li data-view="7">一路上有你</li>
+     <li data-view="8">
+     <a href="www.13.com" singer="任贤齐">沧海一声笑</a>
+     </li>
+     <li>
+     <li data-view="9">
+     <a href="www.1223.com" singer="齐秦">往事随风</a></li>
+     </li>
+     </div>
+"""
+result = re.search('<li.*?singer="(.*?)">(.*?)</a>', html, re.S)
+if result:
+    print(result.group(1), result.group(2))
+
+# re.findall() will match all results and put them into a list
+result = re.findall('<li.*?href="(.*?)".*?singer="(.*?)">(.*?)</a>', html, re.S)
+print(result)    # [('www.13.com', '任贤齐', '沧海一声笑'), ('www.1223.com', '齐秦', '往事随风')]
+for i in result:
+    print(i)
+
+#
+result = re.findall('<li.*?>\s*?(<a.*?>)?(\w+)(</a>)?\s*?</li>', html, re.S)
+print(result)    # [('www.13.com', '任贤齐', '沧海一声笑'), ('www.1223.com', '齐秦', '往事随风')]
+for i in result:
+    print(i[1])
+
+# re.sub()
+html = re.sub('<a.*?>|</a>', '',  html)
+print(html)
+#      <div id ="songs-list">
+#      <h2 class="title">经典老歌</h2>
+#      <li data-view="7">一路上有你</li>
+#      <li data-view="8">
+#      沧海一声笑
+#      </li>
+#      <li>
+#      <li data-view="9">
+#      往事随风</li>
+#      </li>
+#      </div>
+result = re.findall('<li.*?>\s*?(\w+)\s*?</li>', html, re.S)
+print(result)
+for i in result:
+    print(i)
+# 一路上有你
+# 沧海一声笑
+# 往事随风
+
+#
+# with open('douban.html') as f:
+#     # print(f.read())
+#     r = f.read()
+r = """          <li class="">
+            <div class="cover">
+              <a href="https://book.douban.com/subject/34779925/?icn=index-latestbook-subject" title="what ia real life">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s33465670.jpg" class=""
+                  width="115px" height="172px" alt="waht is real life">
+              </a>
+            </div>
+            <div class="info">
+              <div class="title">
+                <a class="" href="https://book.douban.com/subject/34779925/?icn=index-latestbook-subject"
+                  title="what is real life">what is life</a>
+              </div>
+              <div class="author">
+                France Alan
+              </div>
+              <div class="more-meta">
+                <h4 class="title">
+                  what is real life
+                </h4>
+                <p>
+                  <span class="author">
+                    李晓瞻
+                  </span>
+                  /
+                  <span class="year">
+                    2019-8
+                  </span>
+                  /
+                  <span class="publisher">
+                    china ren min daxue
+                  </span>
+                </p>
+                <p class="abstract">
+
+                </p>
+              </div>
+            </div>
+          </li>
+"""
+pattern = re.compile('<li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?author">(.*?)</span>.*?year">(.*?)</span>.*?publisher">(.*?)</span>.*?</li>', re.S)
+result = re.findall(pattern, r)
+# print(result)
+for i in result:
+    url, title, author, year, publisher = i
+    print(url.strip(),title.strip(),author.strip(),year.strip(),publisher.strip())
+    # print(title.strip())
+    # print(author.strip())
+    # print(year.strip())
+    # print(publisher.strip())
