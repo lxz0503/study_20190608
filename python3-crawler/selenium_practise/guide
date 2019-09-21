@@ -1,0 +1,7 @@
+
+Selenium可以用用于多种浏览器，驱动浏览器做一些操作
+
+爬虫中主要用来解决javaScript渲染的问题
+
+study link:
+https://selenium-python.readthedocs.io/locating-elements.html

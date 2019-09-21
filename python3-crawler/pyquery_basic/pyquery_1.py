@@ -21,7 +21,7 @@ for it in its:
 
 # 获取属性信息
 doc = pq(html)
-its = doc("link").items()
+its = doc("link").items()       # pyquery多个节点的遍历用items()方法
 for it in its:
     print(it.attr('href'))
     # print(it.attr('class'))
@@ -33,7 +33,7 @@ its = doc("link").items()
 for it in its:
     print(it.text())     # asdadasdad12312
 
-#
+# 获取文本信息
 print('获取html')
 doc = pq(html)
 its = doc("link").items()

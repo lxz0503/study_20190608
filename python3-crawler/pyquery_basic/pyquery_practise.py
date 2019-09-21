@@ -63,7 +63,7 @@ html = '''
 doc = pq(html)
 items = doc("link.active1.a123")         # 查找link标签，再继续查找class里面含有active1和a123的link
 # items = doc(".s_from .active1.a123")         # 有空格，表示选择里层的，没有空格，表示是并列条件
-# 先找到class s_from
+# 先找到class  s_from
 print(items)
 # 查找兄弟元素
 siblings_href = items.siblings()     # siblings 返回了同级的其他标签
