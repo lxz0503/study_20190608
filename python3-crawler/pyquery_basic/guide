@@ -1,0 +1,9 @@
+正则表达式麻烦，
+bs4语法记不住
+如果熟悉jquery,那就用pyquery
+
+html文档的所有操作都需要PyQuery对象来完成，初始化PyQuery对象主要有三种方式，分别是通过网址、字符串和文件名创建。
+
+作者：智慧大石
+链接：http://www.imooc.com/article/266913
+来源：慕课网
