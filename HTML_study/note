@@ -52,3 +52,124 @@
 
 提示：请始终为 <button> 元素规定 type 属性。不同的浏览器对 <button> 元素的 type 属性使用不同的默认值。
 
+#<canvas> 标签是 HTML5 中的新标签。
+# <caption> 标签定义表格的标题。
+<caption> 标签必须直接放置到 <table> 标签之后。
+您只能对每个表格定义一个标题。
+提示：通常这个标题会被居中于表格之上
+# HTML5 不支持 <center> 标签。请用 CSS 代替
+# 在 HTML5 中，<cite> 标签定义作品的标题。
+
+在 HTML 4.01 中，<cite> 标签定义一个引用
+# <colgroup> 标签用于对表格中的列进行组合，以便对其进行格式化。
+
+通过使用 <colgroup> 标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。
+
+注释：只能在 <table> 元素之内，在任何一个 <caption> 元素之后，在任何一个 <thead>、<tbody>、<tfoot>、<tr> 元素之前使用 <colgroup> 标签。
+
+提示：如果想对 <colgroup> 中的某列定义不同的属性，请在 <colgroup> 标签内使用 <col> 标签
+
+#<datalist> 标签规定了 <input> 元素可能的选项列表。
+
+<datalist> 标签被用来在为 <input> 元素提供"自动完成"的特性。用户能看到一个下拉列表，里边的选项是预先定义好的，将作为用户的输入数据。
+
+请使用 <input> 元素的 list 属性来绑定 <datalist> 元素
+# <dd> 标签被用来对一个描述列表中的项目/名字进行描述。
+
+<dd> 标签与 <dl> （定义一个描述列表）和 <dt> （定义项目/名字）一起使用。
+
+在 <dd> 标签内，您能放置段落、换行、图片、链接、列表等等
+# <dialog> 标签是 HTML5 中的新标签  <dialog> 标签定义一个对话框、确认框或窗口
+# <div> 标签定义 HTML 文档中的一个分隔区块或者一个区域部分。
+
+# <div>标签常用于组合块级元素，以便通过 CSS 来对这些元素进行格式化。
+
+提示和注释
+提示：<div> 元素经常与 CSS 一起使用，用来布局网页。
+
+注释：默认情况下，浏览器通常会在 <div> 元素前后放置一个换行符。然而，您可以通过使用 CSS 改变这种情况
+# <embed> 标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）
+# <fieldset> 标签可以将表单内的相关元素分组。
+<fieldset> 标签会在相关表单元素周围绘制边框
+<legend> 标签为 <fieldset> 元素定义标题
+# <figcaption> 标签为 <figure> 元素定义标题。<figcaption> 标签是 HTML5 中的新标签
+<figcaption> 元素应该被置于 <figure> 元素的第一个或最后一个子元素的位置
+使用 <figure> 元素标记文档中的一个图像。<figure> 元素带有一个标题
+# 使用 <figure> 元素标记文档中的一个图像：
+# <footer> 标签是 HTML 5 中的新标签
+<footer> 标签定义文档或者文档的一部分区域的页脚。
+<footer> 元素应该包含它所包含的元素的信息。
+在典型情况下，该元素会包含文档创作者的姓名、文档的版权信息、使用条款的链接、联系信息等等。
+在一个文档中，您可以定义多个 <footer> 元素
+# form 
+https://baike.baidu.com/item/HTML%E8%A1%A8%E5%8D%95/11046337?fr=aladdin
+<form> 标签用于创建供用户输入的 HTML 表单。
+
+<form> 元素包含一个或多个如下的表单元素：
+
+<input>
+<textarea>
+<button>
+<select>
+<option>
+<optgroup>
+<fieldset>
+<label>
+# hr <hr> 标签定义 HTML 页面中的主题变化（比如话题的转移），并显示为一条水平线。
+
+<hr> 元素被用来分隔 HTML 页面中的内容（或者定义一个变化）。
+# <i> 定义与文本中其余部分不同的部分，并把这部分文本呈现为斜体文本
+# <img> 标签定义 HTML 页面中的图像。
+
+<img> 标签有两个必需的属性：src 和 alt
+通过在 <a> 标签中嵌套 <img> 标签，给图像添加到另一个文档的链接
+# <input> 标签规定了用户可以在其中输入数据的输入字段。
+
+<input> 元素在 <form> 元素中使用，用来声明允许用户输入数据的 input 控件。
+
+输入字段可通过多种方式改变，取决于 type 属性。
+# <ins> 标签定义已经被插入文档中的文本。
+# <label> 标签为 input 元素定义标注（标记）
+# <li> 标签定义列表项目
+# <link> 标签最常见的用途是链接样式表。
+
+注意： link 元素是空元素，它仅包含属性。
+
+注意： 此元素只能存在于 head 部分，不过它可出现任何次数。
+# mark<mark> 标签定义带有记号的文本。
+
+请在需要突出显示文本时使用 <mark> 标签
+# <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析
+实例 1 - 定义文档关键词，用于搜索引擎：
+
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+实例 2 - 定义web页面描述：
+
+<meta name="description" content="Free Web tutorials on HTML and CSS">
+实例 3 - 定义页面作者：
+
+<meta name="author" content="Hege Refsnes">
+实例 4 - 每30秒刷新页面：
+
+<meta http-equiv="refresh" content="30">
+# <nav> 标签定义导航链接的部分   是 HTML5 的新标签
+# <option> 标签定义下拉列表中的一个选项（一个条目）。
+
+<option> 标签中的内容作为 <select> 或者<datalist> 一个元素使用
+<option> 标签可以在不带有任何属性的情况下使用，但是您通常需要使用 value 属性，此属性会指示出被送往服务器的内容。
+
+注释：请与 select 元素配合使用此标签，否则这个标签是没有意义的。
+
+提示：如果列表选项很多，可以使用 <optgroup> 标签对相关选项进行组合
+# 如果你有很多的选项组合, 你可以使用<optgroup> 标签能够很简单的将相关选项组合在一起
+# <script> 标签用于定义客户端脚本，比如 JavaScript
+# <select> 元素用来创建下拉列表。
+
+<select> 元素中的 <option> 标签定义了列表中的可用选项
+# <source> 标签为媒体元素（比如 <video> 和 <audio>）定义媒体资源
+<source> 标签是 HTML5 中的新标签
+# 被 <span> 元素包含的文本，您可以使用 CSS 对它定义样式，或者使用 JavaScript 对它进行操作
+# type 属性指示 <style> 与 </style> 标签之间的内容。
+值 "text/css" 指示内容是标准的 CSS。
+
+# 使用 <u> 标签为文本添加下划线
