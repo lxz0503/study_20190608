@@ -14,7 +14,7 @@ html = '''
     </div>
 '''
 doc = pq(html)
-its = doc("link").items()
+its = doc("link").items()      # 有很多link标签，所以要想抓取多个link标签，必须用items()，返回的是一个迭代器
 # print(type(its))   # <class 'generator'>
 for it in its:
     print(it)

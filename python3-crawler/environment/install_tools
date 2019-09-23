@@ -53,6 +53,12 @@ C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb
 新开一个cmd窗口，进入mongodb的bin目录，输入mongo或者mongo.exe
 在查询结果中不显示ID的方法：具体参考截图
 
+show dbs
+运行"use"命令，可以连接到一个指定的数据库  use taobao
+show tables
+
+
+
 db.GPRS_PRODUCT_HIS_FEE.find({"条件字段" : "412171211145135"},{"查询字段1":1,"查询字段2":1,"查询字段3":1,"查询字段4":1,"查询字段5":1,"查询字段6":1},{'_id':0})
 db.runoob.find({"name":"beijing"},{_id:0})
 
