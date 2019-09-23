@@ -9,14 +9,13 @@ import time
 
 browser = webdriver.Chrome()
 browser.get('https://www.taobao.com/')
+wait = WebDriverWait(browser, 10, 0.2)
 
 try:
-    wait = WebDriverWait(browser, 10, 0.2)
-    # e = browser.find_element_by_css_selector('.mod-navbar div2')
-    ele = wait.until(EC.presence_of_element_located((By.ID, 'q')))
-    button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'btn-search')))
-    print(ele)
-    print(button)
+    input_box = wait.until(EC.presence_of_element_located((By.ID, 'q')))
+    button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#J_TSearchForm > div.search-button > button')))
+    input_box.send_keys('iphone')
+    button.click()
 except NoSuchElementException as e:
     print('no')
     print(e)
