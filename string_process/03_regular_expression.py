@@ -112,16 +112,14 @@ m = re.findall(r'\w{4}', line)
 #     print(m.group())
 print(m)    # ['RegE', 'crea']
 
-# 正式表达式：(?<=src=\").*?(?=\")   # 不实用，参考下面自己的改编
-
 # 待匹配的文本：<img src="/UploadFiles/image/20140304/20140304094318_2971.png" alt="" />
 
-p = re.compile(r'<img src=\"(.*?)\"')
+p = re.compile(r'<img src="(.*?)"')
 url = '<img src="/UploadFiles/image/20140304/20140304094318_2971.png" alt=" />'
-m = re.match(r'<img src=\"(.*?)\"', url)
+# m = re.match(r'<img src="(.*?)"', url)
 m = p.match(url)
 if m is not None:
-    print(m.group(1))                # /UploadFiles/image/20140304/20140304094318_2971.png
+    print('the url is:', m.group(1))                # /UploadFiles/image/20140304/20140304094318_2971.png
 
 # not greedy match
 content = 'hello 1234567 demo'

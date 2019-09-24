@@ -1,4 +1,6 @@
 import requests
+from requests.exceptions import RequestException
+import re
 
 def get_one_page(url):
     headers = {
@@ -11,6 +13,9 @@ def get_one_page(url):
     except Exception as e:
         print(e)
         return None
+
+def parse_one_page(html):
+    pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)"')
 
 
 if __name__ == '__main__':
