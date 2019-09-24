@@ -18,7 +18,7 @@ print(ts)
 # process csv
 lines = list(csv.reader(open(r'F:\xiaozhan_git\study_20190608\xiaozhan\bug_record.csv')))
 header, values = lines[0], lines[1:]
-print(values)
+print('value is:', values)
 data_dict = {h: v for h, v in zip(header, values)}
 print(type(data_dict))
 print(data_dict)
