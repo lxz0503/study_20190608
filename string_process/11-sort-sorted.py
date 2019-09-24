@@ -10,7 +10,7 @@ print(a)              #输出：[0, 1, 4, 5, 7, 88]
 a.sort(reverse=True)  # reverse=True，降序排列。默认FALSE：升序；
 print(a)              # 输出：[88, 7, 5, 4, 1, 0]
 
-b=sorted(a,reverse=True)   #有返回值，需要用一个变量进行接收
+b = sorted(a,reverse=True)   #有返回值，需要用一个变量进行接收
 print(b)              # 输出：[88, 7, 5, 4, 1, 0]
 
 # 在这里，可以看出sort()是没有返回值的，它会改变原有的列表，而sorted()需要用一个变量进行接收，它并不会修改原有的列表
@@ -22,14 +22,14 @@ print(b)              # 输出：[88, 7, 5, 4, 1, 0]
 stu = [("winnie", "A", 12),("lucy", "C", 16),("john", "B", 14)]
 stu.sort(key=lambda x: x[2])
 print(stu)
-s=sorted(stu, key=lambda x: x[1], reverse=True)  # 默认false ,升序
+s = sorted(stu, key=lambda x: x[1], reverse=True)  # 默认false ,升序
 print(s)
 # 输出：
 # [('winnie', 'A', 12), ('john', 'B', 14), ('lucy', 'C', 16)]
 # [('lucy', 'C', 16), ('john', 'B', 14), ('winnie', 'A', 12)]
 # 列表中包含字典，按照字典中某个key值进行排序  lambda x:x[key值]
-l1=[{'name0': '李丽', 'age': 40}, {'name0': '张那', 'age': 30},{'name0':'王原','age':50},{'name0':'王丽萍','age':50}]
-l2=sorted(l1, key=lambda x:x['age'])
+l1 = [{'name0': '李丽', 'age': 40}, {'name0': '张那', 'age': 30},{'name0':'王原','age':50},{'name0':'王丽萍','age':50}]
+l2 = sorted(l1, key=lambda x:x['age'])
 print(l2)
 # 结果：[{'name0': '张那', 'age': 30}, {'name0': '李丽', 'age': 40}, {'name0': '王原', 'age': 50}, {'name0': '王丽萍', 'age': 50}]
 

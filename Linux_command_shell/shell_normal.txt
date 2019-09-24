@@ -217,7 +217,7 @@ jack
 alex
 
 下面的cut命令可以切分出ip地址
-# ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cur -d " " -f 1
+# ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cut -d " " -f 1
 
 # 利用windows下安装的git来练习linux shell命令
 # 用下面的方法可以编辑一个文本，把里面的多行内容输出到另外一个文件

@@ -41,7 +41,6 @@ class DatabaseInit(object):
             # self.cur.execute(drop_table)
             self.cur.execute(create_table)
         except Exception as e:
-
             print("create error", e)
         else:
             self.conn.commit()    # do not forget to commit after modification
