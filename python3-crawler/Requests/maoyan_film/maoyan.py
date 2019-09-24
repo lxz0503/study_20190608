@@ -15,9 +15,15 @@ def get_one_page(url):
         return None
 
 def parse_one_page(html):
-    pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)"')
+    pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)".*?name"><a'
+                         + '.*?>(.*?)</a>.*?star">(.*?)</p>.*?releasetime">(.*?)</p>'
+                         + '.*?integer">(.*?)</i>.*?fraction">(.*?)</i>.*?</dd>', re.S)
+    # pattern = re.compile('<dd>.*?board-index.*?>(\d+)</i>.*?data-src="(.*?)".*?name"><a', re.S)
+    items = re.findall(pattern, html)
+    print(items)
 
 
 if __name__ == '__main__':
     html = get_one_page('http://maoyan.com/board')
-    print(html)
+    # print(html)
+    parse_one_page(html)
