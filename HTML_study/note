@@ -1,10 +1,13 @@
 #<!DOCTYPE> 声明不是一个 HTML 标签；它是用来告知 Web 浏览器页面使用了哪种 HTML 版本
 
-#<!--...--> 注释标签用来在源文档中插入注释。注释不会在浏览器中显示
+#<!--  ... --> 注释标签用来在源文档中插入注释。注释不会在浏览器中显示
 
 #<a> 标签定义超链接，用于从一个页面链接到另一个页面。
 ##<a> 元素最重要的属性是 href 属性，它指定链接的目标.
 ##提示：如果没有使用 href 属性，则不能使用 hreflang、media、rel、target 以及 type 属性。
+##target属性可以用来指定如何跳转到其他链接
+_blank	在新窗口中打开被链接文档
+
 
 #<abbr> 标签用来表示一个缩写词或者首字母缩略词，如"WWW"或者"NATO"。
 ##提示：在某些浏览器中，当您把鼠标移至带有 <abbr> 标签的缩写词/首字母缩略词上时，<abbr> 标签的 title 属性可被用来展示缩写词/首字母缩略词的完整版本。
@@ -103,7 +106,7 @@
 在一个文档中，您可以定义多个 <footer> 元素
 # form 
 https://baike.baidu.com/item/HTML%E8%A1%A8%E5%8D%95/11046337?fr=aladdin
-<form> 标签用于创建供用户输入的 HTML 表单。
+<form> 标签用于创建供用户输入的 HTML 表单。需要前后端交互的时候就要form
 
 <form> 元素包含一个或多个如下的表单元素：
 
@@ -120,8 +123,11 @@ https://baike.baidu.com/item/HTML%E8%A1%A8%E5%8D%95/11046337?fr=aladdin
 <hr> 元素被用来分隔 HTML 页面中的内容（或者定义一个变化）。
 # <i> 定义与文本中其余部分不同的部分，并把这部分文本呈现为斜体文本
 # <img> 标签定义 HTML 页面中的图像。
-
 <img> 标签有两个必需的属性：src 和 alt
+alt 与 title 属性区别：
+图片中的 alt 属性是在图片不能正常显示时出现的文本提示。
+图片中的 title 属性是在鼠标在移动到元素上的文本提示
+
 通过在 <a> 标签中嵌套 <img> 标签，给图像添加到另一个文档的链接
 # <input> 标签规定了用户可以在其中输入数据的输入字段。
 
@@ -139,19 +145,20 @@ https://baike.baidu.com/item/HTML%E8%A1%A8%E5%8D%95/11046337?fr=aladdin
 # mark<mark> 标签定义带有记号的文本。
 
 请在需要突出显示文本时使用 <mark> 标签
-# <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析
-实例 1 - 定义文档关键词，用于搜索引擎：
 
+# <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析，不是给客户看的，是给浏览器用的
+实例 1 - 定义文档关键词，用于搜索引擎：也就是搜索content里面的关键字就能关联到这个网址
 <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+
 实例 2 - 定义web页面描述：
-
 <meta name="description" content="Free Web tutorials on HTML and CSS">
+
 实例 3 - 定义页面作者：
-
 <meta name="author" content="Hege Refsnes">
-实例 4 - 每30秒刷新页面：
 
+实例 4 - 每30秒刷新页面：
 <meta http-equiv="refresh" content="30">
+
 # <nav> 标签定义导航链接的部分   是 HTML5 的新标签
 # <option> 标签定义下拉列表中的一个选项（一个条目）。
 
@@ -173,3 +180,18 @@ https://baike.baidu.com/item/HTML%E8%A1%A8%E5%8D%95/11046337?fr=aladdin
 值 "text/css" 指示内容是标准的 CSS。
 
 # 使用 <u> 标签为文本添加下划线
+把这个link放在head标签，用test.css文件里面的内容来定义CSS属性<link rel="stylesheet" href="test.css">
+
+<link> 标签最常见的用途是链接样式表,例如上面的test.css就是自己定义的样式表文件
+# HTML中几个常见的特殊字符  http://www.divcss5.com/html/h50257.shtml
+&nbsp; 表示 空格
+
+&amp; 表示  &
+
+&lt;    表示   <
+
+&gt;   表示   >
+
+&quot;   表示 "
+
+&qpos;  表示  '
