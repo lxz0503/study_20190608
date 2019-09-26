@@ -137,7 +137,7 @@ alt 与 title 属性区别：
 
 输入字段可通过多种方式改变，取决于 type 属性。
 # <ins> 标签定义已经被插入文档中的文本。
-# <label> 标签为 input 元素定义标注（标记）
+# <label> 标签为 input 元素定义标注标记,和input元素成对出现
 # <li> 标签定义列表项目
 # <link> 标签最常见的用途是链接样式表。
 
@@ -197,3 +197,8 @@ alt 与 title 属性区别：
 &quot;   表示 "
 
 &qpos;  表示  '
+
+textarea-------输入大段文本，例如产品介绍
+
+autocomplete="on" 表单里这个属性表示自动保存之前输入的值，
+placeholder="xiaozhan"   表示占位内容，可以随时输入新的内容

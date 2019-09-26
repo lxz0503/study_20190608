@@ -37,26 +37,26 @@ form表单:
 action决定form表单送到哪里去处理，例如送到浏览器---涉及到后端Django的处理
 最好设置name属性，这是给后台server看的，相当于键值对
 input: type
-button
-checkbox
+button    ---按钮，伴随着JS事件
+checkbox  ----复选框
 color
-date
+date   ----日期
 datetime
 datetime-local
-email
-file
-hidden
+email-------邮箱
+file--------上传文件
+hidden   -----什么时候用这个？
 image
 month
 number
-password
-radio
+password------输入密码
+radio--------单选按钮
 range
-reset
+reset-------重置
 search
-submit
+submit-------提交按钮，必须有
 tel
-text
+text---------文本输入框
 time
 url
 week
