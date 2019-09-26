@@ -30,3 +30,33 @@ day47---HTML tag
 meta-----charset
 body标签里面才是用户可见的内容
 >>>>>>> 965f6e516c43afeddb1d1deda71f7fc385459d15
+
+form表单:
+所有获取用户输入的标签都要放在form表单里面
+一个页面可以有多个form表单
+action决定form表单送到哪里去处理，例如送到浏览器---涉及到后端Django的处理
+最好设置name属性，这是给后台server看的，相当于键值对
+input: type
+button
+checkbox
+color
+date
+datetime
+datetime-local
+email
+file
+hidden
+image
+month
+number
+password
+radio
+range
+reset
+search
+submit
+tel
+text
+time
+url
+week
