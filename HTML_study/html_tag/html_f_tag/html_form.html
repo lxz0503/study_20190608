@@ -7,12 +7,13 @@
 <body>
 <!-- 用户表单 start-->
 <!-- input type=text决定了一个文本输入框 -->
-<form action="demo-form.php" method="get" name="xiaozhan" id="form1">
+<!-- Django to write a client application to upload-->
+<form action="http://127.0.0.1:8080/upload/" method="post" name="xiaozhan" id="form1" enctype="multipart/form-data" autocomplete="off">
    <p>First name:
-       <input type="text" name="FirstName" value="Mickey">
+       <input type="text" name="FirstName" value="Mickey" readonly>
    </p>
    <p>Last name:
-       <input type="text" name="LastName" value="Mouse">
+       <input type="text" name="LastName" value="" placeholder="xiaozhan">   <!-- 站位符，可以修改-->
    </p>
     <p>Password:
         <input name="password" type="password">
@@ -22,36 +23,53 @@
     </p>
 
     <p>这是一个单选按钮: <!-- 单选按钮-->
-        <input type="radio" name="fruit" value="strawberry">草莓
-        <input type="radio" name="fruit" value="watermelon">西瓜
-        <input type="radio" name="fruit" value="orange">橙子
-        <input type="radio" name="fruit" value="kiwifruit">猕猴桃
+        <label>
+            <input type="radio" name="fruit" value="strawberry">草莓
+            <input type="radio" name="fruit" value="watermelon">西瓜
+            <input type="radio" name="fruit" value="orange">橙子
+            <input type="radio" name="fruit" value="kiwifruit">猕猴桃
+        </label>
     </p>
-    <p>性别:
-        <input type="radio" name="gender" value="boy">男  <!-- 男女只是提示符而已-->
-        <input type="radio" name="gender" value="girl">女  <!--真正后台处理的是name和value-->
+    <p>性别:   <!-- 把input标签用label标签封装起来，这是标准写法-->
+        <label>
+            <input type="radio" name="gender" value="boy">男  <!-- 男女只是提示符而已-->
+            <input type="radio" name="gender" value="girl">女  <!--真正后台处理的是name和value-->
+            <input checked type="radio" name="gender" value="secret">保密  <!--真正后台处理的是name和value-->
+        </label>
     </p>
     <p>一般需要绑定JS事件:
         <input type="reset" name="reset"> <br/>    <!-- 重置按钮-->
         <input type="button" name="button" value="点击">   <!--需要写JS脚本-->
 
     </p>
-    <!-- 复选框 -->
-    <p>this is a checkbox,you do not need the name attribute,多选:
-        <input name="hobby" type="checkbox" value="football" >足球
+    <!-- 复选框，没有label标签，所以input会变黄告警 -->
+    <p>this is a checkbox,多选:
+        <input name="hobby" type="checkbox" value="football">足球
         <input name="hobby" type="checkbox" value="basketball">篮球
         <input name="hobby" type="checkbox" value="badminton">羽毛球
         <input name="hobby" type="checkbox" value="voleyball">排球
     </p>
+    <!-- label标签的作用和用法 -->
+    <p>this is a checkbox with label tag,多选:
+        <label for="h1">足球</label>
+        <input id="h1" name="hobby" type="checkbox" value="football">
+        <label for="h2">篮球</label>
+        <input id="h2" name="hobby" type="checkbox" value="basketball">
+        <label for="h3">羽毛球</label>
+        <input id="h3" name="hobby" type="checkbox" value="badminton">
+        <label for="h4">排球</label>
+        <input id="h4" name="hobby" type="checkbox" value="volleyball">
+    </p>
     <!-- 下拉菜单 -->
     <p>This is a drop down list: <!-- id,value可以为空-->
-        <select name="zxs" id="cs1">
-            <option value="beijing">北京</option>
-            <option value="shanghai">上海</option>
-            <option id ='tianjin' value="tianjin">天津</option>
-
-        </select>
-        <select name="fruit" id="dropdown" size=1>
+        <label>
+            <select name="zxs" id="cs1">
+                <option value="beijing" selected>北京</option>   <!-- selected表示默认中某项-->
+                <option value="shanghai">上海</option>
+                <option value="tianjin">天津</option>
+            </select>
+        </label>
+        <select name="fruit" id="dropdown" size=10 multiple>   <!-- multiple表示可以多选-->
             <optgroup label="水果">
                <option value="peach">桃子</option>
                <option value="watermelon">西瓜</option>
@@ -60,7 +78,7 @@
                <option id ='maybush' value="maybush">山楂</option>
             </optgroup>
             <optgroup label="区域">
-                <option value="beijing">顺义</option>
+                <option value="beijing" selected>顺义</option>
                 <option value="shanghai">朝阳</option>
                 <option id ='tianjin' value="tianjin">海淀</option>
             </optgroup>
@@ -68,13 +86,25 @@
     </p>
     <!-- 下拉菜单结束 -->
     <!-- 文本框如下-->
-    <textarea name="info" id="t1" cols="10" rows="10">输入内容</textarea>
-    <!-- 上传图片或者文件 -->
+    <label>
+        <textarea name="info" id="t1" cols="10" rows="10">输入内容</textarea>
+    </label>
+        <!-- 上传图片或者文件 -->
     <p>选择文件或者图片:
-        <input type="file" >
+        <input type="file" name="file" >
     </p>
     <br/>
-
+    <!-- datalist attribute for your options -->
+    <p> you can see what you will input with datalist tag:
+        <input list="browsers" name="browser">
+           <datalist id="browsers">
+              <option value="Internet Explorer" selected>
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+           </datalist>
+    </p>
     <input type="submit" value="提交">
 </form>
 <!-- 用户表单 end -->
