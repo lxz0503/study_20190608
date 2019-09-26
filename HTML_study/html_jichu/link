@@ -16,6 +16,7 @@ HTML---展示网站的内容----------------标签   (一周)
 CSS----BootStrap ------网站的样式，例如格式，字体，布局等等   -----------选择器，属性  （一周）
 JavaScript-----JQuery  -------定位页面元素，人机交互，动画效果之类  -----------语法，BOM,DOM  （一周）
 
+<<<<<<< HEAD
 Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的
 
 Web开发本质：服务端，浏览器，HTML文件
@@ -24,3 +25,8 @@ Python下有许多款不同的 Web 框架。Django是重量级选手中最有代
 MTV的框架模式，即模型M，视图V和模版T
 https://www.cnblogs.com/liqu/p/9308966.html   ---- for Django
 
+=======
+day47---HTML tag
+meta-----charset
+body标签里面才是用户可见的内容
+>>>>>>> 965f6e516c43afeddb1d1deda71f7fc385459d15
