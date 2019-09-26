@@ -21,7 +21,9 @@ while True:                       # 新增接收链接循环,可以不停的接�
             # print(msg, type(msg))   # b'dir' <class 'bytes'>, 只能收发字节
             # conn.send(msg.upper())    # 发消息,说话
             conn.send(b'HTTP/1.1 200 OK\r\n\r\n')  # 表示约定了http 协议
-            conn.send(b'<h1>hello xiaozhan</h1>')
+            conn.send(b'<h1>hello xiaozhan</h1>')    # 也可以把内容放到文件里，用rb方式来读取，因为发送的是字节流
+            conn.send(b'<a href="http://www.sogo.com">sogo</a>')    # 也可以把内容放到文件里，用rb方式来读取，因为发送的是字节流
+
         except Exception:
             break  # 异常处理结束,下面的conn.close()不会被执行
     # conn.close()                   # 挂电话
