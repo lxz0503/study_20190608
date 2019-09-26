@@ -1,0 +1,399 @@
+D:\Pycharm\Xiaozhan_Nightly>cd ..
+
+D:\Pycharm>cd ..
+
+D:\>cd xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial>dir
+ 驱动器 D 中的卷是 New Volume
+ 卷的序列号是 02F9-2904
+
+ D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial 的目录
+
+2019/09/26  22:11    <DIR>          .
+2019/09/26  22:11    <DIR>          ..
+2019/09/26  22:11    <DIR>          quotetutorial
+2019/09/26  22:11               269 scrapy.cfg
+               1 个文件            269 字节
+               3 个目录 294,000,824,320 可用字节
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial>cd quotetutorial
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial>dir
+ 驱动器 D 中的卷是 New Volume
+ 卷的序列号是 02F9-2904
+
+ D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial 的目录
+
+2019/09/26  22:11    <DIR>          .
+2019/09/26  22:11    <DIR>          ..
+2019/09/26  22:11               294 items.py
+2019/09/26  22:11             3,611 middlewares.py
+2019/09/26  22:11               295 pipelines.py
+2019/09/26  22:11             3,159 settings.py
+2019/09/26  22:13    <DIR>          spiders
+2019/09/24  22:45                 0 __init__.py
+2019/09/26  22:13    <DIR>          __pycache__
+               5 个文件          7,359 字节
+               4 个目录 294,000,824,320 可用字节
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial>cd spiders
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial\spiders>dir
+ 驱动器 D 中的卷是 New Volume
+ 卷的序列号是 02F9-2904
+
+ D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial\spiders 的目录
+
+2019/09/26  22:13    <DIR>          .
+2019/09/26  22:13    <DIR>          ..
+2019/09/26  22:13               235 quotes.py
+2019/09/24  22:45               161 __init__.py
+2019/09/26  22:13    <DIR>          __pycache__
+               2 个文件            396 字节
+               3 个目录 294,000,824,320 可用字节
+
+D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial\spiders>scrapy crawl quotes
+2019-09-26 22:40:54 [scrapy.utils.log] INFO: Scrapy 1.7.3 started (bot: quotetutorial)
+2019-09-26 22:40:54 [scrapy.utils.log] INFO: Versions: lxml 4.3.4.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.7.0, Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 17:00:18) [MSC v.1900 64
+ bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Windows-7-6.1.7601-SP1
+2019-09-26 22:40:54 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'quotetutorial', 'NEWSPIDER_MODULE': 'quotetutorial.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['quotetutorial.spiders']}
+2019-09-26 22:40:54 [scrapy.extensions.telnet] INFO: Telnet Password: f91038b029b77659
+2019-09-26 22:40:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-09-26 22:40:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-09-26 22:40:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-09-26 22:40:54 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-09-26 22:40:54 [scrapy.core.engine] INFO: Spider opened
+2019-09-26 22:40:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-09-26 22:40:54 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-09-26 22:40:55 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://quotes.toscrape.com/robots.txt> (referer: None)
+2019-09-26 22:40:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://quotes.toscrape.com/> (referer: None)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Quotes to Scrape</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row header-box">
+            <div class="col-md-8">
+                <h1>
+                    <a href="/" style="text-decoration: none">Quotes to Scrape</a>
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <p>
+
+                    <a href="/login">Login</a>
+
+                </p>
+            </div>
+        </div>
+
+
+<div class="row">
+    <div class="col-md-8">
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>
+        <span>by <small class="author" itemprop="author">Albert Einstein</small>
+        <a href="/author/Albert-Einstein">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="change,deep-thoughts,thinking,world" /    >
+
+            <a class="tag" href="/tag/change/page/1/">change</a>
+
+            <a class="tag" href="/tag/deep-thoughts/page/1/">deep-thoughts</a>
+
+            <a class="tag" href="/tag/thinking/page/1/">thinking</a>
+
+            <a class="tag" href="/tag/world/page/1/">world</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“It is our choices, Harry, that show what we truly are, far more than our abilities.”</span>
+        <span>by <small class="author" itemprop="author">J.K. Rowling</small>
+        <a href="/author/J-K-Rowling">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="abilities,choices" /    >
+
+            <a class="tag" href="/tag/abilities/page/1/">abilities</a>
+
+            <a class="tag" href="/tag/choices/page/1/">choices</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”</span>
+        <span>by <small class="author" itemprop="author">Albert Einstein</small>
+        <a href="/author/Albert-Einstein">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="inspirational,life,live,miracle,miracles" /    >
+
+            <a class="tag" href="/tag/inspirational/page/1/">inspirational</a>
+
+            <a class="tag" href="/tag/life/page/1/">life</a>
+
+            <a class="tag" href="/tag/live/page/1/">live</a>
+
+            <a class="tag" href="/tag/miracle/page/1/">miracle</a>
+
+            <a class="tag" href="/tag/miracles/page/1/">miracles</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.”</span>
+        <span>by <small class="author" itemprop="author">Jane Austen</small>
+        <a href="/author/Jane-Austen">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="aliteracy,books,classic,humor" /    >
+
+            <a class="tag" href="/tag/aliteracy/page/1/">aliteracy</a>
+
+            <a class="tag" href="/tag/books/page/1/">books</a>
+
+            <a class="tag" href="/tag/classic/page/1/">classic</a>
+
+            <a class="tag" href="/tag/humor/page/1/">humor</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“Imperfection is beauty, madness is genius and it&#39;s better to be absolutely ridiculous than absolutely boring.”</span>
+        <span>by <small class="author" itemprop="author">Marilyn Monroe</small>
+        <a href="/author/Marilyn-Monroe">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="be-yourself,inspirational" /    >
+
+            <a class="tag" href="/tag/be-yourself/page/1/">be-yourself</a>
+
+            <a class="tag" href="/tag/inspirational/page/1/">inspirational</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“Try not to become a man of success. Rather become a man of value.”</span>
+        <span>by <small class="author" itemprop="author">Albert Einstein</small>
+        <a href="/author/Albert-Einstein">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="adulthood,success,value" /    >
+
+            <a class="tag" href="/tag/adulthood/page/1/">adulthood</a>
+
+            <a class="tag" href="/tag/success/page/1/">success</a>
+
+            <a class="tag" href="/tag/value/page/1/">value</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“It is better to be hated for what you are than to be loved for what you are not.”</span>
+        <span>by <small class="author" itemprop="author">André Gide</small>
+        <a href="/author/Andre-Gide">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="life,love" /    >
+
+            <a class="tag" href="/tag/life/page/1/">life</a>
+
+            <a class="tag" href="/tag/love/page/1/">love</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“I have not failed. I&#39;ve just found 10,000 ways that won&#39;t work.”</span>
+        <span>by <small class="author" itemprop="author">Thomas A. Edison</small>
+        <a href="/author/Thomas-A-Edison">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="edison,failure,inspirational,paraphrased" /    >
+
+            <a class="tag" href="/tag/edison/page/1/">edison</a>
+
+            <a class="tag" href="/tag/failure/page/1/">failure</a>
+
+            <a class="tag" href="/tag/inspirational/page/1/">inspirational</a>
+
+            <a class="tag" href="/tag/paraphrased/page/1/">paraphrased</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“A woman is like a tea bag; you never know how strong it is until it&#39;s in hot water.”</span>
+        <span>by <small class="author" itemprop="author">Eleanor Roosevelt</small>
+        <a href="/author/Eleanor-Roosevelt">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="misattributed-eleanor-roosevelt" /    >
+
+            <a class="tag" href="/tag/misattributed-eleanor-roosevelt/page/1/">misattributed-eleanor-roosevelt</a>
+
+        </div>
+    </div>
+
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <span class="text" itemprop="text">“A day without sunshine is like, you know, night.”</span>
+        <span>by <small class="author" itemprop="author">Steve Martin</small>
+        <a href="/author/Steve-Martin">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            <meta class="keywords" itemprop="keywords" content="humor,obvious,simile" /    >
+
+            <a class="tag" href="/tag/humor/page/1/">humor</a>
+
+            <a class="tag" href="/tag/obvious/page/1/">obvious</a>
+
+            <a class="tag" href="/tag/simile/page/1/">simile</a>
+
+        </div>
+    </div>
+
+    <nav>
+        <ul class="pager">
+
+
+            <li class="next">
+                <a href="/page/2/">Next <span aria-hidden="true">&rarr;</span></a>
+            </li>
+
+        </ul>
+    </nav>
+    </div>
+    <div class="col-md-4 tags-box">
+
+            <h2>Top Ten tags</h2>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 28px" href="/tag/love/">love</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 26px" href="/tag/inspirational/">inspirational</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 26px" href="/tag/life/">life</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 24px" href="/tag/humor/">humor</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 22px" href="/tag/books/">books</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 14px" href="/tag/reading/">reading</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 10px" href="/tag/friendship/">friendship</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 8px" href="/tag/friends/">friends</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 8px" href="/tag/truth/">truth</a>
+            </span>
+
+            <span class="tag-item">
+            <a class="tag" style="font-size: 6px" href="/tag/simile/">simile</a>
+            </span>
+
+
+    </div>
+</div>
+
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                Quotes by: <a href="https://www.goodreads.com/quotes">GoodReads.com</a>
+            </p>
+            <p class="copyright">
+                Made with <span class='sh-red'>?</span> by <a href="https://scrapinghub.com">Scrapinghub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+2019-09-26 22:40:56 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-09-26 22:40:56 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 446,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 2701,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.417,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 9, 26, 14, 40, 56, 330000),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 9, 26, 14, 40, 54, 913000)}
+2019-09-26 22:40:56 [scrapy.core.engine] INFO: Spider closed (finished)
