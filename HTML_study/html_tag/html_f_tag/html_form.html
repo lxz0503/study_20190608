@@ -5,13 +5,79 @@
 <title>菜鸟教程(runoob.com)</title> 
 </head>
 <body>
+<!-- 用户表单 start-->
+<!-- input type=text决定了一个文本输入框 -->
+<form action="demo-form.php" method="get" name="xiaozhan" id="form1">
+   <p>First name:
+       <input type="text" name="FirstName" value="Mickey">
+   </p>
+   <p>Last name:
+       <input type="text" name="LastName" value="Mouse">
+   </p>
+    <p>Password:
+        <input name="password" type="password">
+    </p>
+    <p>生日：
+        <input type="date" name="birthday" value="">
+    </p>
 
-<form action="demo-form.php" method="get" name="xiaozhan">
-First name: <input type="text" name="FirstName" value="Mickey"><br>
-Last name: <input type="text" name="LastName" value="Mouse"><br>
-<input type="submit" value="提交">
+    <p>这是一个单选按钮: <!-- 单选按钮-->
+        <input type="radio" name="fruit" value="strawberry">草莓
+        <input type="radio" name="fruit" value="watermelon">西瓜
+        <input type="radio" name="fruit" value="orange">橙子
+        <input type="radio" name="fruit" value="kiwifruit">猕猴桃
+    </p>
+    <p>性别:
+        <input type="radio" name="gender" value="boy">男  <!-- 男女只是提示符而已-->
+        <input type="radio" name="gender" value="girl">女  <!--真正后台处理的是name和value-->
+    </p>
+    <p>一般需要绑定JS事件:
+        <input type="reset" name="reset"> <br/>    <!-- 重置按钮-->
+        <input type="button" name="button" value="点击">   <!--需要写JS脚本-->
+
+    </p>
+    <!-- 复选框 -->
+    <p>this is a checkbox,you do not need the name attribute,多选:
+        <input name="hobby" type="checkbox" value="football" >足球
+        <input name="hobby" type="checkbox" value="basketball">篮球
+        <input name="hobby" type="checkbox" value="badminton">羽毛球
+        <input name="hobby" type="checkbox" value="voleyball">排球
+    </p>
+    <!-- 下拉菜单 -->
+    <p>This is a drop down list: <!-- id,value可以为空-->
+        <select name="zxs" id="cs1">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option id ='tianjin' value="tianjin">天津</option>
+
+        </select>
+        <select name="fruit" id="dropdown" size=1>
+            <optgroup label="水果">
+               <option value="peach">桃子</option>
+               <option value="watermelon">西瓜</option>
+               <option value="orange">橘子</option>
+               <option value="kiwifruit">猕猴桃</option>
+               <option id ='maybush' value="maybush">山楂</option>
+            </optgroup>
+            <optgroup label="区域">
+                <option value="beijing">顺义</option>
+                <option value="shanghai">朝阳</option>
+                <option id ='tianjin' value="tianjin">海淀</option>
+            </optgroup>
+        </select>
+    </p>
+    <!-- 下拉菜单结束 -->
+    <!-- 文本框如下-->
+    <textarea name="info" id="t1" cols="10" rows="10">输入内容</textarea>
+    <!-- 上传图片或者文件 -->
+    <p>选择文件或者图片:
+        <input type="file" >
+    </p>
+    <br/>
+
+    <input type="submit" value="提交">
 </form>
-
+<!-- 用户表单 end -->
 <p>点击"提交"按钮，表单数据将被发送到服务器上的“demo-form.php”。</p>
 
 </body>
