@@ -1,4 +1,4 @@
-
+# https://www.cnblogs.com/keyou1/p/11510975.html
 import yaml
 f = open(r'D:\xiaozhan_git\study_20190608\API_Python\web_api_selenium_unittest\my_discover_unittest\Test_Data\config_yaml')
 y = yaml.load_all(f, Loader=yaml.FullLoader)          # return a generator
