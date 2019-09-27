@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+#grad1 {
+    height: 200px;
+    background: -webkit-linear-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, green, blue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, green, blue); /* 标准的语法（必须放在最后） */
+}
+
+#grad2 {
+    height: 200px;
+    background: -webkit-linear-gradient(red, orange, yellow, green, blue, indigo, violet); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, orange, yellow, green, blue, indigo, violet); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, orange, yellow, green, blue, indigo, violet); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, orange, yellow, green, blue, indigo, violet); /* 标准的语法（必须放在最后） */
+}
+
+#grad3 {
+    height: 200px;
+    background: -webkit-linear-gradient(red 10%, green 85%, blue 90%); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red 10%, green 85%, blue 90%); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red 10%, green 85%, blue 90%); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red 10%, green 85%, blue 90%); /* 标准的语法（必须放在最后） */
+}
+</style>
+</head>
+<body>
+
+<h3>3 个颜色结点（均匀分布）</h3>
+<div id="grad1"></div>
+
+<h3>7 个颜色结点（均匀分布）</h3>
+<div id="grad2"></div>
+
+<h3>3 个颜色结点（不均匀分布）</h3>
+<div id="grad3"></div>
+
+<p><strong>注意：</strong> 当指定百分比时，颜色是不均匀分布。</p>
+<p><strong>注意：</strong> Internet Explorer 9 及之前的版本不支持渐变。</p>
+
+</body>
+</html>
