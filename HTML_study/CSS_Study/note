@@ -1,0 +1,65 @@
+CSS如何引用:
+1.直接写在标签里, style="样式1，样式2"
+2.在head中通过style标签定义
+3.把样式单独写在CSS文件里,在html中通过link标签引入
+
+<style type="text/css">
+h1 {color:red;}
+p {color:blue;}
+</style>
+
+CSS语法:
+选择器selector, p {color:blue; background: #66cc66;font-size: medium}   p 就是选择器
+
+CSS文件内容格式：
+注释用    /* */
+/* 导航条样式*/
+/* 商品列表条样式*/
+/* 标题样式*/
+
+CSS选择器规则：
+.intro      选择所有class="intro"的元素
+#firstname  选择所有id="firstname"的元素
+p           选择所有<p>元素
+div,p       选择所有<div>元素和<p>元素
+div p       选择<div>元素内的所有<p>元素 ----有空格
+div>p       选择所有父级是 <div> 元素的 <p> 元素-----没有空格
+div+p       选择所有紧接着<div>元素之后的第一个<p>元素-----即div标签之后的第一个p标签
+[target]    选择所有带有target属性元素
+a[target]   选择所有带有target属性的 <a>元素
+[target=-blank]   选择所有使用target="-blank"的元素
+[title~=flower]    选择标题属性包含单词"flower"的所有元素,必须是全单词匹配
+[lang|=en]	      选择 lang 属性以 en 为开头的所有元素
+p:first-letter    用来指定元素第一个字母的样式  新版本CSS3支持的标准,双冒号CSS3语法(::letter)
+p~ul	          选择p元素之后的每一个ul元素
+div[class^="test"]      设置class属性值以"test"开头的所有div元素
+a[src$=".pdf"]	        选择每一个src属性的值以".pdf"结尾的元素
+a[src*="runoob"]	   选择每一个src属性的值包含子字符串"runoob"的元素
+p:first-of-type	       选择每个p元素是其父级的第一个p元素
+p:last-of-type	       选择每个p元素是其父级的最后一个p元素
+p:only-of-type	       选择每个p元素是其父级的唯一p元素
+p:only-child           选择每个p元素是其父级的唯一子元素
+p:nth-child(2)	       选择每个p元素是其父级的第二个子元素
+:root	                  选择文档的根元素
+p:empty	              选择每个没有任何子级的p元素（包括文本节点）
+input[type="text"]:disabled
+input[type="text"]:enabled
+为所有选中的输入元素设置背景颜色：当元素被选中时候，会按照设置来变化
+input:checked {
+    height: 50px;
+    width: 50px;
+}
+
+::selection选择器匹配元素中被用户选中或处于高亮状态的部分。例如鼠标双击文字或者按住左键，直接选择文本，都会改变设置
+::selection只可以应用于少数的CSS属性：color, background, cursor,和outline
+::selection
+{
+color:#ff0000;
+}
+
+如果 input 元素没有设置 "required" 属性，设置其为黄色
+input:optional        要么是optional，要么是required
+{
+background-color: yellow;
+}
+
