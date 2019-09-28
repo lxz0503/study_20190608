@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid red;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;   /*hide the text*/
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip .tooltiptext::after {   /*it will show arrow*/
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.tooltip:hover .tooltiptext {       /*when the mouse moves to the element, the text will display*/
+    visibility: visible;
+}
+</style>
+<body style="text-align:center;">
+
+<h2>右侧提示工具</h2>
+<p>鼠标移动到以下元素:</p>
+
+<div class="tooltip">鼠标移动到我这
+  <span class="tooltiptext">提示文本</span>
+</div>
+
+</body>
+</html>

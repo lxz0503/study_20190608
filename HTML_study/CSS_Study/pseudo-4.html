@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<style type="text/css">
+input:focus         /*当鼠标放在输入框的时候，背景色会变成黄色*/
+{
+  background-color:yellow;
+}
+</style>
+</head>
+
+<body>
+<form action="form_action.asp" method="get">
+    <p>First name:
+        <label>
+            <input type="text" name="fname"/>
+        </label>
+    </p>
+    <p>Last name:
+      <label>
+          <input type="text" name="lname"/>
+      </label>
+    </p>
+<input type="submit" value="Submit"/>
+</form>
+
+<p><b>注释：</b>如果已规定 !DOCTYPE，那么 Internet Explorer 8 （以及更高版本）支持 :focus 伪类。</p>
+
+</body>
+</html>

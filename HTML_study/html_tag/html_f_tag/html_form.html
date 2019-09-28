@@ -9,9 +9,11 @@
 <!-- input type=text决定了一个文本输入框 -->
 <!-- Django to write a client application to upload-->
 <form action="http://127.0.0.1:8080/upload/" method="post" name="xiaozhan" id="form1" enctype="multipart/form-data" autocomplete="off">
-   <p>First name:
-       <input type="text" name="FirstName" value="Mickey" readonly>
-   </p>
+   <div>First name:
+       <label>
+           <input type="text" name="FirstName" value="Mickey" readonly>
+       </label>
+   </div>
    <p>Last name:
        <input type="text" name="LastName" value="" placeholder="xiaozhan">   <!-- 站位符，可以修改-->
    </p>
