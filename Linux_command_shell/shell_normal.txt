@@ -285,7 +285,7 @@ PATH=$PATH:/etc/apache/bin
 for example:
 windriver@PEK-QCAO1-D2:~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path
+windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path， export PATH=$PATH:/home/windriver
 windriver@PEK-QCAO1-D2:~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cd pexpect-4.6.0/
@@ -421,6 +421,8 @@ xlnx-zcu102-rev-1.1.dtb                                                         
 ====rsync     without password
 https://www.cnblogs.com/felixzh/p/4950049.html
 
+rsync 可以快速同步两个机器上的文件，因为只传输不同的部分，所以当传输很多文件的时候，尤其有些没有改动，
+尽量用rsync不要用scp，
 =================================
 chown can modify the group and user
 
@@ -455,6 +457,10 @@ linux里面用来从网络上下载东西的命令
 使用wget -O下载并以不同的文件名保存
 使用wget -b后台下载
 wget --no-check-certificate  -O test.html https://www.centos.bz/2016/10/download-compile-install-nginx/
+
+==================================
+xmanager, to show GUI
+export display=192.168.1.1:0.0    the IP of windows machine
 
 
 
