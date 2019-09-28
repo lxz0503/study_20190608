@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+#main {
+    width: 220px;
+    height: 300px;
+    border: 1px solid black;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;   /*居中对齐弹性盒的各项 <div> 元素*/
+    /*align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit*/
+}
+
+#main div {
+   -webkit-flex: 1; /* Safari 6.1+ */
+   flex: 1;
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+  <div style="background-color:coral;">RED</div>
+  <div style="background-color:lightblue;">BLUE</div>
+  <div style="background-color:lightgreen;">Green div with more content.</div>
+</div>
+
+<p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 align-items 属性。</p>
+<p><b>注意:</b> Safari 7.0 及更新版本通过 -webkit-align-items 属性支持该属性。</p>
+
+</body>
+</html>

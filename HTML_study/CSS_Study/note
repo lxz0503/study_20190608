@@ -30,13 +30,16 @@ a[target]   选择所有带有target属性的 <a>元素
 [target=-blank]   选择所有使用target="-blank"的元素
 [title~=flower]    选择标题属性包含单词"flower"的所有元素,必须是全单词匹配
 [lang|=en]	      选择 lang 属性以 en 为开头的所有元素
+[attribute~=value] 属性中包含独立的单词为 value
+[attribute*=value] 属性中做字符串拆分，只要能拆出来 value 这个词就行 
+[title*=flower]   -->  <img src="/i/eg_tulip.jpg" title="ffffflowerrrrrr" />
 p:first-letter    用来指定元素第一个字母的样式  新版本CSS3支持的标准,双冒号CSS3语法(::letter)
 p~ul	          选择p元素之后的每一个ul元素
 div[class^="test"]      设置class属性值以"test"开头的所有div元素
 a[src$=".pdf"]	        选择每一个src属性的值以".pdf"结尾的元素
 a[src*="runoob"]	   选择每一个src属性的值包含子字符串"runoob"的元素
-p:first-of-type	       选择每个p元素是其父级的第一个p元素
-p:last-of-type	       选择每个p元素是其父级的最后一个p元素
+p:first-of-type	 p:first-child      选择每个p元素是其父级的第一个p元素-----注意这是伪类选择器，实际上是选择冒号前面的元素
+p:last-of-type	p:last-child       选择每个p元素是其父级的最后一个p元素
 p:only-of-type	       选择每个p元素是其父级的唯一p元素
 p:only-child           选择每个p元素是其父级的唯一子元素
 p:nth-child(2)	       选择每个p元素是其父级的第二个子元素
@@ -70,3 +73,86 @@ background-color: yellow;
 相邻兄弟选择器（以加号分隔）
 普通兄弟选择器（以破折号分隔）
 
+如果有多个css文件，按照从上到下的原则，依次生效.
+<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="test1.css"> 
+内联样式---直接写在标签里面的style，这种优先级最高
+基本是谁靠近标签优先级就高
+
+选择器优先级:
+内联样式>ID>类>元素   权重分别为1000,100,10,1
+也就是说第一个css文件里面有定义了#ID的样式，第二个文件定义了 p(ID包含在p标签里)，但是依然是第一个生效，因为第二个权重低
+
+pseudo classes---伪类选择器是CSS3里面才有的   发音是'sjuːdəʊ
+:active	向被激活的元素添加样式。	1
+:focus	向拥有键盘输入焦点的元素添加样式。	2
+:hover	当鼠标悬浮在元素上方时，向元素添加样式。	1
+:link	向未被访问的链接添加样式。	1
+:visited	向已被访问的链接添加样式。	1
+:first-child	向元素的第一个子元素添加样式。p:first-child  选择器匹配作为任何元素的第一个子元素的 <p> 元素
+":before" 伪元素可以在元素的内容前面插入新内容
+":after" 伪元素可以在元素的内容之后插入新内容
+
+html > body table + ul {margin-top:20px;}
+这个选择器解释为：选择紧接在 table 元素后出现的所有兄弟 ul 元素，
+该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。
+
+div 配合float来做页面的布局
+
+#font-family 属性应该设置几个字体名称作为一种"后备"机制，如果浏览器不支持第一种字体，他将尝试下一种字体。
+##注意: 如果字体系列的名称超过一个字，它必须用引号，如Font Family："宋体"
+
+#所有HTML元素可以看作盒子.CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容
+##Margin(外边距) - 清除边框外的区域，外边距是透明的。
+##Border(边框) - 围绕在内边距和内容外的边框。
+##Padding(内边距) - 清除内容周围的区域，内边距是透明的。
+##Content(内容) - 盒子的内容，显示文本和图像
+##当您指定一个CSS元素的宽度和高度属性时，你只是设置内容区域的宽度和高度。要知道，完全大小的元素，你还必须添加填充，边框和边距。.
+##总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+##总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距
+
+#selector group 
+## p{ }: 为所有 p 元素指定一个样式。
+## .marked{ }: 为所有 class="marked" 的元素指定一个样式。
+## .marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
+## p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
+
+# 块元素是一个元素，占用了全部宽度，在前后都是换行符
+## h1,  p, div
+
+# position 属性指定了元素的定位类型
+## 使用 position: absolute; 属性来对齐元素
+##文本在元素内居中对齐，可以使用 text-align: center;
+## 水平居中对齐一个元素(如 <div>), 可以使用 margin: auto
+
+# 导航条基本上是一个链接列表，所以使用 <ul> 和 <li>元素非常有意义
+# padding:10px 5px 15px 20px;
+上内边距是 10px
+右内边距是 5px
+下内边距是 15px
+左内边距是 20px
+# padding:10px 5px;
+上内边距和下内边距是 10px
+右内边距和左内边距是 5px
+# padding:10px;
+所有 4 个内边距都是 10px
+
+# 使用CSS很容易创建透明的图像 
+## 首先，我们创建一个固定的高度和宽度的div元素，带有一个背景图片和边框。
+## 然后我们在第一个div内部创建一个较小的div元素。 
+## 这个div也有一个固定的宽度，背景颜色，边框 - 而且它是透明的。透明的div里面，我们在P元素内部添加一些文本
+
+# @media 规则允许在相同样式表为不同媒体设置不同的样式。
+
+在下面的例子告诉我们浏览器屏幕上显示一个 14 像素的 Verdana 字体样式。但是如果页面打印，将是 10 个像素的 Times 字体
+
+# css counter 
+CSS 计数器使用到以下几个属性：
+
+counter-reset - 创建或者重置计数器
+counter-increment - 递增变量
+content - 插入生成的内容
+counter() 或 counters() 函数 - 将计数器的值添加到元素
+# -webkit ---this is for Safari and Chrome
+-o      this is for Opera
+-moz     this is for Firefox

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+#main {
+    width: 70px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center; /*对齐弹性盒的 <div> 元素的各项.容器内必须有多行的项目，该属性才能渲染出效果*/
+}
+
+#main div {
+    width: 70px;
+    height: 70px;
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+  <div style="background-color:coral;"></div>
+  <div style="background-color:lightblue;"></div>
+  <div style="background-color:pink;"></div>
+</div>
+
+<p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 align-content 属性。</p>
+<p><b>注意:</b> Safari 7.0 及更新版本通过 -webkit-align-content 属性支持该属性。</p>
+
+</body>
+</html>

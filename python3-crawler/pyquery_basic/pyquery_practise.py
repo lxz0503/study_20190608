@@ -67,7 +67,7 @@ items = doc("link.active1.a123")         # 查找link标签，再继续查找cla
 print(items)
 # 查找兄弟元素
 siblings_href = items.siblings()     # siblings 返回了同级的其他标签
-print(siblings_href)
+print('the siblings are:', siblings_href)
 
 # 
 
