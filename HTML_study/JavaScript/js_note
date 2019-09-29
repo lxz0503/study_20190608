@@ -1,0 +1,12 @@
+ECMAScript
+DOM   Document Object Module   js,html,css
+BOM   Browser Object Module    js,browser
+
+Use below 2 methods to introduce js script:
+
+<script>
+  insert your js script like
+  alert("1234");
+</script>
+
+or  <script src="my.js"></script>
