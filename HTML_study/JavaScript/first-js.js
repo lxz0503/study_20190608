@@ -4,3 +4,4 @@ c = a + b;
 console.log(c);
 s = '123456';
 console.log('the length is ', s.length);
+console.log('a is ', a)

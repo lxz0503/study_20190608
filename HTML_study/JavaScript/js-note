@@ -1,0 +1,111 @@
+可以在浏览器的console里面执行js代码
+注释还是用  /**/
+用分号来结束，不是必须，但是建议养成这种习惯
+
+通常的做法是把函数放入 <head> 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容
+
+JavaScript 可以通过不同的方式来输出数据：
+
+使用 window.alert() 弹出警告框。
+使用 document.write() 方法将内容写到 HTML 文档中。
+使用 innerHTML 写入到 HTML 元素。this is to modify the html element
+使用 console.log() 写入到浏览器的控制台。
+
+JavaScript 使用关键字 var 来定义变量， 使用等号来为变量赋值
+JavaScript 中，常见的是驼峰法的命名规则，如 lastName
+语句是用分号分隔
+双斜杠 // 后的内容将会被浏览器忽略
+
+the basic data type in js:
+var length = 16;                                  // Number 通过数字字面量赋值
+var points = x * 10;                              // Number 通过表达式字面量赋值
+var lastName = "Johnson";                         // String 通过字符串字面量赋值
+var cars = ["Saab", "Volvo", "BMW"];              // Array  通过数组字面量赋值
+var person = {firstName:"John", lastName:"Doe"};  // Object 通过对象字面量赋值
+
+function in js:
+function myFunction(a, b) {
+   	return a * b;                                // 返回 a 乘以 b 的结果
+}
+
+JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么
+JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型, it is same with python
+极大或极小的数字可以通过科学（指数）计数法来书写
+var y=123e5;      // 12300000
+var z=123e-5;     // 0.00123
+
+JavaScript 对象 is dictionary in python.
+var person={firstname:"John", lastname:"Doe", id:5566};
+
+可以通过将变量的值设置为 null 来清空变量
+
+js中var 和不带var的区别：
+由于变量声明自带不可删除属性，比较var num = 1 跟 num = 1，前者是变量声明，带不可删除属性，因此无法被删除；
+后者为全局变量的一个属性，因此可以从全局变量中删除。
+
+ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+var变量作用域只有函数作用域和全局变量。
+let非常适合用于 for循环内部的块级作用域
+
+可以在某事件发生时直接调用函数（比如当用户点击按钮时），并且可由 JavaScript 在任何位置进行调用
+
+变量作用域：
+如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。
+
+以下实例中 carName 在函数内，但是为全局变量。
+
+实例
+// 此处可调用 carName 变量
+
+function myFunction() {
+    carName = "Volvo";
+    // 此处可调用 carName 变量
+}
+
+在 HTML 中, 全局变量是 window 对象: 所有数据变量都属于 window 对象
+即定义一个全局变量后，就可以用window.变量名   来调用
+
+变量在函数内声明，变量为局部作用域。
+局部变量：只能在函数内部访问。
+// 此处不能调用 carName 变量
+function myFunction() {
+    var carName = "Volvo";  //这是一个局部变量
+    // 函数内可调用 carName 变量
+}
+
+以下是 HTML 事件的实例：
+HTML 页面完成加载
+HTML input 字段改变时
+HTML 按钮被点击
+HTML 元素中可以添加事件属性，使用 JavaScript 代码来添加 HTML 元素
+事件可以用于处理表单验证，用户输入，用户行为及浏览器动作
+
+
+在以下实例中，按钮元素中添加了 onclick 属性 (并加上代码):
+button是元素名，  属性是onclick
+<button onclick="getElementById('demo').innerHTML=Date()">现在的时间是?</button>
+
+onchange	HTML 元素改变
+onclick	用户点击 HTML 元素
+onmouseover	用户在一个HTML元素上移动鼠标
+onmouseout	用户从一个HTML元素上移开鼠标
+onkeydown	用户按下键盘按键
+onload	浏览器已完成页面的加载
+
+slice(start, end) 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分
+
+如果把数字与字符串相加，结果将成为字符串！   两个字符串连接用加号，类似于python
+
+===	绝对等于（值和类型均相等）
+!==	 不绝对等于（值和类型有一个不相等，或两个都不相等）
+
+JavaScript for/in 语句循环遍历对象的属性
+
+如需标记 JavaScript 语句，请在语句之前加上冒号：
+break 语句（不带标签引用），只能用在循环或 switch 中
+
+你可以使用 typeof 操作符来检测变量的数据类型
+var person;          // 值为 undefined(空), 类型是undefined
+null 和 undefined 的值相等，但类型不等
+var person = null;           // 值为 null(空), 但类型为对象
+当使用完一个比较大的对象时，需要对其进行释放内存时，设置为 null

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>
+如果你的变量没有声明，它将自动成为全局变量：
+</p>
+<p id="demo"></p>
+<script>
+myFunction();    //函数调用
+document.getElementById("demo").innerHTML = "我可以显示 " + carName; //修改html元素
+// document.getElementById("demo").innerHTML = "我可以显示 " + window.carName;
+// 和上面的等价,所有全局变量都会成为 window 变量
+function myFunction()   //函数实现
+{
+    carName = "Volvo";    //变量前面没有var，所以就是全局变量
+}
+</script>
+
+</body>
+</html>

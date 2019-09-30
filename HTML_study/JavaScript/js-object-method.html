@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>创建和使用对象方法。</p>
+<p>对象方法作为一个函数定义存储在对象属性中。</p>
+<p id="demo"></p>
+<script>
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id : 5566,
+    fullName : function()
+	{
+       return this.firstName + " " + this.lastName;
+    }
+};
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+</body>
+</html>
