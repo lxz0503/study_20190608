@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+
+<body>
+
+<p>判断是否为数组。</p>
+<p id="demo"></p>
+<script>
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+// let myDate = new Date();
+document.getElementById("demo").innerHTML = isArray(fruits);
+function isArray(myArray) {
+    return myArray.constructor.toString().indexOf("Array") > -1;
+}
+
+// document.getElementById("demo").innerHTML = isDate(myDate);
+// function isDate(myDate) {
+//     return myDate.constructor.toString().indexOf("Date") > -1;
+// }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+通过 id 找到 HTML 元素        var x=document.getElementById("intro");
+通过标签名找到 HTML 元素      var y=x.getElementsByTagName("p");
+通过类名找到 HTML 元素        var x=document.getElementsByClassName("intro");
+
+
+如何改变 HTML 元素的内容 (innerHTML)
+如何改变 HTML 元素的样式 (CSS)
+如何对 HTML DOM 事件做出反应
+如何添加或删除 HTML 元素
+
+如需改变 HTML 元素的内容，请使用这个语法：
+document.getElementById(id).innerHTML=新的 HTML
+
+如需改变 HTML 元素的属性，请使用这个语法：
+document.getElementById(id).attribute=新属性值
+
+在用户点击某个元素时执行代码，请向一个 HTML 事件属性添加 JavaScript 代码
+
+如需向 HTML 元素分配 事件，您可以使用事件属性
+onchange 事件常结合对输入字段的验证来使用
