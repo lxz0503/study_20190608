@@ -109,3 +109,58 @@ var person;          // 值为 undefined(空), 类型是undefined
 null 和 undefined 的值相等，但类型不等
 var person = null;           // 值为 null(空), 但类型为对象
 当使用完一个比较大的对象时，需要对其进行释放内存时，设置为 null
+
+Number.NaN  NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字
+例如: Month = Number.NaN   返回值是NaN.
+在 JavaScript 中有 5 种不同的数据类型：
+string
+number
+boolean
+object
+function
+typeof null                   // 返回 object
+
+test() 方法是一个正则表达式方法。
+test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false
+var n = str.search(/Runoob/i);
+
+js中的异常处理:
+try {
+    ...    //异常的抛出
+} catch(e) {
+    ...    //异常的捕获与处理
+} finally {
+    ...    //结束处理
+}
+
+在每个作用域开始前声明这些变量
+"use strict" 的目的是指定代码在严格条件下执行。
+严格模式下你不能使用未声明的变量
+
+严格模式通过在脚本或函数的头部添加 "use strict"; 表达式来声明
+
+JavaScript 的加法和连接都使用 + 运算符
+
+字符串断行需要使用反斜杠(\)
+
+
+JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。
+表单数据经常需要使用 JavaScript 来验证其正确性：
+验证表单数据是否为空？
+验证输入是否是一个正确的email地址？
+验证日期是否输入正确？
+验证表单输入内容是否为数字型？
+
+indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置
+lastIndexOf() 是从右向左查某个指定的字符串在字符串中最后一次出现的位置
+注意区分：
+当数组（字符串）中所要查询的数（字符串/字符）在字符串（数组）中只出现一次的时候 二者返回的索引值相同
+当数组（字符串）中所要查询的数（字符串/字符）在字符串（数组）中出现两次及以上的时候
+indexOf  返回的是 valuesearch 第一次在数组（字符串）出现的位置（从左往右）
+lastIndexOf 返回的是 valuesearch 最后一次在数组（字符串）出现的位置（从左往右）
+
+let 声明的变量只在 let 命令所在的代码块内有效。
+const 声明一个只读的常量，一旦声明，常量的值就不能改变。
+
+javascript:void(0) 中最关键的是 void 关键字，
+void 是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值
