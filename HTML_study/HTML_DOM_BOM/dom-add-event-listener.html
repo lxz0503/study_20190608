@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>该实例使用 addEventListener() 方法向同个按钮中添加两个点击事件。</p>
+<button id="myBtn">点我</button>
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+function myFunction() {
+    alert ("Hello World!")
+}
+function someOtherFunction() {
+    alert ("函数已执行!")
+}
+</script>
+
+</body>
+</html>

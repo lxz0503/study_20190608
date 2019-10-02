@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p>实例使用 addEventListener() 方法在同一个按钮中添加多个事件。</p>
+<button id="myBtn">点我</button>
+<p id="demo"></p>
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+function myFunction() {
+    document.getElementById("demo").innerHTML += "Moused over!<br>"
+}
+function mySecondFunction() {
+    document.getElementById("demo").innerHTML += "Clicked!<br>"
+}
+function myThirdFunction() {
+    document.getElementById("demo").innerHTML += "Moused out!<br>"
+}
+</script>
+
+</body>
+</html>

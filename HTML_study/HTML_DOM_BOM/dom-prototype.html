@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<h2>JavaScript 对象</h2>
+<p>使用 prototype 属性就可以给对象的构造函数添加新的属性</p>
+
+<p id="demo"></p>
+
+<script>
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+Person.prototype.nationality = "English";    <!--add new attribute-->
+
+var myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"我父亲对国籍是 " + myFather.nationality;
+</script>
+
+</body>
+</html>
