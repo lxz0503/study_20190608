@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="close-box.css">    <!-- introduce css script in the head-->
+</head>
+
+<body>
+
+<h2>提示信息</h2>
+<p>点击 "x" 关闭提示框。</p>
+<div class="alert">
+  <span class="closebtn">&times;</span>
+  <strong>危险!</strong> 危险操作提示。
+</div>
+
+<div class="alert success">
+  <span class="closebtn">&times;</span>
+  <strong>成功!</strong> 操作成功提示。
+</div>
+
+<div class="alert info">
+  <span class="closebtn">&times;</span>
+  <strong>提示!</strong> 提示信息修改等。
+</div>
+
+<div class="alert warning">
+  <span class="closebtn">&times;</span>
+  <strong>警告!</strong> 提示当前操作要注意。
+</div>
+
+<script type="text/javascript" src="close-box.js"></script>   <!-- put your js at the end of body,otherwise it will not work-->
+<p>对dom的渲染，一般原则是，样式在前面，dom文档，js脚本在最后面。遵循先解析 再渲染 再执行script这个顺序。</p>
+
+</body>
+</html>

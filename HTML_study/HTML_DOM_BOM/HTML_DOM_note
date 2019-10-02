@@ -1,0 +1,47 @@
+通过 id 找到 HTML 元素        var x=document.getElementById("intro");
+通过标签名找到 HTML 元素      var y=x.getElementsByTagName("p");
+通过类名找到 HTML 元素        var x=document.getElementsByClassName("intro");
+
+
+如何改变 HTML 元素的内容 (innerHTML)
+如何改变 HTML 元素的样式 (CSS)
+如何对 HTML DOM 事件做出反应
+如何添加或删除 HTML 元素
+
+如需改变 HTML 元素的内容，请使用这个语法：
+document.getElementById(id).innerHTML=新的 HTML
+
+如需改变 HTML 元素的属性，请使用这个语法：
+document.getElementById(id).attribute=新属性值
+
+在用户点击某个元素时执行代码，请向一个 HTML 事件属性添加 JavaScript 代码
+
+如需向 HTML 元素分配 事件，您可以使用事件属性
+onchange 事件常结合对输入字段的验证来使用
+
+
+addEventListener() 方法用于向指定元素添加事件句柄。
+element.addEventListener(event, function, useCapture);
+第一个参数是事件的类型 (如 "click" 或 "mousedown").
+第二个参数是事件触发后调用的函数。
+第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的。
+
+study all dom events:
+https://www.runoob.com/jsref/dom-obj-event.html
+
+Console 对象提供了访问浏览器调试模式的信息到控制台。
+
+NodeList 对象是一个从文档中获取的节点列表 (集合)
+NodeList 对象 length 属性定义了节点列表中元素的数量
+
+使用 prototype 属性就可以给对象的构造函数添加新的属性
+
+全局变量不能通过 delete 操作符删除；而 window 属性上定义的变量可以通过 delete 删除
+弹窗alert()使用 反斜杠 + "n"(\n) 来设置换行
+
+在 JavaScritp 中使用计时事件是很容易的，两个关键方法是:
+setInterval() - 间隔指定的毫秒数不停地执行指定的代码。
+setTimeout() - 在指定的毫秒数后执行指定代码。
+setInterval("javascript function",milliseconds)
+
+JavaScript 可以使用 document.cookie 属性来创建 、读取、及删除 cookie
