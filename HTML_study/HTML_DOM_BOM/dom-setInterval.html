@@ -6,15 +6,26 @@
 </head>
 <body>
 
+<p>点击按钮，3秒后会弹出</p>
+<button onclick="myFunction()">点我</button>
 <p>在页面显示一个时钟</p>
 <p id="demo"></p>
 <script>
-var myVar=setInterval(function(){myTimer()},1000);
-function myTimer(){
-	var d=new Date();
-	var t=d.toLocaleTimeString();
-	document.getElementById("demo").innerHTML=t;
+    function alertFunc() {
+    alert("Hello!");
 }
+    function myFunction() {
+        setTimeout(alertFunc, 3000);
+    }
+
+    var myVar = setInterval(myTimer,1000);
+    function myTimer(){
+	    let d = new Date();
+	    let t = d.toLocaleTimeString();
+	    document.getElementById("demo").innerHTML = t;
+}
+
+
 </script>
 
 </body>

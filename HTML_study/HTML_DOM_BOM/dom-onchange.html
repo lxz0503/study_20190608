@@ -6,18 +6,19 @@
 </head>
 
 <head>
-<script>
-function myFunction(){
-	var x=document.getElementById("fname");
-	x.value=x.value.toUpperCase();
-}
-</script>
+    <script>
+    function myFunction(){
+    	let x=document.getElementById("fname");
+    	x.value=x.value.toUpperCase();
+    }
+    </script>
 </head>
 
 <body>
-
-输入你的名字: <input type="text" id="fname" value="" onchange="myFunction()">
-<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+<label>输入你的名字:
+    <input type="text" id="fname" value="" onchange="myFunction()">
+</label>
+<p>当你离开输入框后，在其他地方点击一下才表示离开，函数将被触发，将小写字母转为大写字母。</p>
 
 </body>
 </html>
