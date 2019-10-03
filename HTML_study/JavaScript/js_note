@@ -2,7 +2,7 @@ ECMAScript
 DOM   Document Object Module   js,html,css
 BOM   Browser Object Module    js,browser
 
-Use below 2 methods to introduce js script:
+Use below 2 methods to introduce js script: put it at the end of the body
 
 <script>
   insert your js script like
@@ -10,3 +10,45 @@ Use below 2 methods to introduce js script:
 </script>
 
 or  <script src="my.js"></script>
+
+
+在JS对象中，属性默认不需要加引号或者双引号,value部分如果是字符串就加双引号
+var person = {name:'xiao', age:10};
+
+在console里面输入 document.body.contentEditable=true
+就可以修改购物网站上的商品价格,可用于PS图片
+
+/reg/gi    表示全局，忽略大小写匹配
+在js中，正则表达式中不能加空格
+
+location.href="www.sogo.com"   跳转到指定页面
+location.href      可以获取当前页面URL地址
+location.reload()    重新加载当前页面
+
+setAttribute() 方法添加指定的属性，并为其赋指定的值。
+如果这个指定的属性已存在，则仅设置/更改值
+
+document.getElementsByTagName("a")[0].getAttribute("target")
+
+.innerText = "aaaa"   快速设置文本内容
+.innerHTML = "<p>this is a new paragraph</p>"     设置标签内容
+
+.innerHTML   可以取出标签信息
+.innerText   只取出文本内容
+
+// 可以删除子元素
+d1 = document.getElementById("d1");
+d2 = d1.firstElementChild
+d1.removeChild(d2)  //可以删除第一个子元素
+
+//replaceChild
+d1 = document.getElementById("d1");
+d2 = d1.firstElementChild
+var newTag = document.createElement("a");
+newTag.innerText = "this is a new link";
+newTag.href = "http://www.sogo.com/";
+d1.replaceChild(newTag,d2)       //用newTag替换d2标签
+
+//直接修改css属性
+obj.style.margin
+obj.style.left

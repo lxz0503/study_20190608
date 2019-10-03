@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+
+<div id="d1">
+    <p>first paragraph</p>   //document.getElementsByTagName("div")[0].firstElementChild
+</div>
+<a id="myAnchor" href="http://www.microsoft.com">微软</a>
+<input type="button" onclick="changeLink()" value="更改链接">
+
+<script>
+function changeLink()
+{
+document.getElementById('myAnchor').innerHTML="W3School";
+document.getElementById('myAnchor').href="http://www.w3school.com.cn";
+document.getElementById('myAnchor').target="_blank";
+document.getElementById("d1").innerHTML = "<p>this is a new paragraph</p>";   //添加一个新的段落，通过innerHTML属性
+}
+
+</script>
+
+
+</body>
+</html>

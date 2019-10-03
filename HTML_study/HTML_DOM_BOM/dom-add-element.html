@@ -12,12 +12,21 @@
 </div>
 
 <script>
-var para = document.createElement("p");
-var node = document.createTextNode("这是一个新的段落。");
-para.appendChild(node);
+    <!--添加一个p标签-->
+    var para = document.createElement("p");      //创建<p>元素
+    var node = document.createTextNode("这是一个新的段落。"); //为<p>元素创建一个新的文本节点
+    para.appendChild(node);                          //将文本节点添加到<p>元素中
 
-var element = document.getElementById("div1");
-element.appendChild(para);
+    <!--添加一个img标签-->
+    var imgEle = document.createElement("img");
+    imgEle.src = "jenkins_config_0.png"
+
+    <!--在一个已存在的元素中添加 p 元素,这个是以div1元素为例子-->
+    var element = document.getElementById("div1");
+    var child = document.getElementById("p1");
+    element.appendChild(para);     //添加一个新的段落
+    element.appendChild(imgEle);   //添加新的图片
+    element.insertBefore(imgEle,child);  //把图片添加到p1标签之前
 </script>
 
 </body>

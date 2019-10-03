@@ -1,0 +1,5 @@
+input {
+    background-color: #4CAF50;
+    font-size: larger;
+}
+input#b1:active {visibility: hidden}
