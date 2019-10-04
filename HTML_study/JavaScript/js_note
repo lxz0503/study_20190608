@@ -52,3 +52,16 @@ d1.replaceChild(newTag,d2)       //用newTag替换d2标签
 //直接修改css属性
 obj.style.margin
 obj.style.left
+
+HTML DOM事件对象
+https://www.runoob.com/jsref/dom-obj-event.html
+
+常用事件: onclick,ondbclick,onfocus,onblur,onchange
+绑定事件的方式:在标签里直接添加属性,例如 <input type="text" onfocus="myFunction(this)">
+通过js脚本
+
+this代表的是触发当前事件的标签
+
+1.innerText是标签内的文本,输入输出的是字符串;
+2.innerHtml是<标签内的文本,输入输出到该DOM内部纯HTML代码;
+3.value是表单元素特有的属性,输入输出的是字符串;

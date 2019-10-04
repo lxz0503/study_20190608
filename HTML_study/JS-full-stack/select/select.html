@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select test</title>
+    <link rel="stylesheet" href="select.css">
+</head>
+
+<body>
+    <label>
+        <select id="s1">
+            <option value="0" selected>请选择</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+        </select>
+    </label>
+
+    <label>       <!--会根据第一个下拉选项来添加对应的区,相当于两个下拉标签的联动操作-->
+        <select id="s2" name="areas">
+        </select>
+    </label>
+
+    <script src="select.js"></script>
+</body>
+</html>
