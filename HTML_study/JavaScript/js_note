@@ -27,6 +27,7 @@ location.reload()    重新加载当前页面
 
 setAttribute() 方法添加指定的属性，并为其赋指定的值。
 如果这个指定的属性已存在，则仅设置/更改值
+document.getElementsByTagName("INPUT")[0].setAttribute("type","button");
 
 document.getElementsByTagName("a")[0].getAttribute("target")
 

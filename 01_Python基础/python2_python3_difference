@@ -1,0 +1,67 @@
+py2------引入import from future
+
+1.print函数:（Python3中print为一个函数，必须用括号括起来；Python2中print为class）
+2.Python3中input得到的为str；Python2的input的到的为int型，Python2的raw_input得到的为str类型
+3.在 Python 3 中，range()只是生成一个迭代器（等价于Py2中的xrange函数）. python2中的range会生成一个列表
+4.py3中socket传过来的数据是byte类型 / hashlib包update也需要传bytes类型的数据； py2中则可以直接传入str
+5.py3中默认字符编码是unicode；py2中默认字符编码是 ASCII，如果文件中出现了中文，需要在顶部加入coding声明#coding:utf8
+
+python装饰器：
+它是指对函数执行过程，做一些扩展，甚至可以更改本身函数的执行，它就是在不改变源码的情况下，给它添加新的功能
+It is like an extension for a function which can modify  and add new functionality.
+You can not change the source code.
+
+python提供的内置装饰器有？
+
+@classmethod修饰类函数，可以由对象和类调用，在类函数中，有一个隐形参数，如果使用类函数执行，隐形参数指这个类。如果使用对象.类函数执行，隐形函数指对象的类型。它只想让类来调用
+
+@staticmethod修饰静态函数，静态函数没有任何隐形参数，可以由对象和类调用
+
+@property在函数前面加这个装饰器，那么这个函数可以当成属性类用
+
+列表是可变的，而元组是不可变的  changeable   non-changeable.
+
+打印前三行
+sed -n '1,3p' /etc/passwd
+wk 'NR>=1&&NR<=3 {print $0}' /etc/passwd
+cat /etc/passwd | head -3
+
+深拷贝就是将一个对象拷贝到另一个对象中，这意味着如果你对一个对象的拷贝做出改变时，不会影响原对象。
+而浅拷贝则是将一个对象的引用拷贝到另一个对象上，所以如果我们在拷贝中改动，会影响到原对象
+
+列表解析:根据已有的列表,高效产生新列表的方法
+将列表中的值开方后放入另外一个列表:
+l1=[1,2,3,4,5]
+l2=[i**2 for i in l1]
+print l2
+[1, 4, 9, 16, 25]
+
+也可加入判断,将列表中的偶数开放后放入另外一个列表:
+
+l1=[1,2,3,4,5]
+l2=[i**2 for i in l1 if i%2 == 0]
+print l2
+[4, 16]
+g1=(i**2 for i in range(1,5))
+print g1
+<generator object <genexpr> at 0x2921500>
+通过next方法获取值
+
+g1.next()
+1
+g1.next()
+4
+
+file.seek(offset[,whence])控制位置
+whence起点:0,从文件头;1,从当前位置;2,从末尾  offset偏移量
+f1.seek(10,0)
+
+三元运算符
+[on true] if [expression] else [on false]
+如果表达式为True，就执行[on true]中的语句。否则，就执行[on false]中的语句。
+下面是使用它的方法：
+>>> a,b=2,3
+>>> min=a if a<b else b
+
+study link
+http://www.magedu.com/80272.html

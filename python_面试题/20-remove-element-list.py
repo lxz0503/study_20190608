@@ -44,6 +44,7 @@ print('the new list is', nums)
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
 d = {}
 d = d.fromkeys(nums)     # 设置了字典的键
+print("d is", d)      # d is {0: None, 1: None, 2: None, 3: None, 4: None}
 l = list(d.keys())
 print(l)           # [0, 1, 2, 3, 4]
 
