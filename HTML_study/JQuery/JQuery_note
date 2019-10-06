@@ -1,0 +1,101 @@
+比js写起来简单，代码行数少，但是做的事情多
+JQuery 是js的第三方库，类似于python的第三方库
+
+jQuery库包含以下功能： 是最流行的js框架
+
+HTML 元素选取
+HTML 元素操作
+CSS 操作
+HTML 事件函数
+JavaScript 特效和动画
+HTML DOM 遍历和修改
+AJAX
+Utilities
+
+jQuery 库是一个 JavaScript 文件，您可以使用 HTML 的 <script> 标签引用它：
+在head标签里面
+<script src="jquery-3.4.1.js.js"></script>
+在body标签里面
+<script src="first-jquery.js"></script>
+
+必须先导入，也就是说JQuery的脚本必须放在其他脚本前面，通常放在head标签里面
+
+$符号可以理解为JQuery的别名
+$("")是基础语法
+$(this)	选取当前 HTML 元素
+$("p.intro")	选取 class 为 intro 的 <p> 元素
+$("p:first")	选取第一个 <p> 元素
+$("ul li:first")	选取第一个 <ul> 元素的第一个 <li> 元素
+$("ul li:first-child")	选取每个 <ul> 元素的第一个 <li> 元素
+$("[href]")	选取带有 href 属性的元素
+$("a[target='_blank']")	选取所有 target 属性值等于 "_blank" 的 <a> 元素
+$("a[target!='_blank']")	选取所有 target 属性值不等于 "_blank" 的 <a> 元素
+$(":button")	选取所有 type="button" 的 <input> 元素 和 <button> 元素
+$("tr:even")	选取偶数位置的 <tr> 元素
+$("tr:odd")	选取奇数位置的 <tr> 元素
+
+
+jQuery 事件方法语法
+页面中指定一个点击事件：
+
+$("p").click();
+下一步是定义什么时间触发事件。您可以通过一个事件函数实现：
+
+$("p").click(function(){
+  $(this).hide();
+});
+JQuery 选择器用法:
+$(".intro,.demo")	class 为 "intro" 或 "demo" 的所有元素
+parent > child	    $("div > p")   	<div> 元素的直接子元素的所有 <p> 元素,P元素必须是div的直接子元素
+parent descendant	$("div p")	    <div> 元素的后代的所有 <p> 元素
+element + next	    $("div + p")	    每个 <div> 元素相邻的下一个 <p> 元素
+element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素, p元素必须要在div元素的后面
+:eq(index)	 $("ul li:eq(3)")	 列表中的第四个元素（index 值从 0 开始）
+:gt(no)	  $("ul li:gt(3)")	列举 index 大于 3 的元素
+:lt(no)	  $("ul li:lt(3)")	列举 index 小于 3 的元素
+:not(selector)	$("input:not(:empty)")	所有不为空的输入元素
+:contains(text)	$(":contains('Hello')")	所有包含文本 "Hello" 的元素
+:has(selector)	$("div:has(p)")	所有包含有 <p> 元素在其内的 <div> 元素
+:empty	$(":empty")	所有空元素
+:hidden	$("p:hidden")	所有隐藏的 <p> 元素
+:visible	$("table:visible")	所有可见的表格
+[attribute]	$("[href]")	所有带有 href 属性的元素
+[attribute=value]	$("[href='default.htm']")	所有带有 href 属性且值等于 "default.htm" 的元素
+[attribute!=value]	$("[href!='default.htm']")	所有带有 href 属性且值不等于 "default.htm" 的元素
+[attribute$=value]	$("[href$='.jpg']")	所有带有 href 属性且值以 ".jpg" 结尾的元素
+[attribute|=value]	$("[title|='Tomorrow']")	所有带有 title 属性且值等于 'Tomorrow' 或者以 'Tomorrow' 后跟连接符作为开头的字符串
+[attribute^=value]	$("[title^='Tom']")	所有带有 title 属性且值以 "Tom" 开头的元素
+[attribute~=value]	$("[title~='hello']")	所有带有 title 属性且值包含单词 "hello" 的元素
+[attribute*=value]	$("[title*='hello']")	所有带有 title 属性且值包含字符串 "hello" 的元素
+[name=value][name2=value2]	$( "input[id][name$='man']" )	带有 id 属性，并且 name 属性以 man 结尾的输入框
+
+:input	$(":input")	所有 input 元素
+:text	$(":text")	所有带有 type="text" 的 input 元素
+:password	$(":password")	所有带有 type="password" 的 input 元素
+:radio	$(":radio")	所有带有 type="radio" 的 input 元素
+:checkbox	$(":checkbox")	所有带有 type="checkbox" 的 input 元素
+:submit	$(":submit")	所有带有 type="submit" 的 input 元素
+:reset	$(":reset")	所有带有 type="reset" 的 input 元素
+:button	$(":button")	所有带有 type="button" 的 input 元素
+:image	$(":image")	所有带有 type="image" 的 input 元素
+:file	$(":file")	所有带有 type="file" 的 input 元素
+:enabled	$(":enabled")	所有启用的元素
+:disabled	$(":disabled")	所有禁用的元素
+:selected	$(":selected")	所有选定的下拉列表元素
+:checked	$(":checked")	所有选中的复选框选项
+.selector	$(selector).selector	在jQuery 1.7中已经不被赞成使用。返回传给jQuery()的原始选择器
+:target	$( "p:target" )	选择器将选中ID和URI中一个格式化的标识符相匹配的<p>元素
+
+:first-child	$("p:first-child")	属于其父元素的第一个子元素的所有 <p> 元素
+:first-of-type	$("p:first-of-type")	属于其父元素的第一个 <p> 元素的所有 <p> 元素
+:last-child	    $("p:last-child")	属于其父元素的最后一个子元素的所有 <p> 元素
+:last-of-type	$("p:last-of-type")	属于其父元素的最后一个 <p> 元素的所有 <p> 元素
+:nth-child(n)	$("p:nth-child(2)")	属于其父元素的第二个子元素的所有 <p> 元素
+:nth-last-child(n)	$("p:nth-last-child(2)")	属于其父元素的第二个子元素的所有 <p> 元素，从最后一个子元素开始计数
+:nth-of-type(n)	      $("p:nth-of-type(2)")	 属于其父元素的第二个 <p> 元素的所有 <p> 元素
+:nth-last-of-type(n)	$("p:nth-last-of-type(2)")	属于其父元素的第二个 <p> 元素的所有 <p> 元素，从最后一个子元素开始计数
+:only-child	        $("p:only-child")	属于其父元素的唯一子元素的所有 <p> 元素
+:only-of-type	  $("p:only-of-type")	属于其父元素的特定类型的唯一子元素的所有 <p> 元素
+
+
+所有jQuery对象，变量名前面要加上$符号，来区分DOM对象

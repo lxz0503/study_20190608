@@ -30,8 +30,8 @@ print(v)
 # 可以像这样访问 JavaScript 对象数组中的第一项（索引从 0 开始）：
 # sites[0].name;
 # python3 和 json数据之间的转换
-# json.dumps(): 对数据进行编码。把字典格式转化为json格式的字符串
-# json.loads(): 对数据进行解码。把json格式字符串转化为字典格式
+# json.dumps(): 对数据进行编码。把字典格式转化为json格式的字符串   serialization
+# json.loads(): 对数据进行解码。把json格式字符串转化为字典格式     anti-serialization
 # Python 字典类型转换为 JSON 对象
 data1 = {
     'no': 1,
