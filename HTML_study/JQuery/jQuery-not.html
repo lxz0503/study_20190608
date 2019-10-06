@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script>   <!--选取除了 class="intro" 元素以外的所有 <p> 元素-->
+$(document).ready(function(){
+  $("p:not(.intro)").css("background-color","yellow");
+});
+</script>
+</head>
+
+<body>
+
+<h1>欢迎来到我的主页</h1>
+<p class="intro">菜鸟教程</p>
+<p>学的不仅是技术，更是梦想！</p>
+<p>学的不仅是技术，更是梦想！</p>
+
+<p>你最喜欢的网站:</p>
+<ul id="choose">
+<li>Google</li>
+<li>Taobao</li>
+<li>Runoob</li>
+</ul>
+
+</body>
+</html>

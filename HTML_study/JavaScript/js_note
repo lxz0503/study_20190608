@@ -66,3 +66,5 @@ this代表的是触发当前事件的标签
 1.innerText是标签内的文本,输入输出的是字符串;
 2.innerHtml是<标签内的文本,输入输出到该DOM内部纯HTML代码;   document.getElementById("d1").innerHTML = "<p>this is a new paragraph</p>";
 3.value是表单元素特有的属性,输入输出的是字符串;
+
+涉及到DOM操作的js代码要放在body的最下面

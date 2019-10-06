@@ -25,8 +25,8 @@
     var element = document.getElementById("div1");
     var child = document.getElementById("p1");
     element.appendChild(para);     //添加一个新的段落
-    element.appendChild(imgEle);   //添加新的图片
-    element.insertBefore(imgEle,child);  //把图片添加到p1标签之前
+    element.appendChild(imgEle);   //添加新的图片,默认追加到div1的最后面
+    element.insertBefore(imgEle,child);  //把图片添加到child(p1标签)之前
 </script>
 
 </body>
