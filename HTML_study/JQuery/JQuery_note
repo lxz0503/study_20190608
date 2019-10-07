@@ -42,14 +42,21 @@ $("p").click();
 下一步是定义什么时间触发事件。您可以通过一个事件函数实现：
 
 $("p").click(function(){
-  $(this).hide();
+  $(this).hide();      注意这里要用$(this)才表示jQuery的用法,  this 是DOM的用法
 });
+
+$("input").focus(function(){
+  $(this).css("background-color","#cccccc");
+});
+
+
+
 JQuery 选择器用法:
 $(".intro,.demo")	class 为 "intro" 或 "demo" 的所有元素
 parent > child	    $("div > p")   	<div> 元素的直接子元素的所有 <p> 元素,P元素必须是div的直接子元素
 parent descendant	$("div p")	    <div> 元素的后代的所有 <p> 元素
-element + next	    $("div + p")	    每个 <div> 元素相邻的下一个 <p> 元素
-element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素, p元素必须要在div元素的后面
+element + next	    $("div + p")	    每个 <div> 元素相邻的下一个 <p> 元素,例如$("label+input")
+element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素,所有兄弟元素， p元素必须要在div元素的后面
 :eq(index)	 $("ul li:eq(3)")	 列表中的第四个元素（index 值从 0 开始）
 :gt(no)	  $("ul li:gt(3)")	列举 index 大于 3 的元素
 :lt(no)	  $("ul li:lt(3)")	列举 index 小于 3 的元素
@@ -69,6 +76,7 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素, p元素�
 [attribute*=value]	$("[title*='hello']")	所有带有 title 属性且值包含字符串 "hello" 的元素
 [name=value][name2=value2]	$( "input[id][name$='man']" )	带有 id 属性，并且 name 属性以 man 结尾的输入框
 
+表单选择器：
 :input	$(":input")	所有 input 元素
 :text	$(":text")	所有带有 type="text" 的 input 元素
 :password	$(":password")	所有带有 type="password" 的 input 元素
@@ -99,3 +107,128 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素, p元素�
 
 
 所有jQuery对象，变量名前面要加上$符号，来区分DOM对象
+jQuery对象和DOM对象互相转化
+$(DOM对象)就变成jQuery对象
+
+
+jQuery traverse   遍历
+
+向上遍历 DOM 树：
+parent()    返回被选元素的直接父元素
+parents()   返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)
+parentsUntil()
+$("span").parents("ul");  返回所有 <span> 元素的所有祖先，并且它是 <ul> 元素
+$("span").parentsUntil("div"); 返回介于 <span> 与 <div> 元素之间的所有祖先元素
+
+css里的 * 是通配符 意思就是所有的标签
+.ancestors * 意思就是样式ancestors下的所有标签都参照这个样式
+
+向下遍历DOM树:
+$("div").children()
+$("div").children("p.1"); 返回类名为 "1" 的所有 <p> 元素，并且它们是 <div> 的直接子元素
+find() 方法返回被选元素的后代元素，一路向下直到最后一个后代
+$("div").find("span")    返回属于 <div> 后代的所有 <span> 元素
+
+同胞遍历 siblings
+siblings() 方法返回被选元素的所有同胞元素
+$("h2").siblings("p") 返回属于 <h2> 的同胞元素的所有 <p> 元素
+next() 方法返回被选元素的下一个同胞元素
+nextAll() 方法返回被选元素的所有跟随的同胞元素
+nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素
+$("h2").nextUntil("h6")
+prev(), prevAll(),prevUntil() 它们返回的是前面的同胞元素（在 DOM 树中沿着同胞之前元素遍历
+
+
+过滤方法:
+first() 方法返回被选元素的首个元素,即可能匹配多个元素，但是只返回第一个
+last() 方法返回被选元素的最后一个元素
+eq() 方法返回被选元素中 带有指定索引号的元素  索引号从 0 开始，因此首个元素的索引号是 0
+   $("p").eq(1)    即匹配多个p元素，但是只返回index为1的p元素
+filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+   $("p").filter(".url")   返回带有类名 "url" 的所有 <p> 元素
+not() 方法返回不匹配标准的所有元素。
+提示：not() 方法与 filter() 相反。
+  $("p").not(".url")  返回不带有类名 "url" 的所有 <p> 元素
+  $("p").not(":eq(1)").css("background-color","yellow"); 选取索引值不为 1 的 p 元素，并把背景颜色设置为黄色
+
+
+三个简单实用的用于 DOM 操作的 jQuery 方法：
+text() - 设置或返回所选元素的文本内容
+html() - 设置或返回所选元素的内容（包括 HTML 标记）
+val() - 设置或返回表单字段的值
+attr() 方法用于获取属性值
+prop() 方法用于获取属性值
+
+  alert("Text: " + $("#test").text())
+  alert("HTML: " + $("#test").html())
+  alert("值为: " + $("#test").val())
+  alert($("#runoob").attr("href"))
+prop()函数的结果:
+      1.如果有相应的属性，返回指定属性值。
+      2.如果没有相应的属性，返回值是空字符串。
+attr()函数的结果:
+      1.如果有相应的属性，返回指定属性值。
+      2.如果没有相应的属性，返回值是 undefined。
+对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+对于HTML元素我们自己自定义的DOM属性，在处理时，使用 attr 方法。
+
+
+三个 jQuery 方法：text()、html() 以及 val()，同样拥有回调函数。
+回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。
+然后以函数新值返回您希望使用的字符串
+$("#test1").text(function(i,origText){
+        return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")";
+    });
+
+attr()设置多个属性: 参数就是一个字典格式
+$("#runoob").attr({
+        "href" : "http://www.runoob.com/jquery",
+        "title" : "jQuery 教程"
+    });
+
+
+jQuery 添加元素:
+append() - 在被选元素的结尾插入内容       是在选择元素内部嵌入
+prepend() - 在被选元素的开头插入内容      是在选择元素内部嵌入
+after() - 在被选元素之后插入内容          在元素外面追加
+before() - 在被选元素之前插入内容         在元素外面追加
+
+jQuery 删除元素，一般可使用以下两个 jQuery 方法：
+remove() - 删除被选元素（及其子元素）  $("p").remove(".italic") 该参数可以是任何 jQuery 选择器的语法
+empty() - 从被选元素中删除子元素
+
+
+通过 jQuery，可以很容易地对 CSS 元素进行操作
+ addClass() - 向被选元素添加一个或多个类
+ removeClass() - 从被选元素删除一个或多个类
+ toggleClass() - 对被选元素进行添加/删除类的切换操作， 有这个类就删除，没有就添加
+ $("h1,h2,p").toggleClass("blue");
+
+
+css() - 设置或返回被选元素的一个或多个样式属性
+ $("p").css("background-color")    首个匹配元素的 background-color 值
+ $("p").css({"background-color":"yellow","font-size":"200%"});  设置多个属性，里面就是字典
+ $("p").eq(2).css("background-color","yellow");
+
+
+jQuery尺寸方法：
+width()             元素的尺寸
+height()
+innerWidth()         元素的尺寸加上padding
+innerHeight()
+outerWidth()         元素的尺寸加上padding+border
+outerHeight()
+outerHeight(true)     元素的尺寸加上padding+border+margin
+
+
+通过 jQuery，您可以使用 hide() 和 show() 方法来隐藏和显示 HTML 元素
+$("p").hide()    $("p").show()
+$("div").hide(1000,"linear",function(){      //第一个参数是speed，第二个是表示使用哪种缓动方式，第三个是回调函数
+      alert("Hide() 方法已完成!");
+    });
+
+
+Chaining 允许我们在一条语句中运行多个 jQuery 方法（在相同的元素上）
+$("#p1").css("color","red").slideUp(2000).slideDown(2000);
+
+
