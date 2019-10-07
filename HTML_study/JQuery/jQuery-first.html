@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("div p").first().css("background-color","yellow");
+});
+</script>
+</head>
+<body>
+
+<h1>欢迎访问我的主页</h1>
+<div>
+	<p>这是 div 中的一个段落。</p>     <!-- 这行会被选中 -->
+	<p>这是 div 中的一个段落。</p>
+</div>
+
+<div>
+	<p>这是另外一个 div 中的一个段落。</p>
+</div>
+
+<p>这是一个段落。</p>
+
+</body>
+</html>
