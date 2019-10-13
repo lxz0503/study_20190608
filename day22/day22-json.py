@@ -61,7 +61,7 @@ data = {        # 定义一个字典
 with open('data.json', 'w') as f:
     json.dump(data, f)      # 把data的内容写到一个json文件里面
 
-# 读取数据
+# 从json格式文件中读取数据,用python的字典来处理数据
 with open('data.json', 'r') as f:
     data = json.load(f)
 print(type(data))           # <class 'dict'>

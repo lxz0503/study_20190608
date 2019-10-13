@@ -10,12 +10,28 @@ Install packages one by one: lxml,pyOpenSSL,Twisted,PyWin32,scrapy
 How to use scrapy in pycharm
 https://blog.csdn.net/YiXiao1997/article/details/87834960
 
+# https://blog.csdn.net/cdyjy_litao/article/details/78607124
+## windows平台下关于环境变量的知识
+
 1. cd D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy
 website: http://quotes.toscrape.com/
-scrapy startproject quotetutorial
-cd quotetutorial
-scrapy genspider quotes quotes.toscrape.com
+基本操作步骤如下:
+scrapy startproject quotetutorial       //新建一个项目
+cd quotetutorial                        //进入项目所在目录
+scrapy genspider quotes quotes.toscrape.com          //生成一个和上面同名的目录,创建了一个spider，名字为quotes
 在pycharm上面检查目录结构
 在pycharm的terminal里面执行：
-cd D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\quotetutorial\spiders>
-scrapy crawl quotes
+cd D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\
+scrapy crawl quotes      //开始爬取数据,就可以运行爬虫
+//重点分析quotes.py，parse(self, response),这个方法里面的response就是爬取网站后得到的response，可以对它进行分析，获取信息
+//爬虫启动的时候就会自动调用这个parse()方法，对网站内容进行解析
+
+# study guide for scrapy
+## https://docs.scrapy.org/en/latest/intro/tutorial.html
+On Windows, use double quotes instead:
+scrapy shell "http://quotes.toscrape.com/page/1/"
+
+scrapy crawl quotes -o quotes.json   运行后会把结果存到一个json格式文件里面
+scrapy crawl quotes -o quotes.jl   运行后会把结果存到一个json格式文件里面
+scrapy crawl quotes -o quotes.csv   运行后会把结果存到一个csv格式文件里面
+scrapy crawl quotes -o quotes.xml  运行后会把结果存到一个xml格式文件里面
