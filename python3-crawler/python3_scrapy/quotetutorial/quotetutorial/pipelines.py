@@ -4,8 +4,44 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+import pymongo
+import json
 
+class JsonWriterPipeline(object):
+    def open_spider(self, spider):
+        self.file = open('items.jl', 'w')
 
-class QuotetutorialPipeline(object):
+    def close_spider(self, spider):
+        self.file.close()
+
     def process_item(self, item, spider):
+        if 'inspirational'in item['tags']:    # 自己添加的判断条件，可以去掉，只是练习用
+            line = json.dumps(dict(item)) + "\n"
+            self.file.write(line)
+        return item
+
+
+class MongoPipeline(object):    # 把所有爬取的数据写入MongoDB数据库
+    collection_name = 'items'     # table name
+
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_crawler(cls, crawler):     # 很关键，重点
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI'),
+            mongo_db=crawler.settings.get('MONGO_DB')    # 去setting.py里面获取数据
+        )
+
+    def open_spider(self, spider):    # mongodb相关的初始化
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def close_spider(self, spider):
+        self.client.close()
+
+    def process_item(self, item, spider):
+        self.db[self.collection_name].insert(dict(item))   # 往mongoDB里面写入数据
         return item

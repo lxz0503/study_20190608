@@ -9,7 +9,7 @@ from datetime import datetime
 filename = r'D:\xiaozhan_git\study_20190608\xiaozhan\sitka_weather_2014.csv'
 with open(filename) as f:  # 打开这个文件，并将结果文件对象存储在f中
     reader = csv.reader(f)  # 创建一个阅读器reader
-    header_row = next(reader)  # 返回文件中的下一行,第一行不是数据，所以直接跳过去
+    next(reader)  # 返回文件中的下一行,第一行不是数据，所以直接跳过去
     dates, highs, lows = [], [], []  # 声明存储日期，最值的列表
     for row in reader:
         current_date = datetime.strptime(row[0], '%Y-%m-%d')  # 将日期数据转换为datetime对象

@@ -57,6 +57,17 @@ show dbs
 运行"use"命令，可以连接到一个指定的数据库  use taobao
 show tables
 
+如何删除MongoDB中的数据库：
+use quotestutorial;
+db.dropDatabase();
+
+db.runoob.drop()   # 删除了runoob这个set
+
+插入数据
+db.runoob.insert({"name":"菜鸟教程"})
+
+db.createCollection("runoob")  创建集合，也就是表
+
 
 
 db.GPRS_PRODUCT_HIS_FEE.find({"条件字段" : "412171211145135"},{"查询字段1":1,"查询字段2":1,"查询字段3":1,"查询字段4":1,"查询字段5":1,"查询字段6":1},{'_id':0})
