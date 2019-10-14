@@ -20,7 +20,7 @@ print(count)
 with open('items.jl', 'r') as f:
     lines = f.readlines()
     for line in lines:
-        # print(eval(line))
+        # print(eval(line))    # 已经是字典类型数据了
         for k in eval(line):
             print(k, eval(line)[k])
 

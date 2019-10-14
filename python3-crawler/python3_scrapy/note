@@ -19,10 +19,17 @@ website: http://quotes.toscrape.com/
 scrapy startproject quotetutorial       //新建一个项目
 cd quotetutorial                        //进入项目所在目录
 scrapy genspider quotes quotes.toscrape.com          //生成一个和上面同名的目录,创建了一个spider，名字为quotes
+scrapy genspider baidu www.baidu.com   //在同一个项目下生成另外一个spider，实际项目中会有个多个spider
 在pycharm上面检查目录结构
 在pycharm的terminal里面执行：
 cd D:\xiaozhan_git\study_20190608\python3-crawler\python3_scrapy\quotetutorial\
-scrapy crawl quotes      //开始爬取数据,就可以运行爬虫
+scrapy crawl quotes      //开始爬取数据,就可以运行爬虫,quotes是spider的名称
+多个spider如何运行？？
+
+也可以这样运行spider,需要先进入到spider所在的目录：
+scrapy runspider quotes.py
+scrapy runspider baidu.py
+
 //重点分析quotes.py，parse(self, response),这个方法里面的response就是爬取网站后得到的response，可以对它进行分析，获取信息
 //爬虫启动的时候就会自动调用这个parse()方法，对网站内容进行解析
 
@@ -35,3 +42,32 @@ scrapy crawl quotes -o quotes.json   运行后会把结果存到一个json格式文件里面
 scrapy crawl quotes -o quotes.jl   运行后会把结果存到一个json格式文件里面
 scrapy crawl quotes -o quotes.csv   运行后会把结果存到一个csv格式文件里面
 scrapy crawl quotes -o quotes.xml  运行后会把结果存到一个xml格式文件里面
+
+也可以修改pipelines.py,实现一些功能，例如将数据存到MongoDB，或者json文件
+
+# scrapy shell "https://docs.scrapy.org/en/latest/_static/selectors-sample1.html" 
+response.css('a[href*=image]::attr(href)').getall()
+>>> print(response.text)
+<html>
+ <head>
+  <base href='http://example.com/' />
+  <title>Example website</title>
+ </head>
+ <body>
+  <div id='images'>
+   <a href='image1.html'>Name: My image 1 <br /><img src='image1_thumb.jpg' /></a>
+   <a href='image2.html'>Name: My image 2 <br /><img src='image2_thumb.jpg' /></a>
+   <a href='image3.html'>Name: My image 3 <br /><img src='image3_thumb.jpg' /></a>
+   <a href='image4.html'>Name: My image 4 <br /><img src='image4_thumb.jpg' /></a>
+   <a href='image5.html'>Name: My image 5 <br /><img src='image5_thumb.jpg' /></a>
+  </div>
+ </body>
+</html>
+# response.css('a::attr(href)').getall()
+# response.css('a[href*=image] img::attr(src)').getall()
+# response.css('a[href*=image]::attr(href)').getall()
+# response.css('base::attr(href)').get()
+#　[img.attrib['src'] for img in response.css('img')]
+
+
+

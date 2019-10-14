@@ -14,11 +14,11 @@ class JsonWriterPipeline(object):
     def close_spider(self, spider):
         self.file.close()
 
-    def process_item(self, item, spider):
-        if 'inspirational'in item['tags']:    # 自己添加的判断条件，可以去掉，只是练习用
-            line = json.dumps(dict(item)) + "\n"
-            self.file.write(line)
-        return item
+    def process_item(self, item, spider):     # 这个是关键函数，一定要实现
+        if 'inspirational' in item['tags']:    # 自己添加的判断条件，可以去掉，只是练习用
+            line = json.dumps(dict(item)) + "\n"    # 把字典类型数据转成json
+            self.file.write(line)                   # 写到一个json文件
+        return item                             # 必须返回item
 
 
 class MongoPipeline(object):    # 把所有爬取的数据写入MongoDB数据库
@@ -43,5 +43,5 @@ class MongoPipeline(object):    # 把所有爬取的数据写入MongoDB数据库
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert(dict(item))   # 往mongoDB里面写入数据
-        return item
+        self.db[self.collection_name].insert(dict(item))   # 往MongoDB里面写入数据
+        return item                # 必须返回item
