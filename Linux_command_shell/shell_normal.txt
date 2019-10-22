@@ -41,6 +41,8 @@ cat xiaozhan.txt | sed  '21,24 s/beijing/captical/'    ²»»áĞŞ¸ÄÔ´ÎÄ¼ş£¬Ö»ÊÇÔÚÄÚ´
 sed -i '/^#/d' xiaozhan.txt
 É¾³ı¿ÕĞĞ   sed -i '/^$/d' xiaozhan.txt
 
+sed  -i '/Ethernet/r myfile' test  Æ¥ÅäEthernetµÄĞĞ£¬¶Á½øÀ´ÁíÒ»¸öÎÄ¼şmyfileµÄÄÚÈİ£¬¶Á½øÀ´µÄÎÄ¼şµÄÄÚÈİ»á²åÈëµ½Æ¥ÅäEthernetµÄĞĞºó
+
 Èç¹ûÒªÖ´ĞĞ¶à¸ösedÃüÁî¿ÉÒÔÓÃsed -e
 sed -e '/^#/d' -e '/^#/d' xiaozhan.txt
 
