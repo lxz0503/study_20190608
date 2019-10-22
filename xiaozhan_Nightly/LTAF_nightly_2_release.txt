@@ -1,0 +1,54 @@
+
+
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_component=networking&tf_tr_tags=KONG-nightly&tf_tr_whentostart=2019-08-20&tf_tr_status=Pass&tf_per_page=2500&filter_per_page=2500
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag KONG-nightly --release_name vx7-SR0630-features-native \
+--requirements "VXWEXEC-6158" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2
+
+
+Sprint 59 - Ending 2019-08-03
+week2
+
+
+/folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag KONG-nightly --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6158,VXWEXEC-776" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite NTP --debug
+
+
+
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_component=networking&tf_tr_show_filter=on&tf_tr_tags=LTAF_TAG&tf_tr_whentostart=2019-08-20&tf_tr_tester=MEFA&tf_per_page=500&filter_per_page=500
+
+/folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-21 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6158" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --tester MEFA
+
+http://pek-lpgtest3.wrs.com/ltaf/test_results.php?releasename=vx7-SR0630-features-native&clearfilter=true&tf_test_suite=NTP&tf_test_automation=Auto&tf_tr_show_filter=on&tf_tr_domain=networking&tf_tr_show_latest=on&tf_per_page=250&filter_per_page=250
+
+
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_suite=vxTest_app_webcli_curl_tmVxTestCurl1&tf_test_component=mw&tf_tr_show_filter=on&tf_tr_kf15=native&tf_tr_sprint=Nightly&tf_tr_whentostart=2019-08-20&tf_tr_status=Pass&tf_per_page=500&filter_per_page=500
+
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_suite=vxTest_app_webcli_curl_tmVxTestCurl1&tf_test_component=mw&tf_tr_show_filter=on&tf_tr_kf15=native&tf_tr_sprint=Nightly&tf_tr_whentostart=2019-08-20&tf_tr_status=Pass&tf_per_page=500&filter_per_page=500
+
+
+Kong:
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag KONG-nightly --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6158,VXWEXEC-816" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite IPSEC-IPCRYPTO --debug
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag KONG-nightly --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6158,VXWEXEC-822" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite 'IKE-BASIC,IKE-ADVANCED' --debug
+
+mw:
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6710" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite 'vxTest_app_webcli_curl_tmVxTestCurl1' --component mw --sprint Nightly --debug 
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-781" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite 'soap_Cssl' --component mw --sprint Nightly --debug 
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-781" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite 'soap_CPPcookies' --component mw --nightly_sprint Nightly --debug
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-20 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6711 " --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --test_suite 'xml_XmlConf' --component mw --nightly_sprint Nightly --debug
+
+MEFA:
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_component=networking&tf_tr_tags=LTAF_TAG&tf_tr_whentostart=2019-08-21&tf_per_page=500&filter_per_page=500
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-21 --tag LTAF_TAG --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6218" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --debug
+
+IPERF:
+
+http://pek-lpgtest3.wrs.com/ltaf/nightly_results.php?releasename=vx7-integration-native&clearfilter=true&tf_test_component=networking&tf_tr_tags=IPERF&tf_tr_whentostart=2019-08-22&tf_per_page=500&filter_per_page=500
+
+python3 /folk/hyan1/share/LTAF_nightly_2_release.py --nightly_release_name vx7-integration-native --run_date 2019-08-22 --tag IPERF --release_name vx7-SR0630-features-native --requirements "VXWEXEC-6218" --sprint 'Sprint 59 - Ending 2019-08-03' --week week2 --status Pass --debug

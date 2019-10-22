@@ -232,3 +232,8 @@ Chaining 允许我们在一条语句中运行多个 jQuery 方法（在相同的
 $("#p1").css("color","red").slideUp(2000).slideDown(2000);
 
 
+
+on() 方法在被选元素及子元素上添加一个或多个事件处理程序。
+自 jQuery 版本 1.7 起，on() 方法是 bind()、live() 和 delegate() 方法的新的替代品
+
+
