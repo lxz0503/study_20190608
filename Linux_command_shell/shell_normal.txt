@@ -1,3 +1,68 @@
+1.how to configure tftp on ubuntu
+https://www.iteye.com/blog/xouou-2139332
+
+安装xinetd：
+sudo apt-get install xinetd
+
+安装tftp和tftpd：
+sudo apt-get install tftp tftpd
+
+ 或者安装tftp的增强版本tftp-hpa, tftpd-hpa (推荐)
+sudo apt-get install tftp-hpa tftpd-hpa
+tftp-hpa 这个是客户端
+tftpd-hpa 这个是服务端
+
+ps -ef |grep tftp          能看到tftpd－hpa进程
+netstat -a | grep tftp 成功显示正在运行
+不行的话试试/etc/init.d/xinetd start
+
+sudo service tftpd-hpa restart -----sometimes you need to restart
+
+=============for my environment========
+apt-get install tftpd-hpa
+
+apt-get install xinetd
+
+enter /etc/xinetd.d and touch tftp, chmod -R 777 tftp
+
+modify the content in tftp:
+service tftp
+
+    {
+
+       disable = no
+
+       socket_type = dgram
+
+       protocol = udp
+
+       wait = yes
+
+       user = root
+
+       server = /usr/sbin/in.tftpd
+
+       server_args = -s /tftpboot -c
+
+       per_source = 11
+
+       cps = 100 2
+
+       flags =IPv4
+
+    }
+
+
+and then: sudo service tftpd-hpa restart
+sudo /etc/init.d/xinetd reload
+
+sudo /etc/init.d/xinetd restart
+
+mkdir –p /tftpboot
+
+sudo chmod -R 777 /tftpboot
+=================================================================
+
 echo要支持同C语言一样的\转义功能，只需要加上参数-e，如下所示：
 shell echo打印换行的方法
 
