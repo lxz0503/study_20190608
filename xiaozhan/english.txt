@@ -1964,6 +1964,62 @@ n.（机场的）登机手续办理处；（机场的）办理登机手续
 Web签到；打卡；报到
 
 
+-------------2019.11.6  IELTS writing--
+whether child should use cell phone, some advocate and some oppose. discuss both and give your opinion.
+
+Nowadays,cell phone is very popular in people's daily lives.
+It seems that people even can not live without cell phones.
+Some people hold the view that children should also own their cell phones.Others,however,
+hold the opposite point. This essay will examine this issue and come to a conclusion.
+
+Admittedly,smartphones can bring a great deal of benefits to people,including children.
+They can communicate effectively and efficiently with their parents,friends and teachers.
+This is especially necessary when considering into the fact that now teachers tend to assign tasks to students through some Apps,
+such as Wechat or Skype. If children do not have smartphones, they may not receive the assignments in time and affect their study.
+In addition,the functions of cell phone are not limited to making calls,sending text messages or listening to music.
+They often support the new feature of locating,which is very helpful for children's safety.For example,if a child is lost,
+the parents,police officers and teachers are able to know where the child is and can rush to the place.
+
+Clearly smartphones can bring many conveniences to children's lives and study,but it is important to figure out the demerits of using cell phones.
+To begin with,children can easily use smartphones to access to the Internet which is awash with violent,bloody and obscene videos and images.
+Children are too immature to distinguish right from wrong,so they tend to copy what they see on the cell phones,which may lead them to go astray.
+In addition,some children often spend too much time playing mobile games on their smartphones,which can easily cause eyestrain and headache and do harm to
+children's physical development.What is worse,according to the statistics,children's free time is occupied mostly by smartphones
+and this will inevitable affect the family bonds,because they are more likely to communicate with family members through cell phones
+rather than face-to-face communication.
+
+To sum up,from what has been discussed above,we can safely draw the conclusion that cell phone is very helpful to children,but we still can not
+overlook the disadvantages it brings.As a result,my opinion is that children can use smartphones while at the same time parents and teachers must
+give strict control and proper instructions to guide them to use cell phones in the right way.
+
+===========================you, as a tenant,write a letter to the landlord about the water issue.
+Dear Jack,
+
+I am writing this letter to inform you of the water in your apartment.
+
+I have been living here for more than one month and everything is perfect.But since last Friday,something unexpected had happened.
+I switched on the faucet just as usual and wanted to wash my socks.To my surprise,the color of the water was yellow and it was smelly.
+I was a bit scared.I thought there might be something wrong with the water system and it would be ok later.So I went to work and ignored it.
+When I returned home from work,I found the water still did not come back to normal.
+
+I quickly confirmed with my neighbors and they said their water system were normal.I also made a call to the water company and they replied that there was nothing
+wrong with the water source.So, I had to check the water system in your kitchen and finally found an advanced water purified system just beside the water source.
+Maybe there was something wrong with the water purifier and it spoiled the water.
+
+As you may know,I have to make meals and wash clothes every day,which both need to use water.But now I have to buy mineral water and what is worse,
+I have not washed my dirty clothes for nearly three days.This water issue really causes too much trouble to my life.Based on our contract,you should cover
+the repair.
+
+So, would you please come over to check the water system as soon as possible?
+My wife and I will be really appreciated for your help and kindness.
+If you can come,please tell me the specific time and I will wait at home.
+
+I really look forward to hearing from you soon.
+
+Your sincerely,
+Sam
+---------------------------------------------------------------------------
+
 
 　　A: Hi. What’s up?
 
@@ -2003,6 +2059,44 @@ There are six personnel in this office.
 
 The front-desk personnel asks the guest for a driver's license and form of payment.
 前台服务员请顾客出示驾照并询问其付款方式。
+field  字段
+To create the datastore you only have to create a model for it: a JSON file that defines the fields and options for those fields.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
