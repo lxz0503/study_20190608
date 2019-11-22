@@ -1,0 +1,23 @@
+To install docker, perform the commands listed below
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+If you want to use docker without needing to run sudo, perform the commands listed below.
+sudo usermod -aG docker ${USER}
+newgrp docker
+
+
+windriver@PEK-QCAO1-D2:/var/log/upstart$ sudo tail -5f docker.log
+INFO[0000] serving...                                    address="/var/run/docker/containerd/docker-containerd-debug.sock"
+INFO[0000] serving...                                    address="/var/run/docker/containerd/docker-containerd.sock"
+INFO[0000] containerd successfully booted in 0.005456s
+time="2019-11-18T16:24:25.133937242+08:00" level=info msg="pickfirstBalancer: HandleSubConnStateChange: 0xc4201bbbe0, READY" module=grpc
+time="2019-11-18T16:24:25.136642064+08:00" level=fatal msg="Your Linux kernel version 3.2.0-23-generic is not supported for running docker. Please upgrade your kernel to 3.10.0 or newer."
+
+===================================
+windriver@PEK-QCAO1-D2:/var/log/upstart$ cat /proc/version
+Linux version 3.2.0-23-generic (buildd@crested) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu4) ) #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012
+windriver@PEK-QCAO1-D2:/var/log/upstart$
+
+windriver@PEK-QCAO1-D2:/var/log/upstart$ cat /etc/issue
+Ubuntu 14.04.1 LTS \n \l

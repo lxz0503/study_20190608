@@ -528,9 +528,78 @@ wget --no-check-certificate  -O test.html https://www.centos.bz/2016/10/download
 ==================================
 xmanager, to show GUI
 export display=192.168.1.1:0.0    the IP of windows machine
+==========================================
+vi /net/pek-vx-nightly1/buildarea1/pzhang1/jenkinsEnvInjection/vx7_nightly_spin.config
+NIGHTLYSPIN=vx20191112061605_vx7-native
+lastS=vx20191111061605_vx7-native
+LTAFRELEASE=vx7-integration-native
+timestamp=20191113170215
+PatchBranch=vx7-integration
+
+=================================================
+#!/bin/bash
+date
+#get spin name
+source /net/pek-vx-nightly1/buildarea1/pzhang1/jenkinsEnvInjection/vx7_nightly_spin.config
+Spin_name=$NIGHTLYSPIN
+Branch_name=$LTAFRELEASE
+time=$timestamp
+patch_branch=$PatchBranch
+
+#Spin_name=vx20191007122204_vx7-SR0630-native
+Branch_name=vx7-SR0630-features
+#time=20190702170214
 
 
+installpath=/buildarea2/mw/spin
+profile=VxWorks_7_Plus_Platform__Time_Based_BASE
 
+year=`echo $time| cut -c-4`
+month=`echo $time| cut -c5-6`
+day=`echo $time| cut -c7-8`
+week=$year-$month-$day
+echo $week
+===================================================
+
+Shell获取字符串长度的多种方法总结
+方法一】:利用${#str}来获取字符串的长度
+windriver@PEK-QCAO1-D2:~/test_rsync$ str="abc"
+windriver@PEK-QCAO1-D2:~/test_rsync$ echo ${#str}
+3
+windriver@PEK-QCAO1-D2:~/test_rsync$
+
+方法2】:利用awk的length方法
+str="abc"
+echo ${str} | awk '{print length($0)}'
+最好用{}来放置变量
+     2) 也可以用length($0)来统计文件中每行的长度
+for example:
+awk '{print length($0)}' /etc/passwd
+
+利用awk的NF项来获取字符串长度:
+str="abcd"
+echo $str | awk -F "" '{print NF}'
+备注: -F为分隔符，NF为域的个数，即单行字符串的长度
+
+【方法四】:利用wc的-L参数来获取字符串的长度
+备注: -L参数
+1) 对多行文件来说，表示打印最长行的长度！ 82，表示/etc/passwd文件最长行的长度为82
+2) 对单行字符串而言，表示当前行字符串的长度！
+str="abcd"
+echo $str | wc -L
+
+cat /etc/passwd | wc -L
+
+【方法五】:利用wc的-l参数，结合echo -n参数
+备注:
+1) -c参数: 统计字符的个数
+2) -n参数: 去除"\n"换行符，不去除的话，默认带换行符，字符个数就成了7
+
+echo -n $str | wc -l
+
+【方法六】:利用expr的length方法
+str="abc"
+expr length ${str}
 
 
 
