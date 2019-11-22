@@ -1550,7 +1550,7 @@ UK [??bl??ɡe??(?)n]
 n.义务；责任；职责；（已承诺的或法律等规定的）义务
 Web债务；恩惠；契约
 
-Gifts can creat an expectation that something will be provided in return
+Gifts can create an expectation that something will be provided in return
 put personal interests in conflict with professional obligations
 
 misrepresent
@@ -1561,7 +1561,7 @@ Web曲解；错报；篡改
 Don't say anything that would misrepresent your message if it was taken out of context.
 不要说任何误导性的言语，如果他们缺乏语境。
 
-o many things changed on the rules, on the technical side, political side.
+Too many things changed on the rules, on the technical side, political side.
 那么多的事情改变，在规则上，在技术范围，在政治范围。
 
 wear and tear
@@ -1974,7 +1974,7 @@ hold the opposite point. This essay will examine this issue and come to a conclu
 
 Admittedly,smartphones can bring a great deal of benefits to people,including children.
 They can communicate effectively and efficiently with their parents,friends and teachers.
-This is especially necessary when considering into the fact that now teachers tend to assign tasks to students through some Apps,
+This is particularly necessary when considering into the fact that now teachers tend to assign tasks to students through some Apps,
 such as Wechat or Skype. If children do not have smartphones, they may not receive the assignments in time and affect their study.
 In addition,the functions of cell phone are not limited to making calls,sending text messages or listening to music.
 They often support the new feature of locating,which is very helpful for children's safety.For example,if a child is lost,
@@ -1984,18 +1984,18 @@ Clearly smartphones can bring many conveniences to children's lives and study,bu
 To begin with,children can easily use smartphones to access to the Internet which is awash with violent,bloody and obscene videos and images.
 Children are too immature to distinguish right from wrong,so they tend to copy what they see on the cell phones,which may lead them to go astray.
 In addition,some children often spend too much time playing mobile games on their smartphones,which can easily cause eyestrain and headache and do harm to
-children's physical development.What is worse,according to the statistics,children's free time is occupied mostly by smartphones
-and this will inevitable affect the family bonds,because they are more likely to communicate with family members through cell phones
+their physical development.What is worse,according to the statistics,children's free time is occupied mostly by smartphones
+and this will inevitably affect the family bonds,because they are more likely to communicate with family members through cell phones
 rather than face-to-face communication.
 
 To sum up,from what has been discussed above,we can safely draw the conclusion that cell phone is very helpful to children,but we still can not
-overlook the disadvantages it brings.As a result,my opinion is that children can use smartphones while at the same time parents and teachers must
+overlook the disadvantages it would bring.As a result,my opinion is that children can use smartphones while at the same time parents and teachers must
 give strict control and proper instructions to guide them to use cell phones in the right way.
 
 ===========================you, as a tenant,write a letter to the landlord about the water issue.
 Dear Jack,
 
-I am writing this letter to inform you of the water in your apartment.
+I am writing this letter to inform you of the water issue in your apartment.
 
 I have been living here for more than one month and everything is perfect.But since last Friday,something unexpected had happened.
 I switched on the faucet just as usual and wanted to wash my socks.To my surprise,the color of the water was yellow and it was smelly.
@@ -2019,6 +2019,63 @@ I really look forward to hearing from you soon.
 Your sincerely,
 Sam
 ---------------------------------------------------------------------------
+
+While Mr. Hanson said he expected occupancy levels to increase 1 or 2 percent next year, he did not see rates rebounding soon.
+虽然BjornHanson预计明年的酒店入住率将增加1%-2%，但是他也不认为酒店房价很快会有所反弹。
+
+penalise
+US ['pi:n?la?z]
+UK ['pi:n?la?z]
+v.惩罚；处罚；处以刑罚；（体育运动中）判罚
+Some politicians and activists believe attitudes could be changed by tax laws that penalise investors who trade in and out of stocks.
+一些政界人士和股东维权人士相信，可以通过税法惩罚频繁买卖股票的投资者，以此来改变人们的态度。
+
+on your own
+na.独自地
+Web靠你自己；独立地；独自攀登
+
+It allows you to run automated building and testing of your applications in the cloud rather than on your own computer.
+其允许您在云中而不是在您自己的计算机上运行应用程序的自动化生成和测试。
+If your parents have been covering your living expenses at college, you probably need a reality check before stepping out on your own.
+如果一直是你父母付你大学的生活费，做独立生活前，你或许得了解一下真实世界了。
+
+Use it or lose it
+slow somebody down------
+by the stage a student gets to high school
+The more you use it,the easier it will be to recall next time you wish to use it
+
+But actually, some scholars have opposing views and believe that it is only statistical data and should only be used for reference.
+但事实上也有学者表示不同的看法，认为这只是统计上的数据，仅适合作为参考
+etc
+US [et'set(?)r?]
+
+double-check   come across,run into,encounter,bump into
+
+It is worth remembering that
+forget about it
+in order of time,place,name
+how they are constructed
+There is a probability that
+follow the steps outlined below,if you are not in a mad rush
+incorporate  include   contain
+
+it will direct you to the right direction
+
+Chinese medical practitioner
+
+practitioner
+US [pr?k't??(?)n?r]
+UK [pr?k't??(?)n?(r)]
+n.（尤指医学或法律界的）从业人员；习艺者；专门人才
+Web从业者；开业者；实践者
+
+
+
+
+
+
+
+
 
 
 　　A: Hi. What’s up?
