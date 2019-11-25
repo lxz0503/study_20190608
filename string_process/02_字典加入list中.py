@@ -15,4 +15,4 @@ print("the sorted list is %s" % items)
 for i in range(3):
     word, count = items[i]
     # print("{0:<5}->{1:>5}".format(word, count))
-    print("%s----%s" % (word, count))
+    print("word %s occurred----%s times" % (word, count))

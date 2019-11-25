@@ -3,6 +3,10 @@
 import logging
 
 logger = logging.getLogger(__name__)    # __name__可以根据需要设置
+# 指定name，返回一个名称为name的Logger实例
+# logger = logging.getLogger(__name__)
+# print(logger.name, type(logger), id(logger), id((logger.parent)))
+# __main__ <class 'logging.Logger'> 4367575864 4367575248
 logger.setLevel(level=logging.INFO)
 handler = logging.FileHandler("log.txt")
 handler.setLevel(logging.INFO)
