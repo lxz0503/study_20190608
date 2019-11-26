@@ -55,15 +55,17 @@ class OperationExcel(object):
             num += 1
 
     # 根据行号，找到该行的内容
-    def get_row_values(self, row):
+    def get_row_values(self, row, start_colx=None, end_colx=None):
         tables = self.data
         row_data = tables.row_values(row)
+        # row_data = tables.row_values(row, start_colx=start_colx,end_colx=end_colx) # this is prototype
         return row_data
 
     # 获取某一列的内容
-    def get_cols_data(self, col_id=None):
+    def get_cols_data(self, col_id=None, start_rowx=None, end_rowx=None):
         if col_id:
             cols = self.data.col_values(col_id)
+            # cols = self.data.col_values(col_id, start_rowx=start_rowx, end_rowx=end_rowx) # this is prototype
         else:
             cols = self.data.col_values(0)
         return cols
@@ -73,3 +75,4 @@ if __name__ == '__main__':
     opers = OperationExcel()
     opers.write_value(0, 0, 'aa')
     print(opers.get_cell_value(0, 2))
+
