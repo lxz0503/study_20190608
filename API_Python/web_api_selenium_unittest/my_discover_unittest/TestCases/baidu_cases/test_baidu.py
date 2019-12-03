@@ -18,7 +18,8 @@ class BaiduWebTest(unittest.TestCase):
         title = self.driver.title
         print(title)
         logging.debug("start test for baidu")
-        assert self.driver.title.find(u"搜狗搜索") >= 0, "assert error"
+        # assert self.driver.title.find(u"搜狗搜索") >= 0, "assert error"
+        self.assertTrue(self.driver.title.find(u"搜狗搜索") >= 0)
         logging.debug("end test for baidu")
 
 
