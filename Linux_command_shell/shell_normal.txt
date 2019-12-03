@@ -336,6 +336,8 @@ windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$
 ------------------------------------------------------------------
 Linux下环境变量设置的三种方法：
 
+$PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。
+
 如想将一个路径加入到$PATH中，可以像下面这样做：
 
 1、控制台中设置，不赞成这种方式，因为他只对当前的shell 起作用，换一个shell设置就无效了：
@@ -354,6 +356,8 @@ $PATH=$PATH:/NEW_PATH (关闭shell Path会还原为原来的path)
 linux中如何设置能使一个脚本在任意目录下都可直接运行，不要非到这个脚本所在目录下运行？
 方法如下3种:    其实安装python或者tcl等后都是这么做的
 
+
+
 1.把这个脚本所在目录加入PATH环境变量中。for instance:
 PATH=$PATH:/etc/apache/bin
 使用这种方法,只对当前会话有效，也就是说每当登出或注销系统以后，PATH 设置就会失效
@@ -364,10 +368,25 @@ windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path， expor
 windriver@PEK-QCAO1-D2:~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cd pexpect-4.6.0/
-windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$ anyrun.sh
+windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$ anyrun.sh      ---you can also run this at other directory not limited to
 + echo 'xiaozhan anywhere'
 xiaozhan anywhere
 windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$
+----------------------- anyrun.sh is at /home/windriver but can run anywhere due to PATH   /home/windriver
+windriver@PEK-QCAO1-D2:/usr/bin$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
+windriver@PEK-QCAO1-D2:/usr/bin$ cd /home/windriver/
+windriver@PEK-QCAO1-D2:~$ an
+anacron    anyrun     anyrun.sh
+windriver@PEK-QCAO1-D2:~$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~$ cd ANVL/
+windriver@PEK-QCAO1-D2:~/ANVL$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+
+----------
 
 2.vi /etc/profile
 for example
@@ -414,7 +433,7 @@ ln -s my_cmd mycmd2
 
 实测如下:
 
-windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh .
+windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh .        (copy to /bin)
 
 windriver@PEK-QCAO1-D2:/bin$ sudo ln -s anyrun.sh anyrun
 windriver@PEK-QCAO1-D2:/bin$
@@ -712,7 +731,7 @@ python3 setup.py install
 ————————————————
 
 安装pip
-admin@ ~] tar xf pip-9.0.1.tar.gz //解压
+admin@ ~] tar -xvzf pip-9.0.1.tar.gz //解压
 [admin@ ~] cd pip-9.0.1 //进入安装文件
 [admin@ ~] python3 setup.py build
 [admin@ ~] python3 setup.py install //安装pip
@@ -740,7 +759,11 @@ No matching distribution found for xxx..
 [admin@ ~] pip3 install -U selenium
 #注意linux一般带两个版本python所以这里python3安装的pip要使用pip3命令来使用，如系统只有一个版本python可忽略直接使用pip命令
 
+=========================set python environment variable========================
 这是在python3安装目录下运行的，然后还将其添加到PATH，查询PATH echo $PATH
+
+windriver@PEK-QCAO1-D2:/usr/bin$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
 
 使用如下命令：
 
