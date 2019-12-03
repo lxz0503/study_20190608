@@ -284,7 +284,15 @@ jack
 alex
 
 下面的cut命令可以切分出ip地址
+
+-f2  ---it can show the second column(start from 1 column)
 # ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cut -d " " -f 1
+
+windriver@PEK-QCAO1-D2:~/test_rsync$ ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}'
+128.224.159.79
+or use below line:
+ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{print "{\"HOSTIP\": \""$1"\"}"}'
+{"HOSTIP": "128.224.159.79"}
 
 # 利用windows下安装的git来练习linux shell命令
 # 用下面的方法可以编辑一个文本，把里面的多行内容输出到另外一个文件
@@ -631,7 +639,119 @@ search wrs.com corp.ad.wrs.com windriver.com
 
 重启网卡，可得到的ipv4地址，永久性的
 ====================================================
+set the background color as green on linux
 
+Default Foregroung  Red 15 Green 15 Blue 15
+Default Backgroung  Red 199 Green 237 Blue 204
+Cursor Color        Red 255
+===========================================================
+how to solve U disk space issue----64G is just showing 70M
+
+https://blog.csdn.net/suiyuehuimou/article/details/82809203
+step 1:cmd-----然后输入diskpart，按下回车键；再输入list disk 回车 查看当前有的存储设备，必须记住自己的U盘排序号
+step 2:输入select disk X（X是你U盘的排序号），回车后继续输入clean命令进行回车就可以取消u盘原有的分区，
+让他重新变成一个未分区的状态；这时u盘的大小已经恢复了，但是u盘是处于未分区状态
+step 3:must have this step接着，在我的电脑右键-->管理-->磁盘管理中选择你刚刚的那个U盘，
+右键，新建简单卷，大小自己分配成你U盘本身的大小（也就是U盘的最多容量）。
+这个相当于重新分区，并且格式化。至此U盘就恢复了原来的容量了
+=========================================================================
+install python3 in centos:
+
+download package from https://www.python.org/downloads/release/python-375/
+3、编译安装
+
+进入解压的python安装包      tar -xvzf Python-3.7.5.tgz
+
+1、[admin@ ~] cd Python-3.6.0a1
+2、[admin@ ~] ./configure #有个点
+
+**若执行./configure报错gcc no … **
+可执行命令:
+
+ [admin@ ~] yum install gcc  #安装gcc编译环境即可
+1
+1、[admin@ ~] ./configure #安装完gcc再次执行，如上一步未报错忽略这一步
+2、[admin@ ~] make && make install #编译python
+
+4、查看是否成功
+
+[admin@ ~] python3
+————————————————
+版权声明：本文为CSDN博主「(.*)释然」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zha6476003/article/details/79282996
+
+安装selenium
+安装selenium前先安装setuptools 和pip
+
+请按以下顺序不然可能遇到更多坑
+
+安装setuptools
+
+
+cd setuptools-38.2.3
+
+python3 setup.py install
+
+如报错：RuntimeError: Compression requires the (missing) zlib module
+
+我们需要在linux中安装zlib-devel包，进行支持。
+
+[admin@ ~] yum install zlib
+[admin@ ~] yum install zlib-devel
+
+安装完成后须重新编译安装python
+进入我们前面解压的python3.6安装目录执行：
+
+[admin@ ~] make && make install
+
+重新编译后再次安装setuptools
+
+cd setuptools-38.2.3
+
+python3 setup.py install
+————————————————
+
+安装pip
+admin@ ~] tar xf pip-9.0.1.tar.gz //解压
+[admin@ ~] cd pip-9.0.1 //进入安装文件
+[admin@ ~] python3 setup.py build
+[admin@ ~] python3 setup.py install //安装pip
+
+报错：
+
+ImportError: No module named '_ssl'
+或
+ImportError: cannot import name 'HTTPSHandler'
+或
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not availa............Could not find a version that satisfies the requirement xxx (from versions: )
+No matching distribution found for xxx..
+
+多方查找缺少openssl-devel 我们继续安装
+
+[admin@ ~] yum install openssl-devel
+
+安装完成后须重新编译安装python
+进入我们前面解压的python3.6安装目录执行：
+
+[admin@ ~] make && make install
+
+我们使用pip安装selenium：
+
+[admin@ ~] pip3 install -U selenium
+#注意linux一般带两个版本python所以这里python3安装的pip要使用pip3命令来使用，如系统只有一个版本python可忽略直接使用pip命令
+
+这是在python3安装目录下运行的，然后还将其添加到PATH，查询PATH echo $PATH
+
+使用如下命令：
+
+ln -s /usr/local/python32/bin/python3 /usr/bin/python（如果ln -s /usr/local/python32/bin/python3 /usr/bin/python3 则python还是启动2.7 python3 则启动3.*版）
+
+这里我用的是后者。
+
+接下来在随便路径都可以使用python3命令了。
+
+
+=======================================
 
 
 
