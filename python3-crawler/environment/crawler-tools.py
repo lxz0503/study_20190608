@@ -42,6 +42,8 @@ db = client['xiaozhan']           # create database name is xiaozhan
 db['performance'].insert({'name': 'tcp'})      # table is performance and insert values
 r = db['performance'].find_one({'name': 'tcp'})   # use xiaozhan, show collections, db.performance.find().pretty()
 print(r)
+# db.sheet_weather_3.findOne()
+# db.sheet_weather_3.find({'HeWeather5.basic.city': '北京'})
 #
 # import redis
 # r = redis.Redis('localhost', 6379)
