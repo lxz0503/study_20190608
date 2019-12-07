@@ -69,5 +69,9 @@ response.css('a[href*=image]::attr(href)').getall()
 # response.css('base::attr(href)').get()
 #　[img.attrib['src'] for img in response.css('img')]
 
+# 参考multiple这个工程，是设置了爬取两个网站的数据，仅仅是一个框架，细节还需要再增加
+# 例如增加pipeline处理两个网站的数据等等
+# 如何执行：进入到command目录下面，scrapy crawall 
+
 
 
