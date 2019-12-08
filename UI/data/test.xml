@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataDriven>
+    <url>https://mail.sina.com.cn/#</url>
+    <divText emailNull="请输入邮箱名" emailFormat="您输入的邮箱名格式不正确"></divText>
+</DataDriven>
