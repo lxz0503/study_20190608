@@ -39,8 +39,14 @@ import pymongo
 
 client = pymongo.MongoClient('localhost')
 db = client['xiaozhan']           # create database name is xiaozhan
-db['performance'].insert({'name': 'tcp'})      # table is performance and insert values
-r = db['performance'].find_one({'name': 'tcp'})   # use xiaozhan, show collections, db.performance.find().pretty()
+insert_data = {"board": "board_name", "TCP": 64}
+myquery = {"board": "IA"}
+# db['performance']    this is to create a table
+# db['performance'].insert(insert_data)
+db['performance'].insert({'name': 'tcp'})      # table is performance and insert values,the value is a dictionary
+# r = db['performance'].find_one({'name': 'tcp'})   # use xiaozhan, show collections, db.performance.find().pretty()
+r = db['performance'].find_one(myquery)   # use xiaozhan,
+
 print(r)
 # db.sheet_weather_3.findOne()
 # db.sheet_weather_3.find({'HeWeather5.basic.city': '北京'})
@@ -51,4 +57,20 @@ print(r)
 # result = r.get('name')
 # print(result)
 
-#
+#!/usr/bin/python3
+
+# import pymongo
+
+# myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+# mydb = myclient["runoobdb"]
+# mycol = mydb["sites"]
+
+mylist = [
+    {"name": "Taobao", "alexa": "100", "url": "https://www.taobao.com"},
+    {"name": "QQ", "alexa": "101", "url": "https://www.qq.com"},
+    {"name": "Facebook", "alexa": "10", "url": "https://www.facebook.com"},
+    {"name": "??", "alexa": "103", "url": "https://www.zhihu.com"},
+    {"name": "Github", "alexa": "109", "url": "https://www.github.com"}
+]
+
+mycol.insert_many(mylist)

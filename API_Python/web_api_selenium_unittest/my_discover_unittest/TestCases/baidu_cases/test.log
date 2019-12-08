@@ -1,0 +1,19 @@
+2019-12-02 11:20:34 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:63291/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2019-12-02 11:20:34 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:63291
+2019-12-02 11:20:36 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "POST /session HTTP/1.1" 200 683
+2019-12-02 11:20:36 remote_connection.py: [line:440] DEBUG: Finished Request
+2019-12-02 11:20:36 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:63291/session/b5a88e5589ff2d00521bfc335859d2ee/url {"url": "http://www.sogou.com"}
+2019-12-02 11:20:43 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "POST /session/b5a88e5589ff2d00521bfc335859d2ee/url HTTP/1.1" 200 14
+2019-12-02 11:20:43 remote_connection.py: [line:440] DEBUG: Finished Request
+2019-12-02 11:20:43 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:63291/session/b5a88e5589ff2d00521bfc335859d2ee/url {"url": "https://www.baidu.com"}
+2019-12-02 11:20:48 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "POST /session/b5a88e5589ff2d00521bfc335859d2ee/url HTTP/1.1" 200 14
+2019-12-02 11:20:48 remote_connection.py: [line:440] DEBUG: Finished Request
+2019-12-02 11:20:48 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:63291/session/b5a88e5589ff2d00521bfc335859d2ee/back {}
+2019-12-02 11:20:49 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "POST /session/b5a88e5589ff2d00521bfc335859d2ee/back HTTP/1.1" 200 14
+2019-12-02 11:20:49 remote_connection.py: [line:440] DEBUG: Finished Request
+2019-12-02 11:20:54 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:63291/session/b5a88e5589ff2d00521bfc335859d2ee/forward {}
+2019-12-02 11:20:54 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "POST /session/b5a88e5589ff2d00521bfc335859d2ee/forward HTTP/1.1" 200 14
+2019-12-02 11:20:54 remote_connection.py: [line:440] DEBUG: Finished Request
+2019-12-02 11:20:54 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:63291/session/b5a88e5589ff2d00521bfc335859d2ee {}
+2019-12-02 11:20:54 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:63291 "DELETE /session/b5a88e5589ff2d00521bfc335859d2ee HTTP/1.1" 200 14
+2019-12-02 11:20:54 remote_connection.py: [line:440] DEBUG: Finished Request
