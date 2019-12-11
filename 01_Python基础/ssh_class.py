@@ -16,7 +16,7 @@ class SshTest(object):
         try:
             s = pxssh.pxssh(timeout=60*60)
             s.login(server=self.host_name, username=self.user_name, password=self.password)
-            #f = open("logfile.txt",'w')  # record test log to a file
+            #f = open("logfile.txt",'w')  # record test log to a file,if run in py3, it should be wb.
             #s.logfile = f   
             s.logfile = sys.stdout    
             self.s = s     # 
