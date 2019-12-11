@@ -9,7 +9,7 @@ def square(x):  # 计算平方
 
 res = map(square, [1, 2, 3, 4, 5])  # 计算列表各个元素的平方
 # [1, 4, 9, 16, 25]
-print(list(res))
+print(list(res))   # map function return an address,you must use a list to show it.
 res = map(lambda x: x ** 2, [1, 2, 3, 4, 5])  # 使用 lambda 匿名函数
 #[1, 4, 9, 16, 25]
 print(list(res))
