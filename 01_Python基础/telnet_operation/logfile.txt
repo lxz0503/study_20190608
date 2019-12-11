@@ -1,0 +1,121 @@
+
+Trying 128.224.164.57...
+Connected to 128.224.164.57.
+Escape character is '^]'.
+
+-> reboot
+reboot
+Target Name: vxTarget 
+
+
+
+
+Press any key to stop auto-boot...
+ 7
+
+
+[VxWorks Boot]: @gei(2,0)host:/home/windriver/SPIN/vip_itl_generic/default/vxWorks e=128.224.166.238:0xfffffe00 h=128.224.159.79 g=128.224.166.1 u=windriver pw=windriver f=0x00
+@gei(2,0)host:/home/windriver/SPIN/vip_itl_generic/default/vxWorks e=128.224.166.238:0xfffffe00 h=128.224.159.79 g=128.224.166.1 u=windriver pw=windriver f=0x00
+
+boot device          : gei
+unit number          : 2 
+processor number     : 0 
+host name            : host
+file name            : /home/windriver/SPIN/vip_itl_generic/default/vxWorks
+inet on ethernet (e) : 128.224.166.238:0xfffffe00
+host inet (h)        : 128.224.159.79
+gateway inet (g)     : 128.224.166.1
+user (u)             : windriver
+ftp password (pw)    : windriver
+flags (f)            : 0x0 
+
+Loading... 24576 + 7298616
+Starting at 0x408000...
+
+initialize CPU
+start CPU
+initialize MMU
+initialize base virtual memory support
+initialize address space library
+initialize global mapping
+initialize VxBus
+	install bus types:
+		vxbIeee1588Bus(IEEE1588 bus type)
+		vxbMiiBus(MII bus type)
+		vxbPciBus(PCI bus type)
+		vxbFdtBus(Flattened Device Tree bus type)
+		vxbNexusBus(Nexus bus type)
+	probe and attach devices
+Instantiating /ram0 as rawFs,  device = 0x1
+Target Name: vxTarget 
+ 
+ _________            _________
+ \77777777\          /77777777/
+  \77777777\        /77777777/
+   \77777777\      /77777777/
+    \77777777\    /77777777/
+     \77777777\   \7777777/
+      \77777777\   \77777/              VxWorks 7 SMP 64-bit
+       \77777777\   \777/
+        \77777777\   \7/     Core Kernel version: 3.1.2.0
+         \77777777\   -      Build date: Dec  5 2019 19:49:46
+          \77777777\
+           \7777777/         Copyright Wind River Systems, Inc.
+            \77777/   -                 1984-2019
+             \777/   /7\
+              \7/   /777\
+               -   -------
+
+                   Board: x86 Processor (ACPI_BOOT_OP) SMP/SMT
+               CPU Count: 4
+          OS Memory Size: ~8179MB
+        ED&R Policy Mode: Permanently Deployed
+
+Instantiating /ram as rawFs,  device = 0x10001
+Formatting /ram for DOSFS
+Instantiating /ram as rawFs, device = 0x10001
+Formatting...Retrieved old volume params with %38 confidence:
+Volume Parameters: FAT type: FAT32, sectors per cluster 0
+  0 FAT copies, 0 clusters, 0 sectors per FAT
+  Sectors reserved 0, hidden 0, FAT sectors 0
+  Root dir entries 0, sysId (null)  , serial number 240000
+  Label:"           " ...
+Disk with 64 sectors of 512 bytes will be formatted with:
+Volume Parameters: FAT type: FAT12, sectors per cluster 1
+  2 FAT copies, 54 clusters, 1 sectors per FAT
+  Sectors reserved 1, hidden 0, FAT sectors 2
+  Root dir entries 112, sysId VXDOS12 , serial number 240000
+  Label:"           " ...
+OK.
+
+ Adding 14648 symbols for standalone.
+
+-> ifconfig
+ifconfig
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:27 mcast:1 errors:0 dropped:0
+	TX packets:27 mcast:1 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:1184  TX bytes:1184
+
+gei2	Link type:Ethernet  HWaddr 00:25:90:04:e2:de
+	capabilities: TXCSUM TX6CSUM VLAN_MTU VLAN_TXHWTAG VLAN_RXHWTAG 
+	inet 128.224.166.238  mask 255.255.254.0  broadcast 128.224.167.255
+	inet6 unicast fe80::225:90ff:fe04:e2de%gei2  prefixlen 64  tentative  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:0 mcast:0 errors:0 dropped:0
+	TX packets:3 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:0  TX bytes:186
+
+value = 0 = 0x0
+-> 
+telnet> q
+q
+Connection closed.

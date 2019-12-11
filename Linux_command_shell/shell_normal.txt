@@ -52,6 +52,7 @@ service tftp
 
     }
 
+sudo service xinetd restart
 
 and then: sudo service tftpd-hpa restart
 sudo /etc/init.d/xinetd reload
@@ -61,6 +62,10 @@ sudo /etc/init.d/xinetd restart
 mkdir –p /tftpboot
 
 sudo chmod -R 777 /tftpboot
+===for centos
+yum install xinetd tftp tftp-server
+/etc/init.d/xinetd start
+=====for cenos
 =================================================================
 
 echo要支持同C语言一样的\转义功能，只需要加上参数-e，如下所示：
