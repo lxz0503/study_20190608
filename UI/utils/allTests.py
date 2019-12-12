@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # encoding=UTF-8
-
+# run this script for whole test structure
 import unittest
 import os
 import HTMLTestRunner
 import time
+
 
 class RunTools(object):
     def __init__(self, case_path, pattern):
@@ -24,9 +25,12 @@ if __name__ == '__main__':
     case_dir = os.path.dirname(os.path.dirname(__file__)) + '/case'
     run = RunTools(case_dir, 'test_*.py')
     suite = run.choose_all_cases()
-    report_name = os.path.dirname(os.path.dirname(__file__)) + "/report/" + "sinaReport.html"
-    # below line is for linux,win7 can not create D:/xiaozhan_git/study_20190608/UI/report/2019-12-08_13-43-57/sinaReport.html
-    # file_name = os.path.dirname(os.path.dirname(__file__)) + "/" + filePath + "/" + run.getNowTime + "/" + fileName
+    # generate test report
+    report_dir = os.path.dirname(os.path.dirname(__file__)) + "/report/" + run.getNowTime
+    report_name = report_dir + "/sinaReport.html"
+    if not os.path.exists(report_dir):
+        os.mkdir(report_dir)
     with open(report_name, 'wb') as fp:
-        runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='UI report', description='UI sina test report')
+        runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='UI report', description='UI Sina test report')
         runner.run(suite)
+

@@ -14,7 +14,7 @@ class OperationXml(object):
         # FileNotFoundError: [Errno 2] No such file or directory: 'D:/xiaozhan_git/study_20190608/UI\\data\\ui.xml'
         # for linux you can use
         # os.path.join(os.path.dirname(os.path.dirname(__file__)), filePath, fileName)
-        # for windows you can use
+        # for windows you should use
         # return os.path.dirname(os.path.dirname(__file__)) + "/" + filePath + "/" + fileName
         return os.path.join(os.path.dirname(os.path.dirname(__file__)), filePath, fileName).replace("\\", "/")
 
@@ -32,7 +32,7 @@ class OperationXml(object):
 
     def getXmlUser(self, parent, child):
         '''
-        get child attribute value
+        get the value of child tag attribute value
         :param parent: parent tag name
         :param child: child tag name
         :return: child tag value

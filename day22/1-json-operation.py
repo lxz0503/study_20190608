@@ -15,6 +15,7 @@ class OperateJson(object):
     def read_data(self):
         with open(self.file_path) as fp:
             res = json.load(fp)
+            print('change json to dictionary', type(res))
             return res
 
     # 根据关键字获取数据
@@ -35,5 +36,5 @@ if __name__ == '__main__':
         'url': 'http://www.runoob.com'
          }
     op_json = OperateJson()
-    op_json.write_data(data)
+    op_json.write_data(data)    #write dictionary into a json file
     print(op_json.get_data('name'))

@@ -32,6 +32,15 @@ mysql->FLUSH PRIVILEGES;
 
 For me, the root passwd is 123win
 
+set environmental variable:
+C:\mysql-5.7.27-winx64\bin
+Add below path to the env and then you can run mysql anywhere:
+mysql -u root -p
+
+Install Navicat to manage your database
+
+
+
 # windows下查看mysql服务是否启动，操作非常简单。
 键盘上按：win（就是那个旗帜图案的按键）+R，弹出框中输入：services.msc
 会弹出服务窗口，在窗口中查找mysql项即可
@@ -87,6 +96,14 @@ show databases;
 use test_result;
 show tables;
 select * from ia_result;
+=========================
+For win10,you have to install vcredist_x64.exe first.
+You can refer to this link for how to install mysql5.27 on win10:
+https://blog.csdn.net/jun1159046873/article/details/94182224
+Remember to add your installed path like "F:\xiaozhan_git\mysql-5.7.27-winx64\bin" to the environmental variable.
+
+
+在MySQL中，create database 和 create schema 是一样的
 
 
 

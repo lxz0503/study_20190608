@@ -4,7 +4,7 @@
 import unittest
 from page.sina import *
 from page.init import *
-import time
+
 
 class SinaTest(Init, Sina):
     def test_sina_login_001(self, parent='divText', value='emailNull'):
