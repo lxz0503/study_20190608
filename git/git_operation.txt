@@ -200,5 +200,25 @@ head -n 后面跟数字  可以设置显示多少行，如果不设置，head默
 git log -1 HEAD | grep commit | head -n 1
 cmd = 'cd %s && git log -1 HEAD | grep "commit" | head -n 1' % gitDir
 
+==============windows git====
+please refer to this link: https://blog.csdn.net/u010280075/article/details/82951774
+
+install git on your windows pc
+Enter a directory with git bash(windows start menu).
+Git初始化
+对于第一次使用Git，需要使用以下命令来初始化Git,红色部分分别填写你在Github上的用户名和邮箱
+
+$ git config --global user.name "xiaozhan"
+$ git config --global user.email lxz_20081025@163.com
+
+git init
+
+Git 使用 git init 命令来初始化一个 Git 仓库
+创建成功后，会出现一个.git的隐藏文件夹，可以使用ls -al命令查看
+
+————————————————
+版权声明：本文为CSDN博主「qq_40707451」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_40707451/article/details/84895015
+
 
 
