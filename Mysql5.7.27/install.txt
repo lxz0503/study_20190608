@@ -104,6 +104,10 @@ Remember to add your installed path like "F:\xiaozhan_git\mysql-5.7.27-winx64\bi
 
 
 在MySQL中，create database 和 create schema 是一样的
+=============================if you are using MAC===
+sudo chown -R _mysql:mysql /usr/local/var/mysql
+
+sudo mysql.server start
 
 
 
