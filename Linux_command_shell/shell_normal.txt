@@ -18,7 +18,7 @@ netstat -a | grep tftp 成功显示正在运行
 
 sudo service tftpd-hpa restart -----sometimes you need to restart
 
-=============for my environment========
+=============for my environment,Ubuntu version is lower than 18.04========
 apt-get install tftpd-hpa
 
 apt-get install xinetd
@@ -785,6 +785,21 @@ ln -s /usr/local/python32/bin/python3 /usr/bin/python（如果ln -s /usr/local/pyth
 2>&1，意思是错误输出等同于标准输出。所以使得./test.sh >test.log，可以把标准输出和错误输出全部导入日志test.log里。
 注意：2>&1，中间不能有空格。
 注意：2>&1，必须写在最后，否则会失去原有意义
+
+=======================================================run shell script or linux command====
+$?最后运行的命令的结束代码（返回值),0 is ok,1 is failure.
+
+$# 是传给脚本的参数个数
+$0 是脚本本身的名字
+$1是传递给该shell脚本的第一个参数
+$2是传递给该shell脚本的第二个参数
+$@ 是传给脚本的所有参数的列表
+
+if [ -d $root_vip_dir ];then
+    rm -fr $root_vip_dir
+fi
+
+
 
 
 
