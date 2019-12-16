@@ -1,0 +1,21 @@
+1576487782878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\xli3\\AppData\\Local\\Temp\\rust_mozprofile.ySWv4T61sPUS"
+1576487784191	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1576487784191	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1576487784191	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1576487784192	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+[Parent 103716, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 104108, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 1041JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1576487787430	Marionette	INFO	Listening on port 64495
+1576487787822	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 103716, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 104284, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 104244,[C hild C10h428rome_ChildThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 1[Parent 103716, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1574726744/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+1576487808506	Marionette	INFO	Stopped listening on port 64495
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 1039
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
