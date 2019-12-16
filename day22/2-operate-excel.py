@@ -16,6 +16,7 @@ class OperationExcel(object):
     def get_data(self):
         data = xlrd.open_workbook(self.file_name)
         tables = data.sheets()[self.sheet_id]
+        # tables = data.sheet_by_index(self.sheet_id)
         return tables
 
     # 获取单元格的行数
