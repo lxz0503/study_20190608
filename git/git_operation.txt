@@ -11,10 +11,6 @@ note:147.11.224.60(vxgit.wrs.com)
 
 4.	git checkout vx7-release--------这表示要下载vx7-release，  这是主分支，真正测试还需要知道具体分支的名字，然后执行git checkout 分支名字：
 
- git checkout fr43-crypto-fips-----it is for fips
-
- git checkout vx7-ntp-upgrade-------for NTP upgrade
-
 [root@net-performance-srv vxworks]# git checkout vx7-netperf-exp==============SMP的分支
 Checking out files: 100% (2661/2661), done.
 Branch vx7-netperf-exp set up to track remote branch vx7-netperf-exp from origin.
@@ -130,7 +126,8 @@ cp -rf /buildarea1/xli3/01vxTest_NET_END.cdf  /buildarea1/xli3/vxworks/helix/gue
 cp /buildarea1/xli3/Makefile               /buildarea1/xli3/vxworks/helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/
 
 =================================
-git checkout -b vxtest_xiaozhan
+git checkout vx7-integration(main branch)
+git checkout -b vxtest_xiaozhan(create my development branch based on main branch)
 
 add your modified file, for example:
 
@@ -141,10 +138,10 @@ git add helix/guests/vxworks-7/pkgs_v2/net/end/vxTest/src/Makefile
 
 git commit -m "VXWEXEC-6765:Test ioctl API in vxtest framework"
 
-git push --set-upstream origin vxtest_xiaozhan         
+git push --set-upstream origin vxtest_xiaozhan  ----------this is the key step,push local branch to remote branch,there is a remote branch named vxtest_xiaozhan
 
 ( 
-   if there is error:      you just need to To delete a remote branch with below command:   and checkout again
+   if there is error:      you just need to To delete a remote branch with below command:   and git checkout again
      git push origin --delete branch_name
    
    [xli3@pek-vx-nwk1 vxworks]$ git push --set-upstream origin vxtest_xiaozhan
