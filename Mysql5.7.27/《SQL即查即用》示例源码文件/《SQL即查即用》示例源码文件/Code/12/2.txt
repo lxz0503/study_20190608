@@ -1,0 +1,3 @@
+SELECT AVG(shop_price) AS Æ½¾ùÖµ
+FROM goods
+WHERE shop_price > 3000;

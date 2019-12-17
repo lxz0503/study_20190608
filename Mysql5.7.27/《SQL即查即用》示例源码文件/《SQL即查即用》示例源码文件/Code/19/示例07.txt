@@ -1,0 +1,12 @@
+CREATE VIEW GoodsBrand
+AS
+SELECT goods.goods_id,goods.goods_name,brand.name brand
+FROM goods,brand
+WHERE goods.brand_id=brand.id;
+
+UPDATE GoodsBrand
+SET goods_name = 'øµº—R6000U “∫æßµÁ ”'
+WHERE goods_id = 57;
+UPDATE GoodsBrand
+SET brand = 'øµº—/KONKA'
+WHERE goods_id = 57;
