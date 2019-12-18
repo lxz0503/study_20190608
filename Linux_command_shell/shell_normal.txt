@@ -428,7 +428,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$
 
 3.复制到/bin/目录下
 
-4.创建软连接：
+4.创建软连接  soft link：
 
 ln -s my_cmd mycmd1
 
@@ -440,7 +440,7 @@ ln -s my_cmd mycmd2
 
 windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh .        (copy to /bin)
 
-windriver@PEK-QCAO1-D2:/bin$ sudo ln -s anyrun.sh anyrun
+windriver@PEK-QCAO1-D2:/bin$ sudo ln -s anyrun.sh anyrun   (set script as an execuable file)
 windriver@PEK-QCAO1-D2:/bin$
 
 在另外一个窗口：
@@ -798,7 +798,25 @@ $@ 是传给脚本的所有参数的列表
 if [ -d $root_vip_dir ];then
     rm -fr $root_vip_dir
 fi
+===============查看环境变量
+printenv
+====Ubuntu上卸载软件iperf3
+check your installed software:
+dpkg --list
 
+sudo apt-get --purge remove iperf3
+sudo apt autoremove libiperf0
+sudo apt-get --purge remove iperf  ---this is a must.Otherwise it still shows old version
+
+Install iper3.6 version:
+
+tar -xzvf iperf-3.6.tar.gz
+cd iperf-3.6
+./configure
+make
+make install
+check version: iperf3 -v
+========================
 
 
 
