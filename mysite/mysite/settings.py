@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'autotest',   # my database name
+        'NAME': 'autotest',   # my database name,you should create it first
         'USER': 'root',
         'PASSWORD': '123win',
         'HOST': '127.0.0.1',
