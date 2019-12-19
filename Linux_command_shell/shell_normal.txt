@@ -818,6 +818,69 @@ make install
 check version: iperf3 -v
 ========================
 
+安装pip on centos5.7, download pip-19.3.1.tar.gz
+[root@pek-xli3-d2] tar -xvzf pip-19.3.1.tar.gz //解压
+[[root@pek-xli3-d2] cd pip-19.3.1 //进入安装文件
+[[root@pek-xli3-d2] python3 setup.py build
+[[root@pek-xli3-d2] python3 setup.py install //安装pip
+使用python3安装，所以默认pip安装到了/usr/local/python3/bin
+[root@pek-xli3-d2 bin]# cd /usr/local/python3/bin/
+[root@pek-xli3-d2 bin]# ll
+total 14396
+lrwxrwxrwx 1 root root       8 Jun 12  2018 2to3 -> 2to3-3.6
+-rwxr-xr-x 1 root root     109 Jun 12  2018 2to3-3.6
+-rwxr-xr-x 1 root root     250 Jun 12  2018 easy_install-3.6
+lrwxrwxrwx 1 root root       7 Jun 12  2018 idle3 -> idle3.6
+-rwxr-xr-x 1 root root     107 Jun 12  2018 idle3.6
+-rwxr-xr-x 1 root root     365 Dec 19 15:20 pip
+-rwxr-xr-x 1 root root     367 Dec 19 15:20 pip3
+-rwxr-xr-x 1 root root     371 Dec 19 15:20 pip3.6
+lrwxrwxrwx 1 root root       8 Jun 12  2018 pydoc3 -> pydoc3.6
+-rwxr-xr-x 1 root root      92 Jun 12  2018 pydoc3.6
+lrwxrwxrwx 1 root root       9 Jun 12  2018 python3 -> python3.6
+-rwxr-xr-x 2 root root 7339126 Jun 12  2018 python3.6
+lrwxrwxrwx 1 root root      17 Jun 12  2018 python3.6-config -> python3.6m-config
+-rwxr-xr-x 2 root root 7339126 Jun 12  2018 python3.6m
+-rwxr-xr-x 1 root root    3128 Jun 12  2018 python3.6m-config
+lrwxrwxrwx 1 root root      16 Jun 12  2018 python3-config -> python3.6-config
+lrwxrwxrwx 1 root root      10 Jun 12  2018 pyvenv -> pyvenv-3.6
+-rwxr-xr-x 1 root root     449 Jun 12  2018 pyvenv-3.6
+[root@pek-xli3-d2 bin]# ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3         -----------创建软连接，然后在任何地方都可以执行pip3命令
+[root@pek-xli3-d2 bin]# pip3 -V
+pip 19.3.1 from /usr/local/python3/lib/python3.6/site-packages/pip-19.3.1-py3.6.egg/pip (python 3.6)
+
+
+===================================python  virtualenv====
+virtualenv，对于在同一台机子上搭建便捷的不同版本python开发环境，具有非常重要的作用。它能够使你现在要处理操作的环境与其他使用不同版本、不同模块的python项目分割开来。
+
+  一、如何安装virtualenv
+
+在本机安装virtualenv，可以使用pip install virtualenv 命令
+pip install virtualenv
+
+ 二、创建虚拟目录
+
+   第一步：进入工作目录 mkdir youdir(即项目目录)
+                      cd workdir
+　　第二步：创建虚拟环境 virtualenv yourdir
+cd workdir
+virtualenv yourdir  # yourdir就是虚拟环境的名字，现在系统就会在你当前工作目录下新建一个名为yourdir的文件夹，
+它保存了一个全新的虚拟环境。另外，在使用virtualenv创建python环境时，默认创建的是python2.7的环境。
+如果你想创建其他版本的python，只需要在创建时指定python的版本即可。像输入下面的命令：
+
+virtualenv yourdir python=python3.6
+
+virtualenv yourdir python=python3.6 --no-site-packages ----干净的目录，不会读取系统包,即不带第三方库,需要时才安装
+
+　　三、激活（使用）虚拟环境
+
+　　使用命令：source yourdir/bin/activate（Linux和OS X）
+
+　　　　　　　source  yourdir\Scripts\activate（Windows）
+
+　　四、退出环境
+
+　　命令：deactivate
 
 
 
