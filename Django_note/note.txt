@@ -2,3 +2,28 @@ Django WEB框架核心思想：
 
 从数据库里取出数据
 把数据内容写到模板里面，然后渲染到网页上
+
+右击计算机---属性---高级系统设置---高级--环境变量
+
+选择系统变量，找到path变量，把python的安装目录放进去
+
+如：C:\Python27\;C:\Python27\Scripts;
+
+D:\Python\Scripts----Django-admin命令就在这个目录下
+
+进入到C盘任意目录，如果能运行django-admin startproject beijing 就表示环境变量没问题
+
+不过建议以后运行Django命令还是进入到相应的工程目录下面
+
+python3 manage.py runserver---start django 后端
+python3 manage.py startapp mblog -----创建应用
+view.py里面定义函数来修改html，函数返回render()来修改html
+models.py用来和数据库交互
+url.py设置url信息，即路由信息
+setting.py设置一些固定参数，例如模板路径，数据库，app名字
+static目录下面放js文件，css脚本，然后在setting.py里面设置好路径
+
+js脚本是浏览器调用的，也就是加载后才渲染页面
+
+
+

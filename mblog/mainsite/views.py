@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 def homepage(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all()  # get all data from models,models will get data from database
     now = datetime.now()
     return render(request, 'index.html', locals())
 

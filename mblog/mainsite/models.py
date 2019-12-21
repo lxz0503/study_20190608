@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-class Post(models.Model):
+class Post(models.Model):         # models will get data from database
     title = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
     body = models.TextField()
