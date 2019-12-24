@@ -24,6 +24,9 @@ setting.py设置一些固定参数，例如模板路径，数据库，app名字
 static目录下面放js文件，css脚本，然后在setting.py里面设置好路径
 
 js脚本是浏览器调用的，也就是加载后才渲染页面
+===============注意一下顺序
+创建完新的应用后，再修改modele.py，然后再修改admin.py,再修改setting.py，再迁移同步数据库
+pycharm直接安装django-bootstrap4
 
 
 

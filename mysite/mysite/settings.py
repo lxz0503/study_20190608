@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cmdb',       # this is my app
     'apitest',
+    'product',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

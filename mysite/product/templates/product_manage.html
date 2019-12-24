@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>Automation test platform</title>
+</head>
+<body role="document">
+<!--navigation-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"&nbsp;</a>
+        <ul class="nav justify-center">
+        </ul>
+        <ul class="nav justify-content-end">
+            <li class="nav-link"><a style="color: white" href="#">{{ user }}</a></li>
+            <li class="nav-link"><a style="color: white" href="/logout">quit</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="row" style="padding-top: 20px">
+<div class="col-md-11">
+<table class="table-striped">
+    <thead>
+    <tr>
+        <th>ID</th><th>product name</th><th>product description</th><th>product owner</th><th>create time</th>
+    </tr>
+    </thead>>
+    <tbody>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.product_desc }}</td>
+        <td>{{ product.product_owner }}</td>
+        <td>{{ product.create_time }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
