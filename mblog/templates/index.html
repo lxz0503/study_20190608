@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to my first blog</title>
-</head>
-<body>
-    <h1>This is my blog</h1>
-    <hr>               <!--posts will be modified-->
+<!-- index.html-->
+{% extends 'base.html' %}
+{% block title %}Welcome to my first blog{% endblock %}
+{% block headmessage %}
+<h3 style="font-family: 'Arial Black'">passage list of this site</h3>
+{% endblock %}
+{% block content %}
     {% for post in posts %}
         <p style="font-family:'Arial Black';font-size: 16pt;font-weight: bold;">
             <a href="/post/{{post.slug}}"> {{post.title}} </a>
         </p>
     {% endfor %}
-    <hr>
-    <h3>now the time is: {{now}}</h3>    <!--now will be modified-->
-</body>
-</html>
+{% endblock %}
