@@ -51,3 +51,14 @@ for k in xiaoming_dict.values():      # 只取对应的value值
 # ('phone', '10086')
 for k in xiaoming_dict.items():
     print(k)
+
+# filter a dictionary
+D = {'beijing': 100, 'shanghai': 90, 'tianjin': 80, 'chongqing': 70, 'nanjing': 60}
+r = {k: v for k, v in D.items() if v >= 60}   # 字典解析
+print(r)           # {'beijing': 100, 'shanghai': 90, 'tianjin': 80, 'chongqing': 70, 'nanjing': 60}
+
+# randint(1,10)----生成随机数字1到10之间，包含1和10
+# range(1,15)---从1开始直到14
+import random
+d = {x: random.randint(1, 10) for x in range(1, 15)}
+print(d)
