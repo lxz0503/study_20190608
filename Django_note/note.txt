@@ -18,14 +18,18 @@ D:\Python\Scripts----Django-admin命令就在这个目录下
 python3 manage.py runserver---start django 后端
 python3 manage.py startapp mblog -----创建应用
 view.py里面定义函数来修改html，函数返回render()来修改html
-models.py用来和数据库交互
-url.py设置url信息，即路由信息
+在view.py里面就是获取数据库的数据，形成字典形式，然后通过render（）函数修改html模板
+
+models.py用来和数据库交互，定义了数据库的表的字段(如果是用的MySQL，需要提前建立一个数据库，sqlite3不需要)，表的名字都是自动定义
+
+url.py设置url信息，即路由信息,和view.py里面的函数相关联起来
+
 setting.py设置一些固定参数，例如模板路径，数据库，app名字
 static目录下面放js文件，css脚本，然后在setting.py里面设置好路径
 
 js脚本是浏览器调用的，也就是加载后才渲染页面
 ===============注意一下顺序
-创建完新的应用后，再修改modele.py，然后再修改admin.py,再修改setting.py，再迁移同步数据库
+创建完新的应用后，再修改models.py，然后再修改admin.py,再修改setting.py，再迁移同步数据库
 pycharm直接安装django-bootstrap4
 
 

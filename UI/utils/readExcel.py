@@ -2,12 +2,14 @@
 # encoding=UTF-8
 
 import xlrd
+import os
 
 def readExcel(file, row, sheet_id):
     book = xlrd.open_workbook(file, 'r')
     sheet = book.sheet_by_index(sheet_id)
     print(sheet.row_values(row))
     return sheet.row_values(row)
+
 
 def readExcels(file, row, sheet_id):
     rows = []
@@ -18,6 +20,10 @@ def readExcels(file, row, sheet_id):
     print(rows)
     return rows
 
+
 if __name__ == "__main__":
-    readExcel(r'D:\xiaozhan_git\study_20190608\UI\data\test.xls', 1, 0)
-    readExcels(r'D:\xiaozhan_git\study_20190608\UI\data\test.xls', 1, 0)
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = root_dir + r'\data\test.xls'
+    # print(file_path)           # F:\xiaozhan_git\study_20190608\UI\data\test.xls
+    readExcel(file_path, 1, 0)
+    readExcels(file_path, 1, 0)
