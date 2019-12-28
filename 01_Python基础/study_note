@@ -1,3 +1,6 @@
+# 在Python脚本的第一行，常常能看到#!/usr/bin/env python3或者#!/usr/bin/python3字样，
+其中#!符号在计算机行业中叫做 “Shebang”,
+其作用是指定由哪个解释器来执行脚本。在这里即是指定python3作为解释器。
 # 如果用自己默认安装的Python3，就用pip安装selenium,并且pycharm的python解释器要设置为python安装目录,即F:\Python\python.exe#
 # 如果用anconda,就要进入到dos下面，C盘即可，上来就敲conda，看是否识别，如果不识别，添加环境变量即可 #
 # conda list, conda install selenium， conda upgrade --all #
