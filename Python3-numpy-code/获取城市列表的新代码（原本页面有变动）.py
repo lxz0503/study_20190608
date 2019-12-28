@@ -1,7 +1,9 @@
 # xiaozhan modified for new version
+# encoding=utf-8
 import requests
 import time
 import pymongo
+import json
 
 client = pymongo.MongoClient('localhost', 27017)  # create a connection
 book_weather = client['weather']  # create a new database named weather
@@ -22,10 +24,13 @@ for item in data_1:
     strhtml.encoding = 'utf8'
     time.sleep(1)
     # print(strhtml.text)
-    dic = strhtml.json()
+    dic = strhtml.json()       # <class 'dict'>
+    # print(type(dic))
+    # dic = json.loads(strhtml.text)    # 和上面的作用一样，把JSON格式数据反序列化为字典格式，然后才能存储到MongoDB
+
     # for item in dic['HeWeather5'][0]['daily_forecast']:
     #     print(item['tmp']['max'])
-    # write data into database
+    # write data into MongoDB database
     sheet_weather.insert_one(dic)
 
 # find weather results in mongodb
