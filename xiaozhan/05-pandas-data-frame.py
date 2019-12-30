@@ -2,12 +2,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = {'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
+data = {
+        'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
         'house_price': [50000, 48000, 35000, 30000]
         }    # 每一列数据, 通过字典来创建
 # data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
-data_frame = pd.DataFrame.from_dict(data, orient='index',columns=['year', 'city', 'house_price','a'])
+data_frame = pd.DataFrame.from_dict(data, orient='index', columns=['year', 'city', 'house_price','a'])
 print(data_frame)
 print(data_frame.values)
 print(data_frame.get_values())  # 功能同上，获取所有数值
@@ -21,7 +22,8 @@ x = pd.DataFrame({'x1':[1,2,2,3],'x2':[4,3,2,1],'x3':[3,2,4,1]})
 # print(x.sort_values(by=0,ascending=False, axis=1)) # 按照索引值为0的行，即第一行的值来降序排序
 
 # another example
-frame = pd.DataFrame(np.arange(9).reshape(3, -1),  # -1 means generating columns automatically
+frame = pd.DataFrame(
+                     np.arange(9).reshape(3, -1),  # -1 means generating columns automatically
                      index=['a', 'b', 'c'],   # 每行的名字
                      columns=['beijing', 'shanghai', 'hangzhou'] # 每列的名字
                      )
@@ -57,13 +59,15 @@ print(frame.columns[0]) # 打印第0列column的名字
 # 需要先用loc将数据提取出来，再赋值修改；
 # 若需修改索引，可直接赋值df.index=##;
 # 若需修改列名，可直接赋值df.columns=##
-df = pd.DataFrame({'A': ['one', 'one', 'two', 'three']*3,
+df = pd.DataFrame(
+                   {
+                   'A': ['one', 'one', 'two', 'three']*3,
                    'B': ['A', 'B', 'C']*4,
                    'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar']*2,
                    'D': np.random.randn(12),
                    'E': np.random.randint(0, 5, 12)
                    }
-)
+                 )
 # print(df)
 # 将A列为“one”，C列为“bar”的E列数据修改为110
 df.loc[(df['A'] == 'one') & (df['C'] == 'bar'), 'E'] = 110
