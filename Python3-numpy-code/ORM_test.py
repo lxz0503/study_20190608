@@ -69,4 +69,4 @@ session.commit()
 # 删除数据
 # session.query(Product).filter(Product.ID == '1').delete()
 # session.commit()
-# session.close()
+session.close()
