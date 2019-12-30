@@ -1,13 +1,14 @@
 import matplotlib.pyplot as plt
 import xlrd
 from xlrd import open_workbook
-
+import os
 
 x_data = []
 y_data = []
 x_volte = []
 temp = []
-wb = open_workbook(r'D:\xiaozhan_git\study_20190608\xiaozhan\xiaozhan.xls')
+f_dir = os.path.dirname(__file__) + '/xiaozhan.xls'
+wb = open_workbook(f_dir)
 for s in wb.sheets():
     # print('Sheet:', s.name)
     for row in range(s.nrows):
@@ -15,7 +16,7 @@ for s in wb.sheets():
         values = []
         for col in range(s.ncols):
             values.append(s.cell(row, col).value)
-        print(values)
+        print(values)   # 每一行的数据存储在一个列表里 ['beijing', 1000.0]
         x_data.append(values[0])
         y_data.append(values[1])
 print(x_data)  # the first column

@@ -13,6 +13,7 @@ from collections import Counter
 s = 'heLLoworldabbbaaaccc'
 #s = input()                     # 从控制台输入字符串
 c = Counter(s)
+print(c)    # Counter({'a': 4, 'b': 3, 'c': 3, 'L': 2, 'o': 2, 'h': 1, 'e': 1, 'w': 1, 'r': 1, 'l': 1, 'd': 1})
 # [('a', 4), ('b', 3), ('c', 3), ('L', 2), ('o', 2)]
 print(c.most_common(5))         # 获取频率最高的5个字符，存储在列表,如果没有设置参数，就默认全部统计
 print(c.most_common(5)[0][0])   # 打印列表第一个元素. a
@@ -38,7 +39,7 @@ print(c.most_common(5)[0][1])   # 出现的次数, 4
 
 # [(3, 2), (6, 2), (2, 1), (4, 1), (5, 1)]
 duplicate = {key: count for key, count in Counter(s).items() if count > 1}
-print(duplicate)
+print(duplicate)     # {3: 2, 6: 2}
 
 #
 for key, count in c.items():    # c.items()是可迭代对象，c不行

@@ -11,7 +11,7 @@ result = pd.Series(list_prices)
 # print(apts)
 # print(result)
 arrySer = pd.Series(np.arange(10, 15), index=['a', 'b', 'c', 'd', 'e'])  # use array
-print(arrySer)
+print('the series is', arrySer)
 arrySer.plot.bar()
 # arrySer.plot.line()
 # arrySer.plot.pie()

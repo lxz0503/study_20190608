@@ -4,6 +4,7 @@
 import csv
 from matplotlib import pyplot as plt
 from datetime import datetime
+import os
 
 # 读取CSV文件数据
 filename = r'D:\xiaozhan_git\study_20190608\xiaozhan\sitka_weather_2014.csv'
@@ -29,7 +30,8 @@ plt.xlabel('', fontsize=16)
 plt.ylabel('Temperature(F)', fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
 fig.autofmt_xdate()  # 绘制斜的日期标签
-plt.savefig(r"D:\xiaozhan_git\study_20190608\xiaozhan\csv1.jpg")
+jpg_dir = os.path.dirname(__file__) + '/csv1.jpg'
+plt.savefig(jpg_dir)
 plt.show()
 # ---------------------
 # 作者：Asia - Lee

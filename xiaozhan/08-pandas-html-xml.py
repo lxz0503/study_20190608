@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+# encoding=utf-8
 from lxml.html import parse             # install lxml
 from urllib.request import urlopen      # already install
 import requests                         # install requests
