@@ -1,0 +1,31 @@
+<!-- contact.html (ch08www project) -->
+{% extends "base.html" %}
+{% block title %}联络管理员{% endblock %}
+{% block content %}
+
+<div class='container'>
+    {% if message %}
+        <div class='alert alert-warning'>{{ message }}</div>
+        {{ user_name }}<br/>
+        {{ user_city }}<br/>
+        {{ user_school }}<br/>
+        {{ user_email }}<br/>
+        {{ user_message | linebreaks }}<br/>
+    {% endif %}
+
+    <div class='panel panel-primary'>
+        <div class='panel-heading'>
+            <form name='my form' action='.' method='POST'>
+            {% csrf_token %}
+            <h3>写信给管理员</h3>
+        </div>
+        <div class='panel-body'>
+            {{ form.as_p }}
+        </div>
+        <div class='panel-footer'>
+            <input type='submit' value='提交'>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

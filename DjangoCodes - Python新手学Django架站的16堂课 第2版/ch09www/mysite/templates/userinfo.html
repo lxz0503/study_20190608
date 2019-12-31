@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}分享日记{% endblock %}
+{% block content %}
+<div class='container'>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-default'>
+            <div class='panel-heading' align=center>
+                <h3>用户信息</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-primary'>
+            <div class='panel-heading' align=center>
+                {{ userinfo.user.username | upper }}
+            </div>
+            <div class='panel panel-body'>
+                电子邮件：{{ userinfo.user.email }}<br/>
+                身高：{{ userinfo.height }} cm<br/>
+                性别：{{ userinfo.male | yesno:"男生,女生"}}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- carlist.html (ch06www project) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>二手车卖场</title>
+</head>
+<body>
+    <h2>欢迎光临DJ二手车卖场</h2>
+    <table>
+        <tr>
+    {% for m in car_maker %}
+        <td bgcolor="#ccffcc">
+            <a href="{% url 'carlist-url' forloop.counter0 %}">{{m}}</a>
+        </td>
+    {% endfor %}
+        </tr>
+    </table>
+    {% for c in cars %}
+        {% if forloop.first %}
+    <table>
+        <tr><td>车厂</td><td>车款</td></tr>
+        {% endif %}
+        <tr bgcolor="{% cycle '#eeeeee' '#cccccc' %}">
+        <td>{{maker_name}}</td><td>{{ c }}</td>
+        </tr>
+        {% if forloop.last %}
+    </table>
+        {% endif %}
+    {% empty %}
+        <h3>车厂<em>{{maker_name}}</em>目前无库存车</h3>
+    {% endfor %}
+
+</body>
+</html>

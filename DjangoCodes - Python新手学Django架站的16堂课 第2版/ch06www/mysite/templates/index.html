@@ -1,0 +1,24 @@
+<!-- index.html (ch06www project) -->
+{% extends "base.html" %}
+{% block title %}电视新闻直播 {% endblock %}
+{% block tvname %} {{tv.name}} {% endblock %}
+{% block menu %}
+	<ul class='nav navbar-nav'>
+		<li class='active'><a href='/'>Home</a></li>
+		{% for t in tv_list %}
+			<li><a href="{% url 'tv-url' forloop.counter0 %}">{{t.name}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+{% block content %}
+	<div class='conatiner'>
+		{% if hour > 18 %}
+			晚安
+		{% elif hour < 10 %}
+			早安
+		{% endif %}
+		<div id='tvcode' align='center'>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{tv.tvcode}}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+{% endblock %}

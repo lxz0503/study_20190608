@@ -1,0 +1,5 @@
+感谢您的注册
+用户：{{ user }}
+在网站：{{ site }}注册
+您的链接：http://{{ site }}/accounts/activate/{{ activation_key }}
+将于{{ expiration_days }}天后到期

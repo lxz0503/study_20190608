@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} 欢迎光临我的博客 {% endblock %}
+{% block headmessage %} 
+    <h3 style='font-family:楷体;'>本站文章列表</a>
+{% endblock %}
+{% block content %} 
+    {% for post in posts %}
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+                <p style='font-family:微软雅黑;font-size:14pt;font-weight:bold;'>
+                    <a href='/post/{{post.slug}}'>{{ post.title }}</a>
+                </p>
+            </div>
+            <div class='panel-body' style='background-color:#ffffdd'>
+                <p>
+                   {{ post.body | truncatechars:40 }}
+                </p>
+            </div>
+            <div class='panel-footer'  style='background-color:#efefef'>
+                <p>
+                    发布时间：{{ post.pub_date | date:"Y M d, h:m:s"}}
+                </p>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

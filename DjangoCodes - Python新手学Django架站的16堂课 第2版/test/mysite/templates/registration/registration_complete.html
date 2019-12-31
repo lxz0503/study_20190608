@@ -1,0 +1,20 @@
+<!-- registration_complete.html (ch10www project) -->
+{% extends "base.html" %}
+{% block title %}分享日记{% endblock %}
+{% block content %}
+<div class='container'>
+{% for message in messages %}
+    <div class='alert alert-{{message.tags}}'>{{ message }}</div>
+{% endfor %}
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-default'>
+            <div class='panel-heading' align=center>
+                <h3>感谢您的注册</h3>
+                <p>接下来请别忘了到您注册的电子邮件中去启用账号</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

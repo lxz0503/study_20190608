@@ -1,0 +1,21 @@
+<!-- header.html (gen.min-huang.com project) -->
+    <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <div class='navbar-brand' align=center>
+                    PICS GEN
+                </div>
+            </div>
+            <ul class='nav navbar-nav'>
+                <li class='active'><a href='/'>Home</a></li>
+                <li><a href='/gen/'>产生器</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href='/vip/'>自定义图片功能</a></li>
+                    <li><a href='/accounts/logout'>注销</a></li>
+                {% else %}
+                    <li><a href='/accounts/login'>登录</a></li>
+                    <li><a href='/accounts/register'>注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
