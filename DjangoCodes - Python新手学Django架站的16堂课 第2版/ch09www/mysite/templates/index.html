@@ -1,0 +1,38 @@
+<!-- index.html (ch09site project) -->
+{% extends "base.html" %}
+{% block title %}分享日记{% endblock %}
+{% block content %}
+<div class='container'>
+{% for message in messages %}
+    <div class='alert alert-{{message.tags}}'>{{ message }}</div>
+{% endfor %}
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-default'>
+            <div class='panel-heading' align=center>
+                <h3>{{ username | default:"我"}}的私人日记</h3>
+            </div>
+        </div>
+    </div>
+</div>
+    {% for diary in diaries %}
+    {% cycle "<div class='row'>" "" "" %}
+        <div class='col-md-4'>
+            <div class='panel panel-primary'>
+                <div class='panel-heading' align=center>
+                    {{ diary.ddate }}
+                </div>
+                <div class='panel-body'>
+                    {{ diary.note | linebreaks }}
+                </div>
+                <div class='panel-footer'>
+                    今日花费：{{ diary.budget }}元，体重：{{ diary.weight }}公斤
+                </div>
+            </div>
+        </div>    
+    {% cycle "" "" "</div>" %}
+    {% empty %}
+        <h3><em>登录网站才能够使用日记功能</em></h3>
+    {% endfor %}
+</div>
+{% endblock %}

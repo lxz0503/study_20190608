@@ -1,0 +1,5 @@
+DELETE FROM brand 
+WHERE name = '³¤ºç/CHANGHONG';
+
+SELECT * FROM brand 
+WHERE name = '³¤ºç/CHANGHONG'; 

@@ -1,0 +1,38 @@
+<!-- listing.html (ch08www project) -->
+{% extends "base.html" %}
+{% block title %}我有话要说{% endblock %}
+{% block content %}
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+     <div class='panel panel-default'>
+      <div class='panel-heading' align=center>
+        <h3>~~宝宝心里苦，宝宝只在这里说~~</h3>
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <div class="row">
+   {% for p in posts %}   
+     <div class="col-sm-12 col-md-6">
+      <div class='panel {%cycle "panel-primary" "panel-info" "panel-warning" "panel-success" %}'>
+        <div class='panel-heading'>
+         <table width='100%'>
+          <tr>
+            <td>
+              【{{ p.nickname }}】觉得{{ p.mood }}
+            </td>
+            <td align=right>
+              <i><small>{{ p.pub_time }}</small></i>
+            </td>
+          </tr>
+         </table>
+        </div>
+        <div class='panel-body'>{{ p.message | linebreaks }}</div>
+      </div>
+     </div>
+   {% endfor %}
+  </div>
+</div>
+{% endblock %}

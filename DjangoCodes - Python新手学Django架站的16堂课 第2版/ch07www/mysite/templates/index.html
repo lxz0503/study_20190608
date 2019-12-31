@@ -1,0 +1,29 @@
+<!-- index.html (ch07www project) -->
+{% extends "base.html" %}
+{% block title %}DJ二手手机卖场{% endblock %}
+{% block content %}
+<div class='container' align=center>
+	<!-- 这里放我们要呈现的内容 -->
+	{% for p in products %}
+	{% if forloop.first %}
+	<table>
+	    <tr bgcolor='#cccccc'>
+	        <td width=250>库存手机</td>
+	        <td width=150>品牌/型号</td>
+	        <td width=50>出厂年</td>
+	        <td>价格</td></tr>
+	{% endif %}
+	    <tr bgcolor='{% cycle "#ffccff" "ccffcc" %}'>
+	        <td><a href='{% url "detail-url" p.id %}'>{{ p.nickname }}</a></td>
+	        <td>{{ p.pmodel.maker.name }}/{{ p.pmodel }}</td>
+	        <td>{{ p.year  }}</td>
+	        <td align=right>{{ p.price }}</td>
+	    </tr>
+	{% if forloop.last %}
+	</table>
+	{% endif %}
+	{% empty %}
+	<h3>目前没有库存的二手手机可以卖，真抱歉</h3>
+	{% endfor %}
+</div>
+{% endblock %}

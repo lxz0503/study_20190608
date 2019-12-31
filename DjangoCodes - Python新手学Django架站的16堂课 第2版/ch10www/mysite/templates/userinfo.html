@@ -1,0 +1,41 @@
+<!-- userinfo.html (ch10www project) -->
+{% extends "base.html" %}
+{% block title %}分享日记{% endblock %}
+{% block content %}
+<div class='container'>
+{% for message in messages %}
+    <div class='alert alert-{{message.tags}}'>{{ message }}</div>
+{% endfor %}
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-default'>
+            <div class='panel-heading' align=center>
+                <h3>用户信息</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel panel-primary'>
+            <div class='panel-heading' align=center>
+                {{ profile.user.username | upper }}
+            </div>
+            <div class='panel panel-body'>
+                电子邮件：{{ profile.user.email }}<br/>
+                身高：{{ profile.height }} cm<br/>
+                性别：{{ profile.male | yesno:"男生,女生"}}<br/>
+                个人网站：<a href='{{ profile.website }}'>{{ profile.website }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<form name='myname' action='.' method='POST'>
+    {% csrf_token %}
+    <table>
+    {{ profile_form.as_table }}
+    </table>
+    <input type='submit' value='修改个人资料'>
+</form>
+</div>
+{% endblock %}
