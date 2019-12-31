@@ -1,0 +1,45 @@
+from PyPDF2 import  PdfFileReader                       # 获取页码用
+
+
+
+
+
+'''
+功能：统计文档页码
+path：文件绝对路径
+'''
+def getPdfPageNum(path):
+    with open(path, "rb") as file:
+        doc = PdfFileReader(file)
+        pagecount = doc.getNumPages()
+    return pagecount
+
+
+
+
+
+valueList.append(pdf_name)					# 添加到文件列表中
+
+
+
+
+
+pages = getPdfPageNum(pdf_name)				# 获取页码
+valueList.append([fullfilename,str(pages)])
+totalPages += pages					# 累加页码
+os.remove(pdf_name)					# 删除生成的PDF文件
+
+
+
+
+
+print("转换成功！")
+
+
+
+
+
+for i in resultList:
+    print(i[0],i[1])
+totalPages = str(valueList[0])				# 总页数
+print("合计页数：",totalPages)

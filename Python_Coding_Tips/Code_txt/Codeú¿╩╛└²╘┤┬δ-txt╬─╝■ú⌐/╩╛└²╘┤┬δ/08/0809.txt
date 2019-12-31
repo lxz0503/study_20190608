@@ -1,0 +1,33 @@
+import pandas as pd
+aa =r'../data/1月销售数据.xls'
+df = pd.DataFrame(pd.read_excel(aa)) 
+
+
+
+
+
+df1.duplicated()
+
+
+
+
+
+df1.drop_duplicates()
+
+
+
+
+
+df1.drop_duplicates(['买家会员名'])
+
+
+
+
+
+df1.drop_duplicates(['买家会员名'],keep='last')
+
+
+
+
+
+df1.drop_duplicates(['买家会员名','买家支付宝账号'],inplace=Fasle)

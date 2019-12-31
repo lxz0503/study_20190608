@@ -1,0 +1,127 @@
+data='www.' +'mingrisoft'+'.com'
+train1='www.'+str(12306)+ '.com'
+train2='www.'+'12306'+'.com'
+print(data )
+print(train1)
+print(train2)
+
+
+
+
+
+name=input('姓名：')
+phone=input('电话：')
+university=input('学校：')
+data=name,phone,university
+print(data )
+print(' '.join(data) )
+
+
+
+
+
+print(name,phone,university)
+
+
+
+
+
+print ('mingrisoft''.com')
+
+
+
+
+
+print ('mingrisoft'   '.com')
+
+
+
+
+
+print ('%s %s'%('mingrisoft', 'huawei'))
+
+
+
+
+
+city=['上海', '广州', '成都', '北京', '武汉', '长沙', '杭州', '厦门']
+print(''.join(city))
+print(' '.join(city))
+print('-'.join(city))
+
+
+
+
+
+data = [10, 20, 30, 40, 50, 60, 70, 80]
+strnull = ''
+stradd = ''
+strlin = ''
+for item in data:
+    strnull = strnull + str(item)		# 连接列表中的元素，间隔符为空
+    stradd = stradd + '+' + str(item)		# 连接列表中的元素，间隔符为“+”
+    strlin = strlin + '<' + str(item)		# 连接列表中的元素，间隔符为“<”
+    if item ==80:
+        print(item)
+    else:
+        print(item, end='*')			# 在输出时设置间隔符为“*”
+print(strnull)
+print(stradd.lstrip('+'))
+print(strlin.lstrip('<'))
+
+
+
+
+
+data=['上海', '广州', '上海', '成都', '上海', '上海', '北京', '上海', '广州', '北京', '上海']
+strnull=data[1]+data[2]+ data[3]+data[4]		# 连接列表中的元素，间隔符为空
+stradd=data[1]+'-'+data[2]+'-'+ data[3]+'-'+data[4]	# 连接列表中的元素，间隔符为“+”
+print(strnull)
+print(stradd)
+
+
+
+
+
+gem=[["大众",643518],["奔驰",319163],["宝马",265051],["福特",252323],["雪铁龙",227967],["奥迪",255300]]
+fra=[["雪铁龙", 698985],["雷诺",547704],["大众",259268],["福特",82633],["宝马",84931],["奔驰",73254]]
+eng=[["福特",254082],["大众",203150],["雪铁龙",177298],["奔驰",172238],["宝马",172048],["奥迪",143739]]
+for item1,item2,item3 in zip(gem,fra,eng):
+    print(item1[0],item1[1],"  ",item2[0],item2[1],"  ",item3[0],item3[1]) 
+
+
+
+
+
+for item1,item2,item3 in zip(gem,fra,eng):
+    item11 = item1[0].ljust(8)
+    item12 = str(item1[1]).ljust(8)
+    item21 = item2[0].ljust(8)
+    item22 = str(item2[1]).ljust(8)
+    item31 = item1[0].ljust(8)
+    item32 = str(item3[1]).ljust(8)
+    print(item11 +"\t",item12+"\t","  ",item21+"\t",item22+"\t","  ",item31+"\t",item32)
+
+
+
+
+
+lange={'01':'希腊文输入','02':'俄文输入','03':'德文输入','04':'丹麦文输入','05':'西班牙文输入','06':'法文输入','07': '荷兰文输入','08':'葡萄牙文输入','09': '意大利文输入'}
+for key,value in lange.items():      #  遍历字典
+    print(key ,value)                #  输出语言菜单
+
+
+
+
+
+nba = {'哈登': '31.6','伦纳德': '31.2', '乔治': '28.6', '库里': '27.3', '利拉德': '26.9'}
+for key in list(nba.keys()):
+    print(key,end=' ')
+
+
+
+
+
+nba = {'哈登': '31.6','伦纳德': '31.2', '乔治': '28.6', '库里': '27.3', '利拉德': '26.9'}
+for value in list(nba.values()):
+    print(value,end=' ')

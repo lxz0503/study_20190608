@@ -1,0 +1,7 @@
+print(chr(0xf094))						# 0xf094是十六进制数
+
+
+
+
+
+print(''.join([chr(i) for i in range(0xf08c,0xf095)]))	#  输出不包含截止符号0xf095

@@ -1,0 +1,25 @@
+import datetime			# 导入日期时间模块
+# 测试方法一的执行时间
+st = datetime.datetime.now()	# 获取开始时间
+‘’’开始字符串拼接’’’
+s = “”				# 定义空字符串
+for i in range(0,10000):		# 循环10000次
+    s += str(i)			# 进行字符串拼接
+‘’’结束字符串拼接’’’
+et = datetime.datetime.now()	# 获取结束时间
+print(et-st)			# 输出所用时间
+
+
+
+
+
+import datetime			# 导入日期时间模块
+st = datetime.datetime.now()	# 获取开始时间
+‘’’开始字符串拼接’’’
+s = []  # 定义空列表
+for i in range(0,10000):		# 循环10000次
+    s.append(str(i))			# 追加到列表
+“”.join(s)					# 将列表的元素合并为字符串
+‘’’结束字符串拼接’’’
+et = datetime.datetime.now()		# 获取结束时间
+print(et-st)				# 输出所用时间

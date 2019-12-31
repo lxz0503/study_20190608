@@ -1,0 +1,45 @@
+dfs= [df1, df2, df3]
+result = pd.concat(dfs)
+
+
+
+
+
+result = pd.concat(dfs, keys=['1月', '2月', '3月'])
+
+
+
+
+
+result = pd.concat([df1, df4], axis=1)
+
+
+
+
+
+result = pd.concat([df1, df4], axis=1, join='inner')
+
+
+
+
+
+result = pd.concat([df1, df4], axis=1, join_axes=[df4.index])
+
+
+
+
+
+import pandas as pd
+import glob
+filearray=[]
+filelocation=glob.glob(r'./data/XS/*.xls')	# 获取程序所在data/XS文件夹下的所有.xls文件
+for filename in filelocation:			# 遍历文件夹
+    filearray.append(filename)
+res=pd.read_excel(filearray[0])
+for i in range(1,len(filearray)):		# 读取指定路径下的Excel并进行合并
+    A=pd.read_excel(filearray[i])
+    res=pd.concat([res,A],ignore_index=True,sort=False)
+print(res.index)
+writer = pd.ExcelWriter('output.xls')		# 合并后数据写入Excel
+res.to_excel(writer,'sheet1')
+writer.save()

@@ -1,0 +1,1 @@
+pyinstaller -F E:\tmp\studentsystem\studentsystem.py

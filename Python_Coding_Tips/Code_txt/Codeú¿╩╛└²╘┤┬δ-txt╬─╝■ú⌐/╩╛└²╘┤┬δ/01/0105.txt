@@ -1,0 +1,27 @@
+sys.stdout.write('明日科技' + '\n')			# 输出明日科技
+print('明日科技')					# 输出明日科技
+
+
+
+
+
+sys.stdout.write("\r")				# 让光标回到行首
+sys.stdout.flush()					# 缓冲区数据全部输出
+
+
+
+
+
+import sys
+import time
+def print_act(word):
+    sys.stdout.write("\r")			# 让光标回到行首
+    sys.stdout.flush()				# 缓冲区的数据全部输出
+    for item in word:				# 遍历整个单词
+        sys.stdout.write(item)			# 写到缓冲区
+        sys.stdout.flush()			# 输出
+        time.sleep(0.3)				# 暂停0.3秒
+        print('访澳旅客   ' + chr(0xf090) +' '+ chr(0xf091)+'  访澳旅客 ')
+
+while True:
+    print_act('VISITANTES     VISITANTES')	# 调用print_act()方法动态输出文字

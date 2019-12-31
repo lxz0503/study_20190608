@@ -1,0 +1,21 @@
+try:
+        ret = name.decode('utf-8')
+except (UnicodeEncodeError, UnicodeDecodeError) as e:
+        ret = name.decode('gbk')
+return NameObject(ret)
+
+
+
+
+
+try:
+    r = s.encode('latin-1')
+    if len(s) < 2:
+        bc[s] = r
+    return r
+except Exception as e:
+    print(s)
+    r = s.encode('utf-8')
+    if len(s) < 2:
+        bc[s] = r
+    return r

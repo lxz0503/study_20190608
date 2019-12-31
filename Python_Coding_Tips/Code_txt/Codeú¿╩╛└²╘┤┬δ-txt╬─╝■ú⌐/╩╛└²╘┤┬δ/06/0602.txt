@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+import sys, codecs					# 标准模块
+from PyPDF2 import PdfFileReader, PdfFileMerger	# 第三方模块
+
+
+
+
+
+pip install PyPDF2
+
+
+
+
+
+'''
+   合并pdf文件，输出的pdf文件按输入的pdf文件名生成书签
+'''
+def mergefiles(path, output_filename, import_bookmarks=False):
+    ''' 遍历目录下的所有pdf将其合并输出到一个pdf文件中， # 返回数字（将按该数字排序）输出的pdf文件默认带书签，书签名为之前的文件名。默认情况下原始文件的书签不会导入，使用import_bookmarks=True可以将原文件所带的书签也导入到输出的PDF文件中
+    '''
+    merger = PdfFileMerger()		# 创建PDF合并对象
+        # 获取要合并的PDF文件
+    filelist = common.getfilenames(filepath=path,filelist_out=[], file_ext='.pdf')  
+    if len(filelist) == 0:		# 判断是否存在要合并的文件
+        print("当前目录及子目录下不存在pdf文件")
+        sys.exit()			# 退出文件系统
+    for filename in filelist:		# 遍历文件列表
+        f = codecs.open(filename,'rb')# 使用codecs的open()方法打开文件时，会自动转换为内部Unicode编码
+        file_rd = PdfFileReader(f)
+        short_filename = os.path.basename(os.path.splitext(filename)[0])# 获取文件名称（不包括文件路径）
+        if file_rd.isEncrypted == True:
+            print('不支持的加密文件：%s'%(filename))
+            continue
+        merger.append(file_rd, bookmark=short_filename, import_bookmarks=import_bookmarks)
+        f.close() 			# 关闭文件对象
+    out_filename=os.path.join(os.path.abspath(path), output_filename)# 将文件名和路径连接为一个完整路径
+    merger.write(out_filename)		# 写入内容
+    merger.close()			# 关闭PDF合并对象
+
+
+
+
+
+if __name__ == '__main__':
+    sourcepath = r"E:/learn/test/doc/temp"		# 指定源路径（Word文档所在路径）
+    targetpath = r"E:/learn/test/doc/pdf/"		# 指定目标路径（PDF文件保存路径）
+    filelist = getfilenames(sourcepath,[],'.doc')	# 获取Word文档路径
+    valueList = wordtopdf(filelist,targetpath)		# 实现将Word文档批量转换为PDF文件
+    if valueList:
+        # 将多个PDF文件合并为一个PDF文件
+        mergefiles(targetpath, 'merged.pdf', True)
+        temp = [os.path.join(targetpath , 'merged.pdf')]	# 组合PDF文件路径
+        for file in valueList:					# 遍历临时生成的PDF文件列表
+            os.remove(file)					# 删除PDF文件
+        print("合并完成！")
+    else:
+        print("没有要转换的Word文档或者转换失败！")

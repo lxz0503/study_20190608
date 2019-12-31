@@ -1,0 +1,7 @@
+import os						# 导入os模块
+while True:					# 循环输入
+    try:
+        path=input('请输入文件所在路径：')		# 记录输入的文件路径
+        os.startfile(path)			# 调用系统程序打开文件
+    except :
+        print('请输入正确的文件路径……')

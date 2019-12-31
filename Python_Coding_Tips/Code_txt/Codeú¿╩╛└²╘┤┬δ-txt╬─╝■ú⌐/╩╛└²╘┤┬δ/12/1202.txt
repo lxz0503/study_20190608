@@ -1,0 +1,6 @@
+import os
+try:
+    import jieba				# 导入模块
+except ModuleNotFoundError:
+    print('正在安装jieba，请稍等...')
+    os.system('pip install jieba')	# 安装jieba模块

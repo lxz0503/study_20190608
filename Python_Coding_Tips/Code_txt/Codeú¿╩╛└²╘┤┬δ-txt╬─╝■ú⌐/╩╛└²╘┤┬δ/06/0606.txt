@@ -1,0 +1,60 @@
+'''
+功能：递归获取PDF文档的大纲
+obj：Word文档的大纲对象
+isPage：是否包含页码
+'''
+def getOutline(obj, isPage):			# 递归获取大纲
+    global returnlist
+    for o in obj:
+        if type(o).__name__ == 'Destination':
+            if isPage:				# 包括页码
+                returnlist.append( o.get('/Title') + "\t\t" + str(o.get('/Page') + 1) + "\n")
+            else:					# 不包括页码
+                returnlist.append(o.get('/Title') + "\n")
+        elif type(o).__name__ == 'list':
+            getOutline(o,isPage)			# 递归调用获取大纲
+    return returnlist				# 返回提取后的大纲
+
+
+
+
+
+'''
+功能：提取目录并保存到新的Word文档中
+pdfpath：合并后的PDF文件绝对路径，包括文件名
+listpath：目标路径
+isPage：是否包含页码
+'''
+def getPdfOutlines(pdfpath,listpath,isPage):
+    with open(pdfpath, "rb") as file:
+        doc = PdfFileReader(file)
+        outlines = doc.getOutlines()			# 获取大纲
+        global returnlist					# 全局变量，保存大纲的列表
+        returnlist = []					# 创建一个空列表
+        mylist = getOutline(outlines,isPage)		# 递归获取大纲
+        w = DispatchEx("Word.Application")		# 创建Word文档应用程序对象
+        w.Visible = 1
+        w.DisplayAlerts = 0
+        doc1 = w.Documents.Add()				# 添加一个Word文档对象
+        range1 = doc1.Range(0,0)
+        for item in mylist:		# 通过循环将获取的目录列表插入到Word文档对象中
+             range1.InsertAfter(item)
+        outpath = os.path.join(listpath,'list.docx')	# 连接Word文档路径
+        doc1.SaveAs(outpath)				# 保存文件
+        doc1.Close()					# 关闭Word文档对象
+        w.Quit()						# 退出Word文档的应用程序对象
+    return outpath
+
+
+
+
+
+print("合并完成！")
+
+
+
+
+
+resultvalue = getPdfOutlines(temp[0], targetpath, True)	# 提取目录
+os.remove(temp[0])						# 删除合并后的PDF文件
+print("提取完成！文件保存在：",targetpath )

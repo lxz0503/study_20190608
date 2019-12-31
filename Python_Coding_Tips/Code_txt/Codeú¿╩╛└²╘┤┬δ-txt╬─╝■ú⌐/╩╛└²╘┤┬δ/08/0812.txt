@@ -1,0 +1,7 @@
+import pandas as pd
+aa ='./data/mingribooks.xls'
+df = pd.DataFrame(pd.read_excel(aa))
+df1=df.groupby(["宝贝标题"])["宝贝总数量"].sum()		# 分组统计
+df1.to_excel('dict.xls')					# 保存到Excel文件
+mydict=df1.to_dict()					# 转换为字典
+print(mydict)
