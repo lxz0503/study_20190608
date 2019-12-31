@@ -2071,13 +2071,6 @@ Web从业者；开业者；实践者
 
 
 
-
-
-
-
-
-
-
 　　A: Hi. What’s up?
 
 　　B: Nothing much. What’s new with you?
@@ -2119,42 +2112,77 @@ The front-desk personnel asks the guest for a driver's license and form of payme
 field  字段
 To create the datastore you only have to create a model for it: a JSON file that defines the fields and options for those fields.
 
+live up to your expectations
+1.遵守;符合;不辜负;与...相配达到
+un.
+1.享受
+2.遵守;掣肘;按照…办事;履行
+3.实现;达到
+4.当得起
+5.实行(信仰,主义等);达到预期的标准:
+The resulting situation meant that the "Museum of Oriental Ceramics" was not able to live up to its name.
+这就意味着“东洋陶瓷美术馆”名不符实。
 
+go all out to do sth,  go all out on sth
+1.全力以赴
+2.鼓足干劲
 
+If you want to go all out on your website, you can put together shopping cart technology, but that be pricey to start out with.
+如果你想全力以赴把站点做好，你可以利用一下购物车技术，但开始时费用会有点儿搞。
+I went all out this year.
 
+rain on your parade   扫兴
+Sorry to rain on your parade, but he cancelled the show.
+抱歉扫你的兴，不过他取消表演了。
 
+beg to differ
+恕不同意；恕不苟同；恕难从命
 
+Don't sweat it  别担心；不要紧张；别着急
 
+come down to
+1.降至;归结起来
+2.变为;归结为
+un.
+1.捕捉
+2.取决于
+9.
+Ultimately, it's going to come down to what's best for you and best for your situation.
+最后，这些都取决于什么对你最好、什么更符合你的状况。
 
+come down with
+生病；得(病)
+病倒；染上；患
+Most of us come down with at least a couple of colds a year; children get up to a dozen.
+我们当中的大多数人一年至少要得两次感冒，儿童要达12次。
+Some 400 students at a university have come down with a mystery fever and the cause was under investigation .
+大约400个大学生染上怪病，发烧的原因正在调查中。
 
+ The guests are all downstairs.
 
+ she began to run downstairs
 
+oppressive
+adj.压迫的；压制的；高压的；闷热的
+网络沉重的；压制性的；压抑
+I feel as if I had fire and ice within me, and the air is so oppressive.
+我觉得好像身体里有火又有冰，空气如此的沉闷。
 
+steal my thunder
+抢风头；抢了我的风头
+It was sweet at first, but now I think he's trying to steal my thunder.
+我本来挺感动的。现在我觉得他只是在抢镜头。
 
+a pain in the neck
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+na.讨厌或惹人生气的家伙[责任,义务]
+脖子疼；讨厌的家伙；使人讨厌的事
+To be honest, it was horrible! My manager is such a pain in the neck!
+说实话，太讨厌了！我的经理让人难以对付。
+Oh, sorry to hear that. Physics is always a pain in the neck.
+哦，真遗憾。物理一直让我头痛。
+The traffic is such a pain in the neck. It's always bad at Friday night.
+Standing on the bus is such a pain in the neck.
 
 
 
