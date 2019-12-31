@@ -1,0 +1,106 @@
+name='王李张李陈王杨张吴周王刘赵黄吴杨'
+newname=''
+for char in name:
+    if char not in newname:	# 如果不在结果字符串中
+        newname+=char		# 添加到结果字符串中的末尾
+print (newname)
+
+
+
+
+
+name='王李张李陈王杨张吴周王刘赵黄吴杨'
+newname=''
+i = len(name)-1			# 获取字符串的长度-1，即最大索引值
+while True:
+    if i >=0:			# 如果还超出索引范围
+        if name[i] not in newname:
+            newname+=(name[i])
+        i-=1
+    else:				# 超出索引范围则结束循环
+        break
+print (newname)
+
+
+
+
+
+name='王李张李陈王杨张吴周王刘赵黄吴杨'
+myname=set(name)			# 转换为集合，则去除重复元素
+print(myname)
+newname=list(myname))		# 将集合转换为列表
+print(''.join(newname))		# 将列表连接为字符串并输出
+newname.sort( key=name.index)	# 对列表排序
+print(newname)
+print(''.join(newname))		# 将排序后的列表连接为字符串并输出
+
+
+
+
+
+name='王李张李陈王杨张吴周王刘赵黄吴杨'
+l = len(name)        # 字符串下标的总长度
+for s in name:
+    if name[0] in name[1:l]:
+        name = name[1:l]
+    else:
+        name= name[1:l]+name[0]
+print(name)
+
+
+
+
+
+name='王李张李陈王杨张吴周王刘赵黄吴杨'
+zd={}.fromkeys(name)
+mylist=list(zd.keys())
+print (''.join(mylist))
+
+
+
+
+
+city=['上海', '广州', '上海', '成都', '上海', '上海', '北京', '上海', '广州', '北京', '上海']
+
+
+
+
+
+ncity = []
+for item in city:
+    if item not in ncity:
+        ncity.append(item)	# 添加到新列表中
+print (ncity)
+
+
+
+
+
+ncitx=list(set(city))
+print(ncitx)
+
+
+
+
+
+ncitx=list(set(city))
+ncitx.sort( key=city.index)
+print(ncitx)
+
+
+
+
+
+city.sort()
+for x in city:
+     while city.count(x)>1:
+         del city[city.index(x)]
+
+print(city)
+
+
+
+
+
+mylist = list({}.fromkeys(city).keys())
+print (mylist)

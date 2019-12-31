@@ -1,0 +1,7 @@
+print(chr(9833))                 
+
+
+
+
+
+print([chr(i) for i in range(8710,8719)])

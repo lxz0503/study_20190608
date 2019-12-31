@@ -1,0 +1,2 @@
+# 禁止显示最大化按钮及调整窗体大小
+MainWindow.setFixedSize(MainWindow.width(), MainWindow.height())

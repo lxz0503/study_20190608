@@ -1,0 +1,9 @@
+from collections import OrderedDict
+# 定义有序字典，作为List列表的数据源
+dict=OrderedDict({'诸葛维奇':'格雷格·波波维奇','石佛':'蒂姆·邓肯','妖刀':'马努·吉诺比利',
+                  '法国跑车':'托尼·帕克','海军上将':'大卫·罗宾逊','冰人':'乔治·格文',
+                  '三叔':'布鲁斯·鲍文','小将军':'埃弗里·约翰逊','超人':'肖恩·埃利奥特'})
+for key,value in dict.items():					# 遍历字典，并分别获取键值
+    self.item = QtWidgets.QListWidgetItem(self.listWidget)	# 创建列表项
+    self.item.setText(key+'——'+value)				# 设置项文本
+    self.item.setToolTip(value)					# 设置提示文字

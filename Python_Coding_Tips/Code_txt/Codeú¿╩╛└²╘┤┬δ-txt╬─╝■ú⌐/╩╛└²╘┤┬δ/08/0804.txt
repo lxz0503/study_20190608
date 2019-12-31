@@ -1,0 +1,10 @@
+import tushare as ts
+df = ts.get_hist_data('000001')
+# 直接保存为.csv文件
+df.to_csv('000001.csv')
+
+
+
+
+
+df1.columns = ['日期','开盘价','最高价','闭市价','最低价']

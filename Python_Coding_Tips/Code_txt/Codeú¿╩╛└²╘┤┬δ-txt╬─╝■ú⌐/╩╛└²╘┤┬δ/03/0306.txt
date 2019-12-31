@@ -1,0 +1,5 @@
+import jieba					# 导入jieba分词模块
+filepath=input('请输入要读取的文件：')		# 记录输入的文件路径
+with open(filepath,encoding='utf-8') as f:	# 打开文件
+    words=jieba.lcut(f.read())			# 读取文件内容并分词
+    print(words)					# 替换换行符

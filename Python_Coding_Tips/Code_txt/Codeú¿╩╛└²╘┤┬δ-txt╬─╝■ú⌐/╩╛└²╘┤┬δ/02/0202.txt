@@ -1,0 +1,79 @@
+print('1'.zfill(3))
+print('30'.zfill(3) + '    张强')
+
+
+
+
+
+datasort = []
+i = 0
+data = '莱科宁 236,汉密尔顿 358,维泰尔 294,维斯塔潘 216,博塔斯 227'	# 字符串数据
+newlist = data.split(',')						# 将字符串数据分割为列表
+# 将车手与积分数据添加到新的列表中
+for item in newlist:
+    opendata = item.split(' ')
+    datasort.append([opendata[1], opendata[0]])
+datasort.sort(reverse=True)					# 数据降序排列
+print("\033[1;34m=" * 35)
+print("输出F1大奖赛车手积分".center(25))
+print('=' * 35 + '\033[0m')
+print('排名        车手             积分')
+# 循环打印每个赛车手与对应积分
+for item in datasort:
+    i = i + 1
+    print('\033[1;32;41m ' + str(i).zfill(2) + ' \033[0m    ', item[1].ljust(14) + '\t', item[0].ljust(6) + '\t')
+    print()
+
+
+
+
+
+import random						# 导入随机模块
+char=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']	# 随机数据
+shop='100000056303'					# 头部固定编号
+prize=[]							# 保存抽奖号码的列表
+inside=''							# 中段编码
+amount = input('请输入购物金额:')				# 获取输入金额
+many=int(int(amount)/100)
+if int(amount)>=100:
+    # 随机生成中段7位编码
+    for i in range(0,7):
+        if inside=='':
+             inside = random.choice(char)
+        else:
+            inside =inside+ random.choice(char)
+    # 生成尾部4位数字，并将组合的抽奖号添加至列表
+    for i in range(0,many):
+        number = str(i+1).zfill(4)
+        prize.append([shop,inside, number])
+else:
+    print('购物金额低于100元,不能参加抽奖!!!')
+print("\033[1;34m=" *24)
+print("本次购物抽奖号码")
+print('=' *24 +'\033[0m' )
+# 打印最终的抽奖号码
+for item in prize:
+    print(''.join(item))
+
+
+
+
+
+print("{:0>3}".format('1'))
+
+
+
+
+
+ print("{:0<2}".format('8.1'))
+
+
+
+
+
+nba=['猛龙','勇士','雄鹿','开拓者','掘金','76人']		# 数据列表
+i=0								# 默认编号
+for item in nba:
+    i=i+1							# 递增编号
+    data='{:0>2}'.format(i)+ '   '+  item			# 数字补0，填充左边宽度为2
+    print(data)						# 打印带编号的数据

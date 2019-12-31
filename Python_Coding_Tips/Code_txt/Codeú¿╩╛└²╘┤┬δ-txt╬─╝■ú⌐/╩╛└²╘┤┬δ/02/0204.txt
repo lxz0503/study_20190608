@@ -1,0 +1,17 @@
+big20='王李张刘陈杨黄赵吴周徐孙马胡朱郭何罗高林'
+for x in range(len(big20)-1,-1,-1):
+    print(big20[x],end='')
+
+
+
+
+
+for x in reversed(big20):
+    print(x,end='')
+
+
+
+
+
+for x in big20[::-1]:
+    print (x,end='')
