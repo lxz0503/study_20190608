@@ -2064,11 +2064,8 @@ it will direct you to the right direction
 Chinese medical practitioner
 
 practitioner
-US [pr?k't??(?)n?r]
-UK [pr?k't??(?)n?(r)]
 n.（尤指医学或法律界的）从业人员；习艺者；专门人才
 Web从业者；开业者；实践者
-
 
 
 　　A: Hi. What’s up?
@@ -2082,20 +2079,6 @@ Web从业者；开业者；实践者
 　　A: Gotta go. Call me tonight.
 
 　　B: Okay. Check you later.
-
-　　译文：
-
-　　A: 你好啊!有什么新鲜事儿吗?
-
-　　B: 没什么。你有什么新鲜事吗?
-
-　　A:　也没啥。我近来一直很忙。
-
-　　B: 我也是，好象成天就是吃和睡。
-
-　　A:　我得走了，今晚给我打电话。
-
-　　B: 好吧。回头给你打电话。
 
 　　注解 :
 
@@ -2146,7 +2129,6 @@ come down to
 un.
 1.捕捉
 2.取决于
-9.
 Ultimately, it's going to come down to what's best for you and best for your situation.
 最后，这些都取决于什么对你最好、什么更符合你的状况。
 
@@ -2184,6 +2166,73 @@ Oh, sorry to hear that. Physics is always a pain in the neck.
 The traffic is such a pain in the neck. It's always bad at Friday night.
 Standing on the bus is such a pain in the neck.
 
+How'd it do?   ====how did it go?
+
+turn in
+上交；上床睡觉；交出
+Of course, the assignment solution that you turn in should reflect your own understanding, and not that of your fellow students.
+当然，你交上来的作业答案应该反映出你自己的理解，不是其他同学的理解。
+the combined effect is as if
+
+Turning down the thermostat in winter (and up in summer) a little helps too: Experts say each degree can trim 2%-3% from your heating bill.
+在冬天把恒温器调低一点（夏天调高一点）也会有好处：专家说，每调低一度就可以让采暖费降低2%到3%。
+
+cumbersome
+adj.大而笨重的；难以携带的；缓慢复杂的；冗长的
+麻烦的；讨厌的；累赘的
+
+to streamline cumbersome workflow, improving speed producing live.
+
+For direct response campaigns, the information-gathering process is often too cumbersome for mobile devices.
+和直接反应广告活动相比，手机设备信息收集实在太麻烦了。
+
+
+stampede
+n.蜂拥；狂奔；热潮；风尚
+v.涌向；使仓促行事
+惊跑；惊逃；乱窜
+This led to a stampede of people who wanted this.
+Silicon Valley's annual coming-out season for tech start-ups is about to turn into a stampede.
+硅谷为初创技术企业举办的一年一度的展示季，将成为一场盛会。
+At least 147 people were killed in India in a stampede at a Hindu temple in Jodhpur in the north-western state of Rajasthan.
+在印度拉贾斯坦邦西北部焦特布尔市的寺庙发生一起踩踏事件。事故已造成至少147人死亡。
+
+pay the mortgage,
+put the lid on it.
+mortgages basically hardly ever default.违约；拖欠；缺乏；不履行
+There is no possible chance you are ever going to lose your money.
+
+加满油 fill up the tank
+按喇叭 blow the horn
+方向盘左打 turn the wheel left
+Every week, one of the new generation of internet firms seems to attract a sky-high valuation.
+每个星期，都有一家新一代的互联网公司被极高地估价。
+
+financial institutions, rating institutions, rate triple A.
+He said his evaluation of the data indicates that many Internet companies merit their sky-high valuations.
+他说，他对相关数据的评估显示，很多互联网公司都配得上它们高昂的估值。
+large losses.  municipal bonds.
+There are hedge funds that own those on high leverage.
+对冲基金以很高的杠杆持有他们
+
+A hedge against conflict, in the form of cash, short-term bonds and gold, should be part of any portfolio.
+任何一个投资组合，都应该包含一个对冲（以现金、短期债券或者黄金的形式），用以抵御可能的冲突。
+
+portfolio
+n.文件夹；职务；有价证券组合；公事包
+投资组合；作品集；档案
+In today's environment, they are just a little more willing to take the risk out of their portfolio by cashing out.
+在现在的商业环境，他们只是更愿意通过变现来剔除投资组合中的风险。
+
+security
+n.安全；证券；担保；保证
+安全性；保安；保障
+
+sell those securities.
+Many have been forced to sell shares to meet margin calls on tens of billions of dollars in loans.
+许多人已被迫抛售股票，以满足数百亿美元贷款的追加保证金要求。
+which made them  worth even less and got the bank ever more nervous.
+That resulted in higher-rated securities being sold.
 
 
 ================= 2019.5-8 topic

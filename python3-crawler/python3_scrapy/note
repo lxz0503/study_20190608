@@ -1,3 +1,14 @@
+# 几乎每个网站都有robots.txt，里面设定了哪些路径允许爬取
+# https://www.taobao.com/robots.txt
+
+# User-agent:  Baiduspider
+Allow:  /article
+Allow:  /oshtml
+Allow:  /ershou
+Allow: /$
+Disallow:  /product/
+Disallow:  /
+
 https://www.jianshu.com/p/6bc5a4641629
 https://www.jianshu.com/p/107445b4fffd
 https://scrapy-chs.readthedocs.io/zh_CN/0.24/topics/logging.html
