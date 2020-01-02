@@ -62,6 +62,11 @@ df.to_csv('taobao_price_data_xiaozhan.csv', columns=['商品', '价格'], index=
 grouped = df['成交量'].groupby(df['位置']).mean() #
 print('grouped is:\n', grouped)
 
-means = df['成交量'].groupby(df['位置'], df['卖家']).mean()
-print('the means is:\n', means)
+grouped = df.groupby('位置')
+print(grouped.get_group('上海'))   # 选取某一个分组的数据
 
+# means = df['成交量'].groupby(df['位置'],df['卖家']).mean()
+# # print('the means is:\n', means)
+
+a = df.groupby(['位置', '成交量']).size()
+print(a)
