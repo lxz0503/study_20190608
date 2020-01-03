@@ -62,11 +62,38 @@ df.to_csv('taobao_price_data_xiaozhan.csv', columns=['商品', '价格'], index=
 grouped = df['成交量'].groupby(df['位置']).mean() #
 print('grouped is:\n', grouped)
 
+# 传入多个数组，得到按多列统计的结果
+means = df['成交量'].groupby([df['位置'], df['卖家']]).mean()
+print('the means is:\n', means)
+
 grouped = df.groupby('位置')
-print(grouped.get_group('上海'))   # 选取某一个分组的数据
+print('上海地区数据:\n', grouped.get_group('上海'))   # 选取某一个分组的数据
 
-# means = df['成交量'].groupby(df['位置'],df['卖家']).mean()
-# # print('the means is:\n', means)
+# 查看每个分组的size,下面例子统计每个分组中卖家的店铺数目
+size_group = df.groupby(['位置', '卖家']).size()
+print('每个分组的大小:\n', size_group)
 
-a = df.groupby(['位置', '成交量']).size()
-print(a)
+# page126,将列名用作分组,将位置作为索引，按均值汇总
+print('将位置作为索引的统计均值:\n', df.groupby('位置').mean())
+print('将位置和卖家作为索引的统计均值:\n', df.groupby(['位置', '卖家']).mean())
+
+# 数据分割
+df1 = df[30:40][['位置', '卖家']]  # 只显示30-39行数据，保留位置和卖家两列
+df2 = df[80:90][['卖家', '销售额']]
+p_merge = pd.merge(df1, df2, how='left', on='卖家')  # 指定列名,如果不指定列名，默认会选择列名相同的 卖家 列, how参数取决于需求
+print(p_merge)
+
+# 根据索引来合并
+df1 = df[:5][['位置', '卖家']]
+df2 = df[:5][['价格', '成交量']]
+# d_merge = pd.merge(df1, df2, left_index=True, right_index=True)
+d_merge = df1.join(df2)   # 效果同上，推荐用这个
+# print('merge data based on index:\n', d_merge)
+
+
+# page 132, concat()轴向连接
+s1 = df[:5]['商品']   # 第0到第4行数据
+s2 = df[:5]['价格']   # 第0到第4行数据
+s3 = df[:5]['成交量']   # 第0到第4行数据
+sn = pd.concat([s1, s2, s3], axis=1)
+print('the new DataFrame is:\n', sn)

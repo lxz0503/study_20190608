@@ -3,13 +3,14 @@
 import pandas as pd
 import numpy as np
 
+# 定义一个字典，每个字典元素对应一个列表,key对应这frame的每一列的名字
 ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
             'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
             'Rank': [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
             'Year': [2014, 2015, 2014, 2015,2014,2015,2016,2017,2016,2014,2015,2017],
             'Points': [876, 789, 863, 673, 741,812,756,788,694,701,804,690]}
 df = pd.DataFrame(ipl_data)
-# print(df)
+print('the original data frame is:\n', df)    # default index is 0,1,2....
 print(df.groupby('Team').groups)
 grouped = df.groupby('Team')
 for name, group in grouped:
@@ -31,3 +32,14 @@ print(grouped['Points'].agg([np.sum, np.mean, np.std]))
 
 # 过滤数据
 print(df.groupby('Team').filter(lambda x: len(x) >= 3))
+
+# 定义frame，可以设置index或者用默认index
+frame = pd.DataFrame([[1,2,3,4], [5,6,7,8], [-10,11,12,-13]],
+                     index=['tcp_64', 'tcp_1024', 'udp'],
+                     columns=['SR620', 'SR630', 'three', 'four'])
+print('data with defined index:\n', frame)
+# data with defined index:
+#            SR620  SR630  three  four
+# tcp_64        1      2      3     4
+# tcp_1024      5      6      7     8
+# udp         -10     11     12   -13
