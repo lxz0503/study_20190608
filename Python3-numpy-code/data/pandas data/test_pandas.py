@@ -90,7 +90,6 @@ df2 = df[:5][['价格', '成交量']]
 d_merge = df1.join(df2)   # 效果同上，推荐用这个
 # print('merge data based on index:\n', d_merge)
 
-
 # page 132, concat()轴向连接
 s1 = df[:5]['商品']   # 第0到第4行数据
 s2 = df[:5]['价格']   # 第0到第4行数据

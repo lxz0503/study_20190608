@@ -2305,6 +2305,69 @@ However, as in the case of a falling tide, Beijing has been tightening credit to
 
 dry academic course
 
+ubiquitous    --- universal  pervasive
+adj.似乎无所不在的；十分普遍的
+无处不在；普遍存在的；无处不在的
+
+in the developed world at least, electricity is now so ubiquitous that most people notice it only when it fails to work.
+至少在发达国家，电是如此普遍，大多数人只在没电的时候才会注意到它。
+The growing emphasis on battery life is one reason why fast chargers are so ubiquitous.
+
+common practice
+un.常规
+惯例；国际惯例；惯常的做法
+
+high-end
+adj.高档的
+高端；高阶；高端产品
+
+readily available
+un.容易购到
+唾手可得；容易取得；现成的
+
+wear and tear
+na.磨损；衰竭；伐采
+消耗；损耗；耗损
+
+Conclusion: The set has been used for a very long time without any proper maintenance, which has resulted in a lot of wear and tear.
+总结：该机组由于长期使用，并缺乏相对应的保养措施，使得该机器老化程度严重。
+
+over time
+conj.随着时间的过去
+随着时间的推移；久而久之
+
+If you think a stock is good, you can pick it up in small amounts so that you average out the cost of the investment over time.
+如果你认为一只股具投资潜能，可考虑分几次买入以把平均价拉低。
+
+charge 电荷
+For instance, Samsung promises its 45-watt charger can go from zero to a 70% charge in half an hour.
+Apple says the fast charger that comes with its iPhone 11 Pro can hit a 50% charge in 30 minutes.
+
+drain
+It's incredibly addictive, and you'll notice your phone battery quickly drain as you spend hours trying to conquer each level.
+这游戏极其令人上瘾，你会发现自己的手机电池很快耗光在征服每个关卡所花的时间上。
+
+let your phone discharge all the way down once in a while
+the device could default to the lowest possible charging speed
+
+contraction
+n.收缩；挛缩；缩小；（尤指分娩时的）子宫收缩
+缩写；缩短；紧缩
+Here's what happened: the Fed decided to squeeze inflation out of the system through a monetary contraction.
+收场过程是这样的：美联储决定，通过货币紧缩，从经济体系中，把通胀挤出去
+
+https://www.msn.com/en-us/news/technology/six-truths-about-your-phones-battery-life-overcharging-overheating-and-fast-charging/ar-BBYxSVW
+
+Battery life has become a primary concern for phone owners.
+the importance of all-day battery life on a single charge
+refilling the battery fast
+Now that fast charging is so readily available for phones, we have questions:
+What does a high-capacity charger do to a phone's battery
+and is there a chance that rapid charging can degrade your phone's power-storing capability over time?
+most personal electronics and electric vehicles -- use lithium-ion (li-ion) rechargeable batteries
+
+
+
 ================= 2019.5-8 topic
 
 Part 2 & 3 Topic Cards and Questions
