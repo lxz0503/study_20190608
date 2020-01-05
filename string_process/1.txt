@@ -1,9 +1,19 @@
-lixiaozhan,beijing;jiaotong university.
+﻿lixiaozhan,beijing;jiaotong university.
 lixiaozhan,shanghai,university.
 zhangsan,shanghai,university.
 beijing!! 
 shanghai???
 nanjing&*%
 {nanjing!@#.,;][*&^%$#@!~}
+(Bloomberg) -- As massive wildfires devastate swathes of Australia and supercharge the debate over the impact of climate change, government data show the nation has never suffered a hotter or drier year than 2019.
+
+The average temperature last year was about 1.5 degree Celsius (2.7 Fahrenheit) above the 30-year mean, according to data from the Bureau of Meteorology, which goes back to 1910. Meanwhile, rainfall dropped to its lowest in figures back to 1900. The government agency is scheduled to release final figures and its annual climate report next week.
+Confirmation the world’s driest-inhabited continent is in the grips of historically extreme weather comes as Prime Minister Scott Morrison’s government faces sustained criticism from environmentalists and the opposition for downplaying the link between the huge wildfires and climate change and for not taking stronger steps to curb carbon emissions.
+
+For more on the fires
+Australia Wildfires Trigger Exodus as Navy Joins Rescue EffortPoliticians Fiddle While Australia Burns: David FicklingAustralia Hit by Extreme Heatwave, Escalating Wildfire ThreatBushfires Release Over Half Australia’s Annual Carbon Emissions
+Weather conditions have been particularly severe in recent weeks, with December more than 3 degrees warmer than normal and rainfall at a paltry 15.4 millimeters (0.61 inches), less than a third of the normal level for the month.
+
+The country saw average rainfall totals of just 277.63 millimeters in 2019, beating the previous low of 314.46 millimeters in 1902 and compared with an average of 465.2 millimeters over the 1961-90 reference period.
 
 https://regexr.com/----learning regular expression

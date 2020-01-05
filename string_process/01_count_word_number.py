@@ -1,10 +1,14 @@
 """
 统计文本中的每个单词数目，下面是统计出现最多的单词数目
+把文件用记事本打开，另存为UTF-8编码格式
 """
-
+#!/usr/bin/env python3
+# coding=utf-8
+import os
 
 def get_text():
-    txt = open(r"D:\Pycharm\文本处理\1.txt", "r", encoding='UTF-8').read()
+    f_dir = os.path.dirname(__file__) + '/1.txt'
+    txt = open(f_dir, "r", encoding='UTF-8').read()
     txt = txt.lower()
     for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_‘{|}~':
         txt = txt.replace(ch, " ")      # 将文本中特殊字符替换为空格
