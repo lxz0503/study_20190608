@@ -1,5 +1,5 @@
 http://www.runoob.com/html/html-intro.html
-在开始标签中添加斜杠，比如 <br />，是关闭空元素的正确方法
+在开始标签中添加斜杠，比如 <br/>，是关闭空元素的正确方法
 HTML 属性
 HTML 元素可以设置属性
 属性可以在元素中添加附加信息
