@@ -9,7 +9,7 @@ ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
             'Rank': [1, 2, 2, 3, 3, 4, 1, 1, 2, 4, 1, 2],
             'Year': [2014, 2015, 2014, 2015,2014,2015,2016,2017,2016,2014,2015,2017],
             'Points': [876, 789, 863, 673, 741,812,756,788,694,701,804,690]}
-df = pd.DataFrame(ipl_data)
+df = pd.DataFrame(ipl_data, index=list('123456789999'))   # default index is starting from 0
 print('the original data frame is:\n', df)    # default index is 0,1,2....
 print(df.groupby('Team').groups)
 grouped = df.groupby('Team')
