@@ -8,8 +8,8 @@ from random import randint
 # 创建一个字典
 grade = {x: randint(60, 100) for x in 'xyzabc'}
 # print(grade)
-k = grade.keys()   # 返回一个列表，存储字典中所有的key值
-v = grade.values()  # 存储字典中所有的value
+k = iter(grade.keys())   # 返回一个列表，存储字典中所有的key值
+v = iter(grade.values())  # 存储字典中所有的value
 r = sorted(zip(v, k))   # 按照value从小到大进行排名
 print(r)
 
