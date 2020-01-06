@@ -5,6 +5,7 @@ import os
 import xml.dom.minidom
 
 class OperationXml(object):
+
     def dir_base(self, fileName, filePath='data'):
         '''get file at data repository
            :param fileName is the name of the file
