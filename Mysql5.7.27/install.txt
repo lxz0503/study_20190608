@@ -1,6 +1,6 @@
 # how to install mysql 5.7.27 on my win7 pc
 https://blog.csdn.net/juncailiao/article/details/82706155
-For my home pc win7, I can only install mysql 5.7.27
+For my home pc win7, I can only install mysql 5.7.27，使用的免安装版，解压后按照步骤来配置即可
 
 mkdir data directory under this dir C:\mysql-5.7.27-winx64
 

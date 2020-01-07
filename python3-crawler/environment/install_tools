@@ -1,4 +1,6 @@
 1.Install mongodb
+mongodb official site: username:163mailbox,pwd is qq
+
 https://www.mongodb.com/download-center/community
 2.install urllib, urllib.request, requests,selenium,lxml,beautifulsoup4,pyquery,pymysql,pymongo
 https://www.cnblogs.com/zhangxinqi/p/9210211.html          ---this is for lxml
@@ -49,7 +51,7 @@ driver.get("https://cnblogs.com/")
 
 4.使用mongodb
 https://blog.csdn.net/qq_35810838/article/details/83548102
-C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb
+C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb, 添加此环境变量
 新开一个cmd窗口，进入mongodb的bin目录，输入mongo或者mongo.exe
 在查询结果中不显示ID的方法：具体参考截图
 
