@@ -6,13 +6,14 @@ import pandas as pd
 import glob
 import os
 
-input_path = r"D:\code\foundations-for-analytics-with-python\csv"
+input_path = os.path.dirname(__file__)    # current file path
 output_file = r"output_files\12output.csv"
 
-all_files = glob.glob(os.path.join(input_path,'sales_*'))
+all_files = glob.glob(os.path.join(input_path, 'sales_*'))    #
 all_data_frames = []
 for file in all_files:
-    data_frame = pd.read_csv(file, index_col=None)
+    print(file.replace("\\", "/"))
+    data_frame = pd.read_csv(file.replace("\\", "/"), index_col=None)
     all_data_frames.append(data_frame)
 data_frame_concat = pd.concat(all_data_frames, axis=0, ignore_index=True)
-data_frame_concat.to_csv(output_file, index = False)
+data_frame_concat.to_csv(output_file, index=False)

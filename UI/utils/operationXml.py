@@ -15,7 +15,7 @@ class OperationXml(object):
         # FileNotFoundError: [Errno 2] No such file or directory: 'D:/xiaozhan_git/study_20190608/UI\\data\\ui.xml'
         # for linux you can use
         # os.path.join(os.path.dirname(os.path.dirname(__file__)), filePath, fileName)
-        # for windows you should use
+        # for windows you should use,this is also ok for linux
         # return os.path.dirname(os.path.dirname(__file__)) + "/" + filePath + "/" + fileName
         return os.path.join(os.path.dirname(os.path.dirname(__file__)), filePath, fileName).replace("\\", "/")
 
@@ -46,7 +46,7 @@ class OperationXml(object):
 
 if __name__ == '__main__':
     data = OperationXml()
-    # r = data.dir_base('test.xml')
-    # print(r)
+    r = data.dir_base('test.xml')
+    print(r)
     r = data.getXmlData('url')
     print(r)
