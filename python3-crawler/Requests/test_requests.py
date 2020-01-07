@@ -43,7 +43,9 @@ print(result.text)
 # json
 result = requests.get('http://httpbin.org/get')
 print('json start')
-# print(result.json())
+print(result)   # <Response [200]>
+print(result.json())   # <Response [200]>
+print(type(result.json()))     # <class 'dict'>
 # store the response into a json file. result.json() change the format from str to json
 json.dump(result.json(), open('test.json', 'w'))
 print('json end')
@@ -55,7 +57,7 @@ print('the content of file test.json after anti-serilized is {},type is {}'.form
 # download image and save it, image is binary code
 
 result = requests.get('http://pic25.nipic.com/20121112/9252150_150552938000_2.jpg')
-with open('test_image.jpg', 'wb') as f:
+with open('test_image.jpg', 'wb') as f:   # it must be wb mode, binary mode
     f.write(result.content)
 
 # add headers to get information from website.otherwise it will fail

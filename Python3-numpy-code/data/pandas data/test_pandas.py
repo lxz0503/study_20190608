@@ -8,8 +8,8 @@ import pandas as pd
 import os
 
 f_dir = os.path.dirname(__file__) + '/taobao_data.csv'
-df = pd.read_csv(f_dir, delimiter=',', encoding='utf-8', header=0)
-# print('所有csv数据:\n', df)
+df = pd.read_csv(f_dir, delimiter=',', encoding='utf-8')
+print('所有csv数据:\n', df)
 
 # 块的选取，选择行和列组成的数据,此处的0:3相当于[0,1,2,3]
 print('前4行数据是:\n', df.ix[0:3])
@@ -156,6 +156,6 @@ df_pop['NumericPopulation'] = df_pop.Population.apply(lambda x: int(x.replace(',
 print(df_pop.head())
 # 读取state列中前3行
 print(df_pop['State'].values[:3])
-#
+# remove while space
 df_pop['State'] = df_pop['State'].apply(lambda x: x.strip())
 print(df_pop['State'].values[:3])
