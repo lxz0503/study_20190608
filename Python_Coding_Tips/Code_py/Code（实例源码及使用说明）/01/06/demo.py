@@ -35,18 +35,18 @@ eng=['0041,005A;003A,0040']
 # 显示多国语言菜单
 print('多国语言文字输出系统')
 for key,value in lange.items():     #  遍历字典
-    print(key ,value)                #  输出语言菜单
+    print(key, value)                #  输出语言菜单
 word='1'
 langline(''.join(eng))               #  转换英语字符为对应语言文字字符
 
-mystri =[i for i  in langz]
+mystri =[i for i in langz]
 mystrj=[]
 while word!='0':
-    word= input('请选择需要的国家文字（输入数字即可）：\n')
+    word = input('请选择需要的国家文字（输入数字即可）：\n')
     word=int(word)
     if word in range(0,10):
-        wordid=str(word).zfill(2)
-        print('您正在使用',lange.get(wordid),'输入(回车转换大写)：')
+        wordid = str(word).zfill(2)
+        print('您正在使用', lange.get(wordid), '输入(回车转换大写)：')
         langline(''.join(uni.get(wordid)))
         mystrj = langz
         inword =input().upper()

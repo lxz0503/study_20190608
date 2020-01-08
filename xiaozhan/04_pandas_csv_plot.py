@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 
 # 读取CSV文件数据
-filename = r'D:\xiaozhan_git\study_20190608\xiaozhan\sitka_weather_2014.csv'
+filename = r"sitka_weather_2014.csv"
 with open(filename) as f:  # 打开这个文件，并将结果文件对象存储在f中
     reader = csv.reader(f)  # 创建一个阅读器reader
     next(reader)  # 返回文件中的下一行,第一行不是数据，所以直接跳过去
