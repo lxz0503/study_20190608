@@ -1,5 +1,6 @@
 import unittest
 import HTMLTestRunner
+import os
 
 class RunTools(object):
     def __init__(self, case_path, pattern):
@@ -13,12 +14,11 @@ class RunTools(object):
 
 if __name__ == '__main__':
     ####
-    case_dir = r'D:\xiaozhan_git\study_20190608\API_Python\web_api_selenium_unittest\my_discover_unittest\TestCases'
+    case_dir = os.path.dirname(os.path.dirname(__file__)) + '/TestCases'
     run = RunTools(case_dir, 'test*.py')
     suite = run.choose_all_cases()
     #####
-    # file_name = "F:\\Pycharm\\Selenium_Xiaozhan\\report.html"
-    file_name = r"D:\xiaozhan_git\study_20190608\API_Python\web_api_selenium_unittest\my_discover_unittest\Test_Report\report.html"
+    file_name = os.path.dirname(os.path.dirname(__file__)) + '/Test_Report/report.html'
     with open(file_name, 'wb+') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='report', description='web api test')
         runner.run(suite)
