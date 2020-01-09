@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-09-02 22:24:05</p>
-<p class='attribute'><strong>Duration:</strong> 0:03:40.604000</p>
-<p class='attribute'><strong>Status:</strong> Pass 14 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-01-09 15:56:54</p>
+<p class='attribute'><strong>Duration:</strong> 0:03:45.203848</p>
+<p class='attribute'><strong>Status:</strong> Pass 15</p>
 
 <p class='description'>web api test</p>
 </div>
@@ -221,12 +221,12 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>WebTest</td>
+<tr class='passClass'>
+    <td>web_driver_api.WebTest</td>
     <td>15</td>
-    <td>14</td>
+    <td>15</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',15)">Detail</a></td>
 </tr>
 
@@ -255,7 +255,9 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.3: 
+pt1.3: the tag name is a
+the size is {'height': 24, 'width': 26}
+
 
         </pre>
     </div>
@@ -279,7 +281,9 @@ pt1.3:
         </div>
         <pre>
         
-pt1.4: 
+pt1.4: the name is query
+the content to search is python
+
 
         </pre>
     </div>
@@ -303,7 +307,8 @@ pt1.4:
         </div>
         <pre>
         
-pt1.5: 
+pt1.5: hao123
+
 
         </pre>
     </div>
@@ -337,7 +342,10 @@ pt1.5:
         </div>
         <pre>
         
-pt1.8: 
+pt1.8: the default selection is 橘子
+the length of options is 5
+the selected element is 山楂
+
 
         </pre>
     </div>
@@ -348,59 +356,26 @@ pt1.8:
 
 <tr id='pt1.9' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_operateMultipleOptionDropList</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.10' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_operateRadio</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='ft1.11' class='none'>
-    <td class='errorCase'><div class='testcase'>test_operateWindowHandle</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
 
-    <div id='div_ft1.11' class="popup_window">
+    <div id='div_pt1.9' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.11: Traceback (most recent call last):
-  File "D:/xiaozhan_git/study_20190608/API_Python/web_api_selenium_unittest/unit_test/web_driver_api.py", line 51, in test_operateWindowHandle
-    self.driver.find_element_by_xpath('//h3[@class="t"]/a[@class="favurl"]').click()
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class="t"]/a[@class="favurl"]"}
-  (Session info: chrome=73.0.3683.103)
-  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 6.1.7601 SP1 x86_64)
-
-Traceback (most recent call last):
-  File "D:/xiaozhan_git/study_20190608/API_Python/web_api_selenium_unittest/unit_test/web_driver_api.py", line 51, in test_operateWindowHandle
-    self.driver.find_element_by_xpath('//h3[@class="t"]/a[@class="favurl"]').click()
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "D:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[@class="t"]/a[@class="favurl"]"}
-  (Session info: chrome=73.0.3683.103)
-  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 6.1.7601 SP1 x86_64)
-
+pt1.9: the selected option is 桃子
+the selected option is 猕猴桃
+the selected option is 山楂
+------再次选中3个-------
+the selected option is 西瓜
+the selected option is 橘子
+the selected option is 猕猴桃
 
 
         </pre>
@@ -408,6 +383,16 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     <!--css div popup end-->
 
     </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_operateMultipleOptionDropList1</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_operateRadio</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='pt1.12' class='hiddenRow'>
@@ -425,7 +410,17 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         </div>
         <pre>
         
-pt1.12: 
+pt1.12: the text is 桃子
+the selected value is taozi
+the text is 西瓜
+the selected value is xigua
+the text is 橘子
+the selected value is juzi
+the text is 猕猴桃
+the selected value is mihoutao
+the text is 山楂
+the selected value is shanzha
+
 
         </pre>
     </div>
@@ -459,7 +454,8 @@ pt1.12:
         </div>
         <pre>
         
-pt1.15: 
+pt1.15: 搜狗搜索引擎 - 上网从搜狗开始
+
 
         </pre>
     </div>
@@ -471,9 +467,9 @@ pt1.15:
 <tr id='total_row'>
     <td>Total</td>
     <td>15</td>
-    <td>14</td>
+    <td>15</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

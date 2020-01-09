@@ -4,6 +4,6 @@
 # 开发时间   ：2019/7/1  14:12
 # 文件名称   ：demo03.py
 # 开发工具   ：PyCharm
-print ('mingrisoft''.com')
+print('mingrisoft''.com')
 
-print ('mingrisoft'   '.com')
+print('mingrisoft'   '.com')

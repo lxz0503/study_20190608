@@ -14,11 +14,11 @@ class RunTools(object):
 
 if __name__ == '__main__':
     ####
-    case_dir = os.path.dirname(os.path.dirname(__file__)) + '/TestCases'
-    run = RunTools(case_dir, 'test*.py')
+    case_dir = os.path.dirname(__file__)
+    run = RunTools(case_dir, 'web*.py')
     suite = run.choose_all_cases()
     #####
-    file_name = os.path.dirname(os.path.dirname(__file__)) + '/Test_Report/report.html'
+    file_name = os.path.dirname(__file__) + '/report.html'
     with open(file_name, 'wb+') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='report', description='web api test')
         runner.run(suite)

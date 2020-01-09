@@ -4,4 +4,4 @@
 # 开发时间   ：2019/7/1  14:16
 # 文件名称   ：demo04.py
 # 开发工具   ：PyCharm
-print ('%s %s'%('mingrisoft', 'huawei'))
+print('%s %s' % ('mingrisoft', 'huawei'))

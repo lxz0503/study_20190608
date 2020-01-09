@@ -4,5 +4,5 @@
 # 开发时间   ：2019/7/1  13:55
 # 文件名称   ：demo01.py
 # 开发工具   ：PyCharm
-word=  'D:\mingrisoft\python\gobig\t'
-print(word.replace('\t',''))
+word = 'D:\mingrisoft\python\gobig\t'
+print(word.replace('\t', ''))
