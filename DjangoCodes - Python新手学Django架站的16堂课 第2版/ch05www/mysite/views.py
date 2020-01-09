@@ -3,13 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 def homepage(request, testmode):
-	return render(request, 'index.html', locals())
+    return render(request, 'index.html', locals())
 	# return HttpResponse('Hello world!:{}'.format(testmode))
 
 
 def about(request, author_no = 0):
-	html = "<h2>Here is Author:{}'s about page!</h2><hr>".format(author_no)
-	return HttpResponse(html)	
+    html = "<h2>Here is Author:{}'s about page!</h2><hr>".format(author_no)
+    return HttpResponse(html)
 
 
 def listing(request, yr, mon, day):
