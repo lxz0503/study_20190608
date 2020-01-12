@@ -3,7 +3,7 @@ lst = [1, 2, 3]
 for i in iter(lst):    # iter() creates an iterator
     print(i)
 
-# list、tuple等都是可迭代对象，我们可以通过iter()函数获取这些可迭代对象的迭代器。
+# list、tuple等都是可迭代对象，我们可以通过iter()函数获取这些可迭代对象的迭代器，即迭代器对象
 # 然后我们可以对获取到的迭代器不断使⽤next()函数来获取下⼀条数据
 li = [11, 22, 33, 44, 55]
 li_iter = iter(li)
