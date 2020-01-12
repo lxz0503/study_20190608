@@ -1,4 +1,7 @@
+# http://codingdict.com/      学习链接，有一些例子，能看到项目的源代码
+# 字符串学习 https://zhuanlan.zhihu.com/p/36232614
 # https://www.cnblogs.com/lijunhao/p/5480695.html     py2 和py3的区别
+# C:\Users\Administrator\.PyCharm2018.2\system\python_stubs\-643338342    一些内置函数在builtins.py
 # 在Python脚本的第一行，常常能看到#!/usr/bin/env python3或者#!/usr/bin/python3字样，
 其中#!符号在计算机行业中叫做 “Shebang”,
 其作用是指定由哪个解释器来执行脚本。在这里即是指定python3作为解释器。

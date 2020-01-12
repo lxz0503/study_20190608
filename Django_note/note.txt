@@ -36,5 +36,8 @@ pycharm直接安装django-bootstrap4,然后在setting.py里面加入这个应用
 
 python manage.py makemigrations 和 python manage.py migrate  (再查看数据库，已经生成新的表)
 
+# 学习链接：Python高级编程技巧
+https://www.cnblogs.com/valorchang/p/11434615.html
+
 
 

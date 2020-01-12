@@ -5,14 +5,14 @@ def read_file(fpath):
     block_size = 1024
     with open(fpath, 'rb') as f:
         while True:
-            block = f.read(block_size)
+            block = f.read(block_size)  # 每次读取1024字节
             if block:
                 yield block
             else:
                 return
 
 
-res = read_file(r'D:\xiaozhan_git\study_20190608\day22\test_result.log')
+res = read_file(r'test_result.log')
 print(type(res))        # <class 'generator'>
 # for i in res:
 #     print(i)
