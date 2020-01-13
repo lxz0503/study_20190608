@@ -1,3 +1,15 @@
+如何去掉文件每一行后面的^M
+ 1) 使用sed
+
+去掉windows下的回车符 （注意^M 在linux 下写法 按^M 是回车换行符,输入方法是按住CTRL+v,松开v,按m)
+sed -i 's/^M//g' filename
+
+2) 在vim下类似
+
+:%s/^M//g
+
+（^M输入方法和上面方法相同）
+
 1.how to configure tftp on ubuntu
 https://www.iteye.com/blog/xouou-2139332
 
