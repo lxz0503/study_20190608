@@ -39,5 +39,31 @@ python manage.py makemigrations 和 python manage.py migrate  (再查看数据库，已经
 # 学习链接：Python高级编程技巧
 https://www.cnblogs.com/valorchang/p/11434615.html
 
+# https://www.cnblogs.com/wcwnina/p/8627189.html    Django Admin后台管理用户密码修改
+----------
+方法一
+在Terminal中执行：python manage.py changepassword your_name（其中“your_name”为你要修改密码的用户名），根据提示内容修改即可。
+
+方法二
+进入shell环境，执行：
+
+from django.contrib.auth.models import User
+u = User.objects.get(username='your_name')
+u.set_password('new_password')
+u.save()
+------------
+
+# 如果用的sqlite3数据库，在pycharm上默认不需要任何设置，只有查看里面数据的时候才需要下载driver，参考截图
+# 在学习Django架站第四章，在使用源代码的时候提示没有admin用户
+# 自己创建一个admin用户即可,在pycharm的terminal窗口：密码是test123456
+D:\xiaozhan_git\study_20190608\DjangoCodes - Python新手学Django架站的16堂课 第2版\ch04\mynewsite>python3 manage.py createsuperuser
+Username (leave blank to use 'administrator'): admin
+Email address: lxz_20081025@163.com
+然后就能进入http://127.0.0.1:8000/admin/
+然后在Products里面就能够自由增加数据，同时也会自动增加到sqlite3数据库，在pycharm里面同步查看数据
+
+
+
+
 
 

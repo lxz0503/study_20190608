@@ -11,7 +11,7 @@ def index(request):
             '知识就是力量',
             '一个人的个性就是他的命运']
     quote = random.choice(quotes)
-    return render(request, 'index.html', locals())
+    return render(request, 'index.html', locals())     # 查看index.html
 
 
 def about(request):
