@@ -10,9 +10,9 @@ def homepage(request):
 
 
 def showpost(request, slug):
-	try:
-		post = Post.objects.get(slug = slug)
-		if post != None:
-			return render(request, 'post.html', locals())
-	except:
-		return redirect('/')
+    try:
+        post = Post.objects.get(slug = slug)
+        if post != None:
+            return render(request, 'post.html', locals())
+    except:
+        return redirect('/')
