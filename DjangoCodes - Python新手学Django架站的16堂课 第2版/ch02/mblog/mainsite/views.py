@@ -16,3 +16,7 @@ def showpost(request, slug):
             return render(request, 'post.html', locals())
     except:
         return redirect('/')
+
+def news(request):
+    info = {'name': 'xiaozhan', 'addr': 'beijing', 'age': 30}
+    return render(request, 'news.html', locals())
