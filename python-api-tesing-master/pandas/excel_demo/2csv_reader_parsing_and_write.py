@@ -13,4 +13,5 @@ with open(input_file, 'r', newline='') as csv_in_file:
         filereader = csv.reader(csv_in_file, delimiter=',')
         filewriter = csv.writer(csv_out_file, delimiter=',')
         for row_list in filereader:
+            # 可以加一些判断条件，选取需要的数据写到文件里
             filewriter.writerow(row_list)
