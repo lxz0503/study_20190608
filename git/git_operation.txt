@@ -217,8 +217,26 @@ Git 使用 git init 命令来初始化一个 Git 仓库
 创建成功后，会出现一个.git的隐藏文件夹，可以使用ls -al命令查看
 
 ————————————————
-版权声明：本文为CSDN博主「qq_40707451」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/qq_40707451/article/details/84895015
+error: cannot lock ref 'refs/remotes/origin/xxx': unable to resolve reference refs/remotes/origin/xxx: Invalid argument
+ ! [new branch]      xxx  -> origin/xxx(unable to update local ref)
+ ----rm .git/refs/remotes/origin/xxx
+
+https://www.cnblogs.com/zyjzz/p/7653378.html
+git branch --set-upstream-to=origin/master  master     # this is for my home pc
+
+https://www.cnblogs.com/zyjzz/p/7653378.html
+
+否则的话, 你必须每次都这样做:
+
+在此之前，我们必须要指定想要push或者pull的远程分支。
+
+git push origin new
+git pull origin new
+so, 增加你本地的文件并提交,可以这样
+
+git add.
+git commit -m "first time add project"
+git push
 
 
 

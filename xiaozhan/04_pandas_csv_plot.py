@@ -9,7 +9,7 @@ import os
 # 读取CSV文件数据
 filename = r"sitka_weather_2014.csv"
 with open(filename) as f:  # 打开这个文件，并将结果文件对象存储在f中
-    reader = csv.reader(f)  # 创建一个阅读器reader
+    reader = csv.reader(f)  # 创建一个迭代器reader
     next(reader)  # 返回文件中的下一行,第一行不是数据，所以直接跳过去
     dates, highs, lows = [], [], []  # 声明存储日期，最值的列表
     for row in reader:
@@ -38,3 +38,11 @@ plt.show()
 # 来源：CSDN
 # 原文：https: // blog.csdn.net / asialee_bird / article / details / 79589307
 # 版权声明：本文为博主原创文章，转载请附上博文链接！
+
+# 如何写csv文件,参考pandas的例子
+# filename = r"xiaozhan.csv"
+# with open(filename, 'wb') as wf:  # 打开这个文件，并将结果文件对象存储在f中
+#     writer = csv.writer(wf)  # 创建一个迭代器
+#     writer.writerow(['data', 'age', 'sex', 'addr', 'num'])
+#     # 也可以一边读一遍写到其他文件
+#     writer.writerow(reader.next())
