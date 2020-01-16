@@ -4,8 +4,9 @@
 # CreateDate: 2018-1-19 pandas_add_header_row.py
 import pandas as pd
 
+# 给没有header的数据添加header，即定义了一个列表,然后赋值给names参数
 input_file = r"supplier_data_no_header_row.csv"
-output_file = r"11output.csv"
+output_file = r"output_files/11output.csv"
 header_list = ['Supplier Name', 'Invoice Number', 'Part Number', 'Cost', 'Purchase Date']
 data_frame = pd.read_csv(input_file, header=None, names=header_list)
 print(data_frame)
