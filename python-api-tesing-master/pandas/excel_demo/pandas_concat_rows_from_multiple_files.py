@@ -6,7 +6,7 @@ import pandas as pd
 import glob
 import os
 
-input_path = os.path.dirname(__file__)    # current file path
+input_path = os.path.dirname(__file__)           # current file path
 output_file = r"output_files\12output.csv"
 
 all_files = glob.glob(os.path.join(input_path, 'sales_*'))    #

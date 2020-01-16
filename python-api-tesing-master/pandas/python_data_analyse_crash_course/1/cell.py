@@ -16,10 +16,10 @@ country_df_dot = df.country
 print(country_df_dot.head())
 subset = df[['country', 'continent', 'year']]
 print(subset.head())
-subset = df[[1]]
-print(subset.head())
-subset = df[[0, -1]]
-print(subset.head())
+# subset = df[[1]]
+# print(subset.head())
+# subset = df[[0, -1]]
+# print(subset.head())
 small_range = list(range(5))
 subset = df[small_range]
 print(subset.head())

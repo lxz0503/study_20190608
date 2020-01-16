@@ -8,9 +8,9 @@ input_file = r"supplier_data_unnecessary_header_footer.csv"
 output_file = r"11output.csv"
 
 data_frame = pd.read_csv(input_file, header=None)
-data_frame = data_frame.drop([0, 1, 2, 16, 17, 18])   # remove rows
-print(data_frame)
-data_frame.columns = data_frame.iloc[0]
+data_frame = data_frame.drop([0, 1, 2, 16, 17, 18])   # remove rows with row index
+print(data_frame)   # 此时默认的column是 0 1  2 3 4
+data_frame.columns = data_frame.iloc[0]   # 把column替换成了第0行的内容
 print('the result is:\n', data_frame)
 data_frame = data_frame.reindex(data_frame.index.drop(3))
 print('after drop 3:\n', data_frame)
