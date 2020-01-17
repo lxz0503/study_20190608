@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'course',
     'organization',
     'operation',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +97,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_USER_MODEL = 'users.UserProfile'    # add this line
+# add below 3 lines
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -131,3 +136,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+#
+EMAIL_HOST = "smtp.qq.com"  # SMTP服务器主机
+EMAIL_PORT = 25             # 端口
+EMAIL_HOST_USER = "281237214@qq.com"       # 邮箱地址
+EMAIL_HOST_PASSWORD = "lxzmm201143#"    # 密码
+EMAIL_USE_TLS= True
+EMAIL_FROM = "281237214@qq.com"            # 邮箱地址
