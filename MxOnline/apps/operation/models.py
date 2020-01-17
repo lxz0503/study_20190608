@@ -19,7 +19,7 @@ class UserAsk(models.Model):
     def __str__(self):
         return self.name
 
-# user message
+# user message ？？？？作用是什么？
 # user字段，默认0代表消息是发给所有用户，而不是某个单独的用户；可以通过user.id发给特定用户消息
 class UserMessage(models.Model):
     user = models.IntegerField('接受用户', default=0)
@@ -32,9 +32,9 @@ class UserMessage(models.Model):
         verbose_name_plural = verbose_name
 
 # CourseComments 课程评论
-class CourseComments(models.Model):
-    user = models.ForeignKey(UserProfile,verbose_name='用户', on_delete=models.CASCADE)
-    course = models.ForeignKey(Course,verbose_name='课程', on_delete=models.CASCADE)
+class CourseComments(models.Model):   # 谁评论的？哪门课程？所以关联了其他两个表  UserProfile  Course
+    user = models.ForeignKey(UserProfile, verbose_name='用户', on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, verbose_name='课程', on_delete=models.CASCADE)
     comments = models.CharField('评论', max_length=200)
     add_time = models.DateTimeField('添加时间', default=datetime.now)
 
@@ -44,8 +44,8 @@ class CourseComments(models.Model):
 
 # UserCourse 用户学习的课程
 class UserCourse(models.Model):
-    user = models.ForeignKey(UserProfile,verbose_name='用户',on_delete=models.CASCADE)
-    course = models.ForeignKey(Course,verbose_name='课程',on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, verbose_name='用户',on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, verbose_name='课程',on_delete=models.CASCADE)
     add_time = models.DateTimeField('添加时间', default=datetime.now)
 
     class Meta:

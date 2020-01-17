@@ -13,7 +13,7 @@ class UserProfile(AbstractUser):
     )
 
     nick_name = models.CharField('昵称', max_length=50, default='')
-    birthday = models.CharField('生日', null=True, blank=True)
+    birthday = models.CharField('生日', max_length=10, null=True, blank=True)
     gender = models.CharField('性别', max_length=10, choices=gender_choices, default='')
     address = models.CharField('地址', max_length=100, default='')
     mobile = models.CharField('手机号', max_length=11, null=True, blank=True)

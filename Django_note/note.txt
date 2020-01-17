@@ -61,6 +61,16 @@ Username (leave blank to use 'administrator'): admin
 Email address: lxz_20081025@163.com
 然后就能进入http://127.0.0.1:8000/admin/
 然后在Products里面就能够自由增加数据，同时也会自动增加到sqlite3数据库，在pycharm里面同步查看数据
+===================== models.ForeignKey 的个人理解,后续慢慢深入理解
+foreignkey是一种关联字段，将两张表进行关联的方式
+
+class Lesson(models.Model): # Lesson这张表要用到表Course里面的内容，关联如下
+    course = models.ForeignKey(Course, verbose_name='课程', on_delete=models.CASCADE)
+
+class Video(models.Model):  # 在这张表里要用到表Lesson的内容，所以下面进行关联,规则:设置变量为小写的表名,第一个参数为表名
+    lesson = models.ForeignKey(Lesson, verbose_name='章节', on_delete=models.CASCADE)
+
+==============================================================
 
 
 
