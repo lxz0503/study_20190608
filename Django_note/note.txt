@@ -71,7 +71,27 @@ class Video(models.Model):  # ÔÚÕâÕÅ±íÀïÒªÓÃµ½±íLessonµÄÄÚÈİ£¬ËùÒÔÏÂÃæ½øĞĞ¹ØÁª,¹
     lesson = models.ForeignKey(Lesson, verbose_name='ÕÂ½Ú', on_delete=models.CASCADE)
 
 ==============================================================
+python3 -m pip install --upgrade pip
+¼ÒÀïµçÄÔÓÉÓÚÊÇDjango2.2°æ±¾£¬ËùÒÔĞèÒªĞŞ¸ÄÊı¾İ¿âÀïÃæµÄÅäÖÃ£¬
+========AttributeError: 'str' object has no attribute 'decode'
+D:\Python\lib\site-packages\django\db\backends\mysql\operations.py
+query = query.encode(errors='replace')
 
+½â¾ö·½·¨£º°Ñdecode¸ÄÎªencode¼´¿É
+===========================================================
+
+ËµÃ÷£º
+
+Èç¹ûÊÇgetÇëÇó£¬Ö±½Ó·µ»Ø×¢²áÒ³Ãæ¸øÓÃ»§
+Èç¹ûÊÇpostÇëÇó£¬ÏÈÉú³ÉÒ»¸ö±íµ¥ÊµÀı£¬²¢»ñÈ¡ÓÃ»§Ìá½»µÄËùÓĞĞÅÏ¢£¨request.POST£©
+is_valid()·½·¨£¬ÑéÖ¤ÓÃ»§µÄÌá½»ĞÅÏ¢ÊÇ²»ÊÇºÏ·¨
+Èç¹ûºÏ·¨£¬»ñÈ¡ÓÃ»§Ìá½»µÄemailºÍpassword
+ÊµÀı»¯Ò»¸öuser_profile¶ÔÏó£¬°ÑÓÃ»§Ìí¼Óµ½Êı¾İ¿â
+Ä¬ÈÏÌí¼ÓµÄÓÃ»§ÊÇ¼¤»î×´Ì¬£¨is_active=1±íÊ¾True£©£¬ÔÚÕâÀïÎÒÃÇĞŞ¸ÄÄ¬ÈÏµÄ×´Ì¬£¨¸ÄÎªis_active = False£©£¬Ö»ÓĞÓÃ»§È¥ÓÊÏä¼¤»îÖ®ºó²Å¸ÄÎªTrue
+¶ÔÃÜÂë¼ÓÃÜ£¬È»ºó±£´æ£¬·¢ËÍÓÊÏä£¬usernameÊÇÓÃ»§×¢²áµÄÓÊÏä£¬¡®register¡¯±íÃ÷ÊÇ×¢²á
+×¢²á³É¹¦Ìø×ªµ½µÇÂ¼½çÃæ
+
+============================================================================
 
 
 
