@@ -31,19 +31,19 @@
 		<div class="wp">
 			<ul class="feature">
 				<li class="feature1">
-					<img class="pic" src="/static/images/feature1.png"/>
+					<img class="pic" src="{% static 'images/feature1.png' %}"/>
 					<p class="center">专业权威</p>
 				</li>
 				<li class="feature2">
-					<img class="pic" src="/static/images/feature2.png"/>
+					<img class="pic" src="{% static 'images/feature2.png' %}"/>
 					<p class="center">课程最新</p>
 				</li>
 				<li class="feature3">
-					<img class="pic" src="/static/images/feature3.png"/>
+					<img class="pic" src="{% static 'images/feature3.png' %}"/>
 					<p class="center">名师授课</p>
 				</li>
 				<li class="feature4">
-					<img class="pic" src="/static/images/feature4.png"/>
+					<img class="pic" src="{% static 'images/feature4.png' %}"/>
 					<p class="center">数据真实</p>
 				</li>
 			</ul>
@@ -57,7 +57,7 @@
 				<h1>公开课程</h1>
 				<div class="module1 eachmod">
 					<div class="module1_1 left">
-						<img width="228" height="614" src="/static/images/module1_1.jpg"/>
+						<img width="228" height="614" src="{% static 'images/module1_1.jpg' %}"/>
 						<p class="fisrt_word">名师授课<br/>专业权威</p>
 						<a class="more" href="{% url 'course:course_list' %}">查看更多课程 ></a>
 					</div>
@@ -135,6 +135,6 @@
 	</section>
 {% endblock %}
 {% block custom_js %}
-<script type="text/javascript" src="/static/js/index.js"></script>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
 

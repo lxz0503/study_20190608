@@ -1,5 +1,5 @@
 from django.contrib import admin
-from users.models import EmailVerifyRecord, Banner
+from users.models import EmailVerifyRecord, Banner, UserProfile
 
 
 # Register your models here.
@@ -19,8 +19,13 @@ class BannerAdmin(admin.ModelAdmin):
     # search_fields = ['title', 'image', 'url','index']
     # list_filter = ['title', 'image', 'url','index', 'add_time']
 
+# user management
+class UserProfileAdmin(admin.ModelAdmin):
+    pass
+
 # 将管理器与model进行注册关联
 admin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
 admin.site.register(Banner, BannerAdmin)
+admin.site.register(UserProfile, UserProfileAdmin)
 
 

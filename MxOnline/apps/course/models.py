@@ -18,6 +18,7 @@ class Course(models.Model):
     students = models.IntegerField('学习人数', default=0)
     fav_nums = models.IntegerField('收藏人数', default=0)
     image = models.ImageField('封面图', upload_to='courses/%Y/%m', max_length=100)
+    is_banner = models.BooleanField('是否轮播', default=False)
     click_nums = models.IntegerField('点击数', default=0)
     add_time = models.DateTimeField('添加时间', default=datetime.now)
 
