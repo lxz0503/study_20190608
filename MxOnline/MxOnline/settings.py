@@ -61,8 +61,7 @@ ROOT_URLCONF = 'MxOnline.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,7 +144,7 @@ STATICFILES_DIRS = (
 #
 EMAIL_HOST = "smtp.qq.com"  # SMTP服务器主机
 EMAIL_PORT = 25             # 端口
-EMAIL_HOST_USER = "281237214@qq.com"       # 邮箱地址
-EMAIL_HOST_PASSWORD = "lxzmm201143#"    # 密码
-EMAIL_USE_TLS= True
-EMAIL_FROM = "281237214@qq.com"            # 邮箱地址
+EMAIL_HOST_USER = "534188479@qq.com"       # 邮箱地址
+EMAIL_HOST_PASSWORD = "ocndjpiwqtcdbhfg"    # 密码
+EMAIL_USE_TLS = True
+EMAIL_FROM = "534188479@qq.com"            # 邮箱地址
