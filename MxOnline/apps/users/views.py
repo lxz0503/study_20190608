@@ -9,7 +9,7 @@ from users.models import UserProfile,EmailVerifyRecord
 from django.db.models import Q
 from django.views.generic.base import View
 from users.form import LoginForm,RegisterForm,ForgetPwdForm,ModifyPwdForm
-# from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
+from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
 from utils.email_send import send_register_eamil
 from utils.mixin_utils import LoginRequiredMixin
@@ -39,7 +39,7 @@ class CustomBackend(ModelBackend):
 
 class IndexView(View):
     '''首页'''
-    def get(self,request):
+    def get(self, request):
         #轮播图
         all_banners = Banner.objects.all().order_by('index')
         #课程
@@ -129,8 +129,8 @@ class RegisterView(View):
         if register_form.is_valid():
             user_name = request.POST.get('email', None)
             # 如果用户已存在，则提示错误信息
-            if UserProfile.objects.filter(email = user_name):
-                return render(request, 'register.html', {'register_form': register_form,'msg': '用户已存在'})
+            if UserProfile.objects.filter(email=user_name):
+                return render(request, 'register.html', {'register_form': register_form, 'msg': '用户已存在'})
 
             pass_word = request.POST.get('password', None)
             # 实例化一个user_profile对象
@@ -141,10 +141,10 @@ class RegisterView(View):
             # 对保存到数据库的密码加密
             user_profile.password = make_password(pass_word)
             user_profile.save()
-            send_register_eamil(user_name,'register')
-            return render(request,'login.html')
+            send_register_eamil(user_name, 'register')
+            return render(request, 'login.html')
         else:
-            return render(request,'register.html',{'register_form':register_form})
+            return render(request, 'register.html', {'register_form': register_form})
 
 
 class ForgetPwdView(View):

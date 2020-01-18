@@ -90,7 +90,9 @@ is_valid()方法，验证用户的提交信息是不是合法
 默认添加的用户是激活状态（is_active=1表示True），在这里我们修改默认的状态（改为is_active = False），只有用户去邮箱激活之后才改为True
 对密码加密，然后保存，发送邮箱，username是用户注册的邮箱，‘register’表明是注册
 注册成功跳转到登录界面
-
+保持原来的代码，逐步调试执行---人家原来的框架应该没问题
+另外一个gitbub，也是关于这个在线教育平台的：https://github.com/xyliurui/OnlineLearningPlatform
+https://blog.starmeow.cn/   ---网站页面很漂亮
 ============================================================================
 
 

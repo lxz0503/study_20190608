@@ -2,12 +2,11 @@
 
 from django.urls import path, include, re_path
 from django.contrib import admin
-
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView
-# from organization.views import OrgView
+from organization.views import OrgView
 from django.views.static import serve
-# from MxOnline.settings import MEDIA_ROOT
 from users.views import LogoutView, IndexView
 
 urlpatterns = [
@@ -15,6 +14,7 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name="logout"),
+    # path('register/', RegisterView),  # modified by xiaozhan,if using class,will fail
     path('register/', RegisterView.as_view(), name='register'),
     path('captcha/', include('captcha.urls')),
     re_path('active/(?P<active_code>.*)/', ActiveUserView.as_view(), name='user_active'),
@@ -26,9 +26,9 @@ urlpatterns = [
     # re_path(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
 
     # 课程机构app相关url配置
-    # path("org/", include('organization.urls', namespace="org")),
+    path("org/", include('organization.urls', namespace="org")),
     # 课程app相关url配置
-    # path("course/", include('course.urls', namespace="course")),
+    path("course/", include('course.urls', namespace="course")),
 
     #个人信息
     path("users/", include('users.urls', namespace="users")),
