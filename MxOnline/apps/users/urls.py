@@ -1,22 +1,22 @@
-from django.urls import path,include,re_path
-from .views import UserinfoView,UploadImageView,UpdatePwdView,SendEmailCodeView
-from .views import UpdateEmailView,MyCourseView,MyFavOrgView,MyFavTeacherView,MyFavCourseView,MyMessageView
+from django.urls import path, include, re_path
+from .views import UserinfoView, UploadImageView, UpdatePwdView, SendEmailCodeView
+from .views import UpdateEmailView, MyCourseView, MyFavOrgView, MyFavTeacherView, MyFavCourseView, MyMessageView
 
 app_name = 'users'
 
 urlpatterns = [
     #用户信息
-    path("info/", UserinfoView.as_view(),name='user_info'),
+    path("info/", UserinfoView.as_view(), name='user_info'),  # 在html模板里面的名字体现为user_info
     #用户图像上传
-    path("image/upload/", UploadImageView.as_view(),name='image_upload'),
+    path("image/upload/", UploadImageView.as_view(), name='image_upload'),
     #用户个人中心修改密码
-    path("update/pwd/", UpdatePwdView.as_view(),name='update_pwd'),
+    path("update/pwd/", UpdatePwdView.as_view(), name='update_pwd'),
     #发送邮箱验证码
-    path("sendemail_code/", SendEmailCodeView.as_view(),name='sendemail_code'),
+    path("sendemail_code/", SendEmailCodeView.as_view(), name='sendemail_code'),
     #修改邮箱
-    path("update_email/", UpdateEmailView.as_view(),name='update_email'),
+    path("update_email/", UpdateEmailView.as_view(), name='update_email'),
     #我的课程
-    path("mycourse/", MyCourseView.as_view(),name='mycourse'),
+    path("mycourse/", MyCourseView.as_view(), name='mycourse'),
     # 我的收藏--课程机构
     path('myfav/org/', MyFavOrgView.as_view(), name="myfav_org"),
     # 我的收藏--授课讲师

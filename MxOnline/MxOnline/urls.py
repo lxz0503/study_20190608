@@ -14,7 +14,6 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name="logout"),
-    # path('register/', RegisterView),  # modified by xiaozhan,if using class,will fail
     path('register/', RegisterView.as_view(), name='register'),
     path('captcha/', include('captcha.urls')),
     re_path('active/(?P<active_code>.*)/', ActiveUserView.as_view(), name='user_active'),
@@ -25,7 +24,7 @@ urlpatterns = [
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
     # re_path(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
 
-    # 课程机构app相关url配置
+    # 课程机构app相关url配置, 可以回去参考老男孩视频教学
     path("org/", include('organization.urls', namespace="org")),
     # 课程app相关url配置
     path("course/", include('course.urls', namespace="course")),
