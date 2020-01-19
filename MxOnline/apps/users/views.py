@@ -7,7 +7,7 @@ from django.contrib.auth.backends import ModelBackend
 from users.models import UserProfile, EmailVerifyRecord
 from django.db.models import Q
 from django.views.generic.base import View
-from users.forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm, UploadImageForm, UserInfoForm
+from users.forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UpdatePwdForm
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
 from utils.email_send import send_register_eamil
@@ -246,20 +246,37 @@ class UpdatePwdView(View):
     """
     个人中心修改用户密码
     """
+    # def post(self, request):
+    #     modify_form = ModifyPwdForm(request.POST)
+    #     if modify_form.is_valid():
+    #         pwd1 = request.POST.get("password1", "")
+    #         pwd2 = request.POST.get("password2", "")
+    #         if pwd1 != pwd2:
+    #             return HttpResponse('{"status":"fail","msg":"密码不一致"}',  content_type='application/json')
+    #         user = request.user
+    #         user.password = make_password(pwd2)
+    #         user.save()
+    #
+    #         return HttpResponse('{"status":"success"}', content_type='application/json')
+    #     else:
+    #         return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
+
     def post(self, request):
-        modify_form = ModifyPwdForm(request.POST)
-        if modify_form.is_valid():
+        update_form = UpdatePwdView(request.POST)
+        if update_form.is_valid():
             pwd1 = request.POST.get("password1", "")
             pwd2 = request.POST.get("password2", "")
+            email = request.POST.get("email", "")
             if pwd1 != pwd2:
-                return HttpResponse('{"status":"fail","msg":"密码不一致"}',  content_type='application/json')
-            user = request.user
+                return render(request, "password_upate.html", {"email": email, "msg": "密码不一致！"})
+            user = UserProfile.objects.get(email=email)
             user.password = make_password(pwd2)
             user.save()
 
-            return HttpResponse('{"status":"success"}', content_type='application/json')
+            return render(request, "login.html")
         else:
-            return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
+            email = request.POST.get("email", "")
+            return render(request, "password_update.html", locals())
 
 
 class SendEmailCodeView(LoginRequiredMixin, View):
