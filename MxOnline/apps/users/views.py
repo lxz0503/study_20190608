@@ -151,7 +151,7 @@ class ForgetPwdView(View):
         forget_form = ForgetPwdForm()
         return render(request, 'forgetpwd.html', {'forget_form': forget_form})
 
-    def post(self,request):
+    def post(self, request):
         forget_form = ForgetPwdForm(request.POST)
         if forget_form.is_valid():
             email = request.POST.get('email', None)
@@ -262,7 +262,7 @@ class UpdatePwdView(View):
     #         return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
 
     def post(self, request):
-        update_form = UpdatePwdView(request.POST)
+        update_form = ModifyPwdView(request.POST)
         if update_form.is_valid():
             pwd1 = request.POST.get("password1", "")
             pwd2 = request.POST.get("password2", "")

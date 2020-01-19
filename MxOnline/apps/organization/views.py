@@ -19,10 +19,8 @@ class OrgView(View):
     def get(self, request):
         # 所有课程机构
         all_orgs = CourseOrg.objects.all()
-
         # 所有城市
         all_citys = CityDict.objects.all()
-
         # 机构搜索功能
         search_keywords = request.GET.get('keywords', '')
         if search_keywords:
@@ -90,7 +88,7 @@ class AddUserAskView(View):
 class OrgHomeView(View):
     '''机构首页'''
 
-    def get(self,request,org_id):
+    def get(self, request, org_id):
         current_page = 'home'
         # 根据id找到课程机构
         course_org = CourseOrg.objects.get(id=int(org_id))
@@ -141,7 +139,7 @@ class OrgDescView(View):
     def get(self, request, org_id):
         current_page = 'desc'
         # 根据id取到课程机构
-        course_org = CourseOrg.objects.get(id= int(org_id))
+        course_org = CourseOrg.objects.get(id=int(org_id))
         # 判断收藏状态
         has_fav = False
         if request.user.is_authenticated:

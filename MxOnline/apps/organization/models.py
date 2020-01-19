@@ -6,13 +6,13 @@ from django.db import models
 
 
 class CityDict(models.Model):
-    name = models.CharField('城市',max_length=20)
-    desc = models.CharField('描述',max_length=200)
+    name = models.CharField('城市', max_length=20)
+    desc = models.CharField('描述', max_length=200)
     add_time = models.DateTimeField(default=datetime.now)
 
     class Meta:
         verbose_name = '城市'
-        verbose_name_plural= verbose_name
+        verbose_name_plural = verbose_name
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class CourseOrg(models.Model):
         ("gx", u"高校"),
         ("gr", u"个人"),
     )
-    name = models.CharField('机构名称',max_length=50)
+    name = models.CharField('机构名称', max_length=50)
     desc = models.TextField('机构描述')
     category = models.CharField(max_length=20, choices=ORG_CHOICES, verbose_name=u"机构类别", default="pxjg")
     click_nums = models.IntegerField('点击数',default=0)

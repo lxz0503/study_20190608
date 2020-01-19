@@ -142,6 +142,26 @@ handler500 = 'index.views.page_error'
 ========================================================
 register,updatepwd 在公司网络调试不通，邮箱发不出去，提示socket1051 error
 在家里可以调试成功
+======================================
+Ajax代码说明：org-list.html
 
+第一行表示：其它代码执行完再执行
+给“立即咨询”按钮绑定click事件，点击后执行function()函数里面的代码
+cache:false   这个参数默认True，表示缓存，这里改为false，表示不用缓存
+type：post    以post方式发送数据
+url：把请求发送到哪个url
+data:发送到服务器的数据
+async:ture   表示异步发送
+success:请求成功时执行的回调函数，data是服务器返回过来的数据
+因为后台返回的数据是{"status’:"success"}或者{"status’:"fail"},这里做个判断
+如果是“success”，则把提交表单里面的数据清空，如果是“fail”，显示错误信息
+=======================================================================
+https://github.com/twz915/DjangoUeditor3/
+将包解压放到项目目录文件夹下。
+python3 setup.py install
+
+3.找到配置文件settings.py，在INSTALL_APPS里面增加DjangoUeditor（注册DjangoUeditor）
+===================================
+http://127.0.0.1:8000/org/home/1/
 
 
