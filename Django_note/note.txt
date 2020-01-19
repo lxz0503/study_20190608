@@ -93,6 +93,36 @@ is_valid()方法，验证用户的提交信息是不是合法
 保持原来的代码，逐步调试执行---人家原来的框架应该没问题
 另外一个gitbub，也是关于这个在线教育平台的：https://github.com/xyliurui/OnlineLearningPlatform
 https://blog.starmeow.cn/   ---网站页面很漂亮
+https://www.cnblogs.com/itman123/p/11573284.html
+============================================================================
+debug
+Unknown column 'course_course.is_banner' in 'field list' ----提示数据库里面没有这条记录，根源是修改了models.py，但是没有
+操作python3 manage.py makemigrations, python3 manage.py migrate
+debug
+{% load staticfiles %}    这个在Django2.2系列可以使用，但是Django3.0已经不可以，只能用 {% load static %}
+debug,关于url的一些变化，
+1.x里面的写法是
+url(r’^page=(\d+)&key=(\w+)$’, views.detail, name=”detail”),
+现在的写法    ?P<page>这个表示起了一个别名,也可以不写
+re_path('page=(?P<page>\d+)&key=(?P<key>\w+)', views.detail, name="detail"),
+debug
+一 超链接目标地址
+href后面是目标地址
+template中可以用"{% url 'app_name:url_name' param %}"
+其中app_name和url_name都是在url中配置，实战如下：
+二 url函数的名称参数，已经被替代为path函数
+
+根urls下，写在include()的第二个参数位置，namespace = 'blog'
+
+应用下则写在url()的第三个参数位置，name='article'
+
+取决于是否使用了include引用另一个url配置文件
+http://127.0.0.1:8000/users/info/   这是我打开网页进入到个人中心的url
+在 base.html里面需要这样设置：href="{% url 'users:user_info' %}"
+在users这个app的urls.py里面设置如下：
+path("info/", UserinfoView.as_view(), name='user_info'),  # 在html模板里面的名字体现为user_info
+然后在UserinfoView这个类实现里面 return render(request, 'usercenter-info.html')
+在usercenter-info.html里面：<li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
 ============================================================================
 
 

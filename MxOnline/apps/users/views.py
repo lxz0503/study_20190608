@@ -1,20 +1,19 @@
 # users/views.py
 import json
 from django.shortcuts import render
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse,HttpResponseRedirect
 
 from django.contrib.auth.backends import ModelBackend
-from users.models import UserProfile,EmailVerifyRecord
+from users.models import UserProfile, EmailVerifyRecord
 from django.db.models import Q
 from django.views.generic.base import View
-from users.form import LoginForm,RegisterForm,ForgetPwdForm,ModifyPwdForm
+from users.forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm, UploadImageForm, UserInfoForm
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
 from utils.email_send import send_register_eamil
 from utils.mixin_utils import LoginRequiredMixin
-from users.form import UploadImageForm, UserInfoForm
-from operation.models import UserCourse,UserFavorite,UserMessage
+from operation.models import UserCourse, UserFavorite, UserMessage
 from organization.models import CourseOrg, Teacher
 from course.models import Course
 from .models import Banner
@@ -48,7 +47,7 @@ class IndexView(View):
         banner_courses = Course.objects.filter(is_banner=True)[:3]
         #课程机构
         course_orgs = Course.objects.all()[:15]
-        return render(request, 'index.html',{
+        return render(request, 'index.html', {
             'all_banners': all_banners,
             'courses': courses,
             'banner_courses': banner_courses,
@@ -105,7 +104,7 @@ class ActiveUserView(View):
                 user.save()
          # 验证码不对的时候跳转到激活失败页面
         else:
-            return render(request,'active_fail.html')
+            return render(request, 'active_fail.html')
         # 激活成功跳转到登录页面
         return render(request, "login.html", )
 
@@ -151,16 +150,16 @@ class ForgetPwdView(View):
     '''找回密码'''
     def get(self,request):
         forget_form = ForgetPwdForm()
-        return render(request,'forgetpwd.html',{'forget_form':forget_form})
+        return render(request,'forgetpwd.html', {'forget_form': forget_form})
 
     def post(self,request):
         forget_form = ForgetPwdForm(request.POST)
         if forget_form.is_valid():
-            email = request.POST.get('email',None)
-            send_register_eamil(email,'forget')
+            email = request.POST.get('email', None)
+            send_register_eamil(email, 'forget')
             return render(request, 'send_success.html')
         else:
-            return render(request,'forgetpwd.html',{'forget_form':forget_form})
+            return render(request, 'forgetpwd.html', {'forget_form': forget_form})
 
 
 class ResetView(View):
@@ -169,7 +168,7 @@ class ResetView(View):
         if all_records:
             for record in all_records:
                 email = record.email
-                return render(request, "password_reset.html", {"email":email})
+                return render(request, "password_reset.html", {"email": email})
         else:
             return render(request, "active_fail.html")
         return render(request, "login.html")
@@ -183,7 +182,7 @@ class ModifyPwdView(View):
             pwd2 = request.POST.get("password2", "")
             email = request.POST.get("email", "")
             if pwd1 != pwd2:
-                return render(request, "password_reset.html", {"email":email, "msg":"密码不一致！"})
+                return render(request, "password_reset.html", {"email": email, "msg": "密码不一致！"})
             user = UserProfile.objects.get(email=email)
             user.password = make_password(pwd2)
             user.save()
@@ -191,7 +190,7 @@ class ModifyPwdView(View):
             return render(request, "login.html")
         else:
             email = request.POST.get("email", "")
-            return render(request, "password_reset.html", {"email":email, "modify_form":modify_form })
+            return render(request, "password_reset.html", {"email": email, "modify_form": modify_form })
 
 
 
@@ -200,7 +199,7 @@ class UserinfoView(LoginRequiredMixin, View):
     用户个人信息
     """
     def get(self, request):
-        return render(request, 'usercenter-info.html', {})
+        return render(request, 'usercenter-info.html')
 
     def post(self, request):
         user_info_form = UserInfoForm(request.POST, instance=request.user)
@@ -273,7 +272,7 @@ class SendEmailCodeView(LoginRequiredMixin, View):
         if UserProfile.objects.filter(email=email):
             return HttpResponse('{"email":"邮箱已存在"}', content_type='application/json')
 
-        send_register_eamil(email,'update_email')
+        send_register_eamil(email, 'update_email')
         return HttpResponse('{"status":"success"}', content_type='application/json')
 
 
@@ -303,7 +302,7 @@ class MyCourseView(LoginRequiredMixin, View):
         })
 
 
-class MyFavOrgView(LoginRequiredMixin,View):
+class MyFavOrgView(LoginRequiredMixin, View):
     '''我收藏的课程机构'''
 
     def get(self, request):
@@ -321,7 +320,6 @@ class MyFavOrgView(LoginRequiredMixin,View):
         })
 
 
-
 class MyFavTeacherView(LoginRequiredMixin, View):
     '''我收藏的授课讲师'''
 
@@ -337,7 +335,7 @@ class MyFavTeacherView(LoginRequiredMixin, View):
         })
 
 
-class MyFavCourseView(LoginRequiredMixin,View):
+class MyFavCourseView(LoginRequiredMixin, View):
     """
     我收藏的课程
     """
@@ -350,7 +348,7 @@ class MyFavCourseView(LoginRequiredMixin,View):
             course_list.append(course)
 
         return render(request, 'usercenter-fav-course.html', {
-            "course_list":course_list,
+            "course_list": course_list,
         })
 
 
@@ -365,24 +363,21 @@ class MyMessageView(LoginRequiredMixin, View):
             page = request.GET.get('page', 1)
         except PageNotAnInteger:
             page = 1
-        p = Paginator(all_message, 4,request=request)
+        p = Paginator(all_message, 4, request=request)
         messages = p.page(page)
-        return  render(request, "usercenter-message.html", {
-        "messages":messages,
-        })
+        return render(request, "usercenter-message.html", {"messages": messages})
 
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render    # 修改为使用render函数
 def pag_not_found(request):
     # 全局404处理函数
-    response = render_to_response('404.html', {})
+    response = render(request, '404.html')
     response.status_code = 404
     return response
 
 def page_error(request):
     # 全局500处理函数
-    from django.shortcuts import render_to_response
-    response = render_to_response('500.html', {})
+    response = render(request, '500.html')
     response.status_code = 500
     return response
 
