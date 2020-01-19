@@ -32,6 +32,11 @@ class ModifyPwdForm(forms.Form):
     password1 = forms.CharField(required=True, min_length=5)
     password2 = forms.CharField(required=True, min_length=5)
 
+class UpdatePwdForm(forms.Form):
+    '''重置密码'''
+    password1 = forms.CharField(required=True, min_length=5)
+    password2 = forms.CharField(required=True, min_length=5)
+
 
 class UploadImageForm(forms.ModelForm):
     '''用户更改图像'''

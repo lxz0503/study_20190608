@@ -3,7 +3,7 @@
 from django.shortcuts import render
 
 from django.views.generic import View
-from .models import CourseOrg,CityDict,Teacher
+from .models import CourseOrg, CityDict, Teacher
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from utils.mixin_utils import LoginRequiredMixin
 from django.http import HttpResponse
