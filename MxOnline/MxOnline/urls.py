@@ -37,8 +37,8 @@ urlpatterns = [
     # 富文本相关url
     # path('ueditor/', include('DjangoUeditor.urls')),
 ]
-
+# debug by xiaozhan, to adapt to Django 2.2 or higher version
 # 全局404页面配置
-# handler404 = 'users.views.pag_not_found'
+handler404 = 'users.views.pag_not_found'
 # 全局500页面配置
-# handler500 = 'users.views.page_error'
+handler500 = 'users.views.page_error'

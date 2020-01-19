@@ -2,8 +2,7 @@
 import json
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse,HttpResponseRedirect
-
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.backends import ModelBackend
 from users.models import UserProfile, EmailVerifyRecord
 from django.db.models import Q
@@ -26,7 +25,7 @@ class CustomBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
             # 不希望用户存在两个，get只能有一个。两个是get失败的一种原因 Q为使用并集查询
-            user = UserProfile.objects.get(Q(username=username)|Q(email=username))
+            user = UserProfile.objects.get(Q(username=username) | Q(email=username))
 
             # django的后台中密码加密：所以不能password==password
             # UserProfile继承的AbstractUser中有def check_password(self, raw_password):
@@ -35,7 +34,7 @@ class CustomBackend(ModelBackend):
         except Exception as e:
             return None
 
-
+# 用类的方式来实现每个view，每个类里面应该包含get或者post函数，函数名是固定的
 class IndexView(View):
     '''首页'''
     def get(self, request):
@@ -59,12 +58,13 @@ class IndexView(View):
 class LoginView(View):
     '''用户登录'''
 
-    def get(self,request):
+    def get(self, request):
         return render(request, 'login.html')
 
-    def post(self,request):
+    def post(self, request):
         # 实例化
         login_form = LoginForm(request.POST)
+        # print('the content of login_form is', login_form)        # xiaozhan debug,print this in terminal
         if login_form.is_valid():
             # 获取用户提交的用户名和密码
             user_name = request.POST.get('username', None)
@@ -81,19 +81,18 @@ class LoginView(View):
                     return render(request, 'login.html', {'msg': '用户名或密码错误', 'login_form': login_form})
             # 只有当用户名或密码不存在时，才返回错误信息到前端
             else:
-                return render(request, 'login.html', {'msg': '用户名或密码错误','login_form':login_form})
+                return render(request, 'login.html', {'msg': '用户名或密码错误','login_form': login_form})
 
         # form.is_valid（）已经判断不合法了，所以这里不需要再返回错误信息到前端了
         else:
-            return render(request,'login.html',{'login_form':login_form})
+            return render(request,'login.html', {'login_form': login_form})
 
 
 # 激活用户
 class ActiveUserView(View):
     def get(self, request, active_code):
         # 查询邮箱验证记录是否存在
-        all_record = EmailVerifyRecord.objects.filter(code = active_code)
-
+        all_record = EmailVerifyRecord.objects.filter(code=active_code)
         if all_record:
             for record in all_record:
                 # 获取到对应的邮箱
@@ -148,9 +147,9 @@ class RegisterView(View):
 
 class ForgetPwdView(View):
     '''找回密码'''
-    def get(self,request):
+    def get(self, request):
         forget_form = ForgetPwdForm()
-        return render(request,'forgetpwd.html', {'forget_form': forget_form})
+        return render(request, 'forgetpwd.html', {'forget_form': forget_form})
 
     def post(self,request):
         forget_form = ForgetPwdForm(request.POST)
@@ -215,13 +214,13 @@ class UserinfoView(LoginRequiredMixin, View):
     #         nick_name = request.POST.get('nick_name',None)
     #         gender = request.POST.get('gender',None)
     #         birthday = request.POST.get('birthday',None)
-    #         adress = request.POST.get('address',None)
+    #         address = request.POST.get('address',None)
     #         mobile = request.POST.get('mobile',None)
     #         user = request.user
     #         user.nick_name = nick_name
     #         user.gender = gender
     #         user.birthday = birthday
-    #         user.adress = adress
+    #         user.adress = address
     #         user.mobile = mobile
     #         user.save()
     #         return HttpResponse('{"status":"success"}', content_type='application/json')
@@ -229,12 +228,11 @@ class UserinfoView(LoginRequiredMixin, View):
     #         return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
 
 
-
-class UploadImageView(LoginRequiredMixin,View):
+class UploadImageView(LoginRequiredMixin, View):
     '''用户图像修改'''
-    def post(self,request):
-        #上传的文件都在request.FILES里面获取，所以这里要多传一个这个参数
-        image_form = UploadImageForm(request.POST,request.FILES)
+    def post(self, request):
+        # 上传的文件都在request.FILES里面获取，所以这里要多传一个这个参数
+        image_form = UploadImageForm(request.POST, request.FILES)
         if image_form.is_valid():
             image = image_form.cleaned_data['image']
             request.user.image = image
@@ -274,7 +272,6 @@ class SendEmailCodeView(LoginRequiredMixin, View):
 
         send_register_eamil(email, 'update_email')
         return HttpResponse('{"status":"success"}', content_type='application/json')
-
 
 
 class UpdateEmailView(LoginRequiredMixin, View):
@@ -352,7 +349,6 @@ class MyFavCourseView(LoginRequiredMixin, View):
         })
 
 
-
 class MyMessageView(LoginRequiredMixin, View):
     '''我的消息'''
 
@@ -368,12 +364,15 @@ class MyMessageView(LoginRequiredMixin, View):
         return render(request, "usercenter-message.html", {"messages": messages})
 
 
-from django.shortcuts import render    # 修改为使用render函数
-def pag_not_found(request):
+# debug by xiaozhan for Django 2.2 or higher version,
+# xiaozhan debug 修改为使用render函数
+
+def pag_not_found(request, exception):   # before Django 2.2 version, there was not param: exception
     # 全局404处理函数
     response = render(request, '404.html')
     response.status_code = 404
     return response
+
 
 def page_error(request):
     # 全局500处理函数
