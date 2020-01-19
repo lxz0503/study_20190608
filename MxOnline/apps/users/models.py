@@ -13,10 +13,10 @@ class UserProfile(AbstractUser):
     )
 
     nick_name = models.CharField('昵称', max_length=50, default='')
-    birthday = models.CharField('生日', max_length=10, null=True, blank=True)
+    birthday = models.CharField('生日', max_length=10, null=True, blank=True)  # blank指定这个字段可以为空,会在网页上显示None
     gender = models.CharField('性别', max_length=10, choices=gender_choices, default='')
     address = models.CharField('地址', max_length=100, default='')
-    mobile = models.CharField('手机号', max_length=11, null=True, blank=True)
+    mobile = models.CharField('手机号', max_length=11, null=True)
     image = models.ImageField(upload_to='image/%Y%m', default='image/default.png', max_length=100)
 
     class Meta:

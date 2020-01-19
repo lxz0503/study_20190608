@@ -124,7 +124,14 @@ path("info/", UserinfoView.as_view(), name='user_info'),  # 在html模板里面的名字
 然后在UserinfoView这个类实现里面 return render(request, 'usercenter-info.html')
 在usercenter-info.html里面：<li><a href="{% url 'users:user_info' %}">个人中心</a>></li>
 ============================================================================
-
+HttpResponseRedirect, redirect和reverse
+https://www.jianshu.com/p/3d99ddd5148f
+===================================================
+user_info_form = UserInfoForm(request.POST, instance=request.user)
+TypeError: __init__() got an unexpected keyword argument 'instance'
+debug 采用下面的继承就可以,而不是forms.Form
+class UserInfoForm(forms.ModelForm):
+======================================================
 
 
 
