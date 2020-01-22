@@ -73,6 +73,7 @@ class BannerCourse(Course):
 
 class Lesson(models.Model):
     '''课程章节'''
+    # 注意参数Course没有加引号，所以Course的定义必须在Lesson之前
     course = models.ForeignKey(Course,verbose_name='课程',on_delete=models.CASCADE)
     name = models.CharField("章节名",max_length=100)
     add_time = models.DateTimeField("添加时间",default=datetime.now)
