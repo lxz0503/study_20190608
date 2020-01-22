@@ -19,7 +19,7 @@ class CourseListView(View):
         # 搜索功能
         search_keywords = request.GET.get('keywords', '')
         if search_keywords:
-            # 在name字段进行操作,做like语句的操作。i代表不区分大小写
+            # 在name字段进行操作,做like语句的操作。i代表不区分大小写,双下划线表示模糊查询
             # or操作使用Q
             all_courses = all_courses.filter(Q(name__icontains=search_keywords) | Q(desc__icontains=search_keywords) | Q(
                 detail__icontains=search_keywords))
@@ -99,7 +99,7 @@ class CourseInfoView(LoginRequiredMixin,View):
         all_user_courses = UserCourse.objects.filter(user_id__in=user_ids)
         # 取出所有课程id
         course_ids = [all_user_course.course_id for all_user_course in all_user_courses]
-        # 通过所有课程的id,找到所有的课程，按点击量去五个
+        # 通过所有课程的id,找到所有的课程，按点击量去五个，[:5]相当于limit语句
         relate_courses = Course.objects.filter(id__in=course_ids).order_by("-click_nums")[:5]
 
         # 资源

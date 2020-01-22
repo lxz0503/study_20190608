@@ -163,5 +163,46 @@ python3 setup.py install
 3.找到配置文件settings.py，在INSTALL_APPS里面增加DjangoUeditor（注册DjangoUeditor）
 ===================================
 http://127.0.0.1:8000/org/home/1/
+=========================================================================
+django根据外键反向取数据库值:
+比如class course  包含外键course-org，目前已经取得course-org的值，如何通过course-org取出course的值呢？
+all_course = course_org.course_set().all()
+course_org有一个方法course_set方法，其实就是把course  model的名称变成小写，然后后缀加上set，这样就可以反向获取course的数据库值
+=====================================================================================================================
+可以在pycharm里面直接更新数据库内容，参考我的截图
+================================================================================================================
+1、在course的model中定义一个统计章节数的函数：
+
+def get_zj_nums(self):
+    #获取课程章节数
+    return self.lesson_set.all().count()
+
+lesson的model含有一个course的外键，所以可以通过外键反向取lesson的值
+
+2、在html页面可以通过后台返回的course调用这个方法来显示该课程在的章节数
+<li><span class="pram word3">章&nbsp;节&nbsp;数：</span><span>{{ course.get_zj_nums }}</span></li>
+=====================================================================
+通过类的对象的方式操作，例子如下，一定要有save操作，
+user = UserProfile.objects.get(email=email)
+                user.is_active = True
+                user.save()
+https://www.cnblogs.com/yuanchenqi/articles/6083427.html   ---关于Django web的介绍，老男孩
+==================================================
+如果想打印数据库内容，可以在views.py里面增加调试打印，在html页面会显示出来，也可以选择终端显示
+===========================================
+ORM 一对多：     在多的表里面定义外键
+class Course包含如下外键：
+teacher = models.ForeignKey(Teacher,verbose_name='讲师',null=True,blank=True,on_delete=models.CASCADE)
+course_org = models.ForeignKey(CourseOrg, on_delete=models.CASCADE, verbose_name="所属机构", null=True, blank=True)
+表明一个teacher可以对应多门课程，
+一个CourseOrg可以对应多门课程
+在Course这个表里面查看，会自动增加两个字段:teacher_id,course_org_id
+注意: Teacher和CourseOrg分别对应着两张表
+如果实例化一个Course对象a,则a.teacher和a.course_org分别对应着Teacher表和CourseOrg表的实例化对象，
+即关联到了另外两个表。
+也可以继续调用关联表的内容，例如a.teacher.age, a.course_org.city
+=============================================================================
+https://www.cnblogs.com/regit/p/9531131.html
+<a href="{% url 'org:org_home' course_org.id %}">   line81
 
 

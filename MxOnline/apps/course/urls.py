@@ -5,7 +5,6 @@ from course.views import CourseListView,CourseDetailView,CourseInfoView,Comments
 
 # 要写上app的名字
 app_name = "course"
-
 urlpatterns = [
     # 课程列表
     path('list/',CourseListView.as_view(),name='course_list'),

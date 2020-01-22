@@ -102,6 +102,7 @@ class OrgHomeView(View):
         # 反向查询到课程机构的所有课程和老师
         all_courses = course_org.course_set.all()[:4]
         all_teacher = course_org.teacher_set.all()[:2]
+        print("all_courses are %s---%s" % (type(all_courses), all_courses))
         return render(request, 'org-detail-homepage.html',{
             'course_org': course_org,
             'all_courses': all_courses,
