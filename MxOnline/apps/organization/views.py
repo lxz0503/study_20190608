@@ -48,6 +48,7 @@ class OrgView(View):
                 all_orgs = all_orgs.order_by("-course_nums")
         # 有多少家机构
         org_nums = all_orgs.count()
+        print('aaaaaa', org_nums)   # xiaozhan debug
         # 对课程机构进行分页
         # 尝试获取前台get请求传递过来的page参数
         # 如果是不合法的配置参数默认返回第一页

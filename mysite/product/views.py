@@ -15,6 +15,7 @@ def product_manage(request):
     #                 {'id': 2, 'product_name': 'taobao', 'product_desc': 'shopping', 'product_owner': 'mayun','create_time': '1998'},
     #                 {'id': 3, 'product_name': 'sohu', 'product_desc': 'general', 'product_owner': 'zhang','create_time': '1997'},
     #                 ]
+    print('aaaaaaaaaa')
     return render(request, 'product_manage.html', {'user': username, 'products': product_list})
 
 

@@ -38,13 +38,13 @@ class CustomBackend(ModelBackend):
 class IndexView(View):
     '''首页'''
     def get(self, request):
-        #轮播图
+        # 轮播图
         all_banners = Banner.objects.all().order_by('index')
-        #课程
+        # 课程
         courses = Course.objects.filter(is_banner=False)[:6]
-        #轮播课程
+        # 轮播课程
         banner_courses = Course.objects.filter(is_banner=True)[:3]
-        #课程机构
+        # 课程机构
         course_orgs = Course.objects.all()[:15]
         return render(request, 'index.html', {
             'all_banners': all_banners,
@@ -260,23 +260,6 @@ class UpdatePwdView(View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
-
-    # def post(self, request):
-    #     update_form = ModifyPwdView(request.POST)
-    #     if update_form.is_valid():
-    #         pwd1 = request.POST.get("password1", "")
-    #         pwd2 = request.POST.get("password2", "")
-    #         email = request.POST.get("email", "")
-    #         if pwd1 != pwd2:
-    #             return render(request, "password_upate.html", {"email": email, "msg": "密码不一致！"})
-    #         user = UserProfile.objects.get(email=email)
-    #         user.password = make_password(pwd2)
-    #         user.save()
-    #
-    #         return render(request, "login.html")
-    #     else:
-    #         email = request.POST.get("email", "")
-    #         return render(request, "password_update.html", locals())
 
 
 class SendEmailCodeView(LoginRequiredMixin, View):

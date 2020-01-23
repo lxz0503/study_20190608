@@ -8,16 +8,16 @@ class CityDictAdmin(admin.ModelAdmin):
     '''城市'''
 
     list_display = ['name', 'desc', 'add_time']
-    # search_fields = ['name', 'desc']
-    # list_filter = ['name', 'desc', 'add_time']
+    search_fields = ['name', 'desc']
+    list_filter = ['name', 'desc', 'add_time']
 
 
 class CourseOrgAdmin(admin.ModelAdmin):
     '''机构'''
 
     list_display = ['name', 'desc', 'click_nums', 'fav_nums', 'add_time']
-    # search_fields = ['name', 'desc', 'click_nums', 'fav_nums']
-    # list_filter = ['name', 'desc', 'click_nums', 'fav_nums', 'city__name', 'address', 'add_time']
+    search_fields = ['name', 'desc', 'click_nums', 'fav_nums']
+    list_filter = ['name', 'desc', 'click_nums', 'fav_nums', 'city__name', 'address', 'add_time']
 
 
 class TeacherAdmin(admin.ModelAdmin):

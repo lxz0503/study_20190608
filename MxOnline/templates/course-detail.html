@@ -40,7 +40,7 @@
 							<li><span class="pram word3">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长：</span><span>{{ course.learn_times }}</span></li>
                             <li><span class="pram word3">章&nbsp;节&nbsp;数：</span><span>{{ course.get_zj_nums }}</span></li>
                             <li><span class="pram word3">课程类别：</span><span title="">{{ course.category }}</span></li>
-							<li class="piclist"><span class="pram word4">学习用户：</span>
+							<li class="piclist"><span class="pram word4">学习用户：{{ course.students }}</span>
                                 {% for user_course in course.get_learn_users %}
                                     <span class="pic"><img width="40" height="40" src="{{ MEDIA_URL }}{{ user_course.user.image }}"/></span>
                                 {% endfor %}
