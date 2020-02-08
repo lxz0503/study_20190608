@@ -1,3 +1,4 @@
+ctrl+shift+R  可以快速找到需要所有要替换的内容
 Django WEB框架核心思想：
 
 从数据库里取出数据
@@ -164,6 +165,10 @@ python3 setup.py install
 ===================================
 http://127.0.0.1:8000/org/home/1/
 =========================================================================
+只要见到 course_org.course_set().all() 或者return self.lesson_set.all()
+就是根据外键反向获取数据库值,格式: a.b_set().all()
+
+
 django根据外键反向取数据库值:
 比如class course  包含外键course-org，目前已经取得course-org的值，如何通过course-org取出course的值呢？
 all_course = course_org.course_set().all()
