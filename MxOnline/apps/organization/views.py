@@ -48,7 +48,7 @@ class OrgView(View):
                 all_orgs = all_orgs.order_by("-course_nums")
         # 有多少家机构
         org_nums = all_orgs.count()
-        print('aaaaaa', org_nums)   # xiaozhan debug
+        # print('aaaaaa', org_nums)   # xiaozhan debug
         # 对课程机构进行分页
         # 尝试获取前台get请求传递过来的page参数
         # 如果是不合法的配置参数默认返回第一页
@@ -60,15 +60,7 @@ class OrgView(View):
         p = Paginator(all_orgs, 2, request=request)
         orgs = p.page(page)
 
-        return render(request, "org-list.html", {
-            "all_orgs": orgs,
-            "all_citys": all_citys,
-            "org_nums": org_nums,
-            'city_id': city_id,
-            "category": category,
-            'hot_orgs': hot_orgs,
-            'sort': sort,
-        })
+        return render(request, "org-list.html", locals())
 
 
 class AddUserAskView(View):
@@ -100,17 +92,11 @@ class OrgHomeView(View):
         if request.user.is_authenticated:
             if UserFavorite.objects.filter(user=request.user, fav_id=course_org.id, fav_type=2):
                 has_fav = True
-        # 反向查询到课程机构的所有课程和老师
+        # 反向查询到课程机构的所有课程和老师， 看不明白  xiaozhan debug
         all_courses = course_org.course_set.all()[:4]
         all_teacher = course_org.teacher_set.all()[:2]
-        print("all_courses are %s---%s" % (type(all_courses), all_courses))
-        return render(request, 'org-detail-homepage.html',{
-            'course_org': course_org,
-            'all_courses': all_courses,
-            'all_teacher': all_teacher,
-            'current_page': current_page,
-            'has_fav': has_fav,
-        })
+        return render(request, 'org-detail-homepage.html', locals())
+
 
 class OrgCourseView(View):
     """
@@ -128,12 +114,7 @@ class OrgCourseView(View):
             if UserFavorite.objects.filter(user=request.user, fav_id=course_org.id, fav_type=2):
                 has_fav = True
 
-        return render(request, 'org-detail-course.html', {
-           'all_courses': all_courses,
-            'course_org': course_org,
-            'current_page': current_page,
-            'has_fav': has_fav,
-        })
+        return render(request, 'org-detail-course.html', locals())
 
 
 class OrgDescView(View):
@@ -147,11 +128,8 @@ class OrgDescView(View):
         if request.user.is_authenticated:
             if UserFavorite.objects.filter(user=request.user, fav_id=course_org.id, fav_type=2):
                 has_fav = True
-        return render(request, 'org-detail-desc.html',{
-            'course_org': course_org,
-            'current_page':current_page,
-            'has_fav': has_fav,
-        })
+        return render(request, 'org-detail-desc.html', locals())
+
 
 class OrgTeacherView(View):
     """
@@ -167,12 +145,8 @@ class OrgTeacherView(View):
             if UserFavorite.objects.filter(user=request.user, fav_id=course_org.id, fav_type=2):
                 has_fav = True
 
-        return render(request, 'org-detail-teachers.html',{
-           'all_teacher':all_teacher,
-            'course_org': course_org,
-            'current_page':current_page,
-            'has_fav': has_fav,
-        })
+        return render(request, 'org-detail-teachers.html', locals())
+
 
 class AddFavView(View):
     """
@@ -262,17 +236,12 @@ class TeacherListView(View):
             page = 1
         p = Paginator(all_teachers, 1, request=request)
         teachers = p.page(page)
-        return render(request, "teachers-list.html", {
-            "all_teachers": teachers,
-            "teacher_nums": teacher_nums,
-            'sorted_teacher':sorted_teacher,
-            'sort': sort,
-        })
+        return render(request, "teachers-list.html", locals())
 
 
-#讲师详情
+# 讲师详情
 class TeacherDetailView(LoginRequiredMixin,View):
-    def get(self,request,teacher_id):
+    def get(self, request, teacher_id):
         teacher = Teacher.objects.get(id=int(teacher_id))
         teacher.click_nums += 1
         teacher.save()
@@ -287,11 +256,5 @@ class TeacherDetailView(LoginRequiredMixin,View):
             has_org_faved = True
         # 讲师排行榜
         sorted_teacher = Teacher.objects.all().order_by('-click_nums')[:3]
-        return render(request,'teacher-detail.html',{
-            'teacher':teacher,
-            'all_course':all_course,
-            'sorted_teacher':sorted_teacher,
-            'has_teacher_faved':has_teacher_faved,
-            'has_org_faved':has_org_faved,
-        })
+        return render(request, 'teacher-detail.html', locals())
 

@@ -15,7 +15,7 @@ class OperateJson(object):
     def read_data(self):
         with open(self.file_path) as fp:
             res = json.load(fp)
-            print('change json to dictionary', type(res))
+            # print('change json to dictionary', type(res))
             return res
 
     # 根据关键字获取数据
@@ -23,7 +23,7 @@ class OperateJson(object):
         # print(type(self.data))
         return self.data[index]
 
-    # 写json
+    # 把数据写入 json 文件, 用json.dumps()，参数是字典格式
     def write_data(self, data):
         with open('xiaozhan.json', 'w') as fp:
             fp.write(json.dumps(data))
