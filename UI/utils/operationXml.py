@@ -50,3 +50,5 @@ if __name__ == '__main__':
     print(r)
     r = data.getXmlData('url')
     print(r)
+    r = data.getXmlUser('divText', 'emailNull')
+    print(r)

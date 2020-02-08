@@ -37,12 +37,7 @@ class CourseListView(View):
             page = 1
         p = Paginator(all_courses, 2, request=request)
         courses = p.page(page)
-        return render(request, "course-list.html", {
-            "all_courses": courses,
-            'sort': sort,
-            'hot_courses': hot_courses,
-
-        })
+        return render(request, "course-list.html", locals())
 
 
 class CourseDetailView(View):
@@ -69,12 +64,7 @@ class CourseDetailView(View):
             relate_courses = Course.objects.filter(tag=tag)[:2]
         else:
             relate_courses = []
-        return  render(request, "course-detail.html", {
-            'course':course,
-            'relate_courses': relate_courses,
-            "has_fav_course": has_fav_course,
-            "has_fav_org": has_fav_org,
-        })
+        return  render(request, "course-detail.html", locals())
 
 
 class CourseInfoView(LoginRequiredMixin,View):
@@ -104,11 +94,7 @@ class CourseInfoView(LoginRequiredMixin,View):
 
         # 资源
         all_resources = CourseResource.objects.filter(course=course)
-        return render(request,'course-video.html',{
-            'course':course,
-            'all_resources':all_resources,
-            'relate_courses':relate_courses,
-        })
+        return render(request,'course-video.html', locals())
 
 
 class CommentsView(LoginRequiredMixin,View):
@@ -117,11 +103,7 @@ class CommentsView(LoginRequiredMixin,View):
         course = Course.objects.get(id=int(course_id))
         all_resources = CourseResource.objects.filter(course=course)
         all_comments = CourseComments.objects.all()
-        return render(request, "course-comment.html", {
-            "course": course,
-            "all_resources": all_resources,
-            'all_comments':all_comments,
-        })
+        return render(request, "course-comment.html", locals())
 
 
 #添加评论
@@ -179,10 +161,5 @@ class VideoPlayView(LoginRequiredMixin, View):
 
         # 资源
         all_resources = CourseResource.objects.filter(course=course)
-        return render(request,'course-play.html',{
-            'course':course,
-            'all_resources':all_resources,
-            'relate_courses':relate_courses,
-            'video':video,
-        })
+        return render(request,'course-play.html', locals())
 

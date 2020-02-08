@@ -50,6 +50,7 @@ class CourseOrg(models.Model):
 
 
 class Teacher(models.Model):
+    # 外键org对应着CourseOrg,表明一个机构CourseOrg可以有多个Teacher
     org = models.ForeignKey(CourseOrg,verbose_name='所属机构',on_delete=models.CASCADE)
     name = models.CharField('教师名',max_length=50)
     work_years = models.IntegerField('工作年限',default=0)
