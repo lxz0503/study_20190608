@@ -19,7 +19,7 @@ class CourseListView(View):
         # 搜索功能
         search_keywords = request.GET.get('keywords', '')
         if search_keywords:
-            # 在name字段进行操作,做like语句的操作。i代表不区分大小写,双下划线表示模糊查询
+            # 在name字段进行操作,做like语句的操作。i代表不区分大小写
             # or操作使用Q
             all_courses = all_courses.filter(Q(name__icontains=search_keywords) | Q(desc__icontains=search_keywords) | Q(
                 detail__icontains=search_keywords))
@@ -37,7 +37,12 @@ class CourseListView(View):
             page = 1
         p = Paginator(all_courses, 2, request=request)
         courses = p.page(page)
-        return render(request, "course-list.html", locals())
+        return render(request, "course-list.html", {
+            "all_courses": courses,
+            'sort': sort,
+            'hot_courses': hot_courses,
+
+        })
 
 
 class CourseDetailView(View):
@@ -64,7 +69,12 @@ class CourseDetailView(View):
             relate_courses = Course.objects.filter(tag=tag)[:2]
         else:
             relate_courses = []
-        return  render(request, "course-detail.html", locals())
+        return  render(request, "course-detail.html", {
+            'course':course,
+            'relate_courses': relate_courses,
+            "has_fav_course": has_fav_course,
+            "has_fav_org": has_fav_org,
+        })
 
 
 class CourseInfoView(LoginRequiredMixin,View):
@@ -89,12 +99,16 @@ class CourseInfoView(LoginRequiredMixin,View):
         all_user_courses = UserCourse.objects.filter(user_id__in=user_ids)
         # 取出所有课程id
         course_ids = [all_user_course.course_id for all_user_course in all_user_courses]
-        # 通过所有课程的id,找到所有的课程，按点击量去五个，[:5]相当于limit语句
+        # 通过所有课程的id,找到所有的课程，按点击量去五个
         relate_courses = Course.objects.filter(id__in=course_ids).order_by("-click_nums")[:5]
 
         # 资源
         all_resources = CourseResource.objects.filter(course=course)
-        return render(request,'course-video.html', locals())
+        return render(request,'course-video.html',{
+            'course':course,
+            'all_resources':all_resources,
+            'relate_courses':relate_courses,
+        })
 
 
 class CommentsView(LoginRequiredMixin,View):
@@ -103,7 +117,11 @@ class CommentsView(LoginRequiredMixin,View):
         course = Course.objects.get(id=int(course_id))
         all_resources = CourseResource.objects.filter(course=course)
         all_comments = CourseComments.objects.all()
-        return render(request, "course-comment.html", locals())
+        return render(request, "course-comment.html", {
+            "course": course,
+            "all_resources": all_resources,
+            'all_comments':all_comments,
+        })
 
 
 #添加评论
@@ -161,5 +179,10 @@ class VideoPlayView(LoginRequiredMixin, View):
 
         # 资源
         all_resources = CourseResource.objects.filter(course=course)
-        return render(request,'course-play.html', locals())
+        return render(request,'course-play.html',{
+            'course':course,
+            'all_resources':all_resources,
+            'relate_courses':relate_courses,
+            'video':video,
+        })
 

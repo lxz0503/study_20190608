@@ -55,12 +55,12 @@
                     <div class="layout">
                         <div class="head">
                             <ul class="tab_header">
-                                <li class="{% if sort == '' %}active{% endif %}">
-                                    <a href="?sort=students&ct={{ category }}&city={{ city_id }}">全部</a></li>
-                                <li class="{% if sort == 'students' %}active{% endif %}">
-                                    <a href="?sort=students&ct={{ category }}&city={{ city_id }}">学习人数 &#8595;</a></li>
-                                <li class="{% if sort == 'courses' %}active{% endif %}">
-                                    <a href="?sort=courses&ct={{ category }}&city={{ city_id }}">课程数 &#8595;</a></li>
+                                <li class="{% if sort == '' %}active{% endif %}"><a
+                                        href="?sort=students&ct={{ category }}&city={{ city_id }}">全部</a></li>
+                                <li class="{% if sort == 'students' %}active{% endif %}"><a
+                                        href="?sort=students&ct={{ category }}&city={{ city_id }}">学习人数 &#8595;</a></li>
+                                <li class="{% if sort == 'courses' %}active{% endif %}"><a
+                                        href="?sort=courses&ct={{ category }}&city={{ city_id }}">课程数 &#8595;</a></li>
                             </ul>
                         </div>
 
@@ -78,7 +78,7 @@
                                 </dt>
                                 <dd>
                                     <div class="clearfix">
-                                        <a href="{% url 'org:org_home' course_org.id %}">
+                                        <a href="org-detail-homepage.html">
                                             <h1>{{ course_org.name }}</h1>
                                             <div class="pic fl">
 
@@ -156,13 +156,12 @@
             </div>
             <div class="right companyrank layout">
                 <div class="head">授课机构排名</div>
-                {% for current_org in hot_orgs %}
+                {% for curent_org in hot_orgs %}
                     <dl class="des">
                         <dt class="num fl">{{ foorloop.counter }}</dt>
                         <dd>
-                            <!--<a href="/company/2"><h1>{{ current_org.name }}</h1></a>-->
-                            <p>{{ current_org.name }}</p>
-                            <p>{{ current_org.address }}</p>
+                            <a href="/company/2/"><h1>{{ curent_org.name }}</h1></a>
+                            <p>{{ curent_org.address }}</p>
                         </dd>
                     </dl>
                 {% endfor %}
