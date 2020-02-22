@@ -237,6 +237,14 @@ so, 增加你本地的文件并提交,可以这样
 git add.
 git commit -m "first time add project"
 git push
+==================================================
+git报错bad signature和index file corrupt的处理方法
+index file在 git 里面一般指的是 .git/index 这个文件。
+这个文件保存的是暂存区的信息（索引信息）。可以通过 git ls-files --stage 来查看暂存区的内容
+解决办法：
 
+进入到工程目录下: cd /path/to/dir
+删除或重命名 .git/index 文件： rm -f .git/index 或 mv .git/index{,.bak}
+重建 .git/index : git read-tree 或者直接 git reset
 
 
