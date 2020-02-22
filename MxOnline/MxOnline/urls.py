@@ -24,7 +24,7 @@ urlpatterns = [
     path('update_pwd/', UpdatePwdView.as_view(), name='update_pwd'),       # debug xiaozhan
 
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
-    re_path(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),
+    re_path(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
 
     # 课程机构app相关url配置, 可以回去参考老男孩视频教学
     path("org/", include('organization.urls', namespace="org")),  # 机构相关的链接都在org的链接下面 http://127.0.0.1:8000/org/org_list/
@@ -37,7 +37,7 @@ urlpatterns = [
     # re_path(r'^static/(?P<path>.*)', serve, {"document_root": STATICFILES_DIRS }),
 
     # 富文本相关url
-    path('ueditor/', include('DjangoUeditor.urls')),
+    # path('ueditor/', include('DjangoUeditor.urls')),
 ]
 # debug by xiaozhan, to adapt to Django 2.2 or higher version
 # 全局404页面配置

@@ -38,13 +38,13 @@ class CustomBackend(ModelBackend):
 class IndexView(View):
     '''首页'''
     def get(self, request):
-        # 轮播图
+        #轮播图
         all_banners = Banner.objects.all().order_by('index')
-        # 课程
+        #课程
         courses = Course.objects.filter(is_banner=False)[:6]
-        # 轮播课程
+        #轮播课程
         banner_courses = Course.objects.filter(is_banner=True)[:3]
-        # 课程机构
+        #课程机构
         course_orgs = Course.objects.all()[:15]
         return render(request, 'index.html', {
             'all_banners': all_banners,
@@ -151,7 +151,7 @@ class ForgetPwdView(View):
         forget_form = ForgetPwdForm()
         return render(request, 'forgetpwd.html', {'forget_form': forget_form})
 
-    def post(self, request):
+    def post(self,request):
         forget_form = ForgetPwdForm(request.POST)
         if forget_form.is_valid():
             email = request.POST.get('email', None)
@@ -246,20 +246,37 @@ class UpdatePwdView(View):
     """
     个人中心修改用户密码
     """
+    # def post(self, request):
+    #     modify_form = ModifyPwdForm(request.POST)
+    #     if modify_form.is_valid():
+    #         pwd1 = request.POST.get("password1", "")
+    #         pwd2 = request.POST.get("password2", "")
+    #         if pwd1 != pwd2:
+    #             return HttpResponse('{"status":"fail","msg":"密码不一致"}',  content_type='application/json')
+    #         user = request.user
+    #         user.password = make_password(pwd2)
+    #         user.save()
+    #
+    #         return HttpResponse('{"status":"success"}', content_type='application/json')
+    #     else:
+    #         return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
+
     def post(self, request):
-        modify_form = ModifyPwdForm(request.POST)
-        if modify_form.is_valid():
+        update_form = UpdatePwdView(request.POST)
+        if update_form.is_valid():
             pwd1 = request.POST.get("password1", "")
             pwd2 = request.POST.get("password2", "")
+            email = request.POST.get("email", "")
             if pwd1 != pwd2:
-                return HttpResponse('{"status":"fail","msg":"密码不一致"}',  content_type='application/json')
-            user = request.user
+                return render(request, "password_upate.html", {"email": email, "msg": "密码不一致！"})
+            user = UserProfile.objects.get(email=email)
             user.password = make_password(pwd2)
             user.save()
 
-            return HttpResponse('{"status":"success"}', content_type='application/json')
+            return render(request, "login.html")
         else:
-            return HttpResponse(json.dumps(modify_form.errors), content_type='application/json')
+            email = request.POST.get("email", "")
+            return render(request, "password_update.html", locals())
 
 
 class SendEmailCodeView(LoginRequiredMixin, View):

@@ -45,6 +45,7 @@ class EmailVerifyRecord(models.Model):
 
 # Banner 轮播图
 
+
 class Banner(models.Model):
     title = models.CharField('标题', max_length=100)
     image = models.ImageField('轮播图', upload_to='banner/%Y%m', max_length=100)

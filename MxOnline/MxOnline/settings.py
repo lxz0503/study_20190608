@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'operation',
     'captcha',
     'pure_pagination',
-    'DjangoUeditor',
 ]
 
 MIDDLEWARE = [

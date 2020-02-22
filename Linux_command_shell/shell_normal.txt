@@ -725,7 +725,6 @@ download package from https://www.python.org/downloads/release/python-375/
 
 安装setuptools
 
-
 cd setuptools-38.2.3
 
 python3 setup.py install
@@ -906,6 +905,10 @@ https://www.cnblogs.com/Dreamcho/p/10805690.html
 三、更改/etc/ftpusers，注释掉root用户：sudo vim /etc/ftpusers
 四、在终端中重启FTP服务：sudo /etc/init.d/vsftpd restart
 CuteFTP建立连接：
+====================================================================
+在Linux系统里执行多条命令，每个命令用分号分隔
+cmd = 'cd {fromDir}/bootstrap_installer; ./setup_linux -installerUpdateURLs none -productUpdateURLs none -silent -installPath {toDir}  -yum -y install'.format(fromDir=fromDir, profile=profile, toDir=toDir + '/' + spin)
+
 
 
 
