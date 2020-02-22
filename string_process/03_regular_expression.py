@@ -65,6 +65,24 @@ m = re.search('foo', 'seafood')
 if m is not None:
     print(m.group())    # foo
 
+#
+name = 'NIGHTLYSPIN'
+with open('reg_text', 'r') as fd:
+    content = fd.read()
+    found = re.search('%s=(.*?)\n' % name, content)  # 因为后面有换行符，所以是非贪婪匹配
+    if found is not None:
+        print(found.group())    # NIGHTLYSPIN=vx20200221095524_vx7-SR0640-native
+        print(found.group(1).strip())  # vx20200221095524_vx7-SR0640-native   表示匹配第一个分组，即第一个小括号里面的内容
+    else:
+        print('nothing')
+
+name = 'NIGHTLYSPIN'
+content = 'NIGHTLYSPIN=vx20200221095524_vx7-SR0640-native  '
+found = re.search('%s=(.*)' % name, content)   # 这里必须是贪婪匹配
+if found:
+    print(found.group())            # NIGHTLYSPIN=vx20200221095524_vx7-SR0640-nativ
+    print(found.group(1).strip())   # vx20200221095524_vx7-SR0640-native
+
 m = re.match('foo', 'seafood')
 if m is not None:
     print(m.group())    # nothing
