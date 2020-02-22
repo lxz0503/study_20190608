@@ -16,7 +16,8 @@ for item in data:
     if item == 80:
         print(item)   # 最后一个元素后面不用添加*
     else:
-        print(item, end='*')  # 在输出设置间隔符为‘*’，连接各个元素, 每个元素后面以 * 作为结尾输出
+        print(item, end='*')  # 在输出设置间隔符为‘*’，连接各个元素, 每个元素后面以 * 作为结尾输出,加入参数end后print不换行
+
 print(strnull)
 print(stradd.lstrip('+'))
 print(strlin.lstrip('<'))

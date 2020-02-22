@@ -1,2 +1,11 @@
 SELECT TOP 6 address_id,LTRIM(consignee) AS consignee 
 FROM user_address;
+
+
+# MySQL 如下
+
+SELECT address_id,LTRIM(consignee) AS consignee
+FROM shop.user_address
+LIMIT 6;
+
+# LTRIM(consignee)表示去掉左边的空格

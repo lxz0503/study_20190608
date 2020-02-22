@@ -12,6 +12,7 @@ list_dict = [{"name": "无语", "python": 99, "c": 89},
 print("对列表排序前：")
 for d in list_dict:
     print(d)
+
 list_dict.sort(key=lambda x: x['python'], reverse=True)  # 降序排列
 
 print("对列表排序后：")

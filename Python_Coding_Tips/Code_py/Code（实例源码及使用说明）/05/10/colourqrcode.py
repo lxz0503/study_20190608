@@ -13,7 +13,7 @@ import random
 import os
 import pandas as pd
 
-path=input('请输入保存路径：')
+path = input('请输入保存路径：')
 da = pd.DataFrame(pd.read_excel('qrcode.xlsx')) # 读取Excel
 # 实例化二维码生成类
 qr = qrcode.QRCode(
@@ -26,12 +26,13 @@ qr = qrcode.QRCode(
 # 随机颜色
 def rndColor():
     # 定义颜色列表（红、绿、蓝、紫、黑）
-    list=['red','green','blue','purple','black']
-    index=random.randint(0,len(list)-1) # 随机生成索引
-    return list[index] # 按索引返回颜色
+    list_color = ['red', 'green', 'blue', 'purple', 'black']
+    index = random.randint(0, len(list_color)-1)     # 随机生成索引
+    return list_color[index]              # 按索引返回颜色
+
 i=0 # 循环标识
-while i < len(da.values): # 遍历数据
-    qr.clear() # 清空二维码设置的数据
+while i < len(da.values):         # 遍历数据
+    qr.clear()                # 清空二维码设置的数据
     # 设置二维码数据
     qr.add_data(data=da.values[i][1])
     # 启用二维码颜色设置

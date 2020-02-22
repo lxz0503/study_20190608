@@ -1,3 +1,5 @@
 SELECT "goods_id","cat_id","goods_name" FROM (
 SELECT "goods_id","cat_id","goods_name" FROM "goods" ORDER BY DBMS_RANDOM.VALUE()) 
 WHERE ROWNUM=1;
+
+#

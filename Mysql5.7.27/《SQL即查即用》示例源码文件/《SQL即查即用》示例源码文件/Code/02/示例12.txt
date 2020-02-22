@@ -1,3 +1,5 @@
 SELECT goods_name,market_price
 FROM shop.goods
-LIMIT 2 OFFSET 3; 
+LIMIT 2 OFFSET 3;
+
+# 表示从第一条数据开始偏移三条数据，即从第四条数据开始取两条数据

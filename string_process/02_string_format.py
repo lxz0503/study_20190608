@@ -9,11 +9,11 @@ print('RUNDATE={RUNDATE}'.format(RUNDATE = week))
 # os.system(command)
 # upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --log {LOG} --rundate {RUNDATE} --release {RELEASE}'.format( LOG= logs, RUNDATE = run_date, RELEASE = release_name)
 # os.system(upload_command)
-print("{0[0]}.{0[1]}".format(('baidu','com')))
+print("{0[0]}.{0[1]}".format(('baidu', 'com')))
 # baidu.com
 
 print("{0:.2f} {1:.1f}".format(3.1415926, 4.23))
-# 3.14
+# 3.14  4.2     前面的0表示第一个参数，1表示第二个参数
 
 # 基本语法是通过 {} 和 : 来代替以前的 %
 
@@ -29,10 +29,13 @@ print('{:*<10}'.format('beijing'))
 print('{:*^10}'.format('beijing'))   # 居中
 # 右对齐
 
-print('{:*>10}'.format('beijing'))
+print('{:*>10}'.format('beijing'))   # 右对齐
 a = '{:*>10}'.format('beijing')
 print(a)
 
 # 分割线*******
 # ***分割线****
 # *******分割线
+
+print("{1:.3f},{0:02d}".format(5, 10.11))     # 10.110 , 05
+# {0:02d}   表示位置为0的参数，宽度为2，类型为d,用0来补足

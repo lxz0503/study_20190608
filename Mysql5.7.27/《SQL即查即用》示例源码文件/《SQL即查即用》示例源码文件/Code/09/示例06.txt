@@ -1,3 +1,9 @@
 SELECT user_id,email,CONVERT(VARCHAR(10),birthday,120) AS birthday
 FROM users 
 WHERE email LIKE '%/_%' ESCAPE '/';
+
+# MySQL,  注意，下面的不支持VARCHAR
+
+SELECT user_id,email,CAST(birthday AS CHAR(10)) AS birthday
+FROM users
+WHERE email LIKE '%/_%' ESCAPE '/';

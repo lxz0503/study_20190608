@@ -17,8 +17,7 @@ def get_text():
 
 file_txt = get_text()
 words = file_txt.split()    # 对字符串以空格进行分割，获得单词列表
-counts = {}
-
+counts = {}      # 初始化空字典，用来存储单词和单词数目
 for word in words:
     # if len(word) == 1:
     #     continue

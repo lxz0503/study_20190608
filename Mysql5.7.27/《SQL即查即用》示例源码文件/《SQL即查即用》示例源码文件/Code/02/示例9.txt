@@ -1,2 +1,3 @@
+# this is for oracle but not mysql
 SELECT TOP 5 goods_name,market_price
 FROM goods; 
