@@ -12,7 +12,7 @@ for line in open('cba.txt'):
     over = new.replace('\n', '')          # 通过替换的方式去除换行符“\n”
     list1 = over.split(',')               # 将每行数据转换为列表
     cba.append(list1)                     # 将每行数据添加至cba列表
-##print(cba)
+print(cba)
 print("\033[1;35m=" * 70)
 print('2018-2019赛季CBA 常规赛得分榜'.center(60))
 print('=' * 70 + '\033[0m')

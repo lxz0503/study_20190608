@@ -1,3 +1,8 @@
 SELECT BookName,Price,pDate 
 FROM bookinfo 
-WHERE BookName LIKE '%PHP%' OR BookName LIKE '%Oracle%' OR BookName LIKE '%Android%';
+WHERE BookName LIKE '%PHP%'
+OR BookName LIKE '%Oracle%'
+OR BookName LIKE '%Android%';
+
+# LIKE表示匹配
+# % 表示通配符

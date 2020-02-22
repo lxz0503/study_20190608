@@ -5,7 +5,7 @@
 # 文件名称   ：demo03.py
 # 开发工具   ：PyCharm
 name = '王李张李陈王杨张吴周王刘赵黄吴杨'
-myname = set(name)
+myname = set(name)    # 结合自带去重的特性
 print(myname)
 newname = list(set(name))
 print(''.join(newname))

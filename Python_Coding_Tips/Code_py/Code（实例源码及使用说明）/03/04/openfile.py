@@ -8,10 +8,11 @@
 '''
   如何调用系统默认程序打开相应文件
 '''
-import os # 导入os模块
-while True: # 循环输入
+import os
+while True:
     try:
-        path=input('请输入文件所在路径：') # 记录输入的文件路径
-        os.startfile(path) # 调用系统程序打开文件
-    except :
-        print('请输入正确的文件路径……')
+        path = input('请输入文件所在路径：')    # 记录输入的文件路径, 例如D:\\log.txt
+        os.startfile(path)                      # 调用系统程序打开文件
+    except Exception as e:
+        print(e)
+        # print('请输入正确的文件路径……')

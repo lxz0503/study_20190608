@@ -8,7 +8,7 @@
 '''
   根据图片显示其轮廓
 '''
-from PIL import Image,ImageFilter
-img=Image.open('test.png') # 打开图片文件
-newimg=img.filter(ImageFilter.CONTOUR) # 设置图片筛选器
-newimg.save('轮廓效果.png', 'png') # 保存轮廓效果的图片
+from PIL import Image, ImageFilter
+img = Image.open('test.png')     # 打开图片文件
+newimg = img.filter(ImageFilter.CONTOUR)    # 设置图片筛选器
+newimg.save('轮廓效果.png', 'png')      # 保存轮廓效果的图片

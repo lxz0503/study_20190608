@@ -1,3 +1,9 @@
 SELECT order_id,order_sn,total_amount
 FROM orderform 
 WHERE order_id NOT IN (SELECT TOP 8 order_id FROM orderform);
+
+# 暂时没找到MySQL中如何替换上面的语句,下面的执行失败
+
+SELECT order_id,order_sn,total_amount
+FROM orderform
+WHERE order_id NOT IN (SELECT order_id FROM orderform LIMIT 8);

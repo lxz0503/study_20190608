@@ -153,7 +153,7 @@ if __name__ == '__main__':
         os.remove(temp[0])  # 删除合并后的PDF文件
         print("提取完成！文件保存在：",targetpath )
     else:
-        print("没有要提取目录的Word文档或者提取失败！")
+        print("没有要提取目录的Word文档或者提取失败")
 	
 
 

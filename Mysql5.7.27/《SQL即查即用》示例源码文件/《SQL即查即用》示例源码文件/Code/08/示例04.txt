@@ -1,2 +1,19 @@
 SELECT TOP 6 user_id,email,CAST(total_amount AS int) AS total_amount 
 FROM users;
+
+
+# MySQL用法如下
+SELECT user_id,email,CAST(total_amount AS SIGNED) AS total_amount
+FROM shop.users
+LIMIT 6;
+
+# CAST(total_amount AS DECIMAL(10,2))
+# CAST(字段名 as 要转换的类型)
+
+#其中，可以转换的类型为：
+CHAR（字符）
+DATE（日期）
+DATETIME（日期和时间）
+DECIMAL（浮点型）
+SIGNED（整型）
+TIME（时间型）

@@ -1,3 +1,9 @@
 SELECT TOP 6 id,name,cat_name 
 FROM brand 
 WHERE name LIKE '[A-Z]%';
+
+# MySQL   没有成功，回去查找原因
+SELECT id,name,cat_name
+FROM shop.brand
+WHERE name LIKE '[A-Z]%'
+LIMIT 6;

@@ -43,7 +43,7 @@ print(l2)
 
 dict1={1: 2, 2: 2, 3: 1, 4: 7, 5: 6, 6: 4, 7: 3, 8: 2, 9: 1}
 
-d1=sorted(dict1.values(),reverse=True)#按values值进行排序
+d1=sorted(dict1.values(),reverse=True)    #按values值进行排序
 d2=sorted(dict1)                      #
 d3=sorted(dict1.keys(),reverse=True)  #按key值进行排序
 print(d1)

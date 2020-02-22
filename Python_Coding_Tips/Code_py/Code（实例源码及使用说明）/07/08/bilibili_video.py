@@ -48,10 +48,6 @@ class Crawl():
         else:
             print('视频下载失败！')
 
-
-
-
-
 if __name__ == '__main__':
     c = Crawl()
     ranking = 0                                           # 排名变量

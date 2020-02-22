@@ -1,2 +1,11 @@
 SELECT TOP 6 user_id,email,CONVERT(VARCHAR(10),reg_time,120) AS reg_time 
 FROM users;
+
+# MySQL 语句如下
+
+SELECT user_id,email,CAST(reg_time AS char(10)) AS reg_time
+FROM shop.users
+LIMIT 6;
+
+
+# CAST(reg_time AS char(10))表示把长日期格式变为短日期格式

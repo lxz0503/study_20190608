@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #container {
+        width: 1002px;
+        background: gray;
+    }
+    #header {
+        height: 120px;
+        background: orange;
+        margin: 10px;
+        border: 5px solid green;
+        padding: 10px;
+    }
+    #main {
+        height: 600px;
+    ;   background: white;
+    }
+      #lside {
+        width: 500px;
+        height: 600px;
+        float: left;
+     }
+    #left1 {
+        width: 496px;
+        height: 280px;
+        clear: left;   /* 这个很关键*/
+        background: red;
+        margin: 10px;
+    }
+    #left2 {
+        width: 496px;
+        height: 280px;
+        clear: left;  /* 很关键*/
+        background: green;
+        margin: 10px;
+    }
+    #rside {
+        width: 500px;
+        height: 600px;
+        float: right;
+    }
+    #right1 {
+        width: 496px;
+        height: 280px;
+        clear: right;
+        background: #1E7EE2;
+        margin: 10px;
+    }
+    #right2 {
+        width: 496px;
+        height: 280px;
+        clear: right;
+        background: #98bf21;
+        margin: 10px;
+    }
+    #footer {
+        height: 100px;
+    ;   background: blue;
+        margin: 5px;
+    }
+
+</style>
+<body>
+<div id="container">
+    <div id="header">this is the header</div>
+    <div id="main">
+        <div id="lside">
+            <div id="left1">this is left1</div>
+            <div id="left2">this is left2</div>
+        </div>
+        <div id="rside">
+            <div id="right1">this is right1</div>
+            <div id="right2">this is right2</div>
+        </div>
+    </div>
+    <div id="footer">this is footer</div>
+</div>
+</body>
+</html>

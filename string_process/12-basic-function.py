@@ -43,7 +43,7 @@ print(s1.join(seq_list))
 # 从左到右移除字符串的指定字符，无字符集参数或为 None 时移除空格，
 # str 时移除所有属于字符集子串的字符,一旦不属于则停止移除并返回字符串副本
 str_test = 'www.example.com'
-new_str = str_test.lstrip('cmowz.')
+new_str = str_test.lstrip('cmowz.')   # 没看懂
 print(new_str)            # example.com
 
 # replace() 方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次

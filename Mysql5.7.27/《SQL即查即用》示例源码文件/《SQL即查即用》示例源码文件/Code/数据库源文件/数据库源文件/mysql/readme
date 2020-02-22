@@ -1,0 +1,4 @@
+xiaozhan
+先在自己本地机器上创建数据库名字为shop,直接打开MySQL workbench创建即可
+在pycharm里面直接运行这个MySQL.sql,refresh all查看，生成对应的table
+然后练习SQL脚本

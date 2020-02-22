@@ -1,2 +1,9 @@
-SELECT goods_id AS 商品ID,goods_name AS 商品名称,1+1,'字符'+'串列'
+SELECT
+goods_id AS 商品ID,
+goods_name AS 商品名称,
+1+1,
+'字符'+'串列'
 FROM goods;
+
+# 以上脚本没有任何意义，只是增加了 两个新的column，分别是1+1列，然后每行数值都是2
+# '字符'+'串列' 内容为空

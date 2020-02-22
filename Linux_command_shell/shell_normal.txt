@@ -35,7 +35,7 @@ sudo service tftpd-hpa restart -----sometimes you need to restart
 =============for my environment,Ubuntu version is lower than 18.04========
 apt-get install tftpd-hpa
 
-apt-get install xinetd
+apt-get install xinetd    (vi /etc/xinetd.d/tftp)
 
 enter /etc/xinetd.d and touch tftp, chmod -R 777 tftp
 

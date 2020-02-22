@@ -11,7 +11,7 @@ def my_sort(wordlist):  # 指定要排序的列表
     for i in range(len(temp)):  # 遍历排序后的列表
         result.append(temp[i][1]) # 取出汉字保存到新列表中
     return result  # 返回排序后的列表
-
+# 函数调用
 print(my_sort(['华为', '小米' , '苹果', '三星' ]))  # 调用函数时指定一个品牌名称列表
 
 

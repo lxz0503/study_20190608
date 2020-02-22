@@ -1,3 +1,5 @@
 SELECT goods_id,goods_name,shop_price
 FROM goods 
-WHERE shop_price !> 2000; 
+WHERE shop_price <= 2000;
+# SQL server里面是!>
+# 我是用MySQL，替换为<=

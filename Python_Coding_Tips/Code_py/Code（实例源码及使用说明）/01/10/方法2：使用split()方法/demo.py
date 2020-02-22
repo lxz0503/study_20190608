@@ -5,8 +5,8 @@
 # 文件名称   ：demo01.py
 # 开发工具   ：PyCharm
 word = '编号   姓名       性别 年级      学校   奖项'
-list = word.split(' ')
-print(list)    # 里面会包含空格元素,因为上面的有多个空格
-listnew = [i for i in list if i!='']
+list1 = word.split(' ')
+print(list1)    # 里面会包含空格元素,因为上面的有多个空格
+listnew = [i for i in list1 if i != '']
 new_list = ' '.join(listnew)
 print(new_list)

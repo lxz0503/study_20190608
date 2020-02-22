@@ -1,3 +1,4 @@
+--适用于SQL server
 --查询明日图书表中所有图书信息
 SELECT ISBN,bookname,writer,price,intime FROM bookinfo ORDER BY ISBN;
 --把长日期格式数据转化为短日期格式数据
@@ -7,3 +8,12 @@ FROM bookinfo ORDER BY ISBN;
 SELECT ISBN,bookname, REPLACE(CONVERT(char(10),intime,120),'-','/') 
 AS 数据录入日期 
 FROM bookinfo ORDER BY ISBN;
+--------------------------------下面的适用于MySQL------
+--把长日期格式数据转化为短日期格式数据 ， 即2018-01-22 14:53:55.290000 变为 2018-01-22
+SELECT ISBN,bookname, CAST(INTime as char(10)) AS 数据录入日期
+FROM shop.bookinfo
+ORDER BY ISBN;
+--将日期格式中的“-”转化为“/”
+SELECT ISBN,bookname, REPLACE(CAST(INTime as char(10)),'-','/') AS 数据录入日期
+FROM shop.bookinfo
+ORDER BY ISBN;

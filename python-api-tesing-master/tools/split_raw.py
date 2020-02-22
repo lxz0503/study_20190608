@@ -8,6 +8,7 @@ import argparse
 
 from photos import *
 from data_common import *
+import cv2
     
 parser = argparse.ArgumentParser()
 parser.add_argument('directory', action="store", help=u'文件名')

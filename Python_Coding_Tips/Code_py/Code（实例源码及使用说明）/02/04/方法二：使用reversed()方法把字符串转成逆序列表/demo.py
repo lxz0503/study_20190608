@@ -4,6 +4,6 @@
 # 开发时间   ：2019/7/2  14:45
 # 文件名称   ：demo.py
 # 开发工具   ：PyCharm
-big20='王李张刘陈杨黄赵吴周徐孙马胡朱郭何罗高林'
-for x in reversed(big20):
-    print(x,end='')
+big20 = '王李张刘陈杨黄赵吴周徐孙马胡朱郭何罗高林'
+for x in reversed(big20):     # reversed()函数返回一个反转的迭代器
+    print(x, end='')

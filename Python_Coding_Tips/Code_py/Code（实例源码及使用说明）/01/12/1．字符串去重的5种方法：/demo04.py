@@ -5,13 +5,13 @@
 # 文件名称   ：demo04.py
 # 开发工具   ：PyCharm
 
-name='王李张李陈王杨张吴周王刘赵黄吴杨'
-l = len(name)        # 字符床下标总长度
+name = '王李张李陈王杨张吴周王刘赵黄吴杨'
+name_len = len(name)        # 字符串下标总长度
 for s in name:
-    if name[0] in name[1:l]:
-        name = name[1:l]
+    if name[0] in name[1:name_len]:
+        name = name[1:name_len]
     else:
-        name= name[1:l]+name[0]
+        name = name[1:name_len] + name[0]
 print(name)
 
 

@@ -1,3 +1,8 @@
-SELECT goods_id AS 商品ID,goods_name AS 商品名称,
+SELECT
+goods_id AS 商品ID,
+goods_name AS 商品名称,
 (shop_price - cost_price) AS 销售利润 
 FROM goods;
+
+# 注意，在workbench里面运行上面的脚本会报错，提示找不到goods这个table
+# 必须修改为shop.goods

@@ -1,3 +1,3 @@
-SELECT "goods_name", "market_price"
-FROM "goods"
-WHERE ROWNUM <= 5; 
+SELECT goods_name, market_price
+FROM shop.goods
+WHERE sales_sum <= 5;

@@ -1,5 +1,17 @@
-SELECT ISBN,BookName,INTime 数据录入时间 FROM bookinfo_zerobasis WHERE INTime 
+SELECT ISBN,BookName,INTime 数据录入时间 FROM bookinfo_zerobasis
+WHERE INTime
 BETWEEN
 DATEADD(DAY,-1,GETDATE()) 
 AND
 GETDATE();
+# 上面的适用于SQL server数据库
+
+# 下面的适用于MySQL数据库
+SELECT ISBN,BookName,INTime 数据录入时间
+FROM shop.bookinfo_zerobasis
+WHERE INTime
+BETWEEN
+DATE_ADD(CURDATE(),INTERVAL -700 DAY) # 表示从今天往前700天,往后就写正数
+# DATE_ADD(CURDATE(),INTERVAL -2 YEAR)   # 从今天往前反推两年
+AND
+CURDATE();
