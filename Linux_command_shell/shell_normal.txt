@@ -682,7 +682,7 @@ set the background color as green on linux
 Default Foregroung  Red 15 Green 15 Blue 15
 Default Backgroung  Red 199 Green 237 Blue 204
 Cursor Color        Red 255
-===========================================================
+=========================================================== U盘恢复到原始大小
 how to solve U disk space issue----64G is just showing 70M
 
 https://blog.csdn.net/suiyuehuimou/article/details/82809203
@@ -901,17 +901,74 @@ https://www.cnblogs.com/Dreamcho/p/10805690.html
 安装vsftp服务器
 
 一、在终端上输入 sudo apt-get install vsftpd 命令，等待安装完成
+查询:  service vsftpd status
 二、修改vsftpd.conf文件：sudo vim /etc/vsftpd.conf，将 #write_enable=YES 前面的注释#去掉
 三、更改/etc/ftpusers，注释掉root用户：sudo vim /etc/ftpusers
 四、在终端中重启FTP服务：sudo /etc/init.d/vsftpd restart
 CuteFTP建立连接：
+-----Ubuntu 18.04配置ftp
+1.安装vsftpd(终端执行)
+? ??sudo?apt-get install?vsftpd
+
+2.配置vsftpd(终端执行)
+? ?sudo gedit?/etc/vsftpd.conf
+
+? ?找到:listen=YES ?#将NO改为YES
+
+? ?找到:listen_ipv6=NO?#将YES改为NO
+          local_umask=022
+  试验自己的虚拟机,在windows端用Filezila,选择FTP登录，sam   123456
+————————————————
+版权声明：本文为CSDN博主「神奇程序员」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_37581115/article/details/84849434
 ====================================================================
 在Linux系统里执行多条命令，每个命令用分号分隔
 cmd = 'cd {fromDir}/bootstrap_installer; ./setup_linux -installerUpdateURLs none -productUpdateURLs none -silent -installPath {toDir}  -yum -y install'.format(fromDir=fromDir, profile=profile, toDir=toDir + '/' + spin)
 
+=====================win7 安装Ubuntu虚拟机
+本地用virtualbox，下载Ubuntu18.04的镜像，基本一路默认即可
+选择桥接模式,即bridge模式,使用和本地windows主机同一网段的地址
+设置静态IP:
+sudo vi /etc/network/interfaces
+
+auto enp0s3
+iface enp0s3 inet static
+address 192.168.3.48
+netmastk 255.255.255.0
+gateway 192.168.3.1
 
 
 
+在Ubuntu的网络设置里面(右上角图标的网络设置)
+在IPv4设置里面设置地址和DNS服务器（192.168.3.1）
+
+
+wired消失后：
+sudo gedit /etc/NetworkManager/NetworkManager.conf
+修改false   true
+sudo service network-manager restart
+
+DNS设置为：
+211.142.211.124，8.8.8.8，8.8.8.4
+ping www.baidu.com
+==================================================================
+从windows上通过ssh连接虚拟机：
+sudo apt-get install openssh-server
+/etc/init.d/ssh restart
+ps -e | grep ssh
+vim /etc/ssh/sshd_config
+#PermitRootLogin prohibit-password
+添加下面的:
+PermitRootLogin yes
+/etc/init.d/ssh restart
+=============================================
+这两天重新装的ubuntu系统，发觉使用VI时，方向键按下去后变成ABCD，删除键无效。网上搜寻一番，应该是VI软件本身的问题，顾卸载重装即可，步骤如下：
+
+    1、执行命令 sudo apt-get remove vim-common
+
+    2、执行命令 sudo apt-get install vim
+putty中小数字键盘在vim中的使用：
+选项Terminal->Features里，找到Disable application keypad mode，选上就可以了
 
 
 
