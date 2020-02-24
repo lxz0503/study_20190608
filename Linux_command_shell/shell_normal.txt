@@ -969,6 +969,29 @@ PermitRootLogin yes
     2、执行命令 sudo apt-get install vim
 putty中小数字键盘在vim中的使用：
 选项Terminal->Features里，找到Disable application keypad mode，选上就可以了
+===============================================================================================
+如何解决“Offending key in ~/.ssh/known_hosts” file
+
+[xli3@pek-vx-system1 default]$ scp -r uVxWorks windriver@128.224.166.211:/Jenkins/workspace/19-Vx7_Nig/vxworks_7/mefa_platform/logs/mefaImage/28572/images/image/
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b4:44:1f:95:6e:77:b3:05:fb:19:b2:58:b9:b6:56:d4.
+Please contact your system administrator.
+Add correct host key in /folk/xli3/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /folk/xli3/.ssh/known_hosts:2
+  remove with: ssh-keygen -f "/folk/xli3/.ssh/known_hosts" -R 128.224.166.211
+RSA host key for 128.224.166.211 has changed and you have requested strict checking.
+Host key verification failed.
+lost connection
+--------按照提示去操作
+vi /folk/xli3/.ssh/known_hosts
+remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
+====================================================================================
 
 
 
