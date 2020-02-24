@@ -10,7 +10,7 @@ import pandas as pd
 df = pd.read_csv(r"../data/gapminder.tsv", sep='\t') 
 
 # 列操作
-country_df = df['country'] # 列名选取单列
+country_df = df['country']         # 列名选取单列
 
 print("\n\n列首5行")
 print(country_df.head())
@@ -18,10 +18,11 @@ print(country_df.head())
 print("\n\n列尾5行")
 print(country_df.tail())
 
-country_df_dot = df.country # 点号的方式选取列
+country_df_dot = df.country      # 点号的方式选取列   等价于df['country']
 print("\n\n点号的方式选取列")
 print(country_df_dot.head())
 
-subset = df[['country', 'continent', 'year']] # 选取多列
+subset = df[['country', 'continent', 'year']]        # 选取多列
 print("\n\n选取多列")
 print(subset.head())
+print(subset.tail())

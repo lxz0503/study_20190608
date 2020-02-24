@@ -1,0 +1,157 @@
+1.user: lxz_20081025@163.com
+pwd:QQ password
+
+windows下装完git，在仓库目录下：
+
+先执行git init, ls -ah 会看到.git
+
+$ git config --global user.name "lxz0503"
+$ git config --global user.email "lxz_20081025@163.com"
+
+由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：
+
+使用以下命令生成 SSH Key：ssh-keygen -t rsa -C "youremail@example.com"
+后面的 your_email@youremail.com 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key。
+
+回到 github 上，进入 Account => Settings（账户配置）。
+左边选择 SSH and GPG keys，然后点击 New SSH key 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key(每一次在新的环境都需要这样操作，建立连接)
+为了验证是否成功，输入以下命令：
+
+$ ssh -T git@github.com
+Hi tianqixin! You've successfully authenticated, but GitHub does not provide shell access.
+
+要检查已有的配置信息，可以使用 git config --list
+--------------------------------------------------------------------------------
+现在，我们根据 GitHub 的提示，在本地的仓库下运行命令：
+
+$ mkdir runoob-git-test                     # 创建测试目录
+$ cd runoob-git-test/                       # 进入测试目录
+$ echo "# 菜鸟教程 Git 测试" >> README.md     # 创建 README.md 文件并写入内容
+$ ls                                        # 查看目录下的文件
+README
+$ git init                                  # 初始化
+$ git add README.md                         # 添加文件
+$ git commit -m "添加 README.md 文件"        # 提交并备注信息
+[master (root-commit) 0205aab] 添加 README.md 文件
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+# 提交到 Github
+$ git remote add origin git@github.com:tianqixin/runoob-git-test.git
+$ git push -u origin master
+
+---------------------------------------------------------
+
+github: sign as lxz_0503
+
+when you commit, please use lxz0503, and pwd is your QQ password.
+
+2.  my repository:
+git clone https://github.com/lxz0503/lxz_python.git
+
+会提示输入用户名和密码
+
+或者git clone git@github.com:lxz0503/gitskills.git
+
+3.主分支是master,还有自己建的分支test_practise，用git checkout -b test_practise
+然后在test_practise里面修改代码，再commit到github，然后再从test_practise做pull request到主分支上
+
+4.git push origin master ---origin是远端仓库，master是本地仓库，这个表示推送本地内容到远端
+
+5.合并分支
+
+master和test_practise
+
+首先默认在master分支上
+
+创建test_practise-----git checkout -b test_practise
+
+git branch----查看分支
+
+然后在test_practise分支上做修改，例如修改READ.md
+
+然后提交：git add READ.md
+git commit -m "update readme"
+
+然后切换到master分支： git checkout master
+
+把test_practise分支上做的修改合并到当前master分支： git merge test_practise
+
+合并完成后，可以删除test_practise分支： git branch -d test_practise
+
+如果远端也有test_practise分支，那就需要在test_practise分支上git push之后才能删除这个分支
+或者git branch -D test_practise强制删除就不用push了。
+
+以上只是本地工作区做了修改，然后在master分支上依然需要git add,git commit, git push才真正修改了远端仓库
+
+6.如果要删除文件
+现在本地工作区：rm test.txt
+
+如果确实需要从远端仓库删除： git rm test.txt
+
+git commit -m "remore test.txt"
+
+==========================
+
+https://github.com/lxz0503
+
+you can create a repository on this website
+
+…or create a new repository on the command line
+echo "# study_20190608" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/lxz0503/study_20190608.git
+git push -u origin master
+
+
+==========================
+先在https://github.com/lxz0503创建Repository，名字为study_20190608
+
+echo "# study_20190608" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/lxz0503/study_20190608.git
+git push -u origin master
+
+可以在网站上直接commit文件或者目录
+
+在本地windows目录下，即本地git仓库目录下，
+
+先执行git init, ls -ah 会看到.git
+
+$ git config --global user.name "lxz0503"
+$ git config --global user.email "lxz_20081025@163.com"
+
+git clone https://github.com/lxz0503/study_20190608.git
+
+然后会自动生成一个本地repository, D:\xiaozhan_git\study_20190608
+
+进入到这个目录，才能执行git commit -m "ccc",git add string_process,git push等操作
+
+以后就在这个工程目录下面创建自己的python学习目录，然后逐个地commit到github上去
+
+如果要增加新的目录，必须在目录上下创建文件后才能进行git add目录的操作
+
+
+可以创建自己的python目录，然后git add commit,push
+
+D:\xiaozhan_git\study_20190608\string_process
+
+当执行git status出现如下提示：
+
+Your branch is behind.......
+
+Changes not staged for commit:
+<use git add>
+<use git checkout>
+Untracked files:
+
+出现以上提示后，直接执行git reset --hard，然后git status,
+
+没有需要modified:提示后，就可以执行git pull
+
+下面是设置不用每次都输入用户名和密码：
+git config --global credential.helper store

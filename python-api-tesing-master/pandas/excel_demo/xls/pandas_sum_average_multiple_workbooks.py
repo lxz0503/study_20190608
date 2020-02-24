@@ -9,7 +9,7 @@ import os
 
 input_path = "/media/andrew/6446FA2346F9F5A0/code/foundations-for-analytics-\
 with-python/excel"
-output_file = "pandas_output.xls"
+output_file = "pandas_output3.xls"
 
 all_workbooks = glob.glob(os.path.join(input_path,'*.xls*'))
 data_frames = []

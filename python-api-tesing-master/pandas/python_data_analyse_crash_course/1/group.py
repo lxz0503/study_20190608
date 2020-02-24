@@ -27,8 +27,7 @@ mean_lifeExp_by_year = grouped_year_df_lifeExp.mean()
 print(mean_lifeExp_by_year)
 
 print("\n\n基于年和洲分组")
-print(df.groupby(['year', 'continent'])[['lifeExp',
-'gdpPercap']].mean())
+print(df.groupby(['year', 'continent'])[['lifeExp', 'gdpPercap']].mean())
 
 print("\n\n统计每个洲的国家数")
 print(df.groupby('continent')['country'].nunique())

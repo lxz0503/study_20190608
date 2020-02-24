@@ -7,7 +7,7 @@ import pandas as pd
 import sys
 
 input_file = "sales_2013.xlsx"
-output_file = "pandas_output.xls"
+output_file = "pandas_output2.xls"
 data_frame = pd.read_excel(input_file, sheetname='january_2013')
 
 writer = pd.ExcelWriter(output_file)

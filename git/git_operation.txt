@@ -205,7 +205,7 @@ please refer to this link: https://blog.csdn.net/u010280075/article/details/8295
 
 install git on your windows pc
 Enter a directory with git bash(windows start menu).
-Git初始化
+Git初始化    git init
 对于第一次使用Git，需要使用以下命令来初始化Git,红色部分分别填写你在Github上的用户名和邮箱
 
 $ git config --global user.name "xiaozhan"
@@ -215,6 +215,7 @@ git init
 
 Git 使用 git init 命令来初始化一个 Git 仓库
 创建成功后，会出现一个.git的隐藏文件夹，可以使用ls -al命令查看
+git clone
 
 ————————————————
 error: cannot lock ref 'refs/remotes/origin/xxx': unable to resolve reference refs/remotes/origin/xxx: Invalid argument
@@ -246,5 +247,8 @@ index file在 git 里面一般指的是 .git/index 这个文件。
 进入到工程目录下: cd /path/to/dir
 删除或重命名 .git/index 文件： rm -f .git/index 或 mv .git/index{,.bak}
 重建 .git/index : git read-tree 或者直接 git reset
+
+======================================================
+git config --global credential.helper store
 
 

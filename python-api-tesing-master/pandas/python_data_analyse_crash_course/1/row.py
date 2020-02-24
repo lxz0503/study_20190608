@@ -11,7 +11,7 @@ df = pd.read_csv(r"../data/gapminder.tsv", sep='\t')
 
 # 行操作，注意df.loc[-1]是非法的
 print("\n\n第一行")
-print(df.loc[0])
+print(df.loc[0])     # 会逐个显示第一行的元素，同时带着column信息
 
 print("\n\n行数")
 number_of_rows = df.shape[0]
@@ -32,7 +32,7 @@ print(type(subset_loc))
 print("\n\nhead的类型为数据帧DataFrame")
 print(type(subset_head))
 
-print("\n\nloc选取三列，类型为数据帧DataFrame")
+print("\n\nloc选取三行，类型为数据帧DataFrame")
 print(df.loc[[0, 99, 999]])
 print(type(df.loc[[0, 99, 999]]))
 
