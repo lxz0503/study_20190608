@@ -1,7 +1,7 @@
 from datetime import datetime
 
 week = '{:%Y-%m-%d}'.format(datetime.now())
-print('RUNDATE={RUNDATE}'.format(RUNDATE = week))
+print('rundate={0}'.format(week))
 
 # os.system('ls -l {0} {1}'.format(os.getcwd(),'/home/windriver/xiaozhan'))
 # os.system('ls -l %s %s' % (os.getcwd(),'/home/windriver/xiaozhan'))
@@ -39,3 +39,7 @@ print(a)
 
 print("{1:.3f},{0:02d}".format(5, 10.11))     # 10.110 , 05
 # {0:02d}   表示位置为0的参数，宽度为2，类型为d,用0来补足
+
+# 字符串格式化最简单的方法是用f格式，python3.6以后推出的功能
+msg = {'name': 'wang', 'age': 10}
+print(f'my name is {msg}')
