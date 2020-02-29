@@ -11,13 +11,15 @@ def read_file(fpath):
             else:
                 return
 
-
-res = read_file(r'test_result.log')
-print(type(res))        # <class 'generator'>
+if __name__ == '__main__':
+    res = read_file(r'test_result.log')
+    for r in res:
+        print(r)
+# print(type(res))        # <class 'generator'>
 # for i in res:
 #     print(i)
-print(next(res))  # 调用一次next函数，每次就会读取1024字节
-print(type(next(res)))
+# print(next(res))  # 调用一次next函数，每次就会读取1024字节
+# print(type(next(res)))
 # print(next(res))
 
 # 函数执行结果如下：
