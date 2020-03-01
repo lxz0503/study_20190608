@@ -1,14 +1,19 @@
 # this can change one excel to a html
 import pandas as pd
 import codecs
+import os
 
-def excel_to_html(filepath):
-    xd = pd.ExcelFile(filepath)
+
+def excel_to_html(excel_path, html_name):
+    xd = pd.ExcelFile(excel_path)
     df = xd.parse()
-    with codecs.open(r'performance.html', 'w', 'utf-8') as html_file:
+    with codecs.open(html_name, 'w', 'utf-8') as html_file:
         html_file.write(df.to_html(header=True, index=False))
-    file = open(r'performance.html').read()
-    return file
+    # debug
+    # file = open(html_name).read()
+    # return file
 
-res = excel_to_html(r'F:\xiaozhan_git\study_20190608\xiaozhan\performance.xls')
-print(res)
+
+if __name__ == '__main__':
+    excel_path = os.path.dirname(__file__) + '/test_data.xlsx'
+    excel_to_html(excel_path, 'test_data.html')
