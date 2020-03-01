@@ -17,6 +17,7 @@ for line in islice(f, 500):  # 前500行
 for line in islice(f, 100, None):   # 从100行到结束
     print(line)
 
+f.close()
 # test
 l = range(20)
 t = iter(l)

@@ -24,7 +24,7 @@ for item in data_1:
     strhtml.encoding = 'utf8'
     time.sleep(1)
     # print(strhtml.text)
-    dic = strhtml.json()       # <class 'dict'>
+    dic = strhtml.json()       # <class 'dict'>      change to python dictionary
     # print(type(dic))
     # dic = json.loads(strhtml.text)    # 和上面的作用一样，把JSON格式数据反序列化为字典格式，然后才能存储到MongoDB
 

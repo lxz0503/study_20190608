@@ -5,9 +5,9 @@ import pymongo
 
 
 def search_mongo():
-    client = pymongo.MongoClient('localhost', 27017)
-    book_weather = client['weather']
-    sheet_weather = book_weather['sheet_weather_3']
+    client = pymongo.MongoClient('localhost', 27017)      # create a connection to MongoDB
+    book_weather = client['weather']      # database name is weather
+    sheet_weather = book_weather['sheet_weather_3']     # table name is sheet_weather_3
     # 查找键值为HeWeather5.basic.city为背景的数据
     # for item in sheet_weather.find({'HeWeather5.0.basic.city': '北京'}):
     for item in sheet_weather.find():    # 会打印出所有数据
