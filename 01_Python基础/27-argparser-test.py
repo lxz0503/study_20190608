@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# coding: utf-8
+# coding=utf-8
 # . /net/pek-vx-system1/buildarea1/hyan1/wassp/nightly_config.ini 里面定义了$DVD,$PLAN等变量
 # python3 /folk/hyan1/Nightly/iPerf_smp/iPerf_run.py --plan $PLAN --dvd $DVD --release $LTAFRELEASE --rundate $RUNDATE
 # you can enter F:\xiaozhan_git\study_20190608\01_Python基础 and run for a practice

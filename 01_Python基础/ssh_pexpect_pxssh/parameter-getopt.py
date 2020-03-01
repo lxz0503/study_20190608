@@ -1,5 +1,5 @@
 # https://www.cnblogs.com/ytc6/p/9081913.html
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import getopt
 import sys
 
