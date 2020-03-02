@@ -266,3 +266,19 @@ for i in result:
     # print(author.strip())
     # print(year.strip())
     # print(publisher.strip())
+
+# 正则表达式改变一个文件的内容
+import os
+with open('reg_text', 'r') as f:
+    with open('reg_text.bak', 'w') as f1:
+        for line in f:
+            f1.write(re.sub('timestamp', 'lixiaozhan', line))
+os.remove('reg_text')
+os.rename('reg_text.bak', 'reg_text')
+
+#
+
+a = './vxworks-7/pkgs_v2/net/ipnet/coreip-2.1.1.1/src/iptcp/src/iptcp.c'
+b = a.split('iptcp')[0] + 'iptcp/config/iptcp_config.h'
+print(b)
+# ./vxworks-7/pkgs_v2/net/ipnet/coreip-2.1.1.1/src/iptcp/config/iptcp_config.h
