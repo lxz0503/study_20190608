@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+# coding=utf-8
 import logging
 import pexpect
 import os,re
@@ -54,7 +55,6 @@ class Telnet(object):
             self.t.sendline('q')
             self.t.expect('Connection closed.')
             self.t = None
-        return
 
     def run_cmd(self):
         l = []
@@ -72,10 +72,10 @@ if __name__ == '__main__':
     conn = Telnet()
     conn.connect('128.224.164.57', 2016)
     res = conn.run_cmd()
-    #print(res)   
+    # print(res)
     for i in res:
-        #print(i)
-        r = re.search(r'^gei.*',i)
+        # print(i)
+        r = re.search(r'^gei.*', i)
         if r is not None:
             print(i)
             break

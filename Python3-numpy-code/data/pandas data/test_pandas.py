@@ -60,7 +60,7 @@ df.to_csv('taobao_price_data_xiaozhan.csv', columns=['商品', '价格'], index=
 # page No.124
 # 将指定字段作为索引，汇总数据
 # 按位置分组，并计算成交量列的平均值，
-grouped = df['成交量'].groupby(df['位置']).mean() #
+grouped = df['成交量'].groupby(df['位置']).mean()
 print('grouped is:\n', grouped)
 
 # 传入多个数组，得到按多列统计的结果
