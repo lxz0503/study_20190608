@@ -1,7 +1,6 @@
-# 用paramiko模块实现sftp上传下载文件功能
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding:utf8
-
+# 用paramiko模块实现sftp上传下载文件功能
 import paramiko
 
 def func_sftp(put, get, local_path, remote_path):
@@ -19,9 +18,10 @@ def func_sftp(put, get, local_path, remote_path):
     # 关闭连接
     transport.close()
 
+
 if __name__ == '__main__':
     local_path = input("the local path is:").strip()
     remote_path = input("the remote path is:").strip()
-    put = 1     # if you want to put, just set is as 1
-    get = None  # if you want to get, just set is as 1
+    put = 1     # if you want to put, just set it as 1
+    get = None  # if you want to get, just set it as 1
     func_sftp(put, get, local_path, remote_path)

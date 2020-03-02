@@ -33,7 +33,10 @@ print(grouped['Points'].agg([np.sum, np.mean, np.std]))
 print(df.groupby('Team').filter(lambda x: len(x) >= 3))
 
 # 定义frame，可以设置index或者用默认index
-frame = pd.DataFrame([[1,2,3,4], [5,6,7,8], [-10,11,12,-13]],
+tcp_64 = [1, 2, 3, 4]
+tcp_1024 = [5, 6, 7, 8]
+udp = [-10, 11, 12, -13]
+frame = pd.DataFrame([tcp_64, tcp_1024, udp],
                      index=['tcp_64', 'tcp_1024', 'udp'],
                      columns=['SR620', 'SR630', 'three', 'four'])
 print('data with defined index:\n', frame)
