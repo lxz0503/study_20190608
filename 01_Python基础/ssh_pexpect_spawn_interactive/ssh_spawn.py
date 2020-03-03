@@ -65,11 +65,12 @@ class SshTest(object):
             if i == 2:
                 print("copy log timeout!")
                 break
+    # 修改文件名字
     def mv_file(self, src, dst):
         self.s.sendline('mv %s %s' % (src, dst))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
 
-# ssh到其他server上面去执行脚本，很实用
+    # ssh到其他server上面去执行脚本，很实用
     def run_script(self, ip, port):
         self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
         self.s.expect("windriver@PEK-QCAO1-D2:~")

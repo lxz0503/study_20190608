@@ -20,11 +20,12 @@ class FloatRange(object):
             t -= self.step
 
 # test
-for x in FloatRange(1.0, 4.0, 0.5):
-    print(x)
-print('反向迭代：')
-for x in reversed(FloatRange(1.0, 4.0, 0.5)):
-    print(x)
+if __name__ == '__main__':
+    for x in FloatRange(1.0, 4.0, 0.5):
+        print(x)
+    print('反向迭代：')
+    for x in reversed(FloatRange(1.0, 4.0, 0.5)):
+        print(x)
 
 
 

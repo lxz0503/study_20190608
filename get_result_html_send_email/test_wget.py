@@ -12,10 +12,10 @@ import subprocess
 
 def run_shell_cmd(cmd):
     print('cmd %s', cmd)
-    p = subprocess.Popen(cmd,bufsize=1,shell=True,stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen(cmd, bufsize=1, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     std_out, std_err = p.communicate()
     print('std_out : %s' % std_out)
-    return (p.returncode, std_out)
+    return p.returncode, std_out
 
 def get_test_result_from_html(saved_result_html_link, result_html_link):
     cmd = 'wget -O %s %s' % (saved_result_html_link, result_html_link)
