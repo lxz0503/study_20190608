@@ -18,7 +18,8 @@ if __name__ == '__main__':
     file_name = 'reg_text'
     modify_content = [
         ['timestamp', 'lixiaozhan'],
-        ['lastS', 'lixiaozhan']
+        ['lastS', 'lixiaozhan'],
+        ['#define IPTCP_DUP_ACK_COUNT 3', '#define IPTCP_DUP_ACK_COUNT 10']
         ]
     for content in modify_content:
         modify_file(file_name, content[0], content[1])
