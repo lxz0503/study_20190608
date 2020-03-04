@@ -1,6 +1,11 @@
 NIGHTLYSPIN=vx20200221095524_vx7-SR0640-naiive
-lixiaozhan=vx20200220112633_vx7-SR0640-naiive
+lastS=vx20200220112633_vx7-SR0640-naiive
 LTAFRELEASE=vx7-SR0640-feaiures-naiive
+<<<<<<< HEAD
 lixiaozhan=20200222170250
 PaichBranch=vx7-SR0640-feaiuresPaichBranch=vx7-SR0640-feaiures
 #define IPTCP_DUP_ACK_COUNT 10
+=======
+timestamp=20200222170250
+PaichBranch=vx7-SR0640-feaiuresPaichBranch=vx7-SR0640-feaiures
+>>>>>>> 330d995f658a837d8b9ad0e928de7a8bdbc0f83f

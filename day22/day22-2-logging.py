@@ -19,11 +19,11 @@ console.setLevel(logging.INFO)
 logger.addHandler(handler)
 logger.addHandler(console)
 # 具体使用以上方法来记录log
-# logger.info('Start')
-# logger.warning('Something maybe fail.')
-# try:
-#     result = 10 / 0
-# except Exception:
-#     logger.error('Failed to get result', exc_info=True)
-#     # logging.exception("Exception occurred")
-# logger.info('Finished')
+logger.info('Start')
+logger.warning('Something maybe fail.')
+try:
+    result = 10 / 0
+except Exception:
+    logger.error('Failed to get result', exc_info=True)
+    # logging.exception("Exception occurred")
+logger.info('Finished')
