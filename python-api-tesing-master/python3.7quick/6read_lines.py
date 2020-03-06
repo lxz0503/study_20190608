@@ -6,3 +6,4 @@
 f = open("china-testing.github.io.txt")
 for line in f.readlines():
     print(line)
+f.close()

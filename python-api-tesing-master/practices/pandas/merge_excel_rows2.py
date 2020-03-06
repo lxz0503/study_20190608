@@ -9,7 +9,7 @@ import pandas as pd
 
 df = pd.read_csv("test2.csv", engine='c', header=None)
 arr = df.values.copy()
-arr.resize(20, 5)
+arr.resize(20, 5)      # 20行5列的矩阵
 df2 = pd.DataFrame(arr)
 df2.to_csv("out2.csv", index=None, header=None)
 

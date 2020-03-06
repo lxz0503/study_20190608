@@ -5,6 +5,6 @@
 
 import os.path
 
-print ("File exist:"+str(os.path.exists('china-testing.github.io.txt')))
-print ("File exists:" + str(os.path.exists('github.io.txt')))
-print ("Directory exists:" + str(os.path.exists('myDirectory')))
+print("File exist:" + str(os.path.exists('china-testing.github.io.txt')))
+print("File exists:" + str(os.path.exists('github.io.txt')))
+print("Directory exists:" + str(os.path.exists('myDirectory')))

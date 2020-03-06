@@ -6,3 +6,4 @@
 f = open("china-testing.github.io.txt","r")
 contents =f.read()
 print(contents)
+f.close()

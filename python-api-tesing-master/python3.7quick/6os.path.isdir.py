@@ -5,5 +5,5 @@
 
 import os.path
 
-print ("Is it Directory?" + str(os.path.isdir('china-testing.github.io.txt')))
-print ("Is it Directory?" + str(os.path.isdir('..')))
+print("Is it Directory?" + str(os.path.isdir('china-testing.github.io.txt')))
+print("Is it Directory?" + str(os.path.isdir('..')))

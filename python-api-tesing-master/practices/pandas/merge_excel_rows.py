@@ -6,7 +6,7 @@
 import pandas as pd
 
 frame = pd.read_csv("test.csv", engine='c')
-df =  frame.groupby(['state', 'year']).sum()
+df = frame.groupby(['state', 'year']).sum()     # 对数据求和统计
 df.to_csv("out.csv")
 
 

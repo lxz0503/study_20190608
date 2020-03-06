@@ -249,7 +249,6 @@ find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 11. ssh windriver@128.224.166.46  ---ssh登陆某台服务器
 
 12. telnet 192.168.195.2 2323 ----telnet登陆某台虚拟机，端口号是2323
-
 13. ftp 128.224.167.168 -----ftp登陆某台服务器
 
 14. ls -l >> log.txt (把ls -l的命令输出结果追加到文件log.txt)  ---相当于ls -l | tee log.txt

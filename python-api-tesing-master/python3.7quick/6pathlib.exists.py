@@ -6,7 +6,7 @@
 import pathlib
 
 file = pathlib.Path("china-testing.github.io.txt")
-if file.exists ():
-    print ("File exist")
+if file.exists():
+    print("File exist")
 else:
-    print ("File not exist")
+    print("File not exist")
