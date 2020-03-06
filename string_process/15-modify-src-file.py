@@ -21,7 +21,6 @@ class ModifyFileContent(object):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     file_name = 'reg_text'     # 要修改的文件名
     to_modify = [              # 文件里要修改的内容，放在列表里，每个元素又是一个列表
         ['timestamp', 'lixiaozhan'],   # 前面是未修改前，后面是修改后
@@ -29,13 +28,4 @@ if __name__ == '__main__':
     ]
     ts = ModifyFileContent(file_name, to_modify)
     ts.modify_file()
-=======
-    file_name = 'reg_text'
-    modify_content = [
-        ['timestamp', 'lixiaozhan'],
-        ['lastS', 'lixiaozhan'],
-        ['#define IPTCP_DUP_ACK_COUNT 3', '#define IPTCP_DUP_ACK_COUNT 10']
-        ]
-    for content in modify_content:
-        modify_file(file_name, content[0], content[1])
->>>>>>> 014322fcc5fcb1710340a78bb6e3c16ac337bc66
+
