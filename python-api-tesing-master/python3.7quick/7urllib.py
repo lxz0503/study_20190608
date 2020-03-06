@@ -5,11 +5,11 @@
 
 import urllib.request
 # open a connection to a URL using urllib
-webUrl  = urllib.request.urlopen('https://china-testing.github.io/address.html')
+webUrl = urllib.request.urlopen('https://china-testing.github.io/address.html')
 
 #get the result code and print it
-print ("result code: " + str(webUrl.getcode()))
+print("result code: " + str(webUrl.getcode()))
 
 # read the data from the URL and print it
 data = webUrl.read()
-print (data)
+print(data)

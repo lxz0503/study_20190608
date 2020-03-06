@@ -12,7 +12,7 @@ def get_upcoming_events(url):
     events = soup.findAll('article')
 
     for event in events:
-        event_details = {}
+        event_details = {}   # 空的字典
         event_details['name'] = event.find('h1').find("a").text
         print(event_details)
 
