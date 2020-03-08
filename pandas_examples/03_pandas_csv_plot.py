@@ -63,7 +63,7 @@ fig.autofmt_xdate()
 plt.show()
 
 #将图片保存到指定目录
-# plt.savefig(r"D:\xiaozhan_git\study_20190608\xiaozhan\csv.jpg")
+# plt.savefig(r"D:\xiaozhan_git\study_20190608\pandas_examples\csv.jpg")
 
 # 作者：jtscript
 # 来源：CSDN
