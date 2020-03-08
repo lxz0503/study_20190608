@@ -38,7 +38,7 @@ if __name__ == "__main__":
 # ip 是: 10.0.0.1
 # port 端口是: 80
 #######下面也是一种执行方式，用长参数格式
-# D:\Python\python.exe D:/xiaozhan_git/study_20190608/01_Python基础/20-参数解析parameter-getopt.py -h --ip=10.0.0.1 --port=80
+# D:\Python\python.exe D:/xiaozhan_git/study_20190608/01_Python_Basics/20-参数解析parameter-getopt.py -h --ip=10.0.0.1 --port=80
 # options: [('-h', ''), ('--ip', '10.0.0.1'), ('--port', '80')]
 # args: []
 # help:正确的使用方法是.......

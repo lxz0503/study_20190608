@@ -8,7 +8,7 @@ apts = pd.Series(cities_prices)  # index is the key of the dictionary
 result = pd.Series(list_prices)
 # print("old values: %s" % apts['shanghai'])
 # print("old values:", apts['shanghai'])
-# print(apts)
+print(apts)
 arrySer = pd.Series(np.arange(10, 15), index=['a', 'b', 'c', 'd', 'e'])  # use array
 print('the series is:\n', arrySer)
 arrySer.plot.bar()
