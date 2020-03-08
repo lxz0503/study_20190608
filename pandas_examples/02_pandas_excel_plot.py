@@ -7,7 +7,7 @@ x_data = []
 y_data = []
 x_volte = []
 temp = []
-f_dir = os.path.dirname(__file__) + '/xiaozhan.xls'
+f_dir = os.path.dirname(__file__) + '/pandas_examples.xls'
 wb = open_workbook(f_dir)
 for s in wb.sheets():
     # print('Sheet:', s.name)
@@ -29,4 +29,4 @@ plt.xlabel(u"input-deg")
 plt.ylabel(u"output-V")
 
 plt.show()
-#plt.savefig(r"D:\xiaozhan_git\study_20190608\xiaozhan\line.jpg")  # 保存图
+#plt.savefig(r"D:\xiaozhan_git\study_20190608\pandas_examples\line.jpg")  # 保存图

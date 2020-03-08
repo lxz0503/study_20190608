@@ -37,7 +37,7 @@ print(frame.columns[0]) # 打印第0列column的名字
 # print(frame[frame.beijing>0]) # get value from column beijing that are greater than 0
 
 #
-# fileDf = pd.read_excel(r'F:\xiaozhan_git\study_20190608\xiaozhan\test_data.xlsx','Sheet1')
+# fileDf = pd.read_excel(r'F:\xiaozhan_git\study_20190608\pandas_examples\test_data.xlsx','Sheet1')
 # print("check the info:")
 # print(fileDf.head())
 # print(fileDf.info())
@@ -131,7 +131,7 @@ index = ['snail', 'pig', 'elephant',
          'rabbit', 'giraffe', 'coyote', 'horse']
 df = pd.DataFrame({'speed': speed, 'lifespan': lifespan}, index=index)
 ax = df.plot.bar(rot=0, subplots=True)
-# plt.savefig(r"F:\xiaozhan_git\study_20190608\xiaozhan\dataframe_bar.jpg")
+# plt.savefig(r"F:\xiaozhan_git\study_20190608\pandas_examples\dataframe_bar.jpg")
 plt.show()
 
 # example

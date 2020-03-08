@@ -40,7 +40,7 @@ plt.show()
 # 版权声明：本文为博主原创文章，转载请附上博文链接！
 
 # 如何写csv文件,参考pandas的例子
-# filename = r"xiaozhan.csv"
+# filename = r"pandas_examples.csv"
 # with open(filename, 'wb') as wf:  # 打开这个文件，并将结果文件对象存储在f中
 #     writer = csv.writer(wf)  # 创建一个迭代器
 #     writer.writerow(['data', 'age', 'sex', 'addr', 'num'])
