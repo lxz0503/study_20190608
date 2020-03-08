@@ -11,8 +11,8 @@ class OperationXml(object):
            :param fileName is the name of the file
            :param filePath is the name of the file directory
         '''
-        # os.path.dirname(os.path.dirname(__file__))      # D:/xiaozhan_git/study_20190608/UI
-        # FileNotFoundError: [Errno 2] No such file or directory: 'D:/xiaozhan_git/study_20190608/UI\\data\\ui.xml'
+        # os.path.dirname(os.path.dirname(__file__))      # D:/xiaozhan_git/study_20190608/Page_Object_UI_Test
+        # FileNotFoundError: [Errno 2] No such file or directory: 'D:/xiaozhan_git/study_20190608/Page_Object_UI_Test\\data\\ui.xml'
         # for linux you can use
         # os.path.join(os.path.dirname(os.path.dirname(__file__)), filePath, fileName)
         # for windows you should use,this is also ok for linux

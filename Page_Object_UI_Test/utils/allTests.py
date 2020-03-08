@@ -31,6 +31,6 @@ if __name__ == '__main__':
     if not os.path.exists(report_dir):
         os.mkdir(report_dir)
     with open(report_name, 'wb') as fp:
-        runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='UI report', description='UI Sina test report')
+        runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Page_Object_UI_Test report', description='Page_Object_UI_Test Sina test report')
         runner.run(suite)
 
