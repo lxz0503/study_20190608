@@ -1,0 +1,22 @@
+#!/bin/bash -x
+#本机备份，定时备份重要文件,备份之前参考免密传输文件的设置
+WEEKDAY=`date +%w`
+SOURCE_DIR="/data"
+BCK_DIR="/backup/temp"
+DATE=`date +%F`
+YOURFILE="aaa.log"
+#每周一进行备份
+if [ ${WEEKDAY} -eq 1  ];then
+    if [ -f ${BCK_DIR}/YOURFILE_${DATE}.tar.gz ];then
+        echo "YOURFILE_${DATE} backup file is existing!"
+    else
+        echo "Start tar file"
+        sudo tar -zcvf ${BCK_DIR}/YOURFILE_${DATE}.tar.gz YOURFILE
+        #异地备份
+        echo "Finish tar file! Start scp file"
+        scp -r /backup/temp/YOURFILE_${DATE}.tar.gz root@192.168.60.132:/backup
+        echo "Finish scp file!"
+    fi
+else
+    echo "No need to backup today"
+fi
