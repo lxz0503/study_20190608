@@ -493,7 +493,7 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ================================================
-=======scp or rsync  without password========
+=======scp or rsync  without password========例如备份文件，从主机A定期往主机B备份
 场景 A主机往B主机传文件
 原文链接：https://blog.csdn.net/u010670151/article/details/86649803
 
@@ -509,8 +509,9 @@ note: root用户名字有的机器是wrsadmin
 2.将A中生成的id_rsa.pub文件拷贝到B主机的root用户主目录下的.ssh目录下,并且改名为authorized_keys
 
 [xli3@pek-vx-system1 ~]$ ssh-copy-id -i ~/.ssh/id_rsa.pub wrsadmin@128.224.162.222
-or you can use scp -r
+or you can use scp -r  (scp ~/.ssh/id_rsa.pub root@YOUR-REMOTE-SERVER-IP:~/.ssh/authorized_keys)
 
+提前查看一下远程备份服务器的authorized_keys中是否有其他人的密钥，如果有则把自己的密钥粘贴在下面，没有的话则覆盖就好
 for example:
 wrsadmin@pek-xsun1-d2:~$ cd .ssh/
 wrsadmin@pek-xsun1-d2:~/.ssh$ ll
@@ -535,6 +536,88 @@ https://www.cnblogs.com/felixzh/p/4950049.html
 
 rsync 可以快速同步两个机器上的文件，因为只传输不同的部分，所以当传输很多文件的时候，尤其有些没有改动，
 尽量用rsync不要用scp，
+
+自动备份，可以在服务器上配置定时任务crontab,参照我的实际使用例子:
+windriver@PEK-QCAO1-D2:~/.ssh$ crontab -l
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcvf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+#* 10 * * * python /home/windriver/ANVL/anvl_install_kong.py > /home/windriver/ANVL/nightly.log
+#10 16 * * * /home/windriver/ANVL/buildRTNet.sh > build.log
+#* * * * * echo a >> /home/windriver/ANVL/cron.log
+#* * * * * python /home/windriver/ANVL/test.py >> /home/windriver/ANVL/cron.log
+30 10 * * * python /home/windriver/ANVL/scp_dir_test.py
+30 8 * * * python /home/windriver/ANVL/cp.py
+-----------------------------
+crontab -e可以修改定时
+CTRL +x, YESS, 然后Enter即可保存
+一些实际案例：
+30 6 */10 * * find /home "*.xxx" -mtime +4 -exec rm {} \;  意思是每月的1、11、21、31日的6：30，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件
+00 03 * * 1-5  每周一到周五的3点钟
+0 17 * * 1-5  mail -s "hi" alex@domain.name < /tmp/maildata    定时写邮件
+-------------------------------------------
+1）压缩 tar打包、gzip压缩
+tar -czvf 压缩文件名 目录名
+如： tar czvf dira.tar.gz dira
+注意：tar -czvf与tar czvf是一样的效果，所以说，后面统一取消-
+实战如下: windriver@PEK-QCAO1-D2:~/xiaozhan$
+tar zcvf logfile.txt.targ.gz /home/windriver/xiaozhan  ---压缩了整个目录
+压缩的时候要使用相对路径，否则报错，但是可以通过参数添加-P，例如tar zcvfP
+windriver@PEK-QCAO1-D2:~$ tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt
+./xiaozhan/logfile.txt
+或者:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tar zcvfP /home/windriver/log.tar.gz logfile.txt
+logfile.txt
+
+2）解压
+tar xzvf 压缩文件名
+tar xzvf 压缩文件名 -C 指定目录
+如： tar xzvf dira.tar.gz 解压到当前目录
+如： tar xzvf dira.tar.gz -C /home/book 解压到/home/book
+
+===============================Linux系统自动发送邮件
+https://www.runoob.com/w3cnote/centos-mail-command-sendmail.html ---配置
+https://blog.csdn.net/youmatterhsp/article/details/80207914
+----------------例子
+Centos、RedHat 系统 mail 命令
+1、关闭本机的sendmail服务或者postfix服务
+#执行下面的命令，各位大侠都对号入座吧
+#sendmial
+service sendmail stop
+chkconfig sendmail off
+#postfix
+service postfix stop
+chkconfig postfix off
+
+#再狠一点就直接卸载吧..
+yum remove sendmail
+yum remove postfix
+2、然后修改/etc/mail.rc，在文件末尾增加以下内容，指定外部的smtp服务器地址、帐号密码等
+$ vi /etc/mail.rc
+set from=123456@qq.com
+set smtp=smtp.qq.com
+set smtp-auth-user=123456
+set smtp-auth-password=runoob
+set smtp-auth=login
+
+-----Ubuntu例子
+Ubuntu 系统 heirloom-mailx 命令
+1、安装heirloom-mailx
+sudo apt-get install heirloom-mailx
+2、配置
+vi /etc/nail.rc 添加 QQ 邮箱开放的需要认证的smtp服务器:
+
+set from=429240967@qq.com
+set smtp=smtp.qq.com
+set smtp-auth-user=429240967@qq.com
+set smtp-auth-password=runoob
+set smtp-auth=login
+3、在命令行发邮件给QQ邮箱用户
+echo "邮件内容" | heirloom-mailx -s "邮件标题" 123@qq.com
 =================================
 chown can modify the group and user
 
