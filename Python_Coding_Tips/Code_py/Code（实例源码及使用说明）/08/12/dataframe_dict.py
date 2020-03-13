@@ -6,7 +6,7 @@ print(df1.head(3))
 # df1.to_excel('dict.xls')     # 列名分别为: 宝贝标题 宝贝总数量
 
 mydict = df1.to_dict()
-# print(mydict)
+print(mydict)
 # 遍历字典
 for item in mydict.items():
  print(item)
