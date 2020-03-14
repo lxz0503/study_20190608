@@ -24,7 +24,7 @@ class PandasWriteExcel(object):
                 #     frame_data.append(m.group(1))
                 if re.search("receiver", line):
                     tcp_data.append(line.split()[-3])
-                if re.search('\d+%', line):
+                if re.search(r'\d+%', line):
                     udp_data.append(line.split()[-6])
             else:
                 final_data = tcp_data + udp_data
