@@ -21,6 +21,6 @@ def get_throughput(log):
             # print(final_data)
     return list(zip(frame_data, final_data))
 
-log = r"F:\xiaozhan_git\study_20190608\day21\test_data.txt"
+log = r"test_data.txt"
 res = get_throughput(log)
 print(res)     # [('64', '247'), ('1024', '1082'), ('1400', '6241')]
