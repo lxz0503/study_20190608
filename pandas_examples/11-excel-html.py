@@ -3,17 +3,24 @@ import pandas as pd
 import codecs
 import os
 
+class ExcelToHtml(object):
+    def __init__(self, excel_path, html_name):
+        self.excel_path = excel_path
+        self.html_name = html_name
 
-def excel_to_html(excel_path, html_name):
-    xd = pd.ExcelFile(excel_path)
-    df = xd.parse()
-    with codecs.open(html_name, 'w', 'utf-8') as html_file:
-        html_file.write(df.to_html(header=True, index=False))
-    # debug
-    # file = open(html_name).read()
-    # return file
+    @property
+    def excel_to_html(self):
+        xd = pd.ExcelFile(self.excel_path)
+        df = xd.parse()
+        with codecs.open(self.html_name, 'w', 'utf-8') as html_file:
+            html_file.write(df.to_html(header=True, index=False))
+        with open(self.html_name) as f:
+            res = f.read()
+            if res is not None:
+                return res
 
 
 if __name__ == '__main__':
     excel_path = os.path.dirname(__file__) + '/test_data.xlsx'
-    excel_to_html(excel_path, 'test_data.html')
+    ts = ExcelToHtml(excel_path, 'test_data.html')
+    print(ts.excel_to_html)

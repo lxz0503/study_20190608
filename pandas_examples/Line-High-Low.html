@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="d20461feb7a04d18b1cc980c946c4070" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="2b8854b51d8d47f2b2708cd06bff5ab6" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_d20461feb7a04d18b1cc980c946c4070 = echarts.init(
-            document.getElementById('d20461feb7a04d18b1cc980c946c4070'), 'white', {renderer: 'canvas'});
-        var option_d20461feb7a04d18b1cc980c946c4070 = {
+        var chart_2b8854b51d8d47f2b2708cd06bff5ab6 = echarts.init(
+            document.getElementById('2b8854b51d8d47f2b2708cd06bff5ab6'), 'white', {renderer: 'canvas'});
+        var option_2b8854b51d8d47f2b2708cd06bff5ab6 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -48,52 +48,136 @@
     ],
     "series": [
         {
-            "type": "bar",
+            "type": "line",
             "name": "SR0610",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
             "data": [
-                70,
-                940,
-                940,
-                955
+                [
+                    "tcp_64",
+                    70
+                ],
+                [
+                    "tcp_1024",
+                    940
+                ],
+                [
+                    "tcp_65536",
+                    940
+                ],
+                [
+                    "udp_1400",
+                    955
+                ]
             ],
-            "barCategoryGap": "20%",
+            "hoverAnimation": true,
             "label": {
                 "show": true,
                 "position": "top",
                 "margin": 8
-            }
+            },
+            "lineStyle": {
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
         },
         {
-            "type": "bar",
+            "type": "line",
             "name": "SR0620",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
             "data": [
-                80,
-                1000,
-                940,
-                1005
+                [
+                    "tcp_64",
+                    80
+                ],
+                [
+                    "tcp_1024",
+                    1000
+                ],
+                [
+                    "tcp_65536",
+                    940
+                ],
+                [
+                    "udp_1400",
+                    1005
+                ]
             ],
-            "barCategoryGap": "20%",
+            "hoverAnimation": true,
             "label": {
                 "show": true,
                 "position": "top",
                 "margin": 8
-            }
+            },
+            "lineStyle": {
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
         },
         {
-            "type": "bar",
+            "type": "line",
             "name": "SR0630",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
             "data": [
-                65,
-                940,
-                800,
-                955
+                [
+                    "tcp_64",
+                    65
+                ],
+                [
+                    "tcp_1024",
+                    940
+                ],
+                [
+                    "tcp_65536",
+                    800
+                ],
+                [
+                    "udp_1400",
+                    955
+                ]
             ],
-            "barCategoryGap": "20%",
+            "hoverAnimation": true,
             "label": {
                 "show": true,
                 "position": "top",
                 "margin": 8
-            }
+            },
+            "lineStyle": {
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
         }
     ],
     "legend": [
@@ -180,13 +264,13 @@
     "title": [
         {
             "text": "\u4e3b\u6807\u9898: release performance",
-            "subtext": "\u526f\u6807\u9898:performance",
+            "subtext": "run date on 2020-03-14",
             "padding": 5,
             "itemGap": 10
         }
     ]
 };
-        chart_d20461feb7a04d18b1cc980c946c4070.setOption(option_d20461feb7a04d18b1cc980c946c4070);
+        chart_2b8854b51d8d47f2b2708cd06bff5ab6.setOption(option_2b8854b51d8d47f2b2708cd06bff5ab6);
     </script>
 </body>
 </html>
