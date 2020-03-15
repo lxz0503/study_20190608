@@ -12,7 +12,8 @@ class PandasWriteExcel(object):
         self.data = self.compose_data()
 
     # 正则表达式来解析日志，提取关键数据，存储到列表,列表元素必须是整型
-    def get_throughput(self, log):
+    @staticmethod
+    def get_throughput(log):
         # frame_data = []
         tcp_data = []
         udp_data = []
@@ -22,7 +23,7 @@ class PandasWriteExcel(object):
                 # m = pat.search(line)
                 # if m is not None:
                 #     frame_data.append(m.group(1))
-                if re.search("receiver", line):
+                if re.search(r"receiver", line):
                     tcp_data.append(line.split()[-3])
                 if re.search(r'\d+%', line):
                     udp_data.append(line.split()[-6])
@@ -41,7 +42,7 @@ class PandasWriteExcel(object):
     # 将构造好的数据写到excel
     def write_to_excel(self):
         write_file = "test.xlsx"
-        df = pd.DataFrame(self.data, self.index, self.cols)
+        df = pd.DataFrame(self.data, self.index, self.cols)  # 三个参数
         writer = pd.ExcelWriter(write_file)
         df.to_excel(writer, sheet_name='release', startrow=2, startcol=2)
         writer.save()
