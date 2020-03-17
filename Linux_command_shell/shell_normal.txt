@@ -223,10 +223,11 @@ find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 :10,20y ----±íÊ¾¸´ÖÆµÚ10µ½µÚ20ĞĞ
 ÔÚĞèÒªÕ³ÌùµÄµØ·½ÊäÈëP£¬±íÊ¾Õ³Ìùµ½´Ë´¦
 
+shellÖĞÌæ»»×Ö·û´®
 :10,20s/#/    /g -----ÓÃ4¸ö¿Õ¸ñÌæ»»¿ªÍ·µÄ#
 
 :10,20s/^/    /g----ÔÚÃ¿ĞĞĞĞÊ×Ìí¼Ó4¸ö¿Õ¸ñ
-
+:0,$s/a/b/g
 
 ¶ş¡¢ÀûÓÃÕıÔò±í´ïÊ½É¾³ı´úÂë¶ÎÃ¿ĞĞµÄĞĞºÅ
 
@@ -978,7 +979,7 @@ virtualenv yourdir python=python3.6 --no-site-packages ----¸É¾»µÄÄ¿Â¼£¬²»»á¶ÁÈ¡Ï
 ¡¡¡¡ÃüÁî£ºdeactivate
 
 =======================Ubuntu ftp =======
-if you want root have ftp service
+if you want root user have ftp service
 https://www.cnblogs.com/Dreamcho/p/10805690.html
 °²×°vsftp·şÎñÆ÷
 
@@ -988,7 +989,7 @@ https://www.cnblogs.com/Dreamcho/p/10805690.html
 Èı¡¢¸ü¸Ä/etc/ftpusers£¬×¢ÊÍµôrootÓÃ»§£ºsudo vim /etc/ftpusers
 ËÄ¡¢ÔÚÖÕ¶ËÖĞÖØÆôFTP·şÎñ£ºsudo /etc/init.d/vsftpd restart
 CuteFTP½¨Á¢Á¬½Ó£º
------Ubuntu 18.04ÅäÖÃftp
+-----Ubuntu 18.04ÅäÖÃftp£¬ÔÚ¼ÒÀïĞéÄâ»úÊÔÑé³É¹¦==========================
 1.°²×°vsftpd(ÖÕ¶ËÖ´ĞĞ)
 ? ??sudo?apt-get install?vsftpd
 
