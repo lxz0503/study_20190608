@@ -7,7 +7,7 @@
 
 import pandas as pd
 
-df = pd.read_csv(r"../data/gapminder.tsv", sep='\t') 
+df = pd.read_csv(r"../data/gapminder.tsv", sep='\t')    # 这个csv文件每个元素不是以逗号分割，而是以\t分割
 
 # 行操作，注意df.loc[-1]是非法的
 print("\n\n第一行")
@@ -40,4 +40,4 @@ print("\n\niloc选取第一行")
 print(df.iloc[0])
 
 print("\n\niloc选取三行")
-print(df.iloc[[0, 99, 999]])
+print(df.iloc[[0, 99, 999], [0, 1]])

@@ -15,22 +15,24 @@ import os
 input_path = os.path.dirname(__file__)
 output_file = r"output_files\12output.csv"
 
-all_files = glob.glob(os.path.join(input_path, 'sales_*'))
+all_files = glob.glob(os.path.join(input_path, 'sales_*'))   # 找到对应目录下，所有sales_开头的文件
+print('all_files are:\n')
+print(all_files)
 all_data_frames = []
 for input_file in all_files:
     print(input_file)
-    data_frame = pd.read_csv(input_file, index_col=None)
+    data_frame = pd.read_csv(input_file, index_col=None)    # 从csv读取数据
 
     print(data_frame)
-    
-    sales = pd.DataFrame([float(str(value).strip('$').replace(',', ''))
+    # 取其中一列数据，对其进行处理，例如求和，求平均值
+    sales = pd.DataFrame([float(str(value).strip('$').replace(',', ''))      # "$1,200.00"
                         for value in data_frame.loc[:, 'Sale Amount']])
 
     print('sales', sales)
     total_cost = sales.sum()
     average_cost = sales.mean()
-
-    data = {'file_name': os.path.basename(input_file),
+    # 组成新的dataframe
+    data = {'file_name': os.path.basename(input_file),   # 只取文件名,而不是全路径文件名
             'total_sales': total_cost,
             'average_sales': average_cost}
 
@@ -39,4 +41,4 @@ for input_file in all_files:
 print('all:\n', all_data_frames)
 
 data_frames_concat = pd.concat(all_data_frames, axis=0, ignore_index=True)   # concat() the first para is a list
-data_frames_concat.to_csv(output_file, index=False)
+# data_frames_concat.to_csv(output_file, index=False)
