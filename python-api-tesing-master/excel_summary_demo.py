@@ -23,7 +23,7 @@ df3 = merge_excel(df1, df2, '测试用例',fixes=["type","编号"], sorts=["type
 
 df4 = pandas.read_excel(file1,sheet_name='human')
 df5 = pandas.read_excel(file2,sheet_name='human')
-df5 = df5.rename(index=int, columns={"汇总图片": "图片总数"})
+df5 = df5.rename(index=int, columns={"汇总图片": "图片总数"})      # 改变列名可以用rename
 
 columns = ['用例编号',"测试用例","图片总数",'2pd-v2.11','2pd-v2.12','2pd-v2.13',
            '2pd-v2.14','2pd-v2.15']
