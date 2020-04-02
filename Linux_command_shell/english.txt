@@ -2802,6 +2802,129 @@ Employer Sponsored Migration.
 Dependent family members of New Zealand citizens eligible to apply for employer nominated permanent residence in Australia.
 新西兰公民家庭成员允许申请澳洲雇主担保的永久居民。
 
+referee or reference  推荐人
+be well versed in   通晓
+my daily routine 日常工作
+
+As we remain laser focused on FY20 and our ongoing growth goal, I’ve spent a lot of time working to ensure we have the right sales leadership in place to help drive our initiatives forward. To that end, I am very excited and pleased to announce that Jegan Arthanari has been promoted to Vice President, Worldwide Field Engineering.
+
+Jegan has been part of the Wind River family for 22 years, he is a valued and trusted leader who has the passion, determination, and dedication to inspire and encourage his team, and has had a significant impact on the success of Wind River. He plays a critical role in the growth and development of his team, helping Wind River navigate complex situations like Urgent 11, and driving product requirements into our roadmap.
+
+Always demonstrating strong leadership, Jegan has built an incredibly talented and hard-working global Field Engineering team that our customers rely on for their development of the most advanced, mission-critical systems in the world.  I am honored to have him as a partner, and look forward to his continued success.
+
+Please join me in congratulating Jegan on this well-deserved promotion.
+
+====================================================
+Hi Dong & Peng & Folks,
+
+I have a suggestion and request relating to our networking
+benchmarking testing, and also relating to development efforts
+to improve networking performance.
+
+In the iperf3 performance tests, we currently do not have very good
+testing for receive (RX) performance.  Currently there are four tests
+performed:
+?	TCP 64 (RX)
+?	TCP 1024 (TX)
+?	TCP 65536 (TX)
+?	UDP 1400 (TX)
+
+All of the tests run between a VxWorks target (iperf3 client)
+and a Linux server (iperf3 server).
+
+Of the 4 tests, on ly the TCP 64 (RX) test involves the VxWorks target
+receiving.  The linux server host sends TCP data to the client.  However,
+
+- The test restricts sends by the server and receives by the client to 64 bytes.
+- The Nagle algorithm is disabled, in an effort to avoid coalescing of sends resulting
+   in full-sized segments being transmitted on the wire.
+- The socket buffer sizes are left at the OS default, which means 60000 bytes
+   on VxWorks.
+
+This is not a test aimed at measuring the best receive performance
+of the VxWorks target, or even measuring typical TCP receive performance.
+The limitation of the send/receive size and the disabling of the Nagle algoritm
+are instead handicaps aimed at stressing the RX I/O path in the stack, sockets,
+and I/O layers.
+
+To be fair, for 1Gbit/s Ethernet, I suspect that most VxWorks targets are
+fast enough to support TCP receive at the rough maximum rate of  ~941 Mbit/s
+so one would not see much difference amongst targets, and would also
+not easily see any effect from a small stack performance gain or drop,
+so long as the target could still support the line-rate limited ~941 Mbit/s.
+
+However, this does not apply for 10Gbit/s Ethernet, where most
+VxWorks targets are still CPU limited rather than wire-limited.  I think
+we should add realistic TCP RX performance testing  for a selection
+of VxWorks targets capable of 10Gbit/s Ethernet.  This testing should
+aim at typical or best-case throughput (with MTU 1500) rather than
+handicapping the system with small sends, small receives,  disabled Nagle,
+and small (for 10Gbit/s) socket buffers.
+
+[Note that the TCP 64 (RX) test also has another issue.  Disabling the Nagle
+algorithm does not fully succeed in avoiding coalescing of sends by the
+Linux sender.  On the wire, one sees segments that are often considerably
+larger than the 64-bytes of TCP payload data per send. The Linux sender
+is more successful in coalescing sends when sending against a slower
+receiver, which has the perverse effect that for at least some ranges of
+receiver performance, speeding up the reciever decreases the TX coalescing,
+makes segments on th ewire smaller, and so decreases the actual throughput.
+However, I think it is better to add a new test exercising  10Gbit/s receive by
+VxWorks rather than completely getting rid of the current TCP 64 (RX) test,
+although I would like to see the TCP 64 (RX) test de-emphasized.]
+
+I think it also makes sense to add a set of tests in which VxWorks acts
+as both receiver and sender.   Linux and VxWorks have different
+properties as TCP senders -- in particular, VxWorks does not (yet) support
+TCP segmentation offload, a.k.a. TCP large send.  It is worthwhile to
+test VxWorks against not only Linux but also against VxWorks.
+(Runing a TCP throughput test between two VxWorks targets
+also has the benefit of simultaneously testing VxWorks sending and
+receiving.)  A UDP throughput test measuring successfully received
+RX throughput rather than TX throughput is another possibility.
+
+I would suggest starting with two relatively fast, identical Intel
+boards connected by Intel 82599-based NICs (tei driver) via
+fibre.  The boards would be in VLM and (ideally) each could boot
+into either VxWorks or linux.  Later, other targets with 10Gbit/s
+capable network interfaces could be added.  We could add
+TCP throughput tests between two such VxWorks targets
+to our official iperf3 test repertoire.
+
+I would like such connected target pairs available in VLM
+for remote networking  development as well as for official network throughput
+testing.   I have a tentative improvement in the TCP receive side on
+SMP targets that in preliminary testing (on Intel targets with tei
+interfaces in my WRS office), showed more than doubled TCP throughput
+between the two SMP VXWorks targets.  However, I was not able to
+take those targets home with me, and cannot develop on them remotely.
+That's my "selfish" reason for this request; I would like to continue
+that work, but currently I am not aware of such a pair of 10Gbit/s
+connected targets available via VLM.
+
+Anyhow, that's what I think would be useful for networking
+performance development and testing.
+
+Thanks,
+============================================================
+Hi everyone,
+
+As we continue to expand and evolve our team and leadership capabilities to drive growth for Wind River, I am pleased to announce the following promotions on the HVP team:
+
+ – Senior Member of Technical Staff
+Tasos joined the HVP team in 2017, most recently serving in the position of Member of Technical Staff. This promotion recognizes Tasos’s contributions to Wind River and our team during his tenure, specifically his leadership in planning of the SC0630 release, creation of EPICs, and defining the different phases of SC0630. Now, he is going to bring his knowledge and experience to the Certification program to finish it smoothly while working as a scrum master for two teams and unblocking any hurdles and road blocks in the execution of these teams.
+
+ – Member of Technical Staff
+Dmitriy joined the HVP team in 2017, most recently serving in the position of Senior Engineer. This promotion recognizes Dmitriy’s contributions to Wind River and our team during his tenure, specifically the 653 parity feature enabling permission for system calls. Now, he is going to bring his knowledge and experience to HELIX product overall helping with technical debt reduction and filling in as scrum master which allows him to be a positive and active influence on the entire team.
+
+Please join me in congratulating these individuals on this next opportunity and wishing everyone success in their new roles.
+
+Regards,
+
+
+
+
+
 ================= 2019.5-8 topic
 
 Part 2 & 3 Topic Cards and Questions
