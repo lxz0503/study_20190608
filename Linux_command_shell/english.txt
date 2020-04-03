@@ -2806,6 +2806,34 @@ referee or reference  推荐人
 be well versed in   通晓
 my daily routine 日常工作
 
+====================learn how to write formal email in IELTS test===
+Team,
+
+During this global crisis, our priorities are:
+
+?	Our People, Company
+?	Our Customers, Partners, and the Industry
+?	Our Culture
+
+OUR PEOPLE, COMPANY
+Our primary concern is the safety, health, and well-being of you and your families. With COVID-19 having far-reaching effects on our daily lives, it is essential that we take special care of ourselves and our loved ones. I know we are all aware and experiencing the burdens of working remotely during this time, and the company is here for you to ensure you have access to the tools, resources, and support you need.
+
+I want to thank everyone for the tremendous effort you are making to keep our business going strong under the most challenging of circumstances. Everyone has an important role to play and is stepping up in creative and collaborative ways to support our company and our customers. Since joining the company just five weeks ago, I have truly been amazed at and extremely proud of the response and resilience of our teams around the world.
+
+At the core of our DNA is the ability to build mission-critical capabilities. This DNA is more valuable for us now than ever before as we navigate a new normal. If we lean into the possibilities in these moments and recognize that this new normal is being created, then we can tap into the skills, mindsets, and relationships that are part of our core strengths. Be tolerant of each other and our new working environments. We will get through this difficult time together, and I’m optimistic that we can learn, adapt, and adjust so we emerge as a better, stronger, and more unified Wind River as a result of it.
+
+OUR CUSTOMER, PARTNERS, AND THE INDUSTRY
+As this crisis unfolds, Wind River’s commitment to help the world run better and improve people’s lives has never been more important. We continue to deliver solutions for mission-critical systems that help safeguard and protect the global population. To help our customers, partners, and the industry at large, we’ll be launching an important initiative early next week intended to help companies navigate and adapt to this challenging new climate, including those directly responding to the COVID-19 crisis. This is our chance to underscore Wind River’s collective and focused commitment to the industry to let them know we care and that they can count on Wind River. I’ll be sharing more details soon…stay tuned.
+
+OUR CULTURE
+Today we kick off our Wind Way monthly theme of ‘We Care.’ I can’t think of a time when this guiding principle would be more important and relevant than it is now. From our families, friends, and colleagues to our customers, partners, and communities, showing how much we care right now is more critical than ever. The team will introduce a series of initiatives in support of this guiding principle that they will be sharing with you soon.
+
+Please take care of yourself and those around you, and we will continue to provide you with regular updates as we move forward.
+
+All my best for the ongoing health and safety of you and your loved ones,
+
+======================================================================
+
 As we remain laser focused on FY20 and our ongoing growth goal, I’ve spent a lot of time working to ensure we have the right sales leadership in place to help drive our initiatives forward. To that end, I am very excited and pleased to announce that Jegan Arthanari has been promoted to Vice President, Worldwide Field Engineering.
 
 Jegan has been part of the Wind River family for 22 years, he is a valued and trusted leader who has the passion, determination, and dedication to inspire and encourage his team, and has had a significant impact on the success of Wind River. He plays a critical role in the growth and development of his team, helping Wind River navigate complex situations like Urgent 11, and driving product requirements into our roadmap.
@@ -2814,7 +2842,7 @@ Always demonstrating strong leadership, Jegan has built an incredibly talented a
 
 Please join me in congratulating Jegan on this well-deserved promotion.
 
-====================================================
+============================================================================
 Hi Dong & Peng & Folks,
 
 I have a suggestion and request relating to our networking

@@ -1,3 +1,6 @@
+markdown:
+https://blog.csdn.net/xcbeyond/article/details/104303577?depth_1-utm_source=distribute.pc_feed.none-task&request_id=&utm_source=distribute.pc_feed.none-task
+
 3.	git clone http://xli3@vxgit.wrs.com/scm/vx7/vxworks.git
 
 git clone http://xli3@147.11.224.60/scm/vx7/vxworks.git
