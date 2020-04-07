@@ -2949,9 +2949,48 @@ Please join me in congratulating these individuals on this next opportunity and 
 
 Regards,
 
+================================================================================
+Staff Software Development QA Engineer - Beijing/Sunnyvale
+公司名称Fortinet 所在地区 Beijing, CN
+Fortinet的Staff Software Development QA Engineer - Beijing/Sunnyvale职位
 
+Job Description
 
+Title: Staff Software Development QA Engineer
 
+Responsibilities
+Function, stressing and performance testing on FNAC product
+Write test checklist, test specification, bug report, etc.
+Responsible for automating the test cases
+Solution design and validation on integration with such as FNAC, NGFW, FAC, endpoint security product, etc.
+Programing test script by Python or Shell.
+Work closely with the developer to design and execute the test cases
+
+Requirements
+Bachelor's degree or above in Computer Science/Engineering or related fields.
+Strong experience in network product testing and solution design or validation, especially on the network security device.
+Good experience in Shell/Python script for auto testing.
+Experience configuring, installing, and troubleshooting PC/server software and hardware in a Windows and Unix environment.
+Good knowledge of general QA procedures and methodologies, as well as software development fundamentals
+Solid knowledge in network security production or technology such as NGFW, Endpoint Security, Web Application Firewall.
+Good knowledge of networking routing and switching protocols such as BGP/OSPF/VPN and also TCP/IP protocols.
+Good knowledge of application layer protocol such as HTTP, DNS, Radius, SSL, DHCP, LDAP, Kerberos, SNMP.
+Excellent problem solving and troubleshooting skills.
+Highly motivated, positive, detail-oriented and responsible, communication skills.
+
+Fortinet (NASDAQ: FTNT) secures the largest enterprise, service provider, and government organizations around the world.
+Fortinet empowers its customers with intelligent, seamless protection across the expanding attack surface
+and the power to take on ever-increasing performance requirements of the borderless network - today and into the future.
+Only the Fortinet Security Fabric architecture can deliver security without compromise to address the most critical security challenges,
+whether in networked, application, cloud or mobile environments.
+Fortinet ranks #1 in the most security appliances shipped worldwide and more than 440k customers trust Fortinet to protect their businesses.
+Learn more at http://www.fortinet.com, the Fortinet Blog, or FortiGuard Labs.
+
+Fortinet is an Equal Opportunity employer.
+
+We will only notify shortlisted candidates.
+
+Fortinet will not entertain any unsolicited resumes, please refrain from sending them to any Fortinet employees or Fortinet email aliases. Should any Agency submit any resumes to Fortinet, these resumes if considered, will be assumed to have been given by the Agency free of any related fees/charge.
 
 ================= 2019.5-8 topic
 
