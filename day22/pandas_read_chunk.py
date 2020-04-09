@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 
 def pandas_read(filename, sep=',', size=5):
-    # names参数可以决定列名,否则就会以第一列的名字默认作为列名
+    # names参数可以决定列名,否则就会以第一列的名字默认作为列名,在这里可以去掉这个参数，只是作为提示
     reader = pd.read_csv(filename, sep, chunksize=size, header=None, names=['test result'])   # pd.dataframe
     while True:
         try:
@@ -28,6 +28,6 @@ if __name__ == '__main__':
     print('case status is {}'.format((next(g).values[0][0].split(':')[1])))
     print(type(next(g).values[0]))    # np.ndarray()   <class 'numpy.ndarray'>
     # print(next(g).values[0])
-    print(np.array(next(g).values[0]).tolist())
+    print(np.array(next(g).values[0]).tolist())     # ['ICMP-4.4:Passed']   this is line 16 after 3 calls of next(g)
     print('case status is {}'.format(np.array(next(g).values[0]).tolist()[0].split(':')[1]))
 
