@@ -2806,6 +2806,10 @@ referee or reference  推荐人
 be well versed in   通晓
 my daily routine 日常工作
 
+demarcation   区分  划分；划界；分界
+Wang Yi stressed that the demarcation in the East China Sea can only be addressed through negotiations, which are the only right choice.
+王毅强调，东海划界只能通过谈判解决，这是唯一正确的选择。
+
 ====================learn how to write formal email in IELTS test===
 Team,
 
@@ -2949,8 +2953,85 @@ Please join me in congratulating these individuals on this next opportunity and 
 
 Regards,
 
+================================================================================
+Staff Software Development QA Engineer - Beijing/Sunnyvale
+公司名称Fortinet 所在地区 Beijing, CN
+Fortinet的Staff Software Development QA Engineer - Beijing/Sunnyvale职位
 
+Job Description
 
+Title: Staff Software Development QA Engineer
+
+Responsibilities
+Function, stressing and performance testing on FNAC product
+Write test checklist, test specification, bug report, etc.
+Responsible for automating the test cases
+Solution design and validation on integration with such as FNAC, NGFW, FAC, endpoint security product, etc.
+Programing test script by Python or Shell.
+Work closely with the developer to design and execute the test cases
+
+Requirements
+Bachelor's degree or above in Computer Science/Engineering or related fields.
+Strong experience in network product testing and solution design or validation, especially on the network security device.
+Good experience in Shell/Python script for auto testing.
+Experience configuring, installing, and troubleshooting PC/server software and hardware in a Windows and Unix environment.
+Good knowledge of general QA procedures and methodologies, as well as software development fundamentals
+Solid knowledge in network security production or technology such as NGFW, Endpoint Security, Web Application Firewall.
+Good knowledge of networking routing and switching protocols such as BGP/OSPF/VPN and also TCP/IP protocols.
+Good knowledge of application layer protocol such as HTTP, DNS, Radius, SSL, DHCP, LDAP, Kerberos, SNMP.
+Excellent problem solving and troubleshooting skills.
+Highly motivated, positive, detail-oriented and responsible, communication skills.
+
+Fortinet (NASDAQ: FTNT) secures the largest enterprise, service provider, and government organizations around the world.
+Fortinet empowers its customers with intelligent, seamless protection across the expanding attack surface
+and the power to take on ever-increasing performance requirements of the borderless network - today and into the future.
+Only the Fortinet Security Fabric architecture can deliver security without compromise to address the most critical security challenges,
+whether in networked, application, cloud or mobile environments.
+Fortinet ranks #1 in the most security appliances shipped worldwide and more than 440k customers trust Fortinet to protect their businesses.
+Learn more at http://www.fortinet.com, the Fortinet Blog, or FortiGuard Labs.
+
+Fortinet is an Equal Opportunity employer.
+
+We will only notify shortlisted candidates.
+
+Fortinet will not entertain any unsolicited resumes, please refrain from sending them to any Fortinet employees or Fortinet email aliases. Should any Agency submit any resumes to Fortinet, these resumes if considered, will be assumed to have been given by the Agency free of any related fees/charge.
+
+======================================Bill Gates blog
+There’s no question the United States missed the opportunity to get ahead of the novel coronavirus. But the window for making important decisions hasn’t closed. The choices we and our leaders make now will have an enormous impact on how soon case numbers start to go down, how long the economy remains shut down and how many Americans will have to bury a loved one because of COVID-19.
+
+Our foundation has been working to slow the outbreak for several months. To date, we’ve invested $105 million in efforts to create new therapeutics, expand access to testing, and limit the virus’s impact here in Seattle.
+
+As a result of this work, I’ve spoken with experts and leaders in Washington and across the country. It’s become clear to me that we must take three steps.
+
+First, we need a consistent nationwide approach to shutting down. Despite urging from public health experts, some states and counties haven’t shut down completely. In some states, beaches are still open; in others, restaurants still serve sit-down meals.
+
+This is a recipe for disaster. Because people can travel freely across state lines, so can the virus. The country’s leaders need to be clear: Shutdown anywhere means shutdown everywhere. Until the case numbers start to go down across America—which could take 10 weeks or more—no one can continue business as usual or relax the shutdown. Any confusion about this point will only extend the economic pain, raise the odds that the virus will return, and cause more deaths.
+
+Second, the federal government needs to step up on testing. Far more tests should be made available. We should also aggregate the results so we can quickly identify potential volunteers for clinical trials and know with confidence when it’s time to return to normal. There are good examples to follow: New York state recently expanded its capacity to more than 25,000 tests per day.
+
+There’s also been some progress on more efficient testing methods, such as the self-swab developed by the Seattle Coronavirus Assessment Network, which allows patients to take a sample themselves without possibly exposing a health worker. I hope this and other innovations in testing are scaled up across the country soon.
+
+Even so, demand for tests will probably exceed the supply for some time, and right now, there’s little rhyme or reason to who gets the few that are available. As a result, we don’t have a good handle on how many cases there are or where the virus is likely headed next, and it will be hard to know if it rebounds later. And because of the backlog of samples, it can take seven days for results to arrive when we need them within 24 hours.
+
+This is why the country needs clear priorities for who is tested. First on the list should be people in essential roles such as health-care workers and first responders followed by highly symptomatic people who are most at risk of becoming seriously ill and those who are likely to have been exposed.
+
+The same goes for masks and ventilators. Forcing 50 governors to compete for lifesaving equipment—and hospitals to pay exorbitant prices for it—only makes matters worse.
+
+Finally, we need a data-based approach to developing treatments and a vaccine. Scientists are working full speed on both; in the meantime, leaders can help by not stoking rumors or panic buying. Long before the drug hydroxychloroquine was approved as an emergency treatment for COVID-19, people started hoarding it, making it hard to find for lupus patients who needed it to survive.
+
+We should stick with the process that works: Run rapid trials involving various candidates and inform the public when the results are in. Once we have a safe and effective treatment, we’ll need to ensure that the first doses go to the people who need them most.
+
+To bring the disease to an end, we’ll need a safe and effective vaccine. If we do everything right, we could have one in less than 18 months—the fastest a vaccine has ever been developed. But creating a vaccine is only half the battle. To protect Americans and people around the world, we’ll need to manufacture billions of doses.
+
+Without a vaccine, developing countries are at even greater risk than wealthy ones, because it’s even harder for them to do physical distancing and shutdowns. The further down the income ladder people live, the more important it is that they go to work every day just to feed their family.
+
+If they live in the poorest parts of sub-Saharan Africa or India, staying home simply isn’t an option. Even if they do stay home, they can’t just wall themselves off from their neighbors; in slums, the houses are packed together so closely that there’s no way to keep your distance. All the work that rich countries are doing now to develop vaccines will save lives in those places, too.
+
+We can get a head start on manufacturing all of the doses we’ll need now by building the facilities where these vaccines will be made. Because many of the top candidates are made using unique equipment, we’ll have to build facilities for each of them, knowing that some won’t get used. Private companies can’t take that kind of risk, but the federal government can. It’s a great sign that the administration made deals this week with at least two companies to prepare for vaccine manufacturing. I hope more deals will follow.
+
+In 2015, I urged world leaders in a TED talk to prepare for a pandemic the same way they prepare for war—by running simulations to find the cracks in the system. As we’ve seen this year, we have a long way to go. But I still believe that if we make the right decisions now, informed by science, data, and experience of medical professionals, we can save lives and get the country back to work.
+
+A version of this post originally appeared on the website of the Washington Post.
 
 
 ================= 2019.5-8 topic

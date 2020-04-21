@@ -209,6 +209,8 @@ find . -type d -size +10k-----搜索大于10K的目录
 
 find . -type f -name "*.txt" -delete  -----删除当前目录下所有txt后缀的文件
 
+find ./ -type d -name 'fsl_imx6_platform_up'
+
 或者rm -rf $(find . -type f -name "*.txt")
 或者find . -type f -name "*.txt" -ok rm {} \;
 
@@ -1085,6 +1087,7 @@ remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
 退出后保存即可
 ====================================================================
 
+sudo shutdown -h now
 
 
 
