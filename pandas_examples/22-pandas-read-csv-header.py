@@ -13,4 +13,11 @@ print('pandas read csv without header')
 df = pd.read_csv('bug_record_no_header.csv', header=0, names=['a', 'b', 'c', 'd'])   # read first line, set column names
 print(df.head(3))
 # df.to_csv('xiaozhan.csv', index=False)   # the default value of header is True
+# read with chunksize
+print('====================read with chunksize:======================:')
+df = pd.read_csv('bug_record.csv', header=0, chunksize=2)
+for t in df:
+    print(t)
+    t.drop(columns=['Closed'], axis=1, inplace=True)
+    print(t)
 
