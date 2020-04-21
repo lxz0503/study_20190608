@@ -2,6 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+t = pd.DataFrame([[1,2,3,4],[5,6,7,8],[2,3,4,5],[6,7,8,9]],
+                 index=['a','b','c','d'],
+                 columns=['x1','x2','x3','x4'])
+print(t)
+# another method to initialize dataframe
 data = {
         'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
@@ -11,14 +16,13 @@ data = {
 data_frame = pd.DataFrame.from_dict(data, orient='index', columns=['year', 'city', 'house_price','a'])
 print(data_frame)
 print(data_frame.values)
-print(data_frame.get_values())  # 功能同上，获取所有数值
 # print(data_frame.values[0])
 # print(data_frame.values[0][2])
 # print(data_frame.sort_values(by=['house_price'],na_position='first'))  # 依据house_price列排序，并将该列空值放在首位
 # print(data_frame.sort_values(by=['city','house_price'],ascending=False))
 
-x = pd.DataFrame({'x1':[1,2,2,3],'x2':[4,3,2,1],'x3':[3,2,4,1]})
-# print(x)
+x = pd.DataFrame({'x1': [1,2,2,3], 'x2': [4,3,2,1], 'x3': [3,2,4,1]}, index=['a','b','c','d'])
+print(x.sort_values(by='x2'))
 # print(x.sort_values(by=0,ascending=False, axis=1)) # 按照索引值为0的行，即第一行的值来降序排序
 
 # another example
