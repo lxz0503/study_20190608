@@ -1,0 +1,5 @@
+Tue, 21 Apr 2020 14:05:54-log_test_conf.py-[line:9]-DEBUG-[LogInfoMessage]: this is debug
+Tue, 21 Apr 2020 14:05:54-log_test_conf.py-[line:10]-INFO-[LogInfoMessage]: this is info
+Tue, 21 Apr 2020 14:05:54-log_test_conf.py-[line:11]-WARNING-[LogInfoMessage]: this is warn
+Tue, 21 Apr 2020 14:05:54-log_test_conf.py-[line:12]-ERROR-[LogInfoMessage]: this is error
+Tue, 21 Apr 2020 14:05:54-log_test_conf.py-[line:13]-CRITICAL-[LogInfoMessage]: this is critical
