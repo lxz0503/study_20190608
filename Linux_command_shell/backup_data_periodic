@@ -6,7 +6,7 @@ BCK_DIR="/backup/temp"
 DATE=`date +%F`
 YOURFILE="aaa.log"
 #每周一进行备份
-if [ ${WEEKDAY} -eq 1  ];then
+if [ ${WEEKDAY} -eq 1 ];then
     if [ -f ${BCK_DIR}/YOURFILE_${DATE}.tar.gz ];then
         echo "YOURFILE_${DATE} backup file is existing!"
     else

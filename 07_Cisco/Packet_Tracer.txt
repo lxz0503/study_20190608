@@ -7,3 +7,40 @@ This is for packet tracer 6.2 version:
 ?????????? Chinese.ptl ?????????????????????????????????????????????PT?????????? languages ????? Chinese.ptl ????????? Cisco Packet Tracer?
 Options,Preferences,Select Language,?? Chinese.ptl?Change Language
 
+Switch>en
+Switch#conf  t
+Switch(config)#enable password 123456
+Switch(config)#inter vlan 1
+Switch(config-if)#ip address 192.168.1.1 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+Switch(config)#username ml password 123
+Switch(config)#line vty 0 4
+Switch(config-line)#login
+Switch(config-line)#privilege level 3
+Switch(config-line)#end
+Switch#show run
+
+?????https://blog.csdn.net/gengkui9897/article/details/85141157
+=========================================================================================
+
+configure 3560 layer3 switch:
+
+Switch(config )#int fa 0/1
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#ex
+# configure IP address for vlan
+Switch(config )#int vlan 2
+Switch(config-if)#ip address 192.168.1.1 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#ex
+Switch(config )#int vlan 3
+Switch(config-if)#ip address 192.168.2.1 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#end
+Switch#conf t
+Switch(config)#ip routing
+Switch#show ip route
+Switch#show vlan
+
