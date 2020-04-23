@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>website for housing prices in hangzhou</title>
+</head>
+<body>
+<table>
+    {% for item in links %}
+    <tr>
+        <td>{{ loop.index }}}</td>
+        <td><a href="{{ item['href']}}">{{ item['title']}}</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

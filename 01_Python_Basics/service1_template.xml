@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service1>
+    <server_a_host>{{ server_a_host }}</server_a_host>
+    <server_a_port>{{ server_a_port }}</server_a_port>
+    <server_c>{{ server_c_host }}:{{ server_c_port }}</server_c>
+</service1>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- this is comment, use filter to process-->
+    <title>{{ title | trim }}}</title>
+</head>
+<body>
+    <!-- this is comment-->
+    {# this is a comment #}
+    <ul id="navigation">
+        <!-- for loop-->
+        {% for item in items %}
+            <!-- visit variable attribute-->
+        <li><a href="{{ item.href }}">{{ item['caption']}}}</a></li>
+        {% endfor %}
+    </ul>
+    <p>{{ content }}}</p>>
+</body>
+</html>
