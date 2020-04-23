@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service1>
+    <server_a_host>1.1.1.1</server_a_host>
+    <server_a_port>10</server_a_port>
+    <server_c>3.1.1.1:30</server_c>
+</service1>
