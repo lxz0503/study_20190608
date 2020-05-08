@@ -9,7 +9,7 @@ import yagmail
 import psutil
 
 EMAIL_USER = 'lxz_20081025@163.com'
-EMAIL_PASSWORD = 'lxzmm201143'
+EMAIL_PASSWORD = '123456'
 RECIPIENTS = ['281237214@qq.com', '534188479@qq.com']
 
 
@@ -38,21 +38,20 @@ def get_memory_info():
     virtual_mem = psutil.virtual_memory()
     mem_total = bytes2human(virtual_mem.total)
     mem_percent = virtual_mem.percent
-    # mem_free = bytes2human(virtual_mem.free + virtual_mem.buffers + virtual_mem.cached)
-    mem_free = bytes2human(virtual_mem.free)
+    mem_free = bytes2human(virtual_mem.free + virtual_mem.buffers + virtual_mem.cached)
     mem_used = bytes2human(virtual_mem.total * virtual_mem.percent)
 
     return dict(mem_total=mem_total, mem_percent=mem_percent, mem_free=mem_free, mem_used=mem_used)
 
-# def get_disck_info():
-#     disk_usage = psutil.disk_usage('/')
-#
-#     disk_total = bytes2human(disk_usage.total)
-#     disk_percent = disk_usage.percent
-#     disk_free = bytes2human(disk_usage.free)
-#     disk_used = bytes2human(disk_usage.used)
-#
-#     return dict(disk_total=disk_total, disk_percent=disk_percent, disk_free=disk_free, disk_used=disk_used)
+def get_disk_info():
+    disk_usage = psutil.disk_usage('/')
+
+    disk_total = bytes2human(disk_usage.total)
+    disk_percent = disk_usage.percent
+    disk_free = bytes2human(disk_usage.free)
+    disk_used = bytes2human(disk_usage.used)
+
+    return dict(disk_total=disk_total, disk_percent=disk_percent, disk_free=disk_free, disk_used=disk_used)
 
 def get_boot_info():
     boot_time = datetime.fromtimestamp(psutil.boot_time()).strftime('%Y-%m-%d %H:%M:%S')
@@ -63,7 +62,7 @@ def collect_monitor_data():
     data.update(get_boot_info())
     data.update(get_cpu_info())
     data.update(get_memory_info())
-    # data.update(get_disck_info())
+    data.update(get_disk_info())
     return data
 
 
