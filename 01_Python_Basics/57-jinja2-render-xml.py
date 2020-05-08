@@ -16,11 +16,11 @@ NAMES = ['server_a_host','server_a_port',
 def parser_vars_into_globals(filename):
     parser = configparser.ConfigParser()
     parser.read(filename)
-    print(globals())
+    print(globals())  # this is a dict
 
     for name in NAMES:
         globals()[name] = parser.get('DEFAULT', name)
-    print(globals())
+    print(globals())  # {'server_a_host': '1.1.1.1', 'server_a_port': '10', 'server_b_host': '2.1.1.1', 'server_b_port': '20', 'server_c_host': '3.1.1.1', 'server_c_port': '30'}
 
 
 def test_xml():
