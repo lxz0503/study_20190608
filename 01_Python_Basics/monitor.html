@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>monitor information</title>
+</head>
+<body>
+    <table border="1">
+        <tr><td>server name</td><td>{{ hostname }}</td></tr>
+        <tr><td>boot time</td><td>{{ boot_time }}</td></tr>
+
+        <tr><td>cpu number</td><td>{{ cpu_count }}</td></tr>
+        <tr><td>cpu percent</td><td>{{ cpu_percent }}</td></tr>
+
+        <tr><td>total memory</td><td>{{ mem_total }}</td></tr>
+        <tr><td>memory percent</td><td>{{ mem_percent }}</td></tr>
+        <tr><td>memory used</td><td>{{ mem_used }}</td></tr>
+        <tr><td>memory free</td><td>{{ mem_free }}</td></tr>
+
+        <tr><td>total disk</td><td>{{ disk_total }}</td></tr>
+        <tr><td>disk percent</td><td>{{ disk_percent }}</td></tr>
+        <tr><td>disk used</td><td>{{ disk_used }}</td></tr>
+        <tr><td>disk free</td><td>{{ disk_free }}</td></tr>
+    </table>
+
+</body>
+</html>
