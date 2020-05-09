@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 # coding=utf-8
 import pandas as pd
+from openpyxl import load_workbook
 
-data = pd.read_excel("bug_copy.xls", sheet_name='Sheet1')
+df = pd.read_excel('bug_copy.xlsx')
+book = load_workbook('bug_copy.xlsx')
+#
+writer = pd.ExcelWriter('bug_copy.xlsx', engine='openpyxl')
+writer.book = book
 
-# 增加行数据，在第5行新增
-# data.loc[8] = ['2/2/2020', 32, 10, 20]
+# get all sheets
+writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+df['Add'] = [10, 20, 30, 40, 50, 60]
+# write data
+df.to_excel(writer, sheet_name='Sheet1', index=0, startrow=0, startcol=0)
+writer.save()
 
-# 增加列数据，给定默认值None
-data['profession'] = None
 
-# 保存数据
-data.to_excel('bug_copy.xls', sheet_name='Sheet1', index=False, header=True)
