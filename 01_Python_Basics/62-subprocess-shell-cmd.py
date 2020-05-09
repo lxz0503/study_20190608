@@ -47,17 +47,17 @@ def start_mongod(cmd):
         print('execute command ({0}) successful '.format(cmd))
 
 def main():
-    package = ’mongodb-linux-x86_64-debian71-3.4.0.tgz'
-    cur_dir =os.path.abspath(’·’)
-    package_dir = os.path.join(cur_dir，’mongo’)
-    data_dir = os.path.join(cur_dir, ’mongodata')
-    logfile = os.path.join(data_dir, ’mongod.log')
+    package = 'mongodb-linux-x86_64-debian71-3.4.0.tgz'
+    cur_dir =os.path.abspath('.')
+    package_dir = os.path.join(cur_dir,'mongo')
+    data_dir = os.path.join(cur_dir, 'mongodata')
+    logfile = os.path.join(data_dir, 'mongod.log')
     if not os.path.exists(package):
-    raise SystemExit('{0} not found'.format(package))
+        raise SystemExit('{0} not found'.format(package))
 
     unpackage_mongo(package, package_dir)
     create_datadir(data_dir)
-    start_mongod(format_mongod_command(package_dir, data_dir, logfile))
+    start_mongod(format_mongod_cmd(package_dir, data_dir, logfile))
 
 
 
