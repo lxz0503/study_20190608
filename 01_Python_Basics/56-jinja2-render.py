@@ -13,7 +13,7 @@ def test_simple():
     items = [{'href':'a.com', 'caption':'ACaption'},
              {'href':'b.com', 'caption':'BCaption'}]
     content = 'This is content'
-    result = my_render('simple.html', **locals())  # **locals() can get all local varibales in test_simple()
+    result = my_render('simple.html', **locals())  # **locals() can get all local variables in test_simple()
     print(result)
 
 

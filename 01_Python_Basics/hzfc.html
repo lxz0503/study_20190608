@@ -8,8 +8,8 @@
 <table>
     {% for item in links %}
     <tr>
-        <td>{{ loop.index }}}</td>
-        <td><a href="{{ item['href']}}">{{ item['title']}}</a></td>
+        <td>{{ loop.index }}</td>
+        <td><a href="{{item['href']}}">{{item['title']}}</a></td>
     </tr>
     {% endfor %}
 
