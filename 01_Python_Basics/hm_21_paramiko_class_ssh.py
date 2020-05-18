@@ -34,6 +34,16 @@ class ParamikoClient(object):
             print(stderr.read().decode())
         else:
             print(str(result, 'utf-8'))      # 将二进制机器码码流转化为字符串
+            return str(result, 'utf-8')
+
+    def sftp_put(self):
+        with self.client.open_sftp() as sftp:
+            sftp.put('test.log', 'test.log')
+            sftp.chmod('test.log', 755)
+
+    def sftp_get(self):
+        with self.client.open_sftp() as sftp:
+            sftp.get('test.log','test.log')
 
     def close(self):
         self.client.close()
