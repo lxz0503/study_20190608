@@ -1,0 +1,125 @@
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Switch-C
+Switch-C(config)#hostname Core-Switch
+Core-Switch(config)#VTP domain mydomain
+Changing VTP domain name from NULL to mydomain
+Core-Switch(config)#vtp mode server
+Device mode already VTP SERVER.
+
+Core-Switch(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Core-Switch(config)#end
+Core-Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+Core-Switch#write
+Building configuration...
+[OK]
+Core-Switch#
+Core-Switch#conf t
+Core-Switch#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Core-Switch(config)#vlan 10
+Core-Switch(config-vlan)#exit
+Core-Switch(config)#vlan 20
+
+Core-Switch(config-vlan)#exit
+Core-Switch(config)#
+Core-Switch(config)#int vlan 10
+Core-Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+Core-Switch(config-if)#ip address 192.168.10.254 255.255.255.0
+Core-Switch(config-if)#no shutdown
+Core-Switch(config-if)#exit
+Core-Switch(config)#int vlan 20
+Core-Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+Core-Switch(config-if)#ip address 192.168.20.254 255.255.255.0
+Core-Switch(config-if)#no shutdown
+Core-Switch(config-if)#exit
+Core-Switch(config)#ip routing
+Core-Switch(config)#end
+Core-Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Core-Switch#write
+Building configuration...
+[OK
+
+-------------------------------------------------
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#host
+Switch(config)#hostname Access-Switch-A
+Access-Switch-A(config)#vtp domain mydomain
+Changing VTP domain name from NULL to mydomain
+Access-Switch-A(config)#vtp password cisco
+Setting device VLAN database password to cisco
+
+Access-Switch-A(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Access-Switch-A(config)#end
+Access-Switch-A#
+%SYS-5-CONFIG_I: Configured from console by console
+w
+Building configuration...
+[OK]
+Access-Switch-A#write
+
+Access-Switch-A(config-if)#description trunnk-interface
+Access-Switch-A(config-if)#switchport mode trunk
+
+Access-Switch-A(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to up
+
+Access-Switch-A(config-if)#end
+Access-Switch-A#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Access-Switch-A#write
+Building configuration...
+[OK]
+
+---------------------------------------
+Switch(config)#hostname Access-Switch-B
+Access-Switch-B(config)#vtp domain mydomain
+Changing VTP domain name from NULL to mydomain
+Access-Switch-B(config)#vtp p
+Access-Switch-B(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Access-Switch-B(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Access-Switch-B(config)#end
+Access-Switch-B#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Access-Switch-B#write
+Building configuration...
+[OK]
+
+# not you do not need to configure trunk interface in core switch.
+Core-Switch(config-if)#switchport mode trunk
+Command rejected: An interface whose trunk encapsulation is "Auto" can not be configured to "trunk" mode.
+Core-Switch(config-if)#
+
+
+Access-Switch-A(config)#int range fastEthernet 0/1-5
+Access-Switch-A(config-if-range)#switchport access vlan 10
+
+Access-Switch-B#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Access-Switch-B(config)#
+
+Access-Switch-B(config)#int range fastEthernet 0/1-5
+Access-Switch-B(config-if-range)#switchport access vlan 10
+Access-Switch-B(config-if-range)#exit
+
+Access-Switch-B(config)#int range fastEthernet 0/6-10
+Access-Switch-B(config-if-range)#switchport access vlan 20
+Access-Switch-B(config-if-range)#
+Access-Switch-B(config-if-range)#end
