@@ -15,7 +15,7 @@ def insertData(db, cursor):
         db.commit()
 
         print("successfully insert data")
-    except:
+    except :
         # 发生错误时回滚
         db.rollback()
 
