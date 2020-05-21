@@ -1,0 +1,106 @@
+Switch(config)#hostname Switch-A
+
+Switch-A(config)#interface vlan 1
+
+Switch-A(config-if)#ip address 192.168.1.1 255.255.255.0
+Switch-A(config-if)#
+Switch-A(config)#line vty 0 4
+Switch-A(config-line)#password cisco
+Switch-A(config-line)#login
+Switch-A(config-line)#exit
+
+Switch-A(config)#exit
+Switch-A#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch-A#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+Switch-A#
+
+Switch-A(config)#line vty 0 4
+Switch-A(config-line)#pas
+Switch-A(config-line)#password cisco
+Switch-A(config-line)#login
+Switch-A(config-line)#exit
+Switch-A(config)#cop
+Switch-A(config)#exit
+Switch-A#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch-A#cop
+Switch-A#copy ru
+Switch-A#copy running-config s
+Switch-A#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+Switch-A#
+Switch-A(config-if)#ip address 192.168.1.100 255.255.255.0
+Switch-A(config-if)#exit
+Switch-A(config)#ip default-gateway 192.168.1.1
+Switch-A(config)#exit
+
+
+Router(config)#host Router-A
+
+Router-A(config)#int gigabitEthernet 0/0
+Router-A(config-if)#ip address 192.168.1.1 255.255.255.0
+Router-A(config-if)#no shutdown
+Router-A#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+
+GigabitEthernet0/0     192.168.1.1     YES manual up                    up
+
+
+ Router-A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router-A(config)#enable secret 123
+
+Router-A(config)#line vty 0 4    # allow 5 users to connect
+Router-A(config-line)#password cisco
+Router-A(config-line)#login
+Router-A(config-line)#exit
+Router-A(config)#username zwk password 123456     # set telnet password
+
+Router-A(config)#line vty 0 4
+
+Router-A(config-line)#login local      ----u need to login
+
+Router-A(config-line)#exit
+Router-A(config)#exit
+Router-A#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router-A#write
+Building configuration...
+[OK]
+==========================set ssh on router
+Router-A(config)#ip domain-name abc.com
+Router-A(config)#
+Router-A(config)#username zwk password cisco
+Router-A(config)#line vty 0 15    # allow 16 users to connect
+Router-A(config-line)#
+Router-A(config-line)#transport input ssh
+Router-A(config-line)#login local
+Router-A(config-line)#
+Router-A(config)#ip ssh version 2
+Please create RSA keys (of at least 768 bits size) to enable SSH v2.
+Router-A(config)#
+Router-A(config)#crypto key generate rsa
+The name for the keys will be: Router-A.abc.com
+Choose the size of the key modulus in the range of 360 to 2048 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
+
+Router-A(config)#
+----
+On your PC, run this command:
+
+ssh -l zwk 192.168.1.1
+Open
+Password:     # this means ssh ok
