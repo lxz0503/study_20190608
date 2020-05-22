@@ -1087,7 +1087,82 @@ remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
 退出后保存即可
 ====================================================================
 
-sudo shutdown -h now
+sudo shutdown -h now      # this is to shutdown linux server
+sudo shutdown -h +1
+sudo shutdown -r 11:00
+
+==========================how to use nmap -==============================
+https://www.cnblogs.com/LyShark/p/10637507.html
+
+Install nmap in my Ubuntu 14.04:    sudo apt-get install nmap
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ nmap -v
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2020-05-19 16:09 CST
+Read data files from: /usr/bin/../share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.03 seconds
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ nmap 128.224.166.211
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2020-05-19 16:19 CST
+Nmap scan report for 128.224.166.211
+Host is up (0.00038s latency).
+Not shown: 986 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+2001/tcp open  dc
+2002/tcp open  globe
+2003/tcp open  finger
+2004/tcp open  mailbox
+2005/tcp open  deslogin
+2006/tcp open  invokator
+6000/tcp open  X11
+9090/tcp open  zeus-admin
+
+Nmap done: 1 IP address (1 host up) scanned in 5.91 seconds
+
+====================================================================
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sudo apt-get install sysstat
+windriver@PEK-QCAO1-D2:~/xiaozhan$ vi /etc/default/sysstat   ------ set it to True
+==============================================================================
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sudo apt-get install python-scapy
+=============================================================
+键盘同时按组合键Ctrl+Alt+Shift+F即tightvnc可退出全屏
+
+---------------------alias-------------------
+windriver@PEK-QCAO1-D2:~/xiaozhan$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+test for alias on my server:
+windriver@PEK-QCAO1-D2:~$ alias loo='cd /home/windriver;ls -l'
+windriver@PEK-QCAO1-D2:~$ loo
+total 318060
+-r-xr--r--  1 windriver windriver     29184 Nov 26 11:22 11_ia_28512_Q170.xls
+-rw-r--r--  1 root      root       27328266 Aug  2  2019 1.cap
+drwxr-xr-x  2 windriver windriver      4096 Dec  6  2018 2018.3-zcu102-release
+-rwxr--r--  1 windriver windriver 104448000 May 29  2019 2018.3-zcu102-release.tar
+-rw-rw-r--  1 windriver windriver       523 Aug 21  2019 23-find-latest-file.py
+-rw-rw-r--  1 windriver windriver         0 Aug  7  2019 2.txt
+drwx------  2 windriver windriver      4096 Jun  1  2018 aaa
+-rw-r--r--  1 root      root         153021 Aug 27  2018 a.cap
+drwxrwxrwx 13 windriver windriver      4096 Apr  7 11:52 ANVL
+
+If you want to cancel the alias:
+unalias loo
 
 
 
