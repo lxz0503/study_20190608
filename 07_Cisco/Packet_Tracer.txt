@@ -43,4 +43,6 @@ Switch#conf t
 Switch(config)#ip routing
 Switch#show ip route
 Switch#show vlan
-
+====================================================================================
+DTE就是你自己的路由或其他设备.
+DCE 是服务控制端.就是串口线都有一端是答dce一端是dte，dce那段要配置clock rate的
