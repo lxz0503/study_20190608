@@ -1,0 +1,49 @@
+router-A(config)#int gigabitEthernet 0/0
+router-A(config-if)#ip address 192.168.2.1 255.255.255.0
+router-A(config-if)#no shutdown
+
+router-A(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+
+
+router-A(config)#int gigabitEthernet 0/0.1
+router-A(config-subif)#ip addr
+router-A(config-subif)#en
+router-A(config-subif)#encapsulation do
+router-A(config-subif)#encapsulation dot1Q 10
+router-A(config-subif)#ip addr
+router-A(config-subif)#ip address 192.168.10.1 255.255.255.0
+router-A(config-subif)#no shutdown
+router-A(config-subif)#int gi
+router-A(config-subif)#ex
+router-A(config)#int gi
+router-A(config)#int gigabitEthernet 0/0.2
+router-A(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.2, changed state to up
+e
+router-A(config-subif)#enc
+router-A(config-subif)#encapsulation do
+router-A(config-subif)#encapsulation dot1Q 20
+router-A(config-subif)#ip addr
+router-A(config-subif)#ip address 192.168.20.1 255.255.255.0
+router-A(config-subif)#no shutdown
+router-A(config-subif)#
+router-A(config)#ip dhcp pool vlan10
+router-A(dhcp-config)#net
+router-A(dhcp-config)#network 192.168.10.0 255.255.255.0
+router-A(dhcp-config)#def
+router-A(dhcp-config)#default-router 192.168.10.1
+
+router-A(config)#ip dhcp pool vlan20
+router-A(dhcp-config)#network 192.168.20.0 255.255.255.0
+router-A(dhcp-config)#default-router 192.168.20.1
+router-A(dhcp-config)#dns-server 202.96.134.133
+router-A(config)#ip dhcp excluded-address 192.168.10.2 192.168.10.30
+router-A(config)#ip dhcp excluded-address 192.168.20.50 192.168.20.90
+
+
