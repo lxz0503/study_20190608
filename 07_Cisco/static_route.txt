@@ -1,0 +1,58 @@
+pc-----switch is using copper straight through line
+pc------router is using copper cross-over
+switch---router,router---router are using  copper cross-over
+
+And I did not see serial0/0 interface.
+
+I just used gig0/0 between routers and switches.
+
+core-switch-A(config)#ip routing
+core-switch-A(config)#int fa0/1
+core-switch-A(config-if)#no switchport 
+core-switch-A(config-if)#ip address 192.168.10.1 255.255.255.0
+core-switch-A(config-if)#no shut
+core-switch-A(config)#int gigabitEthernet 0/1
+
+core-switch-A(config-if)#no switchport 
+core-switch-A(config-if)#ip address 192.168.1.1 255.255.255.0
+core-switch-A(config-if)#no shut
+core-switch-A(config-if)#exit
+
+----router-A
+Continue with configuration dialog? [yes/no]: no
+router-A(config)#int gigabitEthernet 0/1
+router-A(config-if)#ip address 192.168.1.2 255.255.255.0
+router-A(config-if)#no shut
+router-A(config)#int gigabitEthernet 0/0
+router-A(config-if)#ip address 192.168.20.1 255.255.255.0
+router-A(config-if)#no shut
+
+# add route
+router-A(config)#ip route 192.168.10.0 255.255.255.0 192.168.1.1
+router-A(config)#
+core-switch-A(config)#ip route 192.168.20.0 255.255.255.0 192.168.1.2
+core-switch-A(config)#
+
+router-A(config)#int gigabitEthernet 0/2    # this connects router-B's g0/2
+router-A(config-if)#ip address 192.168.2.1 255.255.255.0
+router-A(config-if)#no shut
+
+route-B(config-if)#int gigabitEthernet 0/0      # this connects pc
+route-B(config-if)#ip address 192.168.30.1 255.255.255.0
+route-B(config-if)#no shut
+
+route-B(config)#int gigabitEthernet 0/2
+route-B(config-if)#ip address 192.168.2.2 255.255.255.0
+route-B(config-if)#no shu
+
+router-A(config)#ip route 192.168.30.0 255.255.255.0 192.168.2.2
+router-A(config)#
+
+route-B(config)#ip route 192.168.20.0 255.255.255.0 192.168.2.1
+route-B(config)#
+
+# if pc0 wants to connect pc2
+core-switch-A(config)#ip route 192.168.30.0 255.255.255.0 192.168.1.2
+core-switch-A(config)#
+
+route-B(config)#ip route 192.168.10.0 255.255.255.0 192.168.2.1
