@@ -39,6 +39,24 @@ router-A(dhcp-config)#network 192.168.10.0 255.255.255.0
 router-A(dhcp-config)#def
 router-A(dhcp-config)#default-router 192.168.10.1
 
+access-switch-B>show  vlan 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Gig0/1, Gig0/2
+10   VLAN0010                         active    Fa0/1
+20   VLAN0020                         active    Fa0/6
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+
+
 router-A(config)#ip dhcp pool vlan20
 router-A(dhcp-config)#network 192.168.20.0 255.255.255.0
 router-A(dhcp-config)#default-router 192.168.20.1

@@ -1,0 +1,124 @@
+The HWIC-2T is a Cisco 2-Port Serial High-Speed WAN Interface Card, providing 2 serial ports.
+you can add this module in your router and the you can see 2 interfaces: serial0/0/0 and serial0/0/1
+This is used between 2 routers(WAN), and you must configure DCE clock rate in one router
+
+router-A:
+Router#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+ 
+GigabitEthernet0/0     unassigned      YES unset  administratively down down
+ 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+ 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+ 
+Serial0/0/0            unassigned      YES unset  administratively down down
+ 
+Serial0/0/1            unassigned      YES unset  administratively down down
+ 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#
+router-A(config)#int gigabitEthernet 0/1
+router-A(config-if)#ip address 192.168.1.2 255.255.255.0
+router-A(config-if)#no shut
+router-A(config-if)#int gigabitEthernet 0/0             # this connects PC1
+router-A(config-if)#ip address 192.168.20.1 255.255.255.0
+router-A(config-if)#no shut
+router-A(config)#int serial 0/0/0          # this connects router-B
+router-A(config-if)#clock rate 64000       # this means it is used as DCE and another side is DTE
+router-A(config-if)#ip address 192.168.2.1 255.255.255.0
+router-A(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to down
+router-A(config-if)#
+router-A(config-router)#no auto-summary 
+router-A(config-router)#network 192.168.1.0 
+router-A(config-router)#network 192.168.2.0 
+router-A(config-router)#network 192.168.20.0 
+router-A#write
+Building configuration...
+[OK]
+
+
+-----router-B
+router-B(config)#int gigabitEthernet 0/0         # this connects PC2
+router-B(config-if)#ip address 192.168.30.1 255.255.255.0
+router-B(config-if)#no shut
+router-B(config)#int serial 0/0/0      # this connects router-A
+router-B(config-if)#ip address 192.168.2.2 255.255.255.0
+router-B(config-if)#no shut          # this is to change status to up
+router-B(config)#router rip 
+router-B(config-router)#version 2
+router-B(config-router)#network 192.168.2.0
+router-B(config-router)#network 192.168.30.0
+router-B(config-router)#end
+router-B#
+%SYS-5-CONFIG_I: Configured from console by console
+
+router-B#write
+Building configuration...
+[OK
+
+----switch-A
+core-switch-A(config)#router rip 
+core-switch-A(config-router)#version 2
+core-switch-A(config-router)#no auto-summary     # this  is to remove auto summary, only for version 2
+core-switch-A(config-router)#network 192.168.10.0
+core-switch-A(config-router)#network 192.168.1.0
+core-switch-A(config-router)#end
+core-switch-A#
+%SYS-5-CONFIG_I: Configured from console by console
+
+core-switch-A#write
+Building configuration...
+[OK]
+core-switch-A(config)#no ip route 192.168.20.0 255.255.255.0 192.168.1.2     # this is to remove static route
+core-switch-A(config)#no ip route 192.168.30.0 255.255.255.0 192.168.1.2
+
+
+router-B>show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R    192.168.1.0/24 [120/1] via 192.168.2.1, 00:00:05, Serial0/0/0
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, Serial0/0/0
+L       192.168.2.2/32 is directly connected, Serial0/0/0
+R    192.168.10.0/24 [120/2] via 192.168.2.1, 00:00:05, Serial0/0/0
+R    192.168.20.0/24 [120/1] via 192.168.2.1, 00:00:05, Serial0/0/0
+     192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.30.0/24 is directly connected, GigabitEthernet0/0
+L       192.168.30.1/32 is directly connected, GigabitEthernet0/0
+
+router-A>show ip protocols 
+Routing Protocol is "rip"
+Sending updates every 30 seconds, next due in 1 seconds
+Invalid after 180 seconds, hold down 180, flushed after 240
+Outgoing update filter list for all interfaces is not set
+Incoming update filter list for all interfaces is not set
+Redistributing: rip
+Default version control: send version 2, receive 2
+  Interface             Send  Recv  Triggered RIP  Key-chain
+  GigabitEthernet0/1    2     2     
+  Serial0/0/0           2     2     
+  GigabitEthernet0/0    2     2     
+Automatic network summarization is not in effect
+Maximum path: 4
+Routing for Networks:
+	192.168.1.0
+	192.168.2.0
+	192.168.20.0
+Passive Interface(s):
+Routing Information Sources:
+	Gateway         Distance      Last Update
+	192.168.1.1          120      00:00:25
+	192.168.2.2          120      00:00:22
+Distance: (default is 120)
+router-A>
