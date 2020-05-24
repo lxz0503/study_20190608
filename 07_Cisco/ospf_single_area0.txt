@@ -1,0 +1,54 @@
+router-A(config-router)#network 192.168.2.0 0.0.0.255 area 0
+router-A(config-router)#network 192.168.10.0 0.0.0.255 area 0       # this is for PC0
+router-A(config-router)#network 192.168.20.0 0.0.0.255 area 0       # this is for PC1
+
+router-B(config-router)#network 192.168.30.0 0.0.0.255 area 0      # this is for PC2
+router-B(config-router)#network 192.168.2.0 0.0.0.255 area 0
+router-B(config-router)#network 192.168.40.0 0.0.0.255 area 0      # this is for PC3
+
+router-A#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, Serial0/0/0
+L       192.168.2.1/32 is directly connected, Serial0/0/0
+     192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.10.0/24 is directly connected, GigabitEthernet0/0.1
+L       192.168.10.1/32 is directly connected, GigabitEthernet0/0.1
+     192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.20.0/24 is directly connected, GigabitEthernet0/0.2
+L       192.168.20.1/32 is directly connected, GigabitEthernet0/0.2
+O    192.168.30.0/24 [110/65] via 192.168.2.2, 00:00:39, Serial0/0/0
+O    192.168.40.0/24 [110/65] via 192.168.2.2, 00:00:39, Serial0/0/0
+
+
+router-B#show ip route 
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, Serial0/0/0
+L       192.168.2.2/32 is directly connected, Serial0/0/0
+O    192.168.10.0/24 [110/65] via 192.168.2.1, 00:01:23, Serial0/0/0
+O    192.168.20.0/24 [110/65] via 192.168.2.1, 00:01:23, Serial0/0/0
+     192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.30.0/24 is directly connected, GigabitEthernet0/0.1
+L       192.168.30.1/32 is directly connected, GigabitEthernet0/0.1
+     192.168.40.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.40.0/24 is directly connected, GigabitEthernet0/0.2
+L       192.168.40.1/32 is directly connected, GigabitEthernet0/0.2
