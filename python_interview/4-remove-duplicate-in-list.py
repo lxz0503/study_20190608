@@ -18,3 +18,4 @@ zd = {}.fromkeys(name)        # the key of the dict is unique
 print(zd)
 mylist = list(zd.keys())
 print(''.join(mylist))
+

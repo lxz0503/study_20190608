@@ -1,0 +1,546 @@
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL Machine info: 2.6.18-348.el5PAE
+                   Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+                   Total Memory 8197416 kB RAM. Free Memory 6700688 kB RAM.
+                   025650-678a76-daddf8-a95c
+ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlrip_SplitHorizon rip 8.17 
+
+
+# Parameter File: /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlrip_SplitHorizon.prm 
+
+Reboot Time                              300                 # (0x0000012C)
+Reboot Command                           "./DocScriptQ35/RIP/reboot-command.exp $ANVL_DUTHOSTNAME"
+Post suite Command                       "./DocScriptQ35/RIP/RIPpostsuite.exp $ANVL_DUTHOSTNAME"
+DUT Verification Returns FALSE on Success False
+DUT Verification Return Value on Success 1                   # (0x00000001)
+DUT Configure Check Return Value         False
+Pre Test Command                         "./DocScriptQ35/RIP/SplitHorizonPre.exp $ANVL_DUTHOSTNAME"
+Post Test Command                        "./DocScriptQ35/RIP/after.exp $ANVL_DUTHOSTNAME"
+Are You There Command                    ""
+Are You There Tolerance Time             1                   # (0x00000001)
+RIP Suite Setup Command                  "./DocScriptQ35/RIP/rip-suite-setup-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Flush Routes Command                 "./DocScriptQ35/RIP/rip-flush-routes-command.exp $ANVL_DUTHOSTNAME"
+RIP Version                              2-Broadcast
+RIP DUT Supports all Versions            True
+RIP Host Routes Accepted                 False
+RIP Default Route Supported              True
+RIP Poison Reverse Supported             False
+RIP Default Route Enable Command         "./DocScriptQ35/RIP/rip-default-route-enable-command.exp $ANVL_DUTHOSTNAME"
+RIP Default Route Disable Command        "./DocScriptQ35/RIP/rip-default-route-disable-command.exp $ANVL_DUTHOSTNAME"
+RIP Compatibility Send Command           "./DocScriptQ35/RIP/rip-compatibility-send-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Compatibility Receive Command        "./DocScriptQ35/RIP/rip-compatibility-receive-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Set Authentication Command           "./DocScriptQ35/RIP/rip-set-authentication-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Reset Authentication Command         "./DocScriptQ35/RIP/rip-reset-authentication-command.exp $ANVL_DUTHOSTNAME"
+RIP Router List Command                  "./DocScriptQ35/RIP/rip-router-list-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Poison Reverse Command               "./DocScriptQ35/RIP/rip-poison-reverse-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Reset Router List Command            "./DocScriptQ35/RIP/rip-reset-router-list-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Set Host Route Command               "./DocScriptQ35/RIP/rip-set-host-route-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Static Route Add Command             "./DocScriptQ35/RIP/rip-static-route-add-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Static Route Delete Command          "./DocScriptQ35/RIP/rip-static-route-delete-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+RIP Tolerance Factor                     1                   # (0x00000001)
+RIP Tolerance Time                       10                  # (0x0000000A)
+
+# Parameter File End.
+
+Number of unused prefixes in config file is set to zero
+Setting number of unused prefixes to default value 255
+
+# Configuration File: /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlrip_SplitHorizon.cfg
+
+License Server Location                  
+DUT Hostname                             128.224.166.238
+DUT Username                             
+DUT Prompt                               ""
+DUT Password Level0                      
+DUT Password Level1                      
+DUT Custom Entry1                        
+DUT Custom Entry2                        
+DUT Custom Entry3                        
+IP First Unused Net                      50.0.0.0
+IP Number Unused Nets                    100                 # (0x00000064)
+IP Unused Net Mask                       255.0.0.0
+
+Ethernet Interface                       eth3
+  Interface Enabled                        True
+  DUT Interface                            ""
+  DUT MAC Address                          00:15:17:C8:90:28
+  IP Encapsulation Type                    Ethernet
+  IP DUT Address                           30.1.1.5
+  IP ANVL Address                          30.1.1.150
+  IP Subnet Mask                           255.255.255.0
+  IP Broadcast Address                     30.1.1.255
+  IP First Unused Address                  30.1.1.160
+  IP Number Unused Addresses               50                # (0x00000032)
+
+Ethernet Interface                       eth4
+  Interface Enabled                        True
+  DUT Interface                            ""
+  DUT MAC Address                          00:15:17:C8:90:29
+  IP Encapsulation Type                    Ethernet
+  IP DUT Address                           40.1.1.5
+  IP ANVL Address                          40.1.1.150
+  IP Subnet Mask                           255.255.255.0
+  IP Broadcast Address                     40.1.1.255
+  IP First Unused Address                  40.1.1.160
+  IP Number Unused Addresses               50                # (0x00000032)
+
+# Configuration File End.
+ANVL_DUTHOSTNAME:
+128.224.166.238
+
+ANVL_PARAMARG:
+30.1.1.5 40.1.1.5 255.255.255.0 255.255.255.0 30.1.1.0 40.1.1.0 3
+
+SCRIPT_MODE:
+FOREGROUND
+
+Executing system command:
+  "./DocScriptQ35/RIP/rip-suite-setup-command.exp $ANVL_DUTHOSTNAME $ANVL_PARAMARG"
+spawn telnet 128.224.166.238
+Trying 128.224.166.238...
+Connected to 128.224.166.238.
+Escape character is '^]'.
+
+-> ipAttach 0,"gei"
+value = 0 = 0x0
+-> cmd ifconfig gei0 inet add 30.1.1.5 netmask 255.255.255.0 up
+-> cmd ripctrl ifclose gei0
+The IPRIP daemon is not running
+-> cmd ripctrl ifopen gei0 broadcast  in-multi  in v2 nopoison 
+The IPRIP daemon is not running
+-> ipAttach 1,"gei"
+value = 0 = 0x0
+-> cmd ifconfig gei1 inet add 40.1.1.5 netmask 255.255.255.0 up
+-> cmd ripctrl ifclose gei1
+The IPRIP daemon is not running
+-> cmd ripctrl ifopen gei1 broadcast  in-multi  in v2 nopoison 
+The IPRIP daemon is not running
+-> cmd ipd kill iprip
+ipd: kill iprip failed: not started
+-> cmd sysvar get iprip.drop.hostroute 
+sysvar: iprip.drop.hostroute=0
+-> cmd sysvar set -co iprip.drop.hostroute "1"
+sysvar: iprip.drop.hostroute=1 ok
+-> cmd ipd start iprip
+ipd: start iprip ok
+-> exit
+Au revoir!
+Connection closed by foreign host.
+FF:FF:FF:FF:FF:FF < 00:1B:21:7D:57:BA ARP Req 30.1.1.5
+
+00:1B:21:7D:57:BA < 00:15:17:C8:90:28 ARP Rsp 30.1.1.150
+
+Device Under Test found at 30.1.1.5 as 00:15:17:C8:90:28
+FF:FF:FF:FF:FF:FF < 00:1B:21:7D:57:BB ARP Req 40.1.1.5
+
+00:1B:21:7D:57:BB < 00:15:17:C8:90:29 ARP Rsp 40.1.1.150
+
+Device Under Test found at 40.1.1.5 as 00:15:17:C8:90:29
+
+This test suite tests statements from:
+RFC 2453:  'RIP Version 2'
+(G. Malkin, Bay Networks, November 1998)
+
+ANVL Test Suite Required Setup:
+This suite expects to be running against an IP router that is set up
+to accept and advertise RIP routes.   There are a number of parameters
+controlling this suite that need to be setup for a completely
+automated run.  All tests require at least one interface to be
+configured and connected to the machine running ANVL.  Some of the
+tests require two interfaces.  Some of the tests require RIP v2 to be
+implemented.  Some of the tests require support for setting the
+version Compatibility Switch ('RIP Version 2', RFC 2453,
+Page 34, Section 5.1.)
+
+This suite should be run on an isolated test net which contains
+only the Device Under Test (DUT).
+Some tests may flood the network, some may erroneously fail if other
+devices are on the network, and some may send packets which can
+crash other devices on the network.
+
+>> RIP-8.17
+TEST_DESCRIPTION
+The "simple split horizon" scheme omits routes learned from one
+neighbor in updates sent to that neighbor.
+TEST_REFERENCE
+Thus implementors may at their option implement simple split horizon
+rather than split horizon with poisoned reverse
+The router requirements RFC [11] specifies that all implementation of
+RIP must use split horizon
+TEST_METHOD
+RFC 2453 s3.4.3 p15-16 Split horizon
+ANVL: Send update for a route with metric n
+ DUT: Send update with route missing
+ DUT: Send update for route to other network
+TEST_CLASSIFICATION
+MUST
+TEST_TOPOLOGY
+TOPOLOGY-2
+
+Executing system command:
+  "./DocScriptQ35/RIP/SplitHorizonPre.exp $ANVL_DUTHOSTNAME"
+spawn telnet 128.224.166.238
+Trying 128.224.166.238...
+Connected to 128.224.166.238.
+Escape character is '^]'.
+
+-> cmd ripctrl ifclose gei0
+   ok
+-> cmd ripctrl ifopen gei0 broadcast in-multi in v2 nopoison
+   ok
+-> exit
+Au revoir!
+Connection closed by foreign host.
+Advertising new route to 50.0.0.0
+Sending RIPv2 Response to 30.1.1.255 port 520 from 30.1.1.150 port 520
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = FF:FF:FF:FF:FF:FF
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x0800 (DOD IP)
+ETHER:
+IP: ---- IP Packet ----
+IP:
+IP: Version                = 4
+IP: Internet Header Length = 5 (20 bytes)
+IP: Type Of Service        = 0x00
+IP:  |01234567
+IP:  |000.....             = Precedence (Routine)
+IP:  |...0....             = Normal Delay
+IP:  |....0...             = Normal Throughput
+IP:  |.....0..             = Normal Reliability
+IP:  |......0.             = Normal Monetary Cost
+IP:  |.......0             = Must Be Zero 
+IP: Total Length           = 52 bytes
+IP: Identification         = 0x0001 (1)
+IP: Flags                  = 0
+IP:  |012
+IP:  |0..                  = Reserved 
+IP:  |.0.                  = May Fragment
+IP:  |..0                  = Last Fragment
+IP: Fragment Offset        = 0x0000 (0 bytes)
+IP: Time to Live           = 64
+IP: Protocol               = UDP (17)
+IP: Header Checksum        = 0x3B22 (Correct)
+IP: Source Address         = 30.1.1.150
+IP: Destination Address    = 30.1.1.255
+IP:
+UDP: ---- UDP Packet ----
+UDP:
+UDP: Source Port      = 520 (route)
+UDP: Destination Port = 520 (route)
+UDP: Length           = 32 
+UDP: Checksum         = 0x0000 
+UDP:
+RIP: ---- RIP Packet ----
+RIP:
+RIP: Command        = Response (0x02)
+RIP: Version        = 2
+RIP: Routing Domain = 0x0000 
+RIP:
+RIP:  --- Tuple 1 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 50.0.0.0
+RIP: Subnet Mask    = 0.0.0.0
+RIP: Next Hop       = 0.0.0.0
+RIP: Metric         = 2 
+RIP:
+RIP: ---- End RIP Packet ----
+RIP:
+
+Waiting (up to 45.000 seconds) for RIP Response on net 30.1.1.0
+Received RIP v2 Response (regular update) from 30.1.1.5
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = FF:FF:FF:FF:FF:FF
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x0800 (DOD IP)
+ETHER:
+IP: ---- IP Packet ----
+IP:
+IP: Version                = 4
+IP: Internet Header Length = 5 (20 bytes)
+IP: Type Of Service        = 0x00
+IP:  |01234567
+IP:  |000.....             = Precedence (Routine)
+IP:  |...0....             = Normal Delay
+IP:  |....0...             = Normal Throughput
+IP:  |.....0..             = Normal Reliability
+IP:  |......0.             = Normal Monetary Cost
+IP:  |.......0             = Must Be Zero 
+IP: Total Length           = 72 bytes
+IP: Identification         = 0xDEA1 (56993)
+IP: Flags                  = 0
+IP:  |012
+IP:  |0..                  = Reserved 
+IP:  |.0.                  = May Fragment
+IP:  |..0                  = Last Fragment
+IP: Fragment Offset        = 0x0000 (0 bytes)
+IP: Time to Live           = 64
+IP: Protocol               = UDP (17)
+IP: Header Checksum        = 0x5CFE (Correct)
+IP: Source Address         = 30.1.1.5
+IP: Destination Address    = 30.1.1.255
+IP:
+UDP: ---- UDP Packet ----
+UDP:
+UDP: Source Port      = 520 (route)
+UDP: Destination Port = 520 (route)
+UDP: Length           = 52 
+UDP: Checksum         = 0x2F78 (Correct)
+UDP:
+RIP: ---- RIP Packet ----
+RIP:
+RIP: Command        = Response (0x02)
+RIP: Version        = 2
+RIP: Routing Domain = 0x0000 
+RIP:
+RIP:  --- Tuple 1 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 128.224.166.0
+RIP: Subnet Mask    = 255.255.254.0
+RIP: Next Hop       = 30.1.1.5
+RIP: Metric         = 1 
+RIP:
+RIP:  --- Tuple 2 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 40.1.1.0
+RIP: Subnet Mask    = 255.255.255.0
+RIP: Next Hop       = 30.1.1.5
+RIP: Metric         = 1 
+RIP:
+RIP: ---- End RIP Packet ----
+RIP:
+
+DUT correctly sent update with route missing from first interface
+Waiting (up to 40.000 seconds) for RIP Response on net 40.1.1.0
+Received RIP v2 Response (regular update) from 40.1.1.5
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 01:00:5E:00:00:09
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x0800 (DOD IP)
+ETHER:
+IP: ---- IP Packet ----
+IP:
+IP: Version                = 4
+IP: Internet Header Length = 5 (20 bytes)
+IP: Type Of Service        = 0x00
+IP:  |01234567
+IP:  |000.....             = Precedence (Routine)
+IP:  |...0....             = Normal Delay
+IP:  |....0...             = Normal Throughput
+IP:  |.....0..             = Normal Reliability
+IP:  |......0.             = Normal Monetary Cost
+IP:  |.......0             = Must Be Zero 
+IP: Total Length           = 92 bytes
+IP: Identification         = 0xFA28 (64040)
+IP: Flags                  = 0
+IP:  |012
+IP:  |0..                  = Reserved 
+IP:  |.0.                  = May Fragment
+IP:  |..0                  = Last Fragment
+IP: Fragment Offset        = 0x0000 (0 bytes)
+IP: Time to Live           = 1
+IP: Protocol               = UDP (17)
+IP: Header Checksum        = 0xB659 (Correct)
+IP: Source Address         = 40.1.1.5
+IP: Destination Address    = 224.0.0.9
+IP:
+UDP: ---- UDP Packet ----
+UDP:
+UDP: Source Port      = 520 (route)
+UDP: Destination Port = 520 (route)
+UDP: Length           = 72 
+UDP: Checksum         = 0x013A (Correct)
+UDP:
+RIP: ---- RIP Packet ----
+RIP:
+RIP: Command        = Response (0x02)
+RIP: Version        = 2
+RIP: Routing Domain = 0x0000 
+RIP:
+RIP:  --- Tuple 1 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 128.224.166.0
+RIP: Subnet Mask    = 255.255.254.0
+RIP: Next Hop       = 40.1.1.5
+RIP: Metric         = 1 
+RIP:
+RIP:  --- Tuple 2 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 30.1.1.0
+RIP: Subnet Mask    = 255.255.255.0
+RIP: Next Hop       = 40.1.1.5
+RIP: Metric         = 1 
+RIP:
+RIP:  --- Tuple 3 ---
+RIP:
+RIP: Address Family = IP (0x0002)
+RIP: Route Tag      = 0x0000 
+RIP: IP Address     = 50.0.0.0
+RIP: Subnet Mask    = 255.255.255.0
+RIP: Next Hop       = 40.1.1.5
+RIP: Metric         = 3 
+RIP:
+RIP: ---- End RIP Packet ----
+RIP:
+
+Received update from second interface with metric 3
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = FF:FF:FF:FF:FF:FF
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x0806 (ARP)
+ETHER:
+ARP: ---- ARP Packet ----
+ARP:
+ARP: Hardware Type                = Ethernet (0x0001)
+ARP: Protocol Type                = DOD IP (0x0800)
+ARP: Hardware Address Length      = 6
+ARP: Protocol Address Length      = 4
+ARP: Function                     = Request (0x0001)
+ARP: Source Hardware Address      = 00:1B:21:7D:57:BA
+ARP: Source Protocol Address      = 30.1.1.150
+ARP: Destination Hardware Address = 00:00:00:00:00:00
+ARP: Destination Protocol Address = 30.1.1.5
+ARP:
+ARP: ---- End ARP Packet ----
+ARP:
+ETHER: --- Padding [18 bytes] ---
+ETHER:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+ETHER:  00 00                                             ..
+ETHER: --- Padding End ---
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x0806 (ARP)
+ETHER:
+ARP: ---- ARP Packet ----
+ARP:
+ARP: Hardware Type                = Ethernet (0x0001)
+ARP: Protocol Type                = DOD IP (0x0800)
+ARP: Hardware Address Length      = 6
+ARP: Protocol Address Length      = 4
+ARP: Function                     = Response (0x0002)
+ARP: Source Hardware Address      = 00:15:17:C8:90:28
+ARP: Source Protocol Address      = 30.1.1.5
+ARP: Destination Hardware Address = 00:1B:21:7D:57:BA
+ARP: Destination Protocol Address = 30.1.1.150
+ARP:
+ARP: ---- End ARP Packet ----
+ARP:
+ETHER: --- Padding [18 bytes] ---
+ETHER:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+ETHER:  00 00                                             ..
+ETHER: --- Padding End ---
+
+IP DUT is still alive at: 00:15:17:C8:90:28
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = FF:FF:FF:FF:FF:FF
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x0806 (ARP)
+ETHER:
+ARP: ---- ARP Packet ----
+ARP:
+ARP: Hardware Type                = Ethernet (0x0001)
+ARP: Protocol Type                = DOD IP (0x0800)
+ARP: Hardware Address Length      = 6
+ARP: Protocol Address Length      = 4
+ARP: Function                     = Request (0x0001)
+ARP: Source Hardware Address      = 00:1B:21:7D:57:BB
+ARP: Source Protocol Address      = 40.1.1.150
+ARP: Destination Hardware Address = 00:00:00:00:00:00
+ARP: Destination Protocol Address = 40.1.1.5
+ARP:
+ARP: ---- End ARP Packet ----
+ARP:
+ETHER: --- Padding [18 bytes] ---
+ETHER:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+ETHER:  00 00                                             ..
+ETHER: --- Padding End ---
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x0806 (ARP)
+ETHER:
+ARP: ---- ARP Packet ----
+ARP:
+ARP: Hardware Type                = Ethernet (0x0001)
+ARP: Protocol Type                = DOD IP (0x0800)
+ARP: Hardware Address Length      = 6
+ARP: Protocol Address Length      = 4
+ARP: Function                     = Response (0x0002)
+ARP: Source Hardware Address      = 00:15:17:C8:90:29
+ARP: Source Protocol Address      = 40.1.1.5
+ARP: Destination Hardware Address = 00:1B:21:7D:57:BB
+ARP: Destination Protocol Address = 40.1.1.150
+ARP:
+ARP: ---- End ARP Packet ----
+ARP:
+ETHER: --- Padding [18 bytes] ---
+ETHER:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+ETHER:  00 00                                             ..
+ETHER: --- Padding End ---
+
+IP DUT is still alive at: 00:15:17:C8:90:29
+Executing system command:
+  "./DocScriptQ35/RIP/after.exp $ANVL_DUTHOSTNAME"
+spawn telnet 128.224.166.238
+Trying 128.224.166.238...
+Connected to 128.224.166.238.
+Escape character is '^]'.
+
+-> cmd ipd reconfigure iprip
+ipd: reconfigure iprip ok
+-> exit
+Au revoir!
+Connection closed by foreign host.
+<< RIP-8.17: Passed
+Executing system command:
+  "./DocScriptQ35/RIP/RIPpostsuite.exp $ANVL_DUTHOSTNAME"
+spawn telnet 128.224.166.238
+Trying 128.224.166.238...
+Connected to 128.224.166.238.
+Escape character is '^]'.
+
+-> cmd sysvar set -o iprip.drop.hostroute "0"
+sysvar: iprip.drop.hostroute=0 ok
+-> cmd ripctrl ifclose gei0
+   ok
+-> ipDetach 0,"gei"
+value = 0 = 0x0
+-> cmd ripctrl ifclose gei1
+   ok
+-> ipDetach 1,"gei"
+value = 0 = 0x0
+-> exit
+Au revoir!
+Connection closed by foreign host.
+
+Number of tests run:          1
+Number of tests passed:       1
+Number of tests failed:       0
+Number of tests inconclusive: 0
