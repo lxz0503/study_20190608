@@ -1,7 +1,9 @@
+router-A(config-router)#router ospf 1
 router-A(config-router)#network 192.168.2.0 0.0.0.255 area 0
 router-A(config-router)#network 192.168.10.0 0.0.0.255 area 0       # this is for PC0
 router-A(config-router)#network 192.168.20.0 0.0.0.255 area 0       # this is for PC1
 
+router-B(config-router)#router ospf 1
 router-B(config-router)#network 192.168.30.0 0.0.0.255 area 0      # this is for PC2
 router-B(config-router)#network 192.168.2.0 0.0.0.255 area 0
 router-B(config-router)#network 192.168.40.0 0.0.0.255 area 0      # this is for PC3
