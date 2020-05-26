@@ -1163,7 +1163,23 @@ drwxrwxrwx 13 windriver windriver      4096 Apr  7 11:52 ANVL
 
 If you want to cancel the alias:
 unalias loo
+--------------------------------------------------------------------------tree----
+Install tree in my Ubuntu server as below:
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-05-25_19-52-42$ sudo apt-get install tree
+Reading package lists... Done
 
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
 
+©À©¤©¤ ANVL_Vxhelix_2018-09-06_17-18-04
+©À©¤©¤ ANVL_Vxhelix_2018-09-07_09-21-56
+©À©¤©¤ bak
+©À©¤©¤ Vx7AerospaceProfile
+©¸©¤©¤ Vx7GitAug04
+
+663 directories
+
+mkdir -p a/b     # create parent and child dirs
+tree -d a/b
+touch stu{1,2,3,4}
 
 

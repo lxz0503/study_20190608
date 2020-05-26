@@ -2,12 +2,12 @@ Switch#conf t
 Enter configuration commands, one per line.  End with CNTL/Z.
 Switch(config)#hostname Switch-C
 Switch-C(config)#hostname Core-Switch
-Core-Switch(config)#VTP domain mydomain
+Core-Switch(config)#VTP domain mydomain   # configure vtp domain in core switch
 Changing VTP domain name from NULL to mydomain
-Core-Switch(config)#vtp mode server
+Core-Switch(config)#vtp mode server             # set core switch as vtp server
 Device mode already VTP SERVER.
 
-Core-Switch(config)#vtp password cisco
+Core-Switch(config)#vtp password cisco           # set vtp password in core switch
 Setting device VLAN database password to cisco
 Core-Switch(config)#end
 Core-Switch#
@@ -17,14 +17,12 @@ Building configuration...
 [OK]
 Core-Switch#
 Core-Switch#conf t
-Core-Switch#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Core-Switch(config)#vlan 10
 Core-Switch(config-vlan)#exit
 Core-Switch(config)#vlan 20
 
 Core-Switch(config-vlan)#exit
-Core-Switch(config)#
 Core-Switch(config)#int vlan 10
 Core-Switch(config-if)#
 %LINK-5-CHANGED: Interface Vlan10, changed state to up
@@ -39,7 +37,7 @@ Core-Switch(config-if)#
 Core-Switch(config-if)#ip address 192.168.20.254 255.255.255.0
 Core-Switch(config-if)#no shutdown
 Core-Switch(config-if)#exit
-Core-Switch(config)#ip routing
+Core-Switch(config)#ip routing     # enable routing function in core switch
 Core-Switch(config)#end
 Core-Switch#
 %SYS-5-CONFIG_I: Configured from console by console
@@ -52,14 +50,13 @@ Building configuration...
 Switch>en
 Switch#conf t
 Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#host
 Switch(config)#hostname Access-Switch-A
-Access-Switch-A(config)#vtp domain mydomain
+Access-Switch-A(config)#vtp domain mydomain        # must use the same domain as core switch
 Changing VTP domain name from NULL to mydomain
-Access-Switch-A(config)#vtp password cisco
+Access-Switch-A(config)#vtp password cisco         # must use the same password as core switch
 Setting device VLAN database password to cisco
 
-Access-Switch-A(config)#vtp mode client
+Access-Switch-A(config)#vtp mode client              # set access switch as vtp client
 Setting device to VTP CLIENT mode.
 Access-Switch-A(config)#end
 Access-Switch-A#
@@ -70,7 +67,7 @@ Building configuration...
 Access-Switch-A#write
 
 Access-Switch-A(config-if)#description trunnk-interface
-Access-Switch-A(config-if)#switchport mode trunk
+Access-Switch-A(config-if)#switchport mode trunk              # set interface as trunk
 
 Access-Switch-A(config-if)#
 %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to down
@@ -108,8 +105,8 @@ Command rejected: An interface whose trunk encapsulation is "Auto" can not be co
 Core-Switch(config-if)#
 
 
-Access-Switch-A(config)#int range fastEthernet 0/1-5
-Access-Switch-A(config-if-range)#switchport access vlan 10
+Access-Switch-A(config)#int range fastEthernet 0/1-5               # range from port 1 to port 5
+Access-Switch-A(config-if-range)#switchport access vlan 10          # belong to vlan 10
 
 Access-Switch-B#conf t
 Enter configuration commands, one per line.  End with CNTL/Z.
@@ -121,5 +118,4 @@ Access-Switch-B(config-if-range)#exit
 
 Access-Switch-B(config)#int range fastEthernet 0/6-10
 Access-Switch-B(config-if-range)#switchport access vlan 20
-Access-Switch-B(config-if-range)#
 Access-Switch-B(config-if-range)#end
