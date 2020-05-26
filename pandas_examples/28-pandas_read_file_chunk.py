@@ -7,7 +7,6 @@
 # 每次读取5行
 
 import pandas as pd
-import numpy as np
 
 def pandas_read(filename, sep=',', size=5):
     # names参数可以决定列名,否则就会以第一列的名字默认作为列名,在这里可以去掉这个参数，只是作为提示
