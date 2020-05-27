@@ -6,7 +6,7 @@ Switch-A(config-if)#ip address 192.168.1.1 255.255.255.0
 Switch-A(config-if)#
 Switch-A(config)#line vty 0 4
 Switch-A(config-line)#password cisco       # set telnet password
-Switch-A(config-line)#login
+Switch-A(config-line)#login               # if only this command, u don not need to input username,only input password
 Switch-A(config-line)#exit
 
 Switch-A(config)#exit
@@ -51,17 +51,16 @@ GigabitEthernet0/0     192.168.1.1     YES manual up                    up
 
  Router-A#conf t
 Enter configuration commands, one per line.  End with CNTL/Z.
-Router-A(config)#enable secret 123          # set password
+Router-A(config)#enable secret 123          # set password, when you enter enable, you should input this password
 
 Router-A(config)#line vty 0 4    # allow 5 users to connect
-Router-A(config-line)#password cisco
-Router-A(config-line)#login
+Router-A(config-line)#password cisco        # this is telnet password
 Router-A(config-line)#exit
-Router-A(config)#username zwk password 123456     # set telnet password
+Router-A(config)#username zwk password 123456     # set telnet password and username
 
 Router-A(config)#line vty 0 4
 
-Router-A(config-line)#login local      ----u need to login
+Router-A(config-line)#login local      ----u need to login with username and password
 
 Router-A(config-line)#exit
 Router-A(config)#exit
@@ -71,7 +70,7 @@ Router-A#
 Router-A#write
 Building configuration...
 [OK]
-==========================set ssh on router
+==========================set ssh on router========================
 Router-A(config)#ip domain-name abc.com
 Router-A(config)#
 Router-A(config)#username zwk password cisco
