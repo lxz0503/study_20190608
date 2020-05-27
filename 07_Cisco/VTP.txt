@@ -27,17 +27,17 @@ Core-Switch(config)#int vlan 10
 Core-Switch(config-if)#
 %LINK-5-CHANGED: Interface Vlan10, changed state to up
 
-Core-Switch(config-if)#ip address 192.168.10.254 255.255.255.0
+Core-Switch(config-if)#ip address 192.168.10.254 255.255.255.0       # configure ip for vlan10
 Core-Switch(config-if)#no shutdown
 Core-Switch(config-if)#exit
 Core-Switch(config)#int vlan 20
 Core-Switch(config-if)#
 %LINK-5-CHANGED: Interface Vlan20, changed state to up
 
-Core-Switch(config-if)#ip address 192.168.20.254 255.255.255.0
+Core-Switch(config-if)#ip address 192.168.20.254 255.255.255.0     # configure ip for vlan 20
 Core-Switch(config-if)#no shutdown
 Core-Switch(config-if)#exit
-Core-Switch(config)#ip routing     # enable routing function in core switch
+Core-Switch(config)#ip routing                      # must enable routing function in core switch
 Core-Switch(config)#end
 Core-Switch#
 %SYS-5-CONFIG_I: Configured from console by console
