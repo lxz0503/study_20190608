@@ -1180,6 +1180,58 @@ windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
 
 mkdir -p a/b     # create parent and child dirs
 tree -d a/b
-touch stu{1,2,3,4}
+touch stu{1,2,3,4}    # this can create stu1,stu2,stu3 and stu4
+-----------------------------------------------------------------------------------------
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -l --time-style=long-iso       # this can show specific time
+total 134192
+-rwxrwxrwx  1 windriver windriver       714 2020-05-13 14:51 68-multi-thread-subprocess-ping.py
+-rwxrwxrwx  1 windriver windriver      2073 2019-08-30 15:01 7-pexpect-4.6-telnet.py
+drwxrwxr-x  2 windriver windriver      4096 2020-04-29 13:00 blast
+-rwxrwxrwx  1 windriver windriver      1597 2018-11-20 13:45 build.
+==========================================this can filter all directories
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -F | grep /
+blast/
+home/
+pexpect-4.6.0/
+Python-3.6.5/
+
+================================this can filter all files
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -F | grep -v /
+68-multi-thread-subprocess-ping.py*
+7-pexpect-4.6-telnet.py*
+build.py*
+config.ini
+
+============================export -p     can check all environment variables
+useradd –d  /home/sam -m sam
+Linux中让alias设置永久生效的方法详解:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat /home/windriver/.bashrc
+
+add your new alias like:   alias loo = 'cd /home/windriver;ls -l'
+
+source /home/windriver/.bashrc
+===========================================================================
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -lhi          # this  can show full file size like K or M (you can remove i,just ls -lh)
+total 132M
+ 6954699 -rwxrwxrwx  1 windriver windriver  714 May 13 14:51 68-multi-thread-subprocess-ping.py
+ 6954694 -rwxrwxrwx  1 windriver windriver 2.1K Aug 30  2019 7-pexpect-4.6-telnet.py
+11148140 drwxrwxr-x  2 windriver windriver 4.0K Apr 29 13:00 blast
+ 6969890 -rwxrwxrwx  1 windriver windriver 1.6K Nov 20  2018 build.py
+ 6954704 -rw-rw-r--  1 windriver windriver   82 May 15 14:30 config.ini
+ 6970781 -rwxrwxrwx  1 windriver windriver  42K Dec  5  2018 Conf_xiaozhan_trial.py
+ 6961572 -rwxrwxrwx  1 windriver windriver 1.3K Jul 31  2011 err.py
+ 6954691 -rwxrwxrwx  1 windriver windriver 109M Oct 19  2019 For_Brandon_Beijing.zip
+ =====================================================================================
+
+
+
+
+
+
+
+
+
+
+
 
 
