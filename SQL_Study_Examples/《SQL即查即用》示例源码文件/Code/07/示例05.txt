@@ -1,3 +1,0 @@
-SELECT BookName,Writer,pDate
-FROM bookinfo_zerobasis
-WHERE pDate NOT IN ('2017年8月','2017年9月');

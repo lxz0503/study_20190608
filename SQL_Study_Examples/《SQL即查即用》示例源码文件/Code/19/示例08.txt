@@ -1,6 +1,0 @@
-CREATE VIEW Type
-AS
-SELECT * FROM goods_type;
-
-DELETE Type
-WHERE name = 'Ï´ÒÂ»ú';

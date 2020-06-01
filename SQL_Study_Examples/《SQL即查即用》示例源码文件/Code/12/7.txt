@@ -1,2 +1,0 @@
-SELECT SUM(shop_price-cost_price) AS 所有商品的总盈利
-FROM goods;

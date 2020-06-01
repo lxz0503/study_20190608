@@ -203,6 +203,11 @@ aaa  bbbbb  new.tar  old.txt  rename.txt  test.sh  test.txt
 搜索最近七天内被访问过的所有文件
 find . -type f -atime -7
 find . -type d -atime -7 ------搜索目录
+-mtime means modified file
+
+find . -type f -mtime -7  -name "*.txt" -delete
+find . -type f -mtime +7  -name "*.txt" -delete
+find . -type f -mtime 7   -name "*.txt" -delete
 
 find . -type f -size +10k ---搜索大于10K的文件
 find . -type d -size +10k-----搜索大于10K的目录
@@ -1180,7 +1185,9 @@ windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
 
 mkdir -p a/b     # create parent and child dirs
 tree -d a/b
+----you can create many files with different names at the same time:
 touch stu{1,2,3,4}    # this can create stu1,stu2,stu3 and stu4
+mkdir -p data/{dir1,dir2,dir3}
 -----------------------------------------------------------------------------------------
 windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -l --time-style=long-iso       # this can show specific time
 total 134192
@@ -1215,13 +1222,19 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -lhi          # this  can show full file s
 total 132M
  6954699 -rwxrwxrwx  1 windriver windriver  714 May 13 14:51 68-multi-thread-subprocess-ping.py
  6954694 -rwxrwxrwx  1 windriver windriver 2.1K Aug 30  2019 7-pexpect-4.6-telnet.py
-11148140 drwxrwxr-x  2 windriver windriver 4.0K Apr 29 13:00 blast
- 6969890 -rwxrwxrwx  1 windriver windriver 1.6K Nov 20  2018 build.py
- 6954704 -rw-rw-r--  1 windriver windriver   82 May 15 14:30 config.ini
- 6970781 -rwxrwxrwx  1 windriver windriver  42K Dec  5  2018 Conf_xiaozhan_trial.py
- 6961572 -rwxrwxrwx  1 windriver windriver 1.3K Jul 31  2011 err.py
  6954691 -rwxrwxrwx  1 windriver windriver 109M Oct 19  2019 For_Brandon_Beijing.zip
  =====================================================================================
+copy and backup files:   you can use below command:
+windriver@PEK-QCAO1-D2:~/xiaozhan/blast$ cp blasteeUDPvx.c{,.bak}
+-rw-r--r-- 1 windriver windriver 7002 Apr 29 12:10 blasteeUDPvx.c
+-rw-r--r-- 1 windriver windriver 7002 May 28 16:42 blasteeUDPvx.c.bak
+=========================================you can use find to replace rm
+u can use mv to replace rm, first you can mv file to /tmp
+backup before remove.
+find . -type f -name '.txt' -mtime +7 | xargs rm -f
+rm filename
+
+
 
 
 

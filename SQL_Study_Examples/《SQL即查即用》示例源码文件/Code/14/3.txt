@@ -1,7 +1,0 @@
-SELECT cat_id,goods_name 
-FROM goods
-WHERE cat_id>(
-    SELECT cat_id
-    FROM brand
-    WHERE name='ю╤тбаа'
-);

@@ -1,0 +1,92 @@
+
+for vxworks:vxpr file add blasterTCPvx.c blasterUDPvx.c
+-----TCP----------------------   SMP   ---------
+sp blasterTCP,"10.0.0.1",5000,65536,100000   ---- vxworks   this is for target 28566
+
+sp blasterTCP,"10.0.0.1",5000,1024,100000      size  buffersize
+
+blasterTCPQuit()
+
+
+
+gcc -O -Wall -DLINUX -o blasteeTCP blasteeTCPux.c
+
+gcc -O -Wall -DLINUX -o blasteeUDP blasteeUDPux.c
+
+root@pek-kong-04:/home/windriver# ./blasteeTCP 5000 65536 100000
+
+=======================UDP 
+
+./blasteeUDP 5000 1400 100000
+
+sp blasterUDP,"10.0.0.1",5000,1400,100000               ----10.0.0.1 is the interface ip
+blasterUDPQuit()
+
+
+
+118 659 456 bytes/sec tot 1186594560
+===============================================================target 28566 test result
+sp blasterTCP,"10.0.0.1",5000,64,100000
+106 722 348 bytes/sec tot 1067223488            -------848Mbps
+106680537 bytes/sec tot 1066805376
+106713491 bytes/sec tot 1067134912
+106715648 bytes/sec tot 1067156480
+106645766 bytes/sec tot 1066457664
+
+
+root@pek-kong-04:/home/windriver# ./blasteeTCP 5000 1024 100000
+118 659 270 bytes/sec tot 1186592704           ------944Mbps
+118657305 bytes/sec tot 1186573056
+118656390 bytes/sec tot 1186563900
+118657120 bytes/sec tot 1186571200
+118659602 bytes/sec tot 1186596020
+118656244 bytes/sec tot 1186562440
+
+
+root@pek-kong-04:/home/windriver# ./blasteeTCP 5000 65536 100000
+118657266 bytes/sec tot 1186572660----------------------944Mbps
+118659456 bytes/sec tot 1186594560
+118657120 bytes/sec tot 1186571200
+118657120 bytes/sec tot 1186571200
+118657266 bytes/sec tot 1186572660
+-----------------------------------------------------------
+root@pek-kong-04:/home/windriver# ./blasteeUDP 5000 1400 100000
+119 368 060 bytes/sec tot 1193680600---------------------952Mbps
+119370160 bytes/sec tot 1193701600
+119370160 bytes/sec tot 1193701600
+119368900 bytes/sec tot 1193689000
+==========================================================
+use SMP mode below is 32 bit
+Target     25005,the peer side is 211 server    
+
+sp blasterTCP,"10.10.10.100",5000,64,100000
+
+./blasteeTCP 5000 64 100000
+
+windriver@windriver-S5520HC:~$ ./blasteeTCP 5000 64 100000
+15 651 657 bytes/sec tot 156516572 --------------------120Mbps
+15649285 bytes/sec tot 156492856
+15651285 bytes/sec tot 156512856
+15643723 bytes/sec tot 156437232
+15646708 bytes/sec tot 156467080
+15648696 bytes/sec tot 156486960
+
+windriver@windriver-S5520HC:~$ ./blasteeTCP 5000 1024 100000
+15 861 878 bytes/sec tot 158618780 --------------------120Mbps
+15872244 bytes/sec tot 158722440
+15861586 bytes/sec tot 158615860
+15863192 bytes/sec tot 158631920
+
+windriver@windriver-S5520HC:~$ ./blasteeTCP 5000 65536 100000
+16 953 082 bytes/sec tot 169530820 --------------------128Mbps
+16964908 bytes/sec tot 169649080
+16959214 bytes/sec tot 169592140
+16967390 bytes/sec tot 169673900
+16962134 bytes/sec tot 169621340
+
+
+windriver@windriver-S5520HC:~$ ./blasteeUDP 5000 1400 100000
+
+128Mbps
+
+

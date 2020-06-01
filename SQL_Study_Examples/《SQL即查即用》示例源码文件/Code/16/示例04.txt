@@ -1,3 +1,0 @@
-SELECT a.id,a.name,COUNT(b.cat_id) num
-FROM goods_category a INNER JOIN goods b
-ON a.id=b.cat_id GROUP BY a.id,a.name;

@@ -1,3 +1,0 @@
-SELECT user_id,email,nickname 
-FROM users 
-WHERE nickname IS NOT NULL;
