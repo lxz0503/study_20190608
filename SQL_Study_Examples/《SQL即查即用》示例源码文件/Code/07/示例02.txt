@@ -1,3 +1,0 @@
-SELECT name,cat_name 
-FROM brand 
-WHERE name IN ('OPPO','Î¬Î¬','Íå×ÐÂëÍ·','»ªË¶/ASUS');

@@ -1,2 +1,0 @@
-SELECT SUM(shop_price) AS 所有商品价格总和
-FROM goods;

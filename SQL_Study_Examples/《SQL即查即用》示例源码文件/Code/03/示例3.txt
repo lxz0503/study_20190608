@@ -1,3 +1,0 @@
-SELECT goods_id AS 商品ID,goods_name AS 商品名称,
-(shop_price * sales_sum) AS 销售额 
-FROM goods;

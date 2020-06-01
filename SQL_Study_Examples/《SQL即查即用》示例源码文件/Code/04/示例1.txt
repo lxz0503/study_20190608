@@ -1,1 +1,0 @@
-SELECT * FROM goods WHERE goods_id = 106;

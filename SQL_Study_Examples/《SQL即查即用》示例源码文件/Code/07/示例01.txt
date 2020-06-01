@@ -1,3 +1,0 @@
-SELECT cat_id,goods_name,shop_price
-FROM goods 
-WHERE cat_id IN (191,123,131);

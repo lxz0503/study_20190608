@@ -1,3 +1,0 @@
-SELECT order_id,order_sn,total_amount
-FROM orderform 
-WHERE order_sn LIKE '%[6-9]';

@@ -1,2 +1,0 @@
-ALTER TABLE student
-ALTER COLUMN Ñ§ºÅ varchar(10)

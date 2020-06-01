@@ -1,3 +1,0 @@
-SELECT BookName,Type,pDate FROM bookinfo
-WHERE MONTH(pDate)=10 AND YEAR(pDate)=2017
-AND Type = 'Áã»ù´¡ÏµÁÐ';

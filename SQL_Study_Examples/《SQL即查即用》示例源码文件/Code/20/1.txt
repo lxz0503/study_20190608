@@ -1,2 +1,0 @@
-CREATE PROCEDURE CRE_PRO AS
-SELECT * FROM brand WHERE cat_name='ÉúÏÊÊ³Æ·'

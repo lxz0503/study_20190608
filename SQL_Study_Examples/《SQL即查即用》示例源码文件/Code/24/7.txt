@@ -1,3 +1,0 @@
-/*给学生信息表student添加“专业”列*/
-ALTER TABLE student 
-ADD 专业 char(10)

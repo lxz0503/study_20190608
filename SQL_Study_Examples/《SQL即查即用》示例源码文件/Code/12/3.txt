@@ -1,3 +1,0 @@
-SELECT COUNT(*) AS 商品个数
-FROM goods
-WHERE (shop_price > 3000);

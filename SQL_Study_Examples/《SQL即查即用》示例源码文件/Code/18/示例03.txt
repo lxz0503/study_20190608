@@ -1,4 +1,0 @@
-UPDATE brand
-SET is_hot = 1;
-
-SELECT id,name,cat_name,is_hot FROM brand; 
