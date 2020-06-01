@@ -15,7 +15,7 @@ print(values)
 
 now = time.strftime("%M:%S")
 try:
-    cur.executemany("insert into test values(%s,%s)", values)
+    cur.executemany("insert into student values(%s,%s)", values)
     conn.commit()
 except Exception as err:
     print(err)
