@@ -30,11 +30,11 @@ create_table = """
 insert_data = """
                      INSERT INTO `ia_result` (id,name,status,arch,sprint) VALUES (%s,%s,%s,%s,%s)
                """
+# if you have snmall size of data, you can use below args
 # args = [('1', 'ICMP-1.1', 'Passed', 'IA', 'sprint50'),   # only string can be inserted
 #         ('2', 'ICMP-1.2', 'FAIL', 'IA', 'sprint50'),
 #         ('3', 'ICMP-1.3', 'FAIL', 'IA', 'sprint50')]
 
-# this is for yield test
 
 # alter table and add one column as date
 alter_table = """ ALTER TABLE ia_result ADD date date"""
