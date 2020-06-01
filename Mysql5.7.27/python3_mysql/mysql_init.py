@@ -53,7 +53,7 @@ class DatabaseInit(object):
             self.cur.execute('use test_result')
             # self.conn.select_db('test_result')
             # self.cur.execute(insert_data)
-            self.cur.executemany(insert_data, args)
+            self.cur.executemany(insert_data, args)   # this is ok
         except Exception as e:
             self.conn.rollback()
             print('insert error:', e)
@@ -107,7 +107,7 @@ if __name__ == '__main__':
                       dbname='test_result',
                       username='root',
                       password='123win',
-                      charset='gbk')      # 家里的win7只能用gbk编码
+                      charset='utf8')      # 家里的win7只能用gbk编码,utf8 is for company
     db.connect_db()
     db.create()
     db.insert_data(insert_data, args)
