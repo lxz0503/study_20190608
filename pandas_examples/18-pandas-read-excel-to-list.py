@@ -16,9 +16,15 @@ df = pd.read_excel('performance.xls')
 list1 = df.values.tolist()
 print(list1)
 
+# 处理list的数据，写到一个文本里
+with open('xiaozhan.txt', 'w') as f:
+    for i in list1:
+        f.write(i[0] + ':' + str(i[1]) + '\n')
 #
 # 默认情况下，pandas 假定第一行为表头 (header)，
 # 如果 Excel 不是从第一行开始，header 参数用于指定将哪一行作为表头，
 # 表头在 DataFrame 中变成列索引 (column index) ，header 参数从 0 开始，比如第二行作为 header，
 # 则：df = pd.read_excel(file_name, header=1)
+
+# next you can refer to 26-pandas-yield-read-txt-to-excel.py which can read data from txt file into excel
 
