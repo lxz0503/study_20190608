@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
-# coding=utf-8
-# read data from original test log file, write data into a file and then generate an with pandas
-# original log is like:  << DHCP-SERVER-10.4: Passed
+"""
+   Analyze test log one by one with regular expression.The original log is like:  << DHCP-SERVER-10.4: Passed
+   Write test result into a txt file.
+   And then read txt file and write result into excel with pandas
+"""
 
+# !/usr/bin/env python3
+# coding=utf-8
 import pandas as pd
 import os
 import re
@@ -17,9 +20,9 @@ class PandasWriteExcel(object):
             yield log_file
 
     def gen_txt(self, name):
-        p = re.compile(r'<<.*-.*-\d+\.\d+: .*')
+        p = re.compile(r'<<.*-.*-\d+\.\d+: .*')      # this reg pattern to match test result
         with open(self.log_dir + '/' + name) as f:
-            for line in f:
+            for line in f:           # analyze each test log
                 r = p.match(line)
                 if r is not None:
                     yield r.group().lstrip('<<')
@@ -28,7 +31,7 @@ class PandasWriteExcel(object):
         # firstly, write every line into a file, because the pandas parameter must be file name
         with open("xiaozhan_test.txt", 'w') as fp:
             log_names = self.get_logfile()
-            for name in log_names:
+            for name in log_names:       # analyze each test log
                 h = self.gen_txt(name)
                 for line in h:
                     fp.write(line + '\n')

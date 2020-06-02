@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+"""
+This can read data from other file like txt or csv, and write data into mysql database.
+It also supports other database functions like select,insert alter and update records.
+"""
+# !/usr/bin/python3
 # coding=utf-8
 import pymysql
 import time
@@ -16,7 +20,7 @@ class DatabaseInit(object):
         self.conn = None
         self.cur = None
 
-    def connect_db(self):
+    def connect_db(self):                # this is to connect database system
         try:
             conn = pymysql.Connect(
                                    host=self.host,
@@ -35,14 +39,14 @@ class DatabaseInit(object):
         self.cur.close()
         self.conn.close()
 
-    def create(self):
+    def create(self):           # this is for specific operations like creating database and table
         try:
             self.connect_db()
             self.cur.execute(drop_database)
-            self.cur.execute(create_database)
-            self.conn.select_db('test_result')
+            self.cur.execute(create_database)   # create database
+            self.conn.select_db('test_result')  # connect your database
             # self.cur.execute(drop_table)
-            self.cur.execute(create_table)
+            self.cur.execute(create_table)      # create table
         except Exception as e:
             print("create error", e)
         else:
@@ -51,7 +55,7 @@ class DatabaseInit(object):
             print('create database and table ok')
 
     @staticmethod
-    def get_data(file_name):
+    def get_data(file_name):          # read data from csv file
         with open(file_name) as f:
             f_csv = csv.reader(f)
             headings = next(f_csv)
@@ -65,7 +69,7 @@ class DatabaseInit(object):
             self.cur.execute('use test_result')
             # self.conn.select_db('test_result')
             # self.cur.execute(insert_data)
-            self.cur.executemany(insert_data, args)   # this is ok
+            self.cur.executemany(insert_data, args)   # this is ok,
         except Exception as e:
             self.conn.rollback()
             print('insert error:', e)
@@ -123,8 +127,8 @@ if __name__ == '__main__':
     db.connect_db()
     db.create()
     # xiaozhan debug, auto generate id.
-    for i, t in enumerate(db.get_data('data.csv'), 1):
-        args = [(i, t.name, t.status, t.arch, t.sprint)]
+    for i, t in enumerate(db.get_data('data.csv'), 1):      # the table index always starts from 1
+        args = [(i, t.name, t.status, t.arch, t.sprint)]      # this is to generate parameter for excecutemany
         db.insert_data(insert_data, args)
     # xiaozhan debug
     db.search_data()
