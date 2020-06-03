@@ -80,7 +80,7 @@ def deleteRecord(db, cursor, key, value):
 
 if __name__ == '__main__':
     # 链接mysql数据库
-    db = pymysql.connect("localhost", "root", "123win", charset="utf8")
+    db = pymysql.Connect("localhost", "root", "123win", charset="utf8")
     # 创建指针
     cursor = db.cursor()
 

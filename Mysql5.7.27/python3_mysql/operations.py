@@ -31,7 +31,7 @@ insert_data = """
                      INSERT INTO `ia_result` (id,name,status,arch,sprint) VALUES (%s,%s,%s,%s,%s)
                """
 # if you have snmall size of data, you can use below args
-# args = [('1', 'ICMP-1.1', 'Passed', 'IA', 'sprint50'),   # only string can be inserted
+# insert_args = [('1', 'ICMP-1.1', 'Passed', 'IA', 'sprint50'),   # only string can be inserted
 #         ('2', 'ICMP-1.2', 'FAIL', 'IA', 'sprint50'),
 #         ('3', 'ICMP-1.3', 'FAIL', 'IA', 'sprint50')]
 
@@ -41,9 +41,16 @@ alter_table = """ ALTER TABLE ia_result ADD date date"""
 
 # update data
 update_data = """
-                     # UPDATE `ia_result`  SET status='Passed' WHERE name='ICMP-1.2' 
-                     UPDATE `ia_result`  SET status='Passed', date=current_date 
+                     UPDATE `ia_result`  SET status=%s WHERE name=%s 
+                     # UPDATE `ia_result`  SET status='Passed', date=current_date 
                """
+update_args = ('Passed', 'ICMP-1.2')
+
+# select data
+select_data = """
+                  SELECT * FROM `ia_result` WHERE name=%s
+              """
+select_args = ('ICMP-1.2')
 
 
 
