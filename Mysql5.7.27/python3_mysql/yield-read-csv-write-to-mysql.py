@@ -26,6 +26,7 @@ class DatabaseInit(object):
                                    host=self.host,
                                    user=self.username,
                                    passwd=self.password,
+                                   # db = self.dbname,    # this is only used when you already have a database
                                    charset=self.charset
                                   )
             cur = conn.cursor()
@@ -67,7 +68,7 @@ class DatabaseInit(object):
         try:
             self.connect_db()
             self.cur.execute('use test_result')
-            # self.conn.select_db('test_result')
+            # self.conn.select_db('test_result')   # same with above line
             # self.cur.execute(insert_data)
             self.cur.executemany(insert_data, args)   # this is ok,
         except Exception as e:
@@ -81,7 +82,8 @@ class DatabaseInit(object):
         try:
             self.connect_db()
             self.cur.execute('use test_result')
-            self.cur.execute('select * from ia_result')
+            # self.cur.execute('select * from ia_result')   # you can set parameters as below line
+            self.cur.execute(select_data, select_args)
             res = self.cur.fetchall()
         except Exception as e:
             print(e)
@@ -90,6 +92,7 @@ class DatabaseInit(object):
             # print('Failed cases are:')
             fail_dict = {}
             for row in res:
+                print(row)
                 if row[2] == 'FAIL':
                     fail_dict.setdefault(row[1], row[2])
             return fail_dict
@@ -98,7 +101,7 @@ class DatabaseInit(object):
         try:
             self.connect_db()
             self.cur.execute('use test_result')
-            self.cur.execute(update_data)
+            self.cur.execute(update_data, update_args)
         except Exception as e:
             self.conn.rollback()
             print('update error:', e)
@@ -130,8 +133,7 @@ if __name__ == '__main__':
     for i, t in enumerate(db.get_data('data.csv'), 1):      # the table index always starts from 1
         args = [(i, t.name, t.status, t.arch, t.sprint)]      # this is to generate parameter for excecutemany
         db.insert_data(insert_data, args)
-    # xiaozhan debug
-    db.search_data()
+    # xiaozhan debug end
     # this can put failed cases into a dictionary
     res = db.search_data()
     print(res)
