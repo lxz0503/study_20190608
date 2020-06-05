@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6745064 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5775092 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlicmp icmp 1-5.3 7.1-10 
 
@@ -240,7 +240,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0xA52B (42283)
+IP: Identification         = 0x8874 (34932)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -249,7 +249,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x96F5 (Correct)
+IP: Header Checksum        = 0xB3AC (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -807,13 +807,13 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 13 (Timestamp)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0xD107 (Correct)
+ICMP: Checksum         = 0x5298 (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x0004 (4)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43065187
+ICMP: Originate Timestamp = 43163089
 ICMP: Receive Timestamp   = 0
 ICMP: Transmit Timestamp  = 0
 ICMP:
@@ -842,7 +842,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 40 bytes
-IP: Identification         = 0xA52C (42284)
+IP: Identification         = 0x8875 (34933)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -851,7 +851,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x970C (Correct)
+IP: Header Checksum        = 0xB3C3 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -859,15 +859,15 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 14 (Timestamp Reply)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0xB94B (Correct)
+ICMP: Checksum         = 0xA260 (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x0004 (4)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43065187
-ICMP: Receive Timestamp   = 265050
-ICMP: Transmit Timestamp  = 265050
+ICMP: Originate Timestamp = 43163089
+ICMP: Receive Timestamp   = 251800
+ICMP: Transmit Timestamp  = 251800
 ICMP:
 ICMP: ---- End of ICMP Packet ----
 ETHER: --- Padding [6 bytes] ---
@@ -1044,7 +1044,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 56 bytes
-IP: Identification         = 0xD7D0 (55248)
+IP: Identification         = 0x385F (14431)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1053,7 +1053,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6458 (Correct)
+IP: Header Checksum        = 0x03CA (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1061,11 +1061,11 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 8 (Echo Request)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0xE3F9 (Correct)
+ICMP: Checksum         = 0x77CF (Correct)
 ICMP:
 ICMP: ---- ICMP Echo Data ----
 ICMP:
-ICMP: Identifier       = 0x9B7F (39807)
+ICMP: Identifier       = 0x07AA (1962)
 ICMP: Sequence Number  = 0x0000 (0)
 ICMP:
 ICMP: --- Data [28 bytes] ---
@@ -1081,7 +1081,7 @@ Received expected ICMP Echo Request from DUT
 Pinging 30.1.1.150 (30.1.1.150) with 36 bytes of data:
 
 --- 30.1.1.150 ping statistics ---
-1 packets transmitted, 0 received, 100% packet loss, time 1017 ms
+1 packets transmitted, 0 received, 100% packet loss, time 1016 ms
 exit
 -> 
 ETHER: ---- Ethernet Header ----
@@ -1245,19 +1245,19 @@ cmd route add -host 40.1.1.160 30.1.1.160
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      9     gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       4     gei0   0    
 30.1.1.5                        30.1.1.5                      UH       2     lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       2     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 40.1.1.160                      30.1.1.160                    UGHS     0     gei0   0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       58    gei2   0    
-vxTarget                        vxTarget                      UH       161   lo0    0    
+128.224.166.0/23                vxTarget                      UC       64    gei2   0    
+vxTarget                        vxTarget                      UH       162   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       2690  lo0    0    
+::1                             ::1                           UH       2712  lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -1349,7 +1349,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0x490D (18701)
+IP: Identification         = 0x2FD5 (12245)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1358,7 +1358,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xF2F1 (Correct)
+IP: Header Checksum        = 0x0C2A (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1441,18 +1441,18 @@ Escape character is '^]'.
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      9     gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       6     gei0   0    
 30.1.1.5                        30.1.1.5                      UH       2     lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       2     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       59    gei2   0    
-vxTarget                        vxTarget                      UH       178   lo0    0    
+128.224.166.0/23                vxTarget                      UC       68    gei2   0    
+vxTarget                        vxTarget                      UH       179   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       4628  lo0    0    
+::1                             ::1                           UH       2712  lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -1649,7 +1649,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 56 bytes
-IP: Identification         = 0xBBCF (48079)
+IP: Identification         = 0x9028 (36904)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1658,7 +1658,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x8059 (Correct)
+IP: Header Checksum        = 0xAC00 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1666,11 +1666,11 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 8 (Echo Request)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x80B9 (Correct)
+ICMP: Checksum         = 0x7BE (Correct)
 ICMP:
 ICMP: ---- ICMP Echo Data ----
 ICMP:
-ICMP: Identifier       = 0xFEBF (65215)
+ICMP: Identifier       = 0x77BB (30651)
 ICMP: Sequence Number  = 0x0000 (0)
 ICMP:
 ICMP: --- Data [28 bytes] ---
@@ -1727,7 +1727,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x83F7 (Correct)
+IP: Header Checksum        = 0x0589 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -1737,7 +1737,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 11
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43082632
+IP OPT: TimeStamp          = 43180533
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP:
@@ -1765,7 +1765,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 56 bytes
-IP: Identification         = 0xBBCF (48079)
+IP: Identification         = 0x9028 (36904)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1774,7 +1774,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x8059 (Correct)
+IP: Header Checksum        = 0xAC00 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1782,11 +1782,11 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 8 (Echo Request)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x80B9 *Should be 0xF93F*
+ICMP: Checksum         = 0x7BE *Should be 0x8044*
 ICMP:
 ICMP: ---- ICMP Echo Data ----
 ICMP:
-ICMP: Identifier       = 0xFEBF (65215)
+ICMP: Identifier       = 0x77BB (30651)
 ICMP: Sequence Number  = 0x0000 (0)
 ICMP:
 ICMP: --- Data [0 bytes] ---
@@ -1991,7 +1991,7 @@ IP:  |..1                  = More Fragments
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x3722 (Correct)
+IP: Header Checksum        = 0xB8B3 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -2001,7 +2001,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43094635
+IP OPT: TimeStamp          = 43192536
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -2045,7 +2045,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 84 bytes
-IP: Identification         = 0x0AE6 (2790)
+IP: Identification         = 0xC3A9 (50089)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -2054,7 +2054,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x3121 (Correct)
+IP: Header Checksum        = 0x785D (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -2091,7 +2091,7 @@ IP:  |..1                  = More Fragments
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x3722 (Correct)
+IP: Header Checksum        = 0xB8B3 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -2101,7 +2101,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43094635
+IP OPT: TimeStamp          = 43192536
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -2324,7 +2324,7 @@ IP:  |..1                  = More Fragments
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x2394 (Correct)
+IP: Header Checksum        = 0xA526 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -2334,7 +2334,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43099639
+IP OPT: TimeStamp          = 43197539
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP:
@@ -2400,7 +2400,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0003 (24 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x4397 (Correct)
+IP: Header Checksum        = 0xC528 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -2410,7 +2410,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43099639
+IP OPT: TimeStamp          = 43197540
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -2599,7 +2599,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x31D3 (Correct)
+IP: Header Checksum        = 0xB365 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 255.255.255.255
 IP: ---- Options ----
@@ -2609,7 +2609,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43177643
+IP OPT: TimeStamp          = 43275543
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -3027,7 +3027,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 56 bytes
-IP: Identification         = 0x8B7F (35711)
+IP: Identification         = 0x352A (13610)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -3036,7 +3036,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB0A3 (Correct)
+IP: Header Checksum        = 0x06F9 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -3353,7 +3353,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 138 bytes
-IP: Identification         = 0x8E12 (36370)
+IP: Identification         = 0x042A (1066)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -3362,7 +3362,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xADBE (Correct)
+IP: Header Checksum        = 0x37A7 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -3677,7 +3677,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0xE26C (57964)
+IP: Identification         = 0x8274 (33396)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -3686,7 +3686,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x5992 (Correct)
+IP: Header Checksum        = 0xB98A (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -3890,7 +3890,7 @@ TOPOLOGY-1
 Sending an ICMP Echo Request to <DIface-0> (30.1.1.5), containing:
 - IP Source Address field set to address of host-1 (30.1.1.150)
 - IP Destination Address field set to address of DUT (30.1.1.5)
-- Identification field set to 201
+- Identification field set to 223
 - IP Fragment Offset field set to zero
 - IP Flags field, containing:
   - MF bit set to 1
@@ -3915,7 +3915,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x00C9 (201)
+IP: Identification         = 0x00DF (223)
 IP: Flags                  = 1
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -3924,7 +3924,7 @@ IP:  |..1                  = More Fragments
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x1B6C (Correct)
+IP: Header Checksum        = 0x1B56 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP:
@@ -3954,7 +3954,7 @@ Waiting (up to 72.000 seconds) for fragment reassembly
 Sending an IP packet to <DIface-0> (30.1.1.5), containing:
 - IP Source Address field set to address of host-1 (30.1.1.150)
 - IP Destination Address field set to address of DUT (30.1.1.5)
-- Identification field set to 201
+- Identification field set to 223
 - IP Fragment Offset field set to length of data
   sent in first IP packet in unit of 8 octets
 - IP Flags field, containing:
@@ -3982,7 +3982,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 40 bytes
-IP: Identification         = 0x00C9 (201)
+IP: Identification         = 0x00DF (223)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -3991,7 +3991,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0003 (24 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x3B6D (Correct)
+IP: Header Checksum        = 0x3B57 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP:
@@ -4588,7 +4588,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x0092 (146)
+IP: Identification         = 0x00D3 (211)
 IP: Flags                  = 1
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4597,7 +4597,7 @@ IP:  |..1                  = More Fragments
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x1BA3 (Correct)
+IP: Header Checksum        = 0x1B62 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP:
@@ -4645,7 +4645,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 72 bytes
-IP: Identification         = 0x3393 (13203)
+IP: Identification         = 0x116B (4459)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4654,7 +4654,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x0880 (Correct)
+IP: Header Checksum        = 0x2AA8 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -4681,7 +4681,7 @@ ICMP: IP:  |.....0..             = Normal Reliability
 ICMP: IP:  |......0.             = Normal Monetary Cost
 ICMP: IP:  |.......0             = Must Be Zero 
 ICMP: IP: Total Length           = 44 bytes
-ICMP: IP: Identification         = 0x0092 (146)
+ICMP: IP: Identification         = 0x00D3 (211)
 ICMP: IP: Flags                  = 1
 ICMP: IP:  |012
 ICMP: IP:  |0..                  = Reserved 
@@ -4690,7 +4690,7 @@ ICMP: IP:  |..1                  = More Fragments
 ICMP: IP: Fragment Offset        = 0x0000 (0 bytes)
 ICMP: IP: Time to Live           = 64
 ICMP: IP: Protocol               = ICMP (1)
-ICMP: IP: Header Checksum        = 0x1BA3 (Correct)
+ICMP: IP: Header Checksum        = 0x1B62 (Correct)
 ICMP: IP: Source Address         = 30.1.1.150
 ICMP: IP: Destination Address    = 30.1.1.5
 ICMP: IP:
@@ -4871,7 +4871,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 40 bytes
-IP: Identification         = 0x00B3 (179)
+IP: Identification         = 0x0010 (16)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4880,7 +4880,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0003 (24 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x3B83 (Correct)
+IP: Header Checksum        = 0x3C26 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP:
@@ -5059,7 +5059,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0x0017 (23)
+IP: Identification         = 0x007A (122)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5068,7 +5068,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 0
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x7179 (Correct)
+IP: Header Checksum        = 0x7116 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -5111,7 +5111,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0x8AEC (35564)
+IP: Identification         = 0xE611 (58897)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5120,7 +5120,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB112 (Correct)
+IP: Header Checksum        = 0x55ED (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -5147,7 +5147,7 @@ ICMP: IP:  |.....0..             = Normal Reliability
 ICMP: IP:  |......0.             = Normal Monetary Cost
 ICMP: IP:  |.......0             = Must Be Zero 
 ICMP: IP: Total Length           = 64 bytes
-ICMP: IP: Identification         = 0x0017 (23)
+ICMP: IP: Identification         = 0x007A (122)
 ICMP: IP: Flags                  = 0
 ICMP: IP:  |012
 ICMP: IP:  |0..                  = Reserved 
@@ -5156,7 +5156,7 @@ ICMP: IP:  |..0                  = Last Fragment
 ICMP: IP: Fragment Offset        = 0x0000 (0 bytes)
 ICMP: IP: Time to Live           = 0
 ICMP: IP: Protocol               = ICMP (1)
-ICMP: IP: Header Checksum        = 0x7179 (Correct)
+ICMP: IP: Header Checksum        = 0x7116 (Correct)
 ICMP: IP: Source Address         = 30.1.1.150
 ICMP: IP: Destination Address    = 40.1.1.150
 ICMP: IP:
@@ -5180,7 +5180,7 @@ Unused field of ICMP Time Exceeded Message is correctly set to zero
 
 Data field of ICMP Time Exceeded Message is correctly set to
 exactly same IP header and 64 bits of Original Data sent to the DUT
-45 00 00 40 00 17 00 00 00 01 71 79 1E 01 01 96   E..@......qy....
+45 00 00 40 00 7A 00 00 00 01 71 16 1E 01 01 96   E..@.z....q.....
 28 01 01 96 08 00 E5 27 00 0F 00 00               (......'....
 
 ETHER: ---- Ethernet Header ----
@@ -5354,7 +5354,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x984B (Correct)
+IP: Header Checksum        = 0x19DE (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -5364,7 +5364,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43471144
+IP OPT: TimeStamp          = 43569044
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -5571,7 +5571,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6969 (Correct)
+IP: Header Checksum        = 0xEAFA (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -5581,7 +5581,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43483146
+IP OPT: TimeStamp          = 43581047
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -5627,7 +5627,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 104 bytes
-IP: Identification         = 0x6790 (26512)
+IP: Identification         = 0x311B (12571)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5636,7 +5636,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xD462 (Correct)
+IP: Header Checksum        = 0x0AD8 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -5673,7 +5673,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6969 (Correct)
+IP: Header Checksum        = 0xEAFA (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -5683,7 +5683,7 @@ IP OPT: Length             = 10
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43483146
+IP OPT: TimeStamp          = 43581047
 IP OPT:
 IP OPT: Type               = 0x00 (End of Option List)
 IP OPT:
@@ -5892,7 +5892,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6F95 (Correct)
+IP: Header Checksum        = 0x72B8 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -5902,7 +5902,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43488150
+IP OPT: TimeStamp          = 43586051
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP OPT: Type               = 0x44 (Internet Timestamp)
@@ -5910,7 +5910,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43488150
+IP OPT: TimeStamp          = 43586051
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP:
@@ -5953,7 +5953,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 116 bytes
-IP: Identification         = 0x6791 (26513)
+IP: Identification         = 0x311C (12572)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5962,7 +5962,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xD455 (Correct)
+IP: Header Checksum        = 0x0ACB (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -5999,7 +5999,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6F95 (Correct)
+IP: Header Checksum        = 0x72B8 (Correct)
 IP: Source Address         = 30.1.1.150
 IP: Destination Address    = 30.1.1.5
 IP: ---- Options ----
@@ -6009,7 +6009,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43488150
+IP OPT: TimeStamp          = 43586051
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP OPT: Type               = 0x44 (Internet Timestamp)
@@ -6017,7 +6017,7 @@ IP OPT: Length             = 12
 IP OPT: Pointer            = 9
 IP OPT: Overflow           = 0
 IP OPT: Flag               = 0 (Time stamps only)
-IP OPT: TimeStamp          = 43488150
+IP OPT: TimeStamp          = 43586051
 IP OPT: TimeStamp          = 0
 IP OPT:
 IP:
@@ -6048,9 +6048,9 @@ set to zero
 
 Data field of ICMP Parameter Problem Message is correctly set to
 exactly same IP header and 64 bits of Original Data sent to the DUT
-4B 00 00 58 00 00 00 00 40 01 6F 95 1E 01 01 96   K..X....@.o.....
-1E 01 01 05 44 0C 09 00 02 97 93 96 00 00 00 00   ....D...........
-44 0C 09 00 02 97 93 96 00 00 00 00 08 00 E5 24   D..............$
+4B 00 00 58 00 00 00 00 40 01 72 B8 1E 01 01 96   K..X....@.r.....
+1E 01 01 05 44 0C 09 00 02 99 12 03 00 00 00 00   ....D...........
+44 0C 09 00 02 99 12 03 00 00 00 00 08 00 E5 24   D..............$
 00 12 00 00                                       ....
 
 ETHER: ---- Ethernet Header ----
@@ -6216,19 +6216,19 @@ cmd route add -host 40.1.1.160 30.1.1.160
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       20    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       15    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 40.1.1.160                      30.1.1.160                    UGHS     0     gei0   0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       109   gei2   0    
-vxTarget                        vxTarget                      UH       266   lo0    0    
+128.224.166.0/23                vxTarget                      UC       152   gei2   0    
+vxTarget                        vxTarget                      UH       267   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       7310  lo0    0    
+::1                             ::1                           UH       7720  lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -6320,7 +6320,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0xC66E (50798)
+IP: Identification         = 0x7CF3 (31987)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6329,7 +6329,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x7590 (Correct)
+IP: Header Checksum        = 0xBF0B (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -6415,18 +6415,18 @@ Escape character is '^]'.
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       22    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       15    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       110   gei2   0    
-vxTarget                        vxTarget                      UH       283   lo0    0    
+128.224.166.0/23                vxTarget                      UC       153   gei2   0    
+vxTarget                        vxTarget                      UH       284   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       9360  lo0    0    
+::1                             ::1                           UH       9900  lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -6601,19 +6601,19 @@ cmd route add -host 90.0.3.10 30.1.1.160
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       22    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       15    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 90.0.3.10                       30.1.1.160                    UGHS     0     gei0   0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       113   gei2   0    
-vxTarget                        vxTarget                      UH       300   lo0    0    
+128.224.166.0/23                vxTarget                      UC       158   gei2   0    
+vxTarget                        vxTarget                      UH       301   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       11318 lo0    0    
+::1                             ::1                           UH       11980 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -6823,18 +6823,18 @@ Escape character is '^]'.
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       23    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       15    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       114   gei2   0    
-vxTarget                        vxTarget                      UH       317   lo0    0    
+128.224.166.0/23                vxTarget                      UC       159   gei2   0    
+vxTarget                        vxTarget                      UH       318   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       13336 lo0    0    
+::1                             ::1                           UH       14152 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -7015,19 +7015,19 @@ cmd route add -host 40.1.1.160 30.1.1.160
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       23    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       15    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 40.1.1.160                      30.1.1.160                    UGHS     0     gei0   0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       116   gei2   0    
-vxTarget                        vxTarget                      UH       334   lo0    0    
+128.224.166.0/23                vxTarget                      UC       161   gei2   0    
+vxTarget                        vxTarget                      UH       335   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       15174 lo0    0    
+::1                             ::1                           UH       16244 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -7146,18 +7146,18 @@ Escape character is '^]'.
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      19    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       24    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       16    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       119   gei2   0    
-vxTarget                        vxTarget                      UH       351   lo0    0    
+128.224.166.0/23                vxTarget                      UC       166   gei2   0    
+vxTarget                        vxTarget                      UH       352   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       17148 lo0    0    
+::1                             ::1                           UH       18384 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -7333,19 +7333,19 @@ cmd route add -host 40.1.1.160 30.1.1.160
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      20    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       24    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       16    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 40.1.1.160                      30.1.1.160                    UGHS     0     gei0   0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       121   gei2   0    
+128.224.166.0/23                vxTarget                      UC       168   gei2   0    
 vxTarget                        vxTarget                      UH       369   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       19106 lo0    0    
+::1                             ::1                           UH       20416 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -7418,8 +7418,6 @@ ICMP:
 ICMP: ---- End of ICMP Packet ----
 
 
-Ignoring unexpected ICMP Echo Request from 30.1.1.150 to 40.1.1.160
-
 ETHER: ---- Ethernet Header ----
 ETHER:
 ETHER: Destination = 00:1B:21:7D:57:BA
@@ -7439,7 +7437,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0x5AAA (23210)
+IP: Identification         = 0x9D5C (40284)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7448,7 +7446,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xE154 (Correct)
+IP: Header Checksum        = 0x9EA2 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -7536,18 +7534,18 @@ Escape character is '^]'.
 
 INET route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-0.0.0.0/0                       128.224.166.1                 UGS      20    gei2   0    
+0.0.0.0/0                       128.224.166.1                 UGS      0     gei2   0    
 30.1.1.0/24                     30.1.1.5                      UC       25    gei0   0    
 30.1.1.5                        30.1.1.5                      UH       16    lo0    0    
 40.1.1.0/24                     40.1.1.5                      UC       5     gei1   0    
 40.1.1.5                        40.1.1.5                      UH       0     lo0    0    
 localhost                       localhost                     UH       76    lo0    0    
-128.224.166.0/23                vxTarget                      UC       122   gei2   0    
+128.224.166.0/23                vxTarget                      UC       169   gei2   0    
 vxTarget                        vxTarget                      UH       386   lo0    0    
 
 INET6 route table - vr: 0, table: 254
 Destination                     Gateway                       Flags    Use   If    Metric
-::1                             ::1                           UH       19106 lo0    0    
+::1                             ::1                           UH       22572 lo0    0    
 fe80::%lo0/64                   fe80::1%lo0                   UC       0     lo0    0    
 fe80::%gei2/64                  fe80::225:90ff:fe04:e2de%gei2 UC       0     gei2   0    
 fe80::%gei0/64                  fe80::215:17ff:fec8:9028%gei0 UC       0     gei0   0    
@@ -7769,7 +7767,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0x15E4 (5604)
+IP: Identification         = 0x55D3 (21971)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7778,7 +7776,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x263D (Correct)
+IP: Header Checksum        = 0xE64D (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -8018,7 +8016,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0x15E5 (5605)
+IP: Identification         = 0x55D4 (21972)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -8027,7 +8025,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x263C (Correct)
+IP: Header Checksum        = 0xE64C (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -8380,7 +8378,7 @@ Sending an ICMP Timestamp Message to <DIface-0> (30.1.1.5),
 containing:
 - IP Source Address field set to address of host-1 (30.1.1.150)
 - IP Destination Address field set to address of DUT (30.1.1.5)
-- Originate Timestamp field set to 43552181
+- Originate Timestamp field set to 43650087
 - Receive Timestamp field set to zero
 - Transmit Timestamp field set to zero
 
@@ -8422,13 +8420,13 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 13 (Timestamp)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x6298 (Correct)
+ICMP: Checksum         = 0xE424 (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x001A (26)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43552181
+ICMP: Originate Timestamp = 43650087
 ICMP: Receive Timestamp   = 0
 ICMP: Transmit Timestamp  = 0
 ICMP:
@@ -8457,7 +8455,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 40 bytes
-IP: Identification         = 0x15E6 (5606)
+IP: Identification         = 0x55D5 (21973)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -8466,7 +8464,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x2653 (Correct)
+IP: Header Checksum        = 0xE663 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -8474,15 +8472,15 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 14 (Timestamp Reply)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x6FAD (Correct)
+ICMP: Checksum         = 0x585A (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x001A (26)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43552181
-ICMP: Receive Timestamp   = 751850
-ICMP: Transmit Timestamp  = 751850
+ICMP: Originate Timestamp = 43650087
+ICMP: Receive Timestamp   = 738650
+ICMP: Transmit Timestamp  = 738650
 ICMP:
 ICMP: ---- End of ICMP Packet ----
 ETHER: --- Padding [6 bytes] ---
@@ -8493,13 +8491,13 @@ ETHER: --- Padding End ---
 Received expected ICMP Timestamp Message Reply on <DIface-0>
 
 Originate Timestamp field of ICMP Timestamp Reply is correctly
-set to 43552181
+set to 43650087
 
 Receive Timestamp field of ICMP Timestamp Reply is correctly
-set to 751850 (non zero value)
+set to 738650 (non zero value)
 
 Transmit Timestamp field of ICMP Timestamp Reply is correctly
-set to 751850 (non zero value)
+set to 738650 (non zero value)
 
 ETHER: ---- Ethernet Header ----
 ETHER:
@@ -8675,13 +8673,13 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 13 (Timestamp)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x4F0C (Correct)
+ICMP: Checksum         = 0xD098 (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x001B (27)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43557184
+ICMP: Originate Timestamp = 43655090
 ICMP: Receive Timestamp   = 0
 ICMP: Transmit Timestamp  = 0
 ICMP:
@@ -8710,7 +8708,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 40 bytes
-IP: Identification         = 0x15E7 (5607)
+IP: Identification         = 0x55D6 (21974)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -8719,7 +8717,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x2652 (Correct)
+IP: Header Checksum        = 0xE662 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -8727,15 +8725,15 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 14 (Timestamp Reply)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x34CD (Correct)
+ICMP: Checksum         = 0x1DBE (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x001B (27)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43557184
-ICMP: Receive Timestamp   = 756884
-ICMP: Transmit Timestamp  = 756884
+ICMP: Originate Timestamp = 43655090
+ICMP: Receive Timestamp   = 743650
+ICMP: Transmit Timestamp  = 743650
 ICMP:
 ICMP: ---- End of ICMP Packet ----
 ETHER: --- Padding [6 bytes] ---
@@ -8918,13 +8916,13 @@ ICMP: ---- ICMP Packet ----
 ICMP:
 ICMP: Type             = 13 (Timestamp)
 ICMP: Code             = 0 (0)
-ICMP: Checksum         = 0x3B7F (Correct)
+ICMP: Checksum         = 0xBD0C (Correct)
 ICMP:
 ICMP: ---- ICMP Timestamp Data ----
 ICMP:
 ICMP: Identifier          = 0x001C (28)
 ICMP: Sequence Number     = 0x0000 (0)
-ICMP: Originate Timestamp = 43562188
+ICMP: Originate Timestamp = 43660093
 ICMP: Receive Timestamp   = 0
 ICMP: Transmit Timestamp  = 0
 ICMP:

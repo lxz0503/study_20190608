@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6734028 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5783772 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlipv6_FlowLevelDisable ipv6 7 11 
 
@@ -623,7 +623,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Problem in Routing Header : Routing type(10) unknown
 
@@ -644,14 +644,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 100 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x67C3 (Correct)
+ICMPv6: Checksum           = 0x6C7 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -1346,7 +1346,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Problem in Routing Header : Routing type(10) unknown
 
@@ -1367,14 +1367,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 100 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x67C3 (Correct)
+ICMPv6: Checksum           = 0x6C7 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -1695,7 +1695,8 @@ Trying 128.224.166.238...
 Connected to 128.224.166.238.
 Escape character is '^]'.
 
--> cmReceived IPv6 Packet from 3ffe:1111::9028
+-> cmd ping6 -c 1 -s 148 3ffe:1111::1111 
+Received IPv6 Packet from 3ffe:1111::9028
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -1722,11 +1723,11 @@ ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 128 (Echo Request)
 ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xEE09 (Correct)
+ICMPv6: Checksum           = 0x1BD3 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Echo Request ----
 ICMPv6: 
-ICMPv6: Identifier         = 50784
+ICMPv6: Identifier         = 39063
 ICMPv6: Sequence Number    = 0
 ICMPv6: 
 ICMPv6: --- Data [140 bytes] ---
@@ -1746,7 +1747,6 @@ ICMPv6: ---- End of ICMPv6 Packet ----
 
 Received expected Echo Request from DUT
 Flow Label field value of the received packet is zero
-d ping6 -c 1 -s 148 3ffe:1111::1111 
 
 Pinging 3ffe:1111::1111 (3ffe:1111::1111) with 148 bytes of data:
 

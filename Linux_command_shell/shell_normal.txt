@@ -207,9 +207,10 @@ find . -type d -atime -7 ------搜索目录
 
 find . -type f -mtime -7  -name "*.txt" -delete
 # 下面命令，相当于只保留最近7天的日志
-find . -type f -mtime +7  -name "*.log" | xargs rm -f
+find . -type f -mtime +7  -name "*.log" | xargs rm -f &>/dev/null
 find . -type f -mtime +7  -name "*.log" -delete     # 7 days ago，7天前的文件
 find . -type f -mtime +7  -name "*.log" -exec rm -f {} \;     # there must be ; at the end
+
 
 find . -type f -size +10k ---搜索大于10K的文件
 find . -type d -size +10k-----搜索大于10K的目录
@@ -1265,7 +1266,27 @@ echo $DVD      # DVD is in the nightly_config.ini, refer to below, after run sou
 DVD=/net/pek-vx-system1/buildarea1/yliu2/nightly/vx20200601153139_mmadhava-sr0650-fc_vx7-host-SR0650-features
 LTAFRELEASE=vx7-integration-native
 RUNDATE=2020-06-03
-===========================================================
+===========================================================basename dirname
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50$ basename /home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50/test_result.log
+test_result.log
+
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50$ dirname /home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50/test_result.log
+/home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50
+
+grep -rI "FAILED" ./
+==============================================chown   user right====
+
+-rw-rw-r--  1 windriver      windriver    129562 Aug 16  2019 test.log
+after run this: sudo chown root test.log    # this can modify the user that can view the file
+it will be:
+-rw-rw-r--  1 root      windriver    129562 Aug 16  2019 test.log
+sudo chown .root test.log   or sudo chown :root test.log =====this can modify the user group
+
+or you can use:
+sudo chown root:root test.log      # modify user and user group at the same time
+
+
+
 
 
 
