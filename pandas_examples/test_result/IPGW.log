@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6741724 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5788120 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlipgw ipgw 1-2.9 2.11-5 
 
@@ -220,7 +220,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x9A03 (39427)
+IP: Identification         = 0xC209 (49673)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -229,7 +229,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xA231 (Correct)
+IP: Header Checksum        = 0x7A2B (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -333,7 +333,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x938C (37772)
+IP: Identification         = 0x1AE2 (6882)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -342,7 +342,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x94A8 (Correct)
+IP: Header Checksum        = 0x0D53 (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -918,7 +918,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 41 bytes
-IP: Identification         = 0x9A04 (39428)
+IP: Identification         = 0xC20A (49674)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -927,7 +927,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xA233 (Correct)
+IP: Header Checksum        = 0x7A2D (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -4045,7 +4045,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x6131 (24881)
+IP: Identification         = 0xBB18 (47896)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4054,7 +4054,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xDB03 (Correct)
+IP: Header Checksum        = 0x811C (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -4158,7 +4158,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x6132 (24882)
+IP: Identification         = 0xBB19 (47897)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4167,7 +4167,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xDB02 (Correct)
+IP: Header Checksum        = 0x811B (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -4325,7 +4325,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x54D2 (21714)
+IP: Identification         = 0xF864 (63588)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4334,7 +4334,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xD362 (Correct)
+IP: Header Checksum        = 0x2FD0 (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -4438,7 +4438,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x54D3 (21715)
+IP: Identification         = 0xF865 (63589)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4447,7 +4447,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xD361 (Correct)
+IP: Header Checksum        = 0x2FCF (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -4727,7 +4727,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x6133 (24883)
+IP: Identification         = 0xBB1A (47898)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4736,7 +4736,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xDB01 (Correct)
+IP: Header Checksum        = 0x811A (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -4841,7 +4841,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x54D4 (21716)
+IP: Identification         = 0xF866 (63590)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -4850,7 +4850,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xD360 (Correct)
+IP: Header Checksum        = 0x2FCE (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -5085,7 +5085,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......1             = Must Be Zero (*Should be 0*)
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x6134 (24884)
+IP: Identification         = 0xBB1B (47899)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5094,7 +5094,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xDAFF (Correct)
+IP: Header Checksum        = 0x8118 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -5373,7 +5373,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x6135 (24885)
+IP: Identification         = 0xBB1C (47900)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -5382,7 +5382,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xDAFF (Correct)
+IP: Header Checksum        = 0x8118 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -5451,6 +5451,7 @@ ETHER: --- Padding End ---
 
 
 Waiting (up to 3.000 seconds) for IP and ICMP packets on net 30.1.1.0
+Ignoring ICMP Redirect to 30.1.1.150 from 30.1.1.5
 Received IP packet to 30.1.1.151 from 30.1.1.150 with ID = 66
 
 ETHER: ---- Ethernet Header ----
@@ -5492,7 +5493,6 @@ ETHER: --- Padding [10 bytes] ---
 ETHER:  00 00 00 00 00 00 00 00 00 00                     ..........
 ETHER: --- Padding End ---
 
-Ignoring ICMP Redirect to 30.1.1.150 from 30.1.1.5
 Received ARP Request for 30.1.1.151 from 30.1.1.5
 
 ETHER: ---- Ethernet Header ----
@@ -6431,7 +6431,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0xCFF7 (53239)
+IP: Identification         = 0xF59E (62878)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6440,7 +6440,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6C3D (Correct)
+IP: Header Checksum        = 0x4696 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -6545,7 +6545,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0xCFF8 (53240)
+IP: Identification         = 0xF59F (62879)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6554,7 +6554,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6C3C (Correct)
+IP: Header Checksum        = 0x4695 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -6659,7 +6659,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0xCFF9 (53241)
+IP: Identification         = 0xF5A0 (62880)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6668,7 +6668,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6C3B (Correct)
+IP: Header Checksum        = 0x4694 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -6775,7 +6775,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x782B (30763)
+IP: Identification         = 0xD324 (54052)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6784,7 +6784,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB009 (Correct)
+IP: Header Checksum        = 0x5510 (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -6889,7 +6889,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x782C (30764)
+IP: Identification         = 0xD325 (54053)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -6898,7 +6898,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB008 (Correct)
+IP: Header Checksum        = 0x550F (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -7003,7 +7003,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x782D (30765)
+IP: Identification         = 0xD326 (54054)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7012,7 +7012,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB007 (Correct)
+IP: Header Checksum        = 0x550E (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -7242,7 +7242,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0xCFFA (53242)
+IP: Identification         = 0xF5A1 (62881)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7251,7 +7251,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x6C3A (Correct)
+IP: Header Checksum        = 0x4693 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -7355,7 +7355,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x782E (30766)
+IP: Identification         = 0xD327 (54055)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7364,7 +7364,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB006 (Correct)
+IP: Header Checksum        = 0x550D (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -7468,7 +7468,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 44 bytes
-IP: Identification         = 0x782F (30767)
+IP: Identification         = 0xD328 (54056)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7477,7 +7477,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xBA05 (Correct)
+IP: Header Checksum        = 0x5F0C (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -7936,7 +7936,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 32 bytes
-IP: Identification         = 0x3DA2 (15778)
+IP: Identification         = 0x588D (22669)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -7945,7 +7945,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xFE9E (Correct)
+IP: Header Checksum        = 0xE3B3 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -8045,7 +8045,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 32 bytes
-IP: Identification         = 0x7830 (30768)
+IP: Identification         = 0xD329 (54057)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -8054,7 +8054,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0xB010 (Correct)
+IP: Header Checksum        = 0x5517 (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 40.1.1.150
 IP:
@@ -9139,7 +9139,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0xF881 (63617)
+IP: Identification         = 0x4AB3 (19123)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -9148,7 +9148,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x4399 (Correct)
+IP: Header Checksum        = 0xF167 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -9266,7 +9266,7 @@ IP:  |.....1..             = High Reliability
 IP:  |......1.             = Low Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 64 bytes
-IP: Identification         = 0xF882 (63618)
+IP: Identification         = 0x4AB4 (19124)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -9275,7 +9275,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = ICMP (1)
-IP: Header Checksum        = 0x4398 (Correct)
+IP: Header Checksum        = 0xF166 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -9548,6 +9548,7 @@ ETHER: --- Padding End ---
 
 
 Waiting (up to 3.000 seconds) for IP and ICMP packets on net 30.1.1.0
+Ignoring ICMP Redirect to 30.1.1.150 from 30.1.1.5
 Received IP packet to 30.1.1.151 from 30.1.1.150 with ID = 106
 
 ETHER: ---- Ethernet Header ----
@@ -9589,7 +9590,6 @@ ETHER: --- Padding [10 bytes] ---
 ETHER:  00 00 00 00 00 00 00 00 00 00                     ..........
 ETHER: --- Padding End ---
 
-Ignoring ICMP Redirect to 30.1.1.150 from 30.1.1.5
 DUT decremented IP TTL to 1
 
 Sending IP packet with IP TTL = 17

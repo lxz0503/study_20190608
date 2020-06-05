@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6740476 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5783524 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlipv6 ipv6 1-8.15 8.17-16.1 16.4-16.7 
 
@@ -1646,7 +1646,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::88bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
@@ -3074,7 +3074,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 161
+IPv6: Identification       = 211
 IPv6: 
 IPv6: ---- Hop-by-Hop Extention Header ----
 IPv6: 
@@ -3108,7 +3108,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::88bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -3128,14 +3128,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 92 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::88bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 1 (Unrecognized next header type encountered)
-ICMPv6: Checksum           = 0x406A (Correct)
+ICMPv6: Checksum           = 0xEF3B (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -3158,7 +3158,7 @@ ICMPv6: IPv6:
 ICMPv6: IPv6: ---- End of IPv6 Header ----
 ICMPv6: IPv6:
 ICMPv6: IPv6: --- Payload [44 bytes] ---
-ICMPv6: IPv6:  00 00 00 00 00 00 00 A1 3A 00 01 04 00 00 00 00   ........:.......
+ICMPv6: IPv6:  00 00 00 00 00 00 00 D3 3A 00 01 04 00 00 00 00   ........:.......
 ICMPv6: IPv6:  80 00 1A 41 00 00 00 00 49 50 56 36 5F 50 52 4F   ...A....IPV6_PRO
 ICMPv6: IPv6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
 ICMPv6: IPv6: --- Payload End ---
@@ -3185,7 +3185,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 161
+IPv6: Identification       = 211
 IPv6: 
 IPv6: ---- Hop-by-Hop Extention Header ----
 IPv6: 
@@ -3517,98 +3517,8 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::88bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Received Neighbor Solicitation from 3ffe:2222::9029
 
 ETHER: ---- Ethernet Header ----
@@ -4001,7 +3911,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::88bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -4021,14 +3931,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 92 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::88bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 1 (Unrecognized next header type encountered)
-ICMPv6: Checksum           = 0x3007 (Correct)
+ICMPv6: Checksum           = 0xDF0A (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -6516,7 +6426,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::98bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
@@ -8507,6 +8417,96 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:2222::9029
+ to 3ffe:2222::2222
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
  to 3ffe:1111::1111
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
@@ -8946,96 +8946,6 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:2222::9029
- to 3ffe:2222::2222
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 DUT correctly discarded the ICMPv6 Echo Request with 4
 unknown options with higher order 2-bits set to 00, 01,
 10, 11 respectively, and did not forward the packet
@@ -9320,6 +9230,94 @@ ICMPv6:  49 50 56 36 5F 50 52 4F 54 4F 43 4F 4C 5F 54 45   IPV6_PROTOCOL_TE
 ICMPv6:  53 54 45 52                                       STER
 ICMPv6: --- Data End ---
 ICMPV6: ---- End of Echo Request Packet ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
@@ -10141,98 +10139,6 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
- to 3ffe:1111::1111
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 DUT correctly discarded the ICMv6 Echo Request Packet with
 unknown option with higher order 2-bits set to 10, and
 did not forward the packet
@@ -10583,6 +10489,98 @@ Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028
  to 3ffe:1111::1111
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
+ to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 DUT correctly discarded the ICMv6 Echo Request Packet
 with 4 unknown options with higher order 2-bits set to
 00, 10, 01, 00 respectively, and did not forward the packet
@@ -10870,7 +10868,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::b8ba:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Received Neighbor Solicitation from 3ffe:2222::9029
 
@@ -10956,96 +10954,6 @@ ICMPv6:
 ICMPv6: Type               = Target Link-Layer Address (2)
 ICMPv6: Length             = 1 (in units of 8 octets)
 ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
 ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
@@ -12238,7 +12146,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::b8ba:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -12258,14 +12166,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 84 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::b8ba:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0xAE91 (Correct)
+ICMPv6: Checksum           = 0x8D94 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -12676,7 +12584,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::b8ba:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -12696,14 +12604,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 108 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::b8ba:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0xF0B5 (Correct)
+ICMPv6: Checksum           = 0xCFB8 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -13120,6 +13028,96 @@ ICMPv6: ---- End of ICMPv6 Packet ----
 
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 Received Neighbor Solicitation from 3ffe:2222::9029
 
 ETHER: ---- Ethernet Header ----
@@ -13500,94 +13498,6 @@ ICMPv6: ---- End of ICMPv6 Packet ----
 
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 DUT correctly discarded the Neighbor Solicitation Packet
 with unknown option with higher order 2-bits set to 10,
 and did not send any Neighbor Advertisement
@@ -14688,6 +14598,98 @@ Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028
  to 3ffe:1111::1111
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
+ to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:2222::9029
  to 3ffe:2222::2222
 Received Neighbor Solicitation from 3ffe:2222::9029
@@ -15128,100 +15130,6 @@ Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028
  to 3ffe:1111::1111
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
- to 3ffe:1111::1111
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Ignoring ICMPv6 Router Advertisement packet from fe80::215:17ff:fec8:9028
- to ff02::1
 DUT did not forward any ICMPv6 Echo Request
 DUT correctly discarded the packet with 4 unknown options,
 with higher order 2-bits set to 00, 11, 01, 00 respectively
@@ -15509,8 +15417,186 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::b8ba:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 Did not receive an ICMPv6 Echo Reply from DUT.
 DUT correctly discarded the packet with unknown option,
 with higher order 2-bits set to 11
@@ -15845,186 +15931,8 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::b8ba:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Did not receive an ICMPv6 Echo Reply from DUT.
 DUT correctly discarded the packet with 4 unknown options,
 with higher order 2-bits set to 00, 11, 01, 00 respectively
@@ -17214,7 +17122,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::b8ba:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -17234,14 +17142,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 84 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::b8ba:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0x6E91 (Correct)
+ICMPv6: Checksum           = 0x4D94 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -17652,7 +17560,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::b8ba:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -17672,14 +17580,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 108 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::b8ba:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0xB0B5 (Correct)
+ICMPv6: Checksum           = 0x8FB8 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -18186,6 +18094,94 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 DUT correctly ignored the received Router Solicitation,
 and did not send any ICMPv6 Parameter Problem
 
@@ -18472,94 +18468,6 @@ ICMPv6:
 ICMPv6: Type               = Source Link-Layer Address (1)
 ICMPv6: Length             = 1 (in units of 8 octets)
 ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
 ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
@@ -22434,7 +22342,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 104
+IPv6: Identification       = 200
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -22484,7 +22392,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 104
+IPv6: Identification       = 200
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -22537,7 +22445,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 104
+IPv6: Identification       = 200
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -22849,7 +22757,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 143
+IPv6: Identification       = 102
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -23210,7 +23118,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 137
+IPv6: Identification       = 117
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -23227,6 +23135,94 @@ ICMPv6: --- Data [8 bytes] ---
 ICMPv6:  49 50 56 36 5F 50 52 4F                           IPV6_PRO
 ICMPv6: --- Data End ---
 ICMPV6: ---- End of Echo Request Packet ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
@@ -23320,94 +23316,6 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Sending IPv6 Packet with first half of the constructed ICMPv6 packet(B)
 Sending IPv6 packet from 3ffe:1111::1111 
 to 3ffe:1111::9028 
@@ -23441,7 +23349,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 201
+IPv6: Identification       = 145
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -23494,7 +23402,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 137
+IPv6: Identification       = 117
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -23578,7 +23486,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 201
+IPv6: Identification       = 145
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -23898,7 +23806,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 19
+IPv6: Identification       = 68
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -23994,7 +23902,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 95 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 19
+IPv6: Identification       = 68
 IPv6: 
 IPV6: --- Trailing Data [748 bytes] ---
 IPV6:  41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41   AAAAAAAAAAAAAAAA
@@ -24076,7 +23984,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 2993456251
+IPv6: Identification       = 160679033
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -24215,7 +24123,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 181 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 2993456251
+IPv6: Identification       = 160679033
 IPv6: 
 IPV6: --- Trailing Data [60 bytes] ---
 IPV6:  41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41   AAAAAAAAAAAAAAAA
@@ -24497,17 +24405,17 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 3010233467
+IPv6: Identification       = 177456249
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 128 (Echo Request)
 ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xDDE4 
+ICMPv6: Checksum           = 0x3206 
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Echo Request ----
 ICMPv6: 
-ICMPv6: Identifier         = 18787
+ICMPv6: Identifier         = 62785
 ICMPv6: Sequence Number    = 0
 ICMPv6: 
 ICMPv6: --- Data [1440 bytes] ---
@@ -24636,7 +24544,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 181 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 3010233467
+IPv6: Identification       = 177456249
 IPv6: 
 IPV6: --- Trailing Data [100 bytes] ---
 IPV6:  2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E   /0123456789:;<=>
@@ -24656,7 +24564,7 @@ are correctly initialized to zero
 Pinging 3ffe:1111::1111 (3ffe:1111::1111) with 1548 bytes of data:
 
 --- 3ffe:1111::1111 ping statistics ---
-1 packets transmitted, 0 received, 100% packet loss, time 1017 ms
+1 packets transmitted, 0 received, 100% packet loss, time 1016 ms
 -> exit
 Au revoir!
 Connection closed by foreign host.
@@ -24932,17 +24840,17 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 3027010683
+IPv6: Identification       = 194233465
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 128 (Echo Request)
 ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x9EBB 
+ICMPv6: Checksum           = 0x6BB5 
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Echo Request ----
 ICMPv6: 
-ICMPv6: Identifier         = 34956
+ICMPv6: Identifier         = 48018
 ICMPv6: Sequence Number    = 0
 ICMPv6: 
 ICMPv6: --- Data [1440 bytes] ---
@@ -25071,7 +24979,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 181 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 3027010683
+IPv6: Identification       = 194233465
 IPv6: 
 IPV6: --- Trailing Data [100 bytes] ---
 IPV6:  2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E   /0123456789:;<=>
@@ -25089,7 +24997,7 @@ Second Fragment header has correct Offset and MFlag
 Pinging 3ffe:1111::1111 (3ffe:1111::1111) with 1548 bytes of data:
 
 --- 3ffe:1111::1111 ping statistics ---
-1 packets transmitted, 0 received, 100% packet loss, time 1016 ms
+1 packets transmitted, 0 received, 100% packet loss, time 1017 ms
 -> exit
 Au revoir!
 Connection closed by foreign host.
@@ -25370,7 +25278,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 233
+IPv6: Identification       = 9
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -25424,99 +25332,11 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 233
+IPv6: Identification       = 9
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
 IPV6: --- Trailing Data End ---
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
 
 Received Neighbor Solicitation from 3ffe:1111::9028
 
@@ -25606,6 +25426,94 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 DUT correctly did not send an ICMPv6 Echo Reply
 Sending IPv6 Packet with same source address and with
 second half of the constructed ICMPv6 packet
@@ -25643,7 +25551,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 233
+IPv6: Identification       = 9
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -25970,7 +25878,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 143
+IPv6: Identification       = 146
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -26021,99 +25929,11 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 143
+IPv6: Identification       = 146
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
 IPV6: --- Trailing Data End ---
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
 
 Sending IPv6 Packet with same destination address and
 with second half of constructed packet
@@ -26149,7 +25969,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 143
+IPv6: Identification       = 146
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -26476,7 +26296,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 26
+IPv6: Identification       = 90
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -26530,7 +26350,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 241
+IPv6: Identification       = 129
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -26626,6 +26446,94 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 DUT correctly did not send ICMPv6 Echo Reply
 Sending IPv6 Packet with same Identification Number as that
 of the first IPv6 packet and with second half of constructed
@@ -26662,7 +26570,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 26
+IPv6: Identification       = 90
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -26983,7 +26891,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 188
+IPv6: Identification       = 160
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -27023,7 +26931,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 188
+IPv6: Identification       = 160
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -27351,7 +27259,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 249
+IPv6: Identification       = 13
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -27372,94 +27280,6 @@ ICMPV6:
 ICMPv6: ---- End of ICMPv6 Packet ----
 
 Waiting for 61 seconds
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Received Neighbor Solicitation from 3ffe:1111::9028
 
 ETHER: ---- Ethernet Header ----
@@ -27582,7 +27402,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 249
+IPv6: Identification       = 13
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -27942,7 +27762,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 111
+IPv6: Identification       = 175
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -28051,95 +27871,7 @@ ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Received ICMPv6 Time Exceeded from ::d8be:700:80:ffff 
+Received ICMPv6 Time Exceeded from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -28159,14 +27891,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 72 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::d8be:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 3 (Time Exceeded)
 ICMPv6: Code               = 1 (Fragment Reassembly Time Exceeded)
-ICMPv6: Checksum           = 0xC3D5 (Correct)
+ICMPv6: Checksum           = 0xC29C (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Time Exceeded ----
 ICMPv6: 
@@ -28189,7 +27921,7 @@ ICMPv6: IPv6:
 ICMPv6: IPv6: ---- End of IPv6 Header ----
 ICMPv6: IPv6:
 ICMPv6: IPv6: --- Payload [24 bytes] ---
-ICMPv6: IPv6:  3A 00 00 01 00 00 00 6F 80 00 1A 41 00 00 00 00   :......o...A....
+ICMPv6: IPv6:  3A 00 00 01 00 00 00 AF 80 00 1A 41 00 00 00 00   :..........A....
 ICMPv6: IPv6:  49 50 56 36 5F 50 52 4F                           IPV6_PRO
 ICMPv6: IPv6: --- Payload End ---
 ICMPV6: ---- End of Time Exceeded Packet ----
@@ -28215,7 +27947,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 111
+IPv6: Identification       = 175
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -28500,7 +28232,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 192
+IPv6: Identification       = 110
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -28948,7 +28680,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 232
+IPv6: Identification       = 98
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -28974,8 +28706,6 @@ Sending IPv6 packet from 3ffe:1111::1111
 to 3ffe:1111::9028 
 
 Waiting (up to 16.000 seconds) for ICMPv6 packets on net 3ffe:1111::
-Ignoring ICMPv6 Parameter Problem packet from ::88bb:700:80:ffff 
-to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
 ETHER:
@@ -29004,12 +28734,14 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 232
+IPv6: Identification       = 98
 IPv6: 
 IPV6: --- Trailing Data [11 bytes] ---
 IPV6:  4F 43 4F 4C 5F 54 45 53 54 45 52                  OCOL_TESTER
 IPV6: --- Trailing Data End ---
 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Received Neighbor Solicitation from 3ffe:1111::9028
@@ -29456,7 +29188,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 46
+IPv6: Identification       = 234
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -29476,7 +29208,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::88bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -29496,14 +29228,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 73 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::88bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0xBF14 (Correct)
+ICMPv6: Checksum           = 0x6D5C (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -29526,7 +29258,7 @@ ICMPv6: IPv6:
 ICMPv6: IPv6: ---- End of IPv6 Header ----
 ICMPv6: IPv6:
 ICMPv6: IPv6: --- Payload [25 bytes] ---
-ICMPv6: IPv6:  3A 00 00 01 00 00 00 2E 80 00 1A 41 00 00 00 00   :..........A....
+ICMPv6: IPv6:  3A 00 00 01 00 00 00 EA 80 00 1A 41 00 00 00 00   :..........A....
 ICMPv6: IPv6:  49 50 56 36 5F 50 52 4F 54                        IPV6_PROT
 ICMPv6: IPv6: --- Payload End ---
 ICMPV6: ---- End of Parameter Problem Packet ----
@@ -29552,7 +29284,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 46
+IPv6: Identification       = 234
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -29845,7 +29577,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 216
+IPv6: Identification       = 15
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -29898,7 +29630,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 2 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 216
+IPv6: Identification       = 15
 IPv6: 
 IPV6: --- Trailing Data [12 bytes] ---
 IPV6:  54 4F 43 4F 4C 5F 54 45 53 54 45 52               TOCOL_TESTER
@@ -30343,6 +30075,138 @@ ICMPV6:
 ICMPv6: ---- End of ICMPv6 Packet ----
 
 IPv6 DUT is still alive at: 00:15:17:C8:90:28
+
+Neighbor Discovery for 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 33:33:FF:00:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = ff02::1:ff00:9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xF995 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::9029
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+Waiting for Neighbor Advertisement response
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 
 Neighbor Discovery for 3ffe:2222::9029
 
@@ -30844,184 +30708,6 @@ IPV6:  49 50 56 36 5F 50 52 4F 54 4F 43 4F 4C 5F 54 45   IPV6_PROTOCOL_TE
 IPV6:  53 54 45 52                                       STER
 IPV6: --- Trailing Data End ---
 
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 DUT correctly ignored the Echo Request and did not send ICMPv6 Echo Reply
 
 Neighbor Discovery for 3ffe:1111::9028
@@ -31296,6 +30982,96 @@ IPV6:  3B 00 54 04 49 50 76 36 80 00 1A 41 00 00 00 00   ;.T.IPv6...A....
 IPV6:  49 50 56 36 5F 50 52 4F 54 4F 43 4F 4C 5F 54 45   IPV6_PROTOCOL_TE
 IPV6:  53 54 45 52                                       STER
 IPV6: --- Trailing Data End ---
+
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
 
 DUT correctly ignored the Echo Request and did not send ICMPv6 Echo Reply
 
@@ -31738,7 +31514,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 0 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 1
-IPv6: Identification       = 3043787899
+IPv6: Identification       = 211010681
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
@@ -31877,7 +31653,7 @@ IPv6: Reserved             = 0
 IPv6: Fragment Offset      = 181 (in unit of 8 octets)
 IPv6: Res                  = 0
 IPv6: mFlag                = 0
-IPv6: Identification       = 3043787899
+IPv6: Identification       = 211010681
 IPv6: 
 IPV6: --- Trailing Data [60 bytes] ---
 IPV6:  41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41   AAAAAAAAAAAAAAAA
@@ -33082,7 +32858,8 @@ Trying 128.224.166.238...
 Connected to 128.224.166.238.
 Escape character is '^]'.
 
--> cmd ping6 -c 1 -s 148 Received IPv6 Packet from 3ffe:1111::9028
+-> cmd ping6 -c 1 -s 148 3ffe:1111::1111 
+Received IPv6 Packet from 3ffe:1111::9028
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -33109,11 +32886,11 @@ ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 128 (Echo Request)
 ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xB218 (Correct)
+ICMPv6: Checksum           = 0xB74B (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Echo Request ----
 ICMPv6: 
-ICMPv6: Identifier         = 594
+ICMPv6: Identifier         = 64798
 ICMPv6: Sequence Number    = 0
 ICMPv6: 
 ICMPv6: --- Data [140 bytes] ---
@@ -33133,7 +32910,6 @@ ICMPv6: ---- End of ICMPv6 Packet ----
 
 Pseudo-Header is correctly included in the ICMPv6 checksum
 calculation
-3ffe:1111::1111 
 
 Pinging 3ffe:1111::1111 (3ffe:1111::1111) with 148 bytes of data:
 
@@ -35541,96 +35317,6 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Received Neighbor Solicitation from 3ffe:2222::9029
 
 ETHER: ---- Ethernet Header ----
@@ -36435,96 +36121,8 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::68bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 DUT correctly discarded the ICMv6 Echo Request Packet with
 unknown option with higher order 2-bits set to 10, and
 did not do Echo Reply
@@ -36861,7 +36459,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::68bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
@@ -36949,6 +36547,94 @@ ICMPv6:
 ICMPv6: Type               = Target Link-Layer Address (2)
 ICMPv6: Length             = 1 (in units of 8 octets)
 ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
 ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
@@ -37244,7 +36930,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::68bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -37264,14 +36950,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 84 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::68bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0x3A91 (Correct)
+ICMPv6: Checksum           = 0xC994 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -37683,7 +37369,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::68bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -37703,14 +37389,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 108 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::68bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0x7CB5 (Correct)
+ICMPv6: Checksum           = 0xBB9 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -38122,94 +37808,6 @@ ICMPv6: ---- End of ICMPv6 Packet ----
 
 Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Received Neighbor Solicitation from 3ffe:2222::9029
 
 ETHER: ---- Ethernet Header ----
@@ -38982,8 +38580,98 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::68bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
+Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
+to 3ffe:1111::1111
+Received Neighbor Solicitation from 3ffe:1111::9028
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BA
+ETHER: Source      = 00:15:17:C8:90:28
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::9028
+IPv6: Destination Address  = 3ffe:1111::1111
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x2A26 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:28
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:28
+ETHER: Source      = 00:1B:21:7D:57:BA
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:1111::1111
+IPv6: Destination Address  = 3ffe:1111::9028
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0x16D9 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:1111::1111
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 DUT correctly discarded the ICMv6 Echo Request Packet with
 unknown option with higher order 2-bits set to 11, and
 did not send Echo Reply
@@ -39318,98 +39006,8 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Parameter Problem packet from ::68bb:700:80:ffff 
+Ignoring ICMPv6 Parameter Problem packet from 3ffe:1111::9028 
 to 3ffe:1111::1111
-Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028 
-to 3ffe:1111::1111
-Received Neighbor Solicitation from 3ffe:1111::9028
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BA
-ETHER: Source      = 00:15:17:C8:90:28
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::9028
-IPv6: Destination Address  = 3ffe:1111::1111
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x2A26 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:28
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:28
-ETHER: Source      = 00:1B:21:7D:57:BA
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:1111::1111
-IPv6: Destination Address  = 3ffe:1111::9028
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0x16D9 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:1111::1111
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
 Received Neighbor Solicitation from 3ffe:2222::9029
 
 ETHER: ---- Ethernet Header ----
@@ -39790,7 +39388,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::68bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -39810,14 +39408,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 84 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::68bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0xFA90 (Correct)
+ICMPv6: Checksum           = 0x8994 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -40228,7 +39826,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::68bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -40248,14 +39846,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 108 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::68bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 2 (Unrecognized IPv6 options encountered)
-ICMPv6: Checksum           = 0x3CB5 (Correct)
+ICMPv6: Checksum           = 0xCBB8 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -40752,94 +40350,6 @@ ICMPv6:
 ICMPv6: Type               = Target Link-Layer Address (2)
 ICMPv6: Length             = 1 (in units of 8 octets)
 ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
 ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
@@ -42237,7 +41747,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -42257,14 +41767,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 108 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x71B2 (Correct)
+ICMPv6: Checksum           = 0x10B6 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -42706,7 +42216,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 Problem in Routing Header :
 Segment left field(4) is greater than half of Header Ext len(2)
@@ -42728,14 +42238,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 100 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x71C0 (Correct)
+ICMPv6: Checksum           = 0x10C4 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -43171,7 +42681,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -43191,14 +42701,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 100 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x72C1 (Correct)
+ICMPv6: Checksum           = 0x11C5 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 
@@ -43337,8 +42847,96 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Ignoring ICMPv6 Source Quench from ::78bb:700:80:ffff 
+Ignoring ICMPv6 Source Quench from 3ffe:1111::9028 
 to 3ffe:1111::1111 
+Received Neighbor Solicitation from 3ffe:2222::9029
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:1B:21:7D:57:BB
+ETHER: Source      = 00:15:17:C8:90:29
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::9029
+IPv6: Destination Address  = 3ffe:2222::2222
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 135 (Neighbor Solicitation)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xD4CE (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Solicitation Message ----
+ICMPv6: 
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Source Link-Layer Address (1)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:15:17:C8:90:29
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
+
+ETHER: ---- Ethernet Header ----
+ETHER:
+ETHER: Destination = 00:15:17:C8:90:29
+ETHER: Source      = 00:1B:21:7D:57:BB
+ETHER: Type        = 0x86DD (IPV6)
+ETHER:
+IPv6: ---- IPv6 Packet ----
+IPv6: 
+IPv6: Version              = 6
+IPv6: Traffic Class        = 0
+IPv6:  |01234567
+IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
+IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
+IPv6: Flow Label           = 0
+IPv6: Payload Length       = 32 (bytes)
+IPv6: Next Header          = ICMPV6 (58)
+IPv6: Hop Limit            = 255
+IPv6: Source Address       = 3ffe:2222::2222
+IPv6: Destination Address  = 3ffe:2222::9029
+IPv6: 
+ICMPv6: ---- ICMPv6 Packet ----
+ICMPv6: 
+ICMPv6: Type               = 136 (Neighbor Advertisement)
+ICMPv6: Code               = 0 (0)
+ICMPv6: Checksum           = 0xC181 (Correct)
+ICMPv6: 
+ICMPv6: ---- Neighbor Advertisement Message ----
+ICMPv6: 
+ICMPv6: Flags              = 2
+ICMPv6:  |012
+ICMPv6:  |0..              = Router
+ICMPv6:  |.1.              = Solicited
+ICMPv6:  |..0              = Override
+ICMPv6: Reserved           = 0
+ICMPv6: Target Address     = 3ffe:2222::2222
+ICMPv6: 
+ICMPv6: ---- Link Layer Address Options ----
+ICMPv6: 
+ICMPv6: Type               = Target Link-Layer Address (2)
+ICMPv6: Length             = 1 (in units of 8 octets)
+ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
+ICMPV6: ---- End of ICMPV6 Options ----
+ICMPV6: 
+ICMPv6: ---- End of ICMPv6 Packet ----
+
 Ignoring ICMPv6 Neighbor Solicitation packet from 3ffe:1111::9028
  to 3ffe:1111::1111
 Ignoring ICMPv6 *Unknown Type 135* from 3ffe:1111::9028 
@@ -43427,94 +43025,6 @@ ICMPv6:
 ICMPv6: Type               = Target Link-Layer Address (2)
 ICMPv6: Length             = 1 (in units of 8 octets)
 ICMPv6: Link Layer Address = 00:1B:21:7D:57:BA
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-Received Neighbor Solicitation from 3ffe:2222::9029
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:1B:21:7D:57:BB
-ETHER: Source      = 00:15:17:C8:90:29
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::9029
-IPv6: Destination Address  = 3ffe:2222::2222
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 135 (Neighbor Solicitation)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xD4CE (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Solicitation Message ----
-ICMPv6: 
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Source Link-Layer Address (1)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:15:17:C8:90:29
-ICMPV6: ---- End of ICMPV6 Options ----
-ICMPV6: 
-ICMPv6: ---- End of ICMPv6 Packet ----
-
-
-ETHER: ---- Ethernet Header ----
-ETHER:
-ETHER: Destination = 00:15:17:C8:90:29
-ETHER: Source      = 00:1B:21:7D:57:BB
-ETHER: Type        = 0x86DD (IPV6)
-ETHER:
-IPv6: ---- IPv6 Packet ----
-IPv6: 
-IPv6: Version              = 6
-IPv6: Traffic Class        = 0
-IPv6:  |01234567
-IPv6:  |000000..           = 0 DSCP (Differentiated Services Codepoint)
-IPv6:  |......00           = 0 ECN (Explicit Congestion Notification)
-IPv6: Flow Label           = 0
-IPv6: Payload Length       = 32 (bytes)
-IPv6: Next Header          = ICMPV6 (58)
-IPv6: Hop Limit            = 255
-IPv6: Source Address       = 3ffe:2222::2222
-IPv6: Destination Address  = 3ffe:2222::9029
-IPv6: 
-ICMPv6: ---- ICMPv6 Packet ----
-ICMPv6: 
-ICMPv6: Type               = 136 (Neighbor Advertisement)
-ICMPv6: Code               = 0 (0)
-ICMPv6: Checksum           = 0xC181 (Correct)
-ICMPv6: 
-ICMPv6: ---- Neighbor Advertisement Message ----
-ICMPv6: 
-ICMPv6: Flags              = 2
-ICMPv6:  |012
-ICMPv6:  |0..              = Router
-ICMPv6:  |.1.              = Solicited
-ICMPv6:  |..0              = Override
-ICMPv6: Reserved           = 0
-ICMPv6: Target Address     = 3ffe:2222::2222
-ICMPv6: 
-ICMPv6: ---- Link Layer Address Options ----
-ICMPv6: 
-ICMPv6: Type               = Target Link-Layer Address (2)
-ICMPv6: Length             = 1 (in units of 8 octets)
-ICMPv6: Link Layer Address = 00:1B:21:7D:57:BB
 ICMPV6: ---- End of ICMPV6 Options ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
@@ -43877,7 +43387,7 @@ ICMPV6: ---- End of Echo Request Packet ----
 ICMPV6: 
 ICMPv6: ---- End of ICMPv6 Packet ----
 
-Received ICMPv6 Parameter Problem from ::78bb:700:80:ffff 
+Received ICMPv6 Parameter Problem from 3ffe:1111::9028 
 to 3ffe:1111::1111
 
 ETHER: ---- Ethernet Header ----
@@ -43897,14 +43407,14 @@ IPv6: Flow Label           = 0
 IPv6: Payload Length       = 100 (bytes)
 IPv6: Next Header          = ICMPV6 (58)
 IPv6: Hop Limit            = 64
-IPv6: Source Address       = ::78bb:700:80:ffff
+IPv6: Source Address       = 3ffe:1111::9028
 IPv6: Destination Address  = 3ffe:1111::1111
 IPv6: 
 ICMPv6: ---- ICMPv6 Packet ----
 ICMPv6: 
 ICMPv6: Type               = 4 (Parameter Problem)
 ICMPv6: Code               = 0 (Errorneous header field encountered)
-ICMPv6: Checksum           = 0x72BE (Correct)
+ICMPv6: Checksum           = 0x11C2 (Correct)
 ICMPv6: 
 ICMPv6: ---- ICMPv6 Parameter Problem ----
 ICMPv6: 

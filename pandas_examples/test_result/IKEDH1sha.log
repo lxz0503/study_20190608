@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6685064 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5772744 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlike_dh1_sha ike 2.20, 4.10, 14.6, 16.10 
 
@@ -194,10 +194,10 @@ lo0	Link type:Local loopback
 	inet6 unicast ::1  prefixlen 128
 	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
 	MTU:1500  metric:1  VR:0  ifindex:1
-	RX packets:1169427 mcast:3388 errors:0 dropped:0
-	TX packets:1169427 mcast:3388 errors:0
+	RX packets:1189887 mcast:3395 errors:0 dropped:0
+	TX packets:1189887 mcast:3395 errors:0
 	collisions:0 unsupported proto:0
-	RX bytes:87093181 (87 M)  TX bytes:87093181 (87 M)
+	RX bytes:88445039 (88 M)  TX bytes:88445039 (88 M)
 
 gei2	Link type:Ethernet  HWaddr 00:25:90:04:e2:de
 	capabilities: TXCSUM TX6CSUM VLAN_MTU VLAN_TXHWTAG VLAN_RXHWTAG 
@@ -205,10 +205,10 @@ gei2	Link type:Ethernet  HWaddr 00:25:90:04:e2:de
 	inet6 unicast fe80::225:90ff:fe04:e2de%gei2  prefixlen 64  automatic
 	UP RUNNING SIMPLEX BROADCAST MULTICAST 
 	MTU:1500  metric:1  VR:0  ifindex:2
-	RX packets:357195 mcast:17481 errors:0 dropped:1902
-	TX packets:64735 mcast:1117 errors:0
+	RX packets:863597 mcast:21911 errors:0 dropped:2539
+	TX packets:62875 mcast:1126 errors:0
 	collisions:0 unsupported proto:0
-	RX bytes:24189242 (24 M)  TX bytes:6812268 (6812 k)
+	RX bytes:64653646 (64 M)  TX bytes:6622150 (6622 k)
 
 gei0	Link type:Ethernet  HWaddr 00:15:17:c8:90:28
 	capabilities: TXCSUM TX6CSUM VLAN_MTU VLAN_TXHWTAG VLAN_RXHWTAG 
@@ -216,9 +216,9 @@ gei0	Link type:Ethernet  HWaddr 00:15:17:c8:90:28
 	UP RUNNING SIMPLEX BROADCAST MULTICAST 
 	MTU:1500  metric:1  VR:0  ifindex:51
 	RX packets:0 mcast:0 errors:0 dropped:0
-	TX packets:2 mcast:1 errors:0
+	TX packets:1 mcast:1 errors:0
 	collisions:0 unsupported proto:0
-	RX bytes:0  TX bytes:132
+	RX bytes:0  TX bytes:90
 
 gei1	Link type:Ethernet  HWaddr 00:15:17:c8:90:29
 	capabilities: TXCSUM TX6CSUM VLAN_MTU VLAN_TXHWTAG VLAN_RXHWTAG 
@@ -465,7 +465,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 128 bytes
-IP: Identification         = 0xA847 (43079)
+IP: Identification         = 0xE0A2 (57506)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -474,7 +474,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0x9389 (Correct)
+IP: Header Checksum        = 0x5B2E (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -483,12 +483,12 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 108 
-UDP: Checksum         = 0xF89A (Correct)
+UDP: Checksum         = 0x072E (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  1E FF D3 2F EF 28 02 C7                           .../.(..
+ISAKMP:  EB A1 99 E3 F1 FE 5E 07                           ......^.
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
@@ -605,10 +605,10 @@ Escape character is '^]'.
 md ipd start ipike
 ipd: start ipike ok
 -> e
--> cmd sysvar set -co ipike.filename "/romfs/ANVL_ikexit
+-> cmd sysvar set -co ipike.filename "/romfs/ANVLxit
 Au revoir!
 Connection closed by foreign host.
-v1_resp.cfg"
+_ikev1_resp.cfg"
 sysvar: ipike.filename=/romfs/ANVL_ikev1_resp.cfg ok
 -> cmd sysvar list ipike.filename
 System variables:
@@ -841,12 +841,12 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 80 
-UDP: Checksum         = 0x9102 (Correct)
+UDP: Checksum         = 0x72EE (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  44 96 84 17 7A 24 E3 22                           D...z$."
+ISAKMP:  43 AB 72 12 25 F6 68 55                           C.r.%.hU
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
@@ -943,7 +943,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 128 bytes
-IP: Identification         = 0xA848 (43080)
+IP: Identification         = 0xE0A3 (57507)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -952,7 +952,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0x9388 (Correct)
+IP: Header Checksum        = 0x5B2D (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -961,16 +961,16 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 108 
-UDP: Checksum         = 0x4DAA (Correct)
+UDP: Checksum         = 0x6E60 (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  44 96 84 17 7A 24 E3 22                           D...z$."
+ISAKMP:  43 AB 72 12 25 F6 68 55                           C.r.%.hU
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
-ISAKMP:  36 AB 9A 87 AB AE 5C BA                           6.....\.
+ISAKMP:  E7 19 85 50 E5 1C 49 4A                           ...P..IJ
 ISAKMP: --- Responder Cookie End ---
 ISAKMP:
 ISAKMP: Next Payload             = SA Payload
@@ -1316,7 +1316,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 308 bytes
-IP: Identification         = 0xA849 (43081)
+IP: Identification         = 0xE0A4 (57508)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1325,7 +1325,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0x92D3 (Correct)
+IP: Header Checksum        = 0x5A78 (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1334,12 +1334,12 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 288 
-UDP: Checksum         = 0xEF76 (Correct)
+UDP: Checksum         = 0x37EF (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  A9 F8 E3 41 31 6C E3 38                           ...A1l.8
+ISAKMP:  89 D6 E3 87 FD 91 22 B9                           ......".
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
@@ -1423,12 +1423,12 @@ ISAKMP: Next Payload             = Nonce Payload
 ISAKMP: RESERVED                 = 0
 ISAKMP: Payload Length           = 100 bytes
 ISAKMP: --- Key Exchange Data [96 bytes] ---
-ISAKMP:  22 58 DD 96 99 3F 74 72 E8 87 B3 11 52 23 10 2C   "X...?tr....R#.,
-ISAKMP:  C5 F1 B6 5B 89 8D 89 1C 05 20 5F 02 2D 91 12 B7   ...[..... _.-...
-ISAKMP:  C9 51 69 34 FB BC 15 6F 72 5E AC 98 F4 83 13 5C   .Qi4...or^.....\
-ISAKMP:  21 F2 C5 1D B4 81 F2 E4 DB DF 8C CB 0C A1 64 CD   !.............d.
-ISAKMP:  A0 5C 32 5D 0B BC 11 A0 5B 65 58 F8 A9 47 45 6D   .\2]....[eX..GEm
-ISAKMP:  4A D3 47 80 9C 1D C9 8A F2 FB 72 27 9E CF 0F F7   J.G.......r'....
+ISAKMP:  CF 3F 38 67 BD 74 42 15 58 B8 B9 7C E3 8F DD 95   .?8g.tB.X..|....
+ISAKMP:  11 1A 79 5A 39 B7 81 67 B4 37 85 8D 60 D4 30 F1   ..yZ9..g.7..`.0.
+ISAKMP:  AC D4 AB 19 D2 D1 7B 99 45 32 6B AC 40 CB ED 4A   ......{.E2k.@..J
+ISAKMP:  A2 7C 74 7D 36 95 D4 9B 7A EC C9 20 28 4B 71 33   .|t}6...z.. (Kq3
+ISAKMP:  44 BC F3 ED 37 20 C9 0D 17 62 2B 92 C3 F6 B9 78   D...7 ...b+....x
+ISAKMP:  4C 2F D0 AA B6 AD 5C B4 D8 AB 57 78 0B 36 78 82   L/....\...Wx.6x.
 ISAKMP: --- Key Exchange Data End ---
 ISAKMP:
 ISAKMP: ---- End ISAKMP Key Exchange Payload ----
@@ -1439,10 +1439,10 @@ ISAKMP: Next Payload             = Identification Payload
 ISAKMP: RESERVED                 = 0
 ISAKMP: Payload Length           = 68 bytes
 ISAKMP: --- Nonce Data [64 bytes] ---
-ISAKMP:  25 61 77 B3 C8 C3 1F 9D 01 A6 A5 43 37 FA A4 3A   %aw........C7..:
-ISAKMP:  D5 CA DE 88 EC E6 9A C2 04 C2 55 5F C5 CF 16 1B   ..........U_....
-ISAKMP:  DA 46 C7 F3 DC D3 90 9B 51 61 15 43 64 15 54 7C   .F......Qa.Cd.T|
-ISAKMP:  D6 8D 75 15 86 0A 13 03 B0 C9 39 0C 8D 28 5D 4B   ..u.......9..(]K
+ISAKMP:  4C 74 43 AE B7 93 8E BB A6 0E 4D 64 D0 35 F0 14   LtC.......Md.5..
+ISAKMP:  3B E1 77 AE 98 E7 61 1A 0D 3A 94 2C FD 2A 26 F4   ;.w...a..:.,.*&.
+ISAKMP:  AC C2 76 E1 3E 88 8D 9D 82 D9 B1 BC B1 0C 70 71   ..v.>.........pq
+ISAKMP:  FC 77 BB 82 43 2B 5D 0B DE B8 63 B5 93 DE 1F A3   .w..C+]...c.....
 ISAKMP: --- Nonce Data End ---
 ISAKMP:
 ISAKMP: ---- End ISAKMP Nonce Payload ----
@@ -1497,10 +1497,10 @@ Escape character is '^]'.
 md ipd start ipike
 ipd: start ipike ok
 -> ex
--> cmd sysvar set -co ipike.filename "/romfs/ANVL_ikev1it
+-> cmd sysvar set -co ipike.filename "/romfs/ANit
 Au revoir!
 Connection closed by foreign host.
-_resp.cfg"
+VL_ikev1_resp.cfg"
 sysvar: ipike.filename=/romfs/ANVL_ikev1_resp.cfg ok
 -> cmd sysvar list ipike.filename
 System variables:
@@ -1731,12 +1731,12 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 212 
-UDP: Checksum         = 0x9A7B (Correct)
+UDP: Checksum         = 0x8786 (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  41 34 DD 51 6E 9B F5 12                           A4.Qn...
+ISAKMP:  5D 04 5D 61 BF 60 1B 63                           ].]a.`.c
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
@@ -1874,7 +1874,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 332 bytes
-IP: Identification         = 0xA84A (43082)
+IP: Identification         = 0xE0A5 (57509)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -1883,7 +1883,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0x92BA (Correct)
+IP: Header Checksum        = 0x5A5F (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.150
 IP:
@@ -1892,16 +1892,16 @@ UDP:
 UDP: Source Port      = 500 (500)
 UDP: Destination Port = 500 (500)
 UDP: Length           = 312 
-UDP: Checksum         = 0x73FF (Correct)
+UDP: Checksum         = 0xE153 (Correct)
 UDP:
 ISAKMP:
 ISAKMP: ---- ISAKMP HEADER ----
 ISAKMP: --- Initiator Cookie [8 bytes] ---
-ISAKMP:  41 34 DD 51 6E 9B F5 12                           A4.Qn...
+ISAKMP:  5D 04 5D 61 BF 60 1B 63                           ].]a.`.c
 ISAKMP: --- Initiator Cookie End ---
 ISAKMP:
 ISAKMP: --- Responder Cookie [8 bytes] ---
-ISAKMP:  10 39 39 CE DA 35 97 87                           .99..5..
+ISAKMP:  28 86 0B 21 B3 7B 9B DC                           (..!.{..
 ISAKMP: --- Responder Cookie End ---
 ISAKMP:
 ISAKMP: Next Payload             = SA Payload
@@ -1981,12 +1981,12 @@ ISAKMP: Next Payload             = Nonce Payload
 ISAKMP: RESERVED                 = 0
 ISAKMP: Payload Length           = 100 bytes
 ISAKMP: --- Key Exchange Data [96 bytes] ---
-ISAKMP:  0A 68 92 9F 46 5E 27 D1 36 90 40 C6 E7 8E 04 8E   .h..F^'.6.@.....
-ISAKMP:  A1 9F 94 66 C4 90 87 52 17 77 9B F0 5C 80 27 11   ...f...R.w..\.'.
-ISAKMP:  83 63 A6 C0 B5 2D 0E 61 5A 70 45 C4 BE DD D1 01   .c...-.aZpE.....
-ISAKMP:  F1 3E 4A A8 19 7D AB 15 3F CB B2 9D 38 EE DD D7   .>J..}..?...8...
-ISAKMP:  5A BD DE CF C8 DF 91 94 8C DC 42 56 81 6A 81 22   Z.........BV.j."
-ISAKMP:  9B 50 71 C3 91 72 38 F1 CC 47 68 CF 9E 09 8F B0   .Pq..r8..Gh.....
+ISAKMP:  4E 97 BB E4 07 78 E5 B4 8E A4 4E A4 8F 33 29 DF   N....x....N..3).
+ISAKMP:  20 25 FE 57 02 93 20 CA 02 85 CC DA A2 9C 60 94    %.W.. .......`.
+ISAKMP:  42 C9 F5 40 78 6E 14 CC CF 21 4A 34 8C 9C 6D 2E   B..@xn...!J4..m.
+ISAKMP:  5B E3 60 8C 8B 8B B2 19 4C F9 F1 56 D8 51 DE 3A   [.`.....L..V.Q.:
+ISAKMP:  0F 3D 0B E8 F6 24 F6 8D 0F F5 DB AC A7 8E 82 BB   .=...$..........
+ISAKMP:  90 64 B3 69 17 4F 50 2C 50 E0 EC B8 09 CC 83 78   .d.i.OP,P......x
 ISAKMP: --- Key Exchange Data End ---
 ISAKMP:
 ISAKMP: ---- End ISAKMP Key Exchange Payload ----
@@ -1997,10 +1997,10 @@ ISAKMP: Next Payload             = Identification Payload
 ISAKMP: RESERVED                 = 0
 ISAKMP: Payload Length           = 68 bytes
 ISAKMP: --- Nonce Data [64 bytes] ---
-ISAKMP:  27 4B 2F 3B 85 E6 F0 7D 6D AB 2D DC 46 D3 FF A6   'K/;...}m.-.F...
-ISAKMP:  2C E4 30 57 90 8B B1 FB A5 CD FF FD FC C5 D6 CD   ,.0W............
-ISAKMP:  42 6F 69 57 12 92 20 5B E1 3B 6B E8 4E 4F 61 A6   BoiW.. [.;k.NOa.
-ISAKMP:  C9 B8 7C 53 DD C0 3B 3E D7 20 D3 22 4F 6F 55 23   ..|S..;>. ."OoU#
+ISAKMP:  BF 0D 35 BA 81 98 44 64 2C 39 74 43 D9 E0 F6 4C   ..5...Dd,9tC...L
+ISAKMP:  6F E7 D8 DC C5 7C F0 68 B9 EE EA 99 0D C3 99 E2   o....|.h........
+ISAKMP:  1E 5A D3 2C B0 9D 63 C3 E4 56 EE 79 4A E4 3A B3   .Z.,..c..V.yJ.:.
+ISAKMP:  AC 62 54 E4 8C CB 91 58 7C E6 23 70 31 83 B6 C2   .bT....X|.#p1...
 ISAKMP: --- Nonce Data End ---
 ISAKMP:
 ISAKMP: ---- End ISAKMP Nonce Payload ----
@@ -2025,8 +2025,8 @@ ISAKMP: Next Payload             = Vendor Id Payload
 ISAKMP: RESERVED                 = 0
 ISAKMP: Payload Length           = 24 bytes
 ISAKMP: --- Hash Data [20 bytes] ---
-ISAKMP:  EF 0A FF D8 07 D9 66 A1 7A 06 CA F1 3C E6 31 F1   ......f.z...<.1.
-ISAKMP:  80 12 89 05                                       ....
+ISAKMP:  F5 5C 16 20 6A BB EC 00 27 7A 9E 9E E5 F8 64 9A   .\. j...'z....d.
+ISAKMP:  31 B2 F4 9D                                       1...
 ISAKMP: --- Hash Data End ---
 ISAKMP:
 ISAKMP: ---- End ISAKMP Hash Payload ----

@@ -1,7 +1,7 @@
-ANVL version 8.80.1.28 (Linux). Copyright (c) (2019) Ixia.  All Rights reserved.
+ANVL version 8.80.1.28 (Linux). Copyright (c) (2020) Ixia.  All Rights reserved.
 ANVL Machine info: 2.6.18-348.el5PAE
                    Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
-                   Total Memory 8197416 kB RAM. Free Memory 6700688 kB RAM.
+                   Total Memory 8197464 kB RAM. Free Memory 5761956 kB RAM.
                    025650-678a76-daddf8-a95c
 ANVL command line: /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlrip_SplitHorizon rip 8.17 
 
@@ -273,7 +273,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 72 bytes
-IP: Identification         = 0xDEA1 (56993)
+IP: Identification         = 0x6313 (25363)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -282,7 +282,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 64
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0x5CFE (Correct)
+IP: Header Checksum        = 0xD88C (Correct)
 IP: Source Address         = 30.1.1.5
 IP: Destination Address    = 30.1.1.255
 IP:
@@ -343,7 +343,7 @@ IP:  |.....0..             = Normal Reliability
 IP:  |......0.             = Normal Monetary Cost
 IP:  |.......0             = Must Be Zero 
 IP: Total Length           = 92 bytes
-IP: Identification         = 0xFA28 (64040)
+IP: Identification         = 0xB56D (46445)
 IP: Flags                  = 0
 IP:  |012
 IP:  |0..                  = Reserved 
@@ -352,7 +352,7 @@ IP:  |..0                  = Last Fragment
 IP: Fragment Offset        = 0x0000 (0 bytes)
 IP: Time to Live           = 1
 IP: Protocol               = UDP (17)
-IP: Header Checksum        = 0xB659 (Correct)
+IP: Header Checksum        = 0xFB14 (Correct)
 IP: Source Address         = 40.1.1.5
 IP: Destination Address    = 224.0.0.9
 IP:
