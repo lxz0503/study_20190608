@@ -69,7 +69,7 @@ foreignkey是一种关联字段，将两张表进行关联的方式
 class Lesson(models.Model): # Lesson这张表要用到表Course里面的内容，关联如下
     course = models.ForeignKey(Course, verbose_name='课程', on_delete=models.CASCADE)
 
-class Video(models.Model):  # 在这张表里要用到表Lesson的内容，所以下面进行关联,规则:设置变量为小写的表名,第一个参数为表名
+class Video(models.Model):  # 在Video这张表里要用到表Lesson的内容，所以下面进行关联,规则:设置变量为小写的表名,第一个参数为表名
     lesson = models.ForeignKey(Lesson, verbose_name='章节', on_delete=models.CASCADE)
 
 ==============================================================
