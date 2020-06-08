@@ -7,7 +7,7 @@ y1 = np.cos(x)
 y2 = np.sin(x)
 y3 = np.sqrt(x)
 # show the legend
-plt.grid(True)   # 也可不不设置网格线
+plt.grid(True)   # 也可不设置网格线
 plt.plot(x, y1, color='blue', linewidth=1.5, linestyle='-', marker='.', label="y=cos(x)")
 plt.plot(x, y2, color='green', linewidth=1.5, linestyle='-', marker='*', label="y=sin(x)")
 plt.legend(loc='upper right')   # 关键，设置图例

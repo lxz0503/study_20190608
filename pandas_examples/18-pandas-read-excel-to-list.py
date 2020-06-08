@@ -2,7 +2,7 @@
 # coding=utf-8
 import pandas as pd
 
-df = pd.read_excel('performance.xls')
+df = pd.read_excel('performance.xls', sheet_name='IA', header=None)   # 这个表示没有表头，即第一行就是数据,要设置header=None
 test_data = []
 for i in df.index.values:     # 获取行号的索引，并对其进行遍历：
     # 根据i来获取每一行指定的数据 并利用to_list转化成列表
@@ -12,7 +12,7 @@ for i in df.index.values:     # 获取行号的索引，并对其进行遍历：
 print("the final data is {0}".format(test_data))
 
 # 下面的方法更简单，把每行数据放到列表里面
-df = pd.read_excel('performance.xls')
+df = pd.read_excel('performance.xls', sheet_name='ARM')    # 默认第一行就是表头，所以没有把表头写到list
 list1 = df.values.tolist()
 print(list1)
 
