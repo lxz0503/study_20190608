@@ -1284,6 +1284,34 @@ sudo chown .root test.log   or sudo chown :root test.log =====this can modify th
 
 or you can use:
 sudo chown root:root test.log      # modify user and user group at the same time
+=============================================================
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ cat -n test.log     # you can also use cat -b
+  3809  === nightly release name is:vx7-integration
+  3810  ====nightly spin is
+# you can use below command to remove all empty lines
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ grep -v "^$" xiaozhan_new_dir.py | cat -n
+     1  #!/usr/bin/env python
+     2  import os,sys,time,string,ConfigParser
+     3  import resultDir
+     4  import sys
+
+more test.log     # you can use 空格键查看下一页，b可以回看上一页，用/来搜索
+more -5 test.log   # 只显示前5行内容
+more +5 test.log    # 从第5行开始显示内容
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ ls /etc/ | more -5    # 每按一次空格键，就显示5行内容
+
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ ls /etc/ | less -N     # 可以显示行号
+      1 acpi
+      2 adduser.conf
+      3 adjtime
+      4 aliases
+      5 alternatives
+
+head test.log   # default is 显示10行内容, head -n 5 or head -5
+tail head.log   #
+tail -f test.log     # 可以实时查看文件的变化
+==============================================================================
+
 
 
 
