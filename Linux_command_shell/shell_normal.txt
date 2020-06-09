@@ -1310,7 +1310,48 @@ windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ ls /etc/ | less -N     # 可以显示行号
 head test.log   # default is 显示10行内容, head -n 5 or head -5
 tail head.log   #
 tail -f test.log     # 可以实时查看文件的变化
-==============================================================================
+==============================================================================cut
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d : -f 1 /etc/passwd    # 以冒号作为分隔符,-f 1表示只显示第一列
+root
+daemon
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d : -f 3-5 /etc/passwd
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ wc -l submodule_repo.sh   # 23 lines
+23 submodule_repo.sh
+
+===============================sort
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort ips.txt
+128.224.153.138
+128.224.153.34
+128.224.159.79
+128.224.163.8
+128.224.166.211
+128.224.167.175
+
+sort -u  ips.txt    # 去掉重复行 等同于unique命令
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat sort.txt
+ab-cd-rc-ab 3.2.3.46
+ab-cd-cc-ee 1.2.3.41
+ab-cd-cc-aa 3.2.3.42
+fd-fe-er-fe 2.3.4.51
+aa-er-vd-cd 3.4.5.61
+ee-ad-df-fc 4.5.5.21
+# -n表示按数字排序
+# -t "."表示以.作为分割域
+# -k3,3  按第3个字段开始到第3个个字段结束作为排序
+# -k4.1,4.3   按第4个字段第一个字符开始到第4个字段第3个字符结束排序
+
+# 以aa-cd-dd-xx中的最后一列xx进行分组，再对每组中的IP:2.2.3.xxx中的最后一列xxx进行排序
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort -t "." -k 1.10,1.11 -k 4,4 sort.txt
+ab-cd-cc-aa 3.2.3.42
+ab-cd-rc-ab 3.2.3.30     # 注意30
+ab-cd-rc-ab 3.2.3.46     # 注意46
+aa-er-vd-cd 3.4.5.61
+ab-cd-cc-ee 1.2.3.41
+ee-ad-df-fc 4.5.5.21
+fd-fe-er-fe 2.3.4.51
 
 
 
