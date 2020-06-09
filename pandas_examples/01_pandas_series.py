@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 cities_prices = {'beijing': 60000, 'shanghai': 59000, 'shenzhen': 58000}  # use dictionary
 list_prices = ['beijing', 'shanghai', 'shenzhen']                 # use list
 apts = pd.Series(cities_prices)  # index is the key of the dictionary
-result = pd.Series(list_prices)
+result = pd.Series(list_prices)  # default index is 0,1,2
 # print("old values: %s" % apts['shanghai'])
 # print("old values:", apts['shanghai'])
+print(result)
 print(apts)
 arrySer = pd.Series(np.arange(10, 15), index=['a', 'b', 'c', 'd', 'e'])  # use array
 print('the series is:\n', arrySer)
