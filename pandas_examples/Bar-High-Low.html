@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="d20461feb7a04d18b1cc980c946c4070" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="09a0017da71f40ddb55e98ffcdbbc2c0" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_d20461feb7a04d18b1cc980c946c4070 = echarts.init(
-            document.getElementById('d20461feb7a04d18b1cc980c946c4070'), 'white', {renderer: 'canvas'});
-        var option_d20461feb7a04d18b1cc980c946c4070 = {
+        var chart_09a0017da71f40ddb55e98ffcdbbc2c0 = echarts.init(
+            document.getElementById('09a0017da71f40ddb55e98ffcdbbc2c0'), 'white', {renderer: 'canvas'});
+        var option_09a0017da71f40ddb55e98ffcdbbc2c0 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -49,12 +49,14 @@
     "series": [
         {
             "type": "bar",
-            "name": "SR0610",
+            "name": "Baseline",
             "data": [
-                70,
-                940,
-                940,
-                955
+                5,
+                20,
+                36,
+                10,
+                75,
+                90
             ],
             "barCategoryGap": "20%",
             "label": {
@@ -65,28 +67,14 @@
         },
         {
             "type": "bar",
-            "name": "SR0620",
+            "name": "Nightly",
             "data": [
-                80,
-                1000,
-                940,
-                1005
-            ],
-            "barCategoryGap": "20%",
-            "label": {
-                "show": true,
-                "position": "top",
-                "margin": 8
-            }
-        },
-        {
-            "type": "bar",
-            "name": "SR0630",
-            "data": [
-                65,
-                940,
-                800,
-                955
+                8,
+                15,
+                60,
+                20,
+                25,
+                30
             ],
             "barCategoryGap": "20%",
             "label": {
@@ -99,14 +87,12 @@
     "legend": [
         {
             "data": [
-                "SR0610",
-                "SR0620",
-                "SR0630"
+                "Baseline",
+                "Nightly"
             ],
             "selected": {
-                "SR0610": true,
-                "SR0620": true,
-                "SR0630": true
+                "Baseline": true,
+                "Nightly": true
             },
             "show": true,
             "padding": 5,
@@ -148,10 +134,12 @@
                 }
             },
             "data": [
-                "tcp_64",
-                "tcp_1024",
-                "tcp_65536",
-                "udp_1400"
+                "TCP_64",
+                "UDP_1400",
+                "\u96ea\u7eba\u886b",
+                "\u88e4\u5b50",
+                "\u9ad8\u8ddf\u978b",
+                "\u889c\u5b50"
             ]
         }
     ],
@@ -179,14 +167,14 @@
     ],
     "title": [
         {
-            "text": "\u4e3b\u6807\u9898: release performance",
-            "subtext": "\u526f\u6807\u9898:performance",
+            "text": "\u4e3b\u6807\u9898: \u53cc\u5341\u4e00\u9500\u91cf",
+            "subtext": "\u526f\u6807\u9898:\u670d\u9970\u7c7b",
             "padding": 5,
             "itemGap": 10
         }
     ]
 };
-        chart_d20461feb7a04d18b1cc980c946c4070.setOption(option_d20461feb7a04d18b1cc980c946c4070);
+        chart_09a0017da71f40ddb55e98ffcdbbc2c0.setOption(option_09a0017da71f40ddb55e98ffcdbbc2c0);
     </script>
 </body>
 </html>

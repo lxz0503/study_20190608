@@ -3,3 +3,17 @@ SELECT tb_book_author,tb_author_department,
       FROM tb_book 
       WHERE tb_book_author.tb_book_author=tb_book.tb_book_author) 
 FROM tb_book_author;
+
+根据图书作者，获取不同作者编写的图书中价格最高的信息
+# In my home pc, MySql workbench 子查询
+SELECT tb_book_author,tb_author_department,
+    (SELECT max(book_price)
+    FROM shop.tb_book    # 价格信息存储在其他表tb_book
+    WHERE tb_book_author.tb_book_author=tb_book.tb_book_author  # 两个表中有共同的数据列tb_book_author
+    )  AS max_price
+ FROM shop.tb_book_author;
+
+ # 子查询必须在括号中出现
+ # 子查询必须返回单一数据列
+ # 子查询不能用order by
+ # 子查询必须由一个select语句构成。不能用union组合
