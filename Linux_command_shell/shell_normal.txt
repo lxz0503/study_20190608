@@ -1352,6 +1352,60 @@ aa-er-vd-cd 3.4.5.61
 ab-cd-cc-ee 1.2.3.41
 ee-ad-df-fc 4.5.5.21
 fd-fe-er-fe 2.3.4.51
+==================================uniq
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uniq -c ips.txt
+      1 128.224.159.79
+      2 128.224.163.8               # 出现了两次
+      1 128.224.166.211
+      1 128.224.153.34
+      1 128.224.153.138
+      1 128.224.167.175
+实际当中通常结合sort使用来去重:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort -n ips.txt | uniq -c
+      1 128.224.153.138
+      1 128.224.153.34
+      1 128.224.159.79
+      2 128.224.163.8
+      1 128.224.166.211
+      1 128.224.167.175
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt
+http://www.aaa.org/index.html
+http://www.aaa.org/index.html
+# 以/作为分割，取第三列
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "/" '{print $3}' url.txt
+www.aaa.org
+www.aaa.org
+www.aab.org
+www.bbb.org
+www.aaa.org
+# 统计出现的次数
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "/" '{print $3}' url.txt | sort | uniq -c
+      3 www.aaa.org
+      1 www.aab.org
+      1 www.bbb.org
+# 用cut实现相同功能
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d '/' -f 3 url.txt | sort | uniq -c
+      3 www.aaa.org
+      1 www.aab.org
+      1 www.bbb.org
+================================wc ===
+wc -l      统计文本行数
+wc -L   最长那行的长度
+wc -w    统计单词数
+wc -c    统计字节数
+wc -m    统计字符数
+查看登陆系统的用户数:    who | wc -l
+windriver@PEK-QCAO1-D2:~/xiaozhan$ who
+windriver pts/0        2020-06-02 16:05 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/2        2020-06-02 16:07 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/4        2020-06-01 09:40 (pek-lwang7-d1.corp.ad.wrs.com)
+windriver pts/5        2020-06-01 10:04 (pek-lwang7-d1.corp.ad.wrs.com)
+=======================================
+Dos下的文本是以\r\n作为换行标志，linux下是以\n作为换行标志
+如果在windosw下写了shell脚本，上传到linux机器，就需要转换
+dos2unix  url.txt     # 执行即可
+
 
 
 
