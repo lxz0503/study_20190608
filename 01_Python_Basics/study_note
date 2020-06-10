@@ -7,6 +7,16 @@
 安装 pip
 一般默认Ubuntu服务器自带python3.5  但是却没有自带pip
 sudo apt-get install python3-pip
+=========================================================
+在不同的计算机环境用python开发，假设都在Ubuntu虚拟机上面
+首先git pull
+(pip3 freeze > requirements.txt ---这个是之前在其他计算机上执行过，requirements.txt保存到git)
+在新的电脑上执行  pip3 install -r 'requirements.txt'      # 一步安装所有的套件
+添加完新的代码,如果有新的套件，就执行 pip3 freeze > requirements.txt
+git add
+git commit -m "add new case"
+git push
+==============================================
 
 pip3 freeze > requirements.txt  # 列出安装的所有package
 pip3 install --upgrade   # 统一升级所有安装的package

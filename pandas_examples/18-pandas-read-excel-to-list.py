@@ -3,6 +3,7 @@
 import pandas as pd
 
 df = pd.read_excel('performance.xls', sheet_name='IA', header=None)   # 这个表示没有表头，即第一行就是数据,要设置header=None
+print('the original dataframe is \n{}'.format(df))
 test_data = []
 for i in df.index.values:     # 获取行号的索引，并对其进行遍历：
     # 根据i来获取每一行指定的数据 并利用to_list转化成列表

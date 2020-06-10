@@ -1,3 +1,10 @@
 SELECT ename,sal,job
 FROM emp
 WHERE sal > (SELECT AVG(sal)FROM emp);
+
+
+# 求emp表中员工的平均工资，并将结果作为where自居的查询条件， 来获取工资大于平均工资的员工信息
+SELECT ename,sal,job
+FROM shop.emp
+WHERE sal > (SELECT AVG(sal) FROM shop.emp);
+

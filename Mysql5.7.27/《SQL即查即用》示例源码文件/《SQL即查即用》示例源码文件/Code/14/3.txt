@@ -5,3 +5,13 @@ WHERE cat_id>(
     FROM brand
     WHERE name='蓝月亮'
 );
+
+# 应用比较运算符，查询信息表goods中cat_id的值大于表brand中品牌名为 蓝月亮的商品信息
+
+SELECT cat_id,goods_name
+FROM shop.goods
+WHERE cat_id>(
+    SELECT cat_id
+    FROM shop.brand
+    WHERE name='蓝月亮'
+);

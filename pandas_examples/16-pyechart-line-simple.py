@@ -31,7 +31,7 @@ class Html_Line(object):
             # 添加X轴数据
             .add_xaxis(self.df['length'].to_list())
             # 添加Y轴数据,系列的名称,根据需要可以添加多个y轴数据
-            .add_yaxis("SR0610", self.df['SR0610'].to_list())
+            .add_yaxis("SR0610", self.df['SR0610'].to_list())     # 第一个参数是column名字
             .add_yaxis("SR0620", self.df['SR0620'].to_list())
             .add_yaxis("SR0630", self.df['SR0630'].to_list())
             # 添加标题

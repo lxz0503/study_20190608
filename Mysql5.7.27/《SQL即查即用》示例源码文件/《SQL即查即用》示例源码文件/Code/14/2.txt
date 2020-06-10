@@ -3,3 +3,25 @@ FROM emp
 WHERE sal in(SELECT MAX(sal) FROM emp GROUP BY job)
 AND
 job IN(SELECT  distinct job FROM emp);
+
+# 查询在各个职务中工资最高的员工信息
+# 成对比较的多列子查询，就是返回值有多列  -------------查询原理如下
+# 首先通过子查询返回各个职务中的最高工资和职务
+# 然后在主查询每一行中的工资和职务都要与子查询返回列表中的最高工资和职务相比较
+# 只有当两者完全匹配时才能显示该数据行
+SELECT ename,job,sal
+FROM shop.emp
+WHERE (sal,job) IN (SELECT max(sal), job FROM shop.emp GROUP BY job);
+
+
+# 非成对比较的多列子查询，条件相对宽松
+# 只要主查询工资和职务在子查询返回列表中出现即可
+SELECT ename,job,sal
+ FROM shop.emp
+ WHERE sal in (SELECT max(sal) FROM shop.emp GROUP BY job)
+ AND
+ job in (SELECT distinct job FROM shop.emp);
+
+
+ # 可以根据job查询最高工资
+ SELECT max(sal) as m,job FROM shop.emp  where sal IS not NULL GROUP BY job;
