@@ -344,8 +344,8 @@ cat << ENDOFLINE >> xiaozhan.txt
 >ENDOFLINE       表示结束符
 ------------------------------------
 #  只查看文本的特定行
-cat xiaozhan.txt | head      看前10行   或者直接用  head xiaozhan.txt
-cat xiaozhan.txt | tail      看后10行               tail xiaozhan.txt
+cat xiaozhan.txt | head      看前10行   或者直接用    head xiaozhan.txt
+cat xiaozhan.txt | tail      看后10行                tail xiaozhan.txt
 cat xiaozhan.txt | head -n 3  前3行                  head -n 3 xiaozhan.txt
 cat xiaozhan.txt | tail -n 3   后3行                 tail -n 3 xiaozhan.txt
 
@@ -469,13 +469,11 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$
 
 ln -s my_cmd mycmd1
 
-ln -s my_cmd mycmd2
-
 5.在任意目录中，输入my_cmd1，即可打印"hello,world!cmd1."。
 
 实测如下:
 
-windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh .        (copy to /bin)
+windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh /bin/        (copy to /bin)
 
 windriver@PEK-QCAO1-D2:/bin$ sudo ln -s anyrun.sh anyrun   (set script as an execuable file)
 windriver@PEK-QCAO1-D2:/bin$
@@ -497,6 +495,8 @@ NETWORKING=yes
 NETWORKING_IPV6=yes
 HOSTNAME=pek-xli3-d2.wrs.com
 NISDOMAIN=swamp
+
+In my Ubuntu, cat /proc/sys/kernel/hostname
 
 修改了hostname后，如何使其立即生效而不用重启操作系统:
 method 1: 使用echo  servername > /proc/sys/kernel/hostname
@@ -1405,6 +1405,134 @@ windriver pts/5        2020-06-01 10:04 (pek-lwang7-d1.corp.ad.wrs.com)
 Dos下的文本是以\r\n作为换行标志，linux下是以\n作为换行标志
 如果在windosw下写了shell脚本，上传到linux机器，就需要转换
 dos2unix  url.txt     # 执行即可
+======================================diff ======
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt
+     1  http://www.aaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  http://www.aab.org/index.html
+     4  http://www.bbb.org/index.html
+     5  hattp://www.aaa.org/index.html
+     6  北京
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url_cp.txt
+     1  http://www.aaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  http://www.aab.ddd/index.html
+     4  http://www.bbb.org/bbbb
+     5  hattp://www.aaa.org/index.html
+     6  北京
+     7  aaa
+#  a----add, d---delete, c---change
+# <开头的行属于文件1，>开头的属于文件2
+# 字母a,c,d前面的数字是文本1的行号，字母后面的数字是文本2的行号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ diff url.txt url_cp.txt
+3,4c3,4
+< http://www.aab.org/index.html
+< http://www.bbb.org/index.html
+---
+> http://www.aab.ddd/index.html
+> http://www.bbb.org/bbbb
+6a7     # 表示文件1的第6行增加下面一行内容aaa,即对应文件2的第7行
+> aaa
+==========
+# -表示文件2比文件1少的行， + 表示文件2比文件1多的行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ diff -u url.txt url_cp.txt
+--- url.txt     2020-06-10 17:15:06.759173822 +0800
++++ url_cp.txt  2020-06-11 11:02:36.429817632 +0800
+@@ -1,6 +1,7 @@
+ http://www.aaa.org/index.html
+ http://www.aaa.org/index.html
+-http://www.aab.org/index.html
+-http://www.bbb.org/index.html
++http://www.aab.ddd/index.html
++http://www.bbb.org/bbbb
+ hattp://www.aaa.org/index.html
+ 北京
++aaa
+==========================================================
+vimdiff url.txt url_cp.txt     可以打开最多4个文件来对比，用不同颜色
+
+======rev 可以反向输出文本内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rev url.txt
+lmth.xedni/gro.aaa.www//:ptth
+lmth.xedni/gro.aaa.www//:ptth
+lmth.xedni/gro.baa.www//:ptth
+lmth.xedni/gro.bbb.www//:ptth
+lmth.xedni/gro.aaa.www//:pttah
+京北
+======================================tr 可以替换删除修改文本
+# 下面的表示把a替换为x,b替换为y，c替换为z，< url.txt 表示接受重定向文本
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr 'abc' 'xyz' < url.txt
+http://www.xxx.org/index.html
+http://www.xxx.org/index.html
+http://www.xxy.org/index.html
+http://www.yyy.org/index.html
+hxttp://www.xxx.org/index.html
+北京
+
+# 统一把小写字母转换为大写字母
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt > aaaa.txt   生成新的文件
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt
+HTTP://WWW.AAA.ORG/INDEX.HTML
+HTTP://WWW.AAA.ORG/INDEX.HTML
+HTTP://WWW.AAB.ORG/INDEX.HTML
+HTTP://WWW.BBB.ORG/INDEX.HTML
+HATTP://WWW.AAA.ORG/INDEX.HTML
+北京
+# 删除文件中的abc字符
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr -d 'abc' < url.txt
+http://www..org/index.html
+http://www..org/index.html
+===========================================tee
+把数据重定向到屏幕和文本里   -a 表示在文本后面追加内容,否则就是覆盖
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls | tee -a ls.txt
+68-multi-thread-subprocess-ping.py
+7-pexpect-4.6-telnet.py
+aaaa.txt
+
+=========================================vi vim
+u 可以回复或者回滚前一个操作，如果有操作失误就执行u
+/a   搜索a，  按n逐个往下搜索，按N往上搜索
+d1G   表示删除当前行到第一行（包括当前行和第一行）
+dG    表示删除当前行到最后一行
+d0    表示删除当前光标所在文本到行首
+d$    表示删除当前光标所在文本到行尾
+0     表示光标移动到当前行的行首
+$     表示光标移动到当前行的行尾
+gg     将光标移动到文件第一行
+G       光标移动到文件末尾
+n<Enter>   光标向下移动n行
+ngg      光标移动到第n行
+:n1,n2 co n3   n1到n2行的内容复制到n3行之后
+:n1,n2 m  n3   n1到n2行的内容剪切到n3行之后
+=============================================grep  =====文本处理
+windriver@PEK-QCAO1-D2:~/xiaozhan$ grep -in 'a' url.txt       # -n 可以添加行号, -i 不区分大小写,即匹配a或者A
+1:http://www.aAa.org/index.html
+2:http://www.aaa.org/index.html
+3:http://www.aab.org/index.html
+
+# 下面的表示过滤掉空行和以#开头的行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ grep -v "^$\|#" url.txt
+http://www.aAaa.org/index.html
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt | grep -v "^($|#)"
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+
+date -d "2 second" +"%Y-%m-%d %H:%M.%S"
+echo $(date +"now time is %Y-%m-%d %H:%M.%S")    # 注意+必须紧跟着后面的格式化字符串
+2020-06-11 17:11.25
+
+
+
+
+
+
+
+
+
+
+
 
 
 
