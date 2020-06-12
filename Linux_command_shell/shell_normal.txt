@@ -1522,6 +1522,78 @@ http://www.aaa.org/index.html
 date -d "2 second" +"%Y-%m-%d %H:%M.%S"
 echo $(date +"now time is %Y-%m-%d %H:%M.%S")    # 注意+必须紧跟着后面的格式化字符串
 2020-06-11 17:11.25
+=======================================sed ======
+sed -i         #表示直接修改文件内容，否则只是在内存中修改
+sed -i  s/reg/replace/g      # 用replace来替换reg正则匹配到的文本
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -i '2a xiaozhan' url.txt     # 2a表示在第2行后追加内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+xiaozhan                        #
+http://www.aab.org/index.html
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed  '4i xiaozhan2' url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+xiaozhan
+xiaozhan2                       # 在第4行插入内容，原来的第4行变成了第5行
+
+如果要增加多行文本，就用\n,例子： sed  '4i xiaozhan2\nbeijing' url.txt
+# 表示删除第3行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed '3d' url.txt
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed '3,5d' url.txt    # 删除第3行到第5行，包括第5行
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed 's/xiaozhan/beijing/g' url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+beijing                 # 用beijing来替换xiaozhan
+
+# 如果只显示某一行，必须结合-n,否则回全部打印
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '2p' url.txt
+http://www.aaa.org/index.html
+
+备份文件到相同的目录下:注意下面的写法,优点是不用重复写很常的路径
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cp url.txt{,.bak}
+
+============================================awk ===============
+NR表示行号，$0表示一整行的内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk 'NR==3' url.txt   # 只打印第3行
+xiaozhan
+
+# 下面都能实现相同功能，即打印第3行到第5行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk 'NR==3,NR==5' url.txt
+xiaozhan
+http://www.aab.org/index.html
+http://www.bbb.org/index.html
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '3,5p' url.txt
+xiaozhan
+http://www.aab.org/index.html
+http://www.bbb.org/index.html
+windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+# 下面都是先相同功能，即给每行文本添加行号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk '{print NR,$0}' url.txt
+1 http://www.aAaa.org/index.html
+2 http://www.aaa.org/index.html
+3 xiaozhan
+4 http://www.aab.org/index.html
+5 http://www.bbb.org/index.html
+6
+7 #hattp://www.aaa.org/index.html
+8 北京
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt
+     1  http://www.aAaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  xiaozhan
+     4  http://www.aab.org/index.html
+     5  http://www.bbb.org/index.html
+     6
+     7  #hattp://www.aaa.org/index.html
+     8  北京
+
+
+
 
 
 
