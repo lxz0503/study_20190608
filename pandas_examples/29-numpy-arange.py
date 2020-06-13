@@ -5,6 +5,7 @@ import numpy as np
 # 一维数组
 c = np.arange(10)
 print(c)   # [0 1 2 3 4 5 6 7 8 9]
+print(np.mean(c))     # 4.5 求平均值
 print(c.tolist())  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  # 转化为列表
 print('slice from index 0 to 2: {0}'.format(c[:3]))     # [0 1 2]
 print(c[-7::-1])    # [3 2 1 0]    #
@@ -26,6 +27,7 @@ f = np.array([
     [1, 2, 3],
     [4, 5, 6]
 ])
+print(np.mean(f))     # 3.5
 f1 = f.tolist()   # 数组转化为列表
 print(f1)    # [[1, 2, 3], [4, 5, 6]]
 f2 = np.array(f1)   # list转化为数组
@@ -94,5 +96,6 @@ d = np.column_stack((a, b))   # np.hstack((a, b))
 print(d.size)     # 元素个数18
 # 等差数列
 x = np.linspace(1, 5, 5)  # 从1到5，分成5份，注意包括5
+print(x)
 print(x.tolist())   # [1.0, 2.0, 3.0, 4.0, 5.0]
 
