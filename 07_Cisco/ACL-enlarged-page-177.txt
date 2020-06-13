@@ -1,0 +1,69 @@
+需求:  行政部，职工宿舍
+公司内部架设了FTP服务器和WEB服务器
+FTP服务只供行政部门访问
+WEB服务器则可以随便访问
+由于涉及到了不同服务的限制访问，所以只能使用扩展访问列表
+组网用一台三层交换机
+配置3个vlan,10 20 30
+IP 分别为192.168.1.254, 2.254, 3.254
+# 允许行政部对FTP的访问
+Core-Switch-A(config)#access-list 101 permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 eq 21
+Core-Switch-A(config)#access-list 101 permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 eq 20
+# 针对passive模式下允许FTP访问
+Core-Switch-A(config)#access-list 101 permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 gt 1024
+# 允许各部门对WEB服务器进行访问
+Core-Switch-A(config)#access-list 101 permit tcp 192.168.0.0 0.0.255.255 host 192.168.3.1 eq ?
+  <0-65535>  Port number
+  ftp        File Transfer Protocol (21)
+  pop3       Post Office Protocol v3 (110)
+  smtp       Simple Mail Transport Protocol (25)
+  telnet     Telnet (23)
+  www        World Wide Web (HTTP, 80)
+Core-Switch-A(config)#access-list 101 permit tcp 192.168.0.0 0.0.255.255 host 192.168.3.1 eq www
+
+Core-Switch-A(config)#access-list 101 deny ?
+  ahp    Authentication Header Protocol
+  eigrp  Cisco's EIGRP routing protocol
+  esp    Encapsulation Security Payload
+  gre    Cisco's GRE tunneling
+  icmp   Internet Control Message Protocol
+  ip     Any Internet Protocol
+  ospf   OSPF routing protocol
+  tcp    Transmission Control Protocol
+  udp    User Datagram Protocol
+Core-Switch-A(config)#access-list 101 deny
+Core-Switch-A(config)#access-list 101 deny ip ?
+  A.B.C.D  Source address
+  any      Any source host
+  host     A single source host
+  Core-Switch-A(config)#access-list 101 deny ip any ?
+  A.B.C.D  Destination address
+  any      Any destination host
+  host     A single destination host
+  
+  # 禁止其他数据流量
+  Core-Switch-A(config)#access-list 101 deny ip any any
+  
+  Core-Switch-A(config)#int vlan 30
+Core-Switch-A(config-if)#ip access-group 101 out
+Core-Switch-A(config-if)#ex
+
+interface Vlan10
+ ip address 192.168.1.254 255.255.255.0
+!
+interface Vlan20
+ ip address 192.168.2.254 255.255.255.0
+!
+interface Vlan30
+ ip address 192.168.3.254 255.255.255.0
+ ip access-group 101 out
+ # 查询配置的ACL规则
+ # 扩展访问列表使用100-199以及2000到2699作为编号
+Core-Switch-A#show access-lists 101
+Extended IP access list 101
+    permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 eq ftp (7 match(es))
+    permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 eq 20
+    permit tcp 192.168.1.0 0.0.0.255 host 192.168.3.1 gt 1024
+    permit tcp 192.168.0.0 0.0.255.255 host 192.168.3.1 eq www (25 match(es))
+    deny ip any any (12 match(es))
+Core-Switch-A#
