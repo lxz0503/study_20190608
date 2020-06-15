@@ -325,7 +325,7 @@ tom
 jack
 alex
 
-下面的cut命令可以切分出ip地址
+下面的cut和grep命令可以切分出ip地址
 
 -f2  ---it can show the second column(start from 1 column)
 # ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cut -d " " -f 1
@@ -1379,7 +1379,7 @@ www.aaa.org
 www.aab.org
 www.bbb.org
 www.aaa.org
-# 统计出现的次数
+# 统计域名被访问的次数
 windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "/" '{print $3}' url.txt | sort | uniq -c
       3 www.aaa.org
       1 www.aab.org
@@ -1390,7 +1390,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d '/' -f 3 url.txt | sort | uniq -c
       1 www.aab.org
       1 www.bbb.org
 ================================wc ===
-wc -l      统计文本行数
+wc -l   统计文本行数
 wc -L   最长那行的长度
 wc -w    统计单词数
 wc -c    统计字节数
@@ -1566,7 +1566,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ awk 'NR==3,NR==5' url.txt
 xiaozhan
 http://www.aab.org/index.html
 http://www.bbb.org/index.html
-windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '3,5p' url.txt
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '3,5p' url.txt     # this is recommended
 xiaozhan
 http://www.aab.org/index.html
 http://www.bbb.org/index.html
@@ -1582,7 +1582,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ awk '{print NR,$0}' url.txt
 6
 7 #hattp://www.aaa.org/index.html
 8 北京
-windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt     # this is recommended
      1  http://www.aAaa.org/index.html
      2  http://www.aaa.org/index.html
      3  xiaozhan
@@ -1591,6 +1591,39 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt
      6
      7  #hattp://www.aaa.org/index.html
      8  北京
+# 显示文件的第2到第6行，并添加行号
+# awk后面的参数必须放在单引号里面，print语句必须放在一对大括号里面
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx6.9_2019-08-19_14-36-45$ awk 'NR==2,NR==6 {print NR,$0}' test_result.log
+2 DHCP-SERVER-1.2:Passed
+3 DHCP-SERVER-2.1:Passed
+4 DHCP-SERVER-2.2:Passed
+5 DHCP-SERVER-2.3:Passed
+6 DHCP-SERVER-2.4:Passed
+
+# 打印第1，2和最后一列,只显示前两行
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx6.9_2019-08-19_14-36-45$ awk -F '-' '{print $1,$2,$NF}' test_result.log | head -2
+DHCP SERVER 1.1:Passed
+DHCP SERVER 1.2:Passed
+
+# 用awk里面的gsub函数来查找替换
+# 注意严格按照下面的写法，gsub和后面的小括号之间不能有空格，查找和替换内容要用双引号
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ awk '{gsub("/sbin/nologin","/bin/bash",$0);print $0}' test.log | head -10
+=== nightly test date is:2018-12-03
+/bin/bashg/aa/bbb
+/bin/bash/ccc
+
+# 用sed命令实现相同的查找替换功能，只不过每个/前要加\来取消转义
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ sed 's/\/sbin\/nologin/\/bin\/bash/g' test.log | head -10
+=== nightly test date is:2018-12-03
+=
+/bin/bashg/aa/bbb
+/bin/bash/ccc
+
+
+=========================================光标移动到行首和行尾
+ctrl+a移到行首
+ctrl+e移到行尾
+
 
 
 
