@@ -488,6 +488,9 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 hostname ----
+windriver@PEK-QCAO1-D2:~/xiaozhan$ hostname -I         # 可以获取所有的IP地址
+128.224.159.79
+
 If you are using CentOS, then you can edit this file to change the hostname:
 /etc/sysconfig/network
 For my environment:
@@ -1288,7 +1291,7 @@ sudo chown root:root test.log      # modify user and user group at the same time
 windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ cat -n test.log     # you can also use cat -b
   3809  === nightly release name is:vx7-integration
   3810  ====nightly spin is
-# you can use below command to remove all empty lines
+# you can use below command to remove all empty lines.过滤空行
 windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ grep -v "^$" xiaozhan_new_dir.py | cat -n
      1  #!/usr/bin/env python
      2  import os,sys,time,string,ConfigParser
@@ -1462,7 +1465,7 @@ lmth.xedni/gro.aaa.www//:pttah
 京北
 ======================================tr 可以替换删除修改文本
 # 下面的表示把a替换为x,b替换为y，c替换为z，< url.txt 表示接受重定向文本
-windriver@PEK-QCAO1-D2:~/xiaozhan$ tr 'abc' 'xyz' < url.txt
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr 'abc' 'xyz' < url.txt     # 只是在内存中修改，并没有真正修改文件
 http://www.xxx.org/index.html
 http://www.xxx.org/index.html
 http://www.xxy.org/index.html
@@ -1470,7 +1473,7 @@ http://www.yyy.org/index.html
 hxttp://www.xxx.org/index.html
 北京
 
-# 统一把小写字母转换为大写字母
+# 统一把小写字母转换为大写字母,  重定向新的文件才是真正修改文件
 windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt > aaaa.txt   生成新的文件
 windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt
 HTTP://WWW.AAA.ORG/INDEX.HTML
@@ -1519,9 +1522,6 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt | grep -v "^($|#)"
 http://www.aAaa.org/index.html
 http://www.aaa.org/index.html
 
-date -d "2 second" +"%Y-%m-%d %H:%M.%S"
-echo $(date +"now time is %Y-%m-%d %H:%M.%S")    # 注意+必须紧跟着后面的格式化字符串
-2020-06-11 17:11.25
 =======================================sed ======
 sed -i         #表示直接修改文件内容，否则只是在内存中修改
 sed -i  s/reg/replace/g      # 用replace来替换reg正则匹配到的文本
@@ -1624,6 +1624,85 @@ windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ sed 's/\/sbin\/nologin/\/bin\/bash/g' te
 ctrl+a移到行首
 ctrl+e移到行尾
 
+=================================================uname    查询一些基本信息
+uname -a     可以显示所有信息
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -m      uname -p
+x86_64                # 64位操作系统
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -i
+x86_64
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -r
+3.2.0-23-generic
+========================================du    查看磁盘使用情况
+-h   会自动转换位K,M,G等格式
+-s   显示当前目录所有文件大小
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -sh
+318M    .
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -sh blast/
+128K    blast/
+
+windriver@PEK-QCAO1-D2:~/ANVL$ du -h ANVL_Result
+41M     ANVL_Result/ANVL_Vx6.9_2020-06-12_16-13-55
+8.0K    ANVL_Result/ANVL_Vx7_2018-11-02_16-51-53
+14G     ANVL_Result
+
+# 显示目录下所有文件的大小    du -ah
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-10_19-51-30$ du -ah
+200K    ./ICMPv4.log
+1.5M    ./DHCPS.log
+92K     ./IPv6FlowLevelDisable.log
+2.1M    ./IKEAggressive.log
+5.4M    ./IKEMain.log
+
+# 如果想跳过某个目录，用参数  --exclude
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -ah --exclude home
+
+====================================== date     显示系统时间
+
+# 在shell脚本里显示时间
+date -d "2 second" +"%Y-%m-%d %H:%M.%S"
+echo $(date +"now time is %Y-%m-%d %H:%M.%S")    # 注意+必须紧跟着后面的格式化字符串
+2020-06-11 17:11.25
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +"%Y-%m-%d %H:%M:%S"
+2020-06-16 16:08:08
+
+# 显示详细的系统时间
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +"%F %T"
+2020-06-16 16:12:04
+
+# -d   可以在当前日期基础上加减一定时间显示其他时间   year,month,day,hour,minute,second
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +%F -d "-1day"
+2020-06-15
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +%F -d "+1day"
+2020-06-17
+
+
+# 转换时间格式   -d 后面跟上需要转换的时间，  然后跟上需要转成的时间格式
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date -d "Sat May 19 13:40:02 CST 2015" "+%F %T"
+2015-05-19 13:40:02
+# 实战训练，把文本里面的日期转换为其他时间格式
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat time.txt
+Sat May 19 13:40:02 CST 2015 is 13213213
+Sat May 19 13:41:03 CST 2015 is 13213213
+Sat May 19 13:42:04 CST 2015 is 13213213
+# print语句打印了两个参数，$2表示第2列
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "is" '{print "echo $(date -d \""$1"\" \"+%F %T\")",$2}' time.txt
+echo $(date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T")  13213213
+echo $(date -d "Sat May 19 13:41:03 CST 2015 " "+%F %T")  13213213
+echo $(date -d "Sat May 19 13:42:04 CST 2015 " "+%F %T")  13213213
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T"
+2015-05-19 13:40:02
+windriver@PEK-QCAO1-D2:~/xiaozhan$ echo $(date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T")  13213213
+2015-05-19 13:40:02 13213213
+--------------一条命令就是，  用bash来执行shell命令
+# 难点是双引号的使用  \""$1"\", "$1" 外面还包着一层双引号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "is" '{print "echo $(date -d \""$1"\" \"+%F %T\")",$2}' time.txt | bash
+2015-05-19 13:40:02 13213213
+2015-05-19 13:41:03 13213213
+2015-05-19 13:42:04 13213213
+
+# date -s 
 
 
 
