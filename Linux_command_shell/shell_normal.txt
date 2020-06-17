@@ -283,10 +283,10 @@ shellÖĞÌæ»»×Ö·û´®, s´ú±íÌæ»»
 
  ./test.sh 2>&1 | tee  res2.log   ------¿ÉÒÔ°Ñlog´òÓ¡µ½ÆÁÄ»ÉÏÍ¬Ê±Ò²±£´æµ½ÎÄ¼şÀï
 
-# ¶àÌõÃüÁî·ÅÒ»ĞĞÖ´ĞĞ£¬ÖĞ¼äÓÃ·ÖºÅÀ´¸ô¿ª¼´¿É
+# ¶àÌõÃüÁî·ÅÒ»ĞĞÖ´ĞĞ£¬ÖĞ¼äÓÃ·ÖºÅÀ´¸ô¿ª¼´¿É£¬ ·ÖºÅ¿ÉÒÔÁ¬½Ó¼¸ÌõlinuxÃüÁî
 # ls -l 2> err.log 
 # ls /etc/aa /tc/b &> all.log   ±£´æËùÓĞµÄĞÅÏ¢,ÖØ¶¨ÏòËùÓĞÊä³ö
-#£¨ls -al;cat /etc/passwd£©| less  ×éºÏÁ½ÌõÃüÁîµÄÊä³ö
+#(ls -al;cat /etc/passwd)| less  ×éºÏÁ½ÌõÃüÁîµÄÊä³ö
 
 Linux£ºcutÃüÁîÏê½â
 1.ÀıÈçÓĞÒ»¸öÑ§Éú±¨±íĞÅÏ¢£¬°üº¬No¡¢Name¡¢Mark¡¢Percent£º
@@ -404,7 +404,7 @@ linuxÖĞÈçºÎÉèÖÃÄÜÊ¹Ò»¸ö½Å±¾ÔÚÈÎÒâÄ¿Â¼ÏÂ¶¼¿ÉÖ±½ÓÔËĞĞ£¬²»Òª·Çµ½Õâ¸ö½Å±¾ËùÔÚÄ¿Â¼ÏÂÔ
 PATH=$PATH:/etc/apache/bin
 Ê¹ÓÃÕâÖÖ·½·¨,Ö»¶Ôµ±Ç°»á»°ÓĞĞ§£¬Ò²¾ÍÊÇËµÃ¿µ±µÇ³ö»ò×¢ÏúÏµÍ³ÒÔºó£¬PATH ÉèÖÃ¾Í»áÊ§Ğ§
 for example:
-windriver@PEK-QCAO1-D2:~$ echo $PATH
+windriver@PEK-QCAO1-D2:~$ echo $PATH      # ÏÔÊ¾ÏµÍ³µÄ»·¾³±äÁ¿£¬ÒÔÃ°ºÅ×÷Îª·Ö¸î
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path£¬ export PATH=$PATH:/home/windriver
 windriver@PEK-QCAO1-D2:~$ echo $PATH
@@ -587,24 +587,7 @@ CTRL +x, YESS, È»ºóEnter¼´¿É±£´æ
 00 03 * * 1-5  Ã¿ÖÜÒ»µ½ÖÜÎåµÄ3µãÖÓ
 0 17 * * 1-5  mail -s "hi" alex@domain.name < /tmp/maildata    ¶¨Ê±Ğ´ÓÊ¼ş
 -------------------------------------------
-1£©Ñ¹Ëõ tar´ò°ü¡¢gzipÑ¹Ëõ
-tar -czvf Ñ¹ËõÎÄ¼şÃû Ä¿Â¼Ãû
-Èç£º tar czvf dira.tar.gz dira
-×¢Òâ£ºtar -czvfÓëtar czvfÊÇÒ»ÑùµÄĞ§¹û£¬ËùÒÔËµ£¬ºóÃæÍ³Ò»È¡Ïû-
-ÊµÕ½ÈçÏÂ: windriver@PEK-QCAO1-D2:~/xiaozhan$
-tar zcvf logfile.txt.targ.gz /home/windriver/xiaozhan  ---Ñ¹ËõÁËÕû¸öÄ¿Â¼
-Ñ¹ËõµÄÊ±ºòÒªÊ¹ÓÃÏà¶ÔÂ·¾¶£¬·ñÔò±¨´í£¬µ«ÊÇ¿ÉÒÔÍ¨¹ı²ÎÊıÌí¼Ó-P£¬ÀıÈçtar zcvfP
-windriver@PEK-QCAO1-D2:~$ tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt
-./xiaozhan/logfile.txt
-»òÕß:
-windriver@PEK-QCAO1-D2:~/xiaozhan$ tar zcvfP /home/windriver/log.tar.gz logfile.txt
-logfile.txt
 
-2£©½âÑ¹
-tar xzvf Ñ¹ËõÎÄ¼şÃû
-tar xzvf Ñ¹ËõÎÄ¼şÃû -C Ö¸¶¨Ä¿Â¼
-Èç£º tar xzvf dira.tar.gz ½âÑ¹µ½µ±Ç°Ä¿Â¼
-Èç£º tar xzvf dira.tar.gz -C /home/book ½âÑ¹µ½/home/book
 
 ===============================LinuxÏµÍ³×Ô¶¯·¢ËÍÓÊ¼ş
 https://www.runoob.com/w3cnote/centos-mail-command-sendmail.html ---ÅäÖÃ
@@ -1251,13 +1234,17 @@ backup before remove.
 # Ê¹ÓÃfind + xargsµÄ×éºÏÀ´Ö´ĞĞÃüÁî
 find . -type f -name '.txt' -mtime +7 | xargs rm -f
 rm filename
---------------tar command
+--------------tar command ÓÃÀ´´ò°üÎÄ¼ş =============================
 windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ tar zcvf test.tar.gz a.txt
 
 # ÓÃ·´ÒıºÅÀ´Ö´ĞĞfind
 windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ tar zcvf test.tar.gz `find . -type f -name "*.txt"`
 # ÕÒµ½Ä¿Â¼ÏÂËùÓĞÎÄ¼ş£¬É¾³ıÀïÃæÒÔxiaozhan¿ªÍ·µÄĞĞ
 windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -type f | xargs sed -i '/xiaozhan*/d'
+
+tar -ztvf  test.tar.gz      # ²é¿´Ñ¹Ëõ°üÀïÃæµÄÄÚÈİ£¬ÀıÈç°üº¬Ê²Ã´ÎÄ¼ş
+
+
 =================================source  =============
 windriver@PEK-QCAO1-D2:~/xiaozhan$ vi source_test.sh
 #!/bin/bash
@@ -1702,10 +1689,52 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "is" '{print "echo $(date -d \""$1"\" 
 2015-05-19 13:41:03 13213213
 2015-05-19 13:42:04 13213213
 
-# date -s 
+# ÉèÖÃÏµÍ³Ê±¼ä
+# date -s "10:10:10 2020-06-18"
+# date -s "10:10:10 2020/06/18"
 
+# Ã¿¸ô1ÃëÖ´ĞĞÒ»´Înetstat -an£¬²¢ÇÒ¸ßÁÁÏÔÊ¾±ä»¯£¬ÀıÈçÓĞĞÂµÄ¶Ë¿ÚÁ¬½Ó
+windriver@PEK-QCAO1-D2:~/xiaozhan$ watch -n 1 -d netstat -an
 
+# which ÏÔÊ¾ÃüÁîµÄÈ«Â·¾¶
+windriver@PEK-QCAO1-D2:~/xiaozhan$ which python3
+/usr/local/bin/python3
 
+# locate  blast        ²éÕÒËùÓĞµÄÎÄ¼ş»òÕßÄ¿Â¼,Ö»Òª°üº¬blastÃû×ÖµÄ¶¼»áÁĞ³öÀ´
+windriver@PEK-QCAO1-D2:~/xiaozhan$ locate blast
+/home/windriver/xiaozhan/blast
+/home/windriver/xiaozhan/blast/blasteeTCP
+/home/windriver/xiaozhan/blast/blasteeTCPux.c
+========================================================
+
+1£©Ñ¹Ëõ tar´ò°ü¡¢gzipÑ¹Ëõ
+tar -czvf Ñ¹ËõÎÄ¼şÃû Ä¿Â¼Ãû
+Èç£º tar czvf dira.tar.gz dira
+×¢Òâ£ºtar -czvfÓëtar czvfÊÇÒ»ÑùµÄĞ§¹û£¬ËùÒÔËµ£¬ºóÃæÍ³Ò»È¡Ïû-
+ÊµÕ½ÈçÏÂ: windriver@PEK-QCAO1-D2:~/xiaozhan$
+tar zcvf logfile.txt.targ.gz /home/windriver/xiaozhan  ---Ñ¹ËõÁËÕû¸öÄ¿Â¼
+Ñ¹ËõµÄÊ±ºòÒªÊ¹ÓÃÏà¶ÔÂ·¾¶£¬·ñÔò±¨´í£¬µ«ÊÇ¿ÉÒÔÍ¨¹ı²ÎÊıÌí¼Ó-P£¬ÀıÈçtar zcvfP
+windriver@PEK-QCAO1-D2:~$ tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt
+./xiaozhan/logfile.txt
+»òÕß:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tar zcvfP /home/windriver/log.tar.gz logfile.txt
+logfile.txt
+
+Èç¹ûÑ¹ËõµÄÊ±ºòÒªÅÅ³ıÄ³¸öÄ¿Â¼:
+tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt   --exclude=/home/windriver/xiaozhan  --exclude==/home/aaa
+
+# ÊµÕ½ÑµÁ·£¬ÏÈÕÒµ½¶ÔÓ¦ÎÄ¼ş£¬ÔÙ´ò°ü
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -type f -name "*.txt" | xargs tar zcvf test.tar.gz
+
+»òÕß   tar zcvf test.tar.gz `find /etc -type f -name "*.txt"`       ÓÃÒ»¶Ô·´ÒıºÅÀ´Ö´ĞĞshellÃüÁî
+
+2£©½âÑ¹
+tar xzvf Ñ¹ËõÎÄ¼şÃû
+tar xzvf Ñ¹ËõÎÄ¼şÃû -C Ö¸¶¨Ä¿Â¼
+Èç£º tar xzvf dira.tar.gz ½âÑ¹µ½µ±Ç°Ä¿Â¼
+Èç£º tar xzvf dira.tar.gz -C /home/book ½âÑ¹µ½/home/book
+
+==================================================================
 
 
 
