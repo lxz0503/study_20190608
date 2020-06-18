@@ -1736,6 +1736,68 @@ tar xzvf 压缩文件名 -C 指定目录
 
 ==================================================================
 
+gzip 会删除源文件，同时压缩源文件
+zip不会删除源文件，同时压缩源文件
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ zip aaaa.txt.zip aaaa.txt
+  adding: aaaa.txt (deflated 66%)
+# unzip
+windriver@PEK-QCAO1-D2:~/xiaozhan$ unzip aaaa.txt.zip
+Archive:  aaaa.txt.zip
+replace aaaa.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename: y
+  inflating: aaaa.txt
+====================================rsync 可以替代cp,rsync只会拷贝变化的部分，效率高====
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av xiaozhan.txt root@128.224.166.46:/root    # 把文件push到其他服务器
+root@128.224.166.46's password:
+sending incremental file list
+xiaozhan.txt
+
+sent 99 bytes  received 31 bytes  37.14 bytes/sec
+total size is 0  speedup is 0.00
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av root@128.224.166.46:/root/xiaozhan.txt /home/xiaozhan/    # 从其他服务器拉取文件到本地
+root@128.224.166.46's password:
+receiving incremental file list
+xiaozhan.txt
+
+sent 30 bytes  received 94 bytes  27.56 bytes/sec
+total size is 0  speedup is 0.00
+
+# 也可以用参数-e 来使用SSH隧道加密传输
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av -e 'ssh -p 22' root@128.224.166.46:/root/xiaozhan.txt .
+root@128.224.166.46's password:
+receiving incremental file list
+xiaozhan.txt
+
+sent 30 bytes  received 110 bytes  40.00 bytes/sec
+total size is 12  speedup is 0.09
+
+# 快速清空一个非常大的目录，可以使用rsync， 即快速删除大量文件
+sudo mkdir /null; rsync -av --delete /null /home/xiaozhan
+实测如下：
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ sudo mkdir /null;rsync -av --delete /null/ /home/windriver/xiaozhan/home/windriver/xiaozhan/;sudo rm -rf /null
+sending incremental file list
+./
+deleting test/b.txt
+deleting test/a.txt
+deleting test/
+deleting test.tar.gz
+deleting b.txt
+deleting a.txt
+
+sent 29 bytes  received 15 bytes  88.00 bytes/sec
+total size is 0  speedup is 0.00
+
+# 本地拷贝，或者同步文件
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av xiaozhan.txt  home/windriver/xiaozhan/
+sending incremental file list
+xiaozhan.txt
+
+sent 99 bytes  received 31 bytes  260.00 bytes/sec
+total size is 0  speedup is 0.00
+==================================================================================
+
 
 
 
