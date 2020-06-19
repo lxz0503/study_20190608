@@ -16,7 +16,7 @@ def dmy2ymd(dmy):
     dmy = str(dmy, encoding='utf-8')
     # print(dmy)    # b'20-01-2011'    20-01-2011
     date = datetime.strptime(dmy, '%d-%m-%Y').date()   # 如果不加date()函数，后面会有小时分钟秒全为0
-    # print(type(date), '====', date)  # 这是datetime类型，不是字符串类型
+    print(type(date), '====', date)  # 这是datetime类型，不是字符串类型    <class 'datetime.date'> ==== 2011-01-01
     ymd = date.strftime('%Y-%m-%d')    # this str字符串类型
     # print(type(ymd), '---', ymd)
     # wday = date.weekday()   # 0 1 2 3 4 5 6 分别对应周一到周日

@@ -4,7 +4,7 @@ import csv
 import os
 
 f_dir = os.path.dirname(__file__) + '/bug_record.csv'
-df = pd.read_csv(f_dir, nrows=3)
+df = pd.read_csv(f_dir, nrows=3)           # 读取前3行数据
 # print(df)
 f_dir_copy = os.path.dirname(__file__) + '/bug_record_copy.csv'
 df.to_csv(f_dir_copy, index=False, header=False)    # ????????index?header
