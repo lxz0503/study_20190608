@@ -2,18 +2,20 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-t = pd.DataFrame([[1,2,3,4],[5,6,7,8],[2,3,4,5],[6,7,8,9]],
-                 index=['a','b','c','d'],
-                 columns=['x1','x2','x3','x4'])
+t = pd.DataFrame([[1,2,3,4], [5,6,7,8], [2,3,4,5], [6,7,8,9]],   # 每个list就是一行数据
+                 index=['a', 'b', 'c', 'd'],
+                 columns=['x1', 'x2', 'x3', 'x4'])
 print(t)
-# another method to initialize dataframe
+# another method to initialize data frame
 data = {
         'city': ['beijing', 'shanghai', 'shenzhen', 'guangzhou'],
         'year': [2016, 2017, 2018, 2019],
         'house_price': [50000, 48000, 35000, 30000]
         }    # 每一列数据, 通过字典来创建
-# data_frame = pd.DataFrame(data, columns=['year', 'city', 'house_price'])
-data_frame = pd.DataFrame.from_dict(data, orient='index', columns=['year', 'city', 'house_price','a'])
+# 默认字典的key就是column的名字，也可以自己指定顺序和名字（参数columns），而index名字默认是0 1 2 3
+data_frame = pd.DataFrame(data, index=['a', 'b', 'c', 'd'])
+# 下面的方法表示字典的key就是index名字
+# data_frame = pd.DataFrame.from_dict(data, orient='index', columns=['year', 'city', 'house_price', 'a'])
 print(data_frame)
 print(data_frame.values)
 # print(data_frame.values[0])
@@ -29,21 +31,21 @@ print(x.sort_values(by='x2'))
 frame = pd.DataFrame(
                      np.arange(9).reshape(3, -1),  # -1 means generating columns automatically
                      index=['a', 'b', 'c'],   # 每行的名字
-                     columns=['beijing', 'shanghai', 'hangzhou'] # 每列的名字
+                     columns=['beijing', 'shanghai', 'hangzhou']  # 每列的名字
                      )
 frame.plot.bar()
 plt.show()
-# print(frame)
+print(frame)
 print(frame.index[0])  # 打印第0行的index的名字
-print(frame.columns[0]) # 打印第0列column的名字
-# print(frame.ix['a':'b'])  # get value from index a to index b
+print(frame.columns[[0, 1]])  # 打印第0,1列column的名字,如果只需要第0列名字，则是frame.columns[0]
 # print(frame.sort_values(by=['beijing'],na_position='first'))
-# print(frame[frame.beijing>0]) # get value from column beijing that are greater than 0
+print(frame[frame.beijing > 0])    # get value from column beijing that are greater than 0
+print(frame[['beijing', 'shanghai']])    # 取beijing和shanghai这两列
 
 #
-# fileDf = pd.read_excel(r'F:\xiaozhan_git\study_20190608\numpy_pandas_matplotlib\test_data.xlsx','Sheet1')
+fileDf = pd.read_excel(r'test_data.xlsx', 'Sheet1')
 # print("check the info:")
-# print(fileDf.head())
+print(fileDf.head())
 # print(fileDf.info())
 # print(fileDf.describe())
 # print(fileDf) # 打印所有内容
@@ -51,7 +53,7 @@ print(frame.columns[0]) # 打印第0列column的名字
 # print(fileDf['Baseline'].max())  # 打印Baseline这一列的最大值
 # print(fileDf.fillna(value=5))
 
-# print(fileDf.values)  # 打印每行的值，但是不包括column名字
+print(fileDf.values)  # 打印每行的值，但是不包括column名字
 # print(fileDf.values[1][1])
 # print(fileDf['Baseline'] < 500)
 # print(fileDf.head(3)) # 打印前3行
@@ -72,12 +74,12 @@ df = pd.DataFrame(
                    'E': np.random.randint(0, 5, 12)
                    }
                  )
-# print(df)
+print(df)
 # 将A列为“one”，C列为“bar”的E列数据修改为110
 df.loc[(df['A'] == 'one') & (df['C'] == 'bar'), 'E'] = 110
 # print(df)
-#修改索引为1-12
-df.index=range(1, 13)
+# 修改索引为1-12
+df.index = range(1, 13)
 # print(df)
 
 # pandas中索引的使用
@@ -85,16 +87,13 @@ data = pd.DataFrame({'A': [1,2,3], 'B': [4,5,6], 'C': [7,8,9]}, index=["a","b","
 print(data)
 # .loc[],中括号里面是先行后列，以逗号分割，行和列分别是行标签和列标签，比如我要得到数字5，那么就就是
 print(data.loc['b', 'B'])
-print(data.at['b','B']) # 只能定位单个元素，但是速度快
+print(data.at['b', 'B'])  # 只能定位单个元素，但是速度快
 # 如果我要选择一个区域呢，比如我要选择5，8，6，9，那么可以这样做
 # print(data.loc['b':'c', 'B':'C'])
 # .iloc[]与loc一样，中括号里面也是先行后列，行列标签用逗号分割，与loc不同的之处是，.iloc 是根据行数与列数来索引的
-# print(data.iloc[1, 1])
-print(data.iat[1,1])  # 只能定位单个元素，但是速度快
-# print(data.iloc[1:3, 1:3])
-# .ix[]它既可以根据行列标签又可以根据行列数
-# print(data.ix[1, 1])
-# print(data.ix[1:3, 1:3])
+print(data.iloc[1, 1])
+print(data.iat[1, 1])  # 只能定位单个元素，但是速度快
+print(data.iloc[1:3, 1:3])
 
 #
 df = pd.DataFrame({'AAA': [4, 5, 6, 7],
@@ -115,6 +114,8 @@ print(df)
 # 1    5  555  555
 # 2    6  555  555
 # 3    7  555  555
+# 如果loc函数只有一个参数，则只针对行做处理
+# 下面这行表示，选择AAA这列里面<=6的并且行index在0 2 3里面的所有数据
 r = df.loc[(df.AAA <= 6) & (df.index.isin([0, 2, 3]))]
 print(r)
 #    AAA  BBB  CCC
@@ -122,8 +123,8 @@ print(r)
 # 2    6  555  555
 r = df.loc[df.groupby("AAA")["BBB"].idxmin()]
 print(r)
-
-fecha = pd.date_range('2012-4-10', '2015-1-4', periods=10)
+# 在两个日期之间取10个日期，系统会自动计算间隔
+fecha = pd.date_range('2012-4-10', '2012-4-30', periods=10)
 print(fecha)
 print(type(fecha))
 
@@ -146,3 +147,9 @@ plt.show()
 # print(df)
 # df.plot.bar()
 # plt.show()
+p = pd.Period("2018-03-11", freq='H')
+print(p.day)
+p = pd.Period('2012-1-1', freq='D')
+print(p.start_time)
+print(p.end_time)
+

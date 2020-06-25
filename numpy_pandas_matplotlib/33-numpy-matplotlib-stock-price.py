@@ -42,13 +42,15 @@ plt.tick_params(labelsize=10)     # 设置字体
 plt.grid(linestyle=':')
 # 把numpy的日期类型M8[D]转换为matplotlib的日期类型
 dates = numpy_dates.astype(md.datetime.datetime)
+# print(dates)
 #
 rise = closing_prices - opening_prices >= 0.01
 print('rise is', type(rise), rise)  # [False False False False False False False False False False False  True True  True  True]
 fall = opening_prices - closing_prices >= 0.01
 print('fall is', fall)
+print('dates size', dates.size)
 fc = np.zeros(dates.size, dtype='3f4')  # 每一个元素都是3个浮点数组成
-print('fc is', type(fc), fc)
+print('fc is', type(fc), fc.ndim, fc)
 ec = np.zeros(dates.size, dtype='3f4')
 fc[rise], fc[fall] = (1, 1, 1), (0, 0.5, 0)     # 设置颜色，不明白
 ec[rise], ec[fall] = (1, 0, 0), (0, 0.5, 0)     # 同上

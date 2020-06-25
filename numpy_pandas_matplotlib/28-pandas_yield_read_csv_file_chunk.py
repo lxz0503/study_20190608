@@ -9,8 +9,9 @@
 import pandas as pd
 import numpy as np
 
+
 def pandas_read(filename, sep=',', size=5):
-    # names参数可以决定列名,否则就会以第一列的名字默认作为列名,在这里可以去掉这个参数，只是作为提示
+    # names参数可以决定列名,否则就会以第一行的名字默认作为列名,在这里可以去掉这个参数，只是作为提示
     reader = pd.read_csv(filename, sep, chunksize=size, header=None, names=['test result'])   # pd.dataframe
     while True:
         try:
@@ -21,7 +22,7 @@ def pandas_read(filename, sep=',', size=5):
 
 
 if __name__ == '__main__':
-    g = pandas_read('test_result.log', sep='\n')
+    g = pandas_read('test_result.log', sep='\n')  # 返回一个可迭代对象
     # for c in g:
     #     print(c)
     print('case name is {}'.format((next(g).values[0][0].split(':')[0])))
