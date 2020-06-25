@@ -198,26 +198,6 @@ print(tu[1][2]["k2"])
 #
 print(abs(-2))
 
-# 如果列表内容特别大，就用生成器表达式，把[]替换为()即可,这样不会真用很大内存
-
-l = (i for i in range(10))
-print(l)  # <generator object <genexpr> at 0x000000000213F780>
-print(l.__next__())   # 这里输出0
-print(l.__next__())   # 这里输出1
-
-# yield相当于函数里面的return
-
-def test():
-    print("first")
-    yield "the first"
-    print("second")
-    yield 2
-    print("third")
-    yield 3
-res = test()
-print(res.__next__())  # 这里输出1
-print(res.__next__())  # 这里输出2
-
 #
 def product():
     for i in range(10):
@@ -316,16 +296,6 @@ def show(name):
     print(id(name))
 print(id(name))
 show(name)
-
-# 使用set集合获取两个列表中相同的元素
-
-l1 = [11, 22, 33]
-l2 = [22, 33, 44,'a']
-l = l1 + l2
-print(l)    # 连个列表拼接在一起
-print(set(l))     # 用集合去掉了重复元素
-
-print(set(l1)&set(l2))    # 用&操作，取出集合中相同的元素
 
 #
 def func(x,z,y=5):

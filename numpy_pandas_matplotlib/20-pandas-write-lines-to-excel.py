@@ -31,10 +31,10 @@ class PandasWriteExcel(object):
                 final_data = tcp_data + udp_data
         return list(map(int, final_data))  # 把字符串列表转化为整型列表
 
-    # 构造dataframe的数据格式
+    # 构造data frame的数据格式
     def compose_data(self):
         data = []
-        for i in range(len(self.res_log)):
+        for i in range(len(self.res_log)):  # 循环处理多个log文件
             res = self.get_throughput(self.res_log[i])
             data.append(res)  # 每一个列表元素就是一个release的全部数据，即每一行
         return data      # [[247, 1082, 940, 6241], [247, 1082, 940, 6241], [247, 1082, 940, 6241]]

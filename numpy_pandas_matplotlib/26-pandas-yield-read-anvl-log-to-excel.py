@@ -17,10 +17,10 @@ class PandasWriteExcel(object):
 
     def get_logfile(self):
         for log_file in os.listdir(self.log_dir):
-            yield log_file
+            yield log_file     # 迭代器每次处理一个log文件
 
     def gen_txt(self, name):
-        p = re.compile(r'<<.*-.*-\d+\.\d+: .*')      # this reg pattern to match test result
+        p = re.compile(r'<<.*-.*-\d+\.\d+: .*')      # this reg pattern is to match test result
         with open(self.log_dir + '/' + name) as f:
             for line in f:           # analyze each test log
                 r = p.match(line)
@@ -30,9 +30,9 @@ class PandasWriteExcel(object):
     def write_excel(self):
         # firstly, write every line into a file, because the pandas parameter must be file name
         with open("xiaozhan_test.txt", 'w') as fp:
-            log_names = self.get_logfile()
+            log_names = self.get_logfile()   # 调用生成器函数,返回一个可迭代对象
             for name in log_names:       # analyze each test log
-                h = self.gen_txt(name)
+                h = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象
                 for line in h:
                     fp.write(line + '\n')
         # read txt file and write into excel

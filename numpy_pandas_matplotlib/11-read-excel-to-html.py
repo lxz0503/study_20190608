@@ -1,4 +1,6 @@
-# this can change one excel to a html
+#! /usr/bin/env python3
+# coding=utf-8
+# This can read data from one excel to a html
 import pandas as pd
 import codecs
 import os
@@ -14,6 +16,7 @@ class ExcelToHtml(object):
         df = xd.parse()
         with codecs.open(self.html_name, 'w', 'utf-8') as html_file:
             html_file.write(df.to_html(header=True, index=False))
+        # 下面的代码只是为了测试用
         with open(self.html_name) as f:
             res = f.read()
             if res is not None:
