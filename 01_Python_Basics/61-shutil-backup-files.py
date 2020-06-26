@@ -10,8 +10,8 @@ import datetime
 
 def archive_tgz():
     now = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-    filename = 'all_images_{0}'.format(now)
-    os.chdir('send_email')
+    filename = 'all_images_{0}'.format(now)   # backup file name with tar.gz
+    os.chdir('send_email')  # backup all files under this dir
     shutil.make_archive(filename, 'gztar')    # generate backup.tar.gz
 
 

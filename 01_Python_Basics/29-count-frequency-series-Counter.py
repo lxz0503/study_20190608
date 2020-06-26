@@ -43,8 +43,8 @@ txt = open(f_dir, "r", encoding='UTF-8').read()
 c3 = Counter(re.split('\W+', txt))
 print('出现频率最高的前5个单词:\n%s' % c3.most_common(5))
 #
-c = Counter()
+c = Counter()   # c的类型也类似于一个字典，所以也能用键值对来访问
 with open('file_test', 'r') as f:
     for line in f:
-        c[line] += 1
+        c[line] += 1    # 赋值，类似于字典赋值
 print(c.most_common(2))
