@@ -1,10 +1,13 @@
+#!/usr/bin/env python3
+# coding=utf-8
 from selenium import webdriver
 import unittest
 import time
 import HTMLTestRunner
+from Common.log_util import *
 
 
-class SohuWebTest(unittest.TestCase):
+class BaiduWebTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -16,7 +19,10 @@ class SohuWebTest(unittest.TestCase):
         self.driver.get(url)
         title = self.driver.title
         print(title)
-        assert self.driver.title.find(u"搜狗搜索") >= 0, "assert error"
+        logging.debug("start test for baidu")
+        # assert self.driver.title.find(u"搜狗搜索") >= 0, "assert error"
+        self.assertTrue(self.driver.title.find(u"搜狗搜索") >= 0)
+        logging.debug("end test for baidu")
 
     def test_visitRecentURL(self):
         first_url = "http://www.sogou.com"
@@ -32,9 +38,9 @@ if __name__ == '__main__':
     # unittest.main()                  # 必须注释掉这句话才能生成html报告,否则始终以unittest方式运行
     suite = unittest.TestSuite()
     # suite.addTest(WebTest('test_visitURL'))    # 运行单个case
-    suite.addTest(unittest.TestLoader().loadTestsFromTestCase(SohuWebTest))   # 运行整个测试套
+    suite.addTest(unittest.TestLoader().loadTestsFromTestCase(BaiduWebTest))   # 运行整个测试套
     # file_name = "F:\\Pycharm\\Selenium_Xiaozhan\\report.html"
-    file_name = "D:\\xiaozhan_git\\study_20190608\\API_Python\\web_api_selenium_unittest\\unit_test\\report.html"
+    file_name = "D:\\xiaozhan_git\\study_20190608\\Web_API_Python3\\web_api_selenium_unittest\\unit_test\\report.html"
     with open(file_name, 'wb+') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='report', description='web api test')
         runner.run(suite)

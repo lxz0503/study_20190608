@@ -56,7 +56,10 @@ if __name__ == '__main__':
         print(item)
     # find the top 10 files, or getmtime()
     print('find the top 10 most biggest size files')
+    # 字典生成式
     files = {name: os.path.getsize(name) for name in find_specific_files('.', patterns=['*.py'])}
+    # 降序，按照文件大小排序，file.items()生成一个元组格式，每个元组第二个元素是文件大小
+    # sorted()返回一个列表，用enumerate()函数给添加序号
     result = sorted(files.items(), key=lambda d: d[1], reverse=True)[:10]
     for i, t in enumerate(result, 1):
         print(i, t[0], t[1])
