@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
-
+# 修改文件权限为777
 import os
 import sys
 
