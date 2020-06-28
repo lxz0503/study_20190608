@@ -76,7 +76,7 @@ sudo /etc/init.d/xinetd reload
 
 sudo /etc/init.d/xinetd restart
 
-mkdir –p /tftpboot
+mkdir ?Cp /tftpboot
 
 sudo chmod -R 777 /tftpboot
 ===for centos
@@ -1209,7 +1209,7 @@ build.py*
 config.ini
 
 ============================export -p     can check all environment variables
-useradd –d  /home/sam -m sam
+useradd ?Cd  /home/sam -m sam
 Linux中让alias设置永久生效的方法详解:
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cat /home/windriver/.bashrc
 
@@ -1797,6 +1797,9 @@ xiaozhan.txt
 sent 99 bytes  received 31 bytes  260.00 bytes/sec
 total size is 0  speedup is 0.00
 ==================================================================================
+mac切换大小写：ctrl+caps
+caps切换中英文
+再按caps切换到英文小写字母
 
 
 
