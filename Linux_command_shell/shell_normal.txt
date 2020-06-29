@@ -404,7 +404,7 @@ linuxÖĞÈçºÎÉèÖÃÄÜÊ¹Ò»¸ö½Å±¾ÔÚÈÎÒâÄ¿Â¼ÏÂ¶¼¿ÉÖ±½ÓÔËĞĞ£¬²»Òª·Çµ½Õâ¸ö½Å±¾ËùÔÚÄ¿Â¼ÏÂÔ
 PATH=$PATH:/etc/apache/bin
 Ê¹ÓÃÕâÖÖ·½·¨,Ö»¶Ôµ±Ç°»á»°ÓĞĞ§£¬Ò²¾ÍÊÇËµÃ¿µ±µÇ³ö»ò×¢ÏúÏµÍ³ÒÔºó£¬PATH ÉèÖÃ¾Í»áÊ§Ğ§
 for example:
-windriver@PEK-QCAO1-D2:~$ echo $PATH      # ÏÔÊ¾ÏµÍ³µÄ»·¾³±äÁ¿£¬ÒÔÃ°ºÅ×÷Îª·Ö¸î
+windriver@PEK-QCAO1-D2:~$ echo $PATH      # ²é¿´ÏµÍ³µÄ»·¾³±äÁ¿£¬ÒÔÃ°ºÅ×÷Îª·Ö¸î
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path£¬ export PATH=$PATH:/home/windriver
 windriver@PEK-QCAO1-D2:~$ echo $PATH
@@ -1184,9 +1184,9 @@ windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
 
 mkdir -p a/b     # create parent and child dirs
 tree -d a/b
-----you can create many files with different names at the same time:
+----you can create many files with different names at the same time:ÅúÁ¿´´½¨ÎÄ¼ş,ÓÃÒ»¶Ô´óÀ¨ºÅÀ´ÊµÏÖ
 touch stu{1,2,3,4}    # this can create stu1,stu2,stu3 and stu4
-mkdir -p data/{dir1,dir2,dir3}
+mkdir -p data/{dir1,dir2,dir3}     # ÅúÁ¿´´½¨Ä¿Â¼
 -----------------------------------------------------------------------------------------
 windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -l --time-style=long-iso       # this can show specific time
 total 134192
@@ -1800,6 +1800,54 @@ total size is 0  speedup is 0.00
 macÇĞ»»´óĞ¡Ğ´£ºctrl+caps
 capsÇĞ»»ÖĞÓ¢ÎÄ
 ÔÙ°´capsÇĞ»»µ½Ó¢ÎÄĞ¡Ğ´×ÖÄ¸
+========================================useradd=====ÓÃ»§Ìí¼Ó É¾³ı, ĞèÒªrootÓÃ»§È¨ÏŞÀ´²Ù×÷
+useradd    adduserÁ½ÌõÃüÁîÀàËÆ£¬Ìí¼ÓÓÃ»§ĞÅÏ¢,Í¬Ê±Ò²»áÌí¼ÓºÍÓÃ»§ÃûÏàÍ¬µÄÓÃ»§×é
+usermod    ĞŞ¸ÄÓÃ»§ĞÅÏ¢
+
+userdel -f xiaozhan            -----É¾³ıÕâÌõÓÃ»§ĞÅÏ¢
+rm -rf /home/xiaozhan/
+
+ÏÂÃæÕâÌõÃüÁî½÷É÷Ê¹ÓÃ£¬½¨Òé²ÉÓÃÖ±½Ó×¢ÊÍ/etc/passwdÏÂÃæÏà¹ØÓÃ»§
+»òÕßuserdel -r xiaozhan         ----»áÉ¾³ıËùÓĞÓëÓÃ»§xiaozhanÓĞ¹ØµÄĞÅÏ¢£¬°üÀ¨homeÄ¿Â¼
+
+root@PEK-QCAO1-D2:/home# adduser xiaozhan        ----- Êµ¼ÊÓÃÕâÌõÃüÁî£¬Í¬Ê±´´½¨ÃÜÂë
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  xiaozhan   4096 Jun 29 14:56 xiaozhan/    -------ĞÂÓÃ»§µÄhomeÄ¿Â¼
+
+root@PEK-QCAO1-D2:/home# usermod -g windriver xiaozhan   ------ĞŞ¸ÄÓÃ»§xiaozhanÊôÓÚÓÃ»§×éwindriver
+root@PEK-QCAO1-D2:/home# ll
+total 28
+drwxr-xr-x   5 root      root       4096 Jun 29 15:03 ./
+drwxr-xr-x  30 root      root       4096 Jun 18 13:57 ../
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  windriver  4096 Jun 29 15:03 xiaozhan/
+root@PEK-QCAO1-D2:/home#
+
+Ö±½Ó×¢ÊÍ/etc/passwdÏÂÃæÏà¹ØÓÃ»§   #xiaozhan:x:1002:1002:,,,:/home/xiaozhan:/bin/bash
+root@PEK-QCAO1-D2:/home# userdel -r xiaozhan
+userdel: user 'xiaozhan' does not exist
+root@PEK-QCAO1-D2:/home# su xiaozhan   -----ÕâÑùÏàµ±ÓÚÕâ¸öÓÃ»§²»¿ÉÓÃ
+Unknown id: xiaozhan
+
+=================================================passwd   ĞŞ¸ÄÓÃ»§ÃÜÂë========================
+root@PEK-QCAO1-D2:/home# passwd    ±íÊ¾ĞŞ¸Äµ±Ç°ÓÃ»§ÃÜÂë
+Enter new UNIX password:
+Retype new UNIX password:
+Sorry, passwords do not match
+passwd: Authentication token manipulation error
+passwd: password unchanged
+
+passwd xiaozhan   ---ĞŞ¸ÄÓÃ»§xiaozhanµÄÃÜÂë
+
+root@PEK-QCAO1-D2:/home# echo stu{1,2,3} | tr " " "\n"     ÅúÁ¿Éú³ÉÎÄ¼ş£¬ÓÃ»»ĞĞÀ´Ìæ´ú¿Õ¸ñ
+stu1
+stu2
+stu3
+
+
+
 
 
 
