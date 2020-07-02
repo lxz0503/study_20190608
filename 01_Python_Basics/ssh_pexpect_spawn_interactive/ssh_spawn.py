@@ -22,7 +22,7 @@ class SshTest(object):
                 s = pexpect.spawn(cmdSSH)
                 f.write(sys.stdout + sys.stderr)   # xiaozhan debug
                 s.logfile = f      # xiaozhan debug with file handle f
-                # s.logfile = sys.stdout 
+                # s.logfile = sys.stdout
                 #f = open("spawn.log",'w')
                 #sys.stdout = f
                 for i in range(2):
