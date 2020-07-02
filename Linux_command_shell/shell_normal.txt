@@ -1,3 +1,8 @@
+https://www.techonthenet.com/index.php    ---- this is for Cё╛SQL,р╩╦ЖмЬу╬ё╛спхГ╨нй╧сцword,excel,access,sql
+
+The #ifdef directive must be closed by an #endif directive.
+
+
 1.tail -f filename ╩А╟я filename нд╪ЧюО╣двНн╡╡©╣ддзхщотй╬тзфад╩иоё╛╡╒гр╡╩╤ок╒пбё╛ж╩р╙ filename ╦Эпб╬м©ирт©╢╣╫вНпб╣днд╪Чдзхщ
 tail -f -20 filename   д╛хоотй╬╨С10пп
 хГ╨нх╔╣Тнд╪Чц©р╩пп╨СцФ╣д^M
@@ -76,7 +81,7 @@ sudo /etc/init.d/xinetd reload
 
 sudo /etc/init.d/xinetd restart
 
-mkdir ╗Cp /tftpboot
+mkdir ?Cp /tftpboot
 
 sudo chmod -R 777 /tftpboot
 ===for centos
@@ -404,7 +409,7 @@ linuxжпхГ╨ниХжцдэй╧р╩╦Ж╫е╠╬тзхнрБд©б╪об╤╪©иж╠╫сткппё╛╡╩р╙╥г╣╫уБ╦Ж╫е╠╬кЫтзд©б╪обт
 PATH=$PATH:/etc/apache/bin
 й╧сцуБжж╥╫╥╗,ж╩╤т╣╠г╟╩А╩╟спп╖ё╛р╡╬мйгк╣ц©╣╠╣гЁЖ╩Рв╒оЗо╣мЁрт╨Сё╛PATH иХжц╬м╩Ай╖п╖
 for example:
-windriver@PEK-QCAO1-D2:~$ echo $PATH      # отй╬о╣мЁ╣д╩╥╬Ё╠Да©ё╛ртц╟╨евВн╙╥ж╦Н
+windriver@PEK-QCAO1-D2:~$ echo $PATH      # ╡И©╢о╣мЁ╣д╩╥╬Ё╠Да©ё╛ртц╟╨евВн╙╥ж╦Н
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new pathё╛ export PATH=$PATH:/home/windriver
 windriver@PEK-QCAO1-D2:~$ echo $PATH
@@ -1184,9 +1189,9 @@ windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
 
 mkdir -p a/b     # create parent and child dirs
 tree -d a/b
-----you can create many files with different names at the same time:
+----you can create many files with different names at the same time:еЗа©╢╢╫╗нд╪Ч,сцр╩╤т╢Сю╗╨ею╢й╣ож
 touch stu{1,2,3,4}    # this can create stu1,stu2,stu3 and stu4
-mkdir -p data/{dir1,dir2,dir3}
+mkdir -p data/{dir1,dir2,dir3}     # еЗа©╢╢╫╗д©б╪
 -----------------------------------------------------------------------------------------
 windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -l --time-style=long-iso       # this can show specific time
 total 134192
@@ -1209,7 +1214,7 @@ build.py*
 config.ini
 
 ============================export -p     can check all environment variables
-useradd ╗Cd  /home/sam -m sam
+useradd ?Cd  /home/sam -m sam
 LinuxжпхцaliasиХжцсю╬циЗп╖╣д╥╫╥╗оЙ╫Б:
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cat /home/windriver/.bashrc
 
@@ -1797,19 +1802,173 @@ xiaozhan.txt
 sent 99 bytes  received 31 bytes  260.00 bytes/sec
 total size is 0  speedup is 0.00
 ==================================================================================
+macгп╩╩╢Сп║п╢ё╨ctrl+caps
+capsгп╩╩жпс╒нд
+ты╟╢capsгп╩╩╣╫с╒ндп║п╢вжд╦
+========================================useradd=====сц╩╖лМ╪с и╬ЁЩ, пХр╙rootсц╩╖х╗очю╢╡ывВ
+useradd    adduserа╫лУцЭаНюЮкфё╛лМ╪ссц╩╖пео╒,м╛й╠р╡╩АлМ╪с╨мсц╩╖цШоЮм╛╣дсц╩╖вИ
+usermod    пч╦дсц╩╖пео╒
 
+userdel -f xiaozhan            -----и╬ЁЩуБлУсц╩╖пео╒
+rm -rf /home/xiaozhan/
 
+обцФуБлУцЭаН╫ВиВй╧сцё╛╫╗рИ╡исцж╠╫св╒йм/etc/passwdобцФоЮ╧ьсц╩╖
+╩Руъuserdel -r xiaozhan         ----╩Аи╬ЁЩкЫспсКсц╩╖xiaozhanсп╧ь╣дпео╒ё╛╟Эю╗homeд©б╪
 
+root@PEK-QCAO1-D2:/home# adduser xiaozhan        ----- й╣╪йсцуБлУцЭаНё╛м╛й╠╢╢╫╗цэбК
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  xiaozhan   4096 Jun 29 14:56 xiaozhan/    -------пбсц╩╖╣дhomeд©б╪
 
+root@PEK-QCAO1-D2:/home# usermod -g windriver xiaozhan   ------пч╦дсц╩╖xiaozhanйТсзсц╩╖вИwindriver
+root@PEK-QCAO1-D2:/home# ll
+total 28
+drwxr-xr-x   5 root      root       4096 Jun 29 15:03 ./
+drwxr-xr-x  30 root      root       4096 Jun 18 13:57 ../
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  windriver  4096 Jun 29 15:03 xiaozhan/
+root@PEK-QCAO1-D2:/home#
 
+ж╠╫св╒йм/etc/passwdобцФоЮ╧ьсц╩╖   #xiaozhan:x:1002:1002:,,,:/home/xiaozhan:/bin/bash
+root@PEK-QCAO1-D2:/home# userdel -r xiaozhan
+userdel: user 'xiaozhan' does not exist
+root@PEK-QCAO1-D2:/home# su xiaozhan   -----уБяЫоЮ╣╠сзуБ╦Жсц╩╖╡╩©исц
+Unknown id: xiaozhan
 
+=================================================passwd   пч╦дсц╩╖цэбК========================
+root@PEK-QCAO1-D2:/home# passwd    ╠Мй╬пч╦д╣╠г╟сц╩╖цэбК
+Enter new UNIX password:
+Retype new UNIX password:
+Sorry, passwords do not match
+passwd: Authentication token manipulation error
+passwd: password unchanged
 
+passwd xiaozhan   ---пч╦дсц╩╖xiaozhan╣дцэбК
 
+root@PEK-QCAO1-D2:/home# echo stu{1,2,3} | tr " " "\n"     еЗа©иЗЁинд╪Чё╛сц╩╩ппю╢лФ╢З©у╦Я
+stu1
+stu2
+stu3
+====================================================  отй╬сц╩╖сКсц╩╖вИпео╒  id
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# id
+uid=0(root) gid=0(root) groups=0(root)
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# id windriver
+uid=1001(windriver) gid=1001(windriver) groups=1001(windriver),999(docker)
 
+===================================================w ©ирт╡И©╢╣╠г╟╣дкЫспсц╩╖╪╟фДтзж╢пп╣дцЭаН
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# w
+ 14:23:27 up 71 days,  4:55,  2 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+windrive pts/0    pek-xli3-d2.corp 19Jun20  0.00s  1.02s  1.34s sshd: windriver [priv]
+windrive pts/2    pek-vx-system1.w 14:19    4.00s  0.30s  0.00s ping 127.0.0.1
 
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# who
+windriver pts/0        2020-06-19 09:17 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/2        2020-06-30 14:19 (pek-vx-system1.wrs.com)
 
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# who -H -a
+NAME       LINE         TIME             IDLE          PID COMMENT  EXIT
+           system boot  2020-04-20 09:28
+           run-level 2  2020-04-20 09:28
+LOGIN      tty4         2020-04-20 09:28               861 id=4
+LOGIN      tty5         2020-04-20 09:28               865 id=5
+LOGIN      tty2         2020-04-20 09:28               875 id=2
+windriver + pts/0        2020-06-19 09:17   .          4230 (pek-xli3-d2.corp.ad.wrs.com)
+windriver + pts/2        2020-06-30 14:19 00:02        3260 (pek-vx-system1.wrs.com)
+           pts/4        2020-06-18 16:20              6514 id=ts/4  term=0 exit=0
+           pts/5        2020-06-12 17:03             20662 id=ts/5  term=0 exit=0
 
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# last   ---отй╬вН╫Э╣гб╫╣дсц╩╖пео╒
+windrive pts/2        pek-vx-system1.w Tue Jun 30 14:19   still logged in
+windrive pts/0        pek-xli3-d2.corp Fri Jun 19 09:17   still logged in
+windrive pts/4        pek-xli3-d2.corp Wed Jun 17 15:40 - 16:20 (1+00:40)
+windrive pts/4        pek-xli3-d2.wrs. Wed Jun 17 14:40 - 14:40  (00:00)
+windrive pts/10       pek-xli3-d2.corp Fri Jun 12 15:58 - 16:20 (6+00:22)
+windrive pts/7        pek-cye-d1.corp. Fri Jun 12 15:37 - 16:23  (00:46)
+windrive pts/2        pek-xli3-d2.corp Tue Jun  2 16:07 - 16:20 (16+00:13)
+windrive pts/0        pek-xli3-d2.corp Tue Jun  2 16:05 - 16:20 (16+00:15)
+windrive pts/5        pek-lwang7-d1.co Mon Jun  1 10:04 - 17:03 (11+06:58)
+windrive pts/5        pek-lwang7-d1.co Mon Jun  1 09:46 - 10:04  (00:18)
+windrive pts/4        pek-lwang7-d1.co Mon Jun  1 09:40 - 17:03 (11+07:22)
 
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# last xiaozhan -n 5     ----отй╬ж╦╤╗сц╩╖╣д╣гб╫пео╒,отй╬5пп
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# lastb -n 5            ----отй╬╣гб╫й╖╟э╣дсц╩╖пео╒
+windrivr ssh:notty    pek-xli3-d2.corp Fri Jun 19 09:17 - 09:17  (00:00)
+windrivr ssh:notty    pek-xli3-d2.corp Fri Jun 19 09:17 - 09:17  (00:00)
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# lastlog -u xiaozhan    ----отй╬кЫсп╩Руъж╦╤╗сц╩╖╣д╣гб╫╪гб╪ё╛╡И©╢йг╥ЯспхКгж
+Username         Port     From             Latest
+xiaozhan                                   **Never logged in**
+
+========================================╢еел╥жгЬ  fdiskж╩ййсцсзп║сз2T╣д╢еел
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# fdisk -l
+
+Disk /dev/sda: 500.1 GB, 500107862016 bytes
+255 heads, 63 sectors/track, 60801 cylinders, total 976773168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes     ц©╦ЖихгЬ╣двж╫зйЩ
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x939b939b
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048      391167      194560   83  Linux
+/dev/sda2          391168     4390911     1999872   82  Linux swap / Solaris
+/dev/sda3         4390912   976771071   486190080   83  Linux
+#
+Device  ╥жгЬё╛уБюОсп3╦Ж╥жгЬ
+Boot    фТ╤╞╥жгЬё╛сц*ю╢╠Мй╬фТ╤╞╥жгЬ
+Start    ╠Мй╬©╙й╪╣джЫцФ
+Cylinder   жЫцФ
+===============================╢еел╥жгЬ  parted=======================================
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# parted -l       ---- отй╬╢еел╥жгЬпео╒
+Model: ATA ST3500413AS (scsi)
+Disk /dev/sda: 500GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+
+Number  Start   End     Size    Type     File system     Flags
+ 1      1049kB  200MB   199MB   primary  ext3            boot
+ 2      200MB   2248MB  2048MB  primary  linux-swap(v1)
+ 3      2248MB  500GB   498GB   primary  ext4
+# 3╦Ж╥жгЬё╛
+
+parted /dev/sdb mkpart primary 0 500        ╢╢╫╗жВ╥жгЬё╛╢Сп║500MB
+parted /dev/sdb mkpart primary 500 1000    ╣з╤Ч╦ЖжВ╥жгЬё╛╢Сп║500MB
+
+╥жгЬж╝╨Сё╛р╙╦Яй╫╩╞
+mkfs -t ext4 -v /dev/sdb
+╩Руъmkfs.ext4 /dev/sdb
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3       464G   98G  343G  23% /
+udev            1.9G   12K  1.9G   1% /dev
+tmpfs           759M  1.1M  758M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+/dev/sda1       184M   30M  145M  18% /boot
+cgroup          1.9G     0  1.9G   0% /sys/fs/cgroup
+
+mount  /dev/sdba1/ /mnt/data1
+========================================fsck   ╪Л╡Ипч╦╢linuxнд╪Чо╣мЁ
+ж╩сплАй╬╢еел╢МнС╣дй╠╨Рё╛╡есцуБ╦ЖцЭаН
+╠ьпКп╤тьнд╪Чо╣мЁ unmount
+
+Linuxтз©╙╩Зй╠╩Авт╤╞╣ВсцfsckцЭаН╤т╢еел╫Ьпп╪Л╡И
+
+====================================mount       ============
+mount©ирт╫╚ж╦╤╗╣днд╪Чо╣мЁ╧рть╣╫ж╦╤╗д©б╪ё╛тзLinux╠ьпКох╧ртьиХ╠╦ё╛х╩╨С╡едэ╥цнй
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# mount
+/dev/sda3 on / type ext4 (rw,errors=remount-ro)
+/dev/sda1 on /boot type ext3 (rw)
+
+╧рть╣дд©б╪╠ьпКйбох╢ФтзгрвН╨цн╙©у
+mount -o remount,rw /     Ё╒йтжьпб╧рть╦Ыд©б╪н╙©и╤ап╢
+umount -f /mnt     г©жфп╤ть
+
+тз╤╗й╠хннЯ╨СцФ╪сио00 00 * * * /home/windriver/1.sh  > /dev/null 2>&1 ©и╠эцБ╡ЗиЗ╨э╤Юп║нд╪Ч
 
 
 

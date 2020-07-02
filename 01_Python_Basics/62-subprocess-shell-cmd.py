@@ -48,7 +48,7 @@ def start_mongod(cmd):
 
 def main():
     package = 'mongodb-linux-x86_64-debian71-3.4.0.tgz'
-    cur_dir =os.path.abspath('.')
+    cur_dir = os.path.abspath('.')
     package_dir = os.path.join(cur_dir,'mongo')
     data_dir = os.path.join(cur_dir, 'mongodata')
     logfile = os.path.join(data_dir, 'mongod.log')

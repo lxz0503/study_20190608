@@ -4,7 +4,7 @@
 # 相当于找出多个字典里的公共key
 
 from functools import reduce
-from random import randint,sample
+from random import randint, sample
 
 # 抽样3到6位球员进球
 # a = sample(('suya', 'meisi', 'gelzm', 'wl', 'ronaload', 'aaa', 'bbb'), randint(3, 6))

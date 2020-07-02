@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
-# this is to analyze apache log
+# This is to analyze apache log
 # from  __future__ import print_function    # this is for running python2 version
 from collections import Counter
 ips = []
@@ -9,12 +9,13 @@ with open('http_code', 'r') as f:
         print(line.split()[0])
         ips.append(line.split()[0])
 print('PV is {0}'.format(len(ips)))
-print('UV is {0}'.format(len(set(ips))))
-################most visting site#####
-c = Counter()
+print('UV is {0}'.format(len(set(ips))))     # 用集合set默认去掉重复元素
+# Favorite visiting sites#####
+c = Counter()    # 类似于字典的Counter对象
 with open('http_code', 'r') as f:
     for line in f:
-        c[line.split()[5]] += 1
+        c[line.split()[5]] += 1   # 类似于字典赋值
+print(c)
 print('PV is {0}'.format(c.most_common(2)))
 
 ####calculate error visit######
