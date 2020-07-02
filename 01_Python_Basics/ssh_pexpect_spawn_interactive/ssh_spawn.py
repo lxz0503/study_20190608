@@ -5,43 +5,46 @@
 # !/usr/bin/env python
 # encoding = utf-8
 
-import sys, re
-from pexpect import pxssh
+import sys
 import pexpect
 class SshTest(object):
     def __init__(self, host_name, user_name, password):
         self.host_name = host_name
         self.user_name = user_name
         self.password = password
+        self.logfile = 'ssh_pexpect_spawn.log'
         self.s = None
 
     def connect(self):
-        try:
-            cmdSSH = 'ssh windriver@128.224.163.8'
-            s = pexpect.spawn(cmdSSH)
-            s.logfile = sys.stdout
-            #f = open("spawn.log",'w')
-            #sys.stdout = f
-            for i in range(2):
-                i = s.expect(['windriver@PEK-QCAO1-D2:~',
-                                 'assword:',
-                                 'Are you sure you want to continue connecting',
-                                 pexpect.TIMEOUT,
-                                 pexpect.EOF]) 
-                if i == 2:
-                    s.sendline('yes')
-                if i == 1:
-                    s.sendline("windriver")
-                    s.expect('windriver@PEK-QCAO1-D2:~')
-                    break
-                if i == 0:
-                    break
-                if i == 3 or i == 4:
-                    print("ERROR!: cannot ssh to server!")
-                    break
-        except Exception:
-            print("exception")
-        self.s = s       # 这个赋值很关键，后续都会用到这个self.s
+        with open(self.logfile, 'a+') as f:
+            try:
+                cmdSSH = 'ssh windriver@128.224.159.79'
+                s = pexpect.spawn(cmdSSH)
+                f.write(sys.stdout + sys.stderr)   # xiaozhan debug
+                s.logfile = f      # xiaozhan debug with file handle f
+                # s.logfile = sys.stdout 
+                #f = open("spawn.log",'w')
+                #sys.stdout = f
+                for i in range(2):
+                    i = s.expect(['windriver@PEK-QCAO1-D2:~',
+                                     'assword:',
+                                     'Are you sure you want to continue connecting',
+                                     pexpect.TIMEOUT,
+                                     pexpect.EOF])
+                    if i == 2:
+                        s.sendline('yes')
+                    if i == 1:
+                        s.sendline("windriver")
+                        s.expect('windriver@PEK-QCAO1-D2:~')
+                        break
+                    if i == 0:
+                        break
+                    if i == 3 or i == 4:
+                        print("ERROR!: cannot ssh to server!")
+                        break
+            except Exception:
+                print("exception")
+            self.s = s       # 这个赋值很关键，后续都会用到这个self.s
 
     def disconnect(self):
         self.s.close()
@@ -77,7 +80,7 @@ class SshTest(object):
 
 
 if __name__ == "__main__":
-    ssh_config = {'host_name':'128.224.163.8', 'username':'windriver', 'password':'windriver'}
+    ssh_config = {'host_name':'128.224.159.79', 'username': 'windriver', 'password': 'windriver'}
     cmd = ['uname -a', 'cat /proc/version']
     src_file = "/home/windriver/1.txt"
     dst_file = "/home/windriver/2.txt"
