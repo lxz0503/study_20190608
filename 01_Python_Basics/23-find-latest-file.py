@@ -13,6 +13,6 @@ def find_newest_file(path_file):
 
 
 if __name__  == '__main__':
-    # file_newest = find_newest_file(r'F:\xiaozhan_git\study_20190608\API_Python')
+    # file_newest = find_newest_file(r'F:\xiaozhan_git\study_20190608\Web_API_Python3')
     file_newest = find_newest_file(r'/home/windriver')
     print('the latest file is', file_newest)

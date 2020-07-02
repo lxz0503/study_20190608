@@ -13,8 +13,8 @@ print(apts)
 arrySer = pd.Series(np.arange(10, 15), index=['a', 'b', 'c', 'd', 'e'])  # use array
 print('the series is:\n', arrySer)
 arrySer.plot.bar()
-# arrySer.plot.line()
-# arrySer.plot.pie()
+arrySer.plot.line()
+arrySer.plot.pie()
 plt.show()        # plot
 
 print("the index is %s" % arrySer.index)
@@ -52,15 +52,16 @@ print(test)
 
 # time series
 
-#创建间隔为1s总数10个时间序列
-rng=pd.date_range('20180901',periods=10,freq='S')
-#以时间序列为索引值，创建Series
-ts=pd.Series(np.random.randint(0,500,len(rng)),index=rng)
-#创建间隔为1天总数5个时间序列
-rng=pd.date_range('9/1/2018 00:00',periods=5,freq='D')
+# 创建间隔为1s总数10个的时间序列
+rng = pd.date_range('20180901', periods=10, freq='S')
+# 以时间序列为索引值，创建Series
+ts = pd.Series(np.random.randint(0, 500, len(rng)), index=rng)
+print(ts)
+# 创建间隔为1天总数5个的时间序列
+rng = pd.date_range('9/1/2018 00:00', periods=5, freq='D')
 print(rng)
 
-# 日期格式转换
+# 日期格式转换,这种是国外的日期写法，月份在最前面
 t = pd.to_datetime('01/05/2019', format='%m/%d/%Y')
 print(t)      # 2019-01-05 00:00:00
 

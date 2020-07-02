@@ -4,6 +4,13 @@
 import numpy as np
 # 一维数组
 c = np.arange(10)
+# c1 = c.compress(3 < c.ravel())  # ravel()可以转化为一维数组
+c1 = c.compress(3 < c)     # 选择大于3的数
+print('大于3的数：', c1)
+c2 = c.compress((3 < c) & (7 > c))
+print('介于3和7之间的数：', c2)
+c3 = c.reshape(-1, 5)  # 转化为二维数组，每行5个元素，注意第一个参数如果是-1，表示自动生成行数
+print('c3 is', c3, c3.ndim)
 print('{0}维数组:{1}'.format(c.ndim, c))   # [0 1 2 3 4 5 6 7 8 9]
 print(np.mean(c))     # 4.5 求平均值
 print('average is', np.average(c))
@@ -17,7 +24,7 @@ print('slice from index 0 to 2: {0}'.format(c[:3]))     # [0 1 2]
 print(c[-7::-1])    # [3 2 1 0]    #  从第-7个元素开始，到结束，只要是负数开头的，就默认为反向
 print(type(c))     # [0 1 2 3 4 5 6 7 8 9]  区别于列表，元素之间没有逗号
 c = np.arange(10, 20, 2)     # start,stop, step
-print(c.shape)    # (5,)   各个维度的长度
+print(c, c.ndim, c.shape)    # (5,)   各个维度的长度
 opening_prices = np.loadtxt(
     'numpy_test/stock_price.csv', delimiter=',',
     dtype='f8',
@@ -123,9 +130,16 @@ print(np.cumprod(s))      # 累乘  [     1      2      6     24    120    720  
 mean = np.mean(s)
 devs = s - mean    # 离差  是一个数组[-4. -3. -2. -1.  0.  1.  2.  3.  4.]
 print('devs', devs)
-var = (devs ** 2).mean()   # 方差
+# var = (devs ** 2).mean()   # 方差
+var = np.mean(devs ** 2)    # 方差
 print('var', var)      # 6.666666666666667
 std = np.sqrt(var)    # 标准差
 print('std', std)       # 2.581988897471611
+# 计算n的阶乘
+n = 9
+f = np.arange(1, n + 1).prod()
+print(f)
+
+#
 
 

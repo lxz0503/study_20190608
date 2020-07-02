@@ -27,5 +27,5 @@ with open('xiaozhan.txt', 'w') as f:
 # 表头在 DataFrame 中变成列索引 (column index) ，header 参数从 0 开始，比如第二行作为 header，
 # 则：df = pd.read_excel(file_name, header=1)
 
-# next you can refer to 26-pandas-yield-read-txt-to-excel.py which can read data from txt file into excel
+# next you can refer to 26-pandas-yield-read-anvl-log-to-excel.py which can read data from txt file into excel
 
