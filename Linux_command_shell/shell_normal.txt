@@ -2,6 +2,12 @@ https://www.techonthenet.com/index.php    ---- this is for C，SQL,一个网站，有如
 
 The #ifdef directive must be closed by an #endif directive.
 
+xiaozhan@PEK-QCAO1-D2:~/kong_test$ ypcat passwd | grep -i xiaozhan | grep -i li
+xli3:MSJLHbVMDDYoY:19044:100:Xiaozhan Li:/folk/xli3:/bin/bash
+
+https://docs.python.org/3.5/library/     ---python3 doc dir
+
+# 建议以后在Python3下用paramiko模块来执行SSH相关的操作-----参考我的例子
 
 1.tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内容
 tail -f -20 filename   默认显示后10行
@@ -1213,7 +1219,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -F | grep -v /
 build.py*
 config.ini
 
-============================export -p     can check all environment variables
+============================export -p     can check all environment variables,查看所有环境变量 也可以用export
 useradd ?Cd  /home/sam -m sam
 Linux中让alias设置永久生效的方法详解:
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cat /home/windriver/.bashrc
@@ -1970,13 +1976,19 @@ umount -f /mnt     强制卸载
 
 在定时任务后面加上00 00 * * * /home/windriver/1.sh  > /dev/null 2>&1 可避免产生很多小文件
 
+====================================================ps  pkill sudo kill -9
+ps -ef | grep ping
+xiaozhan   974 30597  0 16:14 pts/0    00:00:00 ping 128.224.159.79
+xiaozhan   980 30597  0 16:14 pts/0    00:00:00 grep --color=auto ping
 
+# 用pkill来杀掉进程，后面跟进程名字
+xiaozhan@PEK-QCAO1-D2:~/kong_test$ pkill ping
+[1]+  Terminated              ping 128.224.159.79
 
+#查看定时任务用命令
+/etc/init.d/cron status
 
-
-
-
-
+=======================top 之后再输入1，可以查看每个逻辑CPU的状态
 
 
 

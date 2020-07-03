@@ -10,7 +10,7 @@
 # D.iteritems()                          #从D.items()返回的(键，值)对中返回一个可迭代的对象
 # D.iterkeys()                           #从D的键中返回一个可迭代对象
 # D.itervalues()                         #从D的值中返回一个可迭代对象
-# D.keys()                               #返回D键的列表
+# D.keys()                               #返回D键的列表, 在python3里面返回dict_keys，是一个class,需要转化为list
 # D.pop(key[,d])                         #移除并且返回对应给定键key或给定的默认值D的值
 # D.popitem()                            #从D中移除任意一项，并将其作为(键，值)对返回
 # D.setdefault(key[,default])            #如果D[key]存在则将其返回；否则返回默认值None
@@ -25,6 +25,7 @@ D1 = {'name': 'Bob', 'age': 40}
 D2 = {}
 D2['name'] = 'Bob'
 D2['age'] = 40
+print('keys', list(D2.keys())[0])
 # 方法三:  dict--关键字形式f
 # 代码比较少，但键必须为字符串型。常用于函数赋值
 D3 = dict(name='Bob', age=45)

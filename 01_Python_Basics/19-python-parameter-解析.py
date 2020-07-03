@@ -73,3 +73,4 @@ if __name__ == "__main__":
 # python getopt_test.py -n ls -p programmer
 # python getopt_test.py -n ls -p programmer --name=lsx
 # python getopt_test.py -n ls -p programmer --name=lsx other1 other2
+# parsed argv: opts----[('-n', 'ls'), ('-p', 'programmer')] args----[]

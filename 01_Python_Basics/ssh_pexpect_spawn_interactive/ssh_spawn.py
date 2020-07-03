@@ -1,6 +1,8 @@
 """this is for ssh test with spawn """
 # if you want to ssh to another server and run some interactive command like scp, ftp
 # you must use spawn but not pxssh
+# run this like:  python  ssh_spawn.py >> ssh_spawn.log   this can show original output
+# or python  ssh_spawn.py 2>&1 | tee ssh_spawn.log
 
 # !/usr/bin/env python
 # encoding = utf-8
@@ -12,39 +14,34 @@ class SshTest(object):
         self.host_name = host_name
         self.user_name = user_name
         self.password = password
-        self.logfile = 'ssh_pexpect_spawn.log'
         self.s = None
 
     def connect(self):
-        with open(self.logfile, 'a+') as f:
-            try:
-                cmdSSH = 'ssh windriver@128.224.159.79'
-                s = pexpect.spawn(cmdSSH)
-                f.write(sys.stdout + sys.stderr)   # xiaozhan debug
-                s.logfile = f      # xiaozhan debug with file handle f
-                # s.logfile = sys.stdout
-                #f = open("spawn.log",'w')
-                #sys.stdout = f
-                for i in range(2):
-                    i = s.expect(['windriver@PEK-QCAO1-D2:~',
-                                     'assword:',
-                                     'Are you sure you want to continue connecting',
-                                     pexpect.TIMEOUT,
-                                     pexpect.EOF])
-                    if i == 2:
-                        s.sendline('yes')
-                    if i == 1:
-                        s.sendline("windriver")
-                        s.expect('windriver@PEK-QCAO1-D2:~')
-                        break
-                    if i == 0:
-                        break
-                    if i == 3 or i == 4:
-                        print("ERROR!: cannot ssh to server!")
-                        break
-            except Exception:
-                print("exception")
-            self.s = s       # 这个赋值很关键，后续都会用到这个self.s
+        try:
+            cmdSSH = 'ssh windriver@128.224.159.79'
+            s = pexpect.spawn(cmdSSH)
+            s.logfile = sys.stdout     # capture sys.stdout
+
+            for i in range(2):
+                i = s.expect(['windriver@PEK-QCAO1-D2:~',
+                                 'assword:',
+                                 'Are you sure you want to continue connecting',
+                                 pexpect.TIMEOUT,
+                                 pexpect.EOF])
+                if i == 2:
+                    s.sendline('yes')
+                if i == 1:
+                    s.sendline("windriver")
+                    s.expect('windriver@PEK-QCAO1-D2:~')
+                    break
+                if i == 0:
+                    break
+                if i == 3 or i == 4:
+                    print("ERROR!: cannot ssh to server!")
+                    break
+        except Exception:
+            print("exception")
+        self.s = s       # 这个赋值很关键，后续都会用到这个self.s
 
     def disconnect(self):
         self.s.close()
@@ -54,7 +51,7 @@ class SshTest(object):
         self.s.expect("windriver@PEK-QCAO1-D2:~")
         #print(self.s.before)
 
-    # ssh到其他server上面再执行一些交互命令，很实用
+    # ssh
     def transfer_file(self, src, dst):
         self.s.sendline('scp %s %s' % (src, dst))
         for i in range(2):
@@ -68,12 +65,12 @@ class SshTest(object):
             if i == 2:
                 print("copy log timeout!")
                 break
-    # 修改文件名字
+    #
     def mv_file(self, src, dst):
         self.s.sendline('mv %s %s' % (src, dst))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
 
-    # ssh到其他server上面去执行脚本，很实用
+    # ssh
     def run_script(self, ip, port):
         self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
