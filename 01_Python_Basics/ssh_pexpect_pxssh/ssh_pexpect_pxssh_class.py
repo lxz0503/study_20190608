@@ -1,8 +1,10 @@
 """this is for ssh test which can capture command output and run on linux platform"""
 
-# !/usr/bin/env python3
+# !/usr/bin/env python
 # encoding = utf-8
 # 这个脚本适合SSH登录到其他服务器上执行一些命令并查看命令输出结果，不适合登录后再进行其他交互操作，例如scp
+# it only run on python2 but not python3(decode issue)
+# python ssh_pexpect_pxssh_class.py >> ssh_pexpect_pxssh_class.log
 from pexpect import pxssh
 import sys
 
@@ -12,20 +14,17 @@ class SshTest(object):
         self.host_name = host_name
         self.user_name = user_name
         self.password = password
-        self.logfile = 'ssh_pexpect_pxssh.log'   # 记录SSH到其他平台上的所有操作
         self.s = None
 
-    def connect(self):
-        with open(self.logfile, 'a+') as f:
-            try:
-                s = pxssh.pxssh(timeout=60*60)
-                s.login(server=self.host_name, username=self.user_name, password=self.password)
-                f.write(sys.stdout + sys.stderr)
-                s.logfile = f
-                # s.logfile = sys.stdout
-                self.s = s     # 初始化一个ssh连接，赋值
-            except pxssh.ExceptionPxssh as e:
-                print(e)
+    def connect(self)
+        try:
+            s = pxssh.pxssh(timeout=60*60)
+            s.login(server=self.host_name, username=self.user_name, password=self.password)
+
+            s.logfile = sys.stdout    # remove this line if you run in python3
+            self.s = s     # 初始化一个ssh连接，赋值
+        except pxssh.ExceptionPxssh as e:
+            print(e)
 
     def disconnect(self):
         self.s.logout()
