@@ -1,3 +1,5 @@
+# http://codingdict.com/       study link but not free
+
 ctrl+shift+R  可以快速找到需要所有要替换的内容
 Django WEB框架核心思想：
 我提前导入测试数据到MySQL数据库,---这个操作也相当于登录网站后用admin账户添加数据

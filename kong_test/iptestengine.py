@@ -37,6 +37,11 @@ from commands import getoutput
 from threading import Thread
 from pexpect import TIMEOUT
 
+# xiaozhan    below is the config file
+# hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7/helix/guests/vxworks-7/pkgs_v2/net/ipnet/NOT_IMPORTED/iptestengine/src$ ls ../config/config.py
+# ../config/config.py*
+# hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7/helix/guests/vxworks-7/pkgs_v2/net/ipnet/NOT_IMPORTED/iptestengine/src$ vi ../config/config.py
+
 sys.path.insert(0, '../config')
 import config
 from util import *
@@ -6833,7 +6838,7 @@ def get_num(result, test_results):
     assert result in ('pass', 'fail', 'skip')
     return len([x for x in test_results if x[1].lower() == result])
 
-def main(args):
+def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_none
     try:
         os.mkdir(config.logpath)
     except OSError:
@@ -6898,7 +6903,7 @@ def main(args):
     for f,more in all_user_flags():
         p.add_option('--' + f, **more)
 
-    (o, _) = p.parse_args(args)
+    (o, _) = p.parse_args(args)      # '-t', '--test', dest = 'what_to_test'
     logverbose = None
     if o.verbose:
         logverbose = sys.stdout
@@ -6952,11 +6957,11 @@ def main(args):
     tests_ok = 0
     tests_fail = 0
     tests_skipped = 0
-    tests = []
+    tests = []      # xiaozhan
 
     #fail on badly specified tests
-    for what in o.what_to_test.split(','):
-        tests_ = gather_tests(what)
+    for what in o.what_to_test.split(','):        # xiaozhan   '-t', '--test', dest = 'what_to_test'
+        tests_ = gather_tests(what)       # xiaozhan
         if not tests_:
             print "No such test: " + what
             return
@@ -6965,7 +6970,7 @@ def main(args):
     logfile = open(config.logpath + os.path.sep + 'test.log' + '_' + localtime_str(), 'w')
     if not logverbose:
         logverbose = logfile
-    runlog = _log(logfile, o.verbose)
+    runlog = _log(logfile, o.verbose)    # xiaozhan, capture log, an log instance of class _log,
 
     class testscript_logger(object):
         def __init__(self, l):
@@ -7181,7 +7186,7 @@ def main(args):
                                 if o.debugme:
                                     import pdb
                                     pdb.set_trace()
-                                # run run run run run run run run run run run
+                                # run run run run run run run run run run run      # xiaozhan this is to run real test case
                                 r = test.test(testscript_logger(runlog), targets_and_more, ipv, opt)
 
                                 for t in targets:
