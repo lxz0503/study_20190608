@@ -8,5 +8,5 @@ print(df1.head(3))
 mydict = df1.to_dict()
 print(mydict)
 # 遍历字典
-for item in mydict.items():
- print(item)
+for item in mydict.items():     # 以tuple的方式显示字典key-value
+    print(item)
