@@ -62,7 +62,31 @@ def insert():
 
 
 def search():
-    pass
+    """search student information"""
+    filename = 'students.txt'
+    mark = True
+    while mark:
+        student_id = input('请输入要搜索的学生ID：')
+        if student_id is not '':
+            with open(filename, 'r') as r:
+                student_old = r.readlines()
+
+            for student in student_old:
+                d = eval(student)  # change string to dict
+                if d['id'] == student_id:  # record students that do not need to delete
+                    print('find student by ID %s' % student_id)
+                    break       # jump out of for loop
+            else:   # this is paired with for loop
+                print('not find this ID %s' % student_id)
+
+            input_mark = input('是否继续搜索？（y/n):')
+            if input_mark == 'y':
+                mark = True
+            else:
+                mark = False
+                break
+        else:
+            print('重新输入有效的ID：')
 
 def delete():
     """delete student information"""
@@ -77,22 +101,17 @@ def delete():
             except:
                 return
 
-            ifdel = False
             if len(student_old) >= 1:
                 with open(filename, 'w') as w:
-                    d = {}
-                    for line in student_old:
-                        d = eval(line)  # change string to dict
+                    for student in student_old:
+                        d = eval(student)  # change string to dict
                         if d['id'] != student_id:  # record students that do not need to delete
-                            w.write(str(d) + '\n')
+                            w.write(student)
                         else:
-                            ifdel = True
-                    if ifdel:
-                        print('ID %s is already deleted' % student_id)
+                            print('ID %s is deleted successfully' % student_id)
+                            break
                     else:
-                        print('can not find ID %s' % student_id)
-            else:
-                print('no record for this id %s' % student_id)
+                        print('not find this ID %s' % student_id)
             # show()
             input_mark = input('是否继续删除？（y/n):')
             if input_mark == 'y':
@@ -104,41 +123,71 @@ def delete():
             print('重新输入有效的ID：')
 
 def modify():
-    # show()
+    """modify student information"""
     filename = 'students.txt'
-    if os.path.exists(filename):
-        with open(filename, 'r') as r:
-            student_old = r.readlines()
-    else:
-        return
-    student_id = input('请输入要修改的学生ID：')
-    with open(filename, 'w') as w:
-        for student in student_old:
-            d = eval(student)
-            if d['id'] == student_id:
-                print('find this ID and modify it')
-                try:
-                    d['name'] = input('输入新的名字：')
-                    d['english'] = input('输入english成绩:')
-                    d['python'] = input('输入python成绩：')
-                    d['c'] = input('输入c语言成绩:')
-                except:
-                    print('输入有误，重新输入')
+    mark = True
+    while mark:
+        student_id = input('请输入要修改的学生ID：')
+        if student_id is not '':
+            try:
+                with open(filename, 'r') as r:
+                    student_old = r.readlines()  # read student information into a list
+            except:
+                return
 
-                student = str(d)
-                w.write(student + '\n')     # 写入修改后的信息, 注意必须有换行符
-                print('modify successful')
+            if len(student_old) >= 1:
+                with open(filename, 'w') as w:
+                    for student in student_old:
+                        d = eval(student)  # change string to dict
+                        if d['id'] == student_id:  # record students that do not need to modify
+                            print('find this ID and modify it')
+                            try:
+                                d['name'] = input('输入新的名字：')
+                                d['english'] = input('输入english成绩:')
+                                d['python'] = input('输入python成绩：')
+                                d['c'] = input('输入c语言成绩:')
+                            except:
+                                print('输入有误，重新输入')
+                            # write modified information
+                            student = str(d)
+                            w.write(student + '\n')       # 写入字符串，要有换行符\n
+                            print('ID %s is already modified' % student_id)
+                        else:
+                            w.write(student)      # 原来的字符串里面包含了换行符，所以不用再加\n
+                            print('can not find ID %s' % student_id)
+            # show()
+            input_mark = input('是否继续修改？（y/n):')
+            if input_mark == 'y':
+                mark = True
             else:
-                w.write(student)    # 原始文件里面包含了换行符，所以此处不用加\n
-    mark = input('是否继续修改？（y/n）:')
-    if mark == 'y':
-        modify()
+                mark = False
+                break
+        else:
+            print('重新输入有效的ID：')
 
 def sort():
-    pass
+    """sort"""
+    filename = 'students.txt'
+    d = []
+    with open(filename, 'r') as r:
+        all_info = r.readlines()    # read into a list
+    for student in all_info:
+        d.append(eval(student))
+
+    print(d)
+    all_info.sort(key=lambda x: d[0]['english'])
+    print('after sorted by english is %s' % all_info)
 
 def total():
-    pass
+    """total student number"""
+    filename = 'students.txt'
+    with open(filename, 'r') as r:
+        all_info = r.readlines()
+    print('total student number is %s' % len(all_info))
+
 
 def show():
-    pass
+    filename = 'students.txt'
+    with open(filename, 'r') as r:
+        for student in r:
+            print(eval(student))
