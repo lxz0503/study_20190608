@@ -65,28 +65,54 @@ def search():
     """search student information"""
     filename = 'students.txt'
     mark = True
+    student_query = []
+    student_id = ''
+    student_name = ''
     while mark:
-        student_id = input('请输入要搜索的学生ID：')
-        if student_id is not '':
-            with open(filename, 'r') as r:
-                student_old = r.readlines()
+        mode = input('按ID查询输入1；按姓名查询输入2：')
+        if mode == '1':
+            student_id = input('请输入要搜索的学生ID：')
+        elif mode == '2':
+            student_name = input('请输入要查询的学生名字：')
+        else:
+            print('输入有误，重新输入')
+            search()
 
-            for student in student_old:
+        with open(filename, 'r') as r:
+            all_info = r.readlines()
+            for student in all_info:
                 d = eval(student)  # change string to dict
-                if d['id'] == student_id:  # record students that do not need to delete
-                    print('find student by ID %s' % student_id)
-                    break       # jump out of for loop
+                if d['id'] == student_id:
+                    student_query.append(d)
+                    break
+                elif d['name'] == student_name:
+                    student_query.append(d)
+                    break
             else:   # this is paired with for loop
-                print('not find this ID %s' % student_id)
-
+                print('not find this ID %s or name %s' % (student_id, student_name))
+            # show query info
+            print('search list is:')
+            for i in student_query:
+                print(i)
+            # show query info with format
+            show_student(student_query)
+            student_query.clear()
             input_mark = input('是否继续搜索？（y/n):')
             if input_mark == 'y':
                 mark = True
             else:
                 mark = False
                 break
-        else:
-            print('重新输入有效的ID：')
+
+def show_student(student_query):
+    format_title = '{:^6}{:^12}\t{:^8}\t{:^10}\t{:^10}\t{:^10}'
+    print(format_title.format('ID', 'name', 'english', 'python', 'c', 'sum'))
+    format_data = '{:^6}{:^12}\t{:^12}\t{:<8}\t{:<8}\t{:^8}'
+    for info in student_query:
+        print(format_data.format(info.get('id'), info.get('name'),
+                                 str(info.get('english')), str(info.get('python')), str(info.get('c')),
+                                 str(info.get('english') + info.get('python') + info.get('c')).center(12)
+                                 ))
 
 def delete():
     """delete student information"""
@@ -126,57 +152,67 @@ def modify():
     """modify student information"""
     filename = 'students.txt'
     mark = True
+    id_list = []
     while mark:
-        student_id = input('请输入要修改的学生ID：')
-        if student_id is not '':
-            try:
-                with open(filename, 'r') as r:
-                    student_old = r.readlines()  # read student information into a list
-            except:
-                return
+        with open(filename, 'r') as r:
+            student_old = r.readlines()  # read student information into a list
+            for student in student_old:
+                id_list.append(eval(student).get('id'))
+            print('id list is %s' % id_list)
 
-            if len(student_old) >= 1:
-                with open(filename, 'w') as w:
-                    for student in student_old:
-                        d = eval(student)  # change string to dict
-                        if d['id'] == student_id:  # record students that do not need to modify
-                            print('find this ID and modify it')
-                            try:
-                                d['name'] = input('输入新的名字：')
-                                d['english'] = input('输入english成绩:')
-                                d['python'] = input('输入python成绩：')
-                                d['c'] = input('输入c语言成绩:')
-                            except:
-                                print('输入有误，重新输入')
-                            # write modified information
-                            student = str(d)
-                            w.write(student + '\n')       # 写入字符串，要有换行符\n
-                            print('ID %s is already modified' % student_id)
-                        else:
-                            w.write(student)      # 原来的字符串里面包含了换行符，所以不用再加\n
-                            print('can not find ID %s' % student_id)
-            # show()
-            input_mark = input('是否继续修改？（y/n):')
-            if input_mark == 'y':
-                mark = True
-            else:
-                mark = False
-                break
+        student_id = input('请输入要修改的学生ID：')  # 如果输错了，不知道怎么处理，目前代码仅支持正确输入
+        with open(filename, 'w') as w:
+            for student in student_old:
+                d = eval(student)  # change string to dict
+                if d['id'] == student_id:
+                    print('find this ID and modify it')
+                    try:
+                        d['name'] = input('输入新的名字：')
+                        d['english'] = input('输入english成绩:')
+                        d['python'] = input('输入python成绩：')
+                        d['c'] = input('输入c语言成绩:')
+                    except:
+                        print('输入有误，重新输入')
+                    # write modified information
+                    student = str(d)
+                    w.write(student + '\n')       # 写入字符串，要有换行符\n
+                    print('ID %s is already modified' % student_id)
+                else:
+                    w.write(student)      # 原来的字符串里面包含了换行符，所以不用再加\n
+        # show()
+        input_mark = input('是否继续修改？（y/n):')
+        if input_mark == 'y':
+            mark = True
         else:
-            print('重新输入有效的ID：')
+            mark = False
+            break
+
 
 def sort():
     """sort"""
     filename = 'students.txt'
-    d = []
+    new_list = []
     with open(filename, 'r') as r:
         all_info = r.readlines()    # read into a list
     for student in all_info:
-        d.append(eval(student))
+        new_list.append(eval(student))
+    print(new_list)
+    mode = input('请选择排序方式:(1 按英语成绩；2 按python成绩; 3 按C语言成绩；0 按总成绩)：')
+    if mode == '1':
+        new_list.sort(key=lambda x: x['english'], reverse=False)
+    elif mode == '2':
+        new_list.sort(key=lambda x: x['python'], reverse=True)
+    elif mode == '3':
+        new_list.sort(key=lambda x: x['c'], reverse=True)
+    elif mode == '0':
+        new_list.sort(key=lambda x: x['english'] + x['python'] + x['c'], reverse=True)
+    else:
+        print('输入有误，重新输入')
+        sort()
+    # after sorted
+    print('after sorted by mode %s,result is:' % mode)
+    show_student(new_list)
 
-    print(d)
-    all_info.sort(key=lambda x: d[0]['english'])
-    print('after sorted by english is %s' % all_info)
 
 def total():
     """total student number"""

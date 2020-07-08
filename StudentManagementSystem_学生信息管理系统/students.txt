@@ -1,2 +1,2 @@
-{'id': '001', 'name': 'sam', 'english': 90, 'python': 100, 'c': 80}
-{'id': '002', 'name': 'cindy', 'english': 80, 'python': 70, 'c': 50}
+{'id': '001', 'name': 'sam', 'english': '88', 'python': '99', 'c': '77'}
+{'id': 'cindy', 'name': 'rf', 'english': '99', 'python': '88', 'c': '77'}
