@@ -1,2 +1,0 @@
-{'id': '001', 'name': 'sam', 'english': 90, 'python': 100, 'c': 80}
-{'id': '002', 'name': 'cindy', 'english': 80, 'python': 70, 'c': 50}
