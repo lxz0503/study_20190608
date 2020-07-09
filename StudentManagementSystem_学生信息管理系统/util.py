@@ -114,13 +114,12 @@ def show_student(student_query):
                                  str(info.get('english') + info.get('python') + info.get('c')).center(12)
                                  ))
 
-def delete():   # delete by ID
+def delete():    # only support deleting by ID
     """delete student information"""
     filename = 'students.txt'
     mark = True
     while mark:
-        # student_id = ''
-        # student_name = ''
+        student_id = ''
         mode = input('按ID删除1；按姓名删除2：')
         if mode == '1':
             student_id = input('请输入要删除的学生ID：')
@@ -128,25 +127,31 @@ def delete():   # delete by ID
             student_name = input('请输入要删除的学生名字：')
         else:
             print('输入有误，重新输入')
-            search()
+            delete()
 
         if student_id is not '':
             try:
                 with open(filename, 'r') as r:
                     student_old = r.readlines()   # read into a list
             except:
-                return
+                student_old = []
 
-            with open(filename, 'w') as w:
-                for student in student_old:
-                    d = eval(student)  # change string to dict
-                    if d['id'] != student_id:  # record students that do not need to delete
-                        w.write(student)
+            ifdel = False   # mark if it is deleted
+            if len(student_old) >= 1:
+                with open(filename, 'w') as w:
+                    for student in student_old:
+                        d = eval(student)  # change string to dict
+                        if d['id'] != student_id:  # record students that do not need to delete
+                            w.write(str(d) + '\n')    # 注意换行符
+                        else:
+                            ifdel = True
+                    if ifdel:
+                        print('ID %s is deleted' % student_id)
                     else:
-                        print('ID %s is deleted successfully' % (student_id, student_name))
-                        break
-                else:
-                    print('not find this ID %s or name %s' % (student_id, student_name))
+                        print('not find ID %s' % student_id)
+            else:
+                print('There is not any student information')
+                break   # 跳出整个循环，
             # show()
             input_mark = input('是否继续删除？（y/n):')
             if input_mark == 'y':
