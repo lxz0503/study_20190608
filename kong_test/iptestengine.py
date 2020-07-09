@@ -6957,7 +6957,7 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
     tests_ok = 0
     tests_fail = 0
     tests_skipped = 0
-    tests = []      # xiaozhan
+    tests = []      # xiaozhan    this is the origin of tests
 
     #fail on badly specified tests
     for what in o.what_to_test.split(','):        # xiaozhan   '-t', '--test', dest = 'what_to_test'
@@ -7071,7 +7071,7 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
     #main loop
     wants_to_quit = False
     while True:
-        for test in tests:
+        for test in tests:    # xiaozhan   analyze test
             time.sleep(0.5)
             try_again = True
             test_run  = 0
