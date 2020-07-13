@@ -6,6 +6,9 @@ import tkinter.filedialog
 from tkinter import *
 import random
 import string
+import qrcode
+from PIL import Image
+# pip3 install pillow    this is to install Pillow if pycharm can not install it
 
 randstr = []
 number = '1234567890'
@@ -178,6 +181,7 @@ def scode5(choice):
             codeb = item.split(',')[1]
             ffcode(codeb, codea, 'no', choice)
 
+
 def scode6():   # https://www.cnblogs.com/bjwu/p/9038910.html
     with open('test.txt') as f:
         r = f.read().split('\n')
@@ -188,13 +192,42 @@ def scode6():   # https://www.cnblogs.com/bjwu/p/9038910.html
     res_letter = strset.translate(remove_digits)
     print(res_letter)
 
-
     remove_letter = str.maketrans('', '', string.ascii_letters)  # 删除字符串中的字母
     remove_letter = str.maketrans('', '', string.ascii_uppercase)  # 删除字符串中的大写字母
     num_letter = strset.translate(remove_letter)
     print(num_letter)
 
 
+def scode8(choice):    # 生成QR二维码链接图片
+    incount = inputbox('\033[1;32m 请输入要生成的12位数字二维码数量：\033[0m', 1, 0)
+    while incount == 0:
+        incount = inputbox('\033[1;32m 请输入要生成的12位数字二维码数量：\033[0m', 1, 0)
+    mk_dir('qrcode')
+    for j in range(int(incount)):
+        strone = ''
+        url = 'http://www.mingrisoft.com/'
+        for i in range(12):
+            strone = strone + str(random.choice(number))
+        url_qr = url + strone + '.html'
+        print(url_qr)
+        encoder = qrcode.make(url_qr)
+        encoder.save('qrcode/' + strone + '.png')
+
+def scode9():    # 粉丝抽奖
+    with open('lottery.ini') as f:
+        r = f.read().split('\n')
+    incount = inputbox('\033[1;32m   请输入要生成的抽奖数量：\033[0m', 1, 0)
+    while int(incount) == 0 or len(r) < int(incount):
+        incount = inputbox('\033[1;32m   请输入要生成的抽奖数量：\033[0m', 1, 0)
+    strone = random.sample(r, int(incount))
+    print('\033[1;35m 中奖信息名单发布: \033[0m')
+    for i in range(int(incount)):
+        # print(strone[i])
+        wdata = str(strone[i].replace('[', '')).replace(']', '')  # 貌似这句话没啥用
+        wdata = wdata.replace("'", '').replace("'", '')
+        print('\033[1;32m     ' + wdata + '\033[0m')
+
+
 if __name__ == '__main__':
-    scode6()
+    scode9()
 
