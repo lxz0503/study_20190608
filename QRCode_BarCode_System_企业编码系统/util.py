@@ -15,7 +15,7 @@ def openfile(filename):    # open file and read content
 
 
 def inputbox(showstr, showorder, length):
-    instr = input(showstr)
+    instr = input(showstr)      # showstr is the indication of input information
     if len(instr) != 0:
         # 1：要求输入数字，不限位数； 2：字母；  3：数字且有位数要求
         if showorder == 1:
