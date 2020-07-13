@@ -7071,7 +7071,7 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
     #main loop
     wants_to_quit = False
     while True:
-        for test in tests:    # xiaozhan   analyze test
+        for test in tests:    # xiaozhan   analyze test where is the test.test?
             time.sleep(0.5)
             try_again = True
             test_run  = 0
@@ -7186,7 +7186,7 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
                                 if o.debugme:
                                     import pdb
                                     pdb.set_trace()
-                                # run run run run run run run run run run run      # xiaozhan this is to run real test case
+                                # run run run run run run run run run run run      # xiaozhan begin real test, this is to run real test case
                                 r = test.test(testscript_logger(runlog), targets_and_more, ipv, opt)
 
                                 for t in targets:
