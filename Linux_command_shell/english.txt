@@ -1,6 +1,7 @@
 https://www.51voa.com/Words_And_Idioms_1.html
 https://app.member.virginpulse.com/#/rewards/earn
 
+<<<<<<< HEAD
 year-round   全年的；整整一年的
 feast or famine     It is feast or famine  忙的时候忙死，闲的时候闲死，  多的时候多，少的时候少，  形容两个极端
 every inch     不折不扣的，彻底的
@@ -18,6 +19,12 @@ Then we started to notice that there wasn't much to catch anymore.
 The end of the line came when officials declared that the water was badly polluted.
 Nobody could enjoy it.
 
+=======
+born with a silver spoon in his(her) mouth
+Everyone said that he was born with a silver spoon in his mouth,
+but actually he acquired his fortune through many years of hard work.
+每个人都说他是一位得天独厚的天之骄子，事实上，他是经历多年辛苦工作才获得财富。
+>>>>>>> da750677826efee0c3d38284b8a61ac43fa6fec2
 
 pioneering    ----开拓性的；先驱性的；探索性的
 communications networks     ---
