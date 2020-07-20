@@ -12,3 +12,13 @@ rm -rf /usr/share/jetbrains-pycharm.desktop
 # import commands, this module can get output of linux shell command like:
 # commands.getoutput('shell command')
 output = getoutput('cd %s; git log -1 HEAD' % gitDir)
+
+===============================my linux pycharm
+install package is at 128.224.159.79:/home/windriver/ANVL/xiaozhan/pycharm*
+
+cd bin   ./pycharm.sh    -----open x11 if using putty
+
+[xli3@pek-vx-nwk1 xli3]$ cd ~/PycharmProjects/TSN/
+[xli3@pek-vx-nwk1 TSN]$ pwd
+/folk/xli3/PycharmProjects/TSN
+[xli3@pek-vx-nwk1 TSN]$
