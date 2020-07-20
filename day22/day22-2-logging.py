@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)    # __name__可以根据需要设置
 # print(logger.name, type(logger), id(logger), id((logger.parent)))
 # __main__ <class 'logging.Logger'> 4367575864 4367575248
 logger.setLevel(level=logging.INFO)
-handler = logging.FileHandler("log.txt")
+handler = logging.FileHandler("log.txt")     # this will automatically generate log.txt file.
 handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
