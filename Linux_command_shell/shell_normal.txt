@@ -1988,6 +1988,17 @@ xiaozhan@PEK-QCAO1-D2:~/kong_test$ pkill ping
 
 =======================top 之后再输入1，可以查看每个逻辑CPU的状态
 
+cat /proc/version ------查看linux版本信息
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/version
+Linux version 4.15.0-54-generic (buildd@lgw01-amd64-014) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #58-Ubuntu SMP M
+
+cat /proc/cpuinfo-------------查看系统cpu信息
+
+processor从0开始     逻辑cpu的数量
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/cpuinfo | grep name | cut -d: -f2 | uniq -c
+     72  Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$
+
 
 
 
