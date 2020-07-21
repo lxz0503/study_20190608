@@ -94,6 +94,29 @@ sudo chmod -R 777 /tftpboot
 yum install xinetd tftp tftp-server
 /etc/init.d/xinetd start
 =====for cenos
+
+===========================================for Ubuntu18.04 tftp config in my environment==
+
+https://blog.csdn.net/zidixia/article/details/106608487?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo apt-get install tftp-hpa tftpd-hpa
+其中 tftp-hpa 是客户端， tftpd-hpa 是服务端。
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo chmod -R 777 /etc/default/tftpd-hpa
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ vi /etc/default/tftpd-hpa
+# /etc/default/tftpd-hpa
+
+TFTP_USERNAME="windriver"    ----- set a user name
+TFTP_DIRECTORY="/tftpboot"         -- this is my tftp root dir
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo service tftpd-hpa restart
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ netstat -a | grep tftp
+udp        0      0 0.0.0.0:tftp            0.0.0.0:*
+udp6       0      0 [::]:tftp               [::]:*
+
+
 =================================================================
 
 echo要支持同C语言一样的\转义功能，只需要加上参数-e，如下所示：
