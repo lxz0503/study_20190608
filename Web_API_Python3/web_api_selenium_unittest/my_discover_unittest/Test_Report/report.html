@@ -5,16 +5,11 @@
     <title>report</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/Chart.js/0.2.0/Chart.min.js"></script>
-    <!-- <link href="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js" rel="stylesheet">   -->
-
     
 <style type="text/css" media="screen">
 body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
 table       { font-size: 100%; }
-pre         {  }
+pre         { }
 
 /* -- heading ---------------------------------------------------------------------- */
 h1 {
@@ -24,7 +19,6 @@ h1 {
 .heading {
     margin-top: 0ex;
     margin-bottom: 1ex;
-	margin-left: 10px;
 }
 
 .heading .attribute {
@@ -51,6 +45,8 @@ a.popup_link:hover {
     left: 0px;
     top: 0px;
     /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
     font-family: "Lucida Console", "Courier New", Courier, monospace;
     text-align: left;
     font-size: 8pt;
@@ -62,31 +58,25 @@ a.popup_link:hover {
 #show_detail_line {
     margin-top: 3ex;
     margin-bottom: 1ex;
-    margin-left: 10px;
 }
 #result_table {
     width: 80%;
     border-collapse: collapse;
     border: 1px solid #777;
-    margin-left: 10px;
 }
 #header_row {
     font-weight: bold;
-    color: #606060;
-    background-color: #f5f5f5;
-    border-top-width: 10px;
-    border-color: #d6e9c6;
-	font-size: 12px;
+    color: white;
+    background-color: #777;
 }
 #result_table td {
-    border: 1px solid #f5f5f5;
+    border: 1px solid #777;
     padding: 2px;
-
 }
 #total_row  { font-weight: bold; }
-.passClass  { background-color: #d6e9c6; }
-.failClass  { background-color: #faebcc; }
-.errorClass { background-color: #ebccd1; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
 .passCase   { color: #6c6; }
 .failCase   { color: #c60; font-weight: bold; }
 .errorCase  { color: #c00; font-weight: bold; }
@@ -98,26 +88,6 @@ a.popup_link:hover {
 #ending {
 }
 
-/* -- chars ---------------------------------------------------------------------- */
-.testChars {margin-left: 150px;}
-
-.btn-info1 {
-    color: #fff;
-    background-color: #d6e9c6;
-    border-color: #d6e9c6;
-}
-
-.btn-info2 {
-    color: #fff;
-    background-color: #faebcc;
-    border-color: #faebcc;
-}
-
-.btn-info3 {
-    color: #fff;
-    background-color: #ebccd1;
-    border-color: #ebccd1;
-}
 </style>
 
 </head>
@@ -219,30 +189,19 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-06-27 17:10:55</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.022618</p>
-<p class='attribute'><strong>Status:</strong> Error 6</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-07-23 13:57:11</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:12.490149</p>
+<p class='attribute'><strong>Status:</strong> Error 4</p>
 
 <p class='description'>web api test</p>
 </div>
 
-<div style="float:left; margin-left: 10px;">
-	<p> Test Case Pie charts </p>
-	<a class="btn btn-xs btn-info1">-Pass-</a><br>
-	<a class="btn btn-xs btn-info2">-Faild-</a><br>
-	<a class="btn btn-xs btn-info3">-Error-</a><br>
-</div>
-
-<div class="testChars">
-	<canvas id="myChart" width="250" height="250"></canvas>
-</div>
 
 
-
-<p id='show_detail_line' style="margin-left: 10px;">Show
-<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
-<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
-<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
 </p>
 <table id='result_table'>
 <colgroup>
@@ -253,7 +212,7 @@ function showOutput(id, name) {
 <col align='right' />
 <col align='right' />
 </colgroup>
-<tr id='header_row' class="panel-title">
+<tr id='header_row'>
     <td>Test Group/Test case</td>
     <td>Count</td>
     <td>Pass</td>
@@ -263,7 +222,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='errorClass'>
-    <td>baidu_cases.test_baidu.BaiduWebTest</td>
+    <td>unittest.loader._FailedTest</td>
     <td>2</td>
     <td>0</td>
     <td>0</td>
@@ -272,7 +231,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitRecentURL</div></td>
+    <td class='errorCase'><div class='testcase'>test_baidu</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -286,25 +245,15 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
+ft1.1: ImportError: Failed to import test module: baidu_cases.test_baidu
 Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/baidu_cases/test_baidu.py", line 12, in setUp
-    self.driver = webdriver.Chrome()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+  File "F:\Python\lib\unittest\loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "F:\Python\lib\unittest\loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\baidu_cases\test_baidu.py", line 7, in &lt;module&gt;
+    from Common.log_util import *
+ModuleNotFoundError: No module named 'Common'
 
 
 
@@ -316,7 +265,7 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
 </tr>
 
 <tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitURL</div></td>
+    <td class='errorCase'><div class='testcase'>test_sogo</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -330,25 +279,15 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
         </div>
         <pre>
         
-ft1.2: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
+ft1.2: ImportError: Failed to import test module: sogo_cases.test_sogo
 Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/baidu_cases/test_baidu.py", line 12, in setUp
-    self.driver = webdriver.Chrome()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+  File "F:\Python\lib\unittest\loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "F:\Python\lib\unittest\loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sogo_cases\test_sogo.py", line 5, in &lt;module&gt;
+    from Common.log_util import *
+ModuleNotFoundError: No module named 'Common'
 
 
 
@@ -360,7 +299,7 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
 </tr>
 
 <tr class='errorClass'>
-    <td>sogo_cases.test_sogo.SogoWebTest</td>
+    <td>sohu_cases.test_sohu.SohuWebTest</td>
     <td>2</td>
     <td>0</td>
     <td>0</td>
@@ -384,24 +323,19 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
         <pre>
         
 ft2.1: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/sogo_cases/test_sogo.py", line 15, in setUp
-    self.driver = webdriver.Chrome(chrome_options=chrome_options)  # this will not show browser when running case
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sohu_cases\test_sohu.py", line 9, in setUp
+    self.driver = webdriver.Chrome()
+  File "F:\Python\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 78
 
 
 
@@ -428,121 +362,19 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
         <pre>
         
 ft2.2: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/sogo_cases/test_sogo.py", line 15, in setUp
-    self.driver = webdriver.Chrome(chrome_options=chrome_options)  # this will not show browser when running case
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>sohu_cases.test_sohu.SohuWebTest</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>2</td>
-    <td><a href="javascript:showClassDetail('c3',2)">Detail</a></td>
-</tr>
-
-<tr id='ft3.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitRecentURL</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        error</a>
-
-    <div id='div_ft3.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft3.1: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/sohu_cases/test_sohu.py", line 9, in setUp
+  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sohu_cases\test_sohu.py", line 9, in setUp
     self.driver = webdriver.Chrome()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft3.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitURL</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
-        error</a>
-
-    <div id='div_ft3.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft3.2: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
-    stdin=PIPE)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 709, in __init__
-    restore_signals, start_new_session)
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/subprocess.py", line 1344, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver': 'chromedriver'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/sam/WorkSpace/study_20190608/Web_API_Python3/web_api_selenium_unittest/my_discover_unittest/TestCases/sohu_cases/test_sohu.py", line 9, in setUp
-    self.driver = webdriver.Chrome()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
-    self.service.start()
-  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 83, in start
-    os.path.basename(self.path), self.start_error_message)
-selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+  File "F:\Python\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "F:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 78
 
 
 
@@ -555,52 +387,15 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>6</td>
-    <td class="text text-success">0</td>
-    <td class="text text-danger">0</td>
-    <td class="text text-warning">6</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td>4</td>
     <td>&nbsp;</td>
 </tr>
 </table>
 
 <div id='ending'>&nbsp;</div>
 
-    <script type="text/javascript">
-var data = [
-	{
-		value: 6,
-		color: "#ebccd1",
-		label: "Error",
-		labelColor: 'white',
-		labelFontSize: '16'
-	},
-	{
-		value : 0,
-		color : "#faebcc",
-		label: "Fail",
-		labelColor: 'white',
-		labelFontSize: '16'
-	},
-	{
-		value : 0,
-		color : "#d6e9c6",
-		label : "Pass",
-		labelColor: 'white',
-		labelFontSize: '16'
-	}
-]
-
-var newopts = {
-     animationSteps: 100,
- 		animationEasing: 'easeInOutQuart',
-}
-
-//Get the context of the canvas element we want to select
-var ctx = document.getElementById("myChart").getContext("2d");
-
-var myNewChart = new Chart(ctx).Pie(data,newopts);
-
-</script>
-	
 </body>
 </html>
