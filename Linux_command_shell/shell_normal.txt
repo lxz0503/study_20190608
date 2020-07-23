@@ -2,7 +2,7 @@ https://www.techonthenet.com/index.php    ---- this is for C£¬SQL,Ò»¸öÍøÕ¾£¬ÓĞÈç
 
 The #ifdef directive must be closed by an #endif directive.
 
-xiaozhan@PEK-QCAO1-D2:~/kong_test$ ypcat passwd | grep -i xiaozhan | grep -i li     # ²éÕÒÒ»¸öÈËÕË»§ÔÚLinuxÏÂµÄËõĞ´
+xiaozhan@PEK-QCAO1-D2:~/kong_test$ ypcat passwd | grep -i xiaozhan     # ²éÕÒÒ»¸öÈËÕË»§ÔÚLinuxÏÂµÄËõĞ´
 xli3:MSJLHbVMDDYoY:19044:100:Xiaozhan Li:/folk/xli3:/bin/bash
 
 https://docs.python.org/3.5/library/     ---python3 doc dir
@@ -10,7 +10,7 @@ https://docs.python.org/3.5/library/     ---python3 doc dir
 # ½¨ÒéÒÔºóÔÚPython3ÏÂÓÃparamikoÄ£¿éÀ´Ö´ĞĞSSHÏà¹ØµÄ²Ù×÷-----²Î¿¼ÎÒµÄÀı×Ó
 
 1.tail -f filename »á°Ñ filename ÎÄ¼şÀïµÄ×îÎ²²¿µÄÄÚÈİÏÔÊ¾ÔÚÆÁÄ»ÉÏ£¬²¢ÇÒ²»¶ÏË¢ĞÂ£¬Ö»Òª filename ¸üĞÂ¾Í¿ÉÒÔ¿´µ½×îĞÂµÄÎÄ¼şÄÚÈİ
-tail -f -20 filename   Ä¬ÈÏÏÔÊ¾ºó10ĞĞ
+tail -f -20 filename          Ä¬ÈÏÏÔÊ¾ºó10ĞĞ
 ÈçºÎÈ¥µôÎÄ¼şÃ¿Ò»ĞĞºóÃæµÄ^M
  1) Ê¹ÓÃsed
 
@@ -19,14 +19,14 @@ sed -i 's/^M//g' filename
 
 2) ÔÚvimÏÂÀàËÆ
 ÔÚviÀïÃæÍ³Ò»Ëõ½øÓÃÏÂÃæµÄÃüÁî:
-ÀıÈç´ÓµÚÒ»ĞĞµ½µÚ20ĞĞ£º  1£¬20>    ±íÊ¾Ëõ½ø4¸ö¿Õ¸ñ    >>±íÊ¾8¸ö¿Õ¸ñ
-                      1£¬20<   ±íÊ¾»ØÍË4¸ö¿Õ¸ñ     <<±íÊ¾8¸ö¿Õ¸ñ
+ÀıÈç´ÓµÚÒ»ĞĞµ½µÚ20ĞĞ£º   1£¬20>    ±íÊ¾Ëõ½ø4¸ö¿Õ¸ñ    >>±íÊ¾8¸ö¿Õ¸ñ
+                       1£¬20<   ±íÊ¾»ØÍË4¸ö¿Õ¸ñ     <<±íÊ¾8¸ö¿Õ¸ñ
 
-:%s/^M//g
+:%s/^M//g     ----viÃüÁîÈ¥µôÃ¿ĞĞµÄ»Ø³µ·û
 
 £¨^MÊäÈë·½·¨ºÍÉÏÃæ·½·¨ÏàÍ¬£©
 
-1.how to configure tftp on ubuntu
+1.how to configure tftp on ubuntu which version is lower than 18.04
 https://www.iteye.com/blog/xouou-2139332
 
 °²×°xinetd£º
@@ -55,29 +55,17 @@ enter /etc/xinetd.d and touch tftp, chmod -R 777 tftp
 
 modify the content in tftp:
 service tftp
-
     {
-
        disable = no
-
        socket_type = dgram
-
        protocol = udp
-
        wait = yes
-
        user = root
-
        server = /usr/sbin/in.tftpd
-
        server_args = -s /tftpboot -c
-
        per_source = 11
-
        cps = 100 2
-
        flags =IPv4
-
     }
 
 sudo service xinetd restart
@@ -87,13 +75,13 @@ sudo /etc/init.d/xinetd reload
 
 sudo /etc/init.d/xinetd restart
 
-mkdir ?Cp /tftpboot
+mkdir  /tftpboot
 
 sudo chmod -R 777 /tftpboot
-===for centos
+=========================for centos,I did not try it==============================
 yum install xinetd tftp tftp-server
 /etc/init.d/xinetd start
-=====for cenos
+=====for centos
 
 ===========================================for Ubuntu18.04 tftp config in my environment==
 
@@ -106,8 +94,8 @@ wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo chmod -R 777 /etc/default/tftpd-h
 wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ vi /etc/default/tftpd-hpa
 # /etc/default/tftpd-hpa
 
-TFTP_USERNAME="windriver"    ----- set a user name
-TFTP_DIRECTORY="/tftpboot"         -- this is my tftp root dir
+TFTP_USERNAME="windriver"          ----- set a user name,you can use default
+TFTP_DIRECTORY="/"         -- this is my tftp root dir
 TFTP_ADDRESS=":69"
 TFTP_OPTIONS="--secure"
 
@@ -115,7 +103,6 @@ wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo service tftpd-hpa restart
 wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ netstat -a | grep tftp
 udp        0      0 0.0.0.0:tftp            0.0.0.0:*
 udp6       0      0 [::]:tftp               [::]:*
-
 
 =================================================================
 
@@ -166,13 +153,11 @@ sed  -i '/Ethernet/r myfile' test  Æ¥ÅäEthernetµÄĞĞ£¬¶Á½øÀ´ÁíÒ»¸öÎÄ¼şmyfileµÄÄÚÈ
 Èç¹ûÒªÖ´ĞĞ¶à¸ösedÃüÁî¿ÉÒÔÓÃsed -e
 sed -e '/^#/d' -e '/^#/d' xiaozhan.txt
 
-
 sed -i 's/^@//' file      È¥µô ¡°ĞĞÊ×¡± ´ø¡°@¡±µÄÊ××ÖÄ¸@
 
 sed -i 's/^#//' file---------È¥µôpython×¢ÊÍµÄÊ±ºòÓÃ
 ÌØ¶¨×Ö·û´®µÄÉ¾³ı
 sed -i '5,6 s/^#//g' sub.py      Ö¸¶¨É¾³ıµÚ5µ½µÚ6ĞĞµÄ¿ªÍ·µÄ#
-
 
 sed -i '/×Ö·û´®/d' file----É¾³ıËùÓĞ·ûºÏÌõ¼şµÄĞĞ
 
@@ -191,8 +176,6 @@ s/shanghai/finace/i
 È»ºóÖ´ĞĞsed -f myrule.txt < xiaozhan_1.txt     ²»»áĞŞ¸ÄÔ´ÎÄ¼ş
 
 ÖØ¶¨Ïòµ½ÁíÍâÒ»¸öÎÄ¼ş sed -f myrule.txt < xiaozhan_1.txt > test.txt
-
-
 
 cat a b c > file -----°ÑÎÄ¼şa,b,cµÄÄÚÈİºÏ²¢µ½fileÀï£¬Í¬Ê±Ò²´´½¨ÁËÎÄ¼şfile
 
@@ -219,9 +202,7 @@ ps | awk '{print $8}' | sort | uniq -c
 4.Li xiaozhan@DESKTOP-JFCIJJF ~
 $ tar -czvf  file.tar.gz  file1  file2 ----tar°ü£¬Ñ¹Ëõ³Étar.gz¸ñÊ½
 
-
 tar -xzvf  file.tar.gz  ---------½âÑ¹Ëõtar.gz°ü
-
 
 5.$ gunzip  new.tar.gz
 
@@ -231,7 +212,7 @@ aaa  bbbbb  new.tar  old.txt  rename.txt  test.sh  test.txt
                                                                                                                                                    
 6. grep -rI "xiaozhan" ./  (ÔÚµ±Ç°Ä¿Â¼µİ¹é²éÕÒËùÓĞ°üº¬xiaozhan×ÖÑùµÄÎÄ±¾)
 
-7. find . -name "*xiaozhan*¡° -print (ÔÚµ±Ç°Ä¿Â¼²éÕÒ°üº¬xiaozhan×ÖÑùµÄÄ¿Â¼)
+7. find . -name "*xiaozhan*¡° -print (ÔÚµ±Ç°Ä¿Â¼²éÕÒ°üº¬xiaozhan×ÖÑùµÄÄ¿Â¼»òÕßÎÄ¼ş)
 
 ËÑË÷×î½üÆßÌìÄÚ±»·ÃÎÊ¹ıµÄËùÓĞÎÄ¼ş
 find . -type f -atime -7
@@ -257,7 +238,7 @@ find ./ -type d -name 'fsl_imx6_platform_up'
 
 {} ÓÃÓÚÓë-execÑ¡Ïî½áºÏÊ¹ÓÃÀ´Æ¥ÅäËùÓĞÎÄ¼ş£¬È»ºó»á±»Ìæ»»ÎªÏàÓ¦µÄÎÄ¼şÃû£¬Ò²¾ÍÊÇËµ{}´ú±í×ÅÆ¥ÅäµÄËùÓĞÎÄ¼şÃû
 
-½«30ÌìÇ°µÄ.logÎÄ¼şÒÆ¶¯µ½oldÄ¿Â¼ÖĞ
+½«30ÌìÇ°µÄ.logÎÄ¼ş¿½±´µ½oldÄ¿Â¼ÖĞ
 find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 
 # ½«Æ¥Åäµ½µÄÎÄ¼şÒÆ¶¯µ½ÆäËûÄ¿Â¼,×¢Òâxargs -i ÃüÁî
