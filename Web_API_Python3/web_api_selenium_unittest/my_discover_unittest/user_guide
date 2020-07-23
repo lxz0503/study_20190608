@@ -27,3 +27,49 @@ print(sys.path)
 sam@sam Downloads % cp HTMLTestRunner.py /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6
 
 或者放在/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages
+
+=============================HTMLTestrunner  for python3
+
+二、修改HTMLTestRunner.py文件
+
+如果你安装的是python2版本，那么不需要做这一步。因为HTMLTestRunner.py 原本就是python2版本，目前还没找到python3版本，所以需要我们自己修改 HTMLTestRunner.py 文件
+
+修改内容如下：
+
+第94行，将import StringIO修改成import io
+
+第539行，将self.outputBuffer = StringIO.StringIO()修改成self.outputBuffer = io.StringIO()
+
+第642行，将if not rmap.has_key(cls):修改成if not cls in rmap:
+
+第766行，将uo = o.decode('latin-1')修改成uo = e
+
+第772行，将ue = e.decode('latin-1')修改成ue = e
+
+第631行，将print >> sys.stderr, '\nTime Elapsed: %s' % (self.stopTime-self.startTime)修改成print(sys.stderr, '\nTime Elapsed: %s' % (self.stopTime-self.startTime))
+
+其中，Python3中，已经没有StringIO了。取而代之的是io.StringIO
+
+==============
+我已经修改好的文件在Web_API_Python3目录下，linux和windows都可以应用
+
+在Linux Ubuntu18.04下，把HTMLTestRunner.py拷贝到Python的安装路径（可以用print(sys.path)来查看）
+我的环境：[xli3@pek-vx-nwk1 dist-packages]$ pwd
+/usr/lib/python3/dist-packages           ---这是系统自带的python3，所以需要拷贝到这个目录下，如果是自己安装的python，就是site-packages
+
+wrsadmin是root用户，完整操作如下:
+wrsadmin@pek-vx-nwk1:/usr/lib/python3/dist-packages$ sudo scp -r windriver@128.224.159.79:/home/windriver/HTMLTestRunnerNew.py .
+windriver@128.224.159.79's password:
+HTMLTestRunnerNew.py                                                                                                  100%   25KB   7.6MB/s   00:00
+wrsadmin@pek-vx-nwk1:/usr/lib/python3/dist-packages$ sudo mv HTMLTestRunnerNew.py HTMLTestRunner.py
+wrsadmin@pek-vx-nwk1:/usr/lib/python3/dist-packages$ su xli3
+Password:
+[xli3@pek-vx-nwk1 dist-packages]$ /usr/bin/python3.6 /folk/xli3/PycharmProjects/TSN/tsn_xiaozhan/run.py    ---my script includes HTMLTestRunner
+
+
+===========================install pycharm2019 on my linux Ubuntu18.04
+
+
+[xli3@pek-vx-nwk1 ~]$ cd /buildarea1/xli3/pycharm-community-2019.1.3/bin
+./pycharm.sh
+
