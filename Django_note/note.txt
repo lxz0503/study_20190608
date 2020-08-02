@@ -1,4 +1,5 @@
 # http://codingdict.com/       study link but not free
+https://code.ziqiangxuetang.com/django/django-models.html    -----this is for Django2.2 study
 
 ctrl+shift+R  可以快速找到需要所有要替换的内容
 Django WEB框架核心思想：
@@ -217,5 +218,10 @@ FBV（function base views） 就是在视图里使用函数处理请求
 CBV（class base views） 就是在视图里使用类处理请求
 =================================================================
 出现403错误，应该添加{% csrf_token %}
+
+========================================Django objects
+objects.get()返回的是一个对象，并不是一个列表，
+相反objects.filter()得到的才是一个列表（一个对象列表）。
+因此当对象不存在时，get会报错，而filter则不会，返回一个空列表（没有对象）。
 
 
