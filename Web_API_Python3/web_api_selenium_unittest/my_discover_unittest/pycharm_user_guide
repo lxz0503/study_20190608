@@ -73,3 +73,10 @@ Password:
 [xli3@pek-vx-nwk1 ~]$ cd /buildarea1/xli3/pycharm-community-2019.1.3/bin
 ./pycharm.sh
 
+or you can use alias:
+
+[xli3@pek-vx-nwk1 ~]$ cd /buildarea1/xli3/pycharm-community-2019.1.3/bin/
+[xli3@pek-vx-nwk1 bin]$ alias pycharm='cd /buildarea1/xli3/pycharm-community-2019.1.3/bin/;./pycharm.sh'
+[xli3@pek-vx-nwk1 bin]$ pycharm
+
+
