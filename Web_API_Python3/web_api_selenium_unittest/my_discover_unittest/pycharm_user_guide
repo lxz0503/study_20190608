@@ -28,7 +28,7 @@ sam@sam Downloads % cp HTMLTestRunner.py /Library/Frameworks/Python.framework/Ve
 
 或者放在/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages
 
-=============================HTMLTestrunner  for python3
+=============================HTMLTestRunner  for python3
 
 二、修改HTMLTestRunner.py文件
 
