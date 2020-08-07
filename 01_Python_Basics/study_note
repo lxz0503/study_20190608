@@ -358,3 +358,8 @@ Numpy and pandas基本函数:
 https://www.cnblogs.com/medik/p/9789002.html
 用matplotlib画bar：
 https://www.cnblogs.com/always-fight/p/9707727.html
+============================================================import traceback     模块被用来跟踪异常返回信息
+traceback.print_exc()         # 将错误信息在终端输出
+
+# 将错误信息写入到tt文件夹内
+traceback.print_exc(limit=2, file=open('tt.log', 'a+'))
