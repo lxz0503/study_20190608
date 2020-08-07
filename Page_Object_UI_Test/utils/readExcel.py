@@ -23,7 +23,8 @@ def readExcels(file, row, sheet_id):
 
 if __name__ == "__main__":
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    file_path = root_dir + r'\data\test.xls'
-    # print(file_path)           # F:\xiaozhan_git\study_20190608\Page_Object_UI_Test\data\test.xls
+    # file_path = root_dir + r'\data\test.xls'   # this is for windows
+    file_path = root_dir + '/data/test.xls'    # this is for linux and mac
+    print(file_path)           # F:\xiaozhan_git\study_20190608\Page_Object_UI_Test\data\test.xls
     readExcel(file_path, 1, 0)
     readExcels(file_path, 1, 0)
