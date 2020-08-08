@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 #!/usr/bin/env python
 import codecs
-
 
 def getWebInfo(path):
     webinfo = {}
@@ -11,7 +9,6 @@ def getWebInfo(path):
         print(result)
         webinfo.update(dict([result]))
     return webinfo
-	
 
 def getUserInfo(path):
     user_info = []
@@ -33,7 +30,7 @@ if __name__ == '__main__':
     user_info = getUserInfo(r'F:\Pycharm\Selenium_Xiaozhan\lxz_python\userinfo.txt')
     for l in user_info:
         print(l)
-=======
+
 #coding:utf-8
 import codecs
 import xlrd
@@ -100,7 +97,4 @@ if __name__ == '__main__':
 	info = xinfo.get_sheetinfo_by_name('Sheet1')
 	print (info)
 
-	
 
-	
->>>>>>> 4fc948b851e507ed66ee191ea35dba9b8cee742b

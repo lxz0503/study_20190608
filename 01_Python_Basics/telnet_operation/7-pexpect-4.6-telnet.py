@@ -55,15 +55,16 @@ class Telnet(object):
             self.t.sendline('q')
             self.t.expect('Connection closed.')
             self.t = None
+            self.log.close()
 
     def run_cmd(self):
-        l = []
+        cmd_res = []
         self.t.sendline('ifconfig')
         self.t.expect('->')
         r = self.t.before.split(b'\r\n')
         for line in r:
-            l.append(line.decode('utf-8').strip())
-        return l
+            cmd_res.append(line.decode('utf-8').strip())
+        return cmd_res
         #return filter(lambda x: x!='',
            #map(lambda x: x.decode('utf-8').strip(), r))
 
