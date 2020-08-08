@@ -31,10 +31,9 @@ class OperationExcel(object):
 
     # 写入数据,实际是修改excel表格
     def write_value(self, row, col, value):
-        '''
-        写入excel数据
-        row,col,value
-        '''
+        """ 写入excel数据
+             row,col,value
+        """
         read_data = xlrd.open_workbook(self.file_name)
         write_data = copy(read_data)
         sheet_data = write_data.get_sheet(0)
