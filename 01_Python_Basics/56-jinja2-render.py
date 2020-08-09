@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # coding=utf-8
+# jinja2可以用来自动修改一个html的模版
 import os
 import jinja2
 
-def my_render(tpl_path, **kwargs):
+
+def my_render(tpl_path, **kwargs):      # 主要就是这个函数来实现
     path, filename = os.path.split(tpl_path)
     return jinja2.Environment(loader=jinja2.FileSystemLoader(path or './')).get_template(filename).render(**kwargs)
 
