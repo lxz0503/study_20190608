@@ -1,5 +1,7 @@
 # how to use virtualenv, please refer to https://www.liaoxuefeng.com/wiki/1016959663602400/1019273143120480
 # 'builtin_function_or_method' object is not subscriptable   -----通常是使用错误，例如函数应该小括号反而用了中括号
+# https://blog.csdn.net/ratsniper/article/details/78954852   ----PEP8 编码规范
+# https://legacy.python.org/dev/peps/pep-0008/   -- this is English version
 
 # http://codingdict.com/      学习链接，有一些例子，能看到项目的源代码
 # http://codingdict.com/courses    some courses

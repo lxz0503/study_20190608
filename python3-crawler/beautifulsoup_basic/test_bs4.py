@@ -19,7 +19,7 @@ print(demo)
 print('start to parser html')
 soup = BeautifulSoup(demo, 'html.parser')
 # soup = BeautifulSoup(demo, 'lxml')
-# print(soup)
+print('soup', soup)
 print('output with prettify():')
 # print(soup.prettify())  # 格式化输出
 #

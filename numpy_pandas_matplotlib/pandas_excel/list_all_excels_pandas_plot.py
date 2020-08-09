@@ -9,9 +9,8 @@ import matplotlib.pyplot as plt
 def click1():
     """find all excels under specific dir"""
     for root, dirnames, filenames in os.walk(os.path.dirname(__file__)):
-        mylist = [os.path.join(root, x).replace('\\', '/') for x in filenames if x.endswith('.xls')]
+        return [os.path.join(root, x).replace('\\', '/') for x in filenames if x.endswith('.xls')]
     # mylist = [x for x in os.listdir('.') if x.endswith('.xls')]
-    return mylist  # this will return full path
 
 
 def clicked(mylist):
@@ -44,6 +43,7 @@ def select_column_plot(res):
     # save_df_to_excel(df1)
     print(df1)
     df1 = df1.set_index('图书编号')
+
     print(df1)
     df1 = df1['买家实际支付金额'].copy()   # copy seems can be removed
     print('df1', '--------', df1)
