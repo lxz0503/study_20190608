@@ -3,6 +3,8 @@
 # https://blog.csdn.net/ratsniper/article/details/78954852   ----PEP8 编码规范
 # https://legacy.python.org/dev/peps/pep-0008/   -- this is English version
 
+with open('time.txt', encoding='utf_8_sig') as f:   # 如果文本里有中文，就用utf_8_sig来解码
+
 # http://codingdict.com/      学习链接，有一些例子，能看到项目的源代码
 # http://codingdict.com/courses    some courses
 # 字符串学习 https://zhuanlan.zhihu.com/p/36232614
