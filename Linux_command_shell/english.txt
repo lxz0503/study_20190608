@@ -9,7 +9,34 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+The ideal candidate must have extensive and advanced knowledge on web scraping and data mining.
+理想的候选人必须拥有广泛而先进的网页抓取和数据挖掘的知识。
+
+ He crafts an exceptional read, which progresses from the basics of Python all the way to automating daily operations that make your life easier.
+  I encourage you to continue learning how to create automations in Python.
+  The addition of this skill will not only transform how you approach problems but also prepare you for what's to come in a world built on automation.
+ I wish you the best of luck!
+
+ Python is an easy-to-learn programming language that allows organizations to script custom automation and reap the time-savings
+ how to automate your own repetitive tasks using Python    重复工作
+
+in-depth   彻底的  深入详尽的
+They go very in-depth
+API developers like to inspect who is calling their APIs
+paired with -组合
+package sth with sth  -把两者打包，组合
+match up with----- 与 。。。配合，向。。。看齐
+base feature---- 从基础特征，特性
+construct my requests---- 构造请求
+Politely point out how that doesn't match up with what you were expecting, and ask if the agent could check again.
+有礼貌地指出与你的预想不相符的地方，并且询问一下，代理人能不能帮你再查证一次。
+I'm just trying to match up with you today. You are looking pretty good there. -
+print it to the console
+suspicion
+Great, I will go ahead and check
+reinvent the wheel ------
 forgone conclusion-----注定的结果,板上钉钉的事情
+APIs act as an intermediary for 2 pieces of software.
 
 Susanna had worked as the assistant manager in the store for three years.
 When the boss decided to take a job with another company,
