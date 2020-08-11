@@ -16,3 +16,13 @@ for i in range(3):
     word, count = items[i]
     # print("{0:<5}->{1:>5}".format(word, count))
     print("word %s occurred----%s times" % (word, count))
+
+#
+sub = {
+    'doc': ['.pdf', '.rtf', '.txt'],
+    'audio': ['.mov', '.m4b', '.mp3'],
+    'image': ['.jpg', '.jpeg', '.png']
+}
+print(sub.items())
+# dict_items([('doc', ['.pdf', '.rtf', '.txt']), ('audio', ['.mov', '.m4b', '.mp3']), ('image', ['.jpg', '.jpeg', '.png'])])
+# for cat, suffixes in sub.items()
