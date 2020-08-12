@@ -20,3 +20,6 @@ c = [7, 8, 9]
 d = [10, 11, 12]
 zipped = zip(a, b, c, d)
 print(list(zipped))      # [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]
+#
+for i, m in enumerate(zip(a, b, c, d), start=1):
+    print(i, ':',  m)
