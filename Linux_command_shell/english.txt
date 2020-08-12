@@ -9,11 +9,37 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+variable argument  list 可变参数列表
+function that can take variable number of parameters  ----接受可变参数,多个参数
+documentation 证明文件；归档；必备资料；文件记载
+document  记录 证明
+It is the first time the technique has been used to document how the brain processes grammar and produces words.
+
+So let's go ahead and run this, all right, and you can see that using this function,
+dropwhile will ignore the first few values, right,
+until it reaches the 40 trigger point, at which point it starts returning the rest of the values.
+ Takewhile however returns the first few values until that 40 value is triggered, at which point it just stops giving you data.
+
+some of them are lower case and others are upper case.  大小写的
+comment out these lines   注释；添加注释；注释禁止
+The practice of looping over sequences of values is very common in Python.  遍历一个序列
+come in handy迟早有用
+派得上用场；派上用场；有用得着的时候
+They come in handy very often.
+It has come in handy for me many times when I am trying to get out the door and found a pocket ripped or a button loose.
+好多次当我急着出门发现口袋撕坏了或是纽扣松了的时候，它们都能及时派上用场。
+
+placeholder   --占位符
+you should indent your code with four spaces instead of tab.
+be equivalent to    相等的；相对于；等同于
+concatenate 2 strings   连接两个字符串
+It probably comes as no surprise to you that string formatting is one of the most common things that Python programmers have to do.
+
 The ideal candidate must have extensive and advanced knowledge on web scraping and data mining.
 理想的候选人必须拥有广泛而先进的网页抓取和数据挖掘的知识。
 
  He crafts an exceptional read, which progresses from the basics of Python all the way to automating daily operations that make your life easier.
-  I encourage you to continue learning how to create automations in Python.
+  I encourage you to continue learning how to create automation in Python.
   The addition of this skill will not only transform how you approach problems but also prepare you for what's to come in a world built on automation.
  I wish you the best of luck!
 
@@ -26,7 +52,7 @@ API developers like to inspect who is calling their APIs
 paired with -组合
 package sth with sth  -把两者打包，组合
 match up with----- 与 。。。配合，向。。。看齐
-base feature---- 从基础特征，特性
+base feature---- 基础特征，特性
 construct my requests---- 构造请求
 Politely point out how that doesn't match up with what you were expecting, and ask if the agent could check again.
 有礼貌地指出与你的预想不相符的地方，并且询问一下，代理人能不能帮你再查证一次。
