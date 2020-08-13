@@ -4,6 +4,7 @@
 # https://legacy.python.org/dev/peps/pep-0008/   -- this is English version
 
 with open('time.txt', encoding='utf_8_sig') as f:   # 如果文本里有中文，就用utf_8_sig来解码
+# xlwt、wlrd只能读写xls文件，而不能操作xlsx文件,openyxl is ok
 
 # http://codingdict.com/      学习链接，有一些例子，能看到项目的源代码
 # http://codingdict.com/courses    some courses
