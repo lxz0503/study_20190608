@@ -1,9 +1,9 @@
-"""Operate excel file."""
+"""Operate excel file.For normal operation this script is engough"""
 # !/usr/bin/env python3
 # coding=utf-8
-import time
 import openpyxl
 from openpyxl.styles import Border, Side, Font
+
 
 class ParseExcel(object):
     def __init__(self):
@@ -54,7 +54,7 @@ class ParseExcel(object):
         except Exception as e:
             raise e
 
-    def get_row_values_each(self, sheet, row):    # this can get values in specific row
+    def get_each_row_values(self, sheet, row):    # this can get values in specific row
         columns = self.get_cols_num(sheet)
         row_data = []
         for i in range(1, columns + 1):
@@ -84,14 +84,13 @@ class ParseExcel(object):
             column_data.append(cell_value)
         return column_data
 
-
-    def get_cell_value(self, sheet, row_num, col_num):
+    def get_cell_value(self, sheet, row_num, col_num):         # if you just want to get one cell value
         try:
             return sheet.cell(row=row_num, column=col_num).value
         except Exception as e:
             raise e
 
-    def write_excel(self, sheet, row_num, col_num, content):
+    def write_excel(self, sheet, row_num, col_num, content):    # just write one cell
         try:
             sheet.cell(row=row_num, column=col_num).value = content
             self.workbook.save(self.excel_file)
@@ -109,20 +108,20 @@ if __name__ == '__main__':
     # get values in all rows and print each row
     r = pe.get_row_values(sheet)
     for row in r:
-        for i in row:
-            print(i.value, end=' ')
+        for cell in row:
+            print(cell.value, end=' ')    # # you can also put them into a list using append as you like
         print()    # this will help to split each row
     #
     # get values in all rows and print each row
     print('print value by column====================== as below')
     r = pe.get_col_values(sheet)
     for col in r:
-        for i in col:
-            print(i.value, end=' ')
+        for cell in col:
+            print(cell.value, end=' ')    # you can also put them into a list as you like
         print()  # this will help to split each row
 
     # get values in specific line
-    print(pe.get_row_values_each(sheet, 2))         # [1000, 2000, 3000, None]
+    print(pe.get_each_row_values(sheet, 2))         # [1000, 2000, 3000, None]
     # get value in specific cell
     print(pe.get_cell_value(sheet, 3, 3))
     # write value into specific cell
