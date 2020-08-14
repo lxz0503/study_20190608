@@ -3,6 +3,8 @@
 # json.load()加载python json格式文件,参数是一个文件句柄
 
 import json
+
+
 class OperateJson(object):
     def __init__(self, file_path=None):
         if file_path == None:
@@ -36,5 +38,5 @@ if __name__ == '__main__':
         'url': 'http://www.runoob.com'
          }
     op_json = OperateJson()
-    op_json.write_data(data)    #write dictionary into a json file
+    op_json.write_data(data)    # write dictionary into a json file
     print(op_json.get_data('name'))

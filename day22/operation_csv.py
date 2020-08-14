@@ -1,6 +1,9 @@
-#!/usr/bin/env python3
+"""This is for old usage, now you can use pandas to process any file"""
+# !/usr/bin/env python3
 # coding=utf-8
 import csv
+
+
 class OperaCsv(object):
     def __init__(self):
         # self.csv_name = csv_name

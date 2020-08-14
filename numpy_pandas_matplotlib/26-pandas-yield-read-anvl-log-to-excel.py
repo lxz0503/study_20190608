@@ -43,7 +43,7 @@ class PandasWriteExcel(object):
         # firstly, write every line into a file, because the pandas parameter must be file name
         with open("xiaozhan_test.txt", 'w') as fp:
             log_names = self.get_logfile()   # 调用生成器函数,返回一个可迭代对象
-            for name in log_names:       # analyze each test log
+            for name in log_names:         # analyze each test log
                 h = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象
                 for line in h:
                     fp.write(line + '\n')

@@ -1,3 +1,4 @@
+"""This is only for old xls file, you can use the new code with pandas or openpyxl"""
 #!/usr/bin/env python3
 # coding=utf-8
 import xlrd

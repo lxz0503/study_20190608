@@ -4,7 +4,7 @@
 
 
 def main():
-    # use iter() to create a iterator
+    # TODO:use iter() to create a iterator
     week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     i = iter(week)
     print(next(i))
