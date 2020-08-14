@@ -9,6 +9,10 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+refer to as把…称作；把…当作；称为
+they are referred to as lambda functions
+suppose----假设 suppose we have a function
+change the function to take an argument like a  ---改变函数，传入一个参数a
 variable argument  list 可变参数列表
 function that can take variable number of parameters  ----接受可变参数,多个参数
 documentation 证明文件；归档；必备资料；文件记载
