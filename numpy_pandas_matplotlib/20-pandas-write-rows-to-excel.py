@@ -20,9 +20,6 @@ class PandasWriteExcel(object):
         # pat = re.compile(r'iperf3.*-l\s(\d+)')
         with open(log, 'r') as f:
             for line in f:
-                # m = pat.search(line)
-                # if m is not None:
-                #     frame_data.append(m.group(1))
                 if re.search(r"receiver", line):
                     tcp_data.append(line.split()[-3])
                 if re.search(r'\d+%', line):
@@ -41,10 +38,10 @@ class PandasWriteExcel(object):
 
     # 将构造好的数据写到excel
     def write_to_excel(self):
-        write_file = "test.xlsx"
+        write_file = "test.xlsx"  # you can use time to generate different excel name
         df = pd.DataFrame(self.data, self.index, self.cols)  # 三个参数
         writer = pd.ExcelWriter(write_file)
-        df.to_excel(writer, sheet_name='release', startrow=2, startcol=2)
+        df.to_excel(writer, sheet_name='release', startrow=0, startcol=0)
         writer.save()
 
 

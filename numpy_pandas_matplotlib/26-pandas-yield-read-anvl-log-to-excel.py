@@ -9,11 +9,23 @@
 import pandas as pd
 import os
 import re
+import time
 
 
 class PandasWriteExcel(object):
     def __init__(self):
         self.log_dir = os.path.dirname(__file__) + '/test_result'
+        self.cur_time = self.get_time()
+
+    def get_time(self):
+        cur_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
+        return cur_time
+
+    def gen_dir(self):     # generate log dir based on current time
+        return os.makedirs(os.path.dirname(__file__) + '/report/' + self.cur_time + '/')
+
+    def gen_file_name(self):     # generate log file based on the current time
+        return self.cur_time + '.html'
 
     def get_logfile(self):
         for log_file in os.listdir(self.log_dir):
@@ -39,10 +51,15 @@ class PandasWriteExcel(object):
         data = pd.read_csv('xiaozhan_test.txt', sep=':')
         data.to_excel('test_result.xlsx', sheet_name='anvl_result', index=False)
 
+    def pd_read_excel(self):     # read data and store in a list as you like
+        df = pd.read_excel('test_result.xlsx', header=None)  # 这个表示没有表头，即第一行就是数据,要设置header=None
+        return df.values.tolist()
+
 
 if __name__ == '__main__':
     t = PandasWriteExcel()
-    t.write_excel()
+    # t.write_excel()
+    print(t.gen_file_name())
 
 # read data from another file and write it to excel
 # data = pd.read_csv('test_result.log', sep=':')
