@@ -21,6 +21,7 @@ if __name__ == "__main__":
     try:
         result = 10 / 0
     except Exception:
+        logger.error('======exception as below=======')
         logger.error('Failed to get result', exc_info=True)
         # logging.exception("Exception occurred")
     logger.info('Finished')
