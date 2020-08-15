@@ -5,6 +5,8 @@
 
 with open('time.txt', encoding='utf_8_sig') as f:   # 如果文本里有中文，就用utf_8_sig来解码
 # xlwt、wlrd只能读写xls文件，而不能操作xlsx文件,openyxl is ok
+# 对于namedtuple，你不必再通过索引值进行访问，你可以把它看做一个字典通过名字进行访问，只不过其中的值是不能改变的
+为了构造一个namedtuple需要两个参数，分别是tuple的名字和其中域的名字
 
 # http://codingdict.com/      学习链接，有一些例子，能看到项目的源代码
 # http://codingdict.com/courses    some courses
