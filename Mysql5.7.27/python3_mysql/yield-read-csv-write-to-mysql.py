@@ -10,6 +10,7 @@ from python3_mysql.operations import *
 import csv
 from collections import namedtuple
 
+
 class DatabaseInit(object):
     def __init__(self, host, dbname, username, password, charset):
         self.host = host
@@ -59,8 +60,8 @@ class DatabaseInit(object):
     def get_data(file_name):          # read data from csv file
         with open(file_name) as f:
             f_csv = csv.reader(f)
-            headings = next(f_csv)
-            Row = namedtuple('Row', headings)
+            headings = next(f_csv)    # use iterator
+            Row = namedtuple('Row', headings)    # this is a trick??? xiaozhan
             for r in f_csv:
                 yield Row(*r)
 
