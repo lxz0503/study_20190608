@@ -9,6 +9,43 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+override this function----覆盖  重写
+represent it in string form ----字符串格式
+as always    一如既往，和平时一样
+Just working out with Bill five times a week. Same as always.
+我根比尔一起健身，每周五次，一直如此。
+keep your Python programming skills up to date by reading this website.
+feel free to reach out to me here on LinkedIn.
+the if statement  is also called predicate expression  --- if语句
+the set however only contains unique values, so none of these values are duplicated.  不重复
+write another for loop named ---for循环
+key colon value  --- key:value
+predicate condition  --- 预定条件，例如if语句
+customize the message output depending on your needs.
+In a production environment that is not what we want,we would want that log sent to a separate file.
+Error messages indicate that something unexpected happened or that a more serious problem might be approaching.
+we like to be straight forward with you and your company.
+我们希望直接和你和你们公司打交道。
+track down the origin of the problem ---查找根源
+so let's try these out on some code
+so down here I will ---  be equal to
+And to do that I need to add another decorator function.
+you can see it's printing out the value that's associated with the key.
+enumeration    列举  枚举
+increase the readability of your code,  more readable
+and much more  ---还有很多
+customize   定制，自定义
+The ability to customize logging like this provides a great deal of flexibility and control over the Linux environment.
+像这种定制日志的能力为Linux环境提供了极大的灵活性与可控制性。
+intersection  交集  十字路口
+Each cell shows an intersection of two modules and a count of the dependencies between them.
+每个单元格表示两个模块之间的交集，以及它们之间依赖的数目。
+
+This expression creates a dictionary that initializes items to an empty string.
+The last one    we'll take a look at    is called deque.
+They can be specified to have a maximum length.
+iterate over   this list or array----遍历
+loop over ------遍历，循环,迭代
 refer to as把…称作；把…当作；称为
 they are referred to as lambda functions
 suppose----假设 suppose we have a function

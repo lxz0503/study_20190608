@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------------------------------
 # D.clear()                              #移除D中的所有项
 # D.copy()                               #返回D的副本
-# D.fromkeys(seq[,val])                  #返回从seq中获得的键和被设置为val的值的字典。可做类方法调用
+# D.fromkeys(seq[,val])                  #返回从seq中获得的键和被设置为val的值的字典。可做类方法调用,返回一个新的字典
 # D.get(key[,default])                   #如果D[key]存在，将其返回；否则返回给定的默认值None
 # D.has_key(key)                         #检查D是否有给定键key
 # D.items()                              #返回表示D项的(键，值)对列表
@@ -53,7 +53,7 @@ for k in xiaoming_dict.values():      # 只取对应的value值
 for k in xiaoming_dict.items():
     print(k)
 
-# filter a dictionary
+# TODO:filter a dictionary
 D = {'beijing': 100, 'shanghai': 90, 'tianjin': 80, 'chongqing': 70, 'nanjing': 60}
 r = {k: v for k, v in D.items() if v >= 60}   # 字典解析
 print(r)           # {'beijing': 100, 'shanghai': 90, 'tianjin': 80, 'chongqing': 70, 'nanjing': 60}
@@ -63,3 +63,16 @@ print(r)           # {'beijing': 100, 'shanghai': 90, 'tianjin': 80, 'chongqing'
 import random
 d = {x: random.randint(1, 10) for x in range(1, 15)}
 print(d)
+# TODO: combine 2 different dictionaries with comprehension, 字典表达式
+tem1 = {'a': 1, 'b': 2, 'c': 3}
+tem2 = {'d': 1, 'e': 2, 'f': 3}
+res = {k: v for team in (tem1, tem2) for k, v in team.items()}
+print(res)
+# TODO:交换现有字典中各键值对的键和值
+res1 = {v: k for k, v in tem1.items()}
+print(res1)
+# TODO:
+team = ['beijing', 'shanghai', 'tianjin']
+res = {k: len(k) for k in team}
+print(res)
+

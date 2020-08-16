@@ -9,8 +9,12 @@ def square(x):  # 计算平方
 
 res = map(square, [1, 2, 3, 4, 5])  # 计算列表各个元素的平方
 # [1, 4, 9, 16, 25]
-print(list(res))   # map function return an address,you must use a list to show it.
-res = map(lambda x: x ** 2, [1, 2, 3, 4, 5])  # 使用 lambda 匿名函数
+# TODO:use comprehensions   列表表达式
+res = [x**2 for x in [1, 2, 3, 4, 5] if x > 1 and x < 5]
+print(res)
+
+# TODO:map function return an address,you must use a list to show it.
+res = map(lambda x: x ** 2, filter(lambda x: x > 1 and x < 5, [1, 2, 3, 4, 5]))  # 使用 lambda 匿名函数
 # [1, 4, 9, 16, 25]
 print(list(res))
 
