@@ -11,12 +11,17 @@ def is_sqr(x):
 
 newlist = filter(is_sqr, range(1, 101))
 print(list(newlist))
-
-
+# TODO:use comprehension,列表表达式
+res = [x for x in range(1, 101) if math.sqrt(x) % 1 == 0]
+print(res)
+# TODO: use a function
 def is_odd(n):
     return n % 2 == 1
 
 
 newlist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 print(list(newlist))
+# TODO:use列表表达式， comprehension
+res = [x for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] if x % 2 == 1]
+print(res)
 

@@ -1,4 +1,4 @@
-""" This is to demonstrate template string fucntion"""
+""" This is to demonstrate template string function"""
 # !/usr/bin/env python3
 # coding=utf-8
 

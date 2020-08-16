@@ -26,3 +26,10 @@ print(type(t))
 print(set(l))     # 用集合去掉了重复元素  {33, 11, 44, 'a', 22}
 
 print(set(l1) & set(l2))    # 用&操作，取出集合中相同的元素 {33, 22}
+
+# TODO: set comprehension
+test = ['beijing', 'shanghia', 'tianjin', 'beijing', 'hebei', 'qinhuangdao']
+res1 = [x + 'a' for x in test]
+print(res1)
+res2 = {x + 'a' for x in test}    # use curly braces for set
+print(res2)
