@@ -9,16 +9,6 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
-you will use daily. Use them often, and they'll become second nature.
-Soon, Git will become an indispensable part of your life as a developer.
-Until next time, happy coding.
-second nature   第二天性  习性
-You may have the solution to a pesky problem many have,
-but it's second nature to you that you don't even think about it.
-你可能有方法解决令大家都感到棘手的问题，但你甚至连想都不想，这就是你的第二本质。
-It has become a second nature to him    to turn off all the lights before leaving the office.
-离开办公室前把所有的灯都关了已成为他的习惯了。
-to revert a commit---to do the opposite, to go backwards  恢复，回退
 practice the techniques that we learned in last chapter
 For the new exercise files   练习文件
 they are colored green
