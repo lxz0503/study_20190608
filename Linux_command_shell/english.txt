@@ -9,6 +9,32 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+practice the techniques that we learned in last chapter
+For the new exercise files   练习文件
+they are colored green
+It is tell us about changes that are in between those files
+--- minus minus
++++ plus plus
+It tells us that--- what this is telling us is that
+go into the text editor and let's make some changes to the first file
+staging area    理解为git中的暂存区
+screenshot   snapshot   截屏，截图
+For bugs, it is often helpful to attach a screenshot of the problem, or a related e-mail discussion.
+对于Bug，附加问题的屏幕抓图或相关电子邮件讨论通常会很有帮助。
+I make changes on my hard drive    在本地硬盘做出变动
+write commit message in present tense but not past tense  用现在时态
+keep each line to less than 72 characters ---每行少于72个字符
+-m   dash m
+" "  inside quotes
+how to install Git on the Linux operating system.
+I've got it here on the desk
+must have network access to submit our changes
+Individual developers clone a master repository, and submit pull requests to the owner of that repository for inclusion.
+独立开发人员克隆一个主代码仓库，然后提交“pull requests”给代码仓库的所有者
+master repository   主仓库
+keep in sync with ----- 保持同步
+out of sync with
+Git does not work that way, it is a distributed version control system.   分布式版本控制
 override this function----覆盖  重写
 represent it in string form ----字符串格式
 as always    一如既往，和平时一样
