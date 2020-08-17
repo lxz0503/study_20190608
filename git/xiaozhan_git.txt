@@ -85,7 +85,6 @@ git commit -m "update readme"
 以上只是本地工作区做了修改，然后在master分支上依然需要git add,git commit, git push才真正修改了远端仓库
 
 6.如果要删除文件
-现在本地工作区：rm test.txt
 
 如果确实需要从远端仓库删除： git rm test.txt
 
@@ -120,7 +119,7 @@ git push -u origin master
 
 在本地windows目录下，即本地git仓库目录下，
 
-先执行git init, ls -ah 会看到.git
+先执行git init, ls -ah 会看到.git----这是git用来track工程的目录(也可以先把所有文件拷贝到本地，然后在目录下执行 git init)
 
 $ git config --global user.name "lxz0503"
 $ git config --global user.email "lxz_20081025@163.com"
@@ -155,3 +154,22 @@ Untracked files:
 
 下面是设置不用每次都输入用户名和密码：
 git config --global credential.helper store
+==============
+git log -n 5      最近5个commit
+git log --since==2020-08-08   查看某个日期之后的commit
+git log --until==2020-08-08   查看某个日期之前的commit
+git log --grep="Python"    用正则表达式查找commit
+------------------------------------
+git diff  文件名     查看两次commit的区别,默认是working area and master repository
+after you run git add files, you can compare the difference like below:
+git diff --staged    查看 repository and staged area
+git diff --cached   效果同上
+===================修改文件名字或者移动到其他目录
+git mv a.txt b.txt
+git mv a.txt a/b/b.txt
+然后再执行 git commit -m "move file"
+==============================
+git commit -am "changes"     ------相当于两条命令  git add and git commit -m 通常用于commit all files,相当于跳过了stage阶段
+git show commit_id（前6到8个字符即可，不用全写） 可以查看每笔commit的变化 类似于git diff
+===========================================添加多行commit信息
+git commit -a
