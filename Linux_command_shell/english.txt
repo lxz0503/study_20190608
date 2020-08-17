@@ -9,6 +9,24 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+sort the jobs      sort them out   排序 整理
+schedule your job
+Jenkins has a much better visual effect than CLI  视觉效应 效果
+case sensitive     大小写敏感；敏感事件；注重大小写
+as the name implies  --- 正 如名字所指,
+We'll take a look at the console log.
+All your plugins are up to date   现代的；最新的
+Back to the menu on the left, you'll find
+In these cases, it's best to have Jenkins installed on a server that can be accessed over the network
+It can be available to multiple users.
+Once everything is set up appropriately
+that are most commonly used by
+Once the installation completes, you wll be prompted to unlock Jenkins  --- 提示
+scroll down the page until you see the reviews
+You'll need at least 256 megabytes of RAM and 1 gigabytes of disk space
+Plugins are a software package that can extend Jenkins' core functionality.
+start a build  or build a project
+We'll be referring to project and job in this chapter.    refer to 谈到 提到 涉及
 practice the techniques that we learned in last chapter
 For the new exercise files   练习文件
 they are colored green
