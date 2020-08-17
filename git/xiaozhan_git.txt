@@ -206,10 +206,10 @@ git revert HEAD~1      //撤销上上次的提交，注意：数字从0开始
 remove untracked files
 git clean -n     it is a indicator
 git clean -f     it will remove files
-=====================================================
+===================================================== not sure about below command==============
 比方说，你的代码已经提交到git库，leader审核的时候发现有个文件代码有点问题，于是让你修改
 
 git add a.txt
 git commit --amend -m "a.txt"
 git push
-zzzzz
+=====================================================
