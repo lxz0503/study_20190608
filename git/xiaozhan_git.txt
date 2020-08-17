@@ -172,4 +172,4 @@ git mv a.txt a/b/b.txt
 git commit -am "changes"     ------相当于两条命令  git add and git commit -m 通常用于commit all files,相当于跳过了stage阶段
 git show commit_id（前6到8个字符即可，不用全写） 可以查看每笔commit的变化 类似于git diff
 ===========================================添加多行commit信息
-git commit -a
+git commit ''
