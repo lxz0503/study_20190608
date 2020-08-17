@@ -171,5 +171,42 @@ git mv a.txt a/b/b.txt
 ==============================
 git commit -am "changes"     ------相当于两条命令  git add and git commit -m 通常用于commit all files,相当于跳过了stage阶段
 git show commit_id（前6到8个字符即可，不用全写） 可以查看每笔commit的变化 类似于git diff
-===========================================添加多行commit信息
-git commit ''
+===========================================添加多行commit信息, 在单引号里面输入多行commit信息
+git commit -m ‘
+ message1
+message2
+message
+        ’
+================================================
+git log --oneline   可以只显示第一行commit信息，还有7个字符的commit id
+
+本地工作区修改了文件，但是又不想提交了，可以用git checkout -- file name来回退
+如果执行了git add之后想回退,即unstage file，用 git reset HEAD filename
+=========================================================================
+获取老的版本的文件
+git checkout commit_id(7位字符即可)  --  filename   (--表示当前分支)
+
+============================================================================
+https://blog.csdn.net/asoar/article/details/84111841   ---- this is a reference link
+https://www.cnblogs.com/pansidong/p/8716226.html
+
+在 Git 开发中通常会控制主干分支的质量，但有时还是会把错误的代码合入到远程主干。
+虽然可以直接回滚远程分支， 但有时新的代码也已经合入，直接回滚后最近的提交都要重新操作。
+那么有没有只移除某些 Commit 的方式呢？可以一次 revert操作来完成
+
+链接：https://www.jianshu.com/p/5e7ee87241e4
+
+revert a commit -----
+如果一笔提交有问题，想直接恢复，找到这笔commit，git revert commit_id(7个字符)
+使用 git revert commit_id 可以撤销指定的提交，
+要撤销一串提交可以用 git revert commit1..commit2 语法。 注意这是一个前开后闭区间，即不包括 commit1，但包括 commit2
+git revert HEAD   //撤销最近一次提交
+git revert HEAD~1      //撤销上上次的提交，注意：数字从0开始
+=====================================
+remove untracked files
+git clean -n     it is a indicator
+git clean -f     it will remove files
+=====================================================
+git add a.txt
+git commit --amend -m "a.txt"
+git push
