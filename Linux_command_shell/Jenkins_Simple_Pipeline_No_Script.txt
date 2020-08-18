@@ -1,0 +1,26 @@
+http://128.224.179.60:8888/view/iPerf_Nighltly_rerun_group3/     this is a pipeline job
+
+The first job is   iPerf_rerun_group3 and its configuration is:
+Post-build Actions
+  Build other projects:   This means after this job it will run  rerun_nightly_smp
+
+     rerun_nightly_smp        ---- which meas this is the next job 
+	 
+	 
+Enter the second job: rerun_nightly_smp
+
+It includes real script
+
+
+Enter the third job: rerun_nightly_smp_1core
+
+check its configuration: Build Triggers
+
+Build after other projects are built
+
+Projects to watch: rerun_nightly_smp      ----This is the key configuration. By setting this, Jenkins knows what is the next job and when to run.
+
+
+The topology is like below:
+
+iPerf_rerun_group3-->rerun_nightly_smp-->rerun_nightly_smp_1core
