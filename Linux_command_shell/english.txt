@@ -9,6 +9,49 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+run tests often and ensure they are passing
+test components working together,
+find the tools that seem best suited for the job   ×îºÏÊÊµÄ
+There is no one solution that can solve all your team's needs
+it can be tough for a team to come to or reach consensus about selecting an automation framework
+ Going back to the test pyramid, it's good to have the most number of unit tests,
+ a medium number of integration tests,
+ and a small number of UI tests.
+Test automation will evolve over time Ëæ×ÅÊ±¼ä½ø»¯ ·¢Õ¹
+There  will always be room for maintenance and improvement   Î¬»¤ºÍ¸ÄÉÆµÄ¿Õ¼ä
+get involved in test automation   ²ÎÓë Éæ¼°
+on-going effort   ³ÖĞøµÄÅ¬Á¦
+when the whole team is invested in the test automation process, robust and well maintained test suite
+one size fits all -----ÆÕ±éµÄ£¬Ò»µ¶ÇĞ Í¨ÓÃµÄ
+To sum up: while there might not be a "one size fits all" solution to build automation,
+new tools being developed seem to come close.
+¸ÅÀ¨À´Ëµ£¬ËäÈ»¶Ô×Ô¶¯»¯¹¹½¨¶øÑÔÃ»ÓĞÒ»ÖÖ·½·¨½â¾öËùÓĞÎÊÌâµÄ½â¾ö·½°¸£¬µ«ÕıÔÚ½ø²½µÄĞÂ¹¤¾ßÈ´ÔÚÅ¬Á¦×öµ½Õâµã¡£
+This is a model I follow in most projects, but one size does not fit all
+This will help you address what is working well with automation test and what can be better
+I recommend getting together as a group every few months for retrospective.
+ will help ensure that all stakeholders are in agreement about the strategy for automation testing going forward
+what types of test to implement
+representatives of developers, testers and business stakeholders
+open and shutdown the browser, cpu usage goes up to 100%
+simulate user behaviour by doing Ä£ÄâÓÃ»§ĞĞÎª
+It takes time to start the server, send a request, wait for the response,
+and confirm that response is successful.
+the response should have the status of 200 indicating that the connection is successful
+integration test should cover cross module processes   ¿çÄ£¿éµÄ´¦ÀíÁ÷³Ì
+unit test focuses on individual small parts, integration test focuses on the whole.
+It helps to structure test in an organized way   Ê¹ĞÎ³ÉÌåÏµ£»ÏµÍ³°²ÅÅ£»¾«ĞÄ×éÖ¯
+Now I want to take a deeper dive into unit test
+consider the pros and cons  ----¿¼ÂÇÓÅÈ±µã, Àû±×
+They are extremely valuable because they test end-to-end workflows and user actions,like clicking and typing.
+test pyramid is visual representation
+there are many different types of tests that are either automated or manual.
+as your team does planning,development and releases.
+it is all circumstantial ---- °´Çé¿öÍÆ²âµÄ£»ÊÓÇé¿ö¶ø¶¨µÄ£»   conditional
+These tests measure data which can then be analyzed,quantified,and visualized in some way.
+usability testing   ¿ÉÓÃĞÔ²âÊÔ
+exploratory testing    Ì½Ë÷ĞÔ²âÊÔ
+quadrant   ÏóÏŞ  involve  °üº¬  Éæ¼°
+whether or not things are working as expected   ----ÊÇ·ñºÍÔ¤ÆÚÒ»Ñù
 sort the jobs      sort them out   ÅÅĞò ÕûÀí
 schedule your job
 Jenkins has a much better visual effect than CLI  ÊÓ¾õĞ§Ó¦ Ğ§¹û
@@ -21,7 +64,7 @@ In these cases, it's best to have Jenkins installed on a server that can be acce
 It can be available to multiple users.
 Once everything is set up appropriately
 that are most commonly used by
-Once the installation completes, you wll be prompted to unlock Jenkins  --- ÌáÊ¾
+Once the installation completes, you will be prompted to unlock Jenkins  --- ÌáÊ¾
 scroll down the page until you see the reviews
 You'll need at least 256 megabytes of RAM and 1 gigabytes of disk space
 Plugins are a software package that can extend Jenkins' core functionality.
@@ -30,7 +73,7 @@ We'll be referring to project and job in this chapter.    refer to Ì¸µ½ Ìáµ½ Éæ¼
 practice the techniques that we learned in last chapter
 For the new exercise files   Á·Ï°ÎÄ¼ş
 they are colored green
-It is tell us about changes that are in between those files
+It is telling us about changes that are in between those files
 --- minus minus
 +++ plus plus
 It tells us that--- what this is telling us is that
@@ -55,7 +98,7 @@ out of sync with
 Git does not work that way, it is a distributed version control system.   ·Ö²¼Ê½°æ±¾¿ØÖÆ
 override this function----¸²¸Ç  ÖØĞ´
 represent it in string form ----×Ö·û´®¸ñÊ½
-as always    Ò»Èç¼ÈÍù£¬ºÍÆ½Ê±Ò»Ñù
+as always    Ò»Èç¼ÈÍù£¬ºÍÆ½Ê±Ò»Ñù   sa usual
 Just working out with Bill five times a week. Same as always.
 ÎÒ¸ù±È¶ûÒ»Æğ½¡Éí£¬Ã¿ÖÜÎå´Î£¬Ò»Ö±Èç´Ë¡£
 keep your Python programming skills up to date by reading this website.
@@ -118,7 +161,8 @@ placeholder   --Õ¼Î»·û
 you should indent your code with four spaces instead of tab.
 be equivalent to    ÏàµÈµÄ£»Ïà¶ÔÓÚ£»µÈÍ¬ÓÚ
 concatenate 2 strings   Á¬½ÓÁ½¸ö×Ö·û´®
-It probably comes as no surprise to you that string formatting is one of the most common things that Python programmers have to do.
+It probably comes as no surprise to you that string formatting
+is one of the most common things that Python programmers have to do.
 
 The ideal candidate must have extensive and advanced knowledge on web scraping and data mining.
 ÀíÏëµÄºòÑ¡ÈË±ØĞëÓµÓĞ¹ã·º¶øÏÈ½øµÄÍøÒ³×¥È¡ºÍÊı¾İÍÚ¾òµÄÖªÊ¶¡£
@@ -131,7 +175,7 @@ The ideal candidate must have extensive and advanced knowledge on web scraping a
  Python is an easy-to-learn programming language that allows organizations to script custom automation and reap the time-savings
  how to automate your own repetitive tasks using Python    ÖØ¸´¹¤×÷
 
-in-depth   ³¹µ×µÄ  ÉîÈëÏê¾¡µÄ
+in-depth workflow ³¹µ×µÄ  ÉîÈëÏê¾¡µÄ
 They go very in-depth
 API developers like to inspect who is calling their APIs
 paired with -×éºÏ
@@ -174,7 +218,7 @@ There were some doubts about whether Drake would be an effective Union president
 Then, he made a racial remark in a speech at an assembly.
 At first, he ignored critics.
 Later, he tried to make a joke of it before deciding to offer a public apology.
-In the end, his attempts at damage control weren't successful.
+In the end, his attempts at     damage control     weren't successful.
 He lost out on the promotion.
 Õâ¶Î»°ÊÇËµ£º´ó¼Ò¶ÔÓÚµÂÀ×¿ËÄÜ²»ÄÜ³ÉÎªÒ»¸öºÃµÄ¹¤»áÖ÷Ï¯ºÜ»³ÒÉ¡£
 ¾ÍÔÚÕâÊ±ºò£¬ËûÔÚÒ»´Î¼¯»á·¢ÑÔÊ±£¬ËµÁËÒ»¾ä´øÓĞÖÖ×åÆçÊÓÉ«²ÊµÄ»°¡£
@@ -254,7 +298,7 @@ my friend shouldn't brush off the poor ratings of that car.
 I have been telling my husband to see a dentist for his bad teeth, but he keeps brushing me off.
 ÎÒÈÃÎÒÀÏ¹«¸Ï½ôÈ¥¿´¿´ÄÇ¿ÅÀÃÑÀ£¬¿ÉËûÈ´°ÑÎÒµÄ»°µ±¶ú±ß·ç¡£
 
-Big fish in a small pondĞ¡³ØÌÁÀïµÄ´óÓã£¬ ÆäÊµ¾ÍÊÇĞÎÈİĞ¡µØ·½µÄ´óÈËÎï£¬Ğ¡È¦×ÓÀïµÄ½Ü³öÕß
+Big fish in a small pond    Ğ¡³ØÌÁÀïµÄ´óÓã£¬ ÆäÊµ¾ÍÊÇĞÎÈİĞ¡µØ·½µÄ´óÈËÎï£¬Ğ¡È¦×ÓÀïµÄ½Ü³öÕß
 he has no interest in living in large, competitive cities. He'd rather be a big fish in a small pond.
 Ëû²»Ô¸Òâ×¡ÔÚ¾ºÕù¼¤ÁÒµÄ´ó³ÇÊĞ£¬ËûÄşµ±¼¦Í·£¬²»×÷·ïÎ²¡£
 Of the 60 students in her graduating class, Tania ranked number one. She received many honors,
