@@ -9,6 +9,30 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+To continue to advance your skills with test automation, spend more time learning about and writing automated tests.
+A good sign of this is having higher productivity and being able to spend less time on each release
+ because more of the checks are automated.
+Take note of which bugs were discovered from test automation
+A goal of automation is to help catch bugs quicker and ideally before a release.
+it is beneficial to discuss what problem automation tends to solve
+offer nice report to visualize coverage
+to ensure a more robust test suite
+ Parallelizing tests allows many tests to be run concurrently, which dramatically reduces the total time it takes to run.
+address the failed tests        mitigate
+run tests in a dedicated environment that is not interfering with other people
+select what to automate      suit your team needs
+create a scale    创建一个尺度  范围
+I will sum them to get the total
+how easy it will be to write the test script
+add an item to cart
+what will the effect be to customers?   the probability of use
+how often will this feature be used by customers?
+clear out cart
+These few weeks of rest and relaxing has allowed me to reset my brain and allow me clear out my head.
+这几个礼拜的休息与放松让我受益良多，让我可以清空我的脑袋，然后重新开机
+start over  重新开始；重新来过；从头开始
+sticker   背后有粘胶的标签；商标贴纸；不干胶
+sit down with your teammates and write down as many scenarios as you can think of
 run tests often and ensure they are passing
 test components working together,
 find the tools that seem best suited for the job   最合适的
