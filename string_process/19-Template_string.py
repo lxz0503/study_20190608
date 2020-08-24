@@ -1,4 +1,4 @@
-""" This is to demonstrate template string function"""
+""" This is to demonstrate template string function, mainly used for string formatting"""
 # !/usr/bin/env python3
 # coding=utf-8
 
@@ -22,7 +22,6 @@ def main():
 
     print(bool(set()))
     print(bool(range(0)))
-
 
 
 if __name__ == '__main__':
