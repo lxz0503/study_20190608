@@ -254,4 +254,12 @@ index file在 git 里面一般指的是 .git/index 这个文件。
 ======================================================
 git config --global credential.helper store
 
+==========================================
+[xli3@pek-vx-nwk1 vxworks]$ git branch -vv        - check correlation between local and remote branch
+* vx7-integration ddb90333b66 [origin/vx7-integration] Merge commit 'abe2efb022990abf395bba4c9579b8bb684f333d' into HEAD
+  vx7-release     3af6cbebebd [origin/vx7-release: behind 3051] Merge pull request #5908 in VX7/vxworks from release-docs-update to vx7-release
 
+
+git branch -u origin/master       -- set up correaltion between local and remote branch
+
+git pull -r                       ----rebase local branch
