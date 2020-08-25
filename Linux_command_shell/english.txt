@@ -9,6 +9,35 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+mock out  模拟验证行为
+This is critical to enable me to mock out the exchange rate so the tests can run without talking to the real exchange-rate server.
+因此，很有必要为汇率创建mock，这样在运行测试时就不需要与真正的汇率服务器通信。
+
+create a test double to take place of the real server
+
+test doubles   测试替身   stubs or mocks
+switch over 切换；转接；切换到另一边
+switch over to the standby database to continue their work.
+It's time to shift gear 换档
+    Web变速；调档
+underscore    下划线
+follow the instructions
+hands-on experience  实际操作的
+how it works and how we can do it in real life
+dig into 深入钻研；探究
+old enough to be served alcohol
+so let's summarize this
+figure out   估计；解决；了解；〈口〉确定
+Web想出；算出；计算出
+ by matching up the picture on your ID
+
+authentication(验证；身份验证) and authorization(授权；批准)
+So in security you hear these two terms, and it's sometimes hard to distinguish exactly what they are.
+But it's good for us to understand the difference between them.
+So in essence, authentication is about verifying who you are, and authorization is about verifying what you can do.
+
+run into some difficulties
+physical development  生理发展；身体发展；身体发育
 To continue to advance your skills with test automation, spend more time learning about and writing automated tests.
 A good sign of this is having higher productivity and being able to spend less time on each release
  because more of the checks are automated.
