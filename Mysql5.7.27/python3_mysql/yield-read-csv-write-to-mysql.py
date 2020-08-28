@@ -9,17 +9,30 @@ import time
 from python3_mysql.operations import *
 import csv
 from collections import namedtuple
+import configparser
 
 
 class DatabaseInit(object):
-    def __init__(self, host, dbname, username, password, charset):
-        self.host = host
-        self.dbname = dbname
-        self.username = username
-        self.password = password
-        self.charset = charset
+    def __init__(self, sql_conf):
+        # self.host = host
+        # self.dbname = dbname
+        # self.username = username
+        # self.password = password
+        self.charset = 'utf8'
+        self.host, self.port, self.db_name, self.user, self.password = self.__get_sql_config()
+        self.sql_conf = sql_conf
         self.conn = None
         self.cur = None
+
+    def __get_sql_config(self):
+        cf = configparser.ConfigParser()
+        cf.read(self.sql_conf)
+        host = cf.get("mysqlconf", "host")
+        port = cf.get("mysqlconf", "port")
+        db = cf.get("mysqlconf", "db_name")
+        user = cf.get("mysqlconf", "user")
+        password = cf.get("mysqlconf", "password")
+        return host, port, db, user, password
 
     def connect_db(self):                # this is to connect database system
         try:
@@ -63,9 +76,9 @@ class DatabaseInit(object):
             headings = next(f_csv)    # use iterator
             Row = namedtuple('Row', headings)    # this is a trick??? xiaozhan
             for r in f_csv:
-                yield Row(*r)
+                yield Row(*r)     # r is a list
 
-    def insert_data(self, insert_data, args):
+    def insert(self, insert_data, args):
         try:
             self.connect_db()
             self.cur.execute('use test_result')
@@ -122,18 +135,15 @@ class DatabaseInit(object):
             self.conn.commit()    # do not forget to commit after modification
             self.disconnect_db()
 
+
 if __name__ == '__main__':
-    db = DatabaseInit(host='localhost',
-                      dbname='test_result',
-                      username='root',
-                      password='123win',
-                      charset='utf8')      # 家里的win7只能用gbk编码,utf8 is for company
+    db = DatabaseInit('db_config.ini')      # 家里的win7只能用gbk编码,utf8 is for company
     db.connect_db()
     db.create()
     # xiaozhan debug, auto generate id.
     for i, t in enumerate(db.get_data('data.csv'), 1):      # the table index always starts from 1
         args = [(i, t.name, t.status, t.arch, t.sprint)]      # this is to generate parameter for excecutemany
-        db.insert_data(insert_data, args)
+        db.insert(insert_data, args)    # insert_data is at operations.py
     # xiaozhan debug end
     # this can put failed cases into a dictionary
     res = db.search_data()

@@ -9,8 +9,76 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+limit yourself to 局限于
+If you choose to drink alcohol, limit yourself to no more than one or two drinks a day.
+如果你选择喝酒，请限制自己每天不得多于一到两杯。
+If the total number of open HTTP connections reaches the connection limit on an HTTP server,
+you are likely to see timed-out connections.
+如果一个HTTP服务器上打开的HTTP连接数量达到了连接上限，你很可能看到连接断开。
+so don't limit yourself to thinking that these are the only things that you can do with API
+
+come down to
+降至；归结起来；变为；归结为
+可归结为；到达；归根结底
+
+Well, as I said at the beginning, it really does come down to a matter of preference.
+嗯，正如我在开始时说，它确实可以归结为一个见仁见智的问题。
+
+mock out  模拟验证行为
+This is critical to enable me to mock out the exchange rate so the tests can run without talking to the real exchange-rate server.
+因此，很有必要为汇率创建mock，这样在运行测试时就不需要与真正的汇率服务器通信。
+
+create a test double to take place of the real server
+
+test doubles   测试替身   stubs or mocks
+switch over 切换；转接；切换到另一边
+switch over to the standby database to continue their work.
+It's time to shift gear 换档
+    Web变速；调档
+underscore    下划线
+follow the instructions
+hands-on experience  实际操作的
+how it works and how we can do it in real life
+dig into 深入钻研；探究
+old enough to be served alcohol
+so let's summarize this
+figure out   估计；解决；了解；〈口〉确定
+Web想出；算出；计算出
+ by matching up the picture on your ID
+
+authentication(验证；身份验证) and authorization(授权；批准)
+So in security you hear these two terms, and it's sometimes hard to distinguish exactly what they are.
+But it's good for us to understand the difference between them.
+So in essence, authentication is about verifying who you are, and authorization is about verifying what you can do.
+
+run into some difficulties
+physical development  生理发展；身体发展；身体发育
+To continue to advance your skills with test automation, spend more time learning about and writing automated tests.
+A good sign of this is having higher productivity and being able to spend less time on each release
+ because more of the checks are automated.
+Take note of which bugs were discovered from test automation
+A goal of automation is to help catch bugs quicker and ideally before a release.
+it is beneficial to discuss what problem automation tends to solve
+offer nice report to visualize coverage
+to ensure a more robust test suite
+ Parallelizing tests allows many tests to be run concurrently, which dramatically reduces the total time it takes to run.
+address the failed tests        mitigate
+run tests in a dedicated environment that is not interfering with other people
+select what to automate      suit your team needs
+create a scale    创建一个尺度  范围
+I will sum them to get the total
+how easy it will be to write the test script
+add an item to cart
+what will the effect be to customers?   the probability of use
+how often will this feature be used by customers?
+clear out cart
+These few weeks of rest and relaxing has allowed me to clear out my head and reset my brain.
+这几个礼拜的休息与放松让我受益良多，让我可以清空我的脑袋，然后重新开机
+start over  重新开始；重新来过；从头开始
+sticker   背后有粘胶的标签；商标贴纸；不干胶
+sit down with your teammates and write down as many scenarios as you can think of
 run tests often and ensure they are passing
-test components working together,
+test components (which are) working together,
 find the tools that seem best suited for the job   最合适的
 There is no one solution that can solve all your team's needs
 it can be tough for a team to come to or reach consensus about selecting an automation framework
@@ -49,7 +117,7 @@ as your team does planning,development and releases.
 it is all circumstantial ---- 按情况推测的；视情况而定的；   conditional
 These tests measure data which can then be analyzed,quantified,and visualized in some way.
 usability testing   可用性测试
-exploratory testing    探索性测试
+exploratory testing    探索性测试     ?k'spl?r?.t?ri
 quadrant   象限  involve  包含  涉及
 whether or not things are working as expected   ----是否和预期一样
 sort the jobs      sort them out   排序 整理
@@ -2092,7 +2160,7 @@ grounded----接地；接地的；被罚不准
 Once the fleet is grounded, America will for a while have no means of its own to deliver men and women to any part of space.
 而一旦航天飞机停飞，美国在一段时间内就没有其他途径将人带往太空。
 
-I found it hard , it was hard to find, oh well, whatever, nevermind.
+I found it hard, it was hard to find, oh well, whatever, nevermind.
 我发现这很难，非常之难，不过，无所谓了。
 
 You are driving on the wrong side.
@@ -2123,8 +2191,6 @@ But meanwhile you should not allow anyone else to know about this transaction as
 但同时你不应该让别人知道这个交易，我已故的父亲没有透露给任何人。
 
 obligation
-US [???bl????e??(?)n]
-UK [??bl????e??(?)n]
 n.义务；责任；职责；（已承诺的或法律等规定的）义务
 Web债务；恩惠；契约
 
@@ -2132,8 +2198,7 @@ Gifts can create an expectation that something will be provided in return
 put personal interests in conflict with professional obligations
 
 misrepresent
-US [?m?srepr??zent]
-UK [?m?srepr??zent]
+
 v.误传；不实报道；歪曲
 Web曲解；错报；篡改
 Don't say anything that would misrepresent your message if it was taken out of context.
@@ -2143,8 +2208,7 @@ Too many things changed on the rules, on the technical side, political side.
 那么多的事情改变，在规则上，在技术范围，在政治范围。
 
 wear and tear
-US [?wer ?n ?ter]
-UK [?we?r ?n ?te?(r)]
+
 na.消耗；衰竭；伐采
 Web磨损；损耗；磨耗及损伤
 Conclusion: The set has been used for a very long time without any proper maintenance, which has resulted in a lot of wear and tear.
@@ -2157,8 +2221,7 @@ How exactly to do this is, of course, the subject of highly controversial and po
 究竟如何做到这一点，当然，高度争议性和充满政治意味的辩论受到这些天。
 
 distasteful
-US [d?s?te?stf?l]
-UK [d?s?te?stf(?)l]
+
 adj.使人不愉快的；令人反感的；讨厌的
 Web不合口味的；味道不佳的；令人讨厌的
 You know, distasteful food, plainly-looking staff, noisy environment, overheated or overcooled rooms, all this will drive customers away.
@@ -2171,9 +2234,8 @@ otherwise disparaging, offensive, illegal, or harassing comments and behavior ca
 It’s important to know and follow the company’s social media policies
 and be mindful of how your online behavior reflects on you and your employer.
 
-disparage
-US [d??sper?d?]
-UK [d??sp?r?d?]
+disparage   [ri]
+
 v.贬低；轻视
 Web蔑视；贬损；轻蔑
 Now I do not for a moment mean to disparage business. My whole point I is that it was not for me.
@@ -2241,8 +2303,7 @@ It has been a basic law that the highly developed and mature logistics and comme
 一个已为国际经验所证明的基本规律是，几乎所有现代化城市都表现在物流业和商业高度发达、成熟。
 
 outsource
-US ['a?ts?:s]
-UK ['a?ts?:s]
+
 v.外包；交外办理；外购
 Web资源外包；业务外包；人力外包
 
@@ -2250,8 +2311,7 @@ Web资源外包；业务外包；人力外包
 “很难将我的工作外包，因为其中包含了太多的专业知识和商业术语，”他表示。
 
 broad-based
-US
-UK
+
 adj.有广泛基础的；无限制的
 Web无限的；基础深厚的；广泛的
 In his weekly radio address, the president says broad-based tax relief should be big enough to make a difference.
@@ -2263,8 +2323,7 @@ In his weekly radio address, the president says broad-based tax relief should be
 
 enter  dreamland
 dreamland
-US [?drim?l?nd]
-UK [?dri?m?l?nd]
+
 n.梦境；幻想世界；理想世界
 Web梦乡；梦想之地；幻境
 
@@ -2382,9 +2441,9 @@ However, I really fear to meet bad weather. If it rains, the only thing I can do
 joneses
 W地位相等者
 
-攀比
+攀比    Keep up with the Joneses 与朋友和邻居在物质和社会成就方面）攀比，比富有，比排场，比阔气
 compare unrealistically
-Comparison; Keeping up with the Joneses; Comparisons
+Comparison; Keeping up with the Joneses(nziz); Comparisons
 oh, please. Stop trying to keep up with the Joneses. You know you can't afford it.
 摆脱，不要跟别人攀比了，你知道你买不起的。
 
@@ -2392,8 +2451,6 @@ Protecting historic blocks means protecting the memory for history, the features
 保护历史街区就是保护历史的记忆，就是保护城市的特色，就是保护城市的文脉，就是保护旅游资源。
 
 expedient
-US [?k?spidi?nt]
-UK [?k?spi?di?nt]
 adj.权宜之计；得当；可取；合宜
 n.权宜之计；应急办法
 Web有利的；方便的；权宜的
@@ -2408,8 +2465,7 @@ It's never too late to study something, smile to the life, work hard and work sm
 学习永远都不晚，微笑面对生活，努力而快乐地工作。
 
 corrupt
-US [k??r?pt]
-UK [k?'r?pt]
+
 v.损坏；破坏；使腐化；使堕落
 adj.贪污的；受贿的；腐败的；营私舞弊的
 Web败坏；贿赂；堕落的
@@ -2421,8 +2477,6 @@ in the United States such as Las Vegas, the Grand Canyon, Niagara Falls, and Dis
 In the books, many of these expenses were falsely recorded as travel to “training sessions” or “factory inspections.”
 
 contravene
-US [?k??ntr??vin]
-UK [?k?ntr??vi?n]
 v.违犯
 Web违反；抵触；违背
 
@@ -2430,8 +2484,7 @@ Women are able to retain all property they owned prior to marriage in the case o
 在离婚案件中，女性可以保留她们婚前所拥有的所有财产。然而，这项规定并不适用于男性。
 
 token
-US [?to?k?n]
-UK [?t??k?n]
+
 n.表示；（用以启动某些机器或用作支付方式的）代币；代金券；赠券
 adj.装样子的；装点门面的；敷衍的；象征性的
 Web令牌；标记；记号
@@ -2450,8 +2503,7 @@ seems designed to curry favor with the foreign government officials to garner fu
 The Act prohibits use of charitable contributions to funnel bribes to government officials
 
 pharmaceutical
-US [?f??rm??sut?k(?)l]
-UK [?f???(r)m??sju?t?k(?)l]
+
 adj.制药的；配药的；卖药的
 n.药物
 Web药品；药物的；药学的
@@ -2460,15 +2512,13 @@ on no condition
 无论如何都不；决不
 
 affiliate
-US [??f?li?t]
-UK [?'f?li?t]
+
 n.分支机构；分公司；附属机构；分会
 v.使隶属；加入；与…有关；为…工作
 Web使隶属于；子公司；联合
 
 discretion
-US [d??skre?(?)n]
-UK [d?'skre?(?)n]
+
 n.谨慎；慎重；审慎；自行决定的自由
 Web判断力；自由裁量权；小心
 I told him I wanted discretion, that I didn't want to do anything risky, and that it would be a one-time thing.
@@ -2483,8 +2533,6 @@ Management authorizes the payment, the agent makes it, the permit is issued,
 and the mining company constructs its new road through the wetlands.
 
 expedite
-US [?eksp??da?t]
-UK [?eksp?da?t]
 v.加快；加速
 adj.没有阻碍的；迅速的；便当的
 Web促进；使加速；发送
@@ -2499,8 +2547,6 @@ Web即时贴；粘滞便笺；便签
 Violations of the FCPA may result in significant fines or imprisonment.
 
 carton
-US [?k??rt(?)n]
-UK [?k???(r)t(?)n]
 n.（尤指装食品或液体的）硬纸盒；硬纸盒（或塑料盒）所装物品
 Web纸箱；纸板箱；纸板盒
 
@@ -2537,59 +2583,59 @@ n.（机场的）登机手续办理处；（机场的）办理登机手续
 Web签到；打卡；报到
 
 
--------------2019.11.6  IELTS writing--
+-------------2019.11.6  IELTS writing--     xiaozhan Li, score 7
 whether child should use cell phone, some advocate and some oppose. discuss both and give your opinion.
 
-Nowadays,cell phone is very popular in people's daily lives.
+Nowadays,cell phone is commonly used in people's daily lives.
 It seems that people even can not live without cell phones.
-Some people hold the view that children should also own their cell phones.Others,however,
-hold the opposite point. This essay will examine this issue and come to a conclusion.
+Some people hold the view that children should also have their own cell phones.Others,however,
+take the opposite point. This essay will examine this issue and come to a conclusion.
 
-Admittedly,smartphones can bring a great deal of benefits to people,including children.
+Admittedly,smartphones can bring a great number of benefits to people,including children.
 They can communicate effectively and efficiently with their parents,friends and teachers.
 This is particularly necessary when considering into the fact that now teachers tend to assign tasks to students through some Apps,
-such as Wechat or Skype. If children do not have smartphones, they may not receive the assignments in time and affect their study.
-In addition,the functions of cell phone are not limited to making calls,sending text messages or listening to music.
-They often support the new feature of locating,which is very helpful for children's safety.For example,if a child is lost,
-the parents,police officers and teachers are able to know where the child is and can rush to the place.
+such as WeChat or Skype. If children do not have smartphones, no wonder they may not receive the assignments in time and could affect their study.
+In addition,the functionalities of cell phone are not limited to making calls,sending text messages or listening to music.
+They often support the new feature of locating,which is very helpful to children's safety.For example,if a child is lost,
+his or her parents,police officers and teachers are able to quickly pinpoint where the child is and can rush to the place.
 
 Clearly smartphones can bring many conveniences to children's lives and study,but it is important to figure out the demerits of using cell phones.
 To begin with,children can easily use smartphones to access to the Internet which is awash with violent,bloody and obscene videos and images.
-Children are too immature to distinguish right from wrong,so they tend to copy what they see on the cell phones,which may lead them to go astray.
-In addition,some children often spend too much time playing mobile games on their smartphones,which can easily cause eyestrain and headache and do harm to
-their physical development.What is worse,according to the statistics,children's free time is occupied mostly by smartphones
+Children are too immature to distinguish right from wrong,so they are more likely to copy what they see on the cell phones,which may lead them to go astray.
+In addition,some children often spend too much time playing mobile games with their smartphones,which can easily cause eyestrain and headache and do harm to
+their physical development.What is worse,according to the latest statistics,children's free time has been occupied mostly by smartphones
 and this will inevitably affect the family bonds,because they are more likely to communicate with family members through cell phones
 rather than face-to-face communication.
 
-To sum up,from what has been discussed above,we can safely draw the conclusion that cell phone is very helpful to children,but we still can not
-overlook the disadvantages it would bring.As a result,my opinion is that children can use smartphones while at the same time parents and teachers must
+To sum up,from what has been discussed above,we can safely draw a conclusion that cell phone is really helpful to children,but we still can not
+overlook the disadvantages it would bring.As a result,my opinion is that children can surely use smartphones while at the same time parents and teachers must
 give strict control and proper instructions to guide them to use cell phones in the right way.
 
-===========================you, as a tenant,write a letter to the landlord about the water issue.
+===========================you, as a tenant,write a letter to the landlord about the water issue.==== xiaozhan Li
 Dear Jack,
 
 I am writing this letter to inform you of the water issue in your apartment.
 
-I have been living here for more than one month and everything is perfect.But since last Friday,something unexpected had happened.
+I have been living here for more than one month and everything is perfect.But something unexpected had happened since last Friday morning.
 I switched on the faucet just as usual and wanted to wash my socks.To my surprise,the color of the water was yellow and it was smelly.
-I was a bit scared.I thought there might be something wrong with the water system and it would be ok later.So I went to work and ignored it.
-When I returned home from work,I found the water still did not come back to normal.
+I was a bit scared.I thought there might be something wrong with the water system and it would be okay later.So I went to work and ignored it.
+When I returned home from work,I found the water quality still did not come back to normal.
 
 I quickly confirmed with my neighbors and they said their water system were normal.I also made a call to the water company and they replied that there was nothing
-wrong with the water source.So, I had to check the water system in your kitchen and finally found an advanced water purified system just beside the water source.
+wrong with the water source.So, I had to check the water facility in your kitchen and finally found an sophisticated water purified system just beside the water source.
 Maybe there was something wrong with the water purifier and it spoiled the water.
 
-As you may know,I have to make meals and wash clothes every day,which both need to use water.But now I have to buy mineral water and what is worse,
-I have not washed my dirty clothes for nearly three days.This water issue really causes too much trouble to my life.Based on our contract,you should cover
-the repair.
+As you may know,I have to make meals and wash clothes every day,which both need a lot of water.But now I have to buy mineral water and what is worse,
+I have not washed my dirty clothes for nearly three days.This water issue really causes too much trouble to my life.Based on our contract,the landlord should have the
+liability to repair it.
 
 So, would you please come over to check the water system as soon as possible?
 My wife and I will be really appreciated for your help and kindness.
-If you can come,please tell me the specific time and I will wait at home.
+If you can come,please tell me the specific time and I will wait for you at home.
 
 I really look forward to hearing from you soon.
 
-Your sincerely,
+Yours sincerely,
 Sam
 ---------------------------------------------------------------------------
 
