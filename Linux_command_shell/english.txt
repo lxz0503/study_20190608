@@ -423,7 +423,7 @@ Unlike something big and expensive, a cupcake is a small treat anyone can afford
 chain reaction-----连锁反应
 
 a case in point-----典型的例子
-A case in point was her belief in living here and now   -----活在当下
+A case in point was her belief in     living here and now   -----活在当下
 
 People assume that the super wealthy live extravagant lifestyles.
 But you can find exceptions. My cousin is a case in point.
@@ -528,6 +528,9 @@ The problem isn't that Microsoft isn't firing on all cylinders,
 it's that this performance isn't reflected in the stock's price.
 问题是尽管微软火力全开，但是其优异的表现并没有反映在股票价值上。
 
+He is a real home bird. He seldom takes part in the social events.
+他真的很宅，很少出去参加社交流动。
+home bird   宅人；喜欢呆在家里的人；宅男宅女
 
 cabin fever-----幽闭症
 He is such a home bird that I wonder if he will suffer from cabin fever.

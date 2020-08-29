@@ -2,22 +2,24 @@
 # 一个好的方法是利用一个固定长度的缓存区去不断的读取文件的内容，通过yield方法可以很容易的实现。
 import csv
 
+
 def read_file(fpath):
     block_size = 1024
     with open(fpath, 'rb') as f:
         while True:
-            block = f.read(block_size)  # 每次读取1024字节
+            block = f.read(block_size)  # 每次读取1024字节, or you can use f.readline() to read just one line each time
             if block:
                 yield block
             else:
                 return
 
+
 def read_csv(fpath):
     with open(fpath) as f:
         f_csv = csv.reader(f)
-        headings = next(f_csv)
-        for r in f_csv:
-            yield r
+        headings = next(f_csv)   # there is a heading in this file,so you need to run next() firstly
+        for line in f_csv:
+            yield line
 
 
 if __name__ == '__main__':
