@@ -663,6 +663,9 @@ total 0
 -rw-rw-r-- 1 wrsadmin windriver 0 Aug 20 14:05 a.txt
 windriver@PEK-QCAO1-D2:~/test_rsync$
 
+if you want to modify whole directory, you can use -R
+[xli3@pek-vx-nightly1 buildarea2]$ sudo chown -R xli3:users mw
+
 chgrp可以更改权限组
 sudo chgrp wrsadmin a.txt
 实际测试如下:
