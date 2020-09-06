@@ -3,6 +3,7 @@ https://app.member.virginpulse.com/#/rewards/earn
 
 ===================================================================
 lixiaozhan_615@me.com
+Ministry of Testing ----  网易邮箱，apple秘
 当下面的字母组合的时候，注意发音，weak的不发音，而只发重读的字母
 Strong: S  N  L
 Weak:   D  T  th
@@ -10,6 +11,119 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+a burn  烧伤 烫伤
+the heat of the surface even can burn her sole.
+burn your bridges
+不留退路；破釜沉舟；背水而战
+burn a hole in your pocket
+一有（钱）就想花；花钱没有节制
+burn the midnight oil
+挑灯夜战；熬夜
+
+After bugs have been prioritized, communicate details about the status of bugs with the team
+high severity   严重性；严重度；严重程度
+downtime   宕机  停工  不可数名词
+Unexpected bursts of traffic are no longer an issue with cloud computing, and downtime is all but eliminated.
+因为云计算，通信的突发意外也不再是问题，当机时间也几乎消除。
+
+emulate  simulate   仿真  模拟
+what input I provide to the box and what output I receive
+navigate through this website   浏览
+manipulate browser  操纵
+from multiple angles, test coverage
+conceal   隐藏；隐瞒；掩盖
+Web隐蔽；把…隐藏起来；掩饰
+He tried to conceal the bad news from his wife , lest she worried .
+他尽量对他的妻子隐瞒这个坏消息，以免她担心。
+First, there is black box testing,
+which means that the box is completely concealed and it is not possible to see inside of it.
+
+
+abide by 遵守；信守；遵循  abide by rules
+sign off  签字保证  签署
+
+Listing 4. Testing an edge case: What if someone presses the button without typing in a word?
+清单4.测试一个极端例子：如果有人没有输入单词就按下了按钮该怎么办？
+
+Those five sections in the test strategy do a good job at setting expectations for what a QA will provide,
+what resources are needed, how testing will be carried out, and which test will be performed
+
+test account
+
+on-demand    按需随选；随需应变；点播
+run against, run across
+An example of test environments is that manual testing will be done in environments created on-demand.
+Automation testing is run against a dedicated machine and across Mac and Windows using Chrome
+
+ one-on-one 单挑；一对一教学；一对一会面
+ We have had to discipline ourselves to set aside a few hours every weekday for some one-on-one home schooling.
+我们曾不得不要求自己每天留出几个小时给孩子一对一家庭辅导。
+
+set expectations and check in on them regularly.
+
+candid          ----- try to give candid feedback
+坦率的；坦诚的；直言不讳的；（照片）偷拍的
+Web正直的；坦白的；公正的
+align the feedback with how an individual is meeting up to their goals.
+
+solidify   巩固 加强  solidify our position
+This usually happens with the help and collaboration of developers.
+
+Traditionally, a QA has only gotten involved during the testing phase,
+but it's proven really useful for a tester to get involved as early and as often as they can
+to ensure quality throughout the entire development process.
+
+
+excel  擅长；善于；突出；胜过平时  excel at or excel in sth
+A part of me thinks that for a child to really excel at a sport they'd have to give up some part of their childhood.
+我一方面认为，要孩子真正在某项运动上表现超群，他们就必须放弃部分童年生活。
+
+programming and scripting skills    编程和脚本技能
+release or delivery manager
+
+aptitude     technical aptitude
+天赋；天资；天生的才能
+Web能力；资质；能力倾向
+Genius is nothing but a great aptitude for patience.
+天才无非是一个极大的耐性。
+
+
+log in  登陆
+
+It is possible that through authentication,
+a user can log in to a system but, through authorization, not be allowed to do anything.
+
+
+hone in on sth    磨练sth
+Start to hone in on the right price by running focus groups to get a sense of what customers are willing to pay.
+要找出合适的价格，开始要关注焦点人群，对顾客愿意付多少有一个认识。
+
+test functionality on both devices
+testing time, testing scope, testing matrices, testing outcomes
+prioritize
+给…排出优先级；优先处理
+Web优先考虑；重点发展；优先化
+
+Just as you prioritize the features that you support in your application, you should also prioritize the infrastructure.
+正如你需要对你的应用程序所支持的特性分优先级一样，你也应该对基础架构进行优先级的划分。
+
+depending on the browsers with highest usage or business revenue
+use case   --- test case
+mind map   -- 思维导图 can show connections between different components
+
+correlate with
+Profession and education level, however, does not always correlate with household income.
+然而，专业与教育水平并不总是与家庭收入相关。
+nail down    敲定；明确；确定
+击中要害,一针见血,非常正确
+把…确定下来
+He added: "It is absolutely clear that Copenhagen must deliver a strong political agreement
+and nail down the essentials. "
+他补充道：“现在明确无误的是，哥本哈根会议必须达成一份强有力的政治协议，并且把要点敲定下来。”
+Always nail down the specifics of a deal in advance -- even with your friends and relatives.
+永远记住，工作前明确的每一个你需要了解的细节??即使是为你的朋友或者亲戚。
+
+flag issues  ---标记   warning flag  警告标记
 stay relevant to users or customers
 under review and reform  ----处于审阅 改革中
 a movie nominated for an award
