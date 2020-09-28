@@ -260,6 +260,8 @@ git config --global credential.helper store
   vx7-release     3af6cbebebd [origin/vx7-release: behind 3051] Merge pull request #5908 in VX7/vxworks from release-docs-update to vx7-release
 
 
-git branch -u origin/master       -- set up correaltion between local and remote branch
+git branch -u origin/master       -- set up correlation between local and remote branch
 
 git pull -r                       ----rebase local branch
+=====================================
+hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7$ git show 7f3e529        只需要跟7个字符就可以查看commit的信息

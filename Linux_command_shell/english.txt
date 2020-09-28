@@ -6,6 +6,8 @@ https://www.coursera.org/?isNewUser=true
 Wind1234!  Wind123$
 lixiaozhan_615@me.com
 Ministry of Testing ----  网易邮箱，apple秘
+http://www.kaosee.cn/plus/list.php?tid=58   笔译口译平台
+
 当下面的字母组合的时候，注意发音，weak的不发音，而只发重读的字母
 Strong: S  N  L
 Weak:   D  T  th
@@ -13,18 +15,31 @@ counting----couning
 twentieth----twenieth
 lightning
 =========================================================================
+impressionable   易受影响的  敏感的；容易受感动的；可塑的
+shut out   排除；把…排斥在外  shut out the noise of commercial messages and become less materialistic
+in the minds of their young children
+brainwash   给（某人）洗脑；强制说服    (n) 洗脑
+The aim of the repetition of commercials on television is nothing but to brainwash the consumers into compulsive consumption.
+电视上重复出现商业广告的目的仅仅是为了给消费者洗脑，从而促进消费。
+
+commercial messages  电视广播广告
+I just want to keep my coding skills sharp.
 a burn  烧伤 烫伤
 the heat of the surface even can burn her sole.
 burn your bridges
 不留退路；破釜沉舟；背水而战
+
 burn a hole in your pocket
 一有（钱）就想花；花钱没有节制
+
 burn the midnight oil
 挑灯夜战；熬夜
 
 After bugs have been prioritized, communicate details about the status of bugs with the team
 high severity   严重性；严重度；严重程度
 downtime   宕机  停工  不可数名词
+
+all but 差一点；除了…都；差不多
 Unexpected bursts of traffic are no longer an issue with cloud computing, and downtime is all but eliminated.
 因为云计算，通信的突发意外也不再是问题，当机时间也几乎消除。
 
@@ -57,7 +72,7 @@ run against, run across
 An example of test environments is that manual testing will be done in environments created on-demand.
 Automation testing is run against a dedicated machine and across Mac and Windows using Chrome
 
- one-on-one 单挑；一对一教学；一对一会面
+ one-on-one 单挑；一对一教学；一对一会面     留出几个小时 set aside a few hours    家庭辅导  home schooling
  We have had to discipline ourselves to set aside a few hours every weekday for some one-on-one home schooling.
 我们曾不得不要求自己每天留出几个小时给孩子一对一家庭辅导。
 
@@ -2179,9 +2194,9 @@ All this at a time when companies acquired by private equity last time round are
 
 To challenge the implications of my own findings, I often play devil’s advocate
 
-lead to a price spike
+lead to a price spike   价格高峰；秒杀价   价格暴涨
 
-to eliminate waivers 
+to eliminate waivers   豁免；免除
 
 it won’t renew waivers that let countries buy Iranian oil without facing U.S. sanctions
 will travel to Beijing next week to discuss “trade issues including 
@@ -2202,7 +2217,7 @@ if you recycle 1 ton of plastic, it saves up to 5,774 kilowatt-hours of energy
 Plastic is manufactured from derivatives of crude oil  
 A Stanford Recycling Center study states that recycling 1 ton of plastic bottles saves 16.3 barrels of oil.
 
-provide some kind of pressure outlet.
+provide some kind of pressure outlet.   压力出口
 
 backfire------产生反效果；适得其反；
 Unfortunately, this is not always the case; Amanda's story is just one of many examples of how having a higher paycheck can backfire.
