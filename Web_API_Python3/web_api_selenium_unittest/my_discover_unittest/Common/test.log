@@ -1,0 +1,109 @@
+2020-10-13 10:06:36 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61462/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-10-13 10:06:36 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61462
+2020-10-13 10:06:38 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "POST /session HTTP/1.1" 200 716
+2020-10-13 10:06:38 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:06:38 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61462/session/92c63ef7cdd03116a8777d43e58512e4/url {"url": "http://www.sogou.com"}
+2020-10-13 10:06:46 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "POST /session/92c63ef7cdd03116a8777d43e58512e4/url HTTP/1.1" 200 14
+2020-10-13 10:06:46 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:06:46 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61462/session/92c63ef7cdd03116a8777d43e58512e4/url {"url": "https://www.baidu.com"}
+2020-10-13 10:06:51 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "POST /session/92c63ef7cdd03116a8777d43e58512e4/url HTTP/1.1" 200 14
+2020-10-13 10:06:51 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:06:51 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61462/session/92c63ef7cdd03116a8777d43e58512e4/back {}
+2020-10-13 10:06:52 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "POST /session/92c63ef7cdd03116a8777d43e58512e4/back HTTP/1.1" 200 14
+2020-10-13 10:06:52 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:06:57 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61462/session/92c63ef7cdd03116a8777d43e58512e4/forward {}
+2020-10-13 10:06:57 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "POST /session/92c63ef7cdd03116a8777d43e58512e4/forward HTTP/1.1" 200 14
+2020-10-13 10:06:57 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:06:57 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61462/session/92c63ef7cdd03116a8777d43e58512e4 {}
+2020-10-13 10:06:58 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61462 "DELETE /session/92c63ef7cdd03116a8777d43e58512e4 HTTP/1.1" 200 14
+2020-10-13 10:06:58 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:00 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61517/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-10-13 10:07:00 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61517
+2020-10-13 10:07:03 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61517 "POST /session HTTP/1.1" 200 717
+2020-10-13 10:07:03 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:03 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61517/session/5192dd4bbeb998077efc796636c189e8/url {"url": "http://www.sogou.com"}
+2020-10-13 10:07:08 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61517 "POST /session/5192dd4bbeb998077efc796636c189e8/url HTTP/1.1" 200 14
+2020-10-13 10:07:08 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:08 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61517/session/5192dd4bbeb998077efc796636c189e8/title {}
+2020-10-13 10:07:08 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61517 "GET /session/5192dd4bbeb998077efc796636c189e8/title HTTP/1.1" 200 54
+2020-10-13 10:07:08 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:08 test_baidu.py: [line:22] DEBUG: start test for baidu
+2020-10-13 10:07:08 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61517/session/5192dd4bbeb998077efc796636c189e8/title {}
+2020-10-13 10:07:08 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61517 "GET /session/5192dd4bbeb998077efc796636c189e8/title HTTP/1.1" 200 54
+2020-10-13 10:07:08 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:08 test_baidu.py: [line:25] DEBUG: end test for baidu
+2020-10-13 10:07:08 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61517/session/5192dd4bbeb998077efc796636c189e8 {}
+2020-10-13 10:07:08 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61517 "DELETE /session/5192dd4bbeb998077efc796636c189e8 HTTP/1.1" 200 14
+2020-10-13 10:07:08 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:11 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61550/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu"]}}}
+2020-10-13 10:07:11 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61550
+2020-10-13 10:07:13 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "POST /session HTTP/1.1" 200 715
+2020-10-13 10:07:13 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:13 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61550/session/193ed47f924471720629fd485ec0834a/url {"url": "http://www.sogou.com"}
+2020-10-13 10:07:14 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "POST /session/193ed47f924471720629fd485ec0834a/url HTTP/1.1" 200 14
+2020-10-13 10:07:14 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:14 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61550/session/193ed47f924471720629fd485ec0834a/url {"url": "https://www.baidu.com"}
+2020-10-13 10:07:14 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "POST /session/193ed47f924471720629fd485ec0834a/url HTTP/1.1" 200 14
+2020-10-13 10:07:14 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:14 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61550/session/193ed47f924471720629fd485ec0834a/back {}
+2020-10-13 10:07:15 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "POST /session/193ed47f924471720629fd485ec0834a/back HTTP/1.1" 200 14
+2020-10-13 10:07:15 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:20 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61550/session/193ed47f924471720629fd485ec0834a/forward {}
+2020-10-13 10:07:20 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "POST /session/193ed47f924471720629fd485ec0834a/forward HTTP/1.1" 200 14
+2020-10-13 10:07:20 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:20 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61550/session/193ed47f924471720629fd485ec0834a {}
+2020-10-13 10:07:20 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61550 "DELETE /session/193ed47f924471720629fd485ec0834a HTTP/1.1" 200 14
+2020-10-13 10:07:20 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:23 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61599/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu"]}}}
+2020-10-13 10:07:23 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61599
+2020-10-13 10:07:25 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61599 "POST /session HTTP/1.1" 200 716
+2020-10-13 10:07:25 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:25 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61599/session/a4e08d23170628bd968d0439e0df2796/url {"url": "http://www.sogou.com"}
+2020-10-13 10:07:26 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61599 "POST /session/a4e08d23170628bd968d0439e0df2796/url HTTP/1.1" 200 14
+2020-10-13 10:07:26 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:26 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61599/session/a4e08d23170628bd968d0439e0df2796/title {}
+2020-10-13 10:07:26 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61599 "GET /session/a4e08d23170628bd968d0439e0df2796/title HTTP/1.1" 200 54
+2020-10-13 10:07:26 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:26 test_sogo.py: [line:26] DEBUG: start test for sogo
+2020-10-13 10:07:26 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61599/session/a4e08d23170628bd968d0439e0df2796/title {}
+2020-10-13 10:07:26 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61599 "GET /session/a4e08d23170628bd968d0439e0df2796/title HTTP/1.1" 200 54
+2020-10-13 10:07:26 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:26 test_sogo.py: [line:28] DEBUG: end test for sogo
+2020-10-13 10:07:26 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61599/session/a4e08d23170628bd968d0439e0df2796 {}
+2020-10-13 10:07:26 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61599 "DELETE /session/a4e08d23170628bd968d0439e0df2796 HTTP/1.1" 200 14
+2020-10-13 10:07:26 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:29 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61631/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-10-13 10:07:29 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61631
+2020-10-13 10:07:31 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "POST /session HTTP/1.1" 200 717
+2020-10-13 10:07:31 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:31 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61631/session/36574efc1f82e475aa67bfe07d8cd2ee/url {"url": "http://www.sogou.com"}
+2020-10-13 10:07:38 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "POST /session/36574efc1f82e475aa67bfe07d8cd2ee/url HTTP/1.1" 200 14
+2020-10-13 10:07:38 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:38 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61631/session/36574efc1f82e475aa67bfe07d8cd2ee/url {"url": "https://www.baidu.com"}
+2020-10-13 10:07:43 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "POST /session/36574efc1f82e475aa67bfe07d8cd2ee/url HTTP/1.1" 200 14
+2020-10-13 10:07:43 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:43 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61631/session/36574efc1f82e475aa67bfe07d8cd2ee/back {}
+2020-10-13 10:07:43 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "POST /session/36574efc1f82e475aa67bfe07d8cd2ee/back HTTP/1.1" 200 14
+2020-10-13 10:07:43 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:48 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61631/session/36574efc1f82e475aa67bfe07d8cd2ee/forward {}
+2020-10-13 10:07:49 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "POST /session/36574efc1f82e475aa67bfe07d8cd2ee/forward HTTP/1.1" 200 14
+2020-10-13 10:07:49 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:49 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61631/session/36574efc1f82e475aa67bfe07d8cd2ee {}
+2020-10-13 10:07:49 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61631 "DELETE /session/36574efc1f82e475aa67bfe07d8cd2ee HTTP/1.1" 200 14
+2020-10-13 10:07:49 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:52 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61688/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-10-13 10:07:52 connectionpool.py: [line:205] DEBUG: Starting new HTTP connection (1): 127.0.0.1:61688
+2020-10-13 10:07:54 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61688 "POST /session HTTP/1.1" 200 717
+2020-10-13 10:07:54 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:07:54 remote_connection.py: [line:388] DEBUG: POST http://127.0.0.1:61688/session/33ea772ed38a6cc7b7c24d681648b328/url {"url": "http://www.sogou.com"}
+2020-10-13 10:08:01 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61688 "POST /session/33ea772ed38a6cc7b7c24d681648b328/url HTTP/1.1" 200 14
+2020-10-13 10:08:01 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:08:01 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61688/session/33ea772ed38a6cc7b7c24d681648b328/title {}
+2020-10-13 10:08:01 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61688 "GET /session/33ea772ed38a6cc7b7c24d681648b328/title HTTP/1.1" 200 54
+2020-10-13 10:08:01 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:08:01 remote_connection.py: [line:388] DEBUG: GET http://127.0.0.1:61688/session/33ea772ed38a6cc7b7c24d681648b328/title {}
+2020-10-13 10:08:01 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61688 "GET /session/33ea772ed38a6cc7b7c24d681648b328/title HTTP/1.1" 200 54
+2020-10-13 10:08:01 remote_connection.py: [line:440] DEBUG: Finished Request
+2020-10-13 10:08:01 remote_connection.py: [line:388] DEBUG: DELETE http://127.0.0.1:61688/session/33ea772ed38a6cc7b7c24d681648b328 {}
+2020-10-13 10:08:01 connectionpool.py: [line:393] DEBUG: http://127.0.0.1:61688 "DELETE /session/33ea772ed38a6cc7b7c24d681648b328 HTTP/1.1" 200 14
+2020-10-13 10:08:01 remote_connection.py: [line:440] DEBUG: Finished Request

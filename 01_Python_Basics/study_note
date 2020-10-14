@@ -3,6 +3,7 @@
 # https://blog.csdn.net/ratsniper/article/details/78954852   ----PEP8 编码规范
 # https://legacy.python.org/dev/peps/pep-0008/   -- this is English version
 # install python packets-----     website is   pypi.org
+# install python on your none operating system disk(if system crashed, you do not need to install python)
 
 with open('time.txt', encoding='utf_8_sig') as f:   # 如果文本里有中文，就用utf_8_sig来解码
 # xlwt、wlrd只能读写xls文件，而不能操作xlsx文件,openyxl is ok
@@ -372,3 +373,6 @@ traceback.print_exc()         # 将错误信息在终端输出
 
 # 将错误信息写入到tt文件夹内
 traceback.print_exc(limit=2, file=open('tt.log', 'a+'))
+
+# reg匹配，如果要匹配一段字符，直接用(.*?)，在括号前后加上字符前后的标志即可
+

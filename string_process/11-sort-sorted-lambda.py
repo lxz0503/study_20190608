@@ -54,3 +54,32 @@ print(d3)
 # [7, 6, 4, 3, 2, 2, 2, 1, 1]
 # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+# lambda函数添加一个参数
+foo = [['z',19],['ll',54],['wa',23],['df',23],['xf',23]]
+a = sorted(foo, key=lambda x: (x[1], x[0]))  # 先按照x[1]排序，然后对于x[1]相同的，按照x[0]排序
+print(a)    # [['z', 19], ['df', 23], ['wa', 23], ['xf', 23], ['ll', 54]]
+
+# 根据键对字典排序    zip 函数
+dic = {'name':'za', 'sex':'man', 'city':'bj'}
+foo = zip(dic.keys(), dic.values())
+foo = [i for i in foo]
+print('字典转换成列表嵌套元组', foo)
+b = sorted(foo, key=lambda x:x[0])
+print('根据键排序', b)
+# 字典推导式构造新字典
+new_dic = {i[0]:i[1] for i in b}
+print(new_dic)
+# 字典转换成列表嵌套元组的更简单的方法如下
+dic = {'name':'za', 'sex':'man', 'city':'bj'}
+foo = list(dic.items())
+print('字典转换成列表嵌套元组', foo)
+
+# 列表推导式，字典推导式，生成器
+import random
+td_list = [i for i in range(10)]    # 0-9
+dic = {k: random.randint(4, 9) for k in ['a','b','c','d']}    # 4-8 not include 9
+print(dic)     # {'a': 6, 'b': 5, 'c': 4, 'd': 8}
+# 统计字符串中某个字符出现的次数
+s = "beijing shang beijing tianjin a b"
+a = s.count('beijing')
+print(a)
