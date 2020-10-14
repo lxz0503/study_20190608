@@ -32,8 +32,9 @@ D3 = dict(name='Bob', age=45)
 # 方法四: dict--键值序列,下面三种方式都可以
 # 如果需要将键值逐步建成序列，则此方式比较有用,常与zip函数一起使用
 D4 = dict([('name', 'Bob'), ('age', 40)])   # dict函数的参数是一个列表，列表里面的元素是键值对组成的元组
-D = dict(zip(['name', 'bob'], ['age', 40]))   # zip函数里面的参数是两个列表
-D = dict(zip(('name', 'bob'), ('age', 40)))   # zip函数里面的参数是两个元组
+D4 = dict([['name', 'Bob'], ['age', 40]])   # dict函数的参数是一个列表，列表里面的元素是键值对组成的元组
+D = dict(zip(['name', 'age'], ['bob', 40]))   # zip函数里面的参数是两个列表
+D = dict(zip(('name', 'age'), ('bob', 40)))   # zip函数里面的参数是两个元组
 print(D)
 
 # 字典遍历

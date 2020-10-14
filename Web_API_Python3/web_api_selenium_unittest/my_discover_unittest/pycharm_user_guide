@@ -51,7 +51,7 @@ sam@sam Downloads % cp HTMLTestRunner.py /Library/Frameworks/Python.framework/Ve
 其中，Python3中，已经没有StringIO了。取而代之的是io.StringIO
 
 ==============
-我已经修改好的文件在Web_API_Python3目录下，linux和windows都可以应用
+我已经修改好的文件在Web_API_Python3目录下，linux和windows都可以应用,HTMLTestRunner.py and HTMLTestRunner---Python3New.py are both ok
 
 在Linux Ubuntu18.04下，把HTMLTestRunner.py拷贝到Python的安装路径（可以用print(sys.path)来查看）
 我的环境：[xli3@pek-vx-nwk1 dist-packages]$ pwd
@@ -78,5 +78,14 @@ or you can use alias:
 [xli3@pek-vx-nwk1 ~]$ cd /buildarea1/xli3/pycharm-community-2019.1.3/bin/
 [xli3@pek-vx-nwk1 bin]$ alias pycharm='cd /buildarea1/xli3/pycharm-community-2019.1.3/bin/;./pycharm.sh'
 [xli3@pek-vx-nwk1 bin]$ pycharm
+
+=============================chrome driver==============
+http://chromedriver.storage.googleapis.com/index.html
+If you encounter any error, like can not find chrome binary,
+please first confirm your driver and download aligned driver from above link and put the driver
+at your python install directory like D:\Python
+
+===================================firefox driver====================
+https://github.com/mozilla/geckodriver/releases/
 
 

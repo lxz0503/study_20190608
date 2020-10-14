@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-07-23 13:57:11</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:12.490149</p>
-<p class='attribute'><strong>Status:</strong> Error 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-10-13 10:06:35</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:28.172886</p>
+<p class='attribute'><strong>Status:</strong> Pass 6</p>
 
 <p class='description'>web api test</p>
 </div>
@@ -221,40 +221,36 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>unittest.loader._FailedTest</td>
+<tr class='passClass'>
+    <td>baidu_cases.test_baidu.BaiduWebTest</td>
+    <td>2</td>
     <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>2</td>
     <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_baidu</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitRecentURL</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitURL</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: ImportError: Failed to import test module: baidu_cases.test_baidu
-Traceback (most recent call last):
-  File "F:\Python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "F:\Python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\baidu_cases\test_baidu.py", line 7, in &lt;module&gt;
-    from Common.log_util import *
-ModuleNotFoundError: No module named 'Common'
-
+pt1.2: 搜狗搜索引擎 - 上网从搜狗开始
 
 
         </pre>
@@ -264,79 +260,36 @@ ModuleNotFoundError: No module named 'Common'
     </td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_sogo</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.2: ImportError: Failed to import test module: sogo_cases.test_sogo
-Traceback (most recent call last):
-  File "F:\Python\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "F:\Python\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sogo_cases\test_sogo.py", line 5, in &lt;module&gt;
-    from Common.log_util import *
-ModuleNotFoundError: No module named 'Common'
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>sohu_cases.test_sohu.SohuWebTest</td>
+<tr class='passClass'>
+    <td>sogo_cases.test_sogo.SogoWebTest</td>
+    <td>2</td>
     <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>2</td>
     <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
 </tr>
 
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitRecentURL</div></td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitRecentURL</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitURL</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
 
-    <div id='div_ft2.1' class="popup_window">
+    <div id='div_pt2.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft2.1: Traceback (most recent call last):
-  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sohu_cases\test_sohu.py", line 9, in setUp
-    self.driver = webdriver.Chrome()
-  File "F:\Python\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 81, in __init__
-    desired_capabilities=desired_capabilities)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 78
-
+pt2.2: 搜狗搜索引擎 - 上网从搜狗开始
 
 
         </pre>
@@ -346,36 +299,36 @@ selenium.common.exceptions.SessionNotCreatedException: Message: session not crea
     </td>
 </tr>
 
-<tr id='ft2.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_visitURL</div></td>
+<tr class='passClass'>
+    <td>sohu_cases.test_sohu.SohuWebTest</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',2)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitRecentURL</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_visitURL</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
 
-    <div id='div_ft2.2' class="popup_window">
+    <div id='div_pt3.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft2.2: Traceback (most recent call last):
-  File "F:\xiaozhan_git\study_20190608\Web_API_Python3\web_api_selenium_unittest\my_discover_unittest\TestCases\sohu_cases\test_sohu.py", line 9, in setUp
-    self.driver = webdriver.Chrome()
-  File "F:\Python\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 81, in __init__
-    desired_capabilities=desired_capabilities)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "F:\Python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 78
-
+pt3.2: 搜狗搜索引擎 - 上网从搜狗开始
 
 
         </pre>
@@ -387,10 +340,10 @@ selenium.common.exceptions.SessionNotCreatedException: Message: session not crea
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>4</td>
+    <td>6</td>
+    <td>6</td>
     <td>0</td>
     <td>0</td>
-    <td>4</td>
     <td>&nbsp;</td>
 </tr>
 </table>

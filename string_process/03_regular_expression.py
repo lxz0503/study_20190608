@@ -2,7 +2,7 @@
 # https://www.runoob.com/python3/python3-reg-expressions.html
 # re.match 尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()就返回none
 # .* 表示任意匹配除换行符（\n、\r）之外的任何单个或多个字符
-# re.search 扫描整个字符串并返回第一个成功的匹配
+# re.search 扫描整个字符串并返回第一个成功的匹配, 需要加group()来提取结果
 # \w	匹配包括下划线的任何单词字符
 # [^abc] 匹配除了a,b,c之外的字符
 # [amk] 匹配 'a'，'m'或'k'
@@ -282,4 +282,20 @@ a = './vxworks-7/pkgs_v2/net/ipnet/coreip-2.1.1.1/src/iptcp/src/iptcp.c'
 b = a.split('iptcp')[0] + 'iptcp/config/iptcp_config.h'
 print(b)
 # ./vxworks-7/pkgs_v2/net/ipnet/coreip-2.1.1.1/src/iptcp/config/iptcp_config.h
+
+# 用正则来切分字符串
+s = 'info:xiaozhang 33 shandong'
+res = re.split(r":| ", s)
+print(res)   # ['info', 'xiaozhang', '33', 'shandong']
+
+# 正则匹配不是以4和7结尾的手机号
+tels = ['13412345674','18912341231','1310086','18812347777']
+for tel in tels:
+    # ret = re.match(r'1\d{9}[0-3,5-6,8-9]',tel)
+    ret = re.match(r'1\d{9}[^47]', tel)
+    if ret:
+        print('the expected result is', ret.group())
+    else:
+        print('%s is not the result' % tel)
+
 
