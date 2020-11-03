@@ -228,7 +228,7 @@ find . -type f -mtime +7  -name "*.log" -exec rm -f {} \;     # there must be ; 
 
 
 find . -type f -size +10k ---搜索大于10K的文件
-find . -type d -size +10k-----搜索大于10K的目录
+find . -type d -size +10k -----搜索大于10K的目录
 
 find . -type f -name "*.txt" -delete  -----删除当前目录下所有txt后缀的文件
 
@@ -2006,6 +2006,26 @@ processor从0开始     逻辑cpu的数量
 hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/cpuinfo | grep name | cut -d: -f2 | uniq -c
      72  Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
 hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$
+=======================================================================
+查看子目录大小，占用磁盘空间
+[xli3@pek-vx-nightly1 wassp-repos]$ du -ah --max-depth=1
+490M    ./workspace_bak
+1.4G    ./Logs
+173M    ./Log_simics
+518M    ./Log_openssl_vxtestfull_pass
+6.9G    ./vxTestCurl
+706M    ./.install_files
+455M    ./wassp-nest
+7.1G    ./Workspace
+============================================
+du -sh : 查看当前目录总共占的容量。而不单独列出各子项占用的容量
+
+du -lh --max-depth=1 : 查看当前目录下一级子文件和子目录占用的磁盘容量。
+du -ah --max-depth=1 ：显示当前目录的占用磁盘容量
+
+
+
+
 
 
 

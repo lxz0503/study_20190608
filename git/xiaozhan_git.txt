@@ -213,3 +213,5 @@ git add a.txt
 git commit --amend -m "a.txt"
 git push
 =====================================================
+找出两笔commit中间的commit
+git  log 60515ac3445806910ab258440f07c817bf7b44df.. 5d0553d19c871cf8a3233c381cc46f3eff9b9e70 
