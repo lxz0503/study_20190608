@@ -1,3 +1,10 @@
+# chrome driver link: http://chromedriver.storage.googleapis.com/index.html
+# Firefox driver link: https://github.com/mozilla/geckodriver/releases/
+# IE driver link:  http://selenium-release.storage.googleapis.com/index.html
+要打开IE浏览器的话，需要在浏览器的Internet选项中的安全页里有4个安全选项，Internet、本地Internet、受信任的站点、受限制的站点，
+这4个里面都有一个启用保护模式，都需要勾选上才可以，
+还得把驱动的路径加入到环境变量中
+
 #Put common functions and classes into the Common directory
 ##in run.py, use discover to find all your test case suites.
 ##Under TestCases directory,create sub-directory for each scenario,for example,baidu_cases
@@ -52,6 +59,8 @@ sam@sam Downloads % cp HTMLTestRunner.py /Library/Frameworks/Python.framework/Ve
 
 ==============
 我已经修改好的文件在Web_API_Python3目录下，linux和windows都可以应用,HTMLTestRunner.py and HTMLTestRunner---Python3New.py are both ok
+
+如果是用家里的windows系统，就放在这个目录下   D:\Python\Lib
 
 在Linux Ubuntu18.04下，把HTMLTestRunner.py拷贝到Python的安装路径（可以用print(sys.path)来查看）
 我的环境：[xli3@pek-vx-nwk1 dist-packages]$ pwd
