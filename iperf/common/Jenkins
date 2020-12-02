@@ -1,0 +1,5 @@
+# how to rerun smp in Jenkins with below script
+
+. /net/pek-vx-system1/buildarea1/hyan1/wassp/nightly_config.ini     (you can also use source to replace .)
+
+python3 /folk/hyan1/Nightly/iPerf_smp/iPerf_rerun_v2.py --dvd $DVD --release $LTAFRELEASE --rundate $RUNDATE
