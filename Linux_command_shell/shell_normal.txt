@@ -10,6 +10,10 @@ https://docs.python.org/3.5/library/     ---python3 doc dir
 
 # 建议以后在Python3下用paramiko模块来执行SSH相关的操作-----参考我的例子
 
+Ubunt下python的缩进，默认设置为四个空格：
+/etc/vim/vimrc
+set tabstop=4
+
 1.tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内容
 tail -f -20 filename          默认显示后10行
 如何去掉文件每一行后面的^M
