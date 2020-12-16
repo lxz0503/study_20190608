@@ -1115,6 +1115,11 @@ remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
 sudo shutdown -h now      # this is to shutdown linux server
 sudo shutdown -h +1
 sudo shutdown -r 11:00
+关机命令：
+1、halt 立刻关机
+2、poweroff 立刻关机
+3、shutdown -h now 立刻关机(root用户使用)
+4、shutdown -h 10 10分钟后自动关机
 
 ==========================how to use nmap -==============================
 https://www.cnblogs.com/LyShark/p/10637507.html
