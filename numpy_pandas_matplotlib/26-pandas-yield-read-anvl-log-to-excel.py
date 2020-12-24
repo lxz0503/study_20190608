@@ -37,14 +37,14 @@ class PandasWriteExcel(object):
             for line in f:           # analyze each test log
                 r = p.match(line)
                 if r is not None:
-                    yield r.group().lstrip('<<')
+                    yield r.group().lstrip('<<')    # 能够获取到每行的内容，例如 << DHCP-SERVER-10.4: Passed
 
     def write_excel(self):
         # firstly, write every line into a file, because the pandas parameter must be file name
         with open("xiaozhan_test.txt", 'w') as fp:
             log_names = self.get_logfile()   # 调用生成器函数,返回一个可迭代对象
             for name in log_names:         # analyze each test log
-                h = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象
+                h = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象----即每行的内容
                 for line in h:
                     fp.write(line + '\n')
         # read txt file and write into excel
