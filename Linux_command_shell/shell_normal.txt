@@ -1111,10 +1111,11 @@ remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
 :%retab!
 退出后保存即可
 ====================================================================
+su root
 
 sudo shutdown -h now      # this is to shutdown linux server
 sudo shutdown -h +1
-sudo shutdown -r 11:00
+sudo shutdown -r 11:00    # reboot     or use  sudo reboot
 关机命令：
 1、halt 立刻关机
 2、poweroff 立刻关机
