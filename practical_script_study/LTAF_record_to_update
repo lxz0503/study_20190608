@@ -1,0 +1,10 @@
+ipnet.windview.arp - IPv4 ETA: 2s                                           OK 2s
+ipnet.windview.frag - IPv4 ETA: 6s                                          OK 5s
+ipnet.windview.frag - IPv6 ETA: 6s                                          OK 5s
+ipnet.windview.icmp_unreach - IPv4 ETA: 1s                                  OK 1s
+ipnet.windview.icmp_unreach - IPv6 ETA: 1s                                  OK 1s
+ipnet.windview.neigh - IPv6 ETA: 2s                                         OK 2s
+ipnet.windview.ping - IPv4 ETA: 6s                                          OK 5s
+ipnet.windview.ping - IPv6 ETA: 6s                                          OK 5s
+ipnet.windview.tcp_reset - IPv4 ETA: 1s                                     OK 1s
+ipnet.windview.tcp_reset - IPv6 ETA: 1s                                     OK 1s

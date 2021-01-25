@@ -1,0 +1,51 @@
+
+== update branch
+	==git checkout vx7-release
+	warning: unable to rmdir vxworks-7/pkgs/rttools/sensorpoint: Directory not empty
+Switched to branch 'vx7-release'
+M	docs
+M	vxworks-7/pkgs/os/hv/hypervisor/wrhv/src/devices/drivers/guestOS/wrlinux-6
+	==git reset --hard
+	HEAD is now at 266b33b Merge pull request #1980 in VX7/vxworks from vx7-core-fr60 to vx7-release
+	==cd /buildarea2/lchen3/workspace/vx7-dev-nightly/vxworks;git pull
+	Already up-to-date.
+
+== update branch
+	==git checkout vx7-netperf-exp
+	Switched to branch 'vx7-netperf-exp'
+M	docs
+M	vxworks-7/pkgs/os/hv/hypervisor/wrhv/src/devices/drivers/guestOS/wrlinux-6
+	==git reset --hard
+	HEAD is now at 5e5fd4b Reverting version number bump to mobility layer.
+	==cd /buildarea2/lchen3/workspace/vx7-dev-nightly/vxworks;git pull
+	Already up-to-date.
+
+== update branch
+	==git checkout vx7-openssl-rtp
+	Switched to branch 'vx7-openssl-rtp'
+M	docs
+M	vxworks-7/pkgs/os/hv/hypervisor/wrhv/src/devices/drivers/guestOS/wrlinux-6
+Your branch is ahead of 'origin/vx7-openssl-rtp' by 7 commits.
+  (use "git push" to publish your local commits)
+	==git reset --hard
+	HEAD is now at daf9015 Merge branch 'vx7-openssl-rtp' of http://vxgit.wrs.com/scm/vx7/vxworks into vx7-openssl-rtp
+	==cd /buildarea2/lchen3/workspace/vx7-dev-nightly/vxworks;git pull
+	Already up-to-date.
+
+== update branch
+	==git checkout vx7-tcp-seq
+	Switched to branch 'vx7-tcp-seq'
+M	docs
+	==git reset --hard
+	HEAD is now at 8706c16 Merge branch 'vx7-feb13-features' into vx7-tcp-seq
+	==cd /buildarea2/lchen3/workspace/vx7-dev-nightly/vxworks;git pull
+	Already up-to-date.
+
+== update branch
+	==git checkout vx7-task-pri
+	Switched to branch 'vx7-task-pri'
+	==git reset --hard
+	HEAD is now at 5aa66b8 fix typos
+	==cd /buildarea2/lchen3/workspace/vx7-dev-nightly/vxworks;git pull
+	Already up-to-date.
+Function main runs 11.0979969501 seconds

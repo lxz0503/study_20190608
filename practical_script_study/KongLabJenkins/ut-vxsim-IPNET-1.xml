@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-release</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NEWCOMMIT</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BSP</name>
+          <description></description>
+          <defaultValue>vxsim_linux</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>kong-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>date
+hostname
+id
+echo $BRANCH
+echo $NEWCOMMIT
+MODULE=IPNET
+TESTCASE=ipnet.frag.drop,ipnet.frag_common.basic,ipnet.gratuitous-arp.gratuitous_arp_config,ipnet.gratuitous-arp.gratuitous_arp_for_arp_update,ipnet.icmp.addr_mask,ipnet.icmp.host_unreachable,ipnet.icmp.ping_unrelated_dst_unreachable,ipnet.icmp.redirect,ipnet.icmp.redirect_min_clone_count,ipnet.icmp_common.echo,ipnet.icmp_common.port_unreachable,ipnet.igmp,ipnet.ip4.addr_format,ipnet.ip4.addr_type_cache,ipnet.ip4.arp_cmd,ipnet.ip4.arp_mcastsrcmac,ipnet.ip4.broadcast,ipnet.ip4.change_lladdr,ipnet.ip4.ip_option_timestamp,ipnet.ip4.ip_options,ipnet.ip4.ip_rr_options,ipnet.ip4.lladdr_generate,ipnet.ip4.lladdr_successfull_defend,ipnet.ip4.lladdr_unsuccessfull_defend,ipnet.ip4.mcast_echo,ipnet.ip4.mroute,ipnet.ip4.non_contiguous_mask,ipnet.ip4.recv_ancillary_data,ipnet.ip4.rfc5227_collision_assign,ipnet.ip4.rfc5227_collision_detect,ipnet.ip4.rfc5227_lladdr_reassign,ipnet.ip4.rfc5227_probe_addr,ipnet.ip4.rfc5227_source_select,ipnet.ip4.source_address_selection,ipnet.ip4.two_nodes_net,ipnet.ip4.ucast_to_bcast_forwarding,ipnet.ip6.addr_format,ipnet.ip6.addr_lifetime,ipnet.ip6.addr_type_cache,ipnet.ip6.anycast,ipnet.ip6.app_neigh_resolve,ipnet.ip6.auto_addr_conf,ipnet.ip6.best_src,ipnet.ip6.communicate_to_self_over_link_local,ipnet.ip6.flowinfo,ipnet.ip6.invalid_addr,ipnet.ip6.ipv4_mapped_ipv6_addr,ipnet.ip6.mroute,ipnet.ip6.multiple_link_local_addr,ipnet.ip6.ndp_cmd,ipnet.ip6.ndp_dos_attack,ipnet.ip6.option_discard,ipnet.ip6.param_prob,ipnet.ip6.per_if_ip6_ctl,ipnet.ip6.ping6,ipnet.ip6.pmtu,ipnet.ip6.privacy_extension,ipnet.ip6.radvd,ipnet.ip6.raw_chksum,ipnet.ip6.raw_sock,ipnet.ip6.recv_ancillary_data,ipnet.ip6.scoped_addr_arch,ipnet.ip6.source_address_selection,ipnet.ip6.tcp_with_exthdr,ipnet.ip6.udp_unconnected_send,ipnet.ipsec.ahtransport_v6exthdr,ipnet.ipsec.ahtunnel_fwdv6exthdr,ipnet.ipsec.esptransport_v6exthdr,ipnet.ipsec.esptunnel_fwdv6exthdr,ipnet.ipsec.esptunnel_v6exthdr,ipnet.ipsec.icmp_fragneeded,ipnet.ipsec.ipsec_tunnel_too_big,ipnet.mld.rfc3590,ipnet.mld.version_1_compat,ipnet.mld.version_2_complex_join_leave,ipnet.mld.version_2_general_query_responses,ipnet.mld.version_2_simple_join_leave,ipnet.mld.version_2_socket_source_filter,ipnet.mld.version_2_specific_query_responses,ipnet.mld.multicast_loop,ipnet.mld.multicast_hops,ipnet.mld.multicast_if,ipnet.neigh.app_probes,ipnet.neigh.flush,ipnet.neigh.gratuitous_arp,ipnet.neigh.many,ipnet.neigh.perm_neigh,ipnet.neigh.proxy_arp_net,ipnet.neigh.too_many,ipnet.neigh_common.dynamic,ipnet.neigh_common.static,ipnet.raw.bind,ipnet.raw.connect,ipnet.raw.fragment,ipnet.raw.hdrincl,ipnet.raw.if_counters,ipnet.raw.proto_unreach,ipnet.route.af_route,ipnet.route.change_metric,ipnet.route.dont_route,ipnet.route.ecmp,ipnet.route.eth_fast_path,ipnet.route.failover,ipnet.route.flood_dont_frag,ipnet.route.flood_must_frag,ipnet.route.flows,ipnet.icmp6.redirect,ipnet.shell_cmd.slab
+
+BSP=vxsim_linux
+/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/try/workspace/PdvTool/vx7tool/new/RunTest.sh $BRANCH $NEWCOMMIT $MODULE $TESTCASE $BSP
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>Info: tinderbox: status: success</regexp>
+      <succeedIfFound>true</succeedIfFound>
+      <unstableIfFound>false</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BRANCH&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

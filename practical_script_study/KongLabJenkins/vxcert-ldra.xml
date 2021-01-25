@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.tikal.jenkins.plugins.multijob.MultiJobProject plugin="jenkins-multijob-plugin@1.16">
+  <actions/>
+  <description>LDRA running on Simics&#xd;
+&#xd;
+How to use:&#xd;
+    Step 1: before using the Jenkins&apos; job, you have set up a private branch, make some changes, and git push the changes to the remote side of the private branch.&#xd;
+    Step 2: login the jenkins web with your Linux account&#xd;
+    Step 3: fill up the input parameters, and then click &quot;Build&quot; button&#xd;
+&#xd;
+Note:&#xd;
+    Here are the commands for dealing with your private branch.&#xd;
+        To create a private branch: &#xd;
+            git checkout -b your_private_branch_name&#xd;
+        To git push to remote side of a private branch for first time:&#xd;
+            git push --set-upstream origin your_private_branch_name&#xd;
+        To git push to remote side of a private branch except first time:&#xd;
+            git push&#xd;
+&#xd;
+        To delete a local branch&#xd;
+            git branch -d the_local_branch&#xd;
+        To remove a remote branch (if you know what you are doing!)&#xd;
+            git push origin :the_remote_branch&#xd;
+&#xd;
+</description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The branch name that you want to run LDRA</description>
+          <defaultValue>vx7-cert</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>COMMIT</name>
+          <description>The commit that you want to run LDRA
+The default is latest commit of the branch</description>
+          <defaultValue>latest</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>COMPONENT</name>
+          <description>Component name that you use to build VIP, e.g. INCLUDE_TM_CERT_IOSMEMPOOLLIB
+Only one component can be specified now.</description>
+          <defaultValue>INCLUDE_TM_CERT_IOSMEMPOOLLIB</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SOURCEFILE</name>
+          <description>A full path must be specified for the source file to be tested, .e.g. /pkgs/os/core/io/src/ios/iosMemPoolLib.c
+Note: the source file must start with /pkgs</description>
+          <defaultValue>/pkgs/os/core/io/src/ios/iosMemPoolLib.c</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>vxcert-ldra</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash -x
+
+hostname
+date
+echo $BUILD_USER
+echo $BRANCH
+echo $COMMIT
+echo $COMPONENT
+echo $SOURCEFILE
+
+echo $WORKSPACE
+sudo rm -fr *
+
+GITPATH=/home/windriver/vxcert/vxworks
+LOGPATH=/home/windriver/logs
+
+cd $GITPATH
+git checkout vx7-cert
+git pull
+#git reset --hard HEAD~1
+git checkout $BRANCH
+
+if [ &quot;$COMMIT&quot; = &quot;latest&quot; ]
+then
+    echo &quot;use latest commit&quot;
+    git pull
+else
+    found=`git log | grep $COMMIT`
+    if [ &quot;$found&quot; = &quot;&quot; ]
+    then
+        echo &quot;not found $COMMIT at the branch $BRANCH&quot;
+        exit 1
+    fi
+    echo &quot;use the commit $COMMIT&quot;
+    git pull
+    git reset --hard $COMMIT
+fi
+
+git branch | grep ^\*
+git log -1 HEAD
+
+# Simics
+export SIMICS_LICENSE_FILE=27000@churchill
+export SIMICS_PROJECT=$HOME/simics-proj
+# LDRA
+export LDRA_LICENSE_FILE=27000@ala-ldraprod.wrs.com
+export PATH=$PATH:/opt/ldra_toolsuite
+# vlm
+export PATH=$PATH:/folk/vlm/commandline
+# DISPLAY
+export DISPLAY=pek-cc-pb02l:3
+
+# start ldra
+cd $GITPATH
+eval `./wrenv.sh -p vxworks-7 -f sh -o print_env`
+
+# clean up
+rm -fr $LOGPATH/$SOURCEFILE
+
+if [[ -z &quot;$WIND_BASE&quot; ]]; then
+    echo &quot;WIND_BASE not set !&quot;
+    exit 1
+fi
+
+SOURCEFILE=$WIND_BASE$SOURCEFILE
+SOURCEBASENAME=`basename $SOURCEFILE`
+
+if [ ! -f &quot;$SOURCEFILE&quot; ]; then
+    echo &quot;$SOURCEFILE not exist!&quot;
+    exit 1
+fi
+
+script_dir=&quot;$WIND_BASE/pkgs/test/cert-tests/cert-scripts/build_tool&quot;
+ldra_dir=&quot;$WIND_BASE/pkgs/test/cert-tests/cert-scripts/ldra&quot;
+vsb=&quot;$WIND_BASE/workspace/vsb-qsp_arm&quot;
+#vsb=&quot;$WIND_BASE/workspace/vsb-fsl_imx6&quot;
+
+cd $script_dir
+
+./buildCertVsb.sh qsp_arm
+#./buildCertVsb.sh fsl_imx6
+
+cd $ldra_dir
+
+./ldra_auto -i $SOURCEFILE -c $COMPONENT -b $vsb -l $LOGPATH/$SOURCEBASENAME -v 2&gt;&amp;1 | tee ./ldra.log
+#./ldra_auto -i $WIND_BASE/pkgs/os/core/io/src/ios/iosMemPoolLib.c -c INCLUDE_TM_CERT_IOSMEMPOOLLIB -b $vsb -l /tmp/logs-iosMemPoolLib -t 21893 -v
+
+wrpython=&quot;/usr/bin/env wrpython&quot;
+SCRIPTPATH=/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/tools/vxcert
+
+$wrpython $SCRIPTPATH/analyzeLDRA.py ./ldra.log
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BUILD_USER&quot;}#${ENV,var=&quot;COMPONENT&quot;}#${ENV,var=&quot;BRANCH&quot;}#${ENV,var=&quot;COMMIT&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</com.tikal.jenkins.plugins.multijob.MultiJobProject>

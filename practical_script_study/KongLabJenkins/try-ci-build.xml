@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-release</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NEWCOMMIT</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>MODULE</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>pek-cc-pb02l</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>hostname
+
+echo $BRANCH
+echo $NEWCOMMIT
+
+NeedSetuptool() {
+    # must be used after git pull
+    ret=`git status | grep &quot;modified:&quot; | grep &quot;new commits&quot; | sed &quot;s/ //g&quot;`
+    if test -z &quot;$ret&quot;
+    then
+        echo &quot;False&quot;
+        return
+    else
+        echo &quot;True&quot;
+        return
+    fi
+}
+
+export PYTHONPATH=/folk/lchen3/try/workspace/PdvTool/vx7tool/new
+export PATH=/folk/lchen3/package/opt/bin:$PATH
+export LD_LIBRARY_PATH=/folk/lchen3/package/opt/lib:$LD_LIBRARY_PATH
+
+CURRENTHOST=`hostname`
+IMAGEHOST=`python -c &quot;import KongConfig; print KongConfig.GetImageServer()&quot;`
+IMAGEPATH=`python -c &quot;import KongConfig; print KongConfig.GetImageDir()&quot;`
+#GITPATH=`python -c &quot;import KongConfig; print KongConfig.GetGitDir(\&quot;$CURRENTHOST\&quot;)&quot;`
+buildFirstFlag=`python -c &quot;import KongConfig; print KongConfig.IsBuildFirst()&quot;`
+
+if [ &quot;$buildFirstFlag&quot; = &quot;True&quot; ]; then
+for GITPATH in /net/pek-cc-pb02l.wrs.com/testcloud/svc-cmnet/vxworks /net/pek-cc-pb01l.wrs.com/buildarea1/svc-cmnet/vxworks; do
+    echo $GITPATH
+
+    cd $GITPATH
+    git branch
+
+    # remove all the changes for current branch so that changing to vx7-cert can be successfully
+    git reset --hard HEAD 
+    # git pull at vx7-release to get latest branch names
+    git checkout vx7-release
+    git pull
+    # remove the local existed branch in case that remote branch re-creates
+    if [ &quot;$BRANCH&quot; != &quot;vx7-release&quot; ]; then
+        # note: cat has to be added to the end of this pipe, or grep might generate -1 and all script gets exit here
+        BranchName=`git branch | grep -w $BRANCH | cat`
+        if [ &quot;$BranchName&quot; != &quot;&quot; ]; then
+            echo &quot;found $BRANCH&quot;
+            git branch -D $BRANCH
+        else
+            echo &quot;not found $BRANCH&quot;
+        fi
+    fi
+
+    git checkout $BRANCH
+    git pull
+
+    # setup-tools has to be run sometimes or build gets failed
+    need_setuptool=$(NeedSetuptool)
+    echo $need_setuptool
+    if [ &quot;$need_setuptool&quot; = &quot;True&quot; ]
+    then
+        ./setup-tools -clean
+        ./setup-tools
+    else
+        echo &quot;no need to run setup-tool&quot;
+    fi
+
+    found=`git log | grep $NEWCOMMIT`
+    if [ &quot;$found&quot; = &quot;&quot; ]
+    then
+        echo &quot;not found $COMMIT at the branch $BRANCH&quot;
+        exit 1
+    fi
+    echo &quot;use the commit $COMMIT&quot;
+    #git pull
+    git reset --hard $NEWCOMMIT
+
+    # show current branch and commit
+    git branch | grep ^\*
+    git log -1 HEAD
+done
+fi
+
+/folk/lchen3/try/workspace/PdvTool/vx7tool/new/KongBuild.py $BRANCH $NEWCOMMIT
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BRANCH&quot;}#${ENV,var=&quot;MODULE&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

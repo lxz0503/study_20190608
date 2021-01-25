@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-release</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NEWCOMMIT</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>kong-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>hostname
+
+echo $BRANCH
+echo $NEWCOMMIT
+
+MODULE=TFTP
+TESTCASE=ALL
+
+GITPATH=/home/${USER}/vxworks
+SCRIPTPATH=/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/tools/vx7-util-scripts
+IMAGEPATH=/net/pek-cc-pb02l/testcloud/svc-cmnet/images
+
+cd ${WORKSPACE}
+
+sudo rm -fr *
+mkdir -p ${MODULE}
+cp -fr ${IMAGEPATH}/${MODULE}/cvs ${MODULE}/
+mkdir -p ${MODULE}/vxsim_linux_1_0_0_0_vip/default
+cp -f ${IMAGEPATH}/${MODULE}/vxsim_linux_1_0_0_0_vip/default/vxWorks ${MODULE}/vxsim_linux_1_0_0_0_vip/default/vxWorks
+
+if [ &quot;$TESTCASE&quot; = &quot;ALL&quot; ]
+then
+    $SCRIPTPATH/runtestsuite.py --uml=&quot;type=generic,kernel=/uml/linux,root=/uml/ubuntu_root_fs,user=test,password=test&quot; --vxworks=&quot;board=vxsim_linux_1_0_0_0,target=simlinux,version=7,wrenv=7,path=$GITPATH&quot; --speed $MODULE --no-rebuild
+else
+    $SCRIPTPATH/runtestsuite.py --uml=&quot;type=generic,kernel=/uml/linux,root=/uml/ubuntu_root_fs,user=test,password=test&quot; --vxworks=&quot;board=vxsim_linux_1_0_0_0,target=simlinux,version=7,wrenv=7,path=$GITPATH&quot; --speed $MODULE --no-rebuild -n $TESTCASE
+fi
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>Info: tinderbox: status: success</regexp>
+      <succeedIfFound>true</succeedIfFound>
+      <unstableIfFound>false</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BRANCH&quot;}#${ENV,var=&quot;NEWCOMMIT&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

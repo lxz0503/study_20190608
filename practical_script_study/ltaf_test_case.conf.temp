@@ -1,0 +1,17 @@
+[TEST_CONFIG]
+TEST_SUITE_NAME = IKE-ADVANCED
+COMPONENT= networking
+TEST_CASE_TYPE = functional
+FEATURE = KONG
+AUTOMATION = yes
+RCA = no
+
+TEST_CASE_LIST = "
+ipike.advanced.napt_liveness1-IPv4
+"
+
+GIT_LINK = "none"
+
+CREATED_DATE = 2017-09-13
+
+RELEASE_NAME = vx7-SR0520-features

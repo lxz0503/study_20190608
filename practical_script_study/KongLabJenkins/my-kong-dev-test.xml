@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Use this Jenkins project for your development test&#xd;
+&#xd;
+Before running this project, you should already&#xd;
+  1. set up a local git branch (e.g. git checkout -b branch_name)&#xd;
+  2. git push your local changes to the remote branch (e.g. git push --set-upstream origin branch_name)&#xd;
+&#xd;
+How to use:&#xd;
+  0. login with your Linux account&#xd;
+  1. input the branch name to BRANCH and COMMIT which you will build/test on&#xd;
+  2. select a module to MODULE which you will use for build/test&#xd;
+  3. select testcases to run (the default is ALL test cases)&#xd;
+  4. go to &quot;Build History&quot; and see your build (format is your_linux_login#module#branch)&#xd;
+     Note: you can see the test.log at &quot;Build Artifacts&quot; for your debugging purpose</description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>120</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-integration</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>COMMIT</name>
+          <description>The Git commit on the branch
+If none, the latest commit on the branch will be used</description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>MODULE</name>
+          <description>The module to test</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>CRYPTO</string>
+              <string>CRYPTO-FIPS-140-2</string>
+              <string>DHCP</string>
+              <string>DHCP6</string>
+              <string>DNSC</string>
+              <string>FIREWALL</string>
+              <string>FTP</string>
+              <string>IKE</string>
+              <string>IKE-ADVANCED</string>
+              <string>IKE-ALGORITHMS</string>
+              <string>IKE-AUTHENTICATION</string>
+              <string>IKE-BASIC</string>
+              <string>IKE-DAEMON</string>
+              <string>IKE-IPEAP</string>
+              <string>IKE-RACOON</string>
+              <string>IKE-ROHC-IPSEC</string>
+              <string>IKE-SETTINGS</string>
+              <string>IPNET</string>
+              <string>IPNET-IPSEC</string>
+              <string>IPSEC-IPCRYPTO</string>
+              <string>L2TP</string>
+              <string>MCP</string>
+              <string>NAT</string>
+              <string>NET_VLAN</string>
+              <string>NTP</string>
+              <string>PPP</string>
+              <string>QOS</string>
+              <string>RADIUS</string>
+              <string>RIP</string>
+              <string>RIPNG</string>
+              <string>ROHC_ESP</string>
+              <string>ROHC_IP</string>
+              <string>ROHC_TCP</string>
+              <string>ROHC_UDP</string>
+              <string>ROHC_UNCMP</string>
+              <string>RTNET</string>
+              <string>SECEVENT</string>
+              <string>SCTP</string>
+              <string>SNTP_CLIENT</string>
+              <string>SNTP_SERVER</string>
+              <string>SSH</string>
+              <string>SSHCLIENT</string>
+              <string>SSH-FIPS-140-2</string>
+              <string>SSL</string>
+              <string>SYSVIEW</string>
+              <string>TFTP</string>
+              <string>USERAUTH_LDAP</string>
+              <string>USERDB</string>
+              <string>VRRP</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TESTCASE</name>
+          <description>ALL : all test cases (default)
+One test case, e.g. ipnet.raw.bind
+One group test cases, e.g. ipnet.raw
+Two group test cases, e.g. ipnet.frag,ipnet.raw</description>
+          <defaultValue>ALL</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>TOOL</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>gnu</string>
+              <string>llvm</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>BOARD</name>
+          <description>the bsp that you assign</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>vxsim_linux</string>
+              <string>fsl_imx6</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>kong-vm-tis-100-11</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash -x
+
+NeedSetuptool() {
+    # must be used after git pull
+    ret=`git status | grep &quot;modified:&quot; | grep &quot;new commits&quot; | sed &quot;s/ //g&quot;`
+    if test -z &quot;$ret&quot;
+    then
+        echo &quot;False&quot;
+        return
+    else
+        echo &quot;True&quot;
+        return
+    fi
+}
+
+hostname
+date
+echo $BUILD_USER
+echo `id`
+echo $BRANCH
+echo $COMMIT
+echo $MODULE
+echo $TESTCASE
+echo $TOOL
+echo $BOARD
+
+echo $WORKSPACE
+sudo rm -fr *
+
+hoststr=`hostname`
+if [[ $hoststr == &quot;kong-vm-tis-&quot;* ]]
+then
+	GITPATH=/home/ubuntu/vxworks
+elif [[ $hoststr == &quot;kong-rvm-&quot;* ]]
+then
+	GITPATH=/home/svc-cmnet/vxworks
+else
+	echo &quot;UNKNOWN_VM&quot;
+	exit 1
+fi
+
+SCRIPTPATH=$GITPATH/vxworks-7/pkgs/net/ipnet/coreip/src/ipcom/util/scripts
+TFTPPATH=/folk/lchen3/tftpboot # hardcoded at runtestsuite_conf.py already, it should be matched here
+
+cd $GITPATH
+git reset --hard HEAD
+git pull # make new branch visible for git checkout
+git checkout $BRANCH
+git pull
+
+need_setuptool=$(NeedSetuptool)
+echo $need_setuptool
+#if [ &quot;$need_setuptool&quot; = &quot;True&quot; ]
+#if [ &quot;True&quot; = &quot;True&quot; ]
+if [ &quot;True&quot; = &quot;False&quot; ]
+then
+    ./setup-tools -clean
+    ./setup-tools
+else
+    echo &quot;no need to run setup-tool&quot;
+fi
+
+if [ &quot;$COMMIT&quot; = &quot;none&quot; ]
+then
+    echo &quot;use latest commit&quot;
+    git pull
+else
+    found=`git log | grep $COMMIT`
+    if [ &quot;$found&quot; = &quot;&quot; ]
+    then
+        echo &quot;not found $COMMIT at the branch $BRANCH&quot;
+        exit 1
+    fi
+    echo &quot;use the commit $COMMIT&quot;
+    git pull
+    git reset --hard $COMMIT
+fi
+
+git branch | grep ^\*
+git log -1 HEAD
+
+# make sure using pexpect 0.99
+export PYTHONPATH=$SCRIPTPATH:$PYTHONPATH
+
+if [ &quot;$BOARD&quot; = &quot;vxsim_linux_1_0_0_0&quot; ]; then
+	TARGET=simlinux
+	cmdPrefix=&quot;$SCRIPTPATH/runtestsuite.py --uml=&quot;type=generic,kernel=/uml/linux,root=/uml/ubuntu_root_fs,user=test,password=test&quot; --vxworks=&quot;board=$BOARD,target=$TARGET,version=7,wrenv=7,path=$GITPATH&quot; --speed &quot;
+elif [ &quot;$BOARD&quot; = &quot;fsl_imx6&quot; ]; then
+	TARGET=ARMARCH7
+	#IMAGEPATH=$GITPATH/vxworks-7/pkgs/net/ipnet/coreip/src/ipcom/util/scripts/$MODULE/${BOARD}_image
+	IMAGEPATH=$WORKSPACE/$MODULE/${BOARD}_image
+	rm -fr $TFTPPATH/*
+	rm -fr $IMAGEPATH
+	mkdir -p $IMAGEPATH
+	cmdPrefix=&quot;$SCRIPTPATH/runtestsuite.py --uml=&quot;type=generic,kernel=/uml/linux,root=/uml/ubuntu_root_fs,user=test,password=test&quot; --targets=2 --vlmtargets=&quot;25002,25003&quot; --speed --supports=mipl --target-speed=50 --toolchain=gnu --vxworks=&quot;board=$BOARD,imagepath=$IMAGEPATH,shell=ipcom,stdout,target=$TARGET,bootdev=fei_intel,interface=eth1,version=7,wrenv=7,path=$GITPATH,tty=/dev/ttyS0&quot; &quot;
+else
+	echo &quot;BOARD should be either vxsim_linux_1_0_0_0 or fsl_imx6&quot;
+	exit 1	
+fi
+
+echo &quot;=== building and testing $BOARD image ===&quot;
+vlmTool forceUnreserve -s amazon.wrs.com -t 25002 -Z lchen3 -P wrslchen3
+vlmTool forceUnreserve -s amazon.wrs.com -t 25003 -Z lchen3 -P wrslchen3
+
+cd $WORKSPACE
+sudo rm -fr $MODULE
+if [ &quot;$TESTCASE&quot; = &quot;ALL&quot; ]
+then
+	echo &quot;test all test cases&quot;
+	$cmdPrefix -c $MODULE
+else
+	echo &quot;test some test cases&quot;
+	$cmdPrefix -c $MODULE -n $TESTCASE
+fi
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>*/cvs/iptestengine/src/log/test.log_*,*/vxsim*/vxsimlog</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>Info: tinderbox: status: success</regexp>
+      <succeedIfFound>true</succeedIfFound>
+      <unstableIfFound>false</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BUILD_USER&quot;}#${ENV,var=&quot;MODULE&quot;}#${ENV,var=&quot;BRANCH&quot;}#${ENV,var=&quot;COMMIT&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

@@ -1,0 +1,127 @@
+== vx7 dev nightly ==
+
+Requirement:
+    - find the code changes at  vx7 feature branches 
+    - run build nightly to get compiler warnings and prevent defects
+    - notify related developers/managers
+    - multiserver support
+    - (future) add automation test
+
+
+Design:
+way 1:
+    - find a new branch (git branch -r)
+        use specified branches so far
+    - (Done) find a new checkin for a branch (compare to a local log)
+        Jenkins job starts at 11:00pm every day
+    - (DONE) clone Git and branch 
+        git pull: error: Your local changes to the following files would be overwritten by merge (use git reset --hard to remove this error)
+    - (Partial DONE) trigger build for warning
+        bsp, tool, layers
+    - trigger build for coverity
+        (DONE) set environment var TMPDIR in case that /tmp cannot have enough space
+        (to-do) 3.4G for one coverity; need to clean up old coverity records
+    - (DONE) notify way: email + Jenkins
+    - (DONE) python: force to use /folk/lchen3/package/opt/bin/python (2.7.3 with dateutil)
+    - multi-server
+        - (DONE) refactor code
+        - (DONE) reuse jenkins framework (ServerStatus, Jenkins APIs, Jenkins jobs)
+        - (DONE) multiple gits sync (master at 05l): use master git for checking updates, use local git for build
+        - (DONE) get truely-build build id, get its status
+        - (DONE) first run, need to check if there is 'truely-build' running
+        - (DONE) try to see if concurrent jobs can be working
+        - (DONE) add email notification
+        - (DONE) job.is_running() issue ( get failed when last build is not running but one of previous job running )
+        - (DONE) refer-to-log on multi-server ( reuse Allen's nightly directory )
+        - (DONE) support multiple builds for the same bsp
+        - (DONE) ?? add Doug Egan latest env variable
+        - (DONE) git log returns incorrect result when dealing with merge commit ( git log --no-merges? )
+        - (DONE) from committer's login name to his/her email, then to manager's email
+            from login to full name:
+                ypcat passwd | grep "^login:"
+                grep "firstname lastname" contact.txt
+        - (DONE) add build commands to email report
+        - (half DONE) clean-up
+        - (DONE) new requirement: filter some directories; filter the final c/output/errors1/index.html
+        - unified error handling
+        - 64bit build
+ 
+  
+way 2: a command line tool which asks developers to use for build
+      theCommand make -j24
+        - build normally
+        - show warnings
+        - build coverity and show result
+        - send email with summary
+
+ISSUE list:        
+(DONE)ISSUE-1: vx7-imx6-sabreai branch need $GIT/setup/postinstall.sh
+            Using fsl_imx6_1_1_2_0 instead of fsl_imx6
+            Creating VSB Project ...
+            VSB project creation failed : need to specify either a BSP or a CPU
+
+            or
+            Using fsl_imx6_1_1_2_0 instead of fsl_imx6
+            Creating VSB Project ...
+            VSB project creation failed : can't read "famDir": no such variable
+            
+            solution: not related to the different env vars; the issue gets removed after running setup-tools
+            
+(DONE)ISSUE-2: .git/index.lock issue (4 branch, 2 branches really do git reset --hard)
+            both git checkout and git reset need to check the lock first before running the commands
+        
+ISSUE-3: bspDir is same for both smp or not
+        
+ISSUE-4: build commands in email were not separated by lines 
+        == build commands at pek-cc-pb05l.wrs.com:
+rm -fr /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab
+cd /buildarea1/target/vx7dev/vx-build/vx7-firewire
+vxprj vsb create -bsp ti_sitara_ctxa8_1_0_1_0 /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab -S cd /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab; vxprj vsb add IEEE1394_1_0_0_0 cd /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab; vxprj vsb add IEEE1394_1_0_0_0_STACK_1_0_0_0 cd /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab; vxprj vsb add VXTEST_1_0_0_0_IEEE1394_1_0_0_0 cd /buildarea1/target/vx7dev/vx-build/vx7-firewire/vx7-firewire@ti_sitara_ctxa8@diab;  prevent.pl  make -j24
+        
+ISSUE-5: 
+COMMAND=vxprj vsb create -bsp fsl_imx6 /buildarea1/target/vx7dev/vx-build/vx7-release/vx7-release@fsl_imx6@gnu@ARMARCH7 -S
+    return_code=255
+    output=
+ERROR, wrenv is incorrect, WIND_BSP_PATHS not set, run /buildarea1/target/vx7dev/vx-git/setup/postinstall 
+ERROR, wrenv is incorrect, WIND_BSP_PATHS not set, run /buildarea1/target/vx7dev/vx-git/setup/postinstall 
+Unknown BSP fsl_imx6.  Invoke `vxprj vsb listBsps -all` for a list of valid BSPs
+
+(DONE) ISSUE-6:
+http://pek-mcbuild2.wrs.com:8070/view/Libo-try/job/vx7-dev-branch-truely-build/209/console
++ /folk/lchen3/package/opt/bin/python /folk/lchen3/try/workspace/PdvTool/vx7tool/new/VsbBuild.py --branch fr43-crypto-fips --server pek-cc-pb05l --oldcommit 5c7aef047e7a967049a52cac97c8b84756c9aea9 --newcommit a40d046a05573f0e4a46c1db38360a46ddb36532
+== build bsp ti_sitara_ctxa8 for branch fr43-crypto-fips
+{'layers': [], 'parallelBuild': True, 'bsp': 'ti_sitara_ctxa8', 'cpu': '', 'preventBuild': True, 'components': ['/pkgs/net/ipnet', '/pkgs/net/mib2', '/pkgs/net/net_base'], 'keywords': ['NET'], 'smp': False, 'tool': 'diab'}
+== BUILDCMD server:pek-cc-pb05l.wrs.com, dir:/buildarea1/target/vx7dev/vx-git
+== BUILDCMD git branch:
+* fr43-crypto-fips
+  jliu1-quark
+  vx7-bluetooth
+  vx7-firewire
+  vx7-release
+== BUILDCMD latest commit:
+commit a40d046a05573f0e4a46c1db38360a46ddb36532
+Author: jren <jren@pek-cc-pb04l.wrs.com>
+Date:   Thu Sep 18 10:44:12 2014 +0800
+
+    Support for NTP crypto does not work. V7NET-430
+== update branch fr43-crypto-fips at pek-cc-pb05l.wrs.com
+
+== update branch
+    ==git checkout fr43-crypto-fips
+    Switched to branch 'fr43-crypto-fips'
+    ==git reset --hard
+    HEAD is now at a40d046 Support for NTP crypto does not work. V7NET-430
+    ==cd /buildarea1/target/vx7dev/vx-git;git pull
+    fatal: Merge branch 'fr43-crypto-fips' of http://vxgit.wrs.com/scm/vx7/vxworks into fr43-crypto-fips - not something we can merge
+== True a40d046a05573f0e4a46c1db38360a46ddb36532 0f6b8ea322752f344c36d9e0c4af73f680f83071
+== server:pek-cc-pb05l, old commit:a40d046a05573f0e4a46c1db38360a46ddb36532, new commit:0f6b8ea322752f344c36d9e0c4af73f680f83071
+== master git old commit:5c7aef047e7a967049a52cac97c8b84756c9aea9, new commit:a40d046a05573f0e4a46c1db38360a46ddb36532
+== VSBBUILD server:pek-cc-pb05l.wrs.com, dir:/buildarea1/target/vx7dev/vx-git
+== VSBBUILD git branch:
+  fr43-crypto-fips
+* jliu1-quark
+  vx7-bluetooth
+  vx7-firewire
+  vx7-release
+ 
+ 
