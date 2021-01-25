@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-release</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NEWCOMMIT</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BSP</name>
+          <description></description>
+          <defaultValue>vxsim_linux</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>kong-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>date
+hostname
+id
+echo $BRANCH
+echo $NEWCOMMIT
+MODULE=IPSEC-IPCRYPTO
+TESTCASE=ipipsec.ipipsec.ah44_sha1,ipipsec.ipipsec.ah46_sha1,ipipsec.ipipsec.ah64_sha1,ipipsec.ipipsec.ah66_sha1,ipipsec.ipipsec.ah_bad_key,ipipsec.ipipsec.ah_transport_aesmac,ipipsec.ipipsec.ah_transport_md5,ipipsec.ipipsec.ah_transport_rmd160,ipipsec.ipipsec.ah_transport_sha1,ipipsec.ipipsec.ah_transport_sha256,ipipsec.ipipsec.ah_transport_sha384,ipipsec.ipipsec.ah_transport_sha512,ipipsec.ipipsec.ah_tunnel_aesmac,ipipsec.ipipsec.ah_tunnel_md5,ipipsec.ipipsec.ah_tunnel_rmd160,ipipsec.ipipsec.ah_tunnel_sha1,ipipsec.ipipsec.ah_tunnel_sha1_esn128,ipipsec.ipipsec.ah_tunnel_sha1_esn32,ipipsec.ipipsec.ah_tunnel_sha1_esn64,ipipsec.ipipsec.ah_tunnel_sha1_replay16,ipipsec.ipipsec.ah_tunnel_sha1_replay32,ipipsec.ipipsec.ah_tunnel_sha256,ipipsec.ipipsec.ah_tunnel_sha384,ipipsec.ipipsec.ah_tunnel_sha512,ipipsec.ipipsec.ahesp_transport_aesctr_md5,ipipsec.ipipsec.ahesp_tunnel_aesctr_md5,ipipsec.ipipsec.ahesp_tunnel_des_md5,ipipsec.ipipsec.ahesp_tunnelah_aesctr_md5,ipipsec.ipipsec.ahesp_tunnelesp_aesctr_md5,ipipsec.ipipsec.config_loopback_esp,ipipsec.ipipsec.esp44_aes_md5,ipipsec.ipipsec.esp46_aes_md5,ipipsec.ipipsec.esp64_aes_md5,ipipsec.ipipsec.esp66_aes_md5,ipipsec.ipipsec.esp_bad_key,ipipsec.ipipsec.esp_tfc_timeout,ipipsec.ipipsec.esp_transport_3des_aesmac,ipipsec.ipipsec.esp_transport_3des_aesmac_esn,ipipsec.ipipsec.esp_transport_3des_md5,ipipsec.ipipsec.esp_transport_3des_none,ipipsec.ipipsec.esp_transport_3des_rmd160,ipipsec.ipipsec.esp_transport_3des_sha1,ipipsec.ipipsec.esp_transport_3des_sha256,ipipsec.ipipsec.esp_transport_3des_sha384,ipipsec.ipipsec.esp_transport_3des_sha512,ipipsec.ipipsec.esp_transport_3des_sha512_esn,ipipsec.ipipsec.esp_transport_aes_aesmac,ipipsec.ipipsec.esp_transport_aes_md5,ipipsec.ipipsec.esp_transport_aes_none,ipipsec.ipipsec.esp_transport_aes_rmd160,ipipsec.ipipsec.esp_transport_aes_sha1,ipipsec.ipipsec.esp_transport_aes_sha1_nat_udpencap,ipipsec.ipipsec.esp_transport_aes_sha1_udpencap,ipipsec.ipipsec.esp_transport_aes_sha256,ipipsec.ipipsec.esp_transport_aes_sha384,ipipsec.ipipsec.esp_transport_aes_sha512,ipipsec.ipipsec.esp_transport_aesctr_aesmac,ipipsec.ipipsec.esp_transport_aesctr_aesmac_esn,ipipsec.ipipsec.esp_transport_aesctr_aesmac_tfc,ipipsec.ipipsec.esp_transport_aesctr_md5,ipipsec.ipipsec.esp_transport_aesctr_none
+
+BSP=vxsim_linux
+/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/try/workspace/PdvTool/vx7tool/new/RunTest.sh $BRANCH $NEWCOMMIT $MODULE $TESTCASE $BSP
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>Info: tinderbox: status: success</regexp>
+      <succeedIfFound>true</succeedIfFound>
+      <unstableIfFound>false</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BRANCH&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

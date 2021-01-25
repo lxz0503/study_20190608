@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>pek-cc-pb02l</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash -x
+hostname
+
+MYPATH=/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3
+GITPATH=/testcloud/svc-cmnet/vxworks
+#SCRIPTPATH=$MYPATH/tools/vx7-util-scripts
+SCRIPTPATH=$GITPATH/vxworks-7/pkgs/net/ipnet/coreip/src/ipcom/util/scripts
+PATH=$PATH:/folk/lchen3/bin
+export PYTHONPATH=/folk/lchen3/try/workspace/PMT/src
+# use svc-cmnet&apos;s python interpreter since python-jira needs python 2.7.12 here
+# or the error &quot;ValueError: SSL_set_tlsext_host_name not supported by this version of OpenSSL&quot; happens
+export PATH=/folk/svc-cmnet/opt/bin:$PATH
+export LD_LIBRARY_PATH=/folk/svc-cmnet/opt/lib:$LD_LIBRARY_PATH
+
+$MYPATH/try/workspace/PdvTool/vx7tool/new/KongStoreTestResult.py
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>

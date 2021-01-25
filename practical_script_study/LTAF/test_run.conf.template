@@ -1,0 +1,32 @@
+[LTAF]
+action = add_update
+
+release_name = R_RELEASENAME_R
+
+test_name = R_TESTCASE_R
+test_suite = R_TESTSUITE_R
+test_component = R_COMPONENT_R
+domain = R_DOMAIN_R
+
+sprint = R_SPRINT_R
+week = R_WEEK_R
+
+bsp = R_BSP_R
+spin = R_SPIN_R
+
+status = R_TESTRESULT_R
+tags = R_TAGS_R
+tester = R_TESTER_R
+board = R_BOARD_R
+log = R_LOG_R
+
+# build for branch info
+build = R_BUILD_R
+# buildoptions for commit info
+buildoptions = R_BUILDOPTIONS_R
+
+requirements = R_REQUIREMENT_R
+
+function_pass = R_FUNCPASS_R
+function_fail = R_FUNCFAIL_R
+SpinType = R_SPINTYPE_R

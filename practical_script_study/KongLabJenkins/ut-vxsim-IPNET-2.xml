@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>14</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>BRANCH</name>
+          <description>The Git branch you want to test on</description>
+          <defaultValue>vx7-release</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NEWCOMMIT</name>
+          <description></description>
+          <defaultValue>none</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BSP</name>
+          <description></description>
+          <defaultValue>vxsim_linux</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.flow__plugin.FlowProjectProperty plugin="flow@1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>kong-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>date
+hostname
+id
+echo $BRANCH
+echo $NEWCOMMIT
+MODULE=IPNET
+TESTCASE=ipnet.route.fragmenting_fragment,ipnet.route.multihop,ipnet.route.multiple_default_gw,ipnet.route.multistream,ipnet.route.same_dst,ipnet.route.same_net,ipnet.route.specific_remove,ipnet.rtadvsol.basic,ipnet.rtadvsol.lifetime,ipnet.shell_cmd.arp,ipnet.shell_cmd.cinterp,ipnet.shell_cmd.configd,ipnet.shell_cmd.ifconfig,ipnet.shell_cmd.ipnet_ctrl,ipnet.shell_cmd.ndp,ipnet.shell_cmd.netstat,ipnet.shell_cmd.pcap,ipnet.shell_cmd.ping,ipnet.shell_cmd.ping6,ipnet.shell_cmd.qc,ipnet.shell_cmd.qos,ipnet.shell_cmd.radvd,ipnet.shell_cmd.route,ipnet.shell_cmd.sysctl,ipnet.sockets.bind_to_device,ipnet.sockets.ephermeral_port,ipnet.sockets.error,ipnet.sockets.event,ipnet.sockets.ioctl,ipnet.sockets.ioctl_siocsintr,ipnet.sockets.open,ipnet.sockets.out_of_mem,ipnet.sockets.packet,ipnet.sockets.rcvbufsz,ipnet.sockets.reuseaddr,ipnet.sockets.vlan,ipnet.tcp.aborted_connection_reconnect,ipnet.tcp.ack_part_of_seg,ipnet.tcp.address_remove,ipnet.tcp.backlog,ipnet.tcp.backoff,ipnet.tcp.clamp_mss,ipnet.tcp.close_listen_sock,ipnet.tcp.connect_reboot_connect,ipnet.tcp.connect_to_self,ipnet.tcp.cork,ipnet.tcp.icmp_error_hard,ipnet.tcp.icmp_error_soft,ipnet.tcp.keepalive,ipnet.tcp.large_send,ipnet.tcp.link_failure,ipnet.tcp.lo_watermark,ipnet.tcp.md5sockopt,ipnet.tcp.msg_peek,ipnet.tcp.mss,ipnet.tcp.multiple_readers,ipnet.tcp.multiple_selects,ipnet.tcp.non_blocking,ipnet.tcp.non_graceful_shell_shutdown,ipnet.tcp.path_mtu,ipnet.tcp.persist,ipnet.tcp.reuse_addr,ipnet.tcp.reuse_addr_same_remote_port,ipnet.tcp.select,ipnet.tcp.selective_ack,ipnet.tcp.send_recv_zero_octets,ipnet.tcp.sendto,ipnet.tcp.shutdown,ipnet.tcp.simultaneous_close,ipnet.tcp.tcpao,ipnet.tcp.timestampopt,ipnet.tcp.tiny_recv_window,ipnet.tcp.unreliable_link,ipnet.tcp.urgent,ipnet.tcp.urgent_oobinline,ipnet.tcp.urgent_rfc_1122_compliant,ipnet.tcp.urgent_two_hosts,ipnet.tcp_common.accept,ipnet.tcp_common.bind_reuse_fail,ipnet.tcp_common.bind_reuse_ok,ipnet.tcp_common.connect,ipnet.tcp_common.linger,ipnet.tcp_common.many,ipnet.tcp_common.many_two_hosts,ipnet.tcp_common.packets_echo,ipnet.tcp_common.packets_echo_ignore_reply,ipnet.tcp_common.same_port,ipnet.tcp_common.shrink_recv_wnd,ipnet.tcp_common.single_big,ipnet.tcp_common.single_small,ipnet.tcp_common.sockopt,ipnet.tcp_common.waitall,ipnet.tunnel.gre,ipnet.tunnel.gre_dstaddr,ipnet.tunnel.gre_seqnum,ipnet.tunnel.ipip,ipnet.tunnel.ipip_dstaddr,ipnet.tunnel.ipipv6_dad,ipnet.tunnel.minencap,ipnet.tunnel.minencap_dstaddr,ipnet.tunnel.sit,ipnet.tunnel.t6over4,ipnet.tunnel.t6to4,ipnet.tunnel.t6to4_relay,ipnet.tunnel.udp_encap,ipnet.tunnel.vr,ipnet.udp.alternate_to_addrs,ipnet.udp.close_when_blocked,ipnet.udp.close_with_outstanding_tx,ipnet.udp.flood,ipnet.udp.mcast_bcast,ipnet.udp.msg_more,ipnet.udp.msg_peek,ipnet.udp.recv_when_blocked,ipnet.udp.udplite,ipnet.udp_common.bind,ipnet.udp_common.connected,ipnet.udp_common.fragment,ipnet.udp_common.large_send,ipnet.udp_common.not_connected,ipnet.udp_common.op_fail,ipnet.udp_common.pending_error,ipnet.udp_common.same_port,ipnet.udp_common.select,ipnet.udp_common.unconnect,ipnet.udp_common.zero_sized_dgram,ipnet.vlan.compact_and_configure,ipnet.vlan.create_and_configure,ipnet.windview.arp,ipnet.windview.frag,ipnet.windview.icmp_unreach,ipnet.windview.neigh,ipnet.windview.ping,ipnet.windview.tcp_reset,ipnet.windview.udp,ipnet.zerocopy.tcp_recv,ipnet.zerocopy.tcp_send,ipnet.zerocopy.udp_recv,ipnet.zerocopy.udp_send
+
+BSP=vxsim_linux
+/net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/try/workspace/PdvTool/vx7tool/new/RunTest.sh $BRANCH $NEWCOMMIT $MODULE $TESTCASE $BSP
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.textfinder.TextFinderPublisher plugin="text-finder@1.10">
+      <regexp>Info: tinderbox: status: success</regexp>
+      <succeedIfFound>true</succeedIfFound>
+      <unstableIfFound>false</unstableIfFound>
+      <alsoCheckConsoleOutput>true</alsoCheckConsoleOutput>
+    </hudson.plugins.textfinder.TextFinderPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.3">
+      <template>#${BUILD_NUMBER}#${ENV,var=&quot;BRANCH&quot;}</template>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+    <org.jenkinsci.plugins.builduser.BuildUser plugin="build-user-vars-plugin@1.4"/>
+  </buildWrappers>
+</project>
