@@ -10,7 +10,6 @@ from jenkinsapi import api
 
 # package python jenkins
 import jenkins
-
 import json, sys, urllib2, os, re
 import requests
 
@@ -84,7 +83,7 @@ def GetLatestJobStatus(jenkinsUrl, jobName, user=None, password=None):
     """ return the latest status of a Jenkins job
         status: SUCCESS, FAILURE, INPROGRESS (None) and latest job number
     """
-    rJson = __GetOneBuildStatus(jenkinsUrl, jobName, 'lastBuild', '/api/json', user, password).json()
+    rJson = __GetOneBuildStatus(jenkinsUrl, jobName, 'lastBuild', '/api/json', user, password).json()    # return value is json, so change to python dict
 
     if rJson.has_key('result') and rJson.has_key('number'):
         status = rJson['result']

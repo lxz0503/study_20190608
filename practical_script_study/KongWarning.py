@@ -48,8 +48,8 @@ def test_extractWarnings():
         i += 1
 
 def main1():
-    multiJob = 'ci-manager'
-    multiJobBuild = 2850
+    multiJob = 'ci-manager'  # job name
+    multiJobBuild = 2850     # build ID
     jobBuilds = GetJobBuildsFromMultiJob(kongJenkins, multiJob, multiJobBuild, kongUser, kongPassword)
     print(jobBuilds)
 
@@ -66,13 +66,17 @@ class WarningParser():
         # format : iptftpc.c:489:23: warning: ...^
         return warning.split(':')[0]
 
-class KongTestJenkins():
+
+class KongTestJenkins(object):
+    """
+    this is for KONG Jenkins API
+    """
     def __init__(self, kongJenkins, kongUser, kongPassword):
         self.kongJenkins = kongJenkins
         self.kongUser = kongUser
         self.kongPassword = kongPassword
     
-    def getLatestBuild(self):
+    def getLatestBuild(self):    # return build ID
         job = 'ci-manager'
         status, build = GetLatestJobStatus(self.kongJenkins, job, user=self.kongUser, password=self.kongPassword)
         if status == 'INPROGRESS':
@@ -179,10 +183,11 @@ def main():
     moduleUrlWarnings = []
     allWarnings = []
 
-    parser = WarningParser()
+    parser = WarningParser()    # crete a class instance
+    # create a class instance, the first parameter is kongJenkins = 'http://pek-testharness-s1.wrs.com:8080'
     jkn = KongTestJenkins(kongJenkins, kongUser, kongPassword)
-    latestBuild = jkn.getLatestBuild()
-    moduleJobBuilds = jkn.getBuildSlaves(latestBuild)
+    latestBuild = jkn.getLatestBuild()      # this can get build ID number
+    moduleJobBuilds = jkn.getBuildSlaves(latestBuild)      # get all build modules,
 
     for module, job, build in moduleJobBuilds:
         content = jkn.getConsole(job, build)
