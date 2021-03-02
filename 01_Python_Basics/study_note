@@ -5,6 +5,8 @@
 # install python packets-----     website is   pypi.org
 # install python on your none operating system disk(if system crashed, you do not need to install python)
 
+可以选择用sys.path.insert(0,‘/path’)，这样新添加的目录会优先于其他目录被import检查
+
 with open('time.txt', encoding='utf_8_sig') as f:   # 如果文本里有中文，就用utf_8_sig来解码
 # xlwt、wlrd只能读写xls文件，而不能操作xlsx文件,openyxl is ok
 # 对于namedtuple，你不必再通过索引值进行访问，你可以把它看做一个字典通过名字进行访问，只不过其中的值是不能改变的
