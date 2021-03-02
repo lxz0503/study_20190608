@@ -9,8 +9,8 @@ data = [randint(0, 20) for i in range(30)]   # 数字介于0到20之间，一共
 # 以data中的数值为key创建 一个字典，每个初始值为0
 # 字典的key不能重复，所以自动过滤掉了重复的key,即不会重复统计
 c = dict.fromkeys(data, 0)  # default value is 0
-print(c)   #
-print(data)  # data includes duplicated element
+print('the generated dictionary is', c)   # this is a dictionary
+print('original data is', data)  # data includes duplicated element
 for x in data:
     c[x] += 1   # change the dict value
 print(c)
@@ -19,7 +19,8 @@ print(c)
 # {20: 2, 19: 5, 12: 2, 2: 1, 16: 3, 18: 2, 1: 2, 13: 2, 7: 2, 8: 1, 0: 3, 15: 1, 14: 1, 9: 1, 17: 1, 3: 1}
 # 统计出现频率最高的前5个元素
 items = list(c.items())
-items.sort(key=lambda k: k[1], reverse=True)
+print('items is', items)
+items.sort(key=lambda k: k[1], reverse=True)   # the sort function in list directly modify the items itself
 # print("the sorted list is %s" % items)
 for i in range(5):
     word, count = items[i]   # unpack
