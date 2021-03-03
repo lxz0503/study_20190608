@@ -16,7 +16,7 @@ import re
 # 正则表达式分组，后面的\1,\2,\3表示正则表达式匹配到的三个分组，1，2，3表示位置
 f = open('file_test').read()
 print('old file content is:\n', f)
-new_f = re.sub(r'(\d{4})-(\d{2})-(\d{2})', r'\2/\3/\1', f)
+new_f = re.sub(r'(\d{4})-(\d{2})-(\d{2})', r'\2/\3/\1', f)    # there is / among USA date
 print('new content is:\n', new_f)
 # 方法二： 正则表达式分组起名字，注意下面的格式，都是用?P<>
 new_f = re.sub(r'(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})', r'\g<month>/\g<day>/\g<year>', f)

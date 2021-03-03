@@ -14,7 +14,7 @@ width = max(map(len, dic.keys()))
 print(width)
 
 for k in dic:
-    print('%10s: %5s' % (k, dic[k]))   # 默认是采用右对齐格式，10s表示宽度为10个字符
+    print('%10s: %5s' % (k, dic[k]))   # 10: 表示采用右对齐格式，10s表示宽度为10个字符
 #　左对齐格式
 print('left format:')
 for k in dic:
@@ -31,4 +31,11 @@ for k in dic:     # 注意下面必须用str()先转化为字符串格式，才�
 # format方法,<>^分别表示左，右，居中对齐
 print('使用format方法：')
 for k in dic:     # 注意下面必须用str()先转化为字符串格式
-    print('{:9} {} {:*>5}'.format(k, ':', str(dic[k])))   # 默认是左对齐
+    print('{:9} {} {:*>5}'.format(k, ':', str(dic[k])))   # {:9}是左对齐, {:*>5}表示右对齐，左边不足的用*补齐
+#
+# 使用format方法：
+# local     : 100.0
+# SmallCull : *0.04
+# DisxtCull : 500.0
+# trilinear : ***40
+# farclip   : **477
