@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# 
+# # run imx6 smp, below is the script in Jenkins shell
+# . /net/pek-vx-system1/buildarea1/hyan1/wassp/nightly_config.ini  # 用.等同于source，后面就可以直接使用里面的变量，适用shell脚本
+DVD=/net/pek-vx-system1/buildarea1/yliu2/nightly/vx20210316020010_vx_2107
+LTAFRELEASE=vx7-integration-native
+RUNDATE=2021-03-18
+VXVER=vxworks/21.07
+# PLAN='/folk/hyan1/wassp/iPerf_smp/03_fsl_arm_25005_imx6_sabrelite.xls'
+# python3 /folk/hyan1/Nightly/iPerf_smp/iPerf_run.py --plan $PLAN --dvd $DVD --release $LTAFRELEASE --rundate $RUNDATE --vxver $VXVER
 import os.path
 import argparse
 from datetime import datetime

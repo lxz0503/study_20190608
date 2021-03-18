@@ -6,7 +6,7 @@ from random import randint
 
 data = [randint(0, 20) for i in range(30)]   # 数字介于0到20之间，一共30个元素
 # print(len(data))
-# 以data中的数值为key创建 一个字典，每个初始值为0
+# below is 以data中的数值为key创建 一个字典，每个初始值为0
 # 字典的key不能重复，所以自动过滤掉了重复的key,即不会重复统计
 c = dict.fromkeys(data, 0)  # default value is 0
 print('the generated dictionary is', c)   # this is a dictionary

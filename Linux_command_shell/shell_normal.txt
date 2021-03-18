@@ -1540,6 +1540,15 @@ http://www.aaa.org/index.html
 sed -i         #表示直接修改文件内容，否则只是在内存中修改
 sed -i  s/reg/replace/g      # 用replace来替换reg正则匹配到的文本
 
+hyan1@pek-vx-nwk1:~/Nightly/iPerf_up$ grep -rI "21.03" ./
+./iPerf_rerun_v2.py:        command = 'runwassp -f {WASSP_PLAN} -E "WASSP_VXWORKS_INSTALL_BASE={WASSP_WIND_HOME}"  -E "WASSP_HOME={WASSP_HOME}" -E "WASSP_WORKSPACE_HOME={WASSP_WORKSPACE_HOME}" -E "WASSP_LOGS_HOME={WASSP_LOGS_HOME}" -E "WASSP_VXWORKS_VERNUM=7" -E "WASSP_VXWORKS_VER=vxworks/21.03" -E "WASSP_VXWORKS_TYPE=vxworks"  --continueIfReleaseInvalid -s exec --exec-retries 5'.format(WASSP_PLAN = rerun_plan, WASSP_WIND_HOME = dvd, WASSP_HOME = wassp_home, WASSP_WORKSPACE_HOME = workspace, WASSP_LOGS_HOME = logs)
+./iPerf_run_spin.py:        command = 'runwassp -f {WASSP_PLAN} -E "WASSP_VXWORKS_INSTALL_BASE={WASSP_WIND_HOME}"  -E "WASSP_HOME={WASSP_HOME}" -E "WASSP_WORKSPACE_HOME={WASSP_WORKSPACE_HOME}" -E "WASSP_LOGS_HOME={WASSP_LOGS_HOME}" -E "WASSP_VXWORKS_VERNUM=7" -E "WASSP_VXWORKS_VER=vxworks/21.03" -E "WASSP_VXWORKS_TYPE=vxworks" --continueIfReleaseInvalid'.format(WASSP_PLAN = wassp_plan, WASSP_WIND_HOME = dvd, WASSP_HOME = wassp_home, WASSP_WORKSPACE_HOME = workspace, WASSP_LOGS_HOME = logs)
+./iPerf_rerun_weekly.py:        command = 'runwassp -f {WASSP_PLAN} -E "WASSP_VXWORKS_INSTALL_BASE={WASSP_WIND_HOME}"  -E "WASSP_HOME={WASSP_HOME}" -E "WASSP_WORKSPACE_HOME={WASSP_WORKSPACE_HOME}" -E "WASSP_LOGS_HOME={WASSP_LOGS_HOME}" -E "WASSP_VXWORKS_VERNUM=7" -E "WASSP_VXWORKS_VER=vxworks/21.03" -E "WASSP_VXWORKS_TYPE=vxworks" --continueIfReleaseInvalid -s exec --exec-retries 5'.format(WASSP_PLAN = rerun_plan, WASSP_WIND_HOME = dvd, WASSP_HOME = wassp_home, WASSP_WORKSPACE_HOME = workspace, WASSP_LOGS_HOME = logs)
+
+# replace 21.03 with 21.07
+sed -i s/21.03/21.07/g iPerf_rerun_v2.py iPerf_run_entropy.py iPerf_rerun_weekly.py iPerf_run_entropy.py iPerf_run_debug.py
+
+
 windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -i '2a xiaozhan' url.txt     # 2a表示在第2行后追加内容
 windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt
 http://www.aAaa.org/index.html
@@ -2016,6 +2025,10 @@ processor从0开始     逻辑cpu的数量
 hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/cpuinfo | grep name | cut -d: -f2 | uniq -c
      72  Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
 hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$
+
+---------------------------保存top命令输出------
+top -b -n 1 > top_output
+top -b -n 1 | tee top_output
 =======================================================================
 查看子目录大小，占用磁盘空间
 [xli3@pek-vx-nightly1 wassp-repos]$ du -ah --max-depth=1
