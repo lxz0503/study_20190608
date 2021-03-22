@@ -43,3 +43,9 @@ print("{1:.3f},{0:02d}".format(5, 10.11))     # 10.110 , 05
 # 字符串格式化最简单的方法是用f格式，python3.6以后推出的功能
 msg = {'name': 'wang', 'age': 10}
 print(f'my name is {msg}')
+
+# example
+time = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
+board = 'IA'
+dir_name = 'log_{TIME}_{BOARD}'.format(TIME=time, BOARD=board)
+print('dir_name:', dir_name)
