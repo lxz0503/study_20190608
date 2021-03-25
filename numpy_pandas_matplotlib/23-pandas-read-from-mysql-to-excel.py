@@ -4,6 +4,8 @@
 import pymysql
 import pandas as pd
 
+# https://blog.csdn.net/qq_39192827/article/details/93990652    pandas 读取各种类型文件的例子
+
 # create connection to database
 conn = pymysql.Connect(host='127.0.0.1', user='root', passwd='123win', db='shop')
 sql = 'select * from brand'   # prepare your sql command

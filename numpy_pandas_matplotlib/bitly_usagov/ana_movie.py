@@ -12,6 +12,9 @@ ratings = pd.read_table('ratings.dat', sep='::', header=None, names=rnames, engi
 # movie names
 mnames = ['movie_id', 'title', 'genres']
 movies = pd.read_table('movies.dat', sep='::', header=None, names=mnames, engine='python')
+# modify column names:
+# a.rename(columns={'A':'a', 'C':'c'}, inplace = True)
+
 #
 # print(users[:5])
 # print(ratings[:5])
@@ -31,6 +34,7 @@ print(ratings_by_title[:5])
 active_titles = ratings_by_title.index[ratings_by_title >= 250]
 # print(active_titles[:5])     # this is an index
 # 修改44页代码，ix函数已经被loc或者iloc替代
+# https://blog.csdn.net/u014712482/article/details/85080864     参考用法
 # https://blog.csdn.net/qq_41913559/article/details/107561309?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242
 mean_ratings = mean_ratings.loc[active_titles]
 # print(mean_ratings[:5])

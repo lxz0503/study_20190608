@@ -12,3 +12,4 @@ print('The element of tuple is\n{0}-{1}-{2}-{3}'.format(s.name, s.age, s.sex, s.
 #
 s1 = Student(name='beijing', age=40, sex='male', email='1111@163.com')
 print('The element of tuple is\n{0}-{1}-{2}-{3}'.format(s1.name, s1.age, s1.sex, s1.email))
+

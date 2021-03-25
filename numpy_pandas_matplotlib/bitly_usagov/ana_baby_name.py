@@ -22,6 +22,7 @@ names = pd.concat(pieces, ignore_index=True)
 print(names[:5])
 total_births = names.pivot_table('births', index='year', columns='sex', aggfunc=sum)
 print(total_births.tail())
+total_births.to_csv('pivot.csv')
 #
 def add_prop(group):
     # 整数除法会向下圆整
