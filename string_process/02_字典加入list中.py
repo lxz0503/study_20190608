@@ -1,6 +1,14 @@
+from collections import Counter
+# 统计字典中value出现的次数，并排序输出
 counts = {'lixiaozhan': 2, 'beijing': 2, 'jiaotong': 1, 'university': 3, 'shanghai': 3, 'zhangsan': 1, 'nanjing': 2}
-items = list(counts.items())
-print(items)
+# items = list(counts.items())
+items = Counter(counts)
+print(items.most_common())   # 统计字典中value出现的次数，并排序输出
+# 统计一个列表中元素出现的次数，并输出
+test = ['lixiaozhan', 'beijing', 'beijing', 'jiaotong', 'university', 'shanghai', 'shanghai', 'zhangsan', 'nanjing']
+res = Counter(test)
+print('res:', res.most_common(3))
+#
 # 统计单词出现的次数
 counts = {}
 words = ["aa", "aa", "bb", "bb", "c", "c", "c"]

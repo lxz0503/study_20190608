@@ -30,4 +30,4 @@ import sys
 # hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7/helix/guests/vxworks-7/pkgs_v2/net/ipnet/NOT_IMPORTED/iptestengine/src$ vi ../config/config.py
 
 sys.path.insert(0, '../config')
-import config    # 想导入这个包,但是当前执行路径不是config.py所在路径
+import config    # 想导入这个包,但是当前执行路径不是config.py所在路径,是它的上一级目录

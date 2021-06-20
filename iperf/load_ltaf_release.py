@@ -73,7 +73,7 @@ def find_xml(**kw):
 def create_ini(filename, result_dir, **kw):
 	#print(kw)
 	template = '/folk/hyan1/Nightly/result.ini'
-	#case_ini = 'case.ini'
+	#case_ini = 'config.ini'
 	dict_ini = {}
 	dict_ini.setdefault('tags', 'IPERF')
 	dict_ini.setdefault('domain', 'networking')

@@ -1,0 +1,57 @@
+use dd;     -- my workbench
+drop table if exists  `departments` ;
+drop table if exists  `dept_emp` ;
+drop table if exists  `employees` ;
+
+CREATE TABLE `departments` (
+`dept_no` char(4) NOT NULL,
+`dept_name` varchar(40) NOT NULL,
+PRIMARY KEY (`dept_no`));
+
+CREATE TABLE `dept_emp` (
+`emp_no` int(11) NOT NULL,
+`dept_no` char(4) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));
+
+INSERT INTO departments VALUES('d001','Marketing');
+INSERT INTO departments VALUES('d002','Finance');
+INSERT INTO departments VALUES('d003','Human Resources');
+
+INSERT INTO dept_emp VALUES(10001,'d001','1986-06-26','9999-01-01');
+INSERT INTO dept_emp VALUES(10002,'d001','1996-08-03','9999-01-01');
+INSERT INTO dept_emp VALUES(10003,'d002','1990-08-05','9999-01-01');
+
+INSERT INTO employees VALUES(10001,'1953-09-02','Georgi','Facello','M','1986-06-26');
+INSERT INTO employees VALUES(10002,'1964-06-02','Bezalel','Simmel','F','1985-11-21');
+INSERT INTO employees VALUES(10003,'1959-12-03','Parto','Bamford','M','1986-08-28');
+INSERT INTO employees VALUES(10004,'1954-05-01','Chirstian','Koblick','M','1986-12-01');
+==========================================================================
+查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工
+分析:
+第一步，将员工表employees与员工-部门关系表dept_emp进行外连接left join，连接条件是员工编号对应，
+这样得到的连表包含所有的员工信息+对应的部门编号信息（如果员工未分配部门，则按照外连接规则，默认填写null）；
+第二步，将第一步中得到的连表，与部门信息表departments进行外连接，连接条件是部门编号对应，这样得到的新的连表即包含题目要求的所有记录。
+select e.last_name, e.first_name, d.dept_name
+from employees e
+left join dept_emp de on e.emp_no = de.emp_no       -----第一步，左连接
+left join departments d on de.dept_no = d.dept_no;  ----第二步，左连接，
+
+三个别名: e, de, d 分别对应三个表,显示e和de连接，然后取其结果和d连接
+
+规律:select列中必须有一个 是第三个表里的列
+先连接前两张表，找到关联字段
+再连接第三个表，找到关联字段
+
+
+

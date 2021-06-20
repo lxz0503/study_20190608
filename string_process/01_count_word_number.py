@@ -35,8 +35,3 @@ for i in range(5):
     word, count = items[i]
     # print("{0:<5}->{1:>5}".format(word, count))
     print("%s----%s" % (word, count))
-# ---------------------
-# 作者：留兰香丶
-# 来源：CSDN
-# 原文：https://blog.csdn.net/codejas/article/details/80356544
-# 版权声明：本文为博主原创文章，转载请附上博文链接！

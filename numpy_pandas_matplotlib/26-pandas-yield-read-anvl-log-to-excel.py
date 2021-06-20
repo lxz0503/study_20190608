@@ -37,19 +37,24 @@ class PandasWriteExcel(object):
             for line in f:           # analyze each test log
                 r = p.match(line)
                 if r is not None:
-                    yield r.group().lstrip('<<')    # 能够获取到每行的内容，例如 << DHCP-SERVER-10.4: Passed
+                    if r.group().__contains__('FAILED') or r.group().__contains__('INCONCLUSIVE'):
+                        yield r.group().lstrip('<<').replace('!', '')
+                    else:
+                        yield r.group().lstrip('<<')    # 能够获取到每行的内容，例如 << DHCP-SERVER-10.4: Passed
 
     def write_excel(self):
         # firstly, write every line into a file, because the pandas parameter must be file name
         with open("xiaozhan_test.txt", 'w') as fp:
+            fp.write('Name:Result\n')
             log_names = self.get_logfile()   # 调用生成器函数,返回一个可迭代对象
             for name in log_names:         # analyze each test log
-                h = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象----即每行的内容
-                for line in h:
+                lines = self.gen_txt(name)     # 调用生成器函数,返回一个可迭代对象----即每行的内容
+                for line in lines:
                     fp.write(line + '\n')
         # read txt file and write into excel
         data = pd.read_csv('xiaozhan_test.txt', sep=':')
-        data.to_excel('test_result.xlsx', sheet_name='anvl_result', index=False)
+        df = data.sort_values(by='Name')
+        df.to_excel('test_result.xlsx', sheet_name='anvl_result', index=False)
 
     def pd_read_excel(self):     # read data and store in a list as you like
         df = pd.read_excel('test_result.xlsx', header=None)  # 这个表示没有表头，即第一行就是数据,要设置header=None
@@ -58,8 +63,8 @@ class PandasWriteExcel(object):
 
 if __name__ == '__main__':
     t = PandasWriteExcel()
-    # t.write_excel()
-    print(t.gen_file_name())
+    t.write_excel()
+    # print(t.gen_file_name())
 
 # read data from another file and write it to excel
 # data = pd.read_csv('test_result.log', sep=':')

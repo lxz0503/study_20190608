@@ -1,4 +1,19 @@
+http://www.360doc.com/content/20/0701/07/68414255_921576429.shtml     刷题SQL
+https://www.nowcoder.com/    牛客网 134,Wind123
+https://leetcode-cn.com/problemset/database/?difficulty=%E7%AE%80%E5%8D%95&listId=qgq7m9e  xiaoyu53 Wind123
+
+SQL语句顺序:
+SELECT 要返回的列或表达式 是
+FROM 从中检索数据的表 仅在从表选择数据时使用
+inner join on
+WHERE 行级过滤 否子 句 说 明 是否必须使用
+GROUP BY 分组说明 仅在按组计算聚集时使用
+HAVING 组级过滤 否
+ORDER BY 输出排序顺序 否
+LIMIT 要检索的行数 否    可以利用这个limit来输出最大值  最小值，同时叠加order by 使用
+
 SQL 语句	语法   最基本最常用的
+https://www.w3school.com.cn/sql/sql_primarykey.asp
 #AND / OR	
 SELECT column_name(s)
 FROM table_name
@@ -7,7 +22,11 @@ AND|OR condition
 
 #ALTER TABLE	
 ALTER TABLE table_name 
-ADD column_name datatype         #新增加一列
+ADD column_name datatype         # 新增加一列
+例子:
+alter table actor
+add create_date datetime NOT NULL default '2020-10-01 00:00:00';
+
 or
 ALTER TABLE table_name 
 DROP COLUMN column_name          #删除一列
@@ -15,9 +34,29 @@ DROP COLUMN column_name          #删除一列
 ALTER TABLE apps
 ADD birth_date date;      #类型是date
 
+alter table dd.persons
+add age int(10);
+
+
+# add primary key
+ALTER table dd.persons
+ADD primary key (Id_P);
+
+# cancel primary key
+ALTER TABLE Persons
+DROP PRIMARY KEY
+
 UPDATE apps              #更新某条记录中的某一列
 SET birth_date=Now()     #默认只返回当前日期
 WHERE app_name='wechat APP';    字符串加单引号，int类型不用加 例如 where id=2
+
+UPDATE Person
+SET Address = 'Zhongshan 23', City = 'Nanjing'
+WHERE LastName = 'Wilson'
+
+update dd.persons
+set age=20 where LastName="Adams";
+
 
 #查看当前时间
 select Now();
@@ -69,6 +108,14 @@ DELETE FROM table_name
 
 DELETE * FROM table_name 
 (Note: Deletes the entire table!!)
+DELETE FROM 表名称 WHERE 列名称 = 值
+DELETE FROM Person WHERE LastName = 'Wilson'
+
+UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。
+PRIMARY KEY 拥有自动定义的 UNIQUE 约束。
+请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。
+ALTER TABLE Persons
+ADD UNIQUE (Id_P)
 
 #DROP DATABASE	
 DROP DATABASE database_name
@@ -112,7 +159,7 @@ INNER JOIN table_name2
 ON table_name1.column_name=table_name2.column_name
 
 #LEFT JOIN	
-SELECT column_name(s)
+SELECT column_name(s)----- this includes columns from 2 tables
 FROM table_name1
 LEFT JOIN table_name2 
 ON table_name1.column_name=table_name2.column_name
@@ -211,6 +258,26 @@ source D:\xiaozhan_git\study_20190608\Mysql5.7.27\access_log.sql
 use runoob;      --选择数据库
 show tables;    ---查看此数据库里的所有表
 select * from apps;   -----查看apps这个表里面的内容
+# 插入多行数据的例子如下,如果用下面这种，必须保证每一列都不是空值，否则会报错
+INSERT INTO `dd.persons` (`Id_P`,`LastName`,`FirstName`,`Address`,`City`)
+VALUES (1,'Adams','John','Oxford Street','London'),
+       (2,'Sam','Jordan','Cambridge Street','New York'),
+       (3,'Swift','Allen','Bristal Avenue','Man City');
+
+
+# 也可以用如下方法插入多行数据，允许某列有 空值
+use tysql;   -- this is my database, you must create it beforehand
+-- ------------------------
+-- Populate Customers table
+-- ------------------------
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
+VALUES('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact)
+VALUES('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green');
+INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact)
+VALUES('1000000005', 'The Toy Store', '4545 53rd Street', 'Chicago', 'IL', '54545', 'USA', 'Kim Howard');
+
+
 insert into `apps` values('4','wechat APP', 'http://weixin.com/', 'CN');   --注意反引号的使用
 或者用下面的语句, 注意，每一行后面都有个换行符，sql语句用分号表示结束
 我们并没有提供 id字段 的数据，因为该字段我们在创建表的时候已经设置它为 AUTO_INCREMENT(自动增加) 属性。
@@ -260,6 +327,32 @@ select avg(alexa) as average_value from websites;
 #count()统计某一列数据出现的次数
 select count(country) as country_number from websites
 where country='CN';
+===================================
+我们拥有下列 "Orders" 表：
+
+O_Id	OrderDate	OrderPrice	Customer
+1	    2008/12/29	 1000	    Bush
+2	    2008/11/23	 1600	    Carter
+3	     2008/10/05	 700	     Bush
+4	     2008/09/28	 300	     Bush
+5	     2008/08/06	 2000	     Adams
+6	     2008/07/21	 100	     Carter
+
+希望计算客户 "Carter" 的订单数
+select count(customer) as order_number
+from orders
+where customer="carter";
+
+我们希望计算 "Orders" 表中不同客户的数目
+select count(distinct customer) as customer_number
+from orders;
+======================================
+
+
+
+我们希望找到 OrderPrice 值高于 OrderPrice 平均值的客户:
+SELECT Customer FROM Orders
+WHERE OrderPrice>(SELECT AVG(OrderPrice) FROM Orders)
 
 # https://blog.csdn.net/u010339879/article/details/81623833    
 https://www.cnblogs.com/zeke-python-road/p/8986318.html    --excel
@@ -287,6 +380,79 @@ https://www.cnblogs.com/zeke-python-road/p/8986318.html    --excel
 ②是从数据库中的第二条数据开始查询两条数据，即第二条和第三条。
 =========================
 当要在workbench 里面执行脚本的时候，先双击你要选择的数据库名字，然后在右边的窗口才能执行脚本
+===================================主键   Primary key========
+PRIMARY KEY 约束 唯一标识  数据库表中的每条记录。
+
+主键必须包含唯一的值。
+主键列不能包含 NULL 值。
+每个表都应该有一个主键，并且每个表只能有一个主键()
+ALTER TABLE OrderItems ADD PRIMARY KEY (order_num, order_item);   --用两列的组合作为主键
 
 
+如果在表已存在的情况下为 "Id_P" 列创建 PRIMARY KEY 约束，请使用下面的 SQL：
+ALTER TABLE Persons
+ADD PRIMARY KEY (Id_P)
 
+ALTER TABLE OrderItems ADD PRIMARY KEY (order_num, order_item);
+
+Define foreign keys: 表已经存在的情况下，用下面的语句来定义外键，关联两张表
+ALTER TABLE OrderItems         -- OrderItems 表名
+ADD CONSTRAINT FK_OrderItems_Orders        -- Orders 表名
+FOREIGN KEY (order_num) REFERENCES Orders (order_num);     -- order_num 共同的列
+=================================理解 外键  FOREIGN KEY=========
+一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY
+"Persons" 表：
+
+Id_P(primary key)	LastName	FirstName	Address	        City
+1	                Adams	    John	   Oxford Street	London
+2	                Bush	    George	   Fifth Avenue	    New York
+3	                Carter	    Thomas	   Changan Street	Beijing
+"Orders" 表：
+
+Id_O  OrderNo	Id_P(foreign key)
+1	   77895	3
+2	   44678	3
+3	   22456	1
+4	   24562	1
+请注意，"Orders" 中的 "Id_P" 列指向 "Persons" 表中的 "Id_P" 列。
+
+"Persons" 表中的 "Id_P" 列是 "Persons" 表中的 PRIMARY KEY。
+
+"Orders" 表中的 "Id_P" 列是 "Orders" 表中的 FOREIGN KEY。
+
+FOREIGN KEY 约束用于预防破坏表之间连接的动作。
+
+FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。
+如果需要命名 FOREIGN KEY 约束：
+ALTER TABLE Orders    ------ 表orders
+ADD CONSTRAINT FK_PersonsOrders   ---- 外键约束，注意名字的写法FK_
+FOREIGN KEY (Id_P)      -- 外键 那一列的名字
+REFERENCES Persons(Id_P)   ---- 指向 另外一张表的primary key那列
+
+====撤销外键==========
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonsOrders
+==============================================
+尝试链接website，去修改数据库的内容----django or flask
+
+==================================  尝试用mockaroo去生成各种格式的随机数据=====================
+sign up with my github account: lxz0503 or email
+尝试用mockaroo去生成各种格式的随机数据------API测试用
+根据自己数据库特点，可以直接生成各种数据，然后直接导入数据库使用即可---也就是替你写了create,insert 语句
+https://www.mockaroo.com/
+https://www.cnblogs.com/zwh1993/p/Mockaroo.html
+Random Data Generator and API Mocking Tool | JSON / CSV / SQL / Excel
+
+create new entries in a table with mockaroo
+
+=================SQLiteStudio SQLite管理工具======很小巧的工具--图形界面---可以试试
+=============================================
+set it to equal aaa
+set it to aaa
+how the data flows through your application
+deal with heavyweight or lightweight queries
+filter down to
+walk you through the solutions
+comment out  注释掉
+=================================== index
+try to create index to accelerate query speed

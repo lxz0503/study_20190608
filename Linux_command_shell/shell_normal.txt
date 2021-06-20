@@ -487,7 +487,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$
 
 ln -s my_cmd mycmd1
 
-5.在任意目录中，输入my_cmd1，即可打印"hello,world!cmd1."。
+5.在任意目录中，输入mycmd1，即可打印"hello,world!cmd1."。
 
 实测如下:  用的是创建软连接的方法
 

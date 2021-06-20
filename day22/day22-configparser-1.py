@@ -15,6 +15,7 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read("test.ini")
+print('a', config['db']['db_host'])
 # 获取所用的section节点
 sections = config.sections()
 print(sections)    # 列表['db', 'concurrent', 'test_result']

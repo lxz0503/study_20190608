@@ -6,7 +6,7 @@ df = pd.read_excel('bug.xls')
 test_data = []
 for i in df.index.values:     # 获取行号的索引，并对其进行遍历：
     # 根据i来获取每一行指定的数据 并利用to_dict转化成字典
-    row_data = df.iloc[i, :].to_dict()   # 字典的key为表头名
+    row_data = df.iloc[i, :].to_dict()   # 字典的key为表头名, 这是一个字典，每行数据都写进一个字典里，然后添加到列表
     # print(row_data)
     test_data.append(row_data)
 print("the final data is {0}".format(test_data))

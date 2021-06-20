@@ -1,0 +1,51 @@
+有一个登录(login)记录表
+第1行表示user_id为2的用户在2020-10-12使用了客户端id为1的设备登录了牛客网
+use dd;   ---- this is for my workbench
+drop table if exists login;
+drop table if exists user;
+drop table if exists client;
+CREATE TABLE login (
+id int(4) NOT NULL,
+user_id int(4) NOT NULL,
+client_id int(4) NOT NULL,
+date date NOT NULL,
+PRIMARY KEY (id));
+
+CREATE TABLE user (
+id int(4) NOT NULL,
+name varchar(32) NOT NULL,
+PRIMARY KEY (id));
+
+CREATE TABLE client (
+id int(4) NOT NULL,
+name varchar(32) NOT NULL,
+PRIMARY KEY (id));
+
+INSERT INTO login VALUES   ---表login
+(1,2,1,'2020-10-12'),
+(2,3,2,'2020-10-12'),
+(3,2,2,'2020-10-13'),
+(4,3,2,'2020-10-13');
+
+INSERT INTO user VALUES   -----表user
+(1,'tm'),
+(2,'fh'),
+(3,'wangchao');
+
+INSERT INTO client VALUES  ------表 client
+(1,'pc'),
+(2,'ios'),
+(3,'anroid'),
+(4,'h5');
+================================================================
+写出一个sql语句查询每个用户 最近一天 登录的日子，并且按照user_id升序排序
+select user_id, max(date) as d      --最近一天，对于date来说，就是用max()函数
+from login
+group by user_id      ----因为有多个user_id,并且多次登录，所以按照user_id分组统计
+order by user_id;     ----
+=====================================
+下面的语句可以统计每个用户最新的登录时间，还有总共登录了多少次
+select user_id,count(user_id) as num,max(date) as d
+from login
+group by user_id
+order by count(user_id) desc;

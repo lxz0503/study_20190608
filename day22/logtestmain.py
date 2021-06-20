@@ -3,16 +3,16 @@
 import logging
 
 logger = logging.getLogger(__name__)    # __name__可以根据需要设置
-logger.setLevel(level=logging.INFO)
-handler = logging.FileHandler("log.txt")
+logger.setLevel(level=logging.INFO)   # default is above warning if you do not set this level
+# for log file
+handler = logging.FileHandler("log.txt", 'a')   # this is storing in a file
 handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
-
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-
 logger.addHandler(handler)
+# for console
+console = logging.StreamHandler()   # this is printing on the screen
+console.setLevel(logging.INFO)
 logger.addHandler(console)
 # 具体使用以上方法来记录log,参考logtest.py
 if __name__ == "__main__":
