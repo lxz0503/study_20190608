@@ -1,0 +1,7 @@
+[2019-04-27 22:40:38,619] Log.py-><module> line:36 [ERROR]error
+[2019-04-27 22:40:38,619] Log.py-><module> line:38 [INFO]info
+[2019-04-27 22:40:38,619] Log.py-><module> line:39 [CRITICAL]严重
+[2019-04-27 22:41:06,901] base_new.py->__init__ line:6 [INFO]info
+[2019-04-27 22:41:06,901] base_new.py->find_ele line:14 [INFO]id
+[2019-04-27 22:41:06,901] base_new.py->find_ele line:15 [INFO]元素nloginname
+[2019-04-27 23:18:13,665] base_new.py->__init__ line:6 [INFO]info
