@@ -28,7 +28,7 @@ create_table = """
 
 # this example, you can insert many lines,but you can not use NOW(),so I have to modify the table
 insert_data = """
-                     INSERT INTO `ia_result` (id,name,status,arch,sprint) VALUES (%s,%s,%s,%s,%s)
+                     INSERT INTO `ia_result` (id, name,status,arch,sprint) VALUES (%s,%s,%s,%s,%s)
                """
 # if you have snmall size of data, you can use below args
 # insert_args = [('1', 'ICMP-1.1', 'Passed', 'IA', 'sprint50'),   # only string can be inserted

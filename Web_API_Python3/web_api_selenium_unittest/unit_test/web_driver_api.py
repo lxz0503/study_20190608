@@ -199,12 +199,13 @@ class WebTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # unittest.main()                  # 必须注释掉这句话才能生成html报告,否则始终以unittest方式运行,在pycharm里面不能用右键 Run unittest,否则依然不能生成报告
+    # unittest.main()
+    # 必须注释掉上面这句话才能生成html报告,否则始终以unittest方式运行,在pycharm里面不能用右键 Run unittest,否则依然不能生成报告
     # 最好的方法就是另外写一个run.py，然后运行这个run.py脚本
     suite = unittest.TestSuite()
     # suite.addTest(WebTest('test_visitURL'))    # 运行单个case
     suite.addTest(unittest.TestLoader().loadTestsFromTestCase(WebTest))   # 运行整个测试套
-    # file_name = "F:\\Pycharm\\Selenium_Xiaozhan\\report.html"
+    # case的执行顺序使按照case名字的ASCII码来执行，即按照a-z字母排序执行
     file_name = os.path.dirname(__file__) + '/report.html'
     with open(file_name, 'wb+') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='report', description='web api test')

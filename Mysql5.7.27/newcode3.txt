@@ -1,0 +1,47 @@
+将employees表的所有员工的last_name和first_name拼接起来作为Name，中间以一个空格区分
+(注：sqllite,字符串拼接为 || 符号，不支持concat函数，mysql支持concat函数)
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));
+
+drop table if exists  `employees` ;
+CREATE TABLE `employees` (
+  `emp_no` int(11) NOT NULL,
+  `birth_date` date NOT NULL,
+  `first_name` varchar(14) NOT NULL,
+  `last_name` varchar(16) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `hire_date` date NOT NULL,
+  PRIMARY KEY (`emp_no`));
+INSERT INTO employees VALUES(10001,'1953-09-02','Georgi','Facello','M','1986-06-26');
+INSERT INTO employees VALUES(10002,'1964-06-02','Bezalel','Simmel','F','1985-11-21');
+INSERT INTO employees VALUES(10003,'1959-12-03','Parto','Bamford','M','1986-08-28');
+INSERT INTO employees VALUES(10004,'1954-05-01','Chirstian','Koblick','M','1986-12-01');
+INSERT INTO employees VALUES(10005,'1955-01-21','Kyoichi','Maliniak','M','1989-09-12');
+INSERT INTO employees VALUES(10006,'1953-04-20','Anneke','Preusig','F','1989-06-02');
+INSERT INTO employees VALUES(10007,'1957-05-23','Tzvetan','Zielinski','F','1989-02-10');
+INSERT INTO employees VALUES(10008,'1958-02-19','Saniya','Kalloufi','M','1994-09-15');
+INSERT INTO employees VALUES(10009,'1952-04-19','Sumant','Peac','F','1985-02-18');
+INSERT INTO employees VALUES(10010,'1963-06-01','Duangkaew','Piveteau','F','1989-08-24');
+INSERT INTO employees VALUES(10011,'1953-11-07','Mary','Sluis','F','1990-01-22');
+
+
+select concat(last_name," ",first_name) as Name
+from employees;
+===============================================插入多条数据
+drop table if exists actor;
+CREATE TABLE actor (
+   actor_id  smallint(5)  NOT NULL PRIMARY KEY,
+   first_name  varchar(45) NOT NULL,
+   last_name  varchar(45) NOT NULL,
+   last_update  DATETIME NOT NULL)   -----这个当作字符串对待，要用引号括起来，否则报错
+
+insert into actor (actor_id,first_name,last_name,last_update)
+values
+(1,'PENELOPE','GUINESS','2006-02-15 12:34:33'),
+(2,'NICK','WAHLBERG','2006-02-15 12:34:33');

@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-import openpyxl
+from openpyxl import load_workbook
 from openpyxl import Workbook
 
-wb = openpyxl.load_workbook('example.xlsx')
+wb = load_workbook('example.xlsx')
 # ws = wb.worksheets
 # # print(ws)
 print(wb.get_sheet_names())     # this is a list
 #
 ws = wb.get_sheet_by_name('student')
-print('type is {0}, values are {1}'.format(type(ws.values),ws.values))
+print('type is {0}, values are {1}'.format(type(ws.values), ws.values))
 
 # for i in ws.values:
 #     print(type(i), i)
 
 for row in ws.rows:
-    print(*[cell.value for cell in row])
+    print(*[cell.value for cell in row])    # ????不明白这个语法
 
 # create a new workbook  and write data
 wb = Workbook()

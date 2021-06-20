@@ -38,7 +38,7 @@ class SendMail(object):
 if __name__ == '__main__':
     # 设置smtplib所需的参数
     mail_server = 'prod-webmail.corp.ad.wrs.com'
-    sender = 'target@windriver.com'
+    sender = 'target@windriver.com'     # this is not important
     # 收件人为多个收件人,放在列表里
     receiver = ['xiaozhan.Li@windriver.com']
     ts = SendMail(mail_server, sender, receiver)

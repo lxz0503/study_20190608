@@ -1,0 +1,45 @@
+2021-04-26 20:28:19,171 - __main__ - INFO - Start
+2021-04-26 20:28:19,171 - __main__ - WARNING - Something maybe fail.
+2021-04-26 20:28:19,171 - __main__ - ERROR - ======exception as below=======
+2021-04-26 20:28:19,171 - __main__ - ERROR - Failed to get result
+Traceback (most recent call last):
+  File "D:/xiaozhan_git/study_20190608/day22/logtestmain.py", line 22, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2021-04-26 20:28:19,172 - __main__ - INFO - Finished
+2021-04-26 20:31:42,214 - __main__ - INFO - Start
+2021-04-26 20:31:42,216 - __main__ - WARNING - Something maybe fail.
+2021-04-26 20:31:42,216 - __main__ - ERROR - ======exception as below=======
+2021-04-26 20:31:42,216 - __main__ - ERROR - Failed to get result
+Traceback (most recent call last):
+  File "D:/xiaozhan_git/study_20190608/day22/logtestmain.py", line 22, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2021-04-26 20:31:42,220 - __main__ - INFO - Finished
+2021-04-29 09:25:15,334 - __main__ - INFO - Start
+2021-04-29 09:25:15,336 - __main__ - WARNING - Something maybe fail.
+2021-04-29 09:25:15,336 - __main__ - ERROR - ======exception as below=======
+2021-04-29 09:25:15,336 - __main__ - ERROR - Failed to get result
+Traceback (most recent call last):
+  File "D:/xiaozhan_git/study_20190608/day22/logtestmain.py", line 22, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2021-04-29 09:25:15,337 - __main__ - INFO - Finished
+2021-04-29 09:26:24,915 - xiaozhan - INFO - Start
+2021-04-29 09:26:24,915 - xiaozhan - WARNING - Something maybe fail.
+2021-04-29 09:26:24,915 - xiaozhan - ERROR - ======exception as below=======
+2021-04-29 09:26:24,915 - xiaozhan - ERROR - Failed to get result
+Traceback (most recent call last):
+  File "D:/xiaozhan_git/study_20190608/day22/logtestmain.py", line 22, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2021-04-29 09:26:24,916 - xiaozhan - INFO - Finished
+2021-04-29 09:35:18,825 - __main__ - INFO - Start
+2021-04-29 09:35:18,825 - __main__ - WARNING - Something maybe fail.
+2021-04-29 09:35:18,825 - __main__ - ERROR - ======exception as below=======
+2021-04-29 09:35:18,825 - __main__ - ERROR - Failed to get result
+Traceback (most recent call last):
+  File "D:/xiaozhan_git/study_20190608/day22/logtestmain.py", line 22, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+2021-04-29 09:35:18,826 - __main__ - INFO - Finished

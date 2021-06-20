@@ -1,0 +1,41 @@
+建表语句如下
+drop table if exists  `salaries` ;
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+INSERT INTO salaries VALUES(10001,88958,'2002-06-22','9999-01-01');
+INSERT INTO salaries VALUES(10002,72527,'2001-08-02','9999-01-01');
+INSERT INTO salaries VALUES(10003,43311,'2001-12-01','9999-01-01');
+=============================================================================
+获取薪水第二多的员工的emp_no以及其对应的薪水salary
+select emp_no,salary
+from salaries
+order by salary desc
+limit 1 1;    or limit 1 offset 1;
+---------------------------------------------------------
+适合有多个相同薪水的情况：    不太明白细节和原理   用到了子查询
+SELECT emp_no, salary
+FROM dd.salaries
+WHERE salary = (SELECT salary
+                FROM dd.salaries
+                GROUP BY salary   -------按salary进行分组
+                ORDER BY salary DESC LIMIT 1,1 );
+===================================================================
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));
+查找最晚入职员工的所有信息
+select *
+from employees
+where hire_date = (
+select max(hire_date) from employees
+);

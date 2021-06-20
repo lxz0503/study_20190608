@@ -1,24 +1,5 @@
 import pymysql
 
-
-# 在数据库中插入数据
-def insertData(db, cursor):
-    # 插入数据
-    sql = """INSERT INTO student (id, name, age) VALUES
-                       (1, '小明', 18),
-                       (2, '小兰', 18);"""
-    try:
-        # 执行sql语句
-        cursor.execute(sql)
-        # 提交到数据库执行
-        db.commit()
-
-        print("successfully insert data")
-    except :
-        # 发生错误时回滚
-        db.rollback()
-
-
 # 创建mysql表
 def createTable(cursor):
     # 创建students 数据库, 如果存在则删除students 数据库
@@ -40,6 +21,22 @@ def createTable(cursor):
 
     print("successfully create table")
 
+# 在数据库中插入数据
+def insertData(db, cursor):
+    # 插入数据
+    sql = """INSERT INTO student (id, name, age) VALUES
+                       (1, '小明', 18),
+                       (2, '小兰', 18);"""
+    try:
+        # 执行sql语句
+        cursor.execute(sql)
+        # 提交到数据库执行
+        db.commit()
+
+        print("successfully insert data")
+    except:
+        # 发生错误时回滚
+        db.rollback()
 
 # 显示
 def readTable(cursor):

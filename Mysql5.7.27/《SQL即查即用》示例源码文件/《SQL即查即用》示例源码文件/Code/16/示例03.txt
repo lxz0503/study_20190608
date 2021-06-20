@@ -1,3 +1,9 @@
 SELECT a.user_id,b.address,CONVERT(VARCHAR(10),last_login,120) AS last_login
-FROM users a,user_address b 
+FROM users a,user_address b
 WHERE a.user_id=b.user_id;
+
+=======================MySQL  on workbench====
+
+SELECT a.user_id,b.address,CAST(last_login as datetime) AS last_login
+FROM shop.users a,shop.user_address b    -----表的别名分别设置为a和b
+WHERE a.user_id=b.user_id;     ----取两表 关联的列

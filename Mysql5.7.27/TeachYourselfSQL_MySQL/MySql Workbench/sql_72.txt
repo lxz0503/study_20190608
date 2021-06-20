@@ -1,0 +1,27 @@
+成绩表(grade)
+use dd;
+drop table if exists grade;
+CREATE TABLE  grade(
+`id` int(4) NOT NULL,
+`job` varchar(32) NOT NULL,
+`score` int(10) NOT NULL,
+PRIMARY KEY (`id`));
+
+INSERT INTO grade VALUES
+(1,'C++',11001),
+(2,'C++',10000),
+(3,'C++',9000),
+(4,'Java',12000),
+(5,'Java',13000),
+(6,'JS',12000),
+(7,'JS',11000),
+(8,'JS',9999);
+=======================================================
+写一个sql语句查询 各个岗位分数的平均数，并且按照分数降序排序，结果保留小数点后面3位(3位之后四舍五入)
+分析：按照各个岗位来分组，统计每个岗位出现的次数，每个岗位的总分数
+round()函数可以指定小数点后面的位数
+
+SELECT job,count(job) as num,sum(score) as sum_score, round(sum(score)/count(job),3) as avg
+from grade
+group by job   --- 按job分组, 数据库会自动计算分组后的总分，平均分
+order by avg desc;

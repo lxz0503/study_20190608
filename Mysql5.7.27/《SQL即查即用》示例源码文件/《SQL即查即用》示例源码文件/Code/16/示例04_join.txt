@@ -1,0 +1,68 @@
+SELECT a.id,a.name,COUNT(b.cat_id) num
+FROM goods_category a INNER JOIN goods b
+ON a.id=b.cat_id GROUP BY a.id,a.name;
+left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录
+right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录
+inner join(等值连接) 只返回两个表中联结字段相等的行
+
+======================MySQL
+
+SELECT a.id,a.name,COUNT(b.cat_id) num
+FROM shop.goods_category a
+INNER JOIN shop.goods b
+ON a.id=b.cat_id
+GROUP BY a.id,a.name;
+
+==================================表结构如下
+"Persons" 表：
+int(10)  varchar(50)  NOT NULL
+Id_P(primary key)	LastName	FirstName	 Address	        City
+1	                Adams	     John	     Oxford Street	    London
+2	                Bush	     George	     Fifth Avenue	    New York
+3	                Carter	     Thomas	     Changan Street	    Beijing
+"Orders" 表：
+int(10)   int(50)  int(10)   NOT NULL
+Id_O	OrderNo	 Id_P(foreign key)
+1	    77895	  3
+2	    44678	  3
+3	    22456	  1
+4	    24562	  1
+5	    34764	  65
+列出所有人的定购：
+SELECT persons.LastName,persons.FirstName,persons.Address,persons.City,orders.OrderNo
+from dd.persons    -- 第一张表
+INNER JOIN dd.orders   -- 内连接    第二张表
+ON persons.Id_P=orders.Id_P    --- 两张表 相关联的字段
+ORDER BY persons.LastName;
+=============================效果同上  用别名，推荐这种
+SELECT a.LastName,a.FirstName,a.Address,a.City,b.OrderNo
+from dd.persons a
+INNER JOIN dd.orders b
+ON a.Id_P=b.Id_P
+ORDER BY a.LastName;
+
+=======================================下面这条语句可以找到OrderNo最大的人======
+select a.FirstName,a.LastName,b.OrderNo
+from dd.persons a         -- 表 设置别名 a
+inner join dd.orders b    -- 表  设置别名 b
+on a.Id_P=b.Id_P          -- 两张表 关联 外键
+order by b.OrderNo DESC   -- 排序
+limit 1;                  -- 只输出一行数据
+============================================
+=============================列出所有的人，以及他们的定购 - 如果有的话
+SELECT a.LastName, a.FirstName, b.OrderNo
+FROM dd.persons a
+LEFT JOIN dd.orders b      ---LEFT JOIN 关键字会从左表 (Persons) 那里返回所有的行，即使在右表 (Orders) 中没有匹配的行。
+ON a.Id_P=b.Id_P
+ORDER BY a.LastName
+
+===========================================================
+RIGHT JOIN         关键字会从右表 (table_name2) 那里返回所有的行，
+即使在左表 (table_name1) 中没有匹配的行
+列出所有的定单，以及定购它们的人 - 如果有的话
+SELECT a.LastName, a.FirstName, b.OrderNo
+FROM dd.Persons a    # 表名字不区分大小写
+RIGHT JOIN dd.Orders b              -- 右连接
+ON a.Id_P=b.Id_P
+ORDER BY a.LastName
+

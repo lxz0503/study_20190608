@@ -1,0 +1,29 @@
+简历信息表(resume_info)
+use dd;
+drop table if exists resume_info;
+CREATE TABLE resume_info (
+id int(4) NOT NULL,
+job varchar(64) NOT NULL,
+date date NOT NULL,
+num int(11) NOT NULL,
+PRIMARY KEY (id));
+
+INSERT INTO resume_info VALUES
+(1,'C++','2025-01-02',53),
+(2,'Python','2025-01-02',23),
+(3,'Java','2025-01-02',12),
+(4,'Java','2025-02-03',24),
+(5,'C++','2025-02-03',23),
+(6,'Python','2025-02-03',34),
+(7,'Python','2025-03-04',54),
+(8,'C++','2025-03-04',65),
+(9,'Java','2025-03-04',92),
+(10,'Java','2026-01-04',230);
+==========================================================
+查询在2025年内投递简历的岗位和数量，并且按数量降序排序
+分析：按岗位分组，统计数量,条件是2025年以内
+SELECT job,sum(num) as cnt      --- 要计算总数
+FROM dd.resume_info
+where date between '2025-01-01' and '2025-12-31'   --- 日期在2025年，考察between and
+group by job        -- 按岗位分组， 数据库会自动计算按岗位分组后的sum(num)
+order by cnt desc;

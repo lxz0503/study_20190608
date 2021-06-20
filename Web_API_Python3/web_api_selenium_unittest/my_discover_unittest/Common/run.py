@@ -4,6 +4,9 @@ import unittest
 import HTMLTestRunner
 import os
 
+""" run this for all test cases"""
+
+
 class RunTools(object):
     def __init__(self, case_path, pattern):
         self.case_path = case_path

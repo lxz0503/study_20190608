@@ -36,10 +36,26 @@ class PandasWriteExcel(object):
             data.append(res)  # 每一个列表元素就是一个release的全部数据，即每一行
         return data      # [[247, 1082, 940, 6241], [247, 1082, 940, 6241], [247, 1082, 940, 6241]]
 
-    # 将构造好的数据写到excel
+    # 将构造好的数据写到excel，适用于不修改原始excel行列索引的情况
     def write_to_excel(self):
         write_file = "test.xlsx"  # you can use time to generate different excel name
         df = pd.DataFrame(self.data, self.index, self.cols)  # 三个参数
+        # xiaozhan trial, add new row into the excel
+        new_row = [100, 300, 300, 500]   # this new data can be acquired from other function
+        df.loc['SR0640', :] = new_row    # new index is SR0640
+        # xiaozhan trial end
+        writer = pd.ExcelWriter(write_file)
+        df.to_excel(writer, sheet_name='release', startrow=0, startcol=0)
+        writer.save()
+
+    # 新增加一行数据，对应着新的index
+    def update_excel_row(self):
+        write_file = "test.xlsx"  # you can use time to generate different excel name
+        df = pd.DataFrame(self.data, self.index, self.cols)  # 三个参数
+        # xiaozhan trial, add new row into the excel
+        new_row = [100, 300, 300, 500]  # this new data can be acquired from other function
+        df.loc['SR0640', :] = new_row  # new index is SR0640
+        # xiaozhan trial end
         writer = pd.ExcelWriter(write_file)
         df.to_excel(writer, sheet_name='release', startrow=0, startcol=0)
         writer.save()

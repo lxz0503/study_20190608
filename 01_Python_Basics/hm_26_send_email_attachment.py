@@ -18,7 +18,7 @@ class SendMail(object):
         # 设置smtplib所需的参数
         # 下面的发件人，收件人是用于邮件传输的。
         username = 'lxz_20081025@163.com'
-        password = '#'
+        password = '#'    # read this from config file
         subject = 'Python email test'
 
         # 通过Header对象编码的文本，包含utf-8编码信息和Base64编码信息。以下中文名测试ok
@@ -58,13 +58,13 @@ class SendMail(object):
         msg.attach(text_html)
 
         # 构造文本附件
-        sendfile = open(r'send_email\test.txt', 'rb').read()
+        sendfile = open(r'send_email\example.xlsx', 'rb').read()
         text_att = MIMEText(sendfile, 'base64', 'utf-8')
         text_att["Content-Type"] = 'application/octet-stream'
         # 以下附件可以重命名成aaa.txt
         #text_att["Content-Disposition"] = 'attachment; filename="aaa.txt"'
         #另一种实现方式
-        text_att.add_header('Content-Disposition', 'attachment', filename='test.txt')    # 附件名字以这个为准
+        text_att.add_header('Content-Disposition', 'attachment', filename='example.xlsx')    # 附件名字以这个为准
         msg.attach(text_att)
 
         # 发送邮件

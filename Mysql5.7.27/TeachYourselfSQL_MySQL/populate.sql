@@ -6,7 +6,7 @@
 
 use tysql;
 -- ------------------------
--- Populate Customers table
+-- Populate Customers table, can optimize below commands,xiaozhan
 -- ------------------------
 INSERT INTO Customers(cust_id, cust_name, cust_address, cust_city, cust_state, cust_zip, cust_country, cust_contact, cust_email)
 VALUES('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com');

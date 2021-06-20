@@ -11,7 +11,8 @@ def main():
     spin_dir = "/home/windriver/Integration/vxworks"
     good_commit = "b0bfef470626c7a7d640088a7fc05ebf98f32827"
     bad_commit = "7d95ca916aa06d481055df4800895e2dec649d9a"
-    set_git_commit(spin_dir,good_commit,bad_commit)
+    set_git_commit(spin_dir,good_commit,bad_commit)    # Ö´ÐÐgit bisect start, git bisect $badcommit, git bisect $goodcommit
+
 #
     while True:
 #build image
@@ -40,7 +41,7 @@ def main():
         if debug == "exception":
             cmd = """grep -rI "exception" ./"""
             r = os.popen(cmd).read()
-            m = re.search("exception", r)
+            m = re.search("exception",r)
             if m is not None:
                 #print m.group()
                 #if m.group() == "exception":
@@ -57,7 +58,7 @@ def main():
             else:
                 result = "fail"
 
-#write a function to get the result: pass or fail, return to the start of the loop
+# write a function to get the result: pass or fail, return to the start of the loop
         r = set_git_sign(spin_dir,result)
         if r is not None:
             print 'already find the first bad commit %s' % r

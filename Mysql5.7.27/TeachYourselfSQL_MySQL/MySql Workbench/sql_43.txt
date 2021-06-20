@@ -1,0 +1,49 @@
+将所有to_date为9999-01-01的全部更新为NULL,且 from_date更新为2001-01-01。
+CREATE TABLE IF NOT EXISTS titles_test (
+id int(11) not null primary key,
+emp_no int(11) NOT NULL,
+title varchar(50) NOT NULL,
+from_date date NOT NULL,
+to_date date DEFAULT NULL);
+
+insert into titles_test values ('1', '10001', 'Senior Engineer', '1986-06-26', '9999-01-01'),
+('2', '10002', 'Staff', '1996-08-03', '9999-01-01'),
+('3', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01'),
+('4', '10004', 'Senior Engineer', '1995-12-03', '9999-01-01'),
+('5', '10001', 'Senior Engineer', '1986-06-26', '9999-01-01'),
+('6', '10002', 'Staff', '1996-08-03', '9999-01-01'),
+('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
+=======================================================================
+注意若干列 set to_date = NULL 和 from_date = '2001-01-01' set后面的内容只能用逗号连接，切勿用AND 连接。
+update titles_test
+set to_date=NULL,from_date="2001-01-01"   ---注意逗号连接
+where to_date="9999-01-01";
+================================================replace 函数
+REPLACE(String,from_str,to_str) 即：将String中所有出现的from_str替换为to_str。
+1、直接替换字符串中的部分字符：
+
+select REPLACE('abcdefghabc','abc','xxx')--输入的字符串为：abcdefghabc
+
+结果为：xxxdefghxxx
+2、替换一个字段中所有的部分字符：
+select city_name,REPLACE(city_name,'市','') as city from tmp_city
+
+UPDATE titles_test
+SET emp_no = 10005
+WHERE id = 5；
+
+直接使用REPLACE INTO的话，就需要重新插入一条完整的新纪录，sql会自动代替id相同的记录
+replace into titles_test values
+(5, 10005, 'Senior Engineer', '1986-06-26', '9999-01-01');
+推荐用下面的方法：
+update titles_test
+SET emp_no = replace(emp_no, 10001, 10005)     --调用replace函数
+where id = 5;
+===============================================================
+sql alter 的用法总结
+一般情况下，不推荐在建表后对表进行大幅度修改，大幅度修改极有可能使表数据丢失
+https://blog.csdn.net/qq_41820897/article/details/100179834
+
+ALTER TABLE dd.titles_test RENAME dd.aaa;   --- rename or rename to   are both ok
+
+===================================================

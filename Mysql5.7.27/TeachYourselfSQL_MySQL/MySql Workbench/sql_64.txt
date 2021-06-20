@@ -1,0 +1,33 @@
+person表，主键是id
+任务(task)表如下，主键也是id
+=========================================
+use dd;  ----- this is for my workbench
+drop table if exists person;
+drop table if exists task;
+CREATE TABLE `person` (
+`id` int(4) NOT NULL,
+`name` varchar(32) NOT NULL,
+PRIMARY KEY (`id`));
+
+CREATE TABLE `task` (
+`id` int(4) NOT NULL,
+`person_id` int(4) NOT NULL,
+`content` varchar(32) NOT NULL,
+PRIMARY KEY (`id`));
+
+INSERT INTO person VALUES
+(1,'fh'),
+(2,'tm');
+
+INSERT INTO task VALUES
+(1,1,'fh works well'),
+(2,2,'tm works well');
+================================================================================
+找到每个人的任务情况，并且输出来，没有任务的也要输出，而且输出结果按照person的id升序排序
+分析：注意person里的id对应task表里的person_id
+没有任务的人也要生成表项，使用left join即可
+select a.id,a.name,b.content
+from person a
+left join task b   -- 因为没有任务的也要输出，所以全部输出left join左边的表
+on a.id=b.person_id  --- 关联两张表
+order by a.id;    -----排序,默认是升序

@@ -1,41 +1,31 @@
-"""Operate excel file.For normal operation this script is engough"""
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 # coding=utf-8
-import openpyxl
+from openpyxl import load_workbook
 from openpyxl.styles import Border, Side, Font
 
-
+# """Operate excel file.For normal operation this script is enough"""
 class ParseExcel(object):
-    def __init__(self):
+    def __init__(self, excel_path_name):
         self.workbook = None
-        self.excel_file = None
+        self.excel_file = excel_path_name
+        self.workbook = load_workbook(self.excel_file)
         self.font = Font(color=None)
         self.RGBDict = {'red': 'FFFF3030', 'green': 'FF008B00'}
 
-    def load_workbook(self, excel_path_name):
+    def get_sheet_by_name(self, sheet_name):    # get sheet object
         try:
-            self.workbook = openpyxl.load_workbook(excel_path_name)
-        except Exception as e:
-            raise e
-        self.excel_file = excel_path_name
-        return self.workbook
-
-    def get_sheet_name(self, sheet_name):    # get sheet object
-        try:
-            sheet = self.workbook[sheet_name]
-            return sheet
+            return self.workbook[sheet_name]
         except Exception as e:
             raise e
 
-    def get_sheet_index(self, sheet_index):   # get sheet by index
+    def get_sheet_by_index(self, sheet_index):   # get sheet by index
         try:
             sheet_name = self.workbook.sheetnames[sheet_index]
+            return self.workbook[sheet_name]
         except Exception as e:
             raise e
-        sheet = self.workbook[sheet_name]
-        return sheet
 
-    def get_rows_num(self, sheet):
+    def get_rows_num(self, sheet):  # sheet needs to be dependent on class instance
         return sheet.max_row
 
     def get_cols_num(self, sheet):
@@ -99,10 +89,9 @@ class ParseExcel(object):
 
 
 if __name__ == '__main__':
-    pe = ParseExcel()
-    pe.load_workbook('xiaozhan.xlsx')
-    sheet = pe.get_sheet_index(0)    # get sheet object
-    # sheet = pe.get_sheet_name('test')
+    pe = ParseExcel('xiaozhan.xlsx')
+    # sheet = pe.get_sheet_by_index(0)    # get sheet object, this is important for later procedures
+    sheet = pe.get_sheet_by_name('test')  # test is the sheet name
     print(sheet.title)    # the first sheet name
     # print(pe.get_cols_num(sheet))
     # get values in all rows and print each row
@@ -111,7 +100,7 @@ if __name__ == '__main__':
         for cell in row:
             print(cell.value, end=' ')    # # you can also put them into a list using append as you like
         print()    # this will help to split each row
-    #
+
     # get values in all rows and print each row
     print('print value by column====================== as below')
     r = pe.get_col_values(sheet)
@@ -131,6 +120,7 @@ if __name__ == '__main__':
 
     # get values in column 1
     print(pe.get_col_values_by_index(sheet, 1))   # ['beijing', 1000, 'shunyi', None]
+
 
 
 

@@ -1,0 +1,20 @@
+use dd;
+drop table if exists actor;
+
+CREATE TABLE actor (
+   actor_id  smallint(5)  NOT NULL PRIMARY KEY,
+   first_name  varchar(45) NOT NULL,
+   last_name  varchar(45) NOT NULL,
+   last_update  DATETIME NOT NULL);
+
+insert into actor values ('3', 'WD', 'GUINESS', '2006-02-15 12:34:33');
+
+=======================================================
+表actor插入如下数据,如果数据已经存在，请忽略(不支持使用replace操作)
+insert into actor values ('3', 'ED', 'GUINESS', '2006-02-15 12:34:33');
+如果直接用上的语句，会提示如下错误：
+Duplicate entry '3' for key 'PRIMARY'
+------------------------正确语句
+insert IGNORE into actor values ('3', 'ED', 'GUINESS', '2006-02-15 12:34:33'); -----workbench不通过
+
+repalce into actor values ('3', 'ED', 'GUINESS', '2006-02-15 12:34:33');   --- 可以通过
