@@ -1,0 +1,32 @@
+df2.resample('AS').sum().to_period('A')
+
+
+
+
+
+Q_df=df2.resample('Q').sum().to_period('Q')
+
+
+
+
+
+df2.resample('M').sum().to_period('M')
+
+
+
+
+
+df2.resample('W').sum().to_period('W').head()
+
+
+
+
+
+import pandas as pd
+aa =r'./data/TB2018.xls'
+df = pd.DataFrame(pd.read_excel(aa))
+df1=df[['订单付款时间','买家会员名','联系手机','买家实际支付金额']]
+df1 = df1.set_index('订单付款时间') # 将date设置为index
+# "MS"是每个月第一天为开始日期，"M"是每个月最后一天
+df2=df1.resample('M').sum().to_period('M')
+df2.to_excel('result2.xls')

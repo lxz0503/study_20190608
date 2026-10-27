@@ -4,11 +4,11 @@ from django.urls import path, include, re_path
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, UpdatePwdView
-from organization.views import OrgView
+from MxOnline.apps.users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, UpdatePwdView
+from MxOnline.apps.organization.views import OrgView
 from django.views.static import serve
-from users.views import LogoutView, IndexView
-from MxOnline.settings import MEDIA_ROOT
+from MxOnline.apps.users.views import LogoutView, IndexView
+from settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),

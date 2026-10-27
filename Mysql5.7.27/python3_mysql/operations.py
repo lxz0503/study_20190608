@@ -9,13 +9,12 @@ create_database = """
 # drop_table = """DROP TABLE IF EXISTS ia_result"""   # this line is not useful
 create_table = """
                CREATE TABLE IF NOT EXISTS `ia_result` (
-              `id` int(12),
               `name` VARCHAR (20),
               `status` varchar(255),
               `arch` char(20),
               #`date` datetime,   # you can use date type, and you should use current_date when inserting data
               `sprint` char(20),    # this is for executemany test
-              PRIMARY KEY (`id`)
+              PRIMARY KEY (`name`)
               )ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=gbk"""
 
 # insert data, this is to insert a bit lines, and you can use NOW()
@@ -27,8 +26,9 @@ create_table = """
 #                """
 
 # this example, you can insert many lines,but you can not use NOW(),so I have to modify the table
+# 下面的  %s 是sql语句中的占位符,不是字符串的格式化参数
 insert_data = """
-                     INSERT INTO `ia_result` (id,name,status,arch,sprint) VALUES (%s,%s,%s,%s,%s)
+                     INSERT INTO `ia_result` (name,status,arch,sprint) VALUES (%s,%s,%s,%s)
                """
 # if you have snmall size of data, you can use below args
 # insert_args = [('1', 'ICMP-1.1', 'Passed', 'IA', 'sprint50'),   # only string can be inserted

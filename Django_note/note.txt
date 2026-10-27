@@ -108,7 +108,7 @@ debug
 debug,关于url的一些变化，
 1.x里面的写法是
 url(r’^page=(\d+)&key=(\w+)$’, views.detail, name=”detail”),
-现在的写法    ?P<page>这个表示起了一个别名,也可以不写
+现在的写法    ?P<page>这个表示给正则表达式起了一个别名,也可以不写
 re_path('page=(?P<page>\d+)&key=(?P<key>\w+)', views.detail, name="detail"),
 debug
 一 超链接目标地址
@@ -223,5 +223,7 @@ CBV（class base views） 就是在视图里使用类处理请求
 objects.get()返回的是一个对象，并不是一个列表，
 相反objects.filter()得到的才是一个列表（一个对象列表）。
 因此当对象不存在时，get会报错，而filter则不会，返回一个空列表（没有对象）。
+==================================================
+
 
 

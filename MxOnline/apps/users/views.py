@@ -4,17 +4,17 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.backends import ModelBackend
-from users.models import UserProfile, EmailVerifyRecord
+from .models import UserProfile, EmailVerifyRecord
 from django.db.models import Q
 from django.views.generic.base import View
-from users.forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UpdatePwdForm
+from .forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm, UploadImageForm, UserInfoForm, UpdatePwdForm
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
-from utils.email_send import send_register_eamil
-from utils.mixin_utils import LoginRequiredMixin
-from operation.models import UserCourse, UserFavorite, UserMessage
-from organization.models import CourseOrg, Teacher
-from course.models import Course
+from MxOnline.apps.utils.email_send import send_register_eamil
+from MxOnline.apps.utils.mixin_utils import LoginRequiredMixin
+from MxOnline.apps.operation.models import UserCourse, UserFavorite, UserMessage
+from MxOnline.apps.organization.models import CourseOrg, Teacher
+from MxOnline.apps.course.models import Course
 from .models import Banner
 from django.urls import reverse
 

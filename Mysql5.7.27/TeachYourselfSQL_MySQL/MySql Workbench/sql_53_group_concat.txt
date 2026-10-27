@@ -1,0 +1,38 @@
+use dd;
+drop table if exists  `dept_emp` ;
+CREATE TABLE `dept_emp` (
+`emp_no` int(11) NOT NULL,
+`dept_no` char(4) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+
+INSERT INTO dept_emp VALUES(10001,'d001','1986-06-26','9999-01-01');
+INSERT INTO dept_emp VALUES(10002,'d001','1996-08-03','9999-01-01');
+INSERT INTO dept_emp VALUES(10003,'d004','1995-12-03','9999-01-01');
+INSERT INTO dept_emp VALUES(10004,'d004','1986-12-01','9999-01-01');
+INSERT INTO dept_emp VALUES(10005,'d003','1989-09-12','9999-01-01');
+INSERT INTO dept_emp VALUES(10006,'d002','1990-08-05','9999-01-01');
+INSERT INTO dept_emp VALUES(10007,'d005','1989-02-10','9999-01-01');
+INSERT INTO dept_emp VALUES(10008,'d005','1998-03-11','2000-07-31');
+INSERT INTO dept_emp VALUES(10009,'d006','1985-02-18','9999-01-01');
+INSERT INTO dept_emp VALUES(10010,'d005','1996-11-24','2000-06-26');
+INSERT INTO dept_emp VALUES(10010,'d006','2000-06-26','9999-01-01');
+============================================================================
+按照dept_no进行汇总，属于同一个部门的emp_no按照逗号进行连接，结果给出dept_no以及连接出的结果employees
+分析:就是考察group_concat()函数
+功能：将group by产生的同一个分组中的值连接起来，返回一个字符串结果
+group_concat(distinct emp_no separator ":") ----workbench is not supporting this separator
+
+select dept_no,group_concat(emp_no)
+from dept_emp
+group by dept_no;
+
+-------------------------------------
+dept_no group_concat(emp_no)
+d001	10001,10002
+d002	10006
+d003	10005
+d004	10003,10004
+d005	10007,10008,10010
+d006	10009,10010

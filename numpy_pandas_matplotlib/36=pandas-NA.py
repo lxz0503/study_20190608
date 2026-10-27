@@ -115,3 +115,9 @@ print(data.head(10))
 # 根据数据的值是正还是负，np.sign(data)可以⽣成1和-1
 print(np.sign(data).head())
 # Permutation and Random Sampling
+# Vectorized String Functions in pandas
+data = {'Dave': 'dave@google.com', 'Steve': 'steve@gmail.com', 'Rob': 'rob@gmail.com', 'Wes': np.nan}
+data = pd.Series(data)
+print(data)
+print(data.str.contains('gmail'))
+

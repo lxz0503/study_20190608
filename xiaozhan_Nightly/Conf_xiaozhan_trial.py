@@ -35,7 +35,7 @@ def HelpGuide():
                       TcpCore_UrgPtrRFC1122,TcpCore_UrgPtrRFC793,TcpAdv,TcpPerf,
                       IPsecAHv4,IPsecAHv6,IPsecESPv4,IPsecESPv4-noencry,IPsecESPv6,IPsecESPv6-des,
                       IKEMain,IKEAggressive,IKECombinedSA,IKEDH1md5,IKEDH1sha,IKEv2,
-                      IKEIPv6Main,IKEIPv6CombinedSA,IKEIPv6Aggressive,IKEIPv6md5\n\n    -c(--case=)  Input case(s) to test. This option only support ANVL now.\n                 If this option isn\'t given , system will run all suites. Valid format is as below:\n\n                 individual number    e.g. 2.3\n                 group number     e.g. 2\n                 range of numbers     e.g. 1.1-1.5 or 1-3\n                 wildcard use     e.g. 1-* or 2.3-2.*\n                 multiple numbers     e.g  1.1, 2.3, 6.3\n\n    --log=       Input log folder fullpath that you want to save your log, if not given, system will create log folder with timestamp under current directory.\n\n    --merge      If not this option, system will create log folder with timestamp under dir identified by "--log". If given, system will save case log into folder identified by "--log" directly.\n\n    --exclude=   Remove suite(s) from executable suite(s) that indicated by "--suite" option or all suites if no "--suite" option.\n\n    --debug      Enable debug mode,default is disabled\n\nEXAMPLES:  \n\n    ./Conf.py -r ANVL --dvd="dvdUser=windriver,dvdPwd=windriver,dvdAddr=128.224.166.223,dvdPrompt=windriver@Nightly-testServer01:,dvdPath=/home/windriver/DVD_Installation/Nightly/vx20151224084202_vx7-SR0440-V2-features_vx7-release" --bsp=itl_64_vx7 --tool=gnu --vxworks=7 --localFTP="ftpuser=target,ftppwd=target,ftpdir=/tftproot" --localSSH="sshuser=root,sshpwd=rootroot" --localAddr="128.224.162.211"  --log=/tftproot --target="console=128.224.164.57 2016,pduAddr=128.224.164.113,pduPort=6,bootEth=gei,bootPort=2,bootIp=128.224.166.238:0xfffffe00" --nobuild=/tftproot/Vx7/Dec/vxWorks  -s ICMPv4 -c 1.1 --debug\n'''
+                      IKEIPv6Main,IKEIPv6CombinedSA,IKEIPv6Aggressive,IKEIPv6md5\n\n    -c(--case=)  Input case(s) to test. This option only support ANVL now.\n                 If this option isn\'t given , system will run all suites. Valid format is as below:\n\n                 individual number    e.g. 2.3\n                 group number     e.g. 2\n                 range of numbers     e.g. 1.1-1.5 or 1-3\n                 wildcard use     e.g. 1-* or 2.3-2.*\n                 multiple numbers     e.g  1.1, 2.3, 6.3\n\n    --Logs=       Input Logs folder fullpath that you want to save your Logs, if not given, system will create Logs folder with timestamp under current directory.\n\n    --merge      If not this option, system will create Logs folder with timestamp under dir identified by "--Logs". If given, system will save case Logs into folder identified by "--Logs" directly.\n\n    --exclude=   Remove suite(s) from executable suite(s) that indicated by "--suite" option or all suites if no "--suite" option.\n\n    --debug      Enable debug mode,default is disabled\n\nEXAMPLES:  \n\n    ./Conf.py -r ANVL --dvd="dvdUser=windriver,dvdPwd=windriver,dvdAddr=128.224.166.223,dvdPrompt=windriver@Nightly-testServer01:,dvdPath=/home/windriver/DVD_Installation/Nightly/vx20151224084202_vx7-SR0440-V2-features_vx7-release" --bsp=itl_64_vx7 --tool=gnu --vxworks=7 --localFTP="ftpuser=target,ftppwd=target,ftpdir=/tftproot" --localSSH="sshuser=root,sshpwd=rootroot" --localAddr="128.224.162.211"  --Logs=/tftproot --target="console=128.224.164.57 2016,pduAddr=128.224.164.113,pduPort=6,bootEth=gei,bootPort=2,bootIp=128.224.166.238:0xfffffe00" --nobuild=/tftproot/Vx7/Dec/vxWorks  -s ICMPv4 -c 1.1 --debug\n'''
 
 
 class _dummy:
@@ -54,7 +54,10 @@ class telnet(object):
         cmdTelnet = 'telnet %s'%addr
         self.t = pexpect.spawn(cmdTelnet)
         self.t.send(os.linesep)
-        i = self.t.expect(['VxWorks Boot]:', '->', 'Press any key to stop auto-boot...', pexpect.TIMEOUT, pexpect.EOF], 1000)            
+        i = self.t.expect(['VxWorks Boot]:',
+                           '->',
+                           'Press any key to stop auto-boot...',
+                           pexpect.TIMEOUT, pexpect.EOF], 1000)
         if i != 0:
             print "ERROR! You must make sure ANVL DUT is under [VxWorks Boot]: shell before automation testing."
             sys.exit(1)     
@@ -341,7 +344,7 @@ class ssh(object):
                 self.s.expect(self.prompt)
                 break
             if i == 2:
-                print "copy log timeout!"
+                print "copy Logs timeout!"
                 break
                 
     def transfer_folder(self, src, dst, passwd):
@@ -440,7 +443,7 @@ def parseOption(argv):
           'bsp'                 : '', 
           'tool'                : '', 
           'debug'               : False, 
-          'log'                 : '',
+          'Logs'                 : '',
           'ftpuser'             : '', 
           'ftppwd'              : '',           
           'ftpdir'              : '',              
@@ -460,7 +463,7 @@ def parseOption(argv):
           }
     para['pwd'] = os.path.abspath(os.getcwd())
     shorts = 'r:s:n:c:t:'
-    longs = ['run=','suite=','dvd=','vxworks=','nobuild=','bsp=','tool=','result=','log=','localFTP=','localAddr=','localSSH=','result=','exclude=','case=','target=','debug','help','merge']
+    longs = ['run=','suite=','dvd=','vxworks=','nobuild=','bsp=','tool=','result=','Logs=','localFTP=','localAddr=','localSSH=','result=','exclude=','case=','target=','debug','help','merge']
     try:
         opts, args = getopt.gnu_getopt(argv, shorts, longs)
     except getopt.GetoptError, desc:
@@ -515,8 +518,8 @@ def parseOption(argv):
         elif opt in ('--tool',):
             para['tool'] = arg
             continue
-        elif opt in ('--log',):
-            para['log'] = os.path.abspath(arg)
+        elif opt in ('--Logs',):
+            para['Logs'] = os.path.abspath(arg)
             continue
         elif opt in ('--merge',):
             para['merge'] = True
@@ -612,11 +615,11 @@ if __name__ == '__main__':
                     bootAnvlTarget.bootTarget(opt['console'], '$%s(%s,0) host:%s e=%s h=%s g=128.224.166.1 u=%s pw=%s f=0x04 '%(opt['bootEth'], opt['bootPort'], imagePath, opt['bootIp'], opt['localAddr'], opt['ftpuser'], opt['ftppwd']))
                     os.system("sudo kill -9 `ps -ef | grep 128.224.164.57 | grep --color=auto telnet |  awk '{print $2}'`")
                 if not logfolder:
-                    if opt['log']:
+                    if opt['Logs']:
                         if not opt['merge']:
-                            logfolder = opt['log'] + '/ANVL_Vx'+opt['vxworks']+'_'+curTime
+                            logfolder = opt['Logs'] + '/ANVL_Vx'+opt['vxworks']+'_'+curTime
                         else:
-                            logfolder = opt['log']
+                            logfolder = opt['Logs']
                     else:
                         logfolder = opt['pwd'] + '/ANVL_Vx'+opt['vxworks']+'_'+curTime 
                 if not logfolderAlreadyCreate:                 
@@ -633,12 +636,12 @@ if __name__ == '__main__':
                 sshToAnvlServer.send_and_wait_prompt('cd /root/ANVL-automation')
                 print '\n<<<<<<<<<<     start to execute ANVL suite "%s"     >>>>>>>>\n'%suite
                 sshToAnvlServer.s.timeout = 30000
-                sshToAnvlServer.s.sendline('./ANVL.py -t %s -c all -s %s -l %s -v %s 2>&1 | tee anvl.log'%(opt['bsp'], suite, AnvlLogFolder, opt['vxworks'])) 
+                sshToAnvlServer.s.sendline('./ANVL.py -t %s -c all -s %s -l %s -v %s 2>&1 | tee anvl.Logs'%(opt['bsp'], suite, AnvlLogFolder, opt['vxworks']))
                 j = sshToAnvlServer.s.expect([sshToAnvlServer.prompt, 'Press return and reboot DUT:'])
                 if j == 0:
                     sshToAnvlServer.s.timeout = 30
                     print '<<<<<<<<<<     finish executing ANVL suite "%s"     >>>>>>>>\n'%suite
-                    sshToAnvlServer.transfer_file(AnvlLogFolder+'/*.log', opt['sshuser']+'@'+opt['localAddr']+':'+logfolder, opt['sshpwd'])
+                    sshToAnvlServer.transfer_file(AnvlLogFolder+'/*.Logs', opt['sshuser']+'@'+opt['localAddr']+':'+logfolder, opt['sshpwd'])
                     os.system("sudo kill -9 `ps -ef | grep 128.224.166.46 | grep --color=auto ssh |  awk '{print $2}'`")
                 if j == 1:
                     print "\nbefore is %s" % sshToAnvlServer.s.before

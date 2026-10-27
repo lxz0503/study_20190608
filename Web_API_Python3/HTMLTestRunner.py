@@ -84,7 +84,7 @@ Version in 0.8.0
 
 Version in 0.7.1
 * Back port to Python 2.3 (Frank Horowitz).
-* Fix missing scroll bars in detail log (Podi).
+* Fix missing scroll bars in detail Logs (Podi).
 """
 
 # TODO: color stderr
@@ -511,7 +511,7 @@ a.popup_link:hover {
 TestResult = unittest.TestResult
 
 class _TestResult(TestResult):
-    # note: _TestResult is a pure representation of results.
+    # note.txt: _TestResult is a pure representation of results.
     # It lacks the output and reporting ability compares to unittest._TextTestResult.
 
     def __init__(self, verbosity=1):
@@ -628,7 +628,7 @@ class HTMLTestRunner(Template_mixin):
         test(result)
         self.stopTime = datetime.datetime.now()
         self.generateReport(test, result)
-        print(sys.stderr, '\nTime Elapsed: %s' % (self.stopTime-self.startTime))
+        sys.stderr.write('\nTime Elapsed: %s\n' % (self.stopTime - self.startTime))
         return result
 
 

@@ -23,7 +23,7 @@ class App():
         logs = logging.getLogger('MyLogger')
         logs.setLevel(logging.DEBUG)
         fh = logging.handlers.RotatingFileHandler(
-            '/tmp/test.log',maxBytes=10000000,backupCount=5)
+            '/tmp/test.Logs',maxBytes=10000000,backupCount=5)
         fh.setLevel(logging.DEBUG)
         formatter = logging.Formatter(u'%(asctime)s [%(levelname)s] %(message)s')
         fh.setFormatter(formatter)

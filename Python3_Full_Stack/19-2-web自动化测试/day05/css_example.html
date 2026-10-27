@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box2{
+            background: red;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--第一级标签 2个div 1个a标签 -->
+    <!--第一个div标签中包含3个p标签，第一个p中包含1个a  -->
+    <!--第二个div中包含3个p标签 -->
+    <!-- p>a -->
+    <!-- div+div+a -->
+    <div id="div1" class="box1" newattr="css_course new_attr">
+        <p class="div1p1">
+            div1 p1
+            <a href="#">inner link text</a>
+        </p>
+        <p class="div1p2">div1 p2</p>
+        <p class="div1p3">div1 p3</p>
+    </div>
+    <div id="div2" class="box2">
+        <p class="div2p1">div2 p1文本</p>
+        <p class="div2p2">div2 p2文本</p>
+        <p class="div2p3">div2 p3文本</p>
+    </div>
+    <a href="#">outter link text</a>
+    <br>
+    <input type="button" value="alert" onclick="alert('这是警告框')">
+    <input type="button" value="confirm" onclick="confirm('这是确认框')">
+    <input type="button" value="prompt" onclick="prompt('这是提示框')">
+</body>
+</html>

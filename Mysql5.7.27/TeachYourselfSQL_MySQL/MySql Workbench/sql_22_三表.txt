@@ -1,0 +1,58 @@
+use dd;
+drop table if exists  `departments` ;
+drop table if exists  `dept_emp` ;
+drop table if exists  `salaries` ;
+
+CREATE TABLE `departments` (
+`dept_no` char(4) NOT NULL,
+`dept_name` varchar(40) NOT NULL,
+PRIMARY KEY (`dept_no`));
+
+CREATE TABLE `dept_emp` (
+`emp_no` int(11) NOT NULL,
+`dept_no` char(4) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+INSERT INTO departments VALUES('d001','Marketing');
+INSERT INTO departments VALUES('d002','Finance');
+
+INSERT INTO dept_emp VALUES(10001,'d001','2001-06-22','9999-01-01');
+INSERT INTO dept_emp VALUES(10002,'d001','1996-08-03','9999-01-01');
+INSERT INTO dept_emp VALUES(10003,'d002','1996-08-03','9999-01-01');
+
+INSERT INTO salaries VALUES(10001,85097,'2001-06-22','2002-06-22');
+INSERT INTO salaries VALUES(10001,88958,'2002-06-22','9999-01-01');
+INSERT INTO salaries VALUES(10002,72527,'1996-08-03','9999-01-01');
+INSERT INTO salaries VALUES(10003,32323,'1996-08-03','9999-01-01');
+==========================================================
+统计各个部门的工资记录数，给出部门编码dept_no、部门名称dept_name以及部门在salaries表里面有多少条记录sum，按照dept_no升序排序
+分析: 三表关联查询，肯定是两次连接，这个一看就是内连接
+首先连接前两张表departments和dept_emp, inner join dd.dept_emp b ---通过字段 a.dept_no=b.dept_no,
+得出所有员工的dept_no和dept_name
+dept_no dept_name
+d001	Marketing
+d001	Marketing
+d002	Finance
+再去关联第三张表salaries，inner join dd.salaries c，通过关联字段on c.emp_no=b.emp_no,得出所有部门的薪水
+dept_no dept_name   salary
+d001	Marketing	85097
+d001	Marketing	88958
+d001	Marketing	72527
+d002	Finance	    32323
+在salaries表里面有多少条记录sum -------这个肯定是用count(salary)
+统计各个部门------------推算出 按照部门名字分组统计 group by dept_name
+SELECT a.dept_no,a.dept_name,count(salary) as sum
+FROM dd.departments a
+inner join dd.dept_emp b   on b.dept_no=a.dept_no
+inner join dd.salaries c   on c.emp_no=b.emp_no
+group by dept_name    ------ 按照部门名字分组统计
+order by dept_no;    ---排序

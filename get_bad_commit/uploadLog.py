@@ -7,7 +7,7 @@ import nightlyInfo
 def updateLtaf(dir):
     os.chdir(dir)
 #write test result into LTAF start
-    with open("test_result.log","r") as fd:
+    with open("test_result.Logs","r") as fd:
         for line in fd.readlines():
             test_name = line.split(":")[0]
             case_status = line.split(":")[1].strip("\n")
@@ -22,7 +22,7 @@ def updateLtaf(dir):
                 status = "Fail"
                 function_fail = 1
             else:
-                print "Test case result is INCLUSIVE!Please check test log!"
+                print "Test case result is INCLUSIVE!Please check test Logs!"
 #modify  nightly.ini file
             log = "http://pek-cc-pb08l.wrs.com/vxtest/vxtest1/LOG_VX7/Vx-7_Networking/REGRESSION/vxworks_sandbox/ANVL"
             nightly_date,release_name,spin = nightlyInfo.nightlyInfo()
@@ -34,7 +34,7 @@ def updateLtaf(dir):
             config.set("LTAF","function_pass",function_pass)
             config.set("LTAF","function_fail",function_fail)
             config.set("LTAF","spin",spin)
-            config.set("LTAF","log",log)
+            config.set("LTAF","Logs",log)
             config.set("LTAF","week",nightly_date)
             config.set("LTAF","release_name",release_name)
             config.write(open('/home/windriver/ANVL/nightly.ini',"r+"))

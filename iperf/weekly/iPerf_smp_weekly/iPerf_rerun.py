@@ -79,7 +79,7 @@ def time_delta(run_date):
 
 def main():
 	parse = argparse.ArgumentParser()
-	#parse.add_argument('--log', help='rerun log path', dest='log', required=True)
+	#parse.add_argument('--Logs', help='rerun Logs path', dest='Logs', required=True)
 	parse.add_argument('--plan', help='test plan', dest='plan', required=True)
 	#parse.add_argument('--workspace', help='workspace', dest='workspace', required=True)
 	parse.add_argument('--dvd', help='dvd', dest='dvd', required=True)
@@ -113,8 +113,8 @@ def main():
 	release = args.release
 	#release = 'vxworks_sandbox'
 	domain = 'networking'
-	#upload_command = 'bash /home/windriver/wassp-repos/testcases/vxworks7/LTAF_meta/ltaf_vxworks.sh -sprint "{SPRINT}" -week {WEEK} -ltaf {LTAF} -log {LOG} -domain {DOMAIN} -nightly'.format(SPRINT = sprint, WEEK = week, LTAF = release, LOG = logs, DOMAIN = domain) 
-	upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --log {LOG} --rundate {RUNDATE} --release {RELEASE} --sprint Weekly'.format( LOG= logs, RUNDATE = week, RELEASE = release)
+	#upload_command = 'bash /home/windriver/wassp-repos/testcases/vxworks7/LTAF_meta/ltaf_vxworks.sh -sprint "{SPRINT}" -week {WEEK} -ltaf {LTAF} -Logs {LOG} -domain {DOMAIN} -nightly'.format(SPRINT = sprint, WEEK = week, LTAF = release, LOG = logs, DOMAIN = domain)
+	upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --Logs {LOG} --rundate {RUNDATE} --release {RELEASE} --sprint Weekly'.format( LOG= logs, RUNDATE = week, RELEASE = release)
 	os.system(upload_command)
 	update_iperf_data(wassp_plan, week, logs)
 if __name__ == '__main__':

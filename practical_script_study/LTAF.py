@@ -92,7 +92,7 @@ class NightlyRecord(Record):
                'testSuite = %s, ' % self.testSuite + \
                'runDate = %s, ' % self.runDate + \
                'status = %s, ' % self.status + \
-               'log = %s, ' % self.log + \
+               'Logs = %s, ' % self.log + \
                'component = %s, ' % self.component + \
                'tester = %s, ' % self.tester + \
                'automation = %s, ' % self.automation + \
@@ -122,7 +122,7 @@ class LTAFTestResult:
                              'testSuite'        :             'Test Suite',
                              'runDate'          :             'Run Date',  
                              'status'           :             'Status',
-                             'log'              :             'Log',
+                             'Logs'              :             'Log',
                              'component'        :             'Component',
                              'tester'           :             'Tester',
                              'automation'       :             'Automation',
@@ -187,7 +187,7 @@ class LTAFTestResult:
                 if not content:
                     if nightlyRecordField == 'status':
                         content = tds[j].find('div/img').get('title')
-                    elif nightlyRecordField == 'log':
+                    elif nightlyRecordField == 'Logs':
                         content = tds[j].find('div').get('value')        
                 record[nightlyRecordField] = content
             else:
@@ -203,7 +203,7 @@ class LTAFTestResult:
         self.tree = None
         self.namespaces = {'re': "http://exslt.org/regular-expressions"}
 
-        self.titles = ('testName', 'testSuite', 'runDate', 'status', 'log', 'component', 'tester',  'automation', 'requirement', 'trDomain', 'funcPass', 'funcFail', 
+        self.titles = ('testName', 'testSuite', 'runDate', 'status', 'Logs', 'component', 'tester',  'automation', 'requirement', 'trDomain', 'funcPass', 'funcFail', 
                        'bsp', 'board', 'spin', 'tags', 'updateTime', 'defects', 'comment', 'configLabel', 'configuration')
         self.xpaths = {
             'testName'    : '//form[@name="testruns_form"]/div/table/tr[@name="trbeforeck"]/td[3]',
@@ -215,7 +215,7 @@ class LTAFTestResult:
             
             # @sth should be handled specifically as it returns string list
             'status'      : '//tr[@name="trbeforeck"]/td[re:test(@id, ".*?_tr_status")]/div/@value',
-            'log'         : '//tr[@name="trbeforeck"]/td[re:test(@id, ".*?_tr_log")]/div/a/@href',
+            'Logs'         : '//tr[@name="trbeforeck"]/td[re:test(@id, ".*?_tr_log")]/div/a/@href',
             
             'component'   : '//tr[@name="trbeforeck"]/td[re:test(@id, ".*?_test_component")]/text()',
             'tester'      : '//tr[@name="trbeforeck"]/td[re:test(@id, ".*?_tr_tester")]/div',
@@ -250,7 +250,7 @@ class LTAFTestResult:
                                            x[titles.index("testSuite")],
                                            x[titles.index("runDate")],
                                            x[titles.index("status")],
-                                           x[titles.index("log")],
+                                           x[titles.index("Logs")],
                                            x[titles.index("component")],
                                            x[titles.index("tester")],
                                            x[titles.index("automation")],
@@ -410,7 +410,7 @@ status = {R_TESTRESULT_R}
 tags = {R_TAGS_R}
 tester = {R_TESTER_R}
 board = {R_BOARD_R}
-log = {R_LOG_R}
+Logs = {R_LOG_R}
 
 # build for branch info
 build = {R_BUILD_R}
@@ -716,7 +716,7 @@ def test_write_nightly_records():
                      'testSuite' : 'IKE-ADVANCED',
                      'runDate' : '2019-08-22',     
                      'status' : 'Pass',      
-                     'log' : 'https://jira.wrs.com/browse/V7NET-2530',   
+                     'Logs' : 'https://jira.wrs.com/browse/V7NET-2530',
                      'component' : 'networking',   
                      'tester' : 'kong-helix',
                      'automation' : 'Auto',  
@@ -778,7 +778,7 @@ def main_update_Helix_LTAF_record():
                      'testSuite' : testSuite,
                      'runDate' : toDate,     
                      'status' : 'Pass',      
-                     'log' : '',   
+                     'Logs' : '',
                      'component' : 'networking',   
                      'tester' : 'KONG',
                      'automation' : 'Auto',  

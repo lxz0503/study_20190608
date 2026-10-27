@@ -1,0 +1,48 @@
+http get请求报文的格式：
+请求行\r\n
+请求头\r\n
+空行\r\n
+
+http post请求报文：
+会多一个form data，里面有用户名和密码等要提交给网站的信息
+也叫Request Payload
+
+请求行\r\n
+请求头\r\n
+空行\r\n
+请求体--也就是form data
+Transfer-Encoding:chunked   服务器发送给客户端程序（浏览器）的数据不确定数据长度，数据发送结束的接收标识：0\r\n
+Content-Length:200(字节)  服务器发送给客户端的数据长度，200字节。
+以上两个不能同时出现，也就是要么是chunked，要么是200字节
+Connection:keep-alive  和客户端保持长连接，如果客户端没消息，自动断开
+
+-----------------------响应报文
+响应行（状态行）
+HTTP/1.1 200 OK
+---响应头
+Server:niginx
+Content-Type
+-----空行
+\r\n
+----响应体  就是给浏览器解析用的数据，即网页数据
+
+状态码：
+200  成功
+300开头  重定向
+400  错误的请求
+404  请求资源在服务器不存在
+500  服务器内部错误
+===================================================================
+# windriver@pek-vx-anvl:~/xiaozhan_py3_env$ source venv/bin/activate
+# (venv) windriver@pek-vx-anvl:~/xiaozhan_py3_env$ python3 -m http
+# ?/           venv/        xiaozhan.py
+# (venv) windriver@pek-vx-anvl:~/xiaozhan_py3_env$ python3 -m http.server
+# Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+# https://blog.csdn.net/weixin_44498127/article/details/122765300
+# 需要先进入静态文件所在的路径，例子如下
+# 在我本地电脑做试验，首先进入C:\Users\xli3\study,运行python -m http.server 9000
+# 然会浏览器里面输入 http://127.0.0.1:9000/，就能看见目录下所有文件
+# http://127.0.0.1:9000/static/html_abbr.html
+--------------------------------------如何运行web静态服务器----------------
+运行5-11或者5-10，5-2的程序，然后在浏览器里打开# 然会浏览器里面输入 http://127.0.0.1:9000/，就能看见目录下所有文件
+后面跟对应的html,例如http://127.0.0.1:9000/static/html_abbr.html，就能看到静态web服务器的效果

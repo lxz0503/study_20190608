@@ -1,0 +1,93 @@
+if input('请输入数字验证码：').isdigit():
+    print('正在登录草根之家商务系统！')
+else:
+    print('输入了非数字字符，请重新输入！')
+
+
+
+
+
+def inputbox(showstr, showorder, lengh):
+    instr = input(showstr)
+    if len(instr) != 0:				# 如果输入内容的长度不为0时
+        # 模式1检测输入的字符是否为数字，并检测是不是0
+        if showorder == 1:
+            if str.isdigit(instr):		# 检测输入的字符串是否只由数字组成
+                if instr == '0':			# 如果输入的字符是0时
+                    print("\033[1;31;40m 输入为零，请重新输入！！\033[0m")
+                    return "0"
+                else:
+                    return instr
+            else:
+                print("\033[1;31;40m输入非法，请重新输入！！\033[0m")
+                return "0"
+        # 模式2检测输入的字符是否为字母，并检测输入的字母是不是3个
+        if showorder == 2:
+            if str.isalpha(instr):		# 检测输入的字符串是否只由字母组成
+                if len(instr) != 3:       # 如果输入的不是3个字母
+                    print("\033[1;31;40m必须输入三个字母，请重新输入！！\033[0m")
+                    return "0"
+                else:
+                    return instr
+            else:
+                print("\033[1;31;40m输入非法，请重新输入！！\033[0m")
+                return "0"
+        # 模式3检测输入的字符是否为数字，并检测输入的字符长度与目标数字是否相同
+        if showorder == 3:
+            if str.isdigit(instr):        # 检测输入的字符串是否只由数字组成
+                if len(instr) != lengh:   # 如果输入的数字字符串长度与目标数字不同时
+                    print("\033[1;31;40m必须输入" + str(lengh) + "个数字，请重新输入！！\033[0m")
+                    return "0"
+                else:
+                    return instr
+            else:
+                print("\033[1;31;40m输入非法，请重新输入！！\033[0m")
+                return "0"
+    else:
+        print("\033[1;31;40m输入为空，请重新输入！！\033[0m")
+        return "0"
+
+
+
+
+
+a=inputbox('请输入数据为零、数字、字母等:',1,2)		# 选择模式1，此时lengh参数无效
+print('返回值为：',a)					# 打印返回值
+
+
+
+
+
+instr=input('请输入5位数字验证码：').strip(' ')	# 获取输入的5位数字
+isgo='go'						# 是否为登录的标记
+if len(instr)!=5:					# 如果输入的字符（数字）长度不是5时
+    print('输入非5位数字，请重新输入！')
+    isgo = 'no'
+else:
+    for i in instr:
+        if ord(i) not in range(ord('1'),ord('8')):# 如果输入字符的ASCII码值不为数字字符时
+            print('输入了非数字字符，请重新输入！')
+            isgo = 'no'
+            break
+if isgo =='go':					# 验证成功输出登录
+    print('正在登录站长之家系统！')
+
+
+
+
+
+instr=input('注册用户名：').strip(' ')		# 获取输入的字符
+isgo='go'						# 验证成功的标记
+for i in instr:					# 循环判断每个字符的ASCII码值是否合法
+    if ord(i) in range(33,127):
+        if  ord(i) in  [64,92,47,35]:
+             print('输入了非法字符"', i, '"请重新输入！')
+             isgo = 'no'
+             break
+    else:
+        print('输入了非法字符,请重新输入！')
+        isgo = 'no'
+        break
+
+if isgo =='go':					# 验证成功输出完成注册
+    print('用户名注册完成，请继续填写其他注册信息！！')

@@ -67,7 +67,7 @@ def checkResult(d, err_id, arg, log):
     except:
         print("Account And Pwd Right!")
         msg = 'uname=%s pwd=%s:pass\n' % (arg['uname'],arg['pwd'])
-        #log.log_write(msg)
+        #Logs.log_write(msg)
         log.log_write(arg['uname'], arg['pwd'], 'Pass')
         result = True
     return result
@@ -79,7 +79,7 @@ def logout(d, ele_dict):
 
 def login_test(ele_dict,user_list):
     d = openBrower()
-    #log = Loginfo()
+    #Logs = Loginfo()
     log = Xlloginfo()
     log.log_init('sheet1', 'uname', 'pwd', 'result', 'msg')
     openUrl(d, ele_dict['url'])

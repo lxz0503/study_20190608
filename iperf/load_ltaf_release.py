@@ -57,7 +57,7 @@ def parse_xml(xml_file):
 		sys.exit(0)
 
 def find_xml(**kw):
-	for log_dir in os.listdir(kw['log']):
+	for log_dir in os.listdir(kw['Logs']):
 		result_dir = os.path.join(os.path.abspath(log_dir), 'LTAF/Result')
 		if not os.path.exists(result_dir):
 			os.makedirs(result_dir)
@@ -97,7 +97,7 @@ def create_ini(filename, result_dir, **kw):
 	dict_ini['Options'] = dict_node['options']
 	dict_ini['Vsboptions'] = dict_node['vsboptions']
 	dict_ini['status'] = dict_node['execStatus']
-	dict_ini['log'] = os.path.dirname(dict_node['status_log']).replace('/home/windriver/Logs', 'http://pek-cc-pb08l.wrs.com/vxtest/vxtest1/LOG_VX7/Vx-7_Networking/{RELEASE}/IPERF'.format(RELEASE = kw['release']))
+	dict_ini['Logs'] = os.path.dirname(dict_node['status_log']).replace('/home/windriver/Logs', 'http://pek-cc-pb08l.wrs.com/vxtest/vxtest1/LOG_VX7/Vx-7_Networking/{RELEASE}/IPERF'.format(RELEASE = kw['release']))
 	dict_ini['build'] = dict_node['buildStatus']
 	dict_ini['test_name'] = dict_node['test_name']
 	dict_ini['test_suite'] = dict_node['test_suite']
@@ -142,7 +142,7 @@ def create_ini(filename, result_dir, **kw):
 
 def main():
 	parse = argparse.ArgumentParser()
-	parse.add_argument('--log', help='log path', dest='log', required=True)
+	parse.add_argument('--Logs', help='Logs path', dest='Logs', required=True)
 	parse.add_argument('--rundate', help='rundate', dest='rundate', required=True)
 	parse.add_argument('--release', help='ltaf release', dest='release', required=True)
 	parse.add_argument('--sprint', help='ltaf sprint', dest='sprint', required=False)
@@ -155,7 +155,7 @@ def main():
 	p_requirements = args.requirements
 	kw = {}
 	if p_log:
-		kw['log'] = p_log
+		kw['Logs'] = p_log
 	if p_rundate:
 		kw['rundate'] = p_rundate
 	if p_release:

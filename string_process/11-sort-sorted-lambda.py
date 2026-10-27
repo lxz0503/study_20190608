@@ -7,10 +7,12 @@ a=[1,4,5,88,0,7]
 a.sort()              # 默认升序排列
 print(a)              #输出：[0, 1, 4, 5, 7, 88]
 
+# sort()函数是直接在原来的列表上修改，即原地修改
 a.sort(reverse=True)  # reverse=True，降序排列。默认FALSE：升序；
 print(a)              # 输出：[88, 7, 5, 4, 1, 0]
 
-b = sorted(a,reverse=True)   #有返回值，需要用一个变量进行接收
+# sorted()函数需要生词一个新的变量
+b = sorted(a, reverse=True)   # 有返回值，需要用一个变量进行接收
 print(b)              # 输出：[88, 7, 5, 4, 1, 0]
 
 # 在这里，可以看出sort()是没有返回值的，它会改变原有的列表，而sorted()需要用一个变量进行接收，它并不会修改原有的列表

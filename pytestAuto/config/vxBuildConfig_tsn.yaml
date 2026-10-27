@@ -1,0 +1,69 @@
+ # vxBuild.py config file
+
+RTNET:
+    vsb:
+        layer : [RTNET, ]      # xiaozhan,this is an array
+        layer_remove : []
+        vxmake : []             # vxprj vsb config -s -add _WRS_CONFIG_COMPONENT_%s=y
+        extra_build_cflags : [-DRTNET_SOCKTEST,]
+    vip:
+        component : [ROMFS, RTNET, RTNET_DEMO, RTNET_FIB_SHOW, RTNET_IPV4_SUPPORT, RTNET_IPV6_SUPPORT, RTNET_IP_SHOW, RTNET_LINK_SHOW, RTNET_LINK_SHOW, RTNET_MUX, RTNET_NEIGH_SHOW, RTNET_PING, RTNET_SOCK_SHOW, SHELL, SHELL_INTERP_CMD, STANDALONE_DTB]
+        component_remove : [IPNET,]
+        vx_extra_define : []    # vxprj buildmacro set EXTRA_DEFINE %s
+        vxparam : []            # [RTNET_JSON_FILE='"/romfs/conf.json"',]
+        add_file : [net/rtnet/test/socktest/tmain.c, net/rtnet/test/sock6test/tmain6.c]
+        romfs_file :     # xiaozhan,below is an array, or you can use []
+            - net/rtnet/test/rtnet/test/conf.json
+            - net/rtnet/test/rtnet/test/25002.json
+            - net/rtnet/test/rtnet/test/25003.json
+            - net/rtnet/test/rtnet/test/28525.json
+            - net/rtnet/test/rtnet/test/28526.json
+            
+RTNET_VXTEST_AF_PACKET:
+    vsb:
+        layer : [RTNET, VXTEST_BUILD]
+    vip:
+        component : [TM_RTNET_AF_PACKET_SOCK_TEST, ROMFS, RTNET_IPV6_SUPPORT, RTNET, SHELL, RTNET_LINK_SHOW, RTNET_MUX, RTNET_LINK_SHOW, RTNET_NEIGH_SHOW, RTNET_PING, RTNET_FIB_SHOW, RTNET_SOCK_SHOW, 
+RTNET_IP_SHOW, RTNET_DEMO]
+        vxparam : [RTNET_JSON_FILE='"/romfs/gei_28514.json"',]
+        romfs_file : 
+            - /workspace/lchen3/wassp/wassp_testcases/networking/RTNET_AF_PACKET_F10296/RT_AF_PACKET_DGRAM/gei_28514.json
+
+            
+TSN_OLD:
+    vsb:
+        layer : [IPNET_COREIP, END_LIB, PTP, IEEE1588_PTP_DEVICE, TSN, GPTP]
+    vip:
+        component : [INCLUDE_SHELL, INCLUDE_SHELL_INTERP_C, INCLUDE_IPD_CMD, INCLUDE_DISK_UTIL, INCLUDE_IFCONFIG, INCLUDE_IPIFCONFIG_CMD, INCLUDE_PING, INCLUDE_IPPING_CMD, INCLUDE_IPATTACH, INCLUDE_IPPTP, INCLUDE_IPPTP_SHOW, INCLUDE_LEGACY_QBV_API, INCLUDE_1588_CLOCK, INCLUDE_TSN_STREAM, INCLUDE_TSN_STREAM_SHOW, INCLUDE_ARP_API, INCLUDE_GEI825XX_VXB_END, INCLUDE_GPTP]
+        vxparam : [VX_SMP_NUM_CPUS=4]
+        add_file : [net/tsn/demo/tsnclock_dkm.c, net/tsn/demo/qbv_dkm.c, net/tsn/demo/demoStreamCommon.h, net/tsn/demo/demoStreamCommon.c, net/tsn/demo/demoStreamMuxRx.c, net/tsn/demo/demoStreamMuxTx.c,
+                net/tsn/demo/demoStreamSocketRx.c, net/tsn/demo/demoStreamSocketTx.c, net/tsn/demo/demoHelloStreamMuxRx.c, net/tsn/demo/demoHelloStreamMuxTx.c, net/tsn/demo/demoHelloStreamSocketRx.c, net/tsn/demo/demoHelloStreamSocketTx.c]
+TSN:
+    vsb:
+        layer : [IPNET_COREIP, END_LIB, PTP, TSN, GPTP, IPNET_QOS, IPERF3]
+    vip:
+        component : [INCLUDE_SHELL, INCLUDE_SHELL_INTERP_C, INCLUDE_IPD_CMD, INCLUDE_DISK_UTIL, INCLUDE_IFCONFIG, INCLUDE_IPIFCONFIG_CMD, INCLUDE_PING, INCLUDE_IPPING_CMD, INCLUDE_IPATTACH, INCLUDE_IPPTP, INCLUDE_IPPTP_SHOW, INCLUDE_8021QBV, INCLUDE_LEGACY_QBV_API, INCLUDE_8021QBV_SHOW, INCLUDE_1588_CLOCK, INCLUDE_TSN_STREAM, INCLUDE_TSN_STREAM_SHOW, INCLUDE_ARP_API, INCLUDE_GEI825XX_VXB_END, INCLUDE_GPTP, INCLUDE_IPQUEUE_CONFIG_CMD, INCLUDE_IPQOS_CMD, INCLUDE_IPERF3]
+        vxparam : [VX_SMP_NUM_CPUS=4]
+        add_file : [net/tsn/demo/tsnclock_dkm.c, net/tsn/demo/qbv_dkm.c, net/tsn/demo/demoStreamCommon.h, net/tsn/demo/demoStreamCommon.c, net/tsn/demo/demoStreamMuxRx.c, net/tsn/demo/demoStreamMuxTx.c,
+                net/tsn/demo/demoStreamSocketRx.c, net/tsn/demo/demoStreamSocketTx.c, net/tsn/demo/demoHelloStreamMuxRx.c, net/tsn/demo/demoHelloStreamMuxTx.c, net/tsn/demo/demoHelloStreamSocketRx.c, net/tsn/demo/demoHelloStreamSocketTx.c, net/tsn/demo/demoQbu.c]
+
+
+     
+GPTP:
+    vsb:
+        layer : [IPNET_COREIP, END_LIB, GPTP]
+    vip:
+        component : [INCLUDE_ROMFS, INCLUDE_SHELL, INCLUDE_SHELL_INTERP_C, INCLUDE_IPD_CMD, INCLUDE_DISK_UTIL, INCLUDE_IFCONFIG, INCLUDE_IPIFCONFIG_CMD, INCLUDE_PING, INCLUDE_IPPING_CMD, INCLUDE_IPATTACH, INCLUDE_GPTP, INCLUDE_ARP_API, INCLUDE_GEI825XX_VXB_END]  
+
+
+
+NESSUS:
+    vsb:
+        layer : [FS_NFS, COMPONENT_IPFIREWALL_SUPPORT, IPPPP_MP, COMPONENT_VLAN_STACKING, IPNET_QOS, IPNET_DIFFSERV, COMPONENT_VIRTUAL_ROUTER, COMPONENT_IPSCTP, IPNET_FTP, OPENSSL, IPFTP_USE_TLS, IPNET_DHCP, IPNET_DHCP_CLIENT, IPNET_DHCP_CLIENT6, IPNET_DHCP_RELAY, IPNET_DHCP_SERVER, SECURITY_MISC_SEC_CRYPTO, IPNET_AAA, COMPONENT_IPDIAMETERP, COMPONENT_IPDIAMETERC, IPNET_IPSECIKE, IPNET_IPSECIKE_IKE, COMPONENT_IPIKE_USE_EVENT_LOG, COMPONENT_IPMCP, IPNET_ROUTEPROTO, IPNET_SSH, IPEAP_USE_EAP_AKA, IPEAP_AKA_ENABLE_TEST, IPEAP_USE_EAP_GTC, IPEAP_USE_EAP_MD5, IPEAP_USE_EAP_MSCHAPV2, IPEAP_USE_EAP_TLS, IPEAP_USE_EAP_TTLS, IPNET_VRRP, IPEAP_DEBUG, FS_DOSFS, SNMP, FEATURE_SNMP_V3, FEATURE_SNMP_AGENTX]
+    vip:
+        component : [INCLUDE_SHELL, INCLUDE_SHELL_INTERP_CMD, INCLUDE_IPSYSCTL_CMD, INCLUDE_IPSSL, INCLUDE_IPCOM_USE_KEY_DB, INCLUDE_IPDHCPC, INCLUDE_IPDHCPR, INCLUDE_IPDHCPS, INCLUDE_IPFTPC, INCLUDE_IPFTPS, INCLUDE_IPCOM_USE_RAM_DISK, INCLUDE_IPFTP_CMD, INCLUDE_IPFIREWALL, INCLUDE_RPC, INCLUDE_XDR, INCLUDE_REMLIB, INCLUDE_IPSNTPS, INCLUDE_IPTFTPS, INCLUDE_SECURITY, INCLUDE_WINDMANAGE_SNMP_CORE, INCLUDE_WINDMANAGE_SNMP_AGENTX_COMMONCORE, INCLUDE_WINDMANAGE_SNMP_V3CORE, INCLUDE_PING, INCLUDE_SSH, INCLUDE_IPCOM_SYSVAR_CMD, INCLUDE_IPD_CMD, INCLUDE_IPIFCONFIG_CMD, INCLUDE_IPATTACH, INCLUDE_IFCONFIG, INCLUDE_IPPING_CMD, INCLUDE_IPPING6_CMD, INCLUDE_IPPING_CMD, INCLUDE_PING6, INCLUDE_IPPING6_CMD, INCLUDE_IPCOM_SYSVAR_CMD, INCLUDE_IPROUTE_CMD, INCLUDE_IPVRRPD, INCLUDE_IPARP_CMD, INCLUDE_IPTCP_TEST_CMD, INCLUDE_IPNDP_CMD]
+        vxparam : [INET_DELETE_ADDR_ON_DUPLICATE_DETECT='"no"', SEC_VAULT_KEY_ENCRYPTING_PW='"8317954752bf255b5321fe19e54a7f8d"', SSH_USE_V1='"0"', SSH_USE_V2='"1"', SNMP_GET_COMMUNITY_1='"mygetCN11"', SNMP_GET_COMMUNITY_2='"mygetCN22"', SNMP_GET_COMMUNITY_3='"mygetCN33"', SNMP_GET_COMMUNITY_4='"mygetCN44"', SNMP_GET_COMMUNITY_5='"mygetCN55"', SNMP_SET_COMMUNITY_1='"mycomunitymm"', SNMP_SET_COMMUNITY_2='"mycomunitynn"', FTPS_TLS='"1"', FTPS_TLS_CERT_FILE='"/romfs/server-cert-bogon.pem"', FTPS_TLS_KEY_FILE='"/romfs/server-key-bogon.pem"', FTPS_TLS_LOGIN_ENC='"1"']
+        romfs_file : [ssl_certs/server-cert-bogon.pem, ssl_certs/server-key-bogon.pem]
+
+        
+        

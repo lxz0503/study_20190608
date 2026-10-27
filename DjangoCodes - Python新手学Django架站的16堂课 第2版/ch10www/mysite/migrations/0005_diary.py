@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('budget', models.FloatField(default=0)),
                 ('weight', models.FloatField(default=0)),
-                ('note', models.TextField()),
+                ('note.txt', models.TextField()),
                 ('ddate', models.DateField()),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

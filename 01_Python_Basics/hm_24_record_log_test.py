@@ -1,7 +1,7 @@
 from hm_23_log_record import *
 import os
 
-sys.stdout = Logger("a.log", sys.stdout)     # 初始化类的实例对象
+sys.stdout = Logger("a.Logs", sys.stdout)     # 初始化类的实例对象
 sys.stderr = Logger("a.log_file", sys.stderr)     # redirect std err, if necessary
 # now it works
 print('print something')

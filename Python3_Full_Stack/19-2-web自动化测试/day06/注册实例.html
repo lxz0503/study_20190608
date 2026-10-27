@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>表单综合实例</title>
+	<style type="text/css">
+
+		body{background: #F0F0F0}
+		form{width: 500px;background: #C7C7E2;padding: 10px;margin-top: 10%;margin-left: 30%}
+		input{padding: 5px;background: #f8f8f8}
+		button{padding: 8px; background: #f8f8f8;border-radius: 5px}
+		button:hover{padding: 10px; background: #2F4F4F}
+		input:focus{background: #FFC0CB}
+
+		/*span{display: none}*/
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+<form action="">
+	<div id="zc">
+		<fieldset>
+		<legend>注册用户</legend>
+			<p id="p1">
+				<label for="user">账号</label>
+		 		<input type="text" name="user" id="user" placeholder="账号" required="" value="">			
+			</p>
+	 		<p>
+				<label for="password">密码</label>		
+				<input type="password" name="password" id="password" placeholder="密码" value="">
+	 		</p>
+			<p>
+				<label for="tel">电话号码</label>
+				<input type="tel" name="tel" id="tel" placeholder="电话" class="tel" value="">				
+			</p>
+			<p>
+				<label for="email">电子邮件</label>
+				<input type="email" name="email" id="email" placeholder="电子邮箱" value="" aa="ddd">				
+			</p>
+				<button type="submit" value="注册" title="加入会员">注册用户</button>
+				<hr>
+				<p><span>Span_tagName</span></p>
+				<p><a href="http://www.sina.com.cn" id="fw" target="_blank">访问 新浪 网站</a></p>
+				<p><a href="http://www.sina.com.cn" id="AA">AA 新浪 网站</a></p>
+				<p><a href="注册A.html" id="ZCA" target="_blank">注册A网页</a></p>
+				<p><a href="注册B.html" id="ZCB" target="_blank">注册B网页</a></p>
+				<p><a href="http://www.baidu.com" rel="nofo"></a></p>
+				<p><a href="logout">我是a标签</a><s/p>
+				<p><a href="www.taobao.com" rel="">退出</a></p>
+				<hr>
+				<p>
+					<select name="select" id="select">
+						<option value="bj">北京</option>
+						<option value="sh">上海</option>
+						<option value="gz">广州</option>
+						<option value="cq">重庆</option>
+					</select>
+				</p>
+				<hr>
+				<form action="">
+					<label for=""><input type="radio" name="fruit" value="pg" id="pg">苹果</label>
+					<label for=""><input type="radio" name="fruit" value="jz" id="jz">橘子</label>
+					<label for=""><input type="radio" name="fruit" value="xj" id="xj">香蕉</label>
+					<label for=""><input type="radio" name="fruit" value="li" id="li" checked="">梨</label>
+					<label for=""><input type="radio" name="fruit" value="xg" id="xg">西瓜</label>
+				</form>
+				<form action="">
+					<input type="checkbox" name="checkbox" value="汽车" id="qc">汽车<br>
+					<input type="checkbox" name="checkbox" value="购物" id="gw">购物<br>
+					<input type="checkbox" name="checkbox" value="旅游" id="ly" readonly="">旅游 <br>
+					<input type="checkbox" name="checkbox" value="音乐" id="yy"disabled="">音乐 <br>
+					<input type="button" value="取消" disabled="" id="cancel"><br>
+					<input type="button" value="alert" id="alert" onclick="al()"> <br>
+					<input type="file"  name="upfile" value="">
+				</form>
+		</fieldset>		
+	</div>
+	<script>
+		function al(){
+			alert('我被被点击啦！')
+		}
+	</script>
+</form>
+<a href="http://www.sina.com.cn" target="myframe1">新浪</a>
+<a href="http://www.hao123.com" target="myframe1">hao123</a>
+<a href="http://www.taobao.com" target="myframe2">淘宝</a>
+<a href="http://www.baidu.com" target="myframe2">百度</a><br>
+<iframe src="注册A.html" frameborder="1" height="500" width="48%" name="myframe1" id="idframe1"></iframe>
+<iframe src="注册B.html" frameborder="1" height="500" width="48%" name="myframe2"></iframe>   
+</body>
+</html>

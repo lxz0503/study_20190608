@@ -1,0 +1,102 @@
+-----
+data = pd.read_csv("某招聘网站数据.csv")
+data = pd.read_excel("TOP250.xlsx")
+-----
+data = pd.read_csv("../2 - 个性化显示设置/data.csv")
+-----
+data = pd.read_csv("某招聘网站数据.csv",nrows = 20)
+-----
+data = pd.read_csv("某招聘网站数据.csv",skiprows = [i for i in range(1,21)])
+-----
+data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: (x != 0) and not x % 2)
+
+# data = pd.read_csv('某招聘网站数据.csv', skiprows=lambda x: x % 2) 奇数行
+-----
+data = pd.read_csv("某招聘网站数据.csv",usecols = [0,2,4])
+-----
+data = pd.read_csv("某招聘网站数据.csv",usecols = ['positionId','positionName','salary'])
+-----
+usecols = ['positionId', 'test', 'positionName', 'test1', 'salary']
+
+data = pd.read_csv('某招聘网站数据.csv', usecols=lambda c: c in set(usecols))
+-----
+data = pd.read_csv('某招聘网站数据.csv',index_col=['positionId'])
+-----
+data = pd.read_csv('某招聘网站数据.csv', usecols=[0,1,17],header = 0,names=['ID','岗位名称','薪资'])
+-----
+data = pd.read_csv('某招聘网站数据.csv', keep_default_na=False)
+-----
+data = pd.read_csv('某招聘网站数据.csv',na_values=['[]'])
+-----
+data = pd.read_csv("某招聘网站数据.csv",na_filter=False)
+-----
+data = pd.read_csv("某招聘网站数据.csv", dtype={'positionId': str,'companyId':str}) 
+-----
+data = pd.read_csv("某招聘网站数据.csv",parse_dates=['createTime']) 
+
+微信搜索公众号「早起Python」，关注后可以获得更多资源！
+-----
+data = pd.read_csv("某招聘网站数据.csv", chunksize= 10)
+-----
+data = pd.read_table("Titanic.txt")
+-----
+data = pd.read_table("TOP250.txt",encoding='gb18030')
+
+# data = pd.read_csv("TOP250.txt",encoding='gb18030',sep = '\t') # 使用 read_csv 也可
+-----
+data = pd.read_json("某基金数据.json")
+-----
+data = pd.read_hdf("store_tl.h5", "table")
+-----
+data = pd.read_clipboard()
+-----
+pd.read_sql('SELECT int_column, date_column FROM test_data', conn)
+-----
+data = pd.read_html("https://olympics.com/tokyo-2020/olympic-games/zh/results/all-sports/medal-standings.htm")[0]
+-----
+import os
+path = 'demodata/'
+filesnames = os.listdir(path)
+filesnames = [f for f in filesnames if f.lower().endswith(".xlsx")]
+df_list = []
+for filename in filesnames:
+    df_list.append(pd.read_excel(path + filename))
+
+df = pd.concat(df_list)
+-----
+data = pd.DataFrame(l,columns=['早起Python'])
+-----
+data = pd.DataFrame(l,index=['公众号','早起Python'])
+-----
+data = pd.DataFrame(d)
+-----
+data = pd.DataFrame(d, index=["d", "b", "a"])
+-----
+data = pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
+-----
+data = pd.DataFrame(data2)
+-----
+data = pd.DataFrame(t, columns=[1,2,3,4], index=[1,2,3,4])
+-----
+data.to_csv("out.csv",encoding = 'utf_8_sig')
+-----
+data.to_csv("out.csv",encoding = 'utf_8_sig',columns=['positionName','salary'])
+-----
+data.to_csv("out.csv",encoding = 'utf_8_sig',index = False)
+-----
+data.to_csv("out.csv",encoding = 'utf_8_sig',index = False,na_rep = '数据缺失')
+-----
+compression_opts = dict(method='zip',
+                        archive_name='out.csv')  
+data.to_csv('out.zip', index=False,
+          compression=compression_opts)  
+-----
+data.to_excel("test.xlsx")
+-----
+data.to_json("out.json")
+-----
+data.head().to_markdown(index = None)
+-----
+data.to_html("out.html", col_space=100,index = None,justify = 'center',border = 1)
+-----
+-----

@@ -4,7 +4,7 @@
 # encoding = utf-8
 # 这个脚本适合SSH登录到其他服务器上执行一些命令并查看命令输出结果，不适合登录后再进行其他交互操作，例如scp
 # it only run on python2 but not python3(decode issue)
-# python ssh_pexpect_pxssh_class.py >> ssh_pexpect_pxssh_class.log
+# python ssh_pexpect_pxssh_class.py >> ssh_pexpect_pxssh_class.Logs
 from pexpect import pxssh
 import sys
 
@@ -48,7 +48,7 @@ class SshTest(object):
         self.s.prompt()
 
     def run_script(self, ip, port):
-        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
+        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.Logs' % (ip, port))
         self.s.prompt()
         res = self.s.before
         print(res)

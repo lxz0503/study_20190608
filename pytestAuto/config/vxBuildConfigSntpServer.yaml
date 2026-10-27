@@ -1,0 +1,58 @@
+# vxBuild.py config file
+SNTP_SERVER:
+    vsb:
+        layer : [ COMPONENT_IPNET, 
+                  COMPONENT_IPNET_ROUTE, 
+                  END_LIB,
+                  IPNET_ROUTEPROTO,
+                  SECURITY_MISC_SEC_CRYPTO,
+                  IPNET_COREIP,
+                  IPNET_EAP,
+                  IPNET_IPCRYPTO,
+                  OPENSSL_CRYPTO,
+                  IPNTP_USE_SSL,
+
+                ]
+        layer_remove : [ FEATURE_USR,
+                         DEBUG_AGENT,
+                       ]
+        extra_build_cflags : [-DIP_USE_TRADITIONAL_STRERROR,
+                              -DIPTESTENGINE,
+                              -DIPFTPS_USE_TEST,
+                              -DIPNTP_USE_TEST,
+                             ]                       
+    vip:
+        component : [ SHELL, SHELL_INTERP_CMD, IPCOM_SHELL_CMD, DISK_UTIL, IPCOM_USE_RAM_DISK, DISK_UTIL_SHELL_CMD,
+                      HRFS, HRFS_FORMAT, RAM_DISK, IFCONFIG, ROMFS, IPTELNETS, IPNET_IFCONFIG_1,
+                      NETSMP_CMD, ERRNOS_CMD, KEYADM_CMD, USER_DATABASE, SECURITY, 
+                      IPQUEUE_CONFIG_CMD, IPSYSCTL_CMD, IPCOM_USE_TIME_CMD, IPCOM_SYSLOGD_CMD,
+                      IPCOM_SYSLOGD_USE_LOG_FILE, IPIFCONFIG, IPIFCONFIG_CMD, IPROUTE_CMD, HOST_TBL,
+                      IPCOM_SYSVAR_CMD, IPTCP_TEST_CMD, IPARP_CMD, IPVERSION_CMD, IPD_CMD, 
+                      IPECHO_CLIENT_CMD, IPECHO_SERVER_CMD, IPSOCKTEST_CMD, IPPING_CMD, IPNET_PCAP_CMD,
+                      IPNETSTAT_CMD, DISK_UTIL_SHELL, PCAP_CMD, ROUTECMD, IPDHCPS, IPDHCPC,
+                      IPDHCPR, IPMCAST_PROXY_CMD, IPMCP, IP_SECURITY, IPSECCTRL_CMD, INTERNET_KEY_EXCHANGE,
+                      IPMCP_USE_IGMP, IPMCP_USE_MLD, TELNET_CLIENT, STANDALONE_SYM_TBL, DEBUG, DEBUG_KPRINTF,
+                      IPFIREWALL, IPFIREWALL_CMD, IPRADVD, IPRADVD_CMD, IPRIP, IPRIP_CTRL_CMD,
+                      IPTFTP_CLIENT_CMD, IPTFTPS, IPPING6_CMD, IPATTACH,
+                      IPFTP_CMD, IPFTPS, IPNTP_CMD, IPNTP, IPCRYPTO, IPSNTP_CMD, IPSNTPC, IPSNTPS,
+                    ]
+        vxparam :
+            # has to use "-" for each element in the list of vxparam since IFCONFIG_1 has "," inside
+            # it reports error when using [...]
+            - IFCONFIG_1='"ifname eth0","devname driver","inet driver","gateway driver"'
+            - IPCOM_TELNET_PORT='"2323"'
+            - IPRIP_IFCONFIG_1='"eth9 broadcast"'
+            - SEC_VAULT_KEY_ENCRYPTING_PW='"donald_duck"'
+            - NUM_FILES=1000
+            - INET_ENABLE_FORWARDING=1
+            - INET6_ENABLE_FORWARDING=1
+            - RTP_FD_NUM_MAX=100
+            - SHELL_DEFAULT_CONFIG='"INTERPRETER=,LINE_EDIT_MODE=,LINE_LENGTH=4096,STRING_FREE=manual,VXE_PATH=.;/romfs"'
+        romfs: [ /home/xli3/pytestAuto/test_cases/network_protocol/sntp_server/ntp/leap-seconds.3629404800,
+                 /home/xli3/pytestAuto/test_cases/network_protocol/sntp_server/ntp/ntp.server.broadcast.conf,
+                 /home/xli3/pytestAuto/test_cases/network_protocol/sntp_server/ntp/ntp.server.multicast.v4.conf,
+                 /home/xli3/pytestAuto/test_cases/network_protocol/sntp_server/ntp/ntp.server.multicast.v6.conf,
+                 /home/xli3/pytestAuto/test_cases/network_protocol/sntp_server/ntp/ntp.server.unicast.conf,
+        ]
+
+                  

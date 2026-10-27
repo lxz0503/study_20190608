@@ -51,7 +51,7 @@ def main():
     cur_dir = os.path.abspath('.')
     package_dir = os.path.join(cur_dir,'mongo')
     data_dir = os.path.join(cur_dir, 'mongodata')
-    logfile = os.path.join(data_dir, 'mongod.log')
+    logfile = os.path.join(data_dir, 'mongod.Logs')
     if not os.path.exists(package):
         raise SystemExit('{0} not found'.format(package))
 

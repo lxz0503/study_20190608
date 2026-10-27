@@ -1,0 +1,46 @@
+建表语句：
+use dd;   ----- use my workbench to create table
+drop table if exists  `salaries` ;
+drop table if exists  titles;
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+CREATE TABLE titles (
+`emp_no` int(11) NOT NULL,
+`title` varchar(50) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date DEFAULT NULL);
+
+INSERT INTO salaries VALUES(10001,88958,'1986-06-26','9999-01-01');
+INSERT INTO salaries VALUES(10003,43311,'2001-12-01','9999-01-01');
+INSERT INTO salaries VALUES(10004,74057,'1995-12-01','9999-01-01');
+INSERT INTO salaries VALUES(10006,43311,'2001-08-02','9999-01-01');
+INSERT INTO salaries VALUES(10007,88070,'2002-02-07','9999-01-01');
+
+INSERT INTO titles VALUES(10001,'Senior Engineer','1986-06-26','9999-01-01');
+INSERT INTO titles VALUES(10003,'Senior Engineer','2001-12-01','9999-01-01');
+INSERT INTO titles VALUES(10004,'Senior Engineer','1995-12-01','9999-01-01');
+INSERT INTO titles VALUES(10006,'Senior Engineer','2001-08-02','9999-01-01');
+INSERT INTO titles VALUES(10007,'Senior Staff','1996-02-11','9999-01-01');
+================================================================================
+统计出各个title类型对应的员工薪水对应的平均工资avg。结果给出title以及平均工资avg，并且以avg升序排序
+分析: 两张表，需要关联，各个title类型，需要分组，求平均值
+
+SELECT title, sum(salary)/count(title) as avg_salary   --- 求和，还有求总数count()
+FROM titles a
+inner join salaries b   ---- 内连接
+on a.emp_no=b.emp_no    ----关联两张表
+group by title          ------ 按照title分组
+order by avg_salary;    -----排序
+=========================================拓展练习====
+SELECT title, sum(salary),count(title)  ---分类计算总数，count()统计每个分类的总人数
+FROM dd.titles a
+inner join dd.salaries b
+on a.emp_no=b.emp_no
+group by title
+order by count(title);
+

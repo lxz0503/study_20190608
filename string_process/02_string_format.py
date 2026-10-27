@@ -7,7 +7,7 @@ print('rundate={0}'.format(week))
 # os.system('ls -l %s %s' % (os.getcwd(),'/home/windriver/xiaozhan'))
 # command = 'runwassp -f {WASSP_PLAN} -E "WASSP_WIND_HOME={WASSP_WIND_HOME}"  -E "WASSP_HOME={WASSP_HOME}" -E "WASSP_WORKSPACE_HOME={WASSP_WORKSPACE_HOME}" -E "WASSP_LOGS_HOME={WASSP_LOGS_HOME}" --continueIfReleaseInvalid -s exec --exec-retries 5'.format(WASSP_PLAN = rerun_plan, WASSP_WIND_HOME = dvd, WASSP_HOME = wassp_home, WASSP_WORKSPACE_HOME = workspace, WASSP_LOGS_HOME = logs)
 # os.system(command)
-# upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --log {LOG} --rundate {RUNDATE} --release {RELEASE}'.format( LOG= logs, RUNDATE = run_date, RELEASE = release_name)
+# upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --Logs {LOG} --rundate {RUNDATE} --release {RELEASE}'.format( LOG= logs, RUNDATE = run_date, RELEASE = release_name)
 # os.system(upload_command)
 print("{0[0]}.{0[1]}".format(('baidu', 'com')))
 # baidu.com

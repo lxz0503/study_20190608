@@ -56,7 +56,7 @@ supportedBsps = ('vxsim_linux', 'fsl_imx6', 'itl_generic', )
 passValue = 0
 failValue = 10
 
-debugFlag = False # boolean to turn on/off debug log
+debugFlag = False # boolean to turn on/off debug Logs
 shcmdIndicator = '===='
 
 def shCmd(cmd, sudo=False):

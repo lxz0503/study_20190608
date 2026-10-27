@@ -26,7 +26,7 @@
 
 
 #This is where logfiles will be stored
-logpath = 'log'
+logpath = 'Logs'
 
 #The top path from where the productpaths begin. This is where you have products dirs like "ipnet2-any-r6_0_0"
 #This is relative from where you run the script, i.e. <iptestengine>/src/

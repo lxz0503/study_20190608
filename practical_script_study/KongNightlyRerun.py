@@ -86,7 +86,7 @@ class RerunManager:
         #nightlyRecord2 = ltaf.NightlyRecord('rtnet.socktest.udp.ioctl_FIONBIO-IPv4',            'RTNET', '2018-12-31', 'Pass', 'http://pek-testharness-s1.wrs.com:8080/view/KONG-rerun/job/try-MODULE/2979', 'networking', 'KONG', 'Auto', '', 'networking', 'fsl_imx6', 'KONG', 'vx20181123201603_vx7-native', 'KONG-nightly', '2018-11-27 11:06:45', '0', '1', '', 'marked as fail for experiment')
         #rerunTest1 = RerunTest(nightlyRecord1, 'SPIN')
         #rerunTest1.nightlyRecord.append(nightlyRecord2)
-        #jobResults = {2979: {'test': rerunTest1, 'result': 'Pass', 'log': 'http://pek-testharness-s1.wrs.com:8080/view/KONG-rerun/job/try-MODULE/2979'}}
+        #jobResults = {2979: {'test': rerunTest1, 'result': 'Pass', 'Logs': 'http://pek-testharness-s1.wrs.com:8080/view/KONG-rerun/job/try-MODULE/2979'}}
 
         return self.__Map2RerunTest(self.rerunTests, jobResults)
     
@@ -116,7 +116,7 @@ class RerunManager:
         return uniqueTestCases.values()
     
     def __Map2RerunTest(self, rerunTests, jobResults):
-        # jobResults = { buildId : { 'test' : rerunTest, 'result' : 'Pass', 'log': ..., }, ...}
+        # jobResults = { buildId : { 'test' : rerunTest, 'result' : 'Pass', 'Logs': ..., }, ...}
         rtnRerunTests = []
         
         for buildId in jobResults:
@@ -126,7 +126,7 @@ class RerunManager:
             if len(nightlyRecords) == 1 and nightlyRecords[0].testSuite != 'SOCKTEST': # for a.b.c
                 print('=== 0 -- nightlyRecords[0].testSuite=%s' % nightlyRecords[0].testSuite)
                 rt.nightlyRecord[0].status = jobResults[buildId]['result']
-                rt.nightlyRecord[0].log = jobResults[buildId]['log']
+                rt.nightlyRecord[0].log = jobResults[buildId]['Logs']
                 rtnRerunTests.append(rt)
             elif len(nightlyRecords) > 1 or nightlyRecords[0].testSuite == 'SOCKTEST': # for a.b.c.d
                 print('=== 1 -- nightlyRecords[0].testSuite=%s' % nightlyRecords[0].testSuite)
@@ -155,7 +155,7 @@ class RerunManager:
                           nr.comment, nr.tech, nr.configLabel, nr.configuration)
                     newnr.testName = ConvertTestNameToLTAF(testName)
                     newnr.status = ConvertTestResultToLTAF(result)
-                    newnr.log = jobResult['log']
+                    newnr.log = jobResult['Logs']
                     rerunTests.append( RerunTest(newnr, commit) )
         return rerunTests          
     
@@ -188,7 +188,7 @@ class JenkinsJob:
     def AddTest(self, rerunTest):
         assert isinstance(rerunTest, RerunTest)
         i = 'x' + str(len(self.jobs))
-        self.jobs[i] = { 'test' : rerunTest, 'result' : None, 'log' : '' } 
+        self.jobs[i] = { 'test' : rerunTest, 'result' : None, 'Logs' : '' }
         
     def LaunchTest(self):
         for k in self.jobs:
@@ -229,7 +229,7 @@ class JenkinsJob:
             return self.jobName, None        
         
     def ReportResult(self):
-        # jobs[i] = { 'test' : rerunTest, 'result' : None, 'log' : '' }
+        # jobs[i] = { 'test' : rerunTest, 'result' : None, 'Logs' : '' }
         while True:
             if not self.runningBuildIds:
                 break
@@ -260,7 +260,7 @@ class JenkinsJob:
                         print '=== debug: build %s GetBuildStatusFromContent() 2nd time returns status: %s' % (buildId, status1)
                     ltafResult = 'Pass' if status1 == 'SUCCESS' else 'Fail'
                     self.jobs[buildId]['result'] = ltafResult
-                    self.jobs[buildId]['log'] = self.logTmpl.format(buildId=buildId)
+                    self.jobs[buildId]['Logs'] = self.logTmpl.format(buildId=buildId)
                     self.runningBuildIds.remove(buildId)
             time.sleep(60)
         return self.jobs

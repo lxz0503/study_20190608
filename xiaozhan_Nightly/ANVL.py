@@ -33,7 +33,7 @@ def HelpGuide():
                  TcpCore_UrgPtrRFC1122,TcpCore_UrgPtrRFC793,TcpAdv,TcpPerf,\n
                  IPsecAHv4,IPsecAHv6,IPsecESPv4,IPsecESPv4-noencry,IPsecESPv6,IPsecESPv6-des,\n
                  IKEMain,IKEAggressive,IKECombinedSA,IKEDH1md5,IKEDH1sha,IKEv2,\n
-                 IKEIPv6Main,IKEIPv6CombinedSA,IKEIPv6Aggressive,IKEIPv6md5\n\nOptional options:\n\n -l  [log_dir]      input directory to save test logs. e.g:\n\n               '/home/windriver'\n               './'\n                default is current directory\n\n --exclude  remove suite(s) from those suite(s) that indicated by "--suite" option to be executed.\n\n -d  [dvd_info]     input dvd info. to the log folder. e.g:\n\n               '6931Apr11'\n               '6923Feb15'\n                default is null\n\n -v  [version]      input dvd version to test,e.g:\n\n               '6.7'\n                default is 6.9\n\nExamples:\n\n             ./ANVL.py -t pcPentium4 -c all -s all\n             ./ANVL.py -t Q35 -c 1.1 -l ./ -d 6931Apr11 -v 7.0 -s ICMPv4\n\n"""
+                 IKEIPv6Main,IKEIPv6CombinedSA,IKEIPv6Aggressive,IKEIPv6md5\n\nOptional options:\n\n -l  [log_dir]      input directory to save test logs. e.g:\n\n               '/home/windriver'\n               './'\n                default is current directory\n\n --exclude  remove suite(s) from those suite(s) that indicated by "--suite" option to be executed.\n\n -d  [dvd_info]     input dvd info. to the Logs folder. e.g:\n\n               '6931Apr11'\n               '6923Feb15'\n                default is null\n\n -v  [version]      input dvd version to test,e.g:\n\n               '6.7'\n                default is 6.9\n\nExamples:\n\n             ./ANVL.py -t pcPentium4 -c all -s all\n             ./ANVL.py -t Q35 -c 1.1 -l ./ -d 6931Apr11 -v 7.0 -s ICMPv4\n\n"""
      
 def checkLogFileFolder(logFolder):
     if os.path.isdir(logFolder):
@@ -56,7 +56,7 @@ def parse_option(argv):
       'target'          : '',     # Default target_type is PENTIUM4
       'case'            : '',     # Default cases is ALL
       'version'         : '6.9',  # Default version is 6.9
-      'log'             : '',     # Default is cwd
+      'Logs'             : '',     # Default is cwd
       'dvd'             : '', 
       'exclude'         : [],   
       'suite'           : '',      
@@ -68,7 +68,7 @@ def parse_option(argv):
       'version',
       'suite',
       'exclude=',
-      'log',
+      'Logs',
       'help',
       'dvd',]
     try:
@@ -111,9 +111,9 @@ def parse_option(argv):
         if opt in ('--exclude',):
             para['exclude'] = arg.split(',')  
             continue
-        if opt in ('-l', '--log'):
-            para['log'] = os.path.abspath(arg)
-            if not para['log']:
+        if opt in ('-l', '--Logs'):
+            para['Logs'] = os.path.abspath(arg)
+            if not para['Logs']:
                 print"Error! You input '-l' with invalid dir: '%s'\n"%arg
                 sys.exit(1) 
             continue 
@@ -160,8 +160,8 @@ if __name__ == '__main__':
             suitesList = tmpList
                 
         curTime = time.strftime('%Y-%m-%d_%H-%M-%S',time.localtime())
-        if opt['log']:
-            logFolder = opt['log']
+        if opt['Logs']:
+            logFolder = opt['Logs']
         else:
             if opt['dvd']:
                 logFolder = os.getcwd() + "/ANVL_"+ opt['target'] + "_" + opt['dvd'] + "_" + curTime
@@ -169,7 +169,7 @@ if __name__ == '__main__':
                 logFolder = os.getcwd() + "/ANVL_"+ opt['target'] + "_" + curTime
         print "logFolder=%s\n"%logFolder
         if not checkLogFileFolder(logFolder): 
-            print "Error! Fail to create log folder:%s"%logFolder
+            print "Error! Fail to create Logs folder:%s"%logFolder
             sys.exit(1)
         for suite in suitesList:
             logFilePath = logFolder + "/" + ANVL_targets[opt['target']][suite]['logfile']

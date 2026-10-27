@@ -1,0 +1,164 @@
+#! /bin/bash -x
+# nightly use as $(basename $0) -b branchname -s spinname
+
+sourcePath=$(cd $(dirname $0); pwd)
+
+usage() {
+    echo "usage:"
+    echo "$(basename $0) -w windHome -g gitPath -b branchname -s spinname"
+    echo "-w|-windHome"
+    echo "The Spin installed directory,default is {default_install}/spinname"
+    echo "-g|-gitPath "
+    echo "The git home path"
+    echo "-b|-branchname "
+    echo "The branch name"
+    echo "-s|-spinname"
+    echo "The spinname name,if windHome gived this parameter is no needed"
+	echo "-c|-conf"
+	echo "The conf file"
+}
+
+while [ $# -gt 0 ]; do
+    case $1 in
+        -w|-windHome) shift; windHome=$1 ;;
+        -g|-gitPath) shift; gitPath=$1 ;;
+        -b|-branchname) shift; branchname=$1 ;;
+        -s|-spinname) shift; spinname=$1 ;;
+        -c|-conf) shift; configf=$1 ;;	
+        -help|-h|--help) usage;exit 1 ;;
+        *) echo "invalid parameter '$1',See usage help." >&2; usage;exit 1;;
+    esac
+    shift
+done
+
+## conf file
+default_conf=config_nightly.ini
+if [ -z $configf ]
+then
+    configf=${default_conf}
+fi
+source $sourcePath/$configf
+
+## default vaulue
+default_gitPath=${default_gitPath}
+default_install=${default_install}
+default_pwd=${default_pwd}
+
+## git path used for patching
+if [ -z "$gitPath" ]
+then
+    echo "Info:gitPath is default as ${default_gitPath}."
+    gitPath=${default_gitPath}
+elif [ ! -d $gitPath ]
+then
+    echo "ERROR: gitPath:$gitPath is not a folder, please check"
+    exit 1
+fi
+
+## branch name for patching
+if [ -z "$branchname" ]
+then
+    echo "ERROR:branchname for patching is must be given."
+	exit 1
+fi
+
+## windhome which patched to
+if [ -z "$windHome" ] && [ -z "$spinname" ]
+then
+    echo "ERROR:windHome and spinname can not all none"
+    exit 1
+fi
+
+if [ -z "$windHome" ];then
+    windHome=${default_install}/$spinname
+fi
+
+echo "****Info: windHome is $windHome, branchname is $branchname and gitPath is $gitPath****"
+echo "****Info: Start to check patch branch.****"
+
+## if git have been installed in the enironment
+git=`which git`
+if [ -z "$git" ]
+then
+    echo "ERROR:no git command in your host,please check"
+    exit 1
+fi
+
+## if git path is a git repository
+cd $gitPath
+pwd
+if $git status |grep "fatal: Not a git repository" >/dev/null
+then
+    echo "ERROR: gitPath:$gitPath is not a git repository,please check"
+    exit 1
+fi
+
+## if check out to branchname successful
+if ! $git branch |grep "* $branchname" >/dev/null
+then
+    echo "Info:The current branch name is not $branchname, will checkout to $branchname"
+## before checkout, should pull first.
+    ## git pull
+    find . -name "ORIG_HEAD.lock" -delete
+	expect -c "
+	 set timeout -1
+	 spawn git pull
+	 expect  {
+		 -gl password*:  {
+			 send ${default_pwd}\r
+		     puts ******
+             exp_continue
+		   }
+         -gl (yes/no)? {
+			 send yes\r
+			 puts yes
+			 exp_continue
+            }
+          timeout {}
+        eof {}
+        }
+    "
+    $git checkout $branchname
+    if [ $? -ne 0 ]
+    then
+       echo "ERROR:git checkout to $branchname failed, please check whether the branch name is correct or whether some conflicts found.Exit"
+       exit 1
+    fi
+fi
+
+## git pull
+find . -name "ORIG_HEAD.lock" -delete
+      expect -c "
+       set timeout -1
+       spawn git pull
+       expect  {
+            -gl password*:  {
+                  send ${default_pwd}\r
+                  puts ******
+                  exp_continue
+                }
+            -gl (yes/no)? {
+                  send yes\r
+                  puts yes
+                  exp_continue
+                }
+            timeout {}
+            eof {}
+            }
+       "
+## checkout to tag, the tag name is spin name.
+tmpTag=${spinname/vx/}
+$git checkout $tmpTag
+if [ $? -ne 0 ]
+then
+    echo "ERROR:git checkout to tag $tmpTag failed, please check whether the tag is correct or whether some conflicts found.Exit"
+    #### Jie debug on 05-27
+    #exit 1
+fi
+
+pwd
+echo "****Info:Start to generate patch file.****"
+## call common patch script.
+bash $sourcePath/vxTestPatchGetInstall.sh -windHome $windHome -gitPath $gitPath -b $branchname  -tag $spinname -notChkGit
+
+exit 0

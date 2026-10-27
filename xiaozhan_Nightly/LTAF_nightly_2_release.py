@@ -72,7 +72,7 @@ class Case(object):
 		dict_ini['week'] = self.week
 		dict_ini['build'] = self.build
 		dict_ini['status'] = self.status
-		dict_ini['log'] = self.log
+		dict_ini['Logs'] = self.log
 		dict_ini['test_component'] = self.test_component
 		dict_ini['tester'] = self.tester
 		dict_ini['requirements'] = self.requirements

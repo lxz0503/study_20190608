@@ -1,0 +1,10 @@
+
+查找字符串 10,A,B 中逗号,出现的次数cnt
+
+解题思路：
+①巧用length函数和replace，length函数计算字符串的长度，length("10,A,B")算出整个字符串的长度。
+②使用replace将 , 替换为空，那么整个字符串减少的长度等于 , 的长度，两者相减就是 , 出现的次数。
+
+
+SELECT
+length('10,A,B') - length(REPLACE( '10,A,B',',',''));

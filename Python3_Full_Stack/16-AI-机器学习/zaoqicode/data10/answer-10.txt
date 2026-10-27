@@ -1,0 +1,129 @@
+-----
+df['A'].plot()
+plt.show()
+-----
+df.plot(subplots=True)
+plt.show()
+-----
+df.plot()
+plt.show()
+-----
+df.plot(figsize=(10,6))
+plt.show()
+-----
+df.plot(figsize=(10,6),title='早起Python')
+plt.show()
+-----
+df.plot(figsize=(10,6),title='早起Python',grid = True)
+plt.show()
+-----
+df.plot(figsize=(10, 6), title='早起Python', grid=True, xlabel='时间', ylabel='数量')
+plt.show()
+-----
+df.plot(figsize=(10, 6), title='早起Python', grid=True, xlabel='时间', ylabel='数量',fontsize = 13)
+plt.show()
+-----
+df.plot(figsize=(10, 6), grid=True, fontsize = 13)
+plt.title("早起Python",size = 17)
+plt.xlabel('时间',size = 15)
+plt.ylabel('数量',size =15)
+plt.show()
+-----
+df.plot(figsize=(10, 6), grid=True, fontsize = 13)
+plt.title("早起Python",size = 17)
+plt.xlabel('时间',size = 15)
+plt.ylabel('数量',size =15)
+plt.legend(loc=3)
+plt.show()
+-----
+ax = df.plot(secondary_y=['A', 'B'], figsize=(10, 6), fontsize = 13)
+ax.set_ylabel('CD')  
+ax.right_ax.set_ylabel('AB')  
+ax.legend(loc=2)
+plt.title("早起Python",size = 17)
+plt.xlabel('时间',size = 15)
+plt.ylabel('数量',size =15)
+plt.legend(loc=1) 
+plt.show()
+-----
+df2.iloc[2].plot(kind = 'bar', figsize=(10, 6))
+plt.show()
+-----
+df2.iloc[2].plot(kind = 'barh', figsize=(10, 6))
+plt.show()
+-----
+df2.plot(kind = 'bar', figsize=(10, 6))
+plt.show()
+-----
+df2.plot(kind = 'bar', figsize=(10, 6),stacked=True)
+plt.show()
+-----
+df3.plot(kind = 'hist', figsize=(10, 6))
+plt.show()
+-----
+df3.plot(kind = 'hist', figsize=(10, 6),alpha = 0.5)
+plt.show()
+-----
+df3.plot(kind = 'hist', figsize=(10, 6),alpha = 0.5,bins = 20,stacked=True)
+plt.show()
+-----
+df3.diff().hist(alpha=0.5, bins=20, figsize=(10, 6))
+plt.show()
+-----
+df4.plot.scatter(x="a", y="b", figsize=(8, 6))
+plt.show()
+-----
+df4.plot.scatter(x="a", y="b", figsize=(8, 6), s=df4["c"] * 200)
+plt.show()
+-----
+df4.plot.scatter(x="a", y="b", figsize=(8, 6), marker='o',
+                 s=100, linewidths=1, alpha=0.8, edgecolors='black')
+plt.show()
+-----
+df4.plot.scatter(x="a", y="b",c="c", figsize=(8, 6), marker='o',
+                 s=100, linewidths=1, alpha=0.8, edgecolors='black')
+
+plt.show()
+-----
+ax = df4.plot.scatter(x="a", y="b", color="DarkBlue", label="Group 1", figsize=(8, 6), marker='o',
+                 s=80, linewidths=1, alpha=0.8, edgecolors='black')
+
+df4.plot.scatter(x="c", y="d", color="DarkGreen", label="Group 2", ax=ax, figsize=(8, 6), marker='o',
+                 s=80, linewidths=1, alpha=0.8, edgecolors='black');
+-----
+df5.plot.box(figsize=(8, 6))
+plt.show()
+-----
+color = {
+    "boxes": "DarkGreen",
+    "whiskers": "DarkOrange",
+    "medians": "DarkBlue",
+    "caps": "Gray",
+}
+
+
+df5.plot.box(color=color, sym="r+", figsize=(8, 6))
+plt.show()
+-----
+df5.plot.box(vert=False,figsize=(8, 6),color=color)
+plt.show()
+-----
+df6.plot.area(figsize=(8, 6),alpha = 0.7)
+plt.show()
+-----
+df7.plot.hexbin(x="a", y="b", gridsize=25, figsize=(8, 6));
+-----
+df8.plot(kind='kde', figsize=(8, 6))
+plt.show()
+-----
+df6.plot.area(figsize=(8, 6),alpha = 0.7)
+plt.show()
+-----
+df6.plot.area(figsize=(8, 6))
+plt.show()
+-----
+df6.plot.area(figsize=(8, 6))
+plt.show()
+-----
+df6.plot.area()
+-----

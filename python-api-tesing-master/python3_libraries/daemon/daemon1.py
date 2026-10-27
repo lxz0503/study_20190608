@@ -8,7 +8,7 @@ import daemon
 import time
 
 with daemon.DaemonContext():
-    f = open("/tmp/test.log",'w')
+    f = open("/tmp/test.Logs",'w')
     while True:
         f.write('''
         Library to implement a well-behaved Unix daemon process.

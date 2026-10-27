@@ -2,6 +2,9 @@
 # encoding=UTF-8
 
 import unittest
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from page.sina import *
 from page.init import *
 
@@ -9,7 +12,7 @@ from page.init import *
 class SinaTest(Init, Sina):
     def test_sina_login_001(self, parent='divText', value='emailNull'):
         '''
-        log in with empty account and password
+        Logs in with empty account and password
         :param parent: tag name
         :param value: child tag name
         '''
@@ -18,7 +21,7 @@ class SinaTest(Init, Sina):
 
     def test_sina_login_002(self, parent='divText', value='emailFormat'):
         '''
-        log in with invalid mailbox name
+        Logs in with invalid mailbox name
         :param parent: tag name
         :param value: child tag name
         '''

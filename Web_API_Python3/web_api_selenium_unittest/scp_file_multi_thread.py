@@ -29,7 +29,7 @@ def scp_file(src, dst, passwd):
     s.close()
 
 def main():
-    src = "log.txt"
+    src = "Logs.txt"
     dstList = ['windriver@128.224.167.168:/home/windriver','windriver@128.224.163.8:/home/windriver']
     passwd = "windriver"
     threads=[]

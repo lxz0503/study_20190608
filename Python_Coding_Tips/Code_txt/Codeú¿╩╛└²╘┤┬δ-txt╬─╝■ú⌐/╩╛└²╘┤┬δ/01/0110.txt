@@ -1,0 +1,58 @@
+nba='哈登: 31.6  伦纳德: 31.2   乔治: 28.6    库里: 27.3    利拉德:26.9'
+nbanew=nba.split(' ')
+
+
+
+
+
+username = '  明日科技  '
+print(username.strip())
+
+
+
+
+
+word='赵 钱 孙 李 周 吴 郑 王'
+word=''.join([i.strip(' ') for i in word])
+print(word)
+
+
+
+
+
+word='编号   姓名       性别 年级      学校   奖项'
+list=word.split(' ')
+listnew=[i for i in list if i!='' ]
+new=' '.join(listnew)
+print(new)
+
+
+
+
+
+word=  'D:\mingrisoft\python\gobig\t'
+print(word.replace('\t',''))
+
+
+
+
+
+word='赵 钱 孙 李 周 吴 郑 王'
+word=''.join([i for i in word if i !=' '])
+print(word)
+
+
+
+
+
+name = '伦纳德:31.2'
+print(name[:3] + name[4:])
+
+
+
+
+
+nba='哈登: 31.6  伦纳德: 31.2   乔治: 28.6    库里: 27.3    利拉德:26.9'
+nbanew=nba.split(' ')
+nbaone=[i for i in nbanew if i !='']
+print(nbaone)

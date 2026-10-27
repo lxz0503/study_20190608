@@ -1,7 +1,7 @@
 import os
 from subprocess import call
 
-debugFlag = False # boolean to turn on/off debug log
+debugFlag = False # boolean to turn on/off debug Logs
 shcmdIndicator = '===='
 
 class build_exception(Exception):

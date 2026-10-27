@@ -17,7 +17,7 @@ def read_file(fpath):
 def read_csv(fpath):
     with open(fpath) as f:
         f_csv = csv.reader(f)
-        headings = next(f_csv)   # there is a heading in this file,so you need to run next() firstly
+        next(f_csv)   # there is a heading in this file,so you need to run next() firstly
         for line in f_csv:
             yield line
 

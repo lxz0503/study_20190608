@@ -39,7 +39,7 @@ class BspBuildCmd(object):
         
         print '== BUILDCMD server:%s, dir:%s' % (getoutput('hostname'), getoutput('pwd'))
         print '== BUILDCMD git branch:\n%s' % getoutput('git branch')
-        print '== BUILDCMD latest commit:\n%s' % getoutput('git log -1 HEAD')        
+        print '== BUILDCMD latest commit:\n%s' % getoutput('git Logs -1 HEAD')
         del currentGit
 
         self.buildDir = buildDir
@@ -238,7 +238,7 @@ class VsbBuild(VxAction):
         
         print '== VSBBUILD server:%s, dir:%s' % (getoutput('hostname'), getoutput('pwd'))
         print '== VSBBUILD git branch:\n%s' % getoutput('git branch')
-        print '== VSBBUILD latest commit:\n%s' % getoutput('git log -1 HEAD')        
+        print '== VSBBUILD latest commit:\n%s' % getoutput('git Logs -1 HEAD')
 
         self.branch = branch
         self.server = server 
@@ -299,7 +299,7 @@ class VsbBuild(VxAction):
         print '== current server:%s' % getoutput('hostname')
         print '== current path:%s' % os.getcwd()
         print '== git branch:\n%s' % getoutput('git branch')
-        print '== current commit id:\n%s' % getoutput('git log -1 HEAD')
+        print '== current commit id:\n%s' % getoutput('git Logs -1 HEAD')
         print '== vxprj vsb listBsps -all'
         print getoutput('vxprj vsb listBsps -all')
         print '== vxprj vsb listAll'
@@ -405,8 +405,8 @@ def NotifyPeople(fromEmail, toEmail, branch, oldCommit, newCommit, warnNum, covN
 def ReportGitChange(oldCommit, newCommit):
     reports = []
     os.chdir(masterGitPath)
-    old = getoutput('git log -1 %s' % oldCommit)
-    new = getoutput('git log -1 %s' % newCommit)
+    old = getoutput('git Logs -1 %s' % oldCommit)
+    new = getoutput('git Logs -1 %s' % newCommit)
     reports.append('From old commit:')
     reports.append( '\n'.join( map(lambda x: '\t' + x, old.split('\n')) ) )
     reports.append('\nTo new commit:')

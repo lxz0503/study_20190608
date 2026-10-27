@@ -39,15 +39,15 @@ def main():
 	# run wassp
 	os.system(command)
 	# upload test result to LTAF
-	# bash ltaf_vxworks.sh -sprint Nightly  -week 2017-11-10 -ltaf vx7-SR0520-features -log /home/windriver/Logs/2017_11_10_17_24_49  -domain bsp_nightly -nightly
+	# bash ltaf_vxworks.sh -sprint Nightly  -week 2017-11-10 -ltaf vx7-SR0520-features -Logs /home/windriver/Logs/2017_11_10_17_24_49  -domain bsp_nightly -nightly
 	#sprint = 'Nightly'
 	#week = '{:%Y-%m-%d}'.format(datetime.now())
 	week = 'week'+time.strftime('%y',time.localtime())+'{:0>2s}'.format(str(datetime.now().isocalendar()[1]))
 	#release = 'vxworks_sandbox'
 	release = args.release
 	#domain = 'networking'
-	#upload_command = 'bash /home/windriver/wassp-repos/testcases/vxworks7/LTAF_meta/ltaf_vxworks.sh -sprint "{SPRINT}" -week {WEEK} -ltaf {LTAF} -log {LOG} -domain {DOMAIN} -nightly'.format(SPRINT = sprint, WEEK = week, LTAF = release, LOG = logs, DOMAIN = domain) 
-	upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --log {LOG} --rundate {RUNDATE} --release {RELEASE} --sprint Weekly'.format( LOG= logs, RUNDATE = week, RELEASE = release)
+	#upload_command = 'bash /home/windriver/wassp-repos/testcases/vxworks7/LTAF_meta/ltaf_vxworks.sh -sprint "{SPRINT}" -week {WEEK} -ltaf {LTAF} -Logs {LOG} -domain {DOMAIN} -nightly'.format(SPRINT = sprint, WEEK = week, LTAF = release, LOG = logs, DOMAIN = domain)
+	upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --Logs {LOG} --rundate {RUNDATE} --release {RELEASE} --sprint Weekly'.format( LOG= logs, RUNDATE = week, RELEASE = release)
 	os.system(upload_command)
 	insert_iperf_data(wassp_plan, week, os.path.basename(dvd), logs)
 	#insert_baseline_data(wassp_plan, os.path.basename(dvd), logs)

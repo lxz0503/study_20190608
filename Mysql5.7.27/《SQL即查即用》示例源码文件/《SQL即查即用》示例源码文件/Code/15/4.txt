@@ -1,6 +1,7 @@
 SELECT * 
-FROM tb_book
-WHERE NOT EXISTS(
+FROM shop.tb_book  ------外层表
+WHERE NOT EXISTS (      -------取差集
     SELECT tb_author_department
-    FROM tb_book_author
-    WHERE tb_book.book_sort=tb_book_author.tb_author_department );
+    FROM shop.tb_book_author  --------内层表
+    WHERE tb_book.book_sort=tb_book_author.tb_author_department)    ---关联两张表
+ORDER BY tb_book.book_price;

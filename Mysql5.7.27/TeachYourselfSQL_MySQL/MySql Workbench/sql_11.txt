@@ -1,0 +1,36 @@
+use dd;
+drop table if exists  `dept_emp` ;
+drop table if exists  `dept_manager` ;
+
+CREATE TABLE `dept_emp` (
+`emp_no` int(11) NOT NULL,
+`dept_no` char(4) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+
+CREATE TABLE `dept_manager` (
+`dept_no` char(4) NOT NULL,
+`emp_no` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+
+INSERT INTO dept_emp VALUES(10001,'d001','1986-06-26','9999-01-01');
+INSERT INTO dept_emp VALUES(10002,'d001','1996-08-03','9999-01-01');
+INSERT INTO dept_emp VALUES(10003,'d002','1995-12-03','9999-01-01');
+INSERT INTO dept_manager VALUES('d001',10002,'1996-08-03','9999-01-01');
+INSERT INTO dept_manager VALUES('d002',10003,'1990-08-05','9999-01-01');
+========================================================================
+获取所有的员工和员工对应的经理，如果员工本身是经理的话则不显示
+分析: 员工和经理有共同的部门---所以inner join的关联字段是dept_no
+
+1、用 INNER JOIN 连接两张表，因为要输出自己的经理，得知自己与经理的部门要相同，故有限制条件 a.dept_no = b.dept_no
+2、再用 WHERE 限制当前员工与当前经理的条件， a.emp_no 不等于 b.emp_no
+3、为了增强代码可读性，将 dept_emp 用别名 a 代替，dept_manager 用 b 代替，最后根据题意将 a.emp_no 用别名 manager_no 代替后输出
+
+SELECT a.emp_no,b.emp_no as manager   --- 别名
+FROM dd.dept_emp a
+inner join dd.dept_manager b  #--- 内连接
+on a.dept_no=b.dept_no     #----关联两张表的字段，因为员工和经理有相同的部门，所以确定关联字段是dept_no
+where a.emp_no!=b.emp_no;   #----限制条件，去掉了本身是经理的输出

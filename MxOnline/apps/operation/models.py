@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
-from users.models import UserProfile
-from course.models import Course
+from MxOnline.apps.users.models import UserProfile
+from MxOnline.apps.course.models import Course
 
 # Create your models here.
 # operation 用户操作

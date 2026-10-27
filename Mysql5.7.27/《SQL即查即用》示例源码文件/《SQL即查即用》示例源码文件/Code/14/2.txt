@@ -1,8 +1,9 @@
 SELECT ename, job, sal 
-FROM emp
-WHERE sal in(SELECT MAX(sal) FROM emp GROUP BY job)
+FROM shop.emp
+WHERE sal in(SELECT MAX(sal) FROM shop.emp GROUP BY job)
 AND
-job IN(SELECT  distinct job FROM emp);
+job IN(SELECT  distinct job FROM shop.emp)
+ORDER BY sal;
 
 # 查询在各个职务中工资最高的员工信息
 # 成对比较的多列子查询，就是返回值有多列  -------------查询原理如下
@@ -24,4 +25,8 @@ SELECT ename,job,sal
 
 
  # 可以根据job查询最高工资
- SELECT max(sal) as m,job FROM shop.emp  where sal IS not NULL GROUP BY job;
+SELECT max(sal) as m,job
+ FROM shop.emp
+ where sal IS not NULL
+ GROUP BY job
+ order by m;

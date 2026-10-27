@@ -1,0 +1,55 @@
+# network.py default config file
+
+# Anchors can be used to duplicate/inherit properties
+QEMU-Q35-COMMON : &QEMU-Q35-COMMON
+    cpu : 2
+    memory : 2048
+    smp : 4
+    enable-kvm : True
+    serial : stdio
+    monitor : none
+    append_prefix : sysbootline:gei(0,0)
+    
+QEMU-Q35-1 : *QEMU-Q35-COMMON 
+QEMU-Q35-2 : *QEMU-Q35-COMMON
+QEMU-Q35-3 : *QEMU-Q35-COMMON
+QEMU-Q35-4 : *QEMU-Q35-COMMON
+QEMU-Q35-5 : *QEMU-Q35-COMMON
+QEMU-Q35-6 : *QEMU-Q35-COMMON
+
+# The regexp << is called Merge Key Language-Independent Type. It is used to
+# indicate that all the keys of one or more specified maps should be inserted
+# into the current map.
+QEMU-Q35-4Disk : 
+    <<: *QEMU-Q35-COMMON
+    disk : 
+        - /net/pek-vx-nwk1/buildarea1/lchen3/workspace/miniKong-dev/qemu/disk/disk1.img
+        - /net/pek-vx-nwk1/buildarea1/lchen3/workspace/miniKong-dev/qemu/disk/disk2.img
+        - /net/pek-vx-nwk1/buildarea1/lchen3/workspace/miniKong-dev/qemu/disk/disk3.img
+        - /net/pek-vx-nwk1/buildarea1/lchen3/workspace/miniKong-dev/qemu/disk/disk4.img
+
+
+bridge : br-vm-123
+
+QEMU-COMMON: &QEMU-COMMON
+    memory : 2048
+    smp : 4
+    enable-kvm : True
+    serial : stdio
+    monitor : none
+
+QEMU-LINUX-COMMON : &QEMU-LINUX-COMMON
+    <<: *QEMU-COMMON
+    cpu : host
+    image : config/focal-server-cloudimg-amd64.img
+
+QEMU-LX-1 :
+    <<: *QEMU-LINUX-COMMON
+    ip : 192.168.123.108/24
+
+LINUX-IMAGE:
+    image  : config/focal-server-cloudimg-amd64.img
+    user   : ubuntu
+    passwd : ubuntu
+    prompt : 'ubuntu@ubuntu:~$ '
+    device : ens3

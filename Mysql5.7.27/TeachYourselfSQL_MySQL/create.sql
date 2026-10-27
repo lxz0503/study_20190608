@@ -4,7 +4,7 @@
 -- Example table creation scripts for MySQL.
 -- -----------------------------------------
 
-use tysql;
+use tysql;    # 首先要创建这个数据库
 -- ----------------------
 -- Create Customers table
 -- ----------------------

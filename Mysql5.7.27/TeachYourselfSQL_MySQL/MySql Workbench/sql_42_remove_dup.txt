@@ -1,0 +1,52 @@
+删除emp_no重复的记录，只保留最小的id对应的记录。
+CREATE TABLE IF NOT EXISTS titles_test (
+id int(11) not null primary key,
+emp_no int(11) NOT NULL,
+title varchar(50) NOT NULL,
+from_date date NOT NULL,
+to_date date DEFAULT NULL);
+
+insert into titles_test values
+('1', '10001', 'Senior Engineer', '1986-06-26', '9999-01-01'),
+('2', '10002', 'Staff', '1996-08-03', '9999-01-01'),
+('3', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01'),
+('4', '10004', 'Senior Engineer', '1995-12-03', '9999-01-01'),
+('5', '10001', 'Senior Engineer', '1986-06-26', '9999-01-01'),
+('6', '10002', 'Staff', '1996-08-03', '9999-01-01'),
+('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
+============================================================
+### 逆向思维：找出所有emp_no组中最小的那些id
+#### step1: 找出所有emp_no组中最小的那些id
+SELECT MIN(id) FROM titles_test GROUP BY emp_no    关键是根据emp_no来分组
+#### step2: 根据id删除数据，
+DELETE FROM titles_test
+WHERE id NOT IN       --not in语句来找到那些重复的id
+(SELECT MIN(id) FROM titles_test GROUP BY emp_no)
+============================================
+抛出异常：ERROR 1093 (HY000): You can't specify target table 'titles_test' for update in FROM clause。
+经查询，MySQL的UPDATE或DELETE中子查询不能为同一张表，可将查询结果再次SELECT。
+DELETE FROM titles_test  ----常规方法
+WHERE id NOT IN (
+    SELECT *    ---- 必须有这个select *   否则报错
+    FROM(
+        SELECT MIN(id)
+        FROM titles_test
+        GROUP BY emp_no
+) AS a);
+这在OJ中也可执行。
+另外，在MySQL中还有一个坑，需要给子查询添加别名，不然会抛出错误：ERROR 1248 (42000): Every derived table must have its own alias，详见：https://blog.csdn.net/cao478208248/article/details/28122113
+=========================================
+查找那些重复的id，
+select id from dd.titles_test
+where id not in (
+SELECT MIN(id)
+FROM dd.titles_test
+GROUP BY emp_no);
+=================================== 方法二  推荐 比较巧妙,用同一个表，采用了别名
+DELETE a   --- 从原始表a 删除
+FROM titles_test a,titles_test b     --- 别名 b
+WHERE a.emp_no=b.emp_no AND a.id>b.id   -- 两表关联起来
+=======================================
+DELETE FROM titles_test as a   -- a作为原始表
+WHERE EXISTS (SELECT * FROM titles_test as b WHERE b.emp_no = a.emp_no and a.id > b.id)
+使用EXISTS :存在比原表ID更小且emp_no一致的条目，就删除该条目

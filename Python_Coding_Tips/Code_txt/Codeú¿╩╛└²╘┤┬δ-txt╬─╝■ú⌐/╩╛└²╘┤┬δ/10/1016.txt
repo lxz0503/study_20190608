@@ -1,0 +1,107 @@
+if os.path.exists(os.path.join(BASE_DIR, 'logs')) is False:
+    os.mkdir(os.path.join(BASE_DIR, 'logs'))
+# logs目录绝对路径
+LOGS_ROOT = os.path.join(BASE_DIR, 'logs')
+# 默认情况下，LOGGING设置与Django的默认logging配置进行合并
+LOGGING = {
+    'version': 1,					# 唯一的dictConfig格式版本。
+    'disable_existing_loggers': False,		# 重新定义部分或所有的默认loggers
+    # 定义两个格式化程序
+    # asctime时间、threadName线程名称、thread线程号、name 记录器(loggers)的名称、lineno异常行号、
+    # module执行日志记录调用的模块名称、funcName执行日志记录调用的函数名称
+         # levelname日志记录级别的文本名称、message日志消息
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)s prototype] [%(name)s:%(lineno)s prototype] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'
+        },
+        'simple': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)s prototype] [%(name)s:%(lineno)s prototype] [%(levelname)s]- %(message)s'
+        }
+    },
+    # 定义过滤器
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'		# 传递记录时DEBUG是False
+        }
+    },
+    # 定义处理程序
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'default': {
+            'level': 'DEBUG',					# 日志级别
+            'class': 'logging.handlers.RotatingFileHandler',	# 输出到文件
+            # 日志文件，请确保修改'filename'路径为运行Django应用的用户有权限写入的一个位置
+            'filename': os.path.join(LOGS_ROOT, 'all.log'),  
+            'maxBytes': 1024 * 1024 * 5,				# 文件大小最大为5MB 
+            'backupCount': 60,			# 备份份数
+            'formatter': 'standard',		# 使用哪种日志格式
+        },
+        'console': {
+            'level': 'DEBUG',			# 日志级别
+            'class': 'logging.StreamHandler',	# 输出到控制台
+            'formatter': 'standard',		# 使用哪种日志格式
+        },
+        'request_handler': {
+            'level': 'DEBUG',			# 日志级别
+            'class': 'logging.handlers.RotatingFileHandler',		# 输出到文件
+            'filename': os.path.join(LOGS_ROOT, 'django_request.log'),	# 日志文件
+            'maxBytes': 1024 * 1024 * 5,		# 文件大小最大为5MB 
+            'backupCount': 60,			# 备份份数
+            'formatter': 'standard',		# 使用哪种日志格式
+        },
+        'exception_handler': {
+            'level': 'DEBUG',			# 日志级别
+            'class': 'logging.handlers.RotatingFileHandler',		# 输出到文件
+            'filename': os.path.join(LOGS_ROOT, 'exception.log'),	# 日志文件
+            'maxBytes': 1024 * 1024 * 5,		# 文件大小最大为5MB
+            'backupCount': 60,			# 备份份数
+            'formatter': 'standard',		# 使用哪种日志格式
+        },
+    },
+    # 配置记录器
+    # Logger为日志系统的入口。每个logger是一个容器，可以向它写入需要处理的消息，也可以配置用哪种handlers来处理日志
+    'loggers': {
+        'django': {
+            'handlers': ['console'],		# 日志处理器，将所有消息传递给console处理程序
+            'level': 'DEBUG',			# 记录器级别
+            'propagate': False	# 是否向上传播，写入的日志消息将不会被django记录器处理
+        },
+        # log app专用
+        'log.log': {
+            'handlers': ['default', 'console'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': 'INFO',
+            'propagate': False
+        },
+        'exception': {
+            'handlers': ['exception_handler'],
+            'level': 'ERROR',
+            'propagate': False
+        },
+    }
+}
+
+
+
+
+
+import logging
+from django.shortcuts import render, HttpResponse
+from django.views.generic import View
+# Create your views here.
+# 为logger命名
+logger = logging.getLogger('log.log')
+class CreateLog(View):
+    """日志配置Demo"""
+    def get(self, request):
+        # 发起调用
+        logger.error('Something went wrong!')
+        return HttpResponse('c0c')

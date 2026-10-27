@@ -1,0 +1,4426 @@
+Begin log at GMT: (Mon Feb 26 03:33:21 2024), Localtime: (Mon Feb 26 11:33:21 2024)
+Following timestamps are GMT
+------------------------------ Login to targets ------------------------------
+Logging in to "192.168.199.2", ip: 192.168.199.2
+Logging in to "192.168.199.3", ip: 192.168.199.3
+Logging in to "192.168.199.4", ip: 192.168.199.4
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:274 mcast:3 errors:0 dropped:0
+	TX packets:277 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:22131 (22 k)  TX bytes:22347 (22 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:03
+	inet 192.168.199.3  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c703%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:38 mcast:0 errors:0 dropped:0
+	TX packets:34 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:2425  TX bytes:4872
+
+192.168.199.3_XunXiqX
+
+192.168.199.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:272 mcast:3 errors:0 dropped:0
+	TX packets:277 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:21987 (21 k)  TX bytes:22347 (22 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:04
+	inet 192.168.199.4  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c704%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:38 mcast:0 errors:0 dropped:0
+	TX packets:35 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:2431  TX bytes:4939
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=1  pid=0x118b60
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=1  pid=0x118e20
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.4_XunXiqX
+
+192.168.199.3>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.3_XunXiqX
+
+192.168.199.4>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.3_XunXiqX
+
+192.168.199.3>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:225 mcast:3 errors:0 dropped:0
+	TX packets:225 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:18603 (18 k)  TX bytes:18603 (18 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:02
+	inet 192.168.199.2  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c702%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:40 mcast:0 errors:0 dropped:0
+	TX packets:34 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:2583  TX bytes:4904
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=1  pid=0x118b60
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.2_XunXiqX
+
+192.168.199.2>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>cat /ram/default_ipv4_forward
+cat: error opening file '/ram/default_ipv4_forward'.
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>cat /ram/default_ipv4_forward
+cat: error opening file '/ram/default_ipv4_forward'.
+192.168.199.4_XunXiqX
+
+192.168.199.3>cat /ram/default_ipv4_forward
+cat: error opening file '/ram/default_ipv4_forward'.
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysctl net.inet.forwarding > /ram/default_ipv4_forward
+192.168.199.4_XunXiqX
+
+192.168.199.4>cat /ram/default_ipv6_forward
+cat: error opening file '/ram/default_ipv6_forward'.
+192.168.199.4_XunXiqX
+
+192.168.199.3>sysctl net.inet.forwarding > /ram/default_ipv4_forward
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysctl net.inet6.forwarding > /ram/default_ipv6_forward
+192.168.199.4_XunXiqX
+
+192.168.199.3>cat /ram/default_ipv6_forward
+cat: error opening file '/ram/default_ipv6_forward'.
+192.168.199.3_XunXiqX
+
+192.168.199.2>sysctl net.inet.forwarding > /ram/default_ipv4_forward
+192.168.199.2_XunXiqX
+
+192.168.199.2>cat /ram/default_ipv6_forward
+cat: error opening file '/ram/default_ipv6_forward'.
+192.168.199.2_XunXiqX
+
+192.168.199.2>sysctl net.inet6.forwarding > /ram/default_ipv6_forward
+192.168.199.2_XunXiqX
+
+192.168.199.3>sysctl net.inet6.forwarding > /ram/default_ipv6_forward
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.4_XunXiqX
+
+192.168.199.3>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.4_XunXiqX
+
+192.168.199.3>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.3_XunXiqX
+
+192.168.199.4>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.4> (51)
+192.168.199.4_XunXiqX
+
+192.168.199.2>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.2_XunXiqX
+
+192.168.199.2>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.2_XunXiqX
+
+192.168.199.2>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.2> (51)
+192.168.199.2_XunXiqX
+
+192.168.199.3>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.3> (51)
+192.168.199.3_XunXiqX
+
+192.168.199.4>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:805 mcast:3 errors:0 dropped:0
+	TX packets:813 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:67772 (67 k)  TX bytes:68348 (68 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:04
+	inet 192.168.199.4  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c704%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:72 mcast:0 errors:0 dropped:0
+	TX packets:70 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:4978  TX bytes:14355 (14 k)
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:695 mcast:3 errors:0 dropped:0
+	TX packets:695 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:59852 (59 k)  TX bytes:59852 (59 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:03
+	inet 192.168.199.3  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c703%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:76 mcast:0 errors:0 dropped:0
+	TX packets:75 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:5236  TX bytes:14684 (14 k)
+
+192.168.199.3_XunXiqX
+
+192.168.199.3>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.3_XunXiqX
+
+192.168.199.4>keydb delete key 1
+Failed
+192.168.199.4_XunXiqX
+
+192.168.199.3>keydb delete key 1
+Failed
+192.168.199.3_XunXiqX
+
+192.168.199.4>keydb delete key 2
+Failed
+192.168.199.4_XunXiqX
+
+192.168.199.3>keydb delete key 2
+Failed
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:734 mcast:3 errors:0 dropped:0
+	TX packets:737 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:62660 (62 k)  TX bytes:62876 (62 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:02
+	inet 192.168.199.2  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c702%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:72 mcast:0 errors:0 dropped:0
+	TX packets:70 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:4998  TX bytes:14386 (14 k)
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.2_XunXiqX
+
+192.168.199.2>keydb delete key 1
+Failed
+192.168.199.2_XunXiqX
+
+192.168.199.2>keydb delete key 2
+Failed
+192.168.199.2_XunXiqX
+
+192.168.199.3>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.3_XunXiqX
+
+192.168.199.4>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.4_XunXiqX
+
+192.168.199.3>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.3_XunXiqX
+
+192.168.199.3>date
+Mon Feb 26 11:33:22 2024
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.4_XunXiqX
+
+192.168.199.3>syslog list
+syslog facility    priority
+ipcom_telnet       Error  
+ipipsec            Error  
+ipftp              Error  
+ipfirewall         Error  
+ipnet              Error  
+iptcp              Error  
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>date
+Mon Feb 26 11:33:22 2024
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>syslog list
+syslog facility    priority
+ipcom_telnet       Error  
+ipipsec            Error  
+ipftp              Error  
+ipfirewall         Error  
+ipnet              Error  
+iptcp              Error  
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>syslog priority all debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.4_XunXiqX
+
+192.168.199.2>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.2_XunXiqX
+
+192.168.199.2>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.2_XunXiqX
+
+192.168.199.2>date
+Mon Feb 26 11:33:22 2024
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>syslog list
+syslog facility    priority
+ipcom_telnet       Error  
+ipipsec            Error  
+ipftp              Error  
+ipfirewall         Error  
+ipnet              Error  
+iptcp              Error  
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>syslog priority all debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog priority all debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.3_XunXiqX
+
+192.168.199.3>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.4>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.2>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.3>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+--------------------------------------------------------------------------------
+------------------------------ Test starts -------------------------------------
+--------------------------------------------------------------------------------
+
+    Protocol number.
+
+    Verify IP filter protocol number.
+    Pass/Fail criteria: The IP filter must be able to filter packets based on
+                        the protocol number. It must be possible to configure
+                        the protocol number in the rule with a string
+                        or decimal number.
+    .
+ipfirewall.ipfilter.protocol - IPv4 ETA: 28s
+
+192.168.199.2>syslog echo warning "test ipfirewall.ipfilter.protocol  starts"
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog echo warning "test ipfirewall.ipfilter.protocol  starts"
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog echo warning "test ipfirewall.ipfilter.protocol  starts"
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan4 create
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan4 vlan 4 vlanif eth0
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan4 mtu 1496
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan4 up
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan4 inet add 10.28.1.1/24
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig vlan5 create
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan5 vlan 5 vlanif eth0
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan5 mtu 1496
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan5 up
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan5 inet add 10.28.2.3/24
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan4 create
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan4 vlan 4 vlanif eth0
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan4 mtu 1496
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan4 up
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan4 inet add 10.28.1.3/24
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan5 create
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan5 vlan 5 vlanif eth0
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan5 mtu 1496
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan5 up
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan5 inet add 10.28.2.1/24
+192.168.199.2_XunXiqX
+
+192.168.199.4>route -n add -net -prefixlen 24 10.28.2.0 10.28.1.3
+    add net 10.28.2.0: netmask 255.255.255.0: gateway 10.28.1.3
+192.168.199.4_XunXiqX
+
+192.168.199.3>route -n add -net -prefixlen 24 10.28.1.0 10.28.2.1
+    add net 10.28.1.0: netmask 255.255.255.0: gateway 10.28.2.1
+192.168.199.3_XunXiqX
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=2  pid=0x118b60
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=2  pid=0x118e20
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=2  pid=0x118b60
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET: @1 pass out quick on vlan5 all group 0:1 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping -n -s 64 -c 1  10.28.2.3
+
+Pinging 10.28.2.3 (10.28.2.3) with 64 bytes of data:
+Reply from 10.28.2.3 bytes=64 ttl=63 seq=0 time<1ms
+
+--- 10.28.2.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30001 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30001
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40001 -p 30001 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40001
+	Connected to 10.28.2.3.30001
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30001 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30001
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40001 -p 30001 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40001
+	Connected to 10.28.2.3.30001
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.*
+	Connected to 10.28.2.3.*
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=3  pid=0x118b60
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=3  pid=0x118e20
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=3  pid=0x118b60
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto icmp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto ipv6-icmp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto udp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto tcp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf block out quick on vlan5 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET: @1 pass out quick on vlan5 proto icmp all group 0:1 
+AF_INET: @2 pass out quick on vlan5 proto ipv6-icmp all group 0:2 
+AF_INET: @3 pass out quick on vlan5 proto udp all group 0:3 
+AF_INET: @4 pass out quick on vlan5 proto tcp all group 0:4 
+AF_INET: @5 block out quick on vlan5 all group 0:5 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping -n -s 64 -c 1  10.28.2.3
+
+Pinging 10.28.2.3 (10.28.2.3) with 64 bytes of data:
+Reply from 10.28.2.3 bytes=64 ttl=63 seq=0 time<1ms
+
+--- 10.28.2.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30002 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30002
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40002 -p 30002 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40002
+	Connected to 10.28.2.3.30002
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 20 milliseconds, 50 kbytes/sec, 50 send i/o calls/sec, 50 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30002 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30002
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40002 -p 30002 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40002
+	Connected to 10.28.2.3.30002
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.*
+	Connected to 10.28.2.3.*
+Failed to recv data: S_errno_EWOULDBLOCK
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=4  pid=0x118b60
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=4  pid=0x118e20
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=4  pid=0x118b60
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto 1 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto 58 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto 17 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf pass out quick on vlan5 proto 6 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf block out quick on vlan5 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET: @1 pass out quick on vlan5 proto icmp all group 0:1 
+AF_INET: @2 pass out quick on vlan5 proto ipv6-icmp all group 0:2 
+AF_INET: @3 pass out quick on vlan5 proto udp all group 0:3 
+AF_INET: @4 pass out quick on vlan5 proto tcp all group 0:4 
+AF_INET: @5 block out quick on vlan5 all group 0:5 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping -n -s 64 -c 1  10.28.2.3
+
+Pinging 10.28.2.3 (10.28.2.3) with 64 bytes of data:
+Reply from 10.28.2.3 bytes=64 ttl=63 seq=0 time<1ms
+
+--- 10.28.2.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30003 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30003
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40003 -p 30003 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40003
+	Connected to 10.28.2.3.30003
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30003 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.30003
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40003 -p 30003 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.40003
+	Connected to 10.28.2.3.30003
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   10.28.2.3
+echoserver is now listening at 10.28.2.3.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 10.28.2.3 
+	New socket: 24
+	Bound to 0.0.0.0.*
+	Connected to 10.28.2.3.*
+Failed to recv data: S_errno_EWOULDBLOCK
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>syslog echo warning "test ipfirewall.ipfilter.protocol  stops"
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog echo warning "test ipfirewall.ipfilter.protocol  stops"
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog echo warning "test ipfirewall.ipfilter.protocol  stops"
+192.168.199.4_XunXiqX
+
+ipfirewall.ipfilter.protocol Test Passed ----------------------------------------
+OK 20s
+--------------------------------------------------------------------------------
+------------------------------ Test ends ---------------------------------------
+--------------------------------------------------------------------------------
+
+192.168.199.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.2_XunXiqX
+cleaning up
+
+192.168.199.2>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan4 inet delete 10.28.1.3/24
+192.168.199.2_XunXiqX
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+cleaning up
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+cleaning up
+
+192.168.199.2>ifconfig vlan4 down
+192.168.199.2_XunXiqX
+
+192.168.199.3>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.2>ifconfig vlan4 destroy
+192.168.199.2_XunXiqX
+
+192.168.199.4>route -n delete -net -prefixlen 24 10.28.2.0 10.28.1.3
+    delete net 10.28.2.0
+192.168.199.4_XunXiqX
+
+192.168.199.3>route -n delete -net -prefixlen 24 10.28.1.0 10.28.2.1
+    delete net 10.28.1.0
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan5 inet delete 10.28.2.1/24
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig vlan4 inet delete 10.28.1.1/24
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig vlan5 inet delete 10.28.2.3/24
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan5 down
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig vlan4 down
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig vlan5 down
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan5 destroy
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig vlan4 destroy
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig vlan5 destroy
+192.168.199.3_XunXiqX
+cleanup done
+cleanup done
+cleanup done
+------------------------------ Logged out from targets ------------------------------
+20240226_03.33.44 
+------------------------------ Login to targets ------------------------------
+Logging in to "192.168.199.2", ip: 192.168.199.2
+Logging in to "192.168.199.3", ip: 192.168.199.3
+Logging in to "192.168.199.4", ip: 192.168.199.4
+
+192.168.199.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.2_XunXiqX
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3232 mcast:3 errors:0 dropped:0
+	TX packets:3236 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:255034 (255 k)  TX bytes:255322 (255 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:02
+	inet 192.168.199.2  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c702%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:365 mcast:0 errors:0 dropped:4
+	TX packets:314 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:42669 (42 k)  TX bytes:41571 (41 k)
+
+192.168.199.2_XunXiqX
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3022 mcast:3 errors:0 dropped:0
+	TX packets:3026 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:241946 (241 k)  TX bytes:242234 (242 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:03
+	inet 192.168.199.3  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c703%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:328 mcast:0 errors:0 dropped:1
+	TX packets:303 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:30925 (30 k)  TX bytes:42848 (42 k)
+
+192.168.199.3_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=5  pid=0x11ad30
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.2_XunXiqX
+
+192.168.199.2>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3398 mcast:3 errors:0 dropped:0
+	TX packets:3405 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:271104 (271 k)  TX bytes:271608 (271 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:04
+	inet 192.168.199.4  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c704%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:336 mcast:0 errors:0 dropped:0
+	TX packets:313 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:31736 (31 k)  TX bytes:45321 (45 k)
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=5  pid=0x1186c0
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.3>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=5  pid=0x11e330
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.2_XunXiqX
+
+192.168.199.4>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFIREWALL - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPIPSEC2 - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+192.168.199.4_XunXiqX
+
+192.168.199.2>cat /ram/default_ipv4_forward
+net.inet.forwarding=0
+192.168.199.2_XunXiqX
+
+192.168.199.3>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.4_XunXiqX
+
+192.168.199.2>cat /ram/default_ipv6_forward
+net.inet6.forwarding=0
+192.168.199.2_XunXiqX
+
+192.168.199.3>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>cat /ram/default_ipv4_forward
+net.inet.forwarding=0
+192.168.199.4_XunXiqX
+
+192.168.199.4>cat /ram/default_ipv6_forward
+net.inet6.forwarding=0
+192.168.199.4_XunXiqX
+
+192.168.199.2>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.2_XunXiqX
+
+192.168.199.3>cat /ram/default_ipv4_forward
+net.inet.forwarding=0
+192.168.199.3_XunXiqX
+
+192.168.199.2>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.2_XunXiqX
+
+192.168.199.3>cat /ram/default_ipv6_forward
+net.inet6.forwarding=0
+192.168.199.3_XunXiqX
+
+192.168.199.2>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.2> (51)
+192.168.199.2_XunXiqX
+
+192.168.199.3>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.199.4_XunXiqX
+
+192.168.199.4>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.4_XunXiqX
+
+192.168.199.4>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.4> (51)
+192.168.199.4_XunXiqX
+
+192.168.199.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3686 mcast:3 errors:0 dropped:0
+	TX packets:3694 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:294828 (294 k)  TX bytes:295404 (295 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:02
+	inet 192.168.199.2  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c702%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:395 mcast:0 errors:0 dropped:4
+	TX packets:348 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:44841 (44 k)  TX bytes:50729 (50 k)
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.2_XunXiqX
+
+192.168.199.3>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.199.3_XunXiqX
+
+192.168.199.2>keydb delete key 1
+Failed
+192.168.199.2_XunXiqX
+
+192.168.199.4>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3815 mcast:3 errors:0 dropped:0
+	TX packets:3821 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:308234 (308 k)  TX bytes:308666 (308 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:04
+	inet 192.168.199.4  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c704%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:362 mcast:0 errors:0 dropped:0
+	TX packets:344 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:33644 (33 k)  TX bytes:54281 (54 k)
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.199.3> (51)
+192.168.199.3_XunXiqX
+
+192.168.199.2>keydb delete key 2
+Failed
+192.168.199.2_XunXiqX
+
+192.168.199.4>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.4_XunXiqX
+
+192.168.199.2>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.2_XunXiqX
+
+192.168.199.4>keydb delete key 1
+Failed
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:3440 mcast:3 errors:0 dropped:0
+	TX packets:3446 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:279148 (279 k)  TX bytes:279580 (279 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c7:03
+	inet 192.168.199.3  mask 255.255.255.0  broadcast 192.168.199.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c703%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:362 mcast:0 errors:0 dropped:1
+	TX packets:339 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:33361 (33 k)  TX bytes:52138 (52 k)
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>keydb delete key 2
+Failed
+192.168.199.4_XunXiqX
+
+192.168.199.3>cp /romfs/* /ram/
+/romfs: S_errno_ENODEV
+192.168.199.3_XunXiqX
+
+192.168.199.3>keydb delete key 1
+Failed
+192.168.199.3_XunXiqX
+
+192.168.199.3>keydb delete key 2
+Failed
+192.168.199.3_XunXiqX
+
+192.168.199.2>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.2_XunXiqX
+
+192.168.199.2>date
+Mon Feb 26 11:33:45 2024
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>syslog list
+syslog facility    priority
+ipcom              Error  
+ipcom_telnet       Debug2 
+ipipsec            Debug2 
+ipftp              Debug2 
+ipfirewall         Debug2 
+ipnet              Debug2 
+iptcp              Debug2 
+
+192.168.199.2_XunXiqX
+
+192.168.199.4>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.4_XunXiqX
+
+192.168.199.4>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.4_XunXiqX
+
+192.168.199.2>syslog priority all debug2
+syslog: facility ipcom priority set to debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.2_XunXiqX
+
+192.168.199.4>date
+Mon Feb 26 11:33:44 2024
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+Failed to open file: /romfs/clt_dsa_key_1024-private
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog list
+syslog facility    priority
+ipcom              Error  
+ipcom_telnet       Debug2 
+ipipsec            Debug2 
+ipftp              Debug2 
+ipfirewall         Debug2 
+ipnet              Debug2 
+iptcp              Debug2 
+
+192.168.199.4_XunXiqX
+
+192.168.199.3>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+Failed to open file: /romfs/clt_rsa_key_2048-private
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog priority all debug2
+syslog: facility ipcom priority set to debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.4_XunXiqX
+
+192.168.199.3>date
+Mon Feb 26 11:33:45 2024
+
+192.168.199.3_XunXiqX
+
+192.168.199.2>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog list
+syslog facility    priority
+ipcom              Error  
+ipcom_telnet       Debug2 
+ipipsec            Debug2 
+ipftp              Debug2 
+ipfirewall         Debug2 
+ipnet              Debug2 
+iptcp              Debug2 
+
+192.168.199.3_XunXiqX
+
+192.168.199.4>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.4_XunXiqX
+
+192.168.199.2>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.4>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>syslog priority all debug2
+syslog: facility ipcom priority set to debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipipsec priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipfirewall priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.199.3_XunXiqX
+
+192.168.199.4>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipftps               started
+ipfirewall           started
+ipipsec              started
+
+192.168.199.3_XunXiqX
+
+192.168.199.3>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.3>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+--------------------------------------------------------------------------------
+------------------------------ Test starts -------------------------------------
+--------------------------------------------------------------------------------
+
+    Protocol number.
+
+    Verify IP filter protocol number.
+    Pass/Fail criteria: The IP filter must be able to filter packets based on
+                        the protocol number. It must be possible to configure
+                        the protocol number in the rule with a string
+                        or decimal number.
+    .
+ipfirewall.ipfilter.protocol - IPv6 ETA: 28s
+
+192.168.199.2>syslog echo warning "test ipfirewall.ipfilter.protocol 6 starts"
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog echo warning "test ipfirewall.ipfilter.protocol 6 starts"
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog echo warning "test ipfirewall.ipfilter.protocol 6 starts"
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 create
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 vlan 6 vlanif eth0
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 mtu 1496
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 up
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig
+
+NAME
+   ifconfig - configure network interface parameters
+
+SYNOPSIS
+   ifconfig <interface> inet <address> [optional parameters]
+   ifconfig <interface> <family> add <address> [optional parameters]
+   ifconfig <interface> <family> delete <address>
+   ifconfig <interface> <family> dstaddr <address>
+   ifconfig <interface> mtu <value>
+   ifconfig <interface> lladdr <string>
+   ifconfig <interface> up
+   ifconfig <interface> down
+   ifconfig <interface> detach
+   ifconfig <interface> [-]promisc
+   ifconfig <interface> rxidx [<stack-instance-id>]
+   ifconfig <interface> [-]dhcp
+   ifconfig <interface> vr <value>
+   ifconfig [<interface> | -a]
+   ifconfig <interface> [create | destroy | attach]
+   ifconfig <interface> vlan <tag> vlanif <iface> 
+   ifconfig <interface> vlanpri <value> 
+   ifconfig <interface> <family> tunnel <local> <remote> [<ttl>] [udpnat rfc3519|dsmipv6|dsmipv6_tlv <sport> <dport>]
+   ifconfig <interface> link2
+
+DESCRIPTION
+   ifconfig is used to assign an address to a network interface and/or
+   configure network interface parameters.
+
+COMMANDS
+   -a           List all interfaces.
+   -v           Verbose output. NOTE: this switch must be the first
+                switch of all if used.
+   inet <a>     Change the primary IPv4 address.
+   add <a>      Add 'a' IPv4 or IPv6 address.
+   delete <a>   Delete 'a' IPv4 or IPv6 address.
+   dstaddr <a>  Set remote address to 'a' (inet and PPP only).
+   mtu <v>      Set interface MTU to 'v'.
+   lladdr <a>   Set interface link address to 'a'.
+   up           Bring the interface up.
+   down         Bring the interface down.
+   attach       Attaches a new physical interface, <interface>.
+                must be the name of the device driver, ex gei1
+   detach       Detaches interface (note: must be down first).
+   vr <v>       Set virtual router to 'v' (default = 0).
+   dhcp         Enable dhcp auto configuration (inet only).
+   -dhcp        Disable dhcp auto configuration (inet only)
+   link[0-2]    Enable special processing at the link level.
+   -link[0-2]   Disable special processing at the link level.
+   noarp        Inhibit all ARP/NDP requests from the node.
+   -noarp       Enable normal ARP/NDP processing (default).
+   create       Create the specified network pseudo-device.
+   destroy      Destroy the specified network pseudo-device.
+   vlan <tag>   The virtual LAN tag (1-4095). Must be set at the
+                same time as vlanif.
+   vlanif <iface> The physical Ethernet interface to use for this
+                virtual lan.
+   vlanpri <value>   Set vlan class of service to 'value'. This optional
+                     3-bit value is inserted to the vlan tag header
+                     for packets sent from the vlan pseudo interface.
+   tunnel <local> <remote> [ttl] If the interface is a gre or gif
+                pseudo-interface, set the tunnel endpoints.
+   udpnat rfc3519|dsmipv6|dsmipv6_tlv <lport> <rport>
+                Must be configured as part of the 'tunnel' command.
+                Use UDP-encapsulation on the tunnel. 'rfc3519' is mobile IP UDP encap.
+                'dsmipv6' and 'dsmipv6_tlv' is RFC555 mobile IPv6 encap.
+                <lport> and <dport> is the local and remote UDP ports.
+   link0        GRE tunnel: Enable minimal encapsulation (RFC 2002)
+   -link0       GRE tunnel: Use normal GRE tunnel operation
+
+VALUES
+   <address>    The IPv4 or IPv6 address.
+   <family>     Address family. 'inet' or 'inet6'.
+   <interface>  Name of the interface.
+   <value>      Numeric value depending on the command.
+
+OPTIONAL PARAMETERS
+   netmask <a.b.c.d>  Set interface netmask to 'a.b.c.d' (inet only)
+   prefixlen <value>  Set interface prefix (mask length) length to 'n'
+   temporary          The address is temporary (inet6 only)
+   nodad              Do not perform DAD before setting address (inet6 only)
+   anycast            The address is anycast (inet6 only)
+   homeaddress        The address is a homeaddress (inet6 only)
+   preferred <value>  Number of seconds this address is preferred (inet6 only)
+   valid <value>      Number of seconds this address is valid (inet6 only)
+
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 inet6 add 2005:28::a1c:101/120 nodad
+192.168.199.4_XunXiqX
+
+192.168.199.3>ifconfig vlan7 create
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan7 vlan 7 vlanif eth0
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan7 mtu 1496
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan7 up
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig
+
+NAME
+   ifconfig - configure network interface parameters
+
+SYNOPSIS
+   ifconfig <interface> inet <address> [optional parameters]
+   ifconfig <interface> <family> add <address> [optional parameters]
+   ifconfig <interface> <family> delete <address>
+   ifconfig <interface> <family> dstaddr <address>
+   ifconfig <interface> mtu <value>
+   ifconfig <interface> lladdr <string>
+   ifconfig <interface> up
+   ifconfig <interface> down
+   ifconfig <interface> detach
+   ifconfig <interface> [-]promisc
+   ifconfig <interface> rxidx [<stack-instance-id>]
+   ifconfig <interface> [-]dhcp
+   ifconfig <interface> vr <value>
+   ifconfig [<interface> | -a]
+   ifconfig <interface> [create | destroy | attach]
+   ifconfig <interface> vlan <tag> vlanif <iface> 
+   ifconfig <interface> vlanpri <value> 
+   ifconfig <interface> <family> tunnel <local> <remote> [<ttl>] [udpnat rfc3519|dsmipv6|dsmipv6_tlv <sport> <dport>]
+   ifconfig <interface> link2
+
+DESCRIPTION
+   ifconfig is used to assign an address to a network interface and/or
+   configure network interface parameters.
+
+COMMANDS
+   -a           List all interfaces.
+   -v           Verbose output. NOTE: this switch must be the first
+                switch of all if used.
+   inet <a>     Change the primary IPv4 address.
+   add <a>      Add 'a' IPv4 or IPv6 address.
+   delete <a>   Delete 'a' IPv4 or IPv6 address.
+   dstaddr <a>  Set remote address to 'a' (inet and PPP only).
+   mtu <v>      Set interface MTU to 'v'.
+   lladdr <a>   Set interface link address to 'a'.
+   up           Bring the interface up.
+   down         Bring the interface down.
+   attach       Attaches a new physical interface, <interface>.
+                must be the name of the device driver, ex gei1
+   detach       Detaches interface (note: must be down first).
+   vr <v>       Set virtual router to 'v' (default = 0).
+   dhcp         Enable dhcp auto configuration (inet only).
+   -dhcp        Disable dhcp auto configuration (inet only)
+   link[0-2]    Enable special processing at the link level.
+   -link[0-2]   Disable special processing at the link level.
+   noarp        Inhibit all ARP/NDP requests from the node.
+   -noarp       Enable normal ARP/NDP processing (default).
+   create       Create the specified network pseudo-device.
+   destroy      Destroy the specified network pseudo-device.
+   vlan <tag>   The virtual LAN tag (1-4095). Must be set at the
+                same time as vlanif.
+   vlanif <iface> The physical Ethernet interface to use for this
+                virtual lan.
+   vlanpri <value>   Set vlan class of service to 'value'. This optional
+                     3-bit value is inserted to the vlan tag header
+                     for packets sent from the vlan pseudo interface.
+   tunnel <local> <remote> [ttl] If the interface is a gre or gif
+                pseudo-interface, set the tunnel endpoints.
+   udpnat rfc3519|dsmipv6|dsmipv6_tlv <lport> <rport>
+                Must be configured as part of the 'tunnel' command.
+                Use UDP-encapsulation on the tunnel. 'rfc3519' is mobile IP UDP encap.
+                'dsmipv6' and 'dsmipv6_tlv' is RFC555 mobile IPv6 encap.
+                <lport> and <dport> is the local and remote UDP ports.
+   link0        GRE tunnel: Enable minimal encapsulation (RFC 2002)
+   -link0       GRE tunnel: Use normal GRE tunnel operation
+
+VALUES
+   <address>    The IPv4 or IPv6 address.
+   <family>     Address family. 'inet' or 'inet6'.
+   <interface>  Name of the interface.
+   <value>      Numeric value depending on the command.
+
+OPTIONAL PARAMETERS
+   netmask <a.b.c.d>  Set interface netmask to 'a.b.c.d' (inet only)
+   prefixlen <value>  Set interface prefix (mask length) length to 'n'
+   temporary          The address is temporary (inet6 only)
+   nodad              Do not perform DAD before setting address (inet6 only)
+   anycast            The address is anycast (inet6 only)
+   homeaddress        The address is a homeaddress (inet6 only)
+   preferred <value>  Number of seconds this address is preferred (inet6 only)
+   valid <value>      Number of seconds this address is valid (inet6 only)
+
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan7 inet6 add 2005:28::a1c:203/120 nodad
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan6 create
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan6 vlan 6 vlanif eth0
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan6 mtu 1496
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan6 up
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig
+
+NAME
+   ifconfig - configure network interface parameters
+
+SYNOPSIS
+   ifconfig <interface> inet <address> [optional parameters]
+   ifconfig <interface> <family> add <address> [optional parameters]
+   ifconfig <interface> <family> delete <address>
+   ifconfig <interface> <family> dstaddr <address>
+   ifconfig <interface> mtu <value>
+   ifconfig <interface> lladdr <string>
+   ifconfig <interface> up
+   ifconfig <interface> down
+   ifconfig <interface> detach
+   ifconfig <interface> [-]promisc
+   ifconfig <interface> rxidx [<stack-instance-id>]
+   ifconfig <interface> [-]dhcp
+   ifconfig <interface> vr <value>
+   ifconfig [<interface> | -a]
+   ifconfig <interface> [create | destroy | attach]
+   ifconfig <interface> vlan <tag> vlanif <iface> 
+   ifconfig <interface> vlanpri <value> 
+   ifconfig <interface> <family> tunnel <local> <remote> [<ttl>] [udpnat rfc3519|dsmipv6|dsmipv6_tlv <sport> <dport>]
+   ifconfig <interface> link2
+
+DESCRIPTION
+   ifconfig is used to assign an address to a network interface and/or
+   configure network interface parameters.
+
+COMMANDS
+   -a           List all interfaces.
+   -v           Verbose output. NOTE: this switch must be the first
+                switch of all if used.
+   inet <a>     Change the primary IPv4 address.
+   add <a>      Add 'a' IPv4 or IPv6 address.
+   delete <a>   Delete 'a' IPv4 or IPv6 address.
+   dstaddr <a>  Set remote address to 'a' (inet and PPP only).
+   mtu <v>      Set interface MTU to 'v'.
+   lladdr <a>   Set interface link address to 'a'.
+   up           Bring the interface up.
+   down         Bring the interface down.
+   attach       Attaches a new physical interface, <interface>.
+                must be the name of the device driver, ex gei1
+   detach       Detaches interface (note: must be down first).
+   vr <v>       Set virtual router to 'v' (default = 0).
+   dhcp         Enable dhcp auto configuration (inet only).
+   -dhcp        Disable dhcp auto configuration (inet only)
+   link[0-2]    Enable special processing at the link level.
+   -link[0-2]   Disable special processing at the link level.
+   noarp        Inhibit all ARP/NDP requests from the node.
+   -noarp       Enable normal ARP/NDP processing (default).
+   create       Create the specified network pseudo-device.
+   destroy      Destroy the specified network pseudo-device.
+   vlan <tag>   The virtual LAN tag (1-4095). Must be set at the
+                same time as vlanif.
+   vlanif <iface> The physical Ethernet interface to use for this
+                virtual lan.
+   vlanpri <value>   Set vlan class of service to 'value'. This optional
+                     3-bit value is inserted to the vlan tag header
+                     for packets sent from the vlan pseudo interface.
+   tunnel <local> <remote> [ttl] If the interface is a gre or gif
+                pseudo-interface, set the tunnel endpoints.
+   udpnat rfc3519|dsmipv6|dsmipv6_tlv <lport> <rport>
+                Must be configured as part of the 'tunnel' command.
+                Use UDP-encapsulation on the tunnel. 'rfc3519' is mobile IP UDP encap.
+                'dsmipv6' and 'dsmipv6_tlv' is RFC555 mobile IPv6 encap.
+                <lport> and <dport> is the local and remote UDP ports.
+   link0        GRE tunnel: Enable minimal encapsulation (RFC 2002)
+   -link0       GRE tunnel: Use normal GRE tunnel operation
+
+VALUES
+   <address>    The IPv4 or IPv6 address.
+   <family>     Address family. 'inet' or 'inet6'.
+   <interface>  Name of the interface.
+   <value>      Numeric value depending on the command.
+
+OPTIONAL PARAMETERS
+   netmask <a.b.c.d>  Set interface netmask to 'a.b.c.d' (inet only)
+   prefixlen <value>  Set interface prefix (mask length) length to 'n'
+   temporary          The address is temporary (inet6 only)
+   nodad              Do not perform DAD before setting address (inet6 only)
+   anycast            The address is anycast (inet6 only)
+   homeaddress        The address is a homeaddress (inet6 only)
+   preferred <value>  Number of seconds this address is preferred (inet6 only)
+   valid <value>      Number of seconds this address is valid (inet6 only)
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan6 inet6 add 2005:28::a1c:103/120 nodad
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 create
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 vlan 7 vlanif eth0
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 mtu 1496
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 up
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig
+
+NAME
+   ifconfig - configure network interface parameters
+
+SYNOPSIS
+   ifconfig <interface> inet <address> [optional parameters]
+   ifconfig <interface> <family> add <address> [optional parameters]
+   ifconfig <interface> <family> delete <address>
+   ifconfig <interface> <family> dstaddr <address>
+   ifconfig <interface> mtu <value>
+   ifconfig <interface> lladdr <string>
+   ifconfig <interface> up
+   ifconfig <interface> down
+   ifconfig <interface> detach
+   ifconfig <interface> [-]promisc
+   ifconfig <interface> rxidx [<stack-instance-id>]
+   ifconfig <interface> [-]dhcp
+   ifconfig <interface> vr <value>
+   ifconfig [<interface> | -a]
+   ifconfig <interface> [create | destroy | attach]
+   ifconfig <interface> vlan <tag> vlanif <iface> 
+   ifconfig <interface> vlanpri <value> 
+   ifconfig <interface> <family> tunnel <local> <remote> [<ttl>] [udpnat rfc3519|dsmipv6|dsmipv6_tlv <sport> <dport>]
+   ifconfig <interface> link2
+
+DESCRIPTION
+   ifconfig is used to assign an address to a network interface and/or
+   configure network interface parameters.
+
+COMMANDS
+   -a           List all interfaces.
+   -v           Verbose output. NOTE: this switch must be the first
+                switch of all if used.
+   inet <a>     Change the primary IPv4 address.
+   add <a>      Add 'a' IPv4 or IPv6 address.
+   delete <a>   Delete 'a' IPv4 or IPv6 address.
+   dstaddr <a>  Set remote address to 'a' (inet and PPP only).
+   mtu <v>      Set interface MTU to 'v'.
+   lladdr <a>   Set interface link address to 'a'.
+   up           Bring the interface up.
+   down         Bring the interface down.
+   attach       Attaches a new physical interface, <interface>.
+                must be the name of the device driver, ex gei1
+   detach       Detaches interface (note: must be down first).
+   vr <v>       Set virtual router to 'v' (default = 0).
+   dhcp         Enable dhcp auto configuration (inet only).
+   -dhcp        Disable dhcp auto configuration (inet only)
+   link[0-2]    Enable special processing at the link level.
+   -link[0-2]   Disable special processing at the link level.
+   noarp        Inhibit all ARP/NDP requests from the node.
+   -noarp       Enable normal ARP/NDP processing (default).
+   create       Create the specified network pseudo-device.
+   destroy      Destroy the specified network pseudo-device.
+   vlan <tag>   The virtual LAN tag (1-4095). Must be set at the
+                same time as vlanif.
+   vlanif <iface> The physical Ethernet interface to use for this
+                virtual lan.
+   vlanpri <value>   Set vlan class of service to 'value'. This optional
+                     3-bit value is inserted to the vlan tag header
+                     for packets sent from the vlan pseudo interface.
+   tunnel <local> <remote> [ttl] If the interface is a gre or gif
+                pseudo-interface, set the tunnel endpoints.
+   udpnat rfc3519|dsmipv6|dsmipv6_tlv <lport> <rport>
+                Must be configured as part of the 'tunnel' command.
+                Use UDP-encapsulation on the tunnel. 'rfc3519' is mobile IP UDP encap.
+                'dsmipv6' and 'dsmipv6_tlv' is RFC555 mobile IPv6 encap.
+                <lport> and <dport> is the local and remote UDP ports.
+   link0        GRE tunnel: Enable minimal encapsulation (RFC 2002)
+   -link0       GRE tunnel: Use normal GRE tunnel operation
+
+VALUES
+   <address>    The IPv4 or IPv6 address.
+   <family>     Address family. 'inet' or 'inet6'.
+   <interface>  Name of the interface.
+   <value>      Numeric value depending on the command.
+
+OPTIONAL PARAMETERS
+   netmask <a.b.c.d>  Set interface netmask to 'a.b.c.d' (inet only)
+   prefixlen <value>  Set interface prefix (mask length) length to 'n'
+   temporary          The address is temporary (inet6 only)
+   nodad              Do not perform DAD before setting address (inet6 only)
+   anycast            The address is anycast (inet6 only)
+   homeaddress        The address is a homeaddress (inet6 only)
+   preferred <value>  Number of seconds this address is preferred (inet6 only)
+   valid <value>      Number of seconds this address is valid (inet6 only)
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 inet6 add 2005:28::a1c:201/120 nodad
+192.168.199.2_XunXiqX
+
+192.168.199.4>route -n add -inet6 -net -prefixlen 120 2005:28::a1c:200 2005:28::a1c:103
+    add net 2005:28::a1c:200: netmask ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00: gateway 2005:28::a1c:103
+192.168.199.4_XunXiqX
+
+192.168.199.3>route -n add -inet6 -net -prefixlen 120 2005:28::a1c:100 2005:28::a1c:201
+    add net 2005:28::a1c:100: netmask ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00: gateway 2005:28::a1c:201
+192.168.199.3_XunXiqX
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=6  pid=0x11ad30
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=6  pid=0x1186c0
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=6  pid=0x11e330
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET6: @1 pass out quick on vlan7 all group 0:1 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping6 -n -s 64 -c 1  2005:28::a1c:203
+
+Pinging 2005:28::a1c:203 (2005:28::a1c:203) with 64 bytes of data:
+Reply from 2005:28::a1c:203 bytes=64 hlim=63 seq=0 time=0ms
+
+--- 2005:28::a1c:203 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30001 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30001
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40001 -p 30001 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40001
+	Connected to 2005:28::a1c:203.30001
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30001 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30001
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40001 -p 30001 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40001
+	Connected to 2005:28::a1c:203.30001
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.*
+	Connected to 2005:28::a1c:203.*
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 20 milliseconds, 50 kbytes/sec, 50 send i/o calls/sec, 50 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=7  pid=0x11ad30
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=7  pid=0x1186c0
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=7  pid=0x11e330
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto icmp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto ipv6-icmp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto udp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto tcp all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 block out quick on vlan7 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET6: @1 pass out quick on vlan7 proto icmp all group 0:1 
+AF_INET6: @2 pass out quick on vlan7 proto ipv6-icmp all group 0:2 
+AF_INET6: @3 pass out quick on vlan7 proto udp all group 0:3 
+AF_INET6: @4 pass out quick on vlan7 proto tcp all group 0:4 
+AF_INET6: @5 block out quick on vlan7 all group 0:5 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping6 -n -s 64 -c 1  2005:28::a1c:203
+
+Pinging 2005:28::a1c:203 (2005:28::a1c:203) with 64 bytes of data:
+Reply from 2005:28::a1c:203 bytes=64 hlim=63 seq=0 time=0ms
+
+--- 2005:28::a1c:203 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0 ms
+rtt min/avg/max = 0/0/0 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30002 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30002
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40002 -p 30002 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40002
+	Connected to 2005:28::a1c:203.30002
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30002 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30002
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40002 -p 30002 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40002
+	Connected to 2005:28::a1c:203.30002
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.*
+	Connected to 2005:28::a1c:203.*
+Failed to recv data: S_errno_EWOULDBLOCK
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=8  pid=0x11ad30
+------------------------------------------
+192.168.199.2_XunXiqX
+
+192.168.199.3>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=8  pid=0x1186c0
+------------------------------------------
+192.168.199.3_XunXiqX
+
+192.168.199.4>keyadm flush
+SADB_MSG: msgtype=FLUSH  err=0  satype=NONE  len=16  seq=8  pid=0x11e330
+------------------------------------------
+192.168.199.4_XunXiqX
+
+192.168.199.2>ipf -D
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -m -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Frls
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Z
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto 1 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto 58 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto 17 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 pass out quick on vlan7 proto 6 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -6 block out quick on vlan7 all
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -Pr
+IP FILTER RULE TABLE:
+Input:
+Output:
+AF_INET6: @1 pass out quick on vlan7 proto icmp all group 0:1 
+AF_INET6: @2 pass out quick on vlan7 proto ipv6-icmp all group 0:2 
+AF_INET6: @3 pass out quick on vlan7 proto udp all group 0:3 
+AF_INET6: @4 pass out quick on vlan7 proto tcp all group 0:4 
+AF_INET6: @5 block out quick on vlan7 all group 0:5 
+
+192.168.199.2_XunXiqX
+
+192.168.199.2>ipf -E
+192.168.199.2_XunXiqX
+
+192.168.199.4>ping6 -n -s 64 -c 1  2005:28::a1c:203
+
+Pinging 2005:28::a1c:203 (2005:28::a1c:203) with 64 bytes of data:
+Reply from 2005:28::a1c:203 bytes=64 hlim=63 seq=0 time=20ms
+
+--- 2005:28::a1c:203 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 20 ms
+rtt min/avg/max = 20/20/20 ms
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -t udp -b 8192 -p 30003 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30003
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t udp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40003 -p 30003 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40003
+	Connected to 2005:28::a1c:203.30003
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t tcp -b 8192 -p 30003 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.30003
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t tcp -b 8192 -n 1 -s 1024 -L 0 -k  -j 40003 -p 30003 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.40003
+	Connected to 2005:28::a1c:203.30003
+	Sent 1024 bytes
+	Received 1024 bytes
+
+192.168.199.4>
+	Elapsed time: 0 milliseconds, 0 kbytes/sec, 0 send i/o calls/sec, 0 read i/o calls/sec
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.3>echoserver -t raw -b 8192 -p 0 -L 0   2005:28::a1c:203
+echoserver is now listening at 2005:28::a1c:203.*
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.4>echoclient -v  -r  -c  -t raw -b 8192 -n 1 -s 1024 -L 0 -k  -j 0 -p 0 2005:28::a1c:203 
+	New socket: 24
+	Bound to ::.*
+	Connected to 2005:28::a1c:203.*
+Failed to recv data: S_errno_EWOULDBLOCK
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.3>echoserver -q
+Stopped
+
+192.168.199.3> echoserver process
+192.168.199.3_XunXiqX
+
+192.168.199.2>syslog echo warning "test ipfirewall.ipfilter.protocol 6 stops"
+192.168.199.2_XunXiqX
+
+192.168.199.3>syslog echo warning "test ipfirewall.ipfilter.protocol 6 stops"
+192.168.199.3_XunXiqX
+
+192.168.199.4>syslog echo warning "test ipfirewall.ipfilter.protocol 6 stops"
+192.168.199.4_XunXiqX
+
+ipfirewall.ipfilter.protocol Test Passed ----------------------------------------
+OK 19s
+--------------------------------------------------------------------------------
+------------------------------ Test ends ---------------------------------------
+--------------------------------------------------------------------------------
+
+192.168.199.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.2_XunXiqX
+cleaning up
+
+192.168.199.2>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.2>
+192.168.199.2_XunXiqX
+
+192.168.199.3>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.3_XunXiqX
+cleaning up
+
+192.168.199.3>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.3>
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan6 inet6 delete 2005:28::a1c:103/120
+192.168.199.2_XunXiqX
+
+192.168.199.3>route -n delete -inet6 -net -prefixlen 120 2005:28::a1c:100 2005:28::a1c:201
+    delete net 2005:28::a1c:100
+192.168.199.3_XunXiqX
+
+192.168.199.4>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.199.4_XunXiqX
+cleaning up
+
+192.168.199.4>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.199.4>
+192.168.199.4_XunXiqX
+
+192.168.199.4>route -n delete -inet6 -net -prefixlen 120 2005:28::a1c:200 2005:28::a1c:103
+    delete net 2005:28::a1c:200
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 inet6 delete 2005:28::a1c:101/120
+192.168.199.4_XunXiqX
+
+192.168.199.4>ifconfig vlan6 down
+192.168.199.4_XunXiqX
+
+192.168.199.2>ifconfig vlan6 down
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan6 destroy
+192.168.199.2_XunXiqX
+
+192.168.199.3>ifconfig vlan7 inet6 delete 2005:28::a1c:203/120
+192.168.199.3_XunXiqX
+
+192.168.199.2>ifconfig vlan7 inet6 delete 2005:28::a1c:201/120
+192.168.199.2_XunXiqX
+
+192.168.199.3>ifconfig vlan7 down
+192.168.199.3_XunXiqX
+
+192.168.199.3>ifconfig vlan7 destroy
+192.168.199.3_XunXiqX
+
+192.168.199.4>ifconfig vlan6 destroy
+192.168.199.4_XunXiqX
+
+192.168.199.2>ifconfig vlan7 down
+192.168.199.2_XunXiqX
+
+192.168.199.2>ifconfig vlan7 destroy
+192.168.199.2_XunXiqX
+cleanup done
+cleanup done
+cleanup done
+------------------------------ Logged out from targets ------------------------------
+20240226_03.34.06 
+rounds: 1.  tests_ok: 2.  tests_fail: 0.  tests_skipped: 0.
+

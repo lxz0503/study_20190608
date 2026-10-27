@@ -6,10 +6,10 @@ import os
 
 def execTool(address, tool):
 	if tool == 'sts':
-		cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /mydisk/F8913/sts-master/sts -v 1 -i 32 -I 0 -w /mydisk/F8913/log/sts/{targetAddress} -F r -'.format(targetAddress = address)
+		cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /mydisk/F8913/sts-master/sts -v 1 -i 32 -I 0 -w /mydisk/F8913/Logs/sts/{targetAddress} -F r -'.format(targetAddress = address)
 	elif tool == 'dieharder':
-		cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /usr/local/bin/dieharder -a -g 200 -c \' \' -D default | tee /mydisk/F8913/log/dieharder/{targetAddress}'.format(targetAddress = address)
-		#cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /usr/local/bin/dieharder -d 100 -g 200 -c \' \' -D default | tee /mydisk/F8913/log/dieharder/{targetAddress}'.format(targetAddress = address)
+		cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /usr/local/bin/dieharder -a -g 200 -c \' \' -D default | tee /mydisk/F8913/Logs/dieharder/{targetAddress}'.format(targetAddress = address)
+		#cmd = '/mydisk/F8913/rndProxy  {targetAddress} 3000 | /usr/local/bin/dieharder -d 100 -g 200 -c \' \' -D default | tee /mydisk/F8913/Logs/dieharder/{targetAddress}'.format(targetAddress = address)
 	print(cmd)
 	print(os.system(cmd))
 	#child = pexpect.spawn('/bin/bash', ['-c', cmd])

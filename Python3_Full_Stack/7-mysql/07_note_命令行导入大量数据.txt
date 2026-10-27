@@ -1,0 +1,314 @@
+primary key 主键必须包含唯一的值。主键列不能包含 NULL 值
+
+自增字段一定要和主键一起使用，是主键的一部分，例如 id INT primary key auto_increment
+
+desc table_name;  -- this can check table information, table_name is the name of your table
+===================================如何导入外部数据，下面是最快的方法，支持各种格式，设置好分隔符=======
+用记事本打开包含中文字符的csv文件，点击save as看见编码应该是UTF-8 with BOM,-----------------------注意这里
+双击此csv文件，可以直接用excel打开。这样的文件就可以直接导入到mysql,前提是Mysql编码是utf8.
+========================================================================================================
+
+excel默认编码是ANSI，mysql默认是UTF8,workbench is latin,一定要转成一致的UTF8编码， workbench 设置为utf8  utf8_bin
+目前创建的表字段都是中文
+文件里也有中文字符，workbench无法导入，提示命令行不支持，如果全部是英文，则没有问题
+但是即使有中文，可以通过命令行的方式导入：
+在dos里面登录mysql, use lession;再执行下面的命令
+用workbench创建完数据库，一定要修改默认编码为UTF8，这样才能直接导入txt或者csv文件。
+
+推荐用命令行，不要用workbench来导入大批量数据，命令行非常快
+建议使用英文表头，字段要使用英文
+
+create database lession; -- 创建名为lession的数据库
+
+use lession; -- 使用lession数据库
+
+-- 创建orderinfo数据表
+create table orderinfo(
+    order_year int,
+    order_month int,
+    order_num int,
+    product_id	varchar(10),
+    price int,
+    city_num varchar(10),
+    product_name varchar(40),
+    product_sub_category varchar(20),
+    product_category varchar(20)
+);
+
+# 必须是绝对路径，即全路径,must use / but not \,  only use English in your file path
+load data local infile 'D:/sql_data/orderinfo.csv'    
+	into table orderinfo
+    fields terminated by ','     
+    ignore 1 lines;
+======================================下面语句ok
+create table regioninfo(
+    city_num varchar(10),
+    country varchar(10),
+    region varchar(10)
+);
+
+load data local infile 'D:/sql_data/regioninfo.csv' 
+	into table regioninfo
+    fields terminated by ','
+    ignore 1 lines;
+
+------------------------下面语句ok  命令行 or workbench
+create table allinfo(
+select orderinfo.*, regioninfo.country, regioninfo.region
+from orderinfo, regioninfo
+where orderinfo.city_num = regioninfo.city_num);
+
+you can also use below:   --- this is generated in workbench
+CREATE TABLE `allinfo` (
+  `order_year` int(11) DEFAULT NULL,
+  `order_month` int(11) DEFAULT NULL,
+  `order_num` int(11) DEFAULT NULL,
+  `product_id` varchar(10) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `city_num` varchar(10) DEFAULT NULL,
+  `product_name` varchar(40) DEFAULT NULL,
+  `product_sub_category` varchar(20) DEFAULT NULL,
+  `product_category` varchar(20) DEFAULT NULL,
+  `country` varchar(10) DEFAULT NULL,
+  `region` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+==============================================================09 chapter=======
+group by 后面跟的就是数据透视表的行列标签
+聚合函数就是放在数据透视表值位置的各种汇总规则，例如 求平均值  求最大值  求和
+having 是针对group by里面的内容来分组
+
+create database test;   --- modify default charset=utf8 in workbench,then it can recognize Chinese;
+use test;
+
+load data local infile 'D:/all.txt' 
+    into table Monthly_Indicator 
+    fields terminated by '\t'
+    ignore 1 lines;
+
+desc Monthly_Indicator;  -- check table and it is ok, not wrong code
+
+SELECT * FROM test.monthly_indicator
+where monthly_indicator.city_name='北京';  -- this is ok on workbench
+
+=============================================直接从mysql导出数据====
+select * from e into outfile "/data/mysql/e.sql" fields terminated by ',';     ---分隔符可以自己指定
+最省事的是从workbench里面直接导出数据，可以存储为cvs或者txt格式
+====================================================================
+可以命令行 source  a.sql来执行sql语句
+                              直接把excel数据导入到Mysql的方法：
+navicat里面可以直接导入，支持xlsx格式，但是workbench只支持cvs,json,txt格式
+方法二
+1.需要在数据库中事先创建好表和表结构，应该和excel的结构一样。
+2.将excel表另存为csv(逗号分隔格式)，用记事本打开csv文件，另存为txt类型，并设置编码utf-8
+3,执行该语句
+load data local infile 'D:/all.txt' 
+    into table Monthly_Indicator 
+    fields terminated by ','
+    ignore 1 lines;
+
+============================================================多表查询=================
+use test;
+
+--  用户主表
+create table userinfo(
+	userid varchar(20) not null default '-',
+    username varchar(20) not null default '-', 
+    gender varchar(4) not null default '-'
+);
+
+
+#导入数据   this can be only run with command in DOS
+load data local infile 'D:/sql_data/UserInfo.txt' 
+	into table userinfo
+    fields terminated by '\t'      # 以\t作为分隔符
+	ignore 1 lines;
+    
+select * from userinfo;
+
+-- 区域表
+create table regioninfo(
+	regionid varchar(10) not null default '-',
+    regionname varchar(20) not null default '-',    
+    regiontype int not null default 0
+);
+
+#导入大量数据   this can be only run with command in DOS
+load data local infile 'D:/sql_data/regioninfo.txt' 
+	into table regioninfo
+    fields terminated by '\t'
+	ignore 1 lines;      # 忽略第一行表头，这个不需要导入，建表的时候已经创建了
+
+select * from regioninfo;
+
+-- 订单主表
+create table OrderInfo(
+	OrderID varchar(20) not null default '-',
+	UserID varchar(20) not null default '-',
+    Country int not null default 0,
+    Province int not null default 0,
+    City int not null default 0,
+    District int not null default 0,
+    orderamount int not null default 0
+);
+
+#导入数据,this can be only run with command in DOS
+load data local infile 'D:/sql_data/OrderInfo.txt' 
+	into table OrderInfo
+    fields terminated by '\t'
+	ignore 1 lines;
+
+select * from OrderInfo;
+
+一般在表名前面加上数据库的名称来引用，即全路径，例如 select  a  from test.orderinfo
+inner join实际就是求两个表的交集
+
+-- 查询练习   基本原则------谁是提供数值的表，谁当作主表来使用，即作为左表-----适当练习
+-- 1.求出购买产品金额最多的前十名顾客
+select username as 顾客, sum(orderamount) as 金额
+from orderinfo left join userinfo on orderinfo.userid = userinfo.userid
+group by orderinfo.userid
+order by 金额 desc
+limit 10;
+
+-- 2.求出购买产品金额最多的前十名顾客的所在城市
+select username as 顾客, sum(orderamount) as 金额, regionname as 城市
+from orderinfo left join userinfo on orderinfo.userid = userinfo.userid 
+left join regioninfo on orderinfo.city = regioninfo.regionid  
+group by orderinfo.userid
+order by 金额 desc
+limit 10;
+
+-- 求出购买产品金额最多的前十名顾客的所在城市
+select userinfo.username as guke,sum(orderinfo.OrderAmount) as jine,regioninfo.regionname as 城市
+from test.orderinfo left join test.userinfo on orderinfo.userid=userinfo.userid  ---先连接orderinfo和userinfo
+left join test.regioninfo on orderinfo.city=regioninfo.regionid  -- 再连接orderinfo和regioninfo
+group by guke  --- group by orderinfo.userid 也可以
+order by jine desc
+limit 10;
+
+-- 3.求出购买力最强的前十个城市
+select regionname as 城市, sum(orderamount) as 金额
+from orderinfo left join regioninfo on orderinfo.city = regioninfo.regionid
+group by city
+order by 金额 desc
+limit 10;
+
+-- 4.求出购买力最强的前十个城市以及他们所在的省份
+-- a.求出购买力最强的前十个城市的中文名称以及这些城市对应的省份id
+create table a(
+select regionname as 城市, province as 省份id,sum(orderamount) as 金额
+from orderinfo left join regioninfo on orderinfo.city = regioninfo.regionid
+group by city
+order by 金额 desc
+limit 10);
+
+select * from a;
+
+-- b.再用a表中的省份id与regioninfo表中的regionid连接，求出省份id对应的省份中文名称
+select regionname as 省份, 城市, 金额
+from a left join regioninfo on a.省份id = regioninfo.regionid
+order by 金额 desc;
+
+-- 用一个含子查询的查询语句可以同时实现以上两步操作
+select regionname as 省份, 城市, 金额
+from (
+select regionname as 城市, province as 省份id,sum(orderamount) as 金额
+from orderinfo left join regioninfo on orderinfo.city = regioninfo.regionid
+group by city
+order by 金额 desc
+limit 10 ) as a left join regioninfo on a.省份id = regioninfo.regionid
+order by 金额 desc;
+ 
+
+select regioninfo.* from regioninfo where regionname in ('石家庄', '唐山','广州','深圳','河北','广东');
+=====================================================================================================
+https://www.w3school.com.cn/sql/sql_foreignkey.asp        外键的最好例子
+"Persons" 表：
+
+Id_P	LastName	FirstName	Address	       City
+1	    Adams	    John	   Oxford Street	London
+2	    Bush	    George	  Fifth Avenue	    New York
+3	    Carter	    Thomas	  Changan Street	Beijing
+"Orders" 表：
+
+Id_O	OrderNo	Id_P
+1	    77895	3
+2	    44678	3
+3	    22456	1
+4	    24562	1
+请注意，"Orders" 中的 "Id_P" 列指向 "Persons" 表中的 "Id_P" 列。
+
+"Persons" 表中的 "Id_P" 列是 "Persons" 表中的 PRIMARY KEY。
+
+"Orders" 表中的 "Id_P" 列是 "Orders" 表中的 FOREIGN KEY。
+
+一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY 
+FOREIGN KEY 约束用于预防破坏表之间连接的动作。
+
+FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。
+下面的 SQL 在 "Orders" 表创建时为 "Id_P" 列创建 FOREIGN KEY：
+
+MySQL:
+CREATE TABLE Orders
+(
+Id_O int NOT NULL,
+OrderNo int NOT NULL,
+Id_P int,
+PRIMARY KEY (Id_O),    --- this is primary key
+FOREIGN KEY (Id_P) REFERENCES Persons(Id_P)   --- foreign key，"Orders" 表中的 "Id_P" 列是 "Persons" 表中的 PRIMARY KEY
+)
+
+==========================================
+-- 查询练习   基本原则------谁是数值，谁当作主表来使用，即作为左表-----适当练习
+-- 1.求出购买产品金额最多的前十名顾客
+一个用户可能有很多订单，所以金额这款要用sum函数
+orderinfo中的Country  province  city district 四个字段都可以对应regioninfo中的regionid
+===================================================
+less 10
+查询销售额最多的产品，倒序
+SELECT GoodsID,sum(GoodsPrice*Amount) as sum_prices
+ FROM test.orderdetail
+ group by GoodsID
+ order by sum_prices desc
+ limit 5;
+-----------------------------------------------
+查询不同尺码下的产品销售金额
+SELECT SizeNote,GoodsID,sum(GoodsPrice*Amount) as sum_prices
+ FROM test.orderdetail left join test.goodssize
+ on orderdetail.sizeid = goodssize.sizeid
+ group by sizenote,goodsid;  -- 先按照尺码分组，再按照产品ID分组
+--------------------------------------------------------------------
+查询不同颜色下的产品销售金额
+SELECT colornote,GoodsID,sum(GoodsPrice*Amount) as sum_account
+ FROM test.orderdetail left join test.goodscolor
+ on orderdetail.colorid = goodscolor.colorid
+ group by colornote,goodsid
+order by colornote, sum_account desc;
+-------------------------------------------------------------
+查询不同尺码下的不同颜色的产品销售额   ----多表连接
+--不同尺码 不同颜色 ---意味着按照尺码 和颜色分组
+销售额从哪个表计算出来，那个表就是主表
+SELECT sizenote,colornote,GoodsID,sum(GoodsPrice*Amount) as sum_prices
+ FROM test.orderdetail left join test.goodssize on orderdetail.sizeid = goodssize.sizeid 
+ left join test.goodscolor on orderdetail.colorid = goodscolor.colorid
+ group by sizenote,colornote, goodsid  --不同尺码  不同颜色  不同产品
+ order by sizenote,colornote,sum_prices desc;
+
+-------------------------------------------------------------
+部分列 多行 插入数据：
+insert into students(name,age) values('lisi',10),('zhangsan',20)
+
+全列  多行  插入数据：
+insert into students values('lisi',10,'boy'),('zhangsan',20,'girl')
+
+select gender,group_concat(name) from students group by gender;
+# group_concat(name) 这个函数可以把所有的名字用逗号拼接在一起
+SELECT arch,group_concat(name) FROM test_result.ia_result group by arch;
+'IA', 'ICMP-1.1,ICMP-1.2,ICMP-1.3'
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+debug: False      # debug means using the local branch to test
+build_image: False     # True means building image, False means using the previous image

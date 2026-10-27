@@ -36,11 +36,11 @@ def AnalyzeJenkinsTestResult(project, build, jenkinsWeb, debug = False):
         ts1 = CategorizeTestCaseResult(testResults)
         ts2 = ExtractTestSummary(content)
         if ts1 != ts2:
-            #print '== self summary is %s while log summary is %s' % (ts1, ts2)
+            #print '== self summary is %s while Logs summary is %s' % (ts1, ts2)
             pass
         if debug:
             if ts1 != ts2:
-                print 'WARINING: self summary:%s not equal to log summary:%s' % (ts1, ts2)
+                print 'WARINING: self summary:%s not equal to Logs summary:%s' % (ts1, ts2)
     except:
         testResults = []
     return testResults, bsp
@@ -533,7 +533,7 @@ def GetRerunTestCases(jenkinsWeb, multiJobProject, build):
 
 def CompareToPredefinedTests(rerunTests, kongTestPlanToReport=kongTestPlanToReport):
     # retRerunTests = { bsp1 : { mod1 : failedTestResultsList, mod2 : ...}, bsp2 : {}, ...}
-    # note: use passed tests to compare with predefined tests so that the blocked tests can be rerun
+    # note.txt: use passed tests to compare with predefined tests so that the blocked tests can be rerun
     retRerunTests = {}
     for bsp in rerunTests:
         for mod in rerunTests[bsp]:

@@ -151,7 +151,7 @@ class ModuleParser:
                 newLines.append(line[index+1:])
             return '\n'.join(newLines)
         else:
-            raise BuildLogError('incorrect build log at %s' % self.url)
+            raise BuildLogError('incorrect build Logs at %s' % self.url)
         
 
 def test_TinderMainPage():

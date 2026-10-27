@@ -1,0 +1,8 @@
+import pythoncom  # 导入封装了OLE自动化API的模块，该模块为win32com的子模块
+
+
+
+
+
+pythoncom.CoInitialize()# 调用线程初始化COM库，解决调用Word 2007时出现"尚未调用CoInitialize"错误的问题
+gencache.EnsureModule('{00020905-0000-0000-C000-000000000046}', 0, 8, 4)

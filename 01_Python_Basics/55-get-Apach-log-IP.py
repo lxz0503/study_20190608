@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
-# This is to analyze apache log
+# This is to analyze apache Logs
 # from  __future__ import print_function    # this is for running python2 version
 from collections import Counter
 ips = []

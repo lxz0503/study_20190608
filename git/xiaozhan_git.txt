@@ -9,9 +9,10 @@ $ git config --global user.name "lxz0503"
 $ git config --global user.email "lxz_20081025@163.com"
 
 由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：
-
+这个公钥是基于电脑的，所以不同电脑需要输入不同的公钥
 使用以下命令生成 SSH Key：ssh-keygen -t rsa -C "youremail@example.com"
-后面的 your_email@youremail.com 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key。
+后面的 your_email@youremail.com 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，
+我们这使用默认的一路回车就行。成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key。
 
 回到 github 上，进入 Account => Settings（账户配置）。
 左边选择 SSH and GPG keys，然后点击 New SSH key 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key(每一次在新的环境都需要这样操作，建立连接)
@@ -90,22 +91,11 @@ git commit -m "update readme"
 
 git commit -m "remore test.txt"
 
-==========================
-
+===============================================
 https://github.com/lxz0503
 
 you can create a repository on this website
-
-…or create a new repository on the command line
-echo "# study_20190608" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/lxz0503/study_20190608.git
-git push -u origin master
-
-
-==========================
+==================================================
 先在https://github.com/lxz0503创建Repository，名字为study_20190608
 
 echo "# study_20190608" >> README.md
@@ -113,8 +103,11 @@ git init
 git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/lxz0503/study_20190608.git
-git push -u origin master
+git push -u origin master     # 本地和远端默认分支名字就是master
+要知道git remote add <shortname> <url>是在我们自己的本地仓库对远程仓库起的别名，这个别名只能在我们自己的本地仓库使用，
+在真正的远程仓库那边，远程仓库的名字是一个绝对唯一的URL(比如:git@github.com:michaelliao/learngit.git)，而不是origin
 
+原文链接：https://blog.csdn.net/wq6ylg08/article/details/89028412
 可以在网站上直接commit文件或者目录
 
 在本地windows目录下，即本地git仓库目录下，
@@ -123,6 +116,7 @@ git push -u origin master
 
 $ git config --global user.name "lxz0503"
 $ git config --global user.email "lxz_20081025@163.com"
+$ git config --global credential.helper   store         # 不用每次push输入密码
 
 git clone https://github.com/lxz0503/study_20190608.git
 

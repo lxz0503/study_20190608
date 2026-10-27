@@ -1,3 +1,7 @@
-SELECT goods_id,goods_name,name 
-FROM goods,goods_type 
+# 从两张表里取
+# goods_id,goods_name  是goods这张表里的
+# name是goods_type这张表里的
+
+SELECT goods_id,goods_name,name
+FROM shop.goods,shop.goods_type
 WHERE goods.goods_type=goods_type.id;

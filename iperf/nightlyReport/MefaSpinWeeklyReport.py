@@ -174,7 +174,7 @@ def summary (fd, productName, spin_name, ltaf_release_name, ltaf_component, matr
         msg2html(fd, '</tbody></table><br>')
 
     # Last commit 
-    cmd = 'cd %s && git log -1 HEAD | grep "commit" | head -n 1' % gitDir
+    cmd = 'cd %s && git Logs -1 HEAD | grep "commit" | head -n 1' % gitDir
     rtncode, lastCommit = run_shell_cmd(cmd)
     #print (type(lastCommit))
 

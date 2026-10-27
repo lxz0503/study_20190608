@@ -1,0 +1,40 @@
+每次SQL考试完之后，老师会将班级成绩表展示给同学看。
+现在有班级成绩表(class_grade)如下:
+use dd;
+drop table if exists class_grade;
+CREATE TABLE class_grade (
+grade varchar(32) NOT NULL,
+number int(4) NOT NULL
+);
+
+INSERT INTO class_grade VALUES
+('A',2),            --第1行表示成绩为A的学生有2个
+('D',1),
+('C',2),
+('B',2);          -- 最后1行表示成绩为B的学生有2个
+--------------------------------------------
+写出一个SQL查询，如果一个学生知道了自己综合成绩以后，最差是排第几名? 结果按照grade升序排序
+分析：本题出题的题意其实主要是考察sum() over (order by ) 开窗函数，sum(a) over (order by b) 的含义是:
+例如
+a  b
+1 2
+3 4
+5 6
+按照b列排序，将a依次相加，得到结果，如下:
+a  b  sum(a) over (order by b)：
+1 2    1
+3 4    1+3
+5 6    1+3+5
+
+========================================== 只有在sql8.0才支持窗口函数-----
+select grade, sum(number) over(order by grade) t_rank
+from class_grade;
+================================================
+首先：窗口函数如果没有分区的话默认是全局排序，因此最后就不需要再次排序了；
+其次：窗口函数OVER()中完整的句式有三部分：分区、排序、数据行子句；
+这三部分都是可选的，我们最常见的就是partition by 和 order by两部分，第三部分通常都省略了，
+而这省略部分的默认句式为rows between unbounded preceding and current row (表示挑选的数据行为从当前窗口的第一行到当前行)，
+刚好符合本题需要对当前数据以及之前的所有数据进行累加。所以完整的写法应该是：
+select grade,
+sum(number) over(order by grade rows between unbounded preceding and current row)as t_rank
+from class_grade;

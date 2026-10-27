@@ -69,7 +69,7 @@ def register():
         salt = PH.get_salt()
         hashed = PH.get_hash(form.password2.data + salt.decode('utf-8'))
         DB.add_user(form.email.data, salt, hashed)
-        return render_template("home.html", loginform=LoginForm(), registrationform=form, onloadmessage="Registration successful. Please log in.")
+        return render_template("home.html", loginform=LoginForm(), registrationform=form, onloadmessage="Registration successful. Please Logs in.")
     return render_template("home.html", loginform=LoginForm(), registrationform=form)
 
 

@@ -1,11 +1,11 @@
 # 记录屏幕输出的log，可以用用下面的方法
 # 也可以用tee名利重定向，简单有效
-# python test.py 2>&1 | tee test.log
+# python testa.py 2>&1 | tee test.Logs
 # 还可以用下面的，没看懂
 import sys
 
 class Logger(object):
-    def __init__(self, filename='default.log', stream=sys.stdout):
+    def __init__(self, filename='default.Logs', stream=sys.stdout):
         self.terminal = stream
         self.log = open(filename, 'a')
 
@@ -18,7 +18,7 @@ class Logger(object):
 
 # 具体使用可以把上面的类封装到一个模块，然后在外面初始化调用，例如下面
 if __name__ == "__main__":
-    sys.stdout = Logger("a.log", sys.stdout)     # 初始化类的实例对象
+    sys.stdout = Logger("a.Logs", sys.stdout)     # 初始化类的实例对象
     sys.stderr = Logger("a.log_file", sys.stderr)     # redirect std err, if necessary
     # now it works
     print('print something')

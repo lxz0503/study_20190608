@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# this script is used to analyze test result and generate test_result.log
+# this script is used to analyze test result and generate test_result.Logs
 import os
 import resultDir
 

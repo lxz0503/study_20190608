@@ -754,7 +754,7 @@ def main(args):
     p.add_option('--cflags', default = '', help = "defaults to '' (none)")
     p.add_option('--scratchdir', default = '/tmp/buildunions/', help = 'union mount will write here')
     p.add_option('--cvsbuild', help = 'replace components/ip_net2-6.6/ip* with cvs', action="store_true", default = False)
-    p.add_option('--logpath', help = 'log files go where? (also puts project files here atm. fix!)')
+    p.add_option('--logpath', help = 'Logs files go where? (also puts project files here atm. fix!)')
     p.add_option('--workdir', default = 'IPNET') #!!! bad
     p.add_option('--shell', default = 'ipcom', help = 'ipcom or native')
     p.add_option('--debug', default = None, help = "tty or serial (or left out)")

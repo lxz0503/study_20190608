@@ -113,7 +113,7 @@ def main():
 		dict_data.setdefault('result',0)
 		exit(0)
 	
-	#upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --log {LOG} --rundate {RUNDATE} --release {RELEASE}'.format( LOG= logs, RUNDATE = week, RELEASE = release)
+	#upload_command = 'python3 /folk/hyan1/Nightly/common/load_ltaf.py --Logs {LOG} --rundate {RUNDATE} --release {RELEASE}'.format( LOG= logs, RUNDATE = week, RELEASE = release)
 	#os.system(upload_command)
 	#insert_iperf_data(wassp_plan, week, os.path.basename(dvd), logs)
 	#insert_baseline_data(wass/folk/hyan1/wassp/iPerf_smp/03_fsl_arm_25005_imx6_sabrelite.xlsp_plan, os.path.basename(dvd), logs)

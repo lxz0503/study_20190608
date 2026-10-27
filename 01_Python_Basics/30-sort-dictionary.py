@@ -9,6 +9,7 @@ from random import randint
 # grade = {x: randint(60, 100) for x in 'xyzabc'}
 grade = {x: randint(60, 100) for x in ('x','y','z','a','b','c')}
 print(grade)
+print(grade.items())
 k = iter(grade.keys())   # 返回一个列表，存储字典中所有的key值
 v = iter(grade.values())  # 存储字典中所有的value
 r = sorted(zip(v, k))   # 按照value从小到大进行排名

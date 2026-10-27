@@ -24,7 +24,7 @@ class ParamikoClient(object):
                             username=self.user,
                             password=self.pwd,
                             timeout=float(self.timeout))
-        self.log_file = "ssh_record.log"  # 存储日志
+        self.log_file = "ssh_record.Logs"  # 存储日志
         
     def run_ssh(self, cmd_command):
         # 执行命令，输出结果在stdout中，如果是错误则放在stderr中
@@ -37,12 +37,12 @@ class ParamikoClient(object):
 
     def sftp_put(self):
         with self.client.open_sftp() as sftp:
-            sftp.put('test.log', 'test.log')
-            sftp.chmod('test.log', 755)
+            sftp.put('test.Logs', 'test.Logs')
+            sftp.chmod('test.Logs', 755)
 
     def sftp_get(self):
         with self.client.open_sftp() as sftp:
-            sftp.get('test.log', 'test.log')
+            sftp.get('test.Logs', 'test.Logs')
 
     def close(self):
         self.client.close()

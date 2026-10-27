@@ -27,10 +27,10 @@ def main():
         if os.path.isfile('/home/windriver/Integration/vxworks/vip_itl_generic/default/vxWorks'):
             print 'image is ok'
         else:
-            print 'no image was built,check log'
+            print 'no image was built,check Logs'
             sys.exit(1)
 #run anvl test
-        runCmdSpin = r'/home/windriver/ANVL/git_bisect_test.py -r ANVL --dvd="dvdUser=windriver,dvdPwd=windriver,dvdAddr=128.224.163.8,dvdPrompt=windriver@PEK-QCAO1-D2:~,dvdPath=/home/windriver/Integration/vxworks"  --bsp=itl_generic --tool=llvm --vxworks=7 --localFTP="ftpuser=windriver,ftppwd=windriver,ftpdir=/home/windriver/ANVL/ANVL_image" --localSSH="sshuser=windriver,sshpwd=windriver" --localAddr=128.224.163.8 --log=/home/windriver/ANVL/ANVL_Result --target="console=128.224.164.57 2016,pduAddr=128.224.164.113,pduPort=6,bootEth=gei,bootPort=2,bootIp=128.224.166.238:0xfffffe00"'
+        runCmdSpin = r'/home/windriver/ANVL/git_bisect_test.py -r ANVL --dvd="dvdUser=windriver,dvdPwd=windriver,dvdAddr=128.224.163.8,dvdPrompt=windriver@PEK-QCAO1-D2:~,dvdPath=/home/windriver/Integration/vxworks"  --bsp=itl_generic --tool=llvm --vxworks=7 --localFTP="ftpuser=windriver,ftppwd=windriver,ftpdir=/home/windriver/ANVL/ANVL_image" --localSSH="sshuser=windriver,sshpwd=windriver" --localAddr=128.224.163.8 --Logs=/home/windriver/ANVL/ANVL_Result --target="console=128.224.164.57 2016,pduAddr=128.224.164.113,pduPort=6,bootEth=gei,bootPort=2,bootIp=128.224.166.238:0xfffffe00"'
         os.system(runCmdSpin)
 #analyze anvl test result and update LTAF
         dir = resultDir.enterDir()

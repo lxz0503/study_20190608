@@ -3,10 +3,10 @@
 from django.shortcuts import render
 from django.views.generic import View
 from .models import Course, CourseResource, Video
-from operation.models import UserFavorite, CourseComments, UserCourse
+from MxOnline.apps.operation.models import UserFavorite, CourseComments, UserCourse
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
-from utils.mixin_utils import LoginRequiredMixin
+from MxOnline.apps.utils.mixin_utils import LoginRequiredMixin
 from django.db.models import Q
 
 

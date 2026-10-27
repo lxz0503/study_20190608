@@ -1,0 +1,3 @@
+用jsonpath来提取字典里的数据
+或者提取JSON字符串的数据
+参考具体例子   xiaozhan_jsonpath.py

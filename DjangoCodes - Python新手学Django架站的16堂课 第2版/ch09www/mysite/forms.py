@@ -44,7 +44,7 @@ class DiaryForm(forms.ModelForm):
 
     class Meta:
         model = models.Diary
-        fields = ['budget', 'weight', 'note', 'ddate']
+        fields = ['budget', 'weight', 'note.txt', 'ddate']
         widgets = {
             'ddate': DateInput(),
         }
@@ -53,5 +53,5 @@ class DiaryForm(forms.ModelForm):
         super(DiaryForm, self).__init__(*args, **kwargs)
         self.fields['budget'].label = '今日花费(元)'
         self.fields['weight'].label = '今日体重(KG)'
-        self.fields['note'].label = '心情留言'
+        self.fields['note.txt'].label = '心情留言'
         self.fields['ddate'].label = '日期'

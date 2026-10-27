@@ -1,6 +1,7 @@
 https://www.techonthenet.com/index.php    ---- this is for C，SQL,一个网站，有如何使用word,excel,access,sql
 https://www.processon.com/diagrams     ------免费画图网站，134手机号  Wind123$
-
+ctrl+a ---光标移动到行首
+ctrl+e ---光标移动到行尾
 The #ifdef directive must be closed by an #endif directive.
 
 xiaozhan@PEK-QCAO1-D2:~/kong_test$ ypcat passwd | grep -i xiaozhan     # 查找一个人账户在Linux下的缩写
@@ -9,7 +10,10 @@ xli3:MSJLHbVMDDYoY:19044:100:Xiaozhan Li:/folk/xli3:/bin/bash
 https://docs.python.org/3.5/library/     ---python3 doc dir
 
 # 建议以后在Python3下用paramiko模块来执行SSH相关的操作-----参考我的例子
-
+# Ubuntu系统里面软件包的卸载：
+sudo dpkg -r 包名
+sudo apt-get remove 包名
+===========================================
 Ubunt下python的缩进，默认设置为四个空格：
 /etc/vim/vimrc
 set tabstop=4
@@ -95,6 +99,7 @@ https://blog.csdn.net/zidixia/article/details/106608487?utm_medium=distribute.pc
 wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo apt-get install tftp-hpa tftpd-hpa
 其中 tftp-hpa 是客户端， tftpd-hpa 是服务端。
 
+beliw is also Ubuntu20.04 tftp 根目录的配置文件：
 wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo chmod -R 777 /etc/default/tftpd-hpa
 wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ vi /etc/default/tftpd-hpa
 # /etc/default/tftpd-hpa
@@ -203,6 +208,23 @@ ps | awk '{print $8}' | sort | uniq -c
       1 /usr/bin/mintty
       1 /usr/bin/ps
       1 COMMAND
+
+获取nightly测试配置文件的内容：
+[xli3@pek-vx-29075 config]$ cat vx7_ci_nightly_spin.config
+NIGHTLYSPIN=vx20220919020040_vx_2303
+lastS=vx20220918020045_vx_2303
+LTAFRELEASE=vx7-integration-native
+timestamp=20220920171720
+PatchBranch=vx7-integration
+VXVER=23.03
+[xli3@pek-vx-29075 config]$ cat vx7_ci_nightly_spin.config | grep NIGHTLYSPIN
+NIGHTLYSPIN=vx20220919020040_vx_2303
+[xli3@pek-vx-29075 config]$ cat vx7_ci_nightly_spin.config | grep NIGHTLYSPIN | awk -F= '{print $2}'
+vx20220919020040_vx_2303
+shell脚本里设置 spin = cat vx7_ci_nightly_spin.config | grep NIGHTLYSPIN | awk -F= '{print $2}'
+
+timestamp = cat vx7_ci_nightly_spin.config | grep timestamp | awk -F= '{print $2}'
+time = ${timestamp:0:4}-${timestamp:4:2}-${timestamp:6:2}   shell中的切片
 
 4.Li xiaozhan@DESKTOP-JFCIJJF ~
 $ tar -czvf  file.tar.gz  file1  file2 ----tar包，压缩成tar.gz格式
@@ -433,6 +455,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$ anyrun.sh      ---you can also 
 xiaozhan anywhere
 windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$
 ----------------------- anyrun.sh is at /home/windriver but can run anywhere due to PATH   /home/windriver
+
 windriver@PEK-QCAO1-D2:/usr/bin$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
 windriver@PEK-QCAO1-D2:/usr/bin$ cd /home/windriver/
@@ -485,7 +508,7 @@ windriver@PEK-QCAO1-D2:~/xiaozhan$
 
 4.创建软连接  soft link：
 
-ln -s my_cmd mycmd1
+ln -s my_cmd mycmd1     (ln -s 源文件 目标文件)
 
 5.在任意目录中，输入my_cmd1，即可打印"hello,world!cmd1."。
 
@@ -669,6 +692,20 @@ windriver@PEK-QCAO1-D2:~/test_rsync$
 
 if you want to modify whole directory, you can use -R
 [xli3@pek-vx-nightly1 buildarea2]$ sudo chown -R xli3:users mw
+
+
+注意如何修改用户权限组：
+例如，原来是windriver，并且windriver用root权限
+drwxrwxr-x  3 windriver windriver 4096 Aug 24 15:14 cases/
+drwxrwxr-x  2 windriver windriver 4096 Aug 24 15:14 config/
+-rw-rw-r--  1 windriver windriver  174 Aug 24 15:14 __init__.py
+drwxrwxr-x  2 windriver windriver 4096 Aug 24 15:14 utils/
+windriver@pek-vx-anvl:~/AutoTSN$ sudo chown -R xli3:users utils
+windriver@pek-vx-anvl:~/AutoTSN$
+windriver@pek-vx-anvl:~$ sudo chown -R xli3:users AutoTSN
+
+每次ftp上传后，需要执行上面的命令，修改用户目录的属性
+然后切换回xli3用户，执行脚本---这样才能用vlm的reserve命令站板子
 
 chgrp可以更改权限组
 sudo chgrp wrsadmin a.txt
@@ -990,7 +1027,7 @@ pip install virtualenv
                       cd workdir
 　　第二步：创建虚拟环境 virtualenv yourdir
 cd workdir
-virtualenv yourdir  # yourdir就是虚拟环境的名字，现在系统就会在你当前工作目录下新建一个名为yourdir的文件夹，
+virtualenv yourdir       # yourdir就是虚拟环境的名字，现在系统就会在你当前工作目录下新建一个名为yourdir的文件夹，
 它保存了一个全新的虚拟环境。另外，在使用virtualenv创建python环境时，默认创建的是python2.7的环境。
 如果你想创建其他版本的python，只需要在创建时指定python的版本即可。像输入下面的命令：
 
@@ -1016,8 +1053,20 @@ https://www.cnblogs.com/Dreamcho/p/10805690.html
 一、在终端上输入 sudo apt-get install vsftpd 命令，等待安装完成
 查询:  service vsftpd status
 二、修改vsftpd.conf文件：sudo vim /etc/vsftpd.conf，将 #write_enable=YES 前面的注释#去掉
+末尾添加------xiaozhan  我自己这样设置没问题
+userlist_deny=NO
+userlist_enable=YES
+userlist_file=/etc/allowed_users    xiaozhan  自己设置能登录的白名单用户
+local_enable=YES
+write_enable=YES
+pasv_promiscuous=YES
+
 三、更改/etc/ftpusers，注释掉root用户：sudo vim /etc/ftpusers
+
 四、在终端中重启FTP服务：sudo /etc/init.d/vsftpd restart
+
+用FileZilla----选择FTP协议，SFTP一直提示算法不通过---128.224.178.153  wrsadmin  kernel
+
 CuteFTP建立连接：
 -----Ubuntu 18.04配置ftp，在家里虚拟机试验成功==========================
 1.安装vsftpd(终端执行)
@@ -1098,14 +1147,14 @@ Please contact your system administrator.
 Add correct host key in /folk/xli3/.ssh/known_hosts to get rid of this message.
 Offending RSA key in /folk/xli3/.ssh/known_hosts:2
   remove with: ssh-keygen -f "/folk/xli3/.ssh/known_hosts" -R 128.224.166.211
-RSA host key for 128.224.166.211 has changed and you have requested strict checking.
+RSA host key for 128./etc/sudoers224.166.211 has changed and you have requested strict checking.
 Host key verification failed.
 lost connection
 --------按照提示去操作
 vi /folk/xli3/.ssh/known_hosts
 remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
 ====================================================================================
-在代码里面用4个空格替代TAB键的方法：
+在代码里面用4个空格替代TAB键的方法：缩进4个空格
 :set ts=4
 :set expandtab
 :%retab!
@@ -2046,13 +2095,476 @@ du -sh : 查看当前目录总共占的容量。而不单独列出各子项占用的容量
 du -lh --max-depth=1 : 查看当前目录下一级子文件和子目录占用的磁盘容量。
 du -ah --max-depth=1 ：显示当前目录的占用磁盘容量
 
+-------------------------------------------------------------------
+cat /etc/passwd  ----查看上面有哪些用户
+Linux系统使用中，服务器重启后，网卡名称改变、网口名称调换导致之前的网络配置失效
+https://blog.51cto.com/u_9099998/2495020
+[wrsadmin@pek-vx-anvlserver network-scripts]$ sudo su    切换到root用户
+[sudo] password for wrsadmin:
+
+CentOS7 配置静态IP
+cat /etc/redhat-release   查看版本
+nmcli device show     查看网卡信息
+nmcli connection up em1
+Centos网络IP地址配置文件在 /etc/sysconfig/network-scripts 文件夹下
+
+输入service network restart命令即可配置静态IP地址
+
+在Linux或CentOS中，可以通过如下命令获取网卡的uuid信息：
+[root@pek-vx-anvlserver network-scripts]# uuidgen p4p3
+6eb1a4ef-20dd-4d36-bc21-1cabe69032a2
+获取到eth1网卡的uuid，即可完成对ifcfg-eth1配置文件的修改，最后通过service network restart命令重启网卡，OK。
+
+[root@pek-vx-anvlserver network-scripts]# uuidgen p4p4
+dd8d9f65-0c7a-4a83-9200-9db1c288f5ee
+
+原文链接：https://blog.csdn.net/xiaolong_4_2/article/details/80858176
+
+[root@localhost ~]# nmcli device show em1
+GENERAL.DEVICE:                         em1
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         5C:F9:DD:76:6A:50
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     System em1
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         128.224.166.253/23
+IP4.GATEWAY:                            128.224.166.1
+IP4.ROUTE[1]:                           dst = 0.0.0.0/0, nh = 128.224.166.1, mt = 100
+IP4.ROUTE[2]:                           dst = 128.224.166.0/23, nh = 0.0.0.0, mt = 100
+IP4.DNS[1]:                             128.224.160.11
+IP4.DNS[2]:                             147.11.100.30
+IP4.DNS[3]:                             147.11.1.11
+IP4.DOMAIN[1]:                          pek-tuxlab2.wrs.com
+IP6.ADDRESS[1]:                         fe80::5ef9:ddff:fe76:6a50/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 100
+IP6.ROUTE[2]:                           dst = ff00::/8, nh = ::, mt = 256, table=255
+-------------------------------------------------------------------------------
+ifconfig p4p3 30.1.1.1/24 up
+
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+BOOTPROTO="static"
+DEVICE="em1"
+ONBOOT="yes"
+UUID="4f4f8d62-80bc-4e1e-9a64-486d1ac95753"
+IPADDR="128.224.166.46"
+NETMASK="255.255.254.0"
+GATEWAY="128.224.166.1"
+DNS1="128.224.160.11"
+DNS2="147.11.100.30"
+DNS3="147.11.1.11"
+
+----------------------------------------------------
+CentOS7修改主机名
+使用hostnamectl来重新设置主机名是永久生效的即使是服务器重启也生效
+[root@localhost ~]# hostnamectl set-hostname pek-vx-anvlserver
 
 
+-----------------------------------------------
+
+[root@pek-vx-anvlserver IxANVL932]# cd /opt/ixia/licenseserverplus/client
+[root@pek-vx-anvlserver client]# ./licensingcmd --server localhost --getofflinerequest output
+{
+   "error" : {
+      "message" : "Unable to connect to licensing service on '127.0.0.1'.",
+      "suggestions" : "Verify that the machine has internet connection.\n\tVerify that the '127.0.0.1' responds to PING command.\n\tVerify that the TCP port : '4502' & '8890' is not blocked by a firewall."
+   },
+   "server" : "localhost"
+}
+
+You can install it with the licensingcmd
+Copy the attached file to you anvl machine and run the licensingcmd to import it.
+
+./licensingcmd --server localhost --importlicense [license file name]
+
+Where [license file name ] is the attached file.
 
 
+You can check to see if the licenses are installed with the –listlicenses option.
+
+./licensingcmd –server localhost –listlicenses
+
+Let me know if you have any problems or questions.
+
+TCP port : '4502' & '8890' is not blocked by a firewall.
 
 
+[root@pek-vx-anvlserver client]# ./licensingcmd --server localhost --getofflinerequest output
+{
+   "offlinerequestpath" : "output/offlinereq_025650-678a76-daddf8-a95c_20220414T192203.bin",
+   "server" : "localhost"
+}
+
+------------------------------------------------------------------
 
 
+=============================================
+修改网卡名字
+mv ifcfg-em1  ifcfg-eth0
+[root@pek-vx-anvlserver client]# vi /etc/default/grub
+接下来禁用网卡命名规则。此功能通过/etc/default/grub文件来控制，要禁用此次功能，
+在文件中加入"net.ifnames=0  biosdevname=0"即可
+
+[root@pek-vx-anvlserver client]# grub2-mkconfig  -o  /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-1160.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-1160.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-8bafeb3cb1ae46bd9410e7ab7c96dc53
+Found initrd image: /boot/initramfs-0-rescue-8bafeb3cb1ae46bd9410e7ab7c96dc53.img
+done
+
+然后再：cd /etc/udev/rules.d
+sudo vi 70-persistent-ipoib.rules
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="3c:ec:ef:22:bc:58", KERNEL=="eth*", NAME="eth0"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:1b:21:7d:57:b8", KERNEL=="eth*", NAME="eth1"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:1b:21:7d:57:b9", KERNEL=="eth*", NAME="eth2"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:1b:21:7d:57:ba", KERNEL=="eth*", NAME="eth3"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:1b:21:7d:57:bb", KERNEL=="eth*", NAME="eth4"
+
+systemctl restart network.service
+
+重启网络服务，网卡已经正常运行，网络名称不再改变
+--------------------------------------------------
+打开一个文档。移动到行首或者行尾，用ctrl+^  ctrl+$
+查看ftp用户：
+vi /etc/allowed_users
+
+windriver@pek-vx-anvl:~$ ftp 128.224.159.79
+Connected to 128.224.159.79.
+220 (vsFTPd 3.0.3)
+Name (128.224.159.79:windriver): windriver
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> pwd
+257 "/home/windriver" is the current directory
+ftp> quit
+221 Goodbye.
+
+-------------------------------------------------
+
+1.逻辑CPU个数：
+
+# cat /proc/cpuinfo | grep “processor” | wc –l
+
+2．物理CPU个数：
+
+# cat /proc/cpuinfo | grep “physical id” | sort | uniq | wc –l
+
+3．每个物理cpu中core的个数：
+
+# cat /proc/cpuinfo | grep “cpu cores” | wc –l
+
+[wrsadmin@pek-vx-anvlserver ~]$ route -n    查看路由表
+注意有些接口上不用配置default route，只有走公网那个口才需要配置，否则会有多个网关，包发不出去
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         128.224.166.1   0.0.0.0         UG    100    0        0 eth0
+10.1.1.0        0.0.0.0         255.255.255.0   U     101    0        0 eth1
+20.1.1.0        0.0.0.0         255.255.255.0   U     102    0        0 eth2
+30.1.1.0        0.0.0.0         255.255.255.0   U     103    0        0 eth3
+40.1.1.0        0.0.0.0         255.255.255.0   U     104    0        0 eth4
+128.224.166.0   0.0.0.0         255.255.254.0   U     100    0        0 eth0
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+===============================
+(!!!This is used for ANVL server transfer from current server 128.224.166.82 to a new Redhat machine. This account had better only be known by ANVL owner and manager!!!)
+Windriver ANVL account:
+#REGNUM=500000244NS
+#PASS=pqceIp
+
+./licensingcmd --server localhost --importlicense 02da58-b55c22-47efeb-bc3c-2022-04-25-23-53.bin
+
+License Server Location localhost
+DUT Hostname                             128.224.166.238
+
+批量查找并替换文件内容。
+
+#   sed -i "s/要找查找的文本/替换后的文本/g" `grep -rl "要找查找的文本" ./`
+
+注意grep  · · 和转移字符"和/,  如果匹配的字符出现了以上字串，要用 \ 转移
+
+例如替换 被病毒修改的一段脚本：
+
+sed -i "s/  字符串 制空或者删除
+
+find  ./ -name "*.cfg"
+
+cfg_name = `find  ./ -name "*.cfg"`
+for i in $cfg_name
+do
+    sed -i "s/DUT Hostname                             128.224.166.238/License Server Location localhost\nDUT Hostname                             128.224.166.238/g" $i
+done
 
 
+sed -i "s/DUT Hostname                             128.224.166.238/License Server Location localhost\nDUT Hostname                             128.224.166.238/g"  ./anvlospf.cfg
+
+x86_64-Linux
+
+/opt/Ixia/IxANVL932/ANVL-SRC/Bin/x86_64-Linux/anvl -l low -f /opt/Ixia/IxANVL932/ANVL-SRC/DocUserQ35/anvlip ip 1
+
+unable to resolve host------解决方法
+修改/etc/hosts:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+128.224.166.46 pek-vx-anvlserver  anvl-server      # this is added by xiaozhan
+vi ./var/log/ixia/licenseserverplus/lmgrd.log
+======================================================================
+
+==============
+查询是否安装telnet服务
+rpm -qa telnet-server
+rpm -qa xinetd
+yum -y install expect
+yum -y install telnet
+yum -y install xinetd
+====================================================
+wrsadmin@pek-vx-iperf16:~$ route -n  查看路由和网络接口
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         128.224.166.1   0.0.0.0         UG    100    0        0 eno1
+11.11.11.0      0.0.0.0         255.255.255.0   U     0      0        0 enp3s0
+128.224.166.0   0.0.0.0         255.255.254.0   U     100    0        0 eno1
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 eno1
+wrsadmin@pek-vx-iperf16:~$
+Ubuntu20.04配置静态IP：
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: no
+      addresses: [128.224.167.16/23]
+      gateway4: 128.224.166.1
+      nameservers:
+              addresses: [128.224.160.11, 128.224.160.12]
+    enp3s0:
+       dhcp4: no
+       addresses: [11.11.11.1/24]
+wrsadmin@pek-vx-iperf16:/etc/netplan$ sudo vi 01-netcfg.yaml
+wrsadmin@pek-vx-iperf16:/etc/netplan$ sudo netplan apply
+
+sudo route add default gw 128.224.166.1
+======================================
+Ubuntu20.04添加当前用户root权限：
+sudo chmod +w /etc/sudoers　　　  #修改sudoers权限
+sudo vi /etc/sudoers　　　　　　　#打开sudoers
+在下面添加自己的用户名即可：
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+xxxx    ALL=(ALL:ALL) ALL　　　　# xxxx改为用户名
+
+/buildarea3/mw/wassp-repos/wassp-nest/tools/bin
+/buildarea3/mw/wassp-repos/wassp-nest/host/scheduler/bin
+
+
+export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh
+export PATH=/home/windriver/wassp-repos/wassp/host/scheduler/bin:/home/windriver/wassp-repos/wassp-nest/tools/bin:/usr/local/mongodb/bin:/buildarea1/hyan1/wassp-repos/wassp/host/scheduler/bin:/buildarea1/hyan1/wassp-repos/wassp-nest/tools/bin:/home/workspace/wassp_repos/wassp/host/scheduler/bin:${PATH}
+export PYTHONPATH="/home/windriver/.pyenv/versions/3.4.0/lib/python3.4/site-packages:/home/windriver/.local/lib/python3.8/site-packages:$PYTHONPATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+----------------------------------------------------
+
+export PATH=/buildarea3/mw/wassp-repos/wassp-nest/tools/bin:/buildarea3/mw/wassp-repos/wassp-nest/host/scheduler/bin:${PATH}
+
+/buildarea3/mw/wassp-repos/.venv_wassp/bin/python3
+
+/buildarea3/mw/wassp-repos/testcases/vxworks7/script/mw_nightly/runwassp_nightly.sh
+
+------------------------------------------------------
+sudo brctl addbr vxBridge
+sudo tunctl -t tap1
+sudo ifconfig tap1 0.0.0.0 up
+sudo ifconfig enp1s0f1 0.0.0.0 up
+sudo brctl addif vxBridge tap1
+sudo brctl addif vxBridge enp1s0f1
+sudo brctl show
+sudo ifconfig vxBridge 10.10.10.100/24 up
+
+======================================================
+Jenkins 里面的定时任务：可以去check
+00,15,30,45 19 * * *       晚上19点开始 每隔15分钟
+00,30 21 * * *       晚上21点开始
+=======================================================
+ssh链接时候报错：paramiko.ssh_exception.SSHException: Incompatible ssh peer (no acceptable kex algorithm)
+解决办法：1，升级paramiko
+2，直接修改 vi /etc/ssh/sshd_config 添加下面的加密算法，然后重启sshd
+#RekeyLimit default none
+Ciphers +aes256-cbc
+KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256
+service sshd restart
+===========================================================
+
+source /folk/vxMW/nightly/jenkinsEnvInjection/configs/vx7_nightly_spin.config
+Spin_name=$NIGHTLYSPIN
+Branch_name=$LTAFRELEASE
+time=$timestamp
+patch_branch=$PatchBranch
+vxver=$VXVER
+# xiaozhan
+if [ -z $Spin_name ];then
+   echo "SPIN is Not ready,change to CISPIN"
+   source /folk/vxMW/nightly/jenkinsEnvInjection/configs/vx7_ci_nightly_spin.config
+   Spin_name=$NIGHTLYSPIN
+   Branch_name=$LTAFRELEASE
+   time=$timestamp
+   patch_branch=$PatchBranch
+   vxver=$VXVER
+   if [ -z $Spin_name ];then
+   echo "CISPIN is Not ready,exit"
+   exit 1
+   fi
+fi
+================================================================
+查看哪个目录占用空间大：
+sudo find . maxdepth 1 -type d -exec du -shx {} \; | sort -hr
+
+每隔两天清除一下log
+10 17 */2 * * sh /buildarea2/mw/spin/rmOldSpinLog.sh
+
+============================================================
+查看Ubuntu20.04 网卡
+wrsadmin@pek-vx-29075:~$ dmesg | grep NIC
+[   18.817278] e1000e: eno1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+
+wrsadmin@pek-vx-29075:~$ lspci | grep -i net
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (2) I219-LM (rev 31)
+03:00.0 Ethernet controller: Intel Corporation I210 Gigabit Network Connection (rev 03)
+
+root@pek-vx-29075:/home/wrsadmin# ethtool -i eno1      这个对应这I219
+driver: e1000e
+version: 3.2.6-k
+firmware-version: 0.8-4
+expansion-rom-version:
+bus-info: 0000:00:1f.6
+================================================================
+
+==========================================NIS ==========================
+root@pek-network-iperf:~# vim /etc/auto.master
+root@pek-network-iperf:~# vim /etc/resolv.conf
+root@pek-network-iperf:~# /etc/init.d/rpcbind restart
+Restarting rpcbind (via systemctl): rpcbind.service.
+root@pek-network-iperf:~# /etc/init.d/nis restart
+Restarting nis (via systemctl): nis.service.
+root@pek-network-iperf:~# /etc/init.d/autofs restart
+Restarting autofs (via systemctl): autofs.service.
+root@pek-network-iperf:~# cd /folk/mliu5
+root@pek-network-iperf:/folk/mliu5# ls
+这三个服务重启下
+root@pek-network-iperf:/folk/mliu5# cat /etc/resolv.conf
+# This file is managed by man:systemd-resolved(8). Do not edit.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs must not access this file directly, but only through the
+# symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,
+# replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+domain wrs.com
+nameserver 128.224.160.11
+nameserver 128.224.160.12
+search wrs.com windriver.com corp.ad.wrs.com
+======================================================================
+Ubuntu16.04以后版本安装pycharm：
+sudo snap install [pycharm-profepycharm-communityssional|pycharm-community] --classic
+卸载 sudo snap remove pycharm-community
+----------------------------------------------
+Ctrl+E搜索outlook邮箱---里面有个中选项
+
+Linux中删除文件中的多行数据：
+1.在命令模式下,利用“:set nu”命令显示行号;
+2.输入“:起始删除行号,结束删除行号d”后,按下回车键就可以删除包括起始结束行在内的多行数据
+
+查看linux机器CPU的核数
+cat  /proc/cpuinfo    processor start from 0
+
+----------------------------------------------
+以管理员权限打开cmd --- ctrl+shift+enter
+或者找到cmd所在目录  然后右键
+
+-----------------------------------
+https://www.zhihu.com/question/58702398      devops的介绍
+
+================================
+Ubuntu 发送邮件功能
+http://t.zoukankan.com/jiqianqian-p-7920603.html
+
+# m h  dom mon dow   command
+* * * * *  /home/windriver/scripts_yy/vxbridge_yy.sh
+1 * * * *  cat /etc/resolv.conf | mail -s 'DNS status' yanyan.liu@windriver.com,xiaozhan.li@windriver.com
+40 * * * *  ping -c 4 pek-vx-system1 | mail -s 'Connection between Jenkins and 211' yanyan.liu@windriver.com,xiaozhan.li@windriver.com
+=====================================================
+Centos 7 配置FTP服务器
+https://www.jianshu.com/p/571ec1794f4d
+我在ANVL server上的操作如下：
+vsftpd -version
+mkdir -p /ftp
+vi /etc/vsftpd/ftpusers  我注释掉了下面的root用户
+#root
+
+/etc/vsftpd/user_list   我注释掉了root用户
+
+vi  /etc/vsftpd/vsftpd.conf  我的修改如下：
+anonymous_enable=YES
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+chroot_list_enable=NO
+chroot_list_file=/etc/vsftpd/chroot_list
+pam_service_name=vsftpd
+userlist_enable=YES
+tcp_wrappers=YES
+allow_writeable_chroot=YES
+local_root=/ftp
+
+# 启动
+systemctl start  vsftpd.service
+
+# 停止
+systemctl stop  vsftpd.service
+
+# 设置开机启动
+systemctl enable vsftpd.service
+
+测试如下：
+在另外一台机器:
+windriver@pek-vx-anvl:~$ ftp 128.224.166.46
+Connected to 128.224.166.46.
+220 (vsFTPd 3.0.2)
+Name (128.224.166.46:windriver): root
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> bin
+200 Switching to Binary mode.
+ftp> put minio_test.py
+local: minio_test.py remote: minio_test.py
+200 PORT command successful. Consider using PASV.
+150 Ok to send data.
+226 Transfer complete.
+387 bytes sent in 0.03 secs (10.9882 kB/s)
+ftp> get 1.txt
+local: 1.txt remote: 1.txt
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for 1.txt (0 bytes).
+226 Transfer complete.
+ftp>

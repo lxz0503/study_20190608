@@ -21,7 +21,7 @@ print(t)          # 2019-11-14
 
 # 查看当前时间常用的函数如下,精确到秒
 cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-print(cur_time)      # 2019-11-14 15:31:28
+print('cur time:', cur_time.split(' ')[0])      # 2019-11-14 15:31:28
 
 
 # Thu Jul 18 20:56:29 2019,

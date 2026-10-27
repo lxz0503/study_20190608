@@ -1,0 +1,434 @@
+vi /etc/exports
+
+# /etc/exports: the access control list for filesystems which may be exported
+#               to NFS clients.  See exports(5).
+#
+# Example for NFSv2 and NFSv3:
+# /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)
+#
+# Example for NFSv4:
+# /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
+# /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
+#
+/buildarea1     *(rw,async,insecure,insecure_locks,nohide,crossmnt,no_subtree_check,fsid=1)
+/buildarea2     *(rw,async,insecure,insecure_locks,nohide,crossmnt,no_subtree_check,fsid=2)
+
+=====================================================================================
+
+[xli3@pek-vx-system1 etc]$ sudo systemctl status nfs-kernel-server
+* nfs-server.service - NFS server and services
+     Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+    Drop-In: /run/systemd/generator/nfs-server.service.d
+             `-order-with-mounts.conf
+     Active: failed (Result: exit-code) since Fri 2021-12-03 17:52:06 CST; 4min 0s ago
+
+Dec 03 17:52:06 pek-vx-system1 systemd[1]: Starting NFS server and services...
+Dec 03 17:52:06 pek-vx-system1 exportfs[849231]: exportfs: Failed to stat /buildarea4: No such file or directory
+Dec 03 17:52:06 pek-vx-system1 systemd[1]: nfs-server.service: Control process exited, code=exited, status=1/FAILURE
+Dec 03 17:52:06 pek-vx-system1 systemd[1]: nfs-server.service: Failed with result 'exit-code'.
+Dec 03 17:52:06 pek-vx-system1 systemd[1]: Stopped NFS server and services.
+
+
+dpkg --list | grep nfs-kernel-server
+[xli3@pek-vx-system1 yliu2]$ dpkg --list | grep nfs-kernel-server
+ii  nfs-kernel-server                          1:1.3.4-2.5ubuntu3.4                  amd64        support for NFS kernel server
+
+sudo apt install openjdk-11-jdk
+
+==================================================================================================================
+
+wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.4.tgz
+
+cd /net/pek-cdftp/pek-cdftp1/ftp/r1/helix/vxworks-7-r4/vx20211207015851_vx_2203/bootstrap_installer
+./setup_linux -installerUpdateURLs none -productUpdateURLS none -silent -installPath /home/windriver/CISPIN/vx20211207015851_vx_2203 -yum -y install
+=================================================================================================脚本免密码执行
+pwd = 'windriver'
+cmd = "ping"
+os.system('echo %s|sudo -S %s' % (pwd, cmd))
+========================================================================脚本免密码执行================
+https://www.cnblogs.com/v5captain/p/13962508.html     Ubuntu设置执行脚本时候免密码
+更简单的办法是直接修改 /etc/sudoers 添加最下面的那一行即可
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+windriver ALL=(ALL) NOPASSWD:ALL
+
+========================================================================================================
+
+ln -s libcrypto.so.1.1 libcrypto.so.1.0.0           （取消软link sudo unlink libcrypto.so.1.0.0          
+windriver@pek-iperf-211:/usr/lib/x86_64-linux-gnu$ sudo ln -s libssl.so.1.1 libssl.so.1.0.0
+
+
+windriver@pek-iperf-211:/lib/x86_64-linux-gnu$ mongod --fork --logpath /mydisk/mongod.log --dbpath  /home/windriver/data/db --bind_ip 0.0.0.0 --replSet rs0 --port 27017
+mongod: error while loading shared libraries: libcrypto.so.1.0.0: cannot open shared object file: No such file or directory
+
+
+export LD_LIBRARY_PATH=/home/windriver/python3/lib:/lib:/usr/lib:/usr/local/lib
+/lib/x86_64-linux-gnu
+
+
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+
+==========================================Ubuntu20.04  Mongodb=====
+su root
+
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+apt update
+apt install mongodb-org
+systemctl start mongod.service
+root@pek-iperf-211:/usr/lib/x86_64-linux-gnu# systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
+     Active: failed (Result: core-dump) since Thu 2021-12-09 17:22:58 CST; 33s ago
+       Docs: https://docs.mongodb.org/manual
+    Process: 305976 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=dumped, signal=ILL)
+   Main PID: 305976 (code=dumped, signal=ILL)
+
+12月 09 17:22:58 pek-iperf-211 systemd[1]: Started MongoDB Database Server.
+12月 09 17:22:58 pek-iperf-211 systemd[1]: mongod.service: Main process exited, code=dumped, status=4/ILL
+12月 09 17:22:58 pek-iperf-211 systemd[1]: mongod.service: Failed with result 'core-dump'.
+
+
+安装过程中会自动执行下的：
+(mongodb' to group `mongodb' )
+
+windriver@pek-iperf-211:/usr/lib/x86_64-linux-gnu$ mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+
+---xiaozhan
+
+
+
+===========================================ANVL  auto====
+https://oldtang.com/5569.html
+
+windriver@pek-vx-anvl:~$ wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+OK
+windriver@pek-vx-anvl:~$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+
+sudo apt-get update
+windriver@pek-vx-anvl:~$ sudo apt-get update
+Hit:1 http://pek-mirror01.wrs.com/ubuntu focal InRelease
+Hit:2 http://pek-mirror01.wrs.com/ubuntu focal-updates InRelease
+Hit:3 http://pek-mirror01.wrs.com/ubuntu focal-backports InRelease
+Hit:4 http://pek-mirror01.wrs.com/ubuntu focal-security InRelease
+Ign:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease
+Get:6 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release [4,412 B]
+Get:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release.gpg [801 B]
+Get:8 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0/multiverse amd64 Packages [10.6 kB]
+Get:9 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0/multiverse arm64 Packages [9,861 B]
+Hit:10 https://linux.teamviewer.com/deb stable InRelease
+Get:11 http://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
+Get:12 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,088 B]
+Fetched 28.6 kB in 5s (5,246 B/s)
+Reading package lists... Done
+
+sudo apt-get install -y mongodb-org
+
+测试是否安装成功
+输入下面命令：
+
+mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+如果输出如下，并且 ok 字段值为 1，就是安装成功了：
+
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("2af3ab0e-2197-4152-8bd0-e33efffe1464") }
+MongoDB server version: 4.4.0
+{
+  "authInfo" : {
+    "authenticatedUsers" : [ ],
+    "authenticatedUserRoles" : [ ]
+  },
+  "ok" : 1
+}
+
+==========================================================================================
+windriver@pek-vx-anvl:~$ sudo vi /etc/netplan/0
+00-installer-config.yaml     01-netcfg.yaml               01-network-manager-all.yaml
+windriver@pek-vx-anvl:~$ sudo vi /etc/netplan/01-netcfg.yaml
+windriver@pek-vx-anvl:~$ sudo vi /etc/netplan/01-network-manager-all.yaml
+windriver@pek-vx-anvl:~$ sudo vi /etc/netplan/00-installer-config.yaml
+
+sudo netplan apply
+
+==================================================================
+
+sudo apt-get install package 安装包
+
+sudo apt-get install package –reinstall 重新安装包
+
+sudo apt-get -f install 修复安装
+
+sudo apt-get remove package mongodb-org 删除包
+
+sudo apt-get remove package –purge 删除包，包括配置文件等
+————————————————
+原文链接：https://blog.csdn.net/u010821666/article/details/74942708/
+
+==========================================python3  virtualenv 虚拟环境====================
+如果需要用到不同的python版本，不同的第三方包版本，例如Django1.1,Django2.0，就需要设置虚拟环境
+sudo  pip3 install virtualenv   --我没用这个安装
+mkdir xiaozhan_py3_env  ---- 工程目录,起和自己项目相关的名字即可，我这里的只是例子
+sudo apt install python3-virtualenv   ---Ubuntu上面直接使用这个安装
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$ virtualenv --version
+virtualenv 20.0.17 from /usr/lib/python3/dist-packages/virtualenv/__init__.py
+
+cd xiaozhan_py3_env      进入工程目录,  下的venv才是项目相关的名字，注意命名
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$ virtualenv -p python3 venv   ---制定了用python3版本,venv目录会自动创建，不用提前创建xiaozhan_py3_env      
+created virtual environment CPython3.8.10.final.0-64 in 164ms
+  creator CPython3Posix(dest=/home/windriver/xiaozhan_py3_env/venv, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, pkg_resources=latest, via=copy, app_data_dir=/home/windriver/.local/share/virtualenv/seed-app-data/v1.0.1.debian.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+在使用虚拟环境之前，必须将其激活
+source venv/bin/activate
+
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$ source venv/bin/activate
+(venv) windriver@pek-vx-anvl:~/xiaozhan_py3_env$
+
+在虚拟环境中，可以像平时一样使用pip安装依赖，操作完全没有区别
+pip3 install requests
+退出是deactivate
+--------------------------------------------------
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$ virtualenv -p python3 Django2.0
+created virtual environment CPython3.8.10.final.0-64 in 1807ms
+  creator CPython3Posix(dest=/home/windriver/xiaozhan_py3_env/Django2.0, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, pkg_resources=latest, via=copy, app_data_dir=/home/windriver/.local/share/virtualenv/seed-app-data/v1.0.1.debian.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$
+windriver@pek-vx-anvl:~/xiaozhan_py3_env$ source Django2.0/bin/activate
+(Django2.0) windriver@pek-vx-anvl:~/xiaozhan_py3_env$
+pip3 list 查询已经安装的第三方包
+---------------------------------------------
+如果想创建一个运行python2的虚拟环境，用下面的命令即可
+cd xiaozhan_py2_env
+windriver@pek-vx-anvl:~$ virtualenv -p python2 venv
+created virtual environment CPython2.7.18.final.0-64 in 511ms
+  creator CPython2Posix(dest=/home/windriver/venv, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, pkg_resources=latest, via=copy, app_data_dir=/home/windriver/.local/share/virtualenv/seed-app-data/v1.0.1.debian.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator
+windriver@pek-vx-anvl:~$ cd venv/bin/   ----进到目录下查看是否是python2版本
+windriver@pek-vx-anvl:~/venv/bin$ ll
+
+tree  命令  查看目录下的结构
+
+============================================================================
+
+windriver@pek-vx-anvl:~$ whereis python
+python: /usr/bin/python3.8 /usr/bin/python2.7 /usr/bin/python /usr/lib/python3.8 /usr/lib/python2.7 /usr/lib/python3.9 /etc/python3.8 /etc/python2.7 /usr/local/lib/python3.8 /usr/local/lib/python2.7 /usr/include/python3.8 /usr/share/python
+windriver@pek-vx-anvl:~$ cd /usr/bin/
+windriver@pek-vx-anvl:/usr/bin$ ll python
+lrwxrwxrwx 1 root root 18 Nov 29 17:08 python -> /usr/bin/python2.7*
+windriver@pek-vx-anvl:/usr/bin$
+
+=====================================================================Jenkins
+# create config file for iPerf 
+. /home/windriver/iperfnightly/bin/activate
+
+hostname
+id
+pwd
+echo $HOME
+echo $PYTHONPATH
+echo $PATH
+which python3 
+python3 -V
+
+python3 /folk/hyan1/Nightly/iPerf_run_config.py
+
+================================================================================================================
+==============================================================================更新Ubuntu20.04后python的执行
+Linux中查看Python安装路径和版本号
+whereis python
+windriver@pek-vx-anvl:~$ whereis python
+python: /usr/bin/python3.8 /usr/lib/python3.8 /usr/lib/python2.7 /usr/lib/python3.9 /etc/python3.8 /usr/local/lib/python3.8 /usr/include/python3.8
+新安装的Ubuntu机器20.04，默认是python3.8
+windriver@pek-vx-anvl:~$ env | grep PATH
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+重新配置软连接
+
+ln -s /usr/bin/python3.8 /usr/bin/python
+windriver@pek-vx-anvl:~$ sudo ln -s /usr/bin/python3.8 /usr/bin/python
+[sudo] password for windriver:
+windriver@pek-vx-anvl:~$ pwd
+/home/windriver
+windriver@pek-vx-anvl:~$ cd ANVL/xiaozhan/
+windriver@pek-vx-anvl:~/ANVL/xiaozhan$ ./spin.py   否则就得每次用python3 spin.py
+tonight is CISPIN
+CISPIN
+vi spin.py    第一行制定了python解释器的路径
+#!/usr/bin/env python     ---这个就表示执行了/usr/bin/python
+
+取消软链接:
+sudo unlink /usr/bin/python
+
+============================================================================================================
+ssh diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1 root@128.224.166.46 
+
+ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@128.224.166.46
+
+===============================================
+I run scp on Achilles which is Ubuntu 18.04,
+windriver@pek-vx-achilles:~$ scp aaaa windriver@128.224.159.79:/home/windriver
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:ldI6S2Qo46MdtW9+IRW1+d877brfsXaQLjStJ0xoVSY.
+Please contact your system administrator.
+Add correct host key in /home/windriver/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/windriver/.ssh/known_hosts:3
+  remove with:
+  ssh-keygen -f "/home/windriver/.ssh/known_hosts" -R "128.224.159.79"
+ECDSA host key for 128.224.159.79 has changed and you have requested strict checking.
+Host key verification failed.
+lost connection
+windriver@pek-vx-achilles:~$ ssh-keygen -f "/home/windriver/.ssh/known_hosts" -R "128.224.159.79"
+# Host 128.224.159.79 found: line 3
+/home/windriver/.ssh/known_hosts updated.
+Original contents retained as /home/windriver/.ssh/known_hosts.old
+windriver@pek-vx-achilles:~$ scp aaaa windriver@128.224.159.79:/home/windriver
+The authenticity of host '128.224.159.79 (128.224.159.79)' can't be established.
+ECDSA key fingerprint is SHA256:ldI6S2Qo46MdtW9+IRW1+d877brfsXaQLjStJ0xoVSY.
+Are you sure you want to continue connecting (yes/no)? yes
+=================================================================================
+
+[root@pek-xli3-d2 ANVL_Vx7_2021-11-29_18-12-08]# scp ExtractANVLLog.py windriver@128.224.167.194:/home/windriver
+The authenticity of host '128.224.167.194 (128.224.167.194)' can't be established.
+RSA key fingerprint is 50:df:9f:d1:cf:8f:3d:94:c1:b1:97:62:7e:85:b2:81.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '128.224.167.194' (RSA) to the list of known hosts.
+windriver@128.224.167.194's password:
+ExtractANVLLog.py 
+                                                                                                    100% 1743     1.7KB/s   00:00
+[root@pek-xli3-d2 ANVL_Vx7_2021-11-29_18-12-08]# scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes256-ctr ExtractANVLLog.py windriver@128.224.159.79:/home/windriver
+no kex alg
+lost connection
+
+pek-xli3-d2  这个server是Centos 5.9的系统
+pek-vx-achilles  这个server是刚升级的Ubuntu18.04
+
+我是需要从pek-xli3-d2上往其他server拷贝资料，自动化用，但是拷贝不过来。从Ubuntu18.04或者20.04可以拷贝到Centos。
+目前看，从低版本的Ubuntu拷贝资料到高版本的Linux系统不行。 解决方法如下:解决两个Linux机器之间ssh或者scp时候算法不一致的问题：
+
+On ANVL auto server,modify below config:, then you can use scp or scp -c
+wrsadmin@pek-vx-anvl:/home/windriver$ cd /etc/ssh
+wrsadmin@pek-vx-anvl:/etc/ssh$ diff sshd_config.bk sshd_config
+25a26,27
+> Ciphers aes256-cbc
+> KexAlgorithms diffie-hellman-group1-sha1
+then restart sshd : sudo service sshd restart
+[root@pek-xli3-d2 ~]# scp xiaozhan.txt windriver@128.224.159.79:/home/windriver
+windriver@128.224.159.79's password: 
+xiaozhan.txt                                  100%   12     0.0KB/s   00:00
+You 11:37 AM
+# Ciphers and keying
+#RekeyLimit default none
+Ciphers aes256-cbc
+KexAlgorithms diffie-hellman-group1-sha1
+
+尝试下面两个命令: 重启ssh 服务
+
+service sshd restart
+systemctl restart sshd.service
+
+or 
+systemctl start sshd”和“systemctl stop sshd”。
+
+
+从211server往ANVL server拷贝文件：
+windriver@pek-vx-anvl:~$ scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes256-cbc /opt/simics/image/28512/images/image/vxworks windriver@128.224.159.79:/home/windriver
+The authenticity of host '128.224.159.79 (128.224.159.79)' can't be established.
+ECDSA key fingerprint is SHA256:ldI6S2Qo46MdtW9+IRW1+d877brfsXaQLjStJ0xoVSY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+=====================================================================================
+import paramiko
+from paramiko import SSHClient
+import scp
+from scp import SCPClient
+import sys
+import time
+import argparse
+import os
+=============================Ubuntu20.04  FTP ============
+sudo apt-get install vsftpd
+service vsftpd status
+https://blog.csdn.net/weixin_44129041/article/details/110358196
+
+0 upgraded, 0 newly installed, 0 to remove and 30 not upgraded.
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ vi /etc/vsftpd.conf
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ sudo chmod -R 777 /etc/vsftpd.conf
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ vi /etc/vsftpd.conf
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ sudo touch /etc/allowed_users
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ sudo chmod -R 777 /etc/allowed_users
+windriver@pek-iperf-211:/opt/simics/image/28512/images/image$ vi /etc/allowed_users   
+我就改了这些
+service vsftpd restart
+=======================================================================Ubuntu 20.04 tftp=====
+
+sudo apt-get install tftp-hpa tftpd-hpa
+sudo vi /etc/default/tftpd-hpa        
+
+sudo service tftpd-hpa restart
+
+check tftp status: 
+root@pek-vx-iperf211:/home/windriver# ps -ef | grep tftp
+root       27554   23780  0 11:35 pts/0    00:00:00 vi /etc/default/tftpd-hpa
+root       29169       1  0 13:52 ?        00:00:00 /usr/sbin/in.tftpd --listen --user tftp --address :69 --secure /opt/simics/image
+=============================================================================================================
+
+在211上安装   sudo apt install openjdk-11-jdk   在Jenkins server上才能控制211这个client
+
+sudo apt-get install csh          
+==================================================================Apache  网页服务=====
+sudo apt-get install apache2
+sudo systemctl status apache2       检查是否安装成
+输入服务器 IP 地址http://YOUR_IP_OR_DOMAIN/       出现it works
+默认就去找index.html-----如果不用这个，可以修改，如果需要，也可以修改为自己的网站   
+如果有其他目录
+
+-rw-r--r-- 1 root  root  10918 12月 30 11:08 index.html.bak
+lrwxrwxrwx 1 hyan1 users    55 12月 30 10:28 log_2021_12_30_10_28_07_Q170-28514 -> /home/windriver/Logs/log_2021_12_30_10_28_07_Q170-28514/
+lrwxrwxrwx 1 hyan1 users    64 12月 30 10:48 log_2021_12_30_10_48_16_XILINX_ZCU102-28572 -> /home/windriver/Log
+
+=================================================Ubuntu20.04 添加用户
+useradd windriver -g windriver
+
+创建windriver的用户目录并修改所属用户和用户组
+passwd windriver
+New password:
+Retype new password:
+passwd: password updated successfully
+创建windriver的用户目录并修改所属用户和用户组
+root@pek-network-iperf:/home# mkdir /home/windriver && chown windriver:windriver /home/windriver
+
+将 windriver ALL=(ALL) ALL (sudo提权时需要输入windriver的密码) 
+或者 windriver ALL=(ALL) NOPASSWD:ALL (sudo提权时无需密码) 追加到 /etc/sudoers 中
+echo "windriver  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+==================================================================================
+wrsadmin@pek-vx-iperf16:~$ sudo useradd windriver
+
+wrsadmin@pek-vx-iperf16:~$ sudo passwd windriver
+New password:
+Retype new password:
+passwd: password updated successfully
+
+sudo mkdir /home/windriver
+sudo chown windriver:windriver /home/windriver
+============================================================
+修改Ubuntu上安装的Mongodb数据库
+在windows机器上安装robo3t-1.4.4-windows-x86_64-e6ac9ec5.exe  -----去官网下载，直接安装，连接即可
+找到自己需要修改的数据库，需要适当熟悉命令:
+db.getCollection('iperf_smp_1core_bl_tb').find({'board':'Q170-28512'})
+修改之前先备份数据库：需要在Ubuntu上安装Mongodb，运行下面的命令来备份
+mongodump -d iperf_baseline_db --out /buildarea1/hyan1/iPerf_data_bak/SR2103_baseline_1225
+

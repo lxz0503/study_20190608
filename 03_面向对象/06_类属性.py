@@ -20,3 +20,7 @@ print("tool2的实例属性", tool2.__dict__)   # tool2的实例属性 {'name': 
 # 使用赋值语句，类对象.类属性不会修改类属性的值
 print(tool1.count)     # 输出100
 print("%d" % Tool.count)     # 输出4
+# 动态增加一个属性  xiaozhan
+tool1.abc = 20
+print(tool1.abc)
+print(tool1.__dict__)   # {'name': '刀', 'count': 100, 'abc': 20}

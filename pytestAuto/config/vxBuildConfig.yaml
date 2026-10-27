@@ -1,0 +1,141 @@
+# vxBuild.py config file
+
+# IPNET-BASIC
+IPNET-BASIC:
+    vsb:
+        layer : [ COMPONENT_IPNET, 
+                  COMPONENT_IPNET_ROUTE, 
+                  SEC_CRYPTO,
+                  END_LIB,
+                  IPNET_DHCP_SERVER, # xiaozhan, add below layers
+                  IPNET_DHCP_RELAY,
+                  IPNET_FIREWALL,
+                  IPNET_IPSECIKE,
+                  IPNET_ROUTEPROTO,
+                  IPNET_IPSECIKE_IKE,
+                  SECURITY_MISC_SEC_CRYPTO,
+                ]
+        layer_remove : [ FEATURE_USR,
+                         DEBUG_AGENT,
+                       ]
+        extra_build_cflags : [-DIP_USE_TRADITIONAL_STRERROR,
+                              -DIPTESTENGINE,
+                             ]                       
+    vip:
+        component : [ SHELL, SHELL_INTERP_CMD, IPCOM_SHELL_CMD, DISK_UTIL, IPCOM_USE_RAM_DISK, DISK_UTIL_SHELL_CMD,
+                      HRFS, HRFS_FORMAT, RAM_DISK, IFCONFIG, ROMFS, IPTELNETS, IPNET_IFCONFIG_1,
+                      NETSMP_CMD, ERRNOS_CMD, KEYADM_CMD, USER_DATABASE, SECURITY, 
+                      IPQUEUE_CONFIG_CMD, IPSYSCTL_CMD, IPCOM_USE_TIME_CMD, IPCOM_SYSLOGD_CMD, 
+                      IPCOM_SYSLOGD_USE_LOG_FILE, IPIFCONFIG, IPIFCONFIG_CMD, IPROUTE_CMD, HOST_TBL,
+                      IPCOM_SYSVAR_CMD, IPTCP_TEST_CMD, IPARP_CMD, IPVERSION_CMD, IPD_CMD, 
+                      IPECHO_CLIENT_CMD, IPECHO_SERVER_CMD, IPSOCKTEST_CMD, IPPING_CMD, IPNET_PCAP_CMD,
+                      IPNETSTAT_CMD, DISK_UTIL_SHELL, PCAP_CMD, IPFTP_CMD, ROUTECMD, IPDHCPS, IPDHCPC,
+                      IPDHCPR, IPMCAST_PROXY_CMD, IPMCP, IP_SECURITY, IPSECCTRL_CMD, INTERNET_KEY_EXCHANGE,
+                      IPMCP_USE_IGMP, IPMCP_USE_MLD, TELNET_CLIENT, STANDALONE_SYM_TBL, DEBUG, DEBUG_KPRINTF,
+                      IPFIREWALL, IPFIREWALL_CMD, IPRADVD, IPRADVD_CMD, IPRIP, IPRIP_CTRL_CMD,
+                      IPTFTP_CLIENT_CMD, INCLUDE_IPTFTPS, IPPING6_CMD,
+                    ]
+        vxparam : 
+            # has to use "-" for each element in the list of vxparam since IFCONFIG_1 has "," inside
+            # it reports error when using [...]
+            - IFCONFIG_1='"ifname eth0","devname driver","inet driver","gateway driver"'
+            - IPCOM_TELNET_PORT='"2323"'
+            - IPRIP_IFCONFIG_1='"eth9 broadcast"'
+            - SEC_VAULT_KEY_ENCRYPTING_PW='"aaa"'
+            - NUM_FILES=1000
+            - INET_ENABLE_FORWARDING=1
+            - INET6_ENABLE_FORWARDING=1
+            - RTP_FD_NUM_MAX=100
+            - SHELL_DEFAULT_CONFIG='"INTERPRETER=,LINE_EDIT_MODE=,LINE_LENGTH=4096,STRING_FREE=manual,VXE_PATH=.;/romfs"'
+
+                  
+# V7NET-2794 - Secure Shell and User Database startup preceeds availability of KeyStore and UDB storage media
+#   board : 28500 IA with ATA disk
+V7NET-2794:
+    vsb:
+        layer : [ USER_MANAGEMENT, 
+                  IPNET_SSH, 
+                  #HRFS, FS_VRFS,        
+                ]
+    vip:
+        component : [ XBD, XBD_RAMDRV, XBD_PART_LIB, 
+                      SHELL, DISK_UTIL, DISK_UTIL_SHELL_CMD,
+                      #ROMFS, 
+                      VRFS, DOSFS, DOSFS_FMT, DOSFS_CACHE, FS_MONITOR, 
+                      \DRV_STORAGE_ATA_HOST\,
+                      IFCONFIG , IPD_CMD,
+                      USER_DATABASE, USER_MGT_SHELL_CMD, 
+                    ]
+        #romfs : [ /buildarea1/lchen3/workspace/miniKong-dev/V7NET-2794/romfs/udb,
+        #        ]
+        vxparam : [ UDB_HASH_KEY='"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F"', 
+                    UDB_STORAGE_PATH='"/ata3d/udb"',
+                    UDB_PROMPT_INITIAL_USER=TRUE,
+                  ]
+
+
+# SFTP_HIGHNUM for TSR V7SEC-1066
+SFTP_HIGHNUM:
+    vsb:
+        layer : [ IPNET_SSH, ]
+    vip:
+        component : [ DISK_UTIL, DISK_UTIL_SHELL_CMD, RAM_DISK, ROMFS, SHELL, 
+                      IFCONFIG, IPCOM_USE_RAM_DISK, 
+                      SSH, IPD_CMD, IPCOM_SYSLOG_CMD, IPCOM_SYSVAR_CMD, IPCOM_KEY_DB_CMD, ]
+        vxparam : [ SEC_VAULT_KEY_ENCRYPTING_PW='"testefefqf3fefgg"', ]
+        romfs : [ /net/pek-vx-nightly1/buildarea2/mw/notSubmmitted/TSR_V7SEC-1066/romfs/dsakeyPlain2048.pem,
+                  /net/pek-vx-nightly1/buildarea2/mw/notSubmmitted/TSR_V7SEC-1066/romfs/rsakeyPlain2048.pem,
+                  /net/pek-vx-nightly1/buildarea2/mw/notSubmmitted/TSR_V7SEC-1066/romfs/eclipse-SDK-3.0.1-linux-motif.zip,
+                ]
+                
+CLI_DEMO:
+    vsb:
+        layer : [OPENSSL, IPNET_SSH, SNMP, 
+                 WEBCLI, WEBCLI_CLI, WEBCLI_CLI_DEMO,]
+    vip:
+        component : [SHELL, ROMFS, DISK_UTIL_SHELL_CMD, WINDMANAGE_SNMP_CORE, WEBCLI_CLIDEMO,]
+        romfs : [ /buildarea1/lchen3/wassp_testcases/mw/cli/cli_Demo/romfs/auto.txt,
+                  /buildarea1/lchen3/wassp_testcases/mw/cli/cli_Demo/romfs/test.txt, ]
+        
+RTNET:
+    vsb:
+        layer : [RTNET, ]
+        layer_remove : []
+        vxmake : []             # vxprj vsb config -s -add _WRS_CONFIG_COMPONENT_%s=y
+        extra_build_cflags : [-DRTNET_SOCKTEST,]
+    vip:
+        component : [ROMFS, RTNET, RTNET_DEMO, RTNET_FIB_SHOW, RTNET_IPV4_SUPPORT, RTNET_IPV6_SUPPORT, RTNET_IP_SHOW, RTNET_LINK_SHOW, RTNET_LINK_SHOW, RTNET_MUX, RTNET_NEIGH_SHOW, RTNET_PING, RTNET_SOCK_SHOW, SHELL, SHELL_INTERP_CMD, STANDALONE_DTB]
+        component_remove : [IPNET,]
+        vx_extra_define : []    # vxprj buildmacro set EXTRA_DEFINE %s
+        vxparam : []            # [RTNET_JSON_FILE='"/romfs/conf.json"',]
+        add_file : [net/rtnet/test/socktest/tmain.c, net/rtnet/test/sock6test/tmain6.c]
+        romfs : 
+            - net/rtnet/test/rtnet/test/conf.json
+            - net/rtnet/test/rtnet/test/25002.json
+            - net/rtnet/test/rtnet/test/25003.json
+            - net/rtnet/test/rtnet/test/28525.json
+            - net/rtnet/test/rtnet/test/28526.json
+            
+RTNET_VXTEST_AF_PACKET:
+    vsb:
+        layer : [RTNET, VXTEST_BUILD]
+    vip:
+        component : [TM_RTNET_AF_PACKET_SOCK_TEST, ROMFS, RTNET_IPV6_SUPPORT, RTNET, SHELL, RTNET_LINK_SHOW, RTNET_MUX, RTNET_LINK_SHOW, RTNET_NEIGH_SHOW, RTNET_PING, RTNET_FIB_SHOW, RTNET_SOCK_SHOW, 
+RTNET_IP_SHOW, RTNET_DEMO]
+        vxparam : [RTNET_JSON_FILE='"/romfs/gei_28514.json"',]
+        romfs : 
+            - /workspace/lchen3/wassp/wassp_testcases/networking/RTNET_AF_PACKET_F10296/RT_AF_PACKET_DGRAM/gei_28514.json
+
+VIRTIO:
+    vsb:
+        layer : [GUEST_SUPPORT_VX7, ]
+        layer_remove : []
+        vxmake : []
+        extra_build_cflags : []
+    vip:
+        component : [SHELL, DEBUG_KPRINTF, IPATTACH, IPTELNETS, VIRTIO_VXB_NET, HYPERVISOR_HVIF, VXBUS_SHOW, PCI_SHOW, EDR_SHOW, VM_SHOW, EXC_SHOW, NETPOOLSHOW, PC_CONSOLE, EVDEV_LIB_KBD_SHELL_ATTACH, USB_GEN2_KEYBOARD_INIT, USB_GEN2_STORAGE_INIT, USB_XHCI_HCD, USB_XHCI_HCD_INIT, IFCONFIG, IPIFCONFIG_CMD, PING, IPPING_CMD, DISK_UTIL, DISK_UTIL_SHELL_CMD, UHCI_INIT, OHCI_INIT, EHCI, EHCI_INIT]
+        component_remove : []
+        vx_extra_define : []
+        vxparam : [DEFAULT_BOOT_LINE='"virtioNet(0,0)host:vxWorks h=128.224.154.1 e=128.224.154.96 u=intel pw=intel"',]
+
+            

@@ -3,12 +3,12 @@ from lettuce import *
 import logging
 
 
-# initialize log
+# initialize Logs
 logging.basicConfig(
     level=logging.DEBUG,
     format=' % (asctime)s % (filename)s[line:%(lineno)d] % (levelname)s % (message)s',
     datefmt=' % a, % Y-% m-% d % H: % M: % S',
-    filename=r'D:\Pycharm\test_xiaozhan\lxz_python\BDD\BddDataDrivenEng\BddDataDrivenEng.log',
+    filename=r'D:\Pycharm\test_xiaozhan\lxz_python\BDD\BddDataDrivenEng\BddDataDrivenEng.Logs',
     filemode='w'
 )
 # run before all

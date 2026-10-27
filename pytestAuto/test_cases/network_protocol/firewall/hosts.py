@@ -1,0 +1,12 @@
+#unix0= {'type': 'ipnet', 'name': '192.168.199.2', 'ip': '192.168.199.2', 'os': 'unix', 'speed' : 1 }
+#unix1= {'type': 'ipnet', 'name': '192.168.199.3', 'ip': '192.168.199.3', 'os': 'unix', 'speed' : 1 }
+#unix2= {'type': 'ipnet', 'name': '192.168.199.4', 'ip': '192.168.199.4', 'os': 'unix', 'speed' : 1 }
+#unix3= {'type': 'ipnet', 'name': '192.168.199.5', 'ip': '192.168.199.5', 'os': 'unix', 'speed' : 1 }
+#unix4= {'type': 'ipnet', 'name': '192.168.199.6', 'ip': '192.168.199.6', 'os': 'unix', 'speed' : 1 }
+#unix5= {'type': 'ipnet', 'name': '192.168.199.7', 'ip': '192.168.199.7', 'os': 'unix', 'speed' : 1 }
+#groups = {'default': (unix0,unix1,unix2,unix3,unix4,unix5)}
+vx0={'type':'ipnet', 'name':'DUT',   'ip':'192.168.130.10', 'os':'vxworks'}
+vx1={'type':'ipnet', 'name':'Node1', 'ip':'192.168.130.11', 'os':'vxworks'}
+vx2={'type':'ipnet', 'name':'Node2', 'ip':'192.168.130.12', 'os':'vxworks'}
+vx3={'type':'ipnet', 'name':'Node3', 'ip':'192.168.130.13', 'os':'vxworks'}
+groups={'default': (vx0, vx1, vx2, vx3)}

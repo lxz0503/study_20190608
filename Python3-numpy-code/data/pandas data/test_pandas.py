@@ -123,7 +123,7 @@ df1 = pd.pivot_table(df[df['出发地']=='杭州'], values=['价格'], index=['�
 print(df1)
 # page 140  缺失值，异常值，重复值的处理
 df = pd.read_csv('hz_weather.csv')
-df1 = pd.pivot_table(df,values=['最高气温'],index=['天气'],columns=['风向'])
+df1 = pd.pivot_table(df,values=['最高气温'],index=['天气.txt'],columns=['风向'])
 print(df1.isnull())
 # 使用参数axis=0来删除有缺失值的行
 print(df1.dropna(axis=0))

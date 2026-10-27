@@ -254,7 +254,7 @@ class Ssh(object):
                 break
             if i == 2:
                 print
-                "copy log timeout!"
+                "copy Logs timeout!"
                 break
 
     def transfer_folder(self, src, dst, passwd):

@@ -1,1 +1,2 @@
-select name + cat_name AS '品牌信息' from brand;
+select name + cat_name AS '品牌信息'
+from brand;

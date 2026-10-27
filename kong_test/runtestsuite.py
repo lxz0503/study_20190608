@@ -98,7 +98,7 @@ class Log:
     LEVEL_INFO  = 1
     LEVEL_ERROR = 2
     def __init__(self, level):
-        "level - Lowest level to be shown in the log, must be one of the LEVEL_XXX constants."
+        "level - Lowest level to be shown in the Logs, must be one of the LEVEL_XXX constants."
         self.level = level
 
     def __print(self, prefix, message):
@@ -960,7 +960,7 @@ class LinuxHost(Host):
                     raw_input('Press enter to continue with next configuration')
                 else:
                     os.chdir('%s/src' % icwd)
-                    shcmdvoid('rm -f log/test*')
+                    shcmdvoid('rm -f Logs/test*')
                     print '=== current dir:%s' % os.getcwd()
                     test_cmd = './iptestengine.py ' + " ".join(iptestopts)      # xiaohan  real test: ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_none
 
@@ -991,7 +991,7 @@ class LinuxHost(Host):
                     t = 1
                     for line in lines:
                         if 'A target is dead' in line:
-                            files = shcmd('ls -1 log/test*').readlines()
+                            files = shcmd('ls -1 Logs/test*').readlines()
                             if len(files) > 0:
                                 mobj.addGZipFileAttachment('iptestengine-%d-%s-%s.txt.gz' % (i, self.p['name'], suite_name), files[0].rstrip())
                             raise ConnectivityException('A target is dead')
@@ -1022,7 +1022,7 @@ class LinuxHost(Host):
                         time.sleep(60*1)
                                              
                     if f != 0:
-                        files = shcmd('ls -1 log/test*').readlines()
+                        files = shcmd('ls -1 Logs/test*').readlines()
                         if len(files) > 0:
                             mobj.addGZipFileAttachment('iptestengine-%d-%s-%s.txt.gz' % (i, self.p['name'], suite_name), files[0].rstrip())
 
@@ -2511,7 +2511,7 @@ class vxworks_target(build):
                     -e '$pathmap_dst='{dstDir} \
                     -e '$simics_path='{simicsPath} \
                     -e 'telnet-frontend -non-interactive {consolePort}' \
-                    -x {simicsPath}/{script} 2>&1 > /buildarea3/lchen3/simics5-workspace/cov.log &"""
+                    -x {simicsPath}/{script} 2>&1 > /buildarea3/lchen3/simics5-workspace/cov.Logs &"""
         
                     simicsCmd = simicsCmdTpl.format(boardIp=boardIp,
                                                     boardNum=i,
@@ -3144,7 +3144,7 @@ Usage: %s [switches] <package>
                           tftppath=the tftp path which the vxworks image will copy to
                           targets=the number of targets used for this module
                           codecoverage : indicate if it runs codecoverage
-                            note: only fsl_t1t2 supports code coverage
+                            note.txt: only fsl_t1t2 supports code coverage
                       For a simulator, path version and board are mandatory.
                       For a simics target, simicpath and imagepath are mandatory.
                       For an external target, all must be specified

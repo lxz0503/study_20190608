@@ -24,7 +24,7 @@ def get_vxTest_result(log):
 if __name__ == '__main__':
 
     parse = argparse.ArgumentParser()
-    parse.add_argument('-f', '--file', help='log file to process', dest='filename', required=True)
+    parse.add_argument('-f', '--file', help='Logs file to process', dest='filename', required=True)
     args = parse.parse_args()
   
     log = args.filename

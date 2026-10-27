@@ -20,7 +20,7 @@ import sys
 import time
 import yaml
 
-debugFlag = False # boolean to turn on/off debug log
+debugFlag = False # boolean to turn on/off debug Logs
 shcmdIndicator = '===='
 
 def shCmd(cmd, sudo=False):

@@ -156,3 +156,5 @@ counter() 或 counters() 函数 - 将计数器的值添加到元素
 # -webkit ---this is for Safari and Chrome
 -o      this is for Opera
 -moz     this is for Firefox
+
+都是先写好css文件，然后从外部导入使用-----外链式

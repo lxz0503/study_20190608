@@ -232,12 +232,12 @@ def test_KongJenkins():
                 testName, testJob, testBuild, testStatus = tasks[bsp][module][1]
                 if testName == 'test':
                     content = j.getBuildConsoleOutput(testJob, testBuild)
-                    saveFile('%s.log' % module, content)
+                    saveFile('%s.Logs' % module, content)
                     print(module, testJob, testBuild, testStatus)
                     if testStatus != 'SUCCESS':
                         retestName, retestJob, retestBuild, retestStatus = tasks[bsp][module][3]
                         content = j.getBuildConsoleOutput(testJob, testBuild)
-                        saveFile('%s-retest.log' % module, content)
+                        saveFile('%s-retest.Logs' % module, content)
                         print(module, retestJob, retestBuild, retestStatus)                    
                 print('\n')
     
@@ -251,12 +251,12 @@ def main():
             if testName == 'test':
                 content = j.getBuildConsoleOutput(testJob, testBuild)
                 print(module, testJob, testBuild, testStatus)
-                saveFile('%s.log' % module, content)
+                saveFile('%s.Logs' % module, content)
                 if testStatus != 'SUCCESS':
                     retestName, retestJob, retestBuild, retestStatus = tasks[bsp][module][3]
                     content = j.getBuildConsoleOutput(testJob, testBuild)
                     print(module, retestJob, retestBuild, retestStatus)                    
-                    saveFile('%s-retest.log' % module, content)
+                    saveFile('%s-retest.Logs' % module, content)
             print('\n')
 
    

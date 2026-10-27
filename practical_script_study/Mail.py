@@ -20,7 +20,7 @@ def SendEmail(sender, to, subject, body, mailServer='prod-webmail.corp.ad.wrs.co
     header = ('From: %s\nTo: %s\nDate: %s\nSubject: %s\n\n' % (From, To, Date, Subj))
     body = body
     text = header + body
-    server = smtplib.SMTP(mailServer)              # connect, no log-in step
+    server = smtplib.SMTP(mailServer)              # connect, no Logs-in step
     failed = server.sendmail(From, Tos, text)
     server.quit()
     if failed:                                     # smtplib may raise exceptions

@@ -19,7 +19,8 @@ print(df[0:2])    # 表示从第一行到第二行的记录。第一行默认从
 # 下面的方法更简单，把每行数据放到列表里面
 df = pd.read_excel('performance.xlsx', sheet_name='ARM')    # 默认第一行就是表头，所以没有把表头写到list
 list1 = df.values.tolist()
-print(list1)
+print('list1:',list1)
+# [['tcp_1024', 940], ['tcp_65536', 940], ['udp_1400', 955]]
 
 # 处理list的数据，写到一个文本里
 with open('xiaozhan.txt', 'w') as f:
@@ -39,7 +40,7 @@ print(df)
 # 表头在 DataFrame 中变成列索引 (column index) ，header 参数从 0 开始，比如第二行作为 header，
 # 则：df = pd.read_excel(file_name, header=1)
 
-# next you can refer to 26-pandas-yield-read-anvl-log-to-excel.py which can read data from txt file into excel
+# next you can refer to 26-pandas-yield-read-anvl-Logs-to-excel.py which can read data from txt file into excel
 
 # 取第0和第2行，第1和第3列
 # df.iloc[[0, 2], [1, 3]]

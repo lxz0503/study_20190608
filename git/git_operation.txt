@@ -21,7 +21,6 @@ Switched to a new branch 'vx7-netperf-exp'-------还可以再切换回去，执�
 
 5.	./setup-tools -site  pek====最后一步
 
- ????
 git pull origin
 ( git pull origin vx7 )
 
@@ -167,20 +166,15 @@ If you wish to set tracking information for this branch you can do so with:
 
     git branch --set-upstream-to=origin/<branch> vxtest_xiaozhan
 
-
-
 )
-
 --creat a new code review
 /folk/bcao/ccollab-client/ccollab  addgitdiffs new HEAD~1 HEAD              (reiview id 64123) 
 
 http://codereview.wrs.com                          (please use your windows password)
 
-
 ---if there are comments, after you modify the comments, then review it again  e946af6148766e13673fa723f6c83007bc42ad4d
 
 /folk/bcao/ccollab-client/ccollab addgitdiffs 64123 HEAD~1 HEAD    (after comments, run this to resubmit)
-
 
 ---------------coverity---
 
@@ -188,14 +182,11 @@ http://ctu-coverity-prod.wrs.com:8080/job/vx7_feature/
 
 buildvsb_vsbAllLayerbsp-itl_generic-llvm-VXTEST_BUILD-PROFILE_DEVELOPMENT-y-PD    (based of your bsp, this is for IA, for zcu 102,xlnx_zynqmp)
 
-
 ---------------  CI =====
 
 after the code review is done and coverity is done without warning
 
-
 http://vxjenkins.wrs.com:8080/job/vx7_CI_launcher/build?delay=0sec
-
 
 curl -F testfile=@test_case.conf http://pek-lpgtest3.wrs.com/ltaf/upload_test.php
 # find the latest commit
@@ -226,7 +217,7 @@ error: cannot lock ref 'refs/remotes/origin/xxx': unable to resolve reference re
  ----rm .git/refs/remotes/origin/xxx
 
 https://www.cnblogs.com/zyjzz/p/7653378.html
-git branch --set-upstream-to=origin/master  master     # this is for my home pc
+git branch --set-upstream-to=origin/master  master     # this is for my home pc,本地分支名字也是master
 
 https://www.cnblogs.com/zyjzz/p/7653378.html
 
@@ -263,5 +254,64 @@ git config --global credential.helper store
 git branch -u origin/master       -- set up correlation between local and remote branch
 
 git pull -r                       ----rebase local branch
-=====================================
+=====================================git基本工作流程如下======
 hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7$ git show 7f3e529        只需要跟7个字符就可以查看commit的信息
+
+$ git fetch
+$ git checkout vx7-integration
+$ git pull --rebase
+
+# create a local work branch   即本地开发分支
+$ git checkout -b <dev-branch>     本地开发分支名字
+在当前自己私有分支操作，就需要和远端关联，否则无法push，然后本地开发新的文件
+$ git push --set-upstream origin <dev-branch>    本地分支和远端建立关联，origin就是远端默认名字
+或者用 git push -u origin dev-branch   # 相当于在远端同时建立了dev-branch分支
+这样远端就多出了一个自己的私有分支
+
+==========================================================
+fatal: The current branch znn has no upstream branch.
+To push the current branch and set the remote as upstream, use
+git push --set-upstream origin znn
+
+解决方案：
+（1）直接 git push origin znn 推向制定的分支，最强暴的方法。
+（2）正如上面所说关联远程分支。
+
+git push --set-upstream origin znn
+origin 是默认的远程版本库名称
+============================================
+git merge dev分支
+======================================================
+步骤一、创建本地分支,auto_test也要在本地clone
+执行命令: git checkout -b local_auto_test auto_test  //基于远程的auto_test分支创建本地分支
+步骤二、提交本地分支
+on branch local_auto_test(在本地分支)
+
+(1) 执行命令: git add .
+
+(2) 执行命令: git commit -m '注释‘
+步骤三、Merge到远程仓库
+
+ (1) 执行命令: git checkout auto_test   //切换分支到auto_test
+
+ (2) 执行命令: git merge local_auto_test   //merge之前local_auto_test内容到本地auto_test分支，xiaozhan，这步操作，公司是在CI工具里面完成了
+
+ (3) 执行命令: git push origin auto_test   //将本地auto_test分支推送到远程服务器。
+ ========================================
+ 公司流程：
+ 1.自己拉主分支到本地，再创建私有分支，用作开发。
+ ---git clone 主分支, git checkout -b 私有分支
+ 2.本地开发完毕
+ git add 新开发文件,  git commit -m "新修改"
+ 3.推送到远端
+ git push -u origin 私有分支
+ 以上push pull都需要在私有分支上操作
+ ---------------------------------------------
+ 我们自己修改了，然后和主分支同步之后，如果允许的话，是在主分支做push操作
+这个push是不允许的-----公司流程不同，其实也可以自己本地git merge 私有分支, 然后直接git push origin 远端主分支名字
+==============================================================================================
+$ git clone git://pek-gitmirror-prod.wrs.com/vx7/vxworks.git -b vx7-integration
+$ cd vxworks
+$ ./setup-tools -site pek -set-url -guest
+
+

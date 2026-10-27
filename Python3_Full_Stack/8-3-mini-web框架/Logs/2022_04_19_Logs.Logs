@@ -1,0 +1,3 @@
+2022-04-19 13:54:07,197 - C:\Users\xli3\study\xiaozhan_git\study_20190608\Python3_Full_Stack\8-3-mini-web框架\framework.py[line:111] - INFO: req_path is /index.html
+2022-04-19 13:54:07,198 - C:\Users\xli3\study\xiaozhan_git\study_20190608\Python3_Full_Stack\8-3-mini-web框架\framework.py[line:116] - INFO: 找到了对应的路由和处理函数:/index.html
+NoneType: None

@@ -80,7 +80,7 @@ def SummaryWarning(content):
 
 def ReportWarning(buildLog):
     """ warning #, report list """
-    print '\nAnalyzing the build log: %s\n' % buildLog
+    print '\nAnalyzing the build Logs: %s\n' % buildLog
     warningNum = 0
     reportList = []
 
@@ -110,7 +110,7 @@ def ReportWarning(buildLog):
     
     
 def main():
-    with open('./test/nightlyBuild-diab-gnu.log', 'r') as fd:
+    with open('./test/nightlyBuild-diab-gnu.Logs', 'r') as fd:
         fc = fd.read()
     SummaryWarning(fc)
 
@@ -118,7 +118,7 @@ def main():
 def AnalyzeBuildMain():
     basicConfig(level=INFO)
     parser = argparse.ArgumentParser(description='Analyze Build Log')
-    parser.add_argument('--log', action='store', dest='logFile', help='specify build log file to analyze (required)')
+    parser.add_argument('--Logs', action='store', dest='logFile', help='specify build Logs file to analyze (required)')
     results = parser.parse_args()
     logFile = results.logFile
     
@@ -126,7 +126,7 @@ def AnalyzeBuildMain():
         parser.print_help()
         exit(1)
     if not os.path.exists(logFile):
-        error('cannot find log file')
+        error('cannot find Logs file')
         exit(1)
         
     with open(logFile, 'r') as fd:

@@ -1,0 +1,23 @@
+Search_Data:    # it is a dictionary, key: value
+  search_test_001:
+    value: 456
+    expect: [4,5,6]
+
+  search_test_002:
+    value: 'hello'
+    expect: {'value':'beijing'}
+
+  search_test_003:   # below is a list
+    - data1
+    - data2
+
+  search_test_004: &imp
+    value: 456
+
+  search_test_005:
+    <<: *imp
+
+
+
+
+

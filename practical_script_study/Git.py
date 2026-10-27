@@ -12,7 +12,7 @@ class Git(object):
             print '%s not exist' % gitDir
             sys.exit(1)
         else:
-            output = getoutput('cd %s; git log -1 HEAD' % gitDir)
+            output = getoutput('cd %s; git Logs -1 HEAD' % gitDir)
             if output.find('Not a git repository') != -1:
                 print '%s is not a git repository' % gitDir
                 sys.exit(2)
@@ -34,7 +34,7 @@ class Git(object):
                       
     def CurrentCommitId(self):
         os.chdir(self.gitDir)
-        result = getoutput('git log -1 HEAD')
+        result = getoutput('git Logs -1 HEAD')
         os.chdir(self.prevDir)
         cmts = result.split(os.linesep)
         return cmts[0][7:].strip()
@@ -43,7 +43,7 @@ class Git(object):
     def CommitInfo(self, commitId):
         """ return: login, author, email, date, result """
         os.chdir(self.gitDir)
-        result = getoutput('git log -1 %s' % commitId)
+        result = getoutput('git Logs -1 %s' % commitId)
         os.chdir(self.prevDir)
         if result.find('fatal: ') != -1:
             return ()
@@ -94,7 +94,7 @@ class Git(object):
     def GetAllCommitIds(self):
         rets = []
         os.chdir(self.gitDir)
-        result = getoutput('git log')
+        result = getoutput('git Logs')
         os.chdir(self.prevDir)
         for line in result.split('\n'):
             if line.startswith('commit '):
@@ -106,7 +106,7 @@ class Git(object):
     def GetCommitIds(self, numDayAgo):
         rets = []
         os.chdir(self.gitDir)
-        result = getoutput('git log --since=\"%s days ago\"' % numDayAgo)
+        result = getoutput('git Logs --since=\"%s days ago\"' % numDayAgo)
         os.chdir(self.prevDir)
         for line in result.split('\n'):
             if line.startswith('commit '):
@@ -117,7 +117,7 @@ class Git(object):
                         
     def GetAuthors(self, oldCommitId, newCommitId):
         """ return a list of (author, authorEmail) between 2 commits 
-        ISSUE: git log old..new --format=xx Has problem when there is a Merge between old and new commits
+        ISSUE: git Logs old..new --format=xx Has problem when there is a Merge between old and new commits
         """
         if oldCommitId == newCommitId:
             (_, author, email, _, _, _) = self.CommitInfo(newCommitId)

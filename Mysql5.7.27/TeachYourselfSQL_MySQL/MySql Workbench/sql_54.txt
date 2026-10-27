@@ -1,0 +1,25 @@
+use dd;
+drop table if exists  `salaries` ;
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` float(11,3) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+INSERT INTO salaries VALUES(10001,85097,'2001-06-22','2002-06-22');
+INSERT INTO salaries VALUES(10001,88958,'2002-06-22','9999-01-01');
+INSERT INTO salaries VALUES(10002,72527,'2001-08-02','9999-01-01');
+INSERT INTO salaries VALUES(10003,43699,'2000-12-01','2001-12-01');
+INSERT INTO salaries VALUES(10003,43311,'2001-12-01','9999-01-01');
+INSERT INTO salaries VALUES(10004,70698,'2000-11-27','2001-11-27');
+INSERT INTO salaries VALUES(10004,74057,'2001-11-27','9999-01-01');
+=====================================================================
+查找排除最大、最小salary之后的当前(to_date = '9999-01-01' )员工的平均工资avg_salary
+分析:求平均数，调用函数avg()
+排除最大和最小值，用两个子查询，分别调用max()和min()，同时考察not in 还有where字句中多个条件的连接--这里是and
+select avg(salary) as avg_salary
+from salaries
+where salary not in (select max(salary) from salaries where to_date = '9999-01-01')  ---子查询里面必须加入where 限制日期，没明白
+and salary not in (select min(salary) from salaries where to_date = '9999-01-01')
+and to_date = '9999-01-01';

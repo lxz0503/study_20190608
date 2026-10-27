@@ -1,0 +1,72 @@
+-----
+df.head(10)
+-----
+df.set_index("学校名称",inplace= True)
+-----
+df.size
+-----
+df.sort_values(by='总分', ascending=True).head(20)
+-----
+df.nlargest(10, '高端人才得分')
+-----
+df.iloc[:,3:].idxmax()
+-----
+df.总分.mean()
+-----
+df.总分.median()
+-----
+df.总分.mode()
+-----
+df.agg({
+        "总分": ["min", "max", "median", "mean"],
+        "高端人才得分": ["min", "max", "median", "mean"],
+        "办学层次得分":["min", "max", "median", "mean"]})
+-----
+df.describe().round(2).T
+-----
+df.groupby("省市")['总分'].mean()
+-----
+df.corr() 
+-----
+### 方法一 ###
+
+df.corr().style.background_gradient(cmap='coolwarm').set_precision(2)
+
+### 方法二 ###
+
+借助 `matplotlib` 和 `seaborn` 
+
+其中中文设置可以参考我的这篇文章 https://mp.weixin.qq.com/s/WKOGvQP-6QUAP00ZXjhweg
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize = (9,6),dpi=100)
+sns.set(font='Songti SC')
+sns.heatmap(df.corr().round(2),annot=True,cmap='RdBu')
+plt.show()
+-----
+df.省市.value_counts()
+-----
+from pyecharts import options as opts
+from pyecharts.charts import Map
+list1 = list(pd.DataFrame(df.省市.value_counts()).index)
+list2 = list(pd.DataFrame(df.省市.value_counts()).省市)
+
+
+c = (
+    Map()
+    .add('', [list(z) for z in zip(list1,list2)], "china",is_map_symbol_show=False)
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title="排名前100高校各省市占比"),
+        visualmap_opts=opts.VisualMapOpts(max_=20),
+       
+
+    )
+)
+c.render_notebook()
+-----
+import seaborn as sns
+sns.set(font='Songti SC')
+sns.distplot(df['总分'])
+-----

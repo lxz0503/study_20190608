@@ -11,7 +11,7 @@ if __name__ == "__main__":
     print m.group(1)
     print m.group(2)"""
     
-    """fp=open("putty_ipv6_host.log",'r')
+    """fp=open("putty_ipv6_host.Logs",'r')
     
     pass_list=[]
     fail_list=[]
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     output2=process.read()
     process.close()
 
-    fp_pass = open("test_pass.log",'w')
+    fp_pass = open("test_pass.Logs",'w')
     fp_pass.write(output1)
     fp_pass.write("\nThe passed case number is:")
     fp_pass.write(output2)
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     output2=process.read()
     process.close()
 
-    fp_fail=open("test_fail.log",'w')
+    fp_fail=open("test_fail.Logs",'w')
     fp_fail.write(output1)
     fp_fail.write("\nThe failed case number is:")
     fp_fail.write(output2)
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     output2=process.read()
     process.close()
    
-    fp_inclusive=open("test_inclusive.log",'w')
+    fp_inclusive=open("test_inclusive.Logs",'w')
     fp_inclusive.write(output1)
     fp_inclusive.write("\nThe INCLUSIVE case number is:")
     fp_inclusive.write(output2)

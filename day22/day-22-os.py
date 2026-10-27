@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 import os
-
 path_test = r'day22-time.py'
 print(os.path.basename('/root/runoob.txt'))         # 返回文件名 runoob.txt
 print(os.path.dirname('/root/abc/runoob.txt'))          # 返回目录路径 /root/abc
-print(os.path.split('/root/a/b/runoob.txt'))             # 分割文件名与路径 ('/root', 'runoob.txt')
+print(os.path.split('/root/a/b/runoob.txt'))             # 分割文件名与路径 ('/root/a/b', 'runoob.txt')
 print(os.path.join('root', 'test', 'runoob.txt'))    # 将目录和文件名合成一个路径root\test\runoob.txt
 print(os.path.isfile(path_test))    # True
 
@@ -12,6 +11,7 @@ print(os.getcwd())     # D:\xiaozhan_git\study_20190608\day22
 print(os.path.dirname(os.path.realpath(__file__)))   # F:\xiaozhan_git\study_20190608\day22
 print(os.path.dirname(os.path.abspath(__file__)))   # F:\xiaozhan_git\study_20190608\day22
 print(os.path.realpath(__file__))    # F:\xiaozhan_git\study_20190608\day22\day-22-os.py
+print(os.path.abspath(__file__))      # C:\Users\xli3\study\xiaozhan_git\study_20190608\day22\day-22-os.py
 
 # os.chdir()   os.system()   os.popen().read()
 # os.mkdir()    os.remove()

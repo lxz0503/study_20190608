@@ -1,0 +1,8 @@
+2022-05-06 14:12:24,834 - C:/Users/xli3/study/xiaozhan_git/study_20190608/Python3_Full_Stack/8-3-mini-web框架/framework.py[line:112] - INFO: req_path is /index.html
+NoneType: None
+2022-05-06 14:12:24,834 - C:/Users/xli3/study/xiaozhan_git/study_20190608/Python3_Full_Stack/8-3-mini-web框架/framework.py[line:117] - INFO: 找到了对应的路由和处理函数:/index.html
+NoneType: None
+2022-05-06 14:15:01,500 - C:/Users/xli3/study/xiaozhan_git/study_20190608/Python3_Full_Stack/8-3-mini-web框架/framework.py[line:112] - INFO: req_path is /index.html
+NoneType: None
+2022-05-06 14:15:01,500 - C:/Users/xli3/study/xiaozhan_git/study_20190608/Python3_Full_Stack/8-3-mini-web框架/framework.py[line:117] - INFO: 找到了对应的路由和处理函数:/index.html
+NoneType: None

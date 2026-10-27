@@ -8,31 +8,34 @@ import random
 import string
 import qrcode
 from PIL import Image
+
 # pip3 install pillow    this is to install Pillow if pycharm can not install it
 
 randstr = []
 number = '1234567890'
 letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+
+
 # randfir = ''
 # root = tkinter.Tk()
 
-def mk_dir(file_path):   # create dir
+def mk_dir(file_path):  # create dir
     if not os.path.exists(file_path):
         os.mkdir(file_path)
 
 
-def openfile(filename):    # open file and read content
+def openfile(filename):  # open file and read content
     with open(filename) as f:
         r = f.read()
     return r
 
 
 def inputbox(showstr, showorder, length):
-    instr = input(showstr)      # showstr is the indication of input information
+    instr = input(showstr)  # showstr is the indication of input information
     if len(instr) != 0:
         # 1：要求输入数字，不限位数； 2：字母；  3：数字且有位数要求
         if showorder == 1:
-            if str.isdigit(instr):    # 判断输入是否是数字
+            if str.isdigit(instr):  # 判断输入是否是数字
                 if instr == '0':
                     print('\033[1;31;40m 输入为0，请重新输入！\033[0m')
                     return '0'  # why
@@ -42,8 +45,8 @@ def inputbox(showstr, showorder, length):
                 print('\033[1;31;40m 输入非法，请重新输入！\033[0m')
                 return '0'
 
-        if showorder == 2:   # 输入是字母且指定长度
-            if str.isalpha(instr):    # 判断输入是否是字母, 字母位数由length决定
+        if showorder == 2:  # 输入是字母且指定长度
+            if str.isalpha(instr):  # 判断输入是否是字母, 字母位数由length决定
                 if len(instr) != length:
                     print('\033[1;31;40m必须输入' + str(length) + '个字母,请重新输入！\033[0m')
                     return '0'
@@ -53,7 +56,7 @@ def inputbox(showstr, showorder, length):
                 print('\033[1;31;40m 输入非法，请重新输入！\033[0m')
                 return '0'
 
-        if showorder == 3:   # 输入数字且指定位数
+        if showorder == 3:  # 输入数字且指定位数
             if str.isdigit(instr):
                 if len(instr) != length:
                     print('\033[1;31;40m必须输入' + str(length) + '个数字,请重新输入！\033[0m')
@@ -66,7 +69,8 @@ def inputbox(showstr, showorder, length):
 
     else:
         print('\033[1;31;40m输入为空，请重新输入！\033[0m')
-        return '0'     # why
+        return '0'  # why
+
 
 # 保存防伪码，打印输出
 def wfile(sstr, sfile, typeis, smsg, datapath):
@@ -74,7 +78,7 @@ def wfile(sstr, sfile, typeis, smsg, datapath):
     mk_dir(datapath)
     datafile = datapath + '/' + sfile
     with open(datafile, 'w') as f:
-        wrlist = sstr    # 传过来的参数是一个列表
+        wrlist = sstr  # 传过来的参数是一个列表
         pdata = ''
         wdata = ''
         for i in range(len(wrlist)):
@@ -90,7 +94,7 @@ def wfile(sstr, sfile, typeis, smsg, datapath):
         root.withdraw()
 
 
-def scode1(choice):    # 生成6位防伪码
+def scode1(choice):  # 生成6位防伪码
     incount = inputbox('\033[1;32m  请输入要生成的防伪码数量：\033[0m', 1, 0)
     while int(incount) == 0:
         incount = inputbox('\033[1;32m  请输入要生成的防伪码数量：\033[0m', 1, 0)
@@ -105,7 +109,7 @@ def scode1(choice):    # 生成6位防伪码
     wfile(randstr, 'scode' + str(choice) + '.txt', '', '生成6位防伪码共计：', 'codepath')
 
 
-def scode2(choice):    # 生成多个产品系列的9位防伪码
+def scode2(choice):  # 生成多个产品系列的9位防伪码
     ordstart = inputbox('\033[1;32m 请输入产品系列号（3位数字）：\033[0m', 3, 3)
     while int(ordstart) == 0:
         ordstart = inputbox('\033[1;32m 请输入产品系列号（3位数字）：\033[0m', 3, 3)
@@ -116,8 +120,8 @@ def scode2(choice):    # 生成多个产品系列的9位防伪码
     while int(incount) == 0:
         incount = inputbox('\033[1;32m 请输入每个系列的产品的防伪码数量：\033[0m', 1, 0)
     randstr.clear()
-    for m in range(int(ordcount)):      # 有多少个系列产品
-        for j in range(int(incount)):   # 每个系列产品有多少防伪码
+    for m in range(int(ordcount)):  # 有多少个系列产品
+        for j in range(int(incount)):  # 每个系列产品有多少防伪码
             randfir = ''
             for i in range(6):
                 randfir = randfir + random.choice(number)  # 每次生成一个随机数
@@ -133,15 +137,15 @@ def scode3(choice):  # 生成25位产品防伪序列码
     for j in range(int(incount)):
         strone = ''
         for i in range(25):
-            strone = strone + random.choice(letter)   # strone是25位字母
+            strone = strone + random.choice(letter)  # strone是25位字母
         strtwo = strone[:5] + '-' + strone[5:10] + '-' + strone[10:15] + '-' + \
-                     strone[15:20] + '-' + strone[20:25] + '\n'
+                 strone[15:20] + '-' + strone[20:25] + '\n'
         randstr.append(strtwo)
 
     wfile(randstr, 'scode' + str(choice) + '.txt', '', '25位防伪序列码：', 'codepath')
 
 
-def scode4(choice):   # 9位防伪码中间插入3个字母
+def scode4(choice):  # 9位防伪码中间插入3个字母
     intype = inputbox('\033[1;32m  请输入数据分析编号（3位字母）： \033[0m', 2, 3)
     while not str.isalpha(intype) or len(intype) != 3:
         intype = inputbox('\033[1;32m  请输入数据分析编号（3位字母）： \033[0m', 2, 3)
@@ -150,6 +154,7 @@ def scode4(choice):   # 9位防伪码中间插入3个字母
         incount = inputbox('\033[1;32m  输入带数据分析的防伪码数量：\033[0m', 1, 0)
     ffcode(incount, intype, 'no', choice)
 
+
 # 将数据分析码随机插入到9位防伪码中
 def ffcode(scount, typestr, ismessage, choice):
     randstr.clear()
@@ -157,18 +162,19 @@ def ffcode(scount, typestr, ismessage, choice):
         strpro = typestr[0].upper()
         strtype = typestr[1].upper()
         strclass = typestr[2].upper()
-        randfir = random.sample(number, 3)   # 随机抽取3个位置,返回一个list
+        randfir = random.sample(number, 3)  # 随机抽取3个位置,返回一个list
         randsec = sorted(randfir)
         letterone = ''
         for i in range(9):
             letterone = letterone + random.choice(number)
-        # 将3个字母按照randsec中存储的位置值添加到9位数字防伪码中,切片原理，自己画一下草图就知道了
+            # 将3个字母按照randsec中存储的位置值添加到9位数字防伪码中,切片原理，自己画一下草图就知道了
             sim = str(letterone[0:int(randsec[0])]) + strpro + \
-              str(letterone[int(randsec[0]):int(randsec[1])]) + strtype + \
-              str(letterone[int(randsec[1]): int(randsec[2])]) + strclass + \
-              str(letterone[int(randsec[2]):]) + '\n'
+                  str(letterone[int(randsec[0]):int(randsec[1])]) + strtype + \
+                  str(letterone[int(randsec[1]): int(randsec[2])]) + strclass + \
+                  str(letterone[int(randsec[2]):]) + '\n'
         randstr.append(sim)
     wfile(randstr, typestr + 'scode' + str(choice) + '.txt', ismessage, '生成含数据分析功能的防伪码：', 'codepath')
+
 
 # 自动生成多个产品系列，是scode4的扩展
 def scode5(choice):
@@ -182,13 +188,13 @@ def scode5(choice):
             ffcode(codeb, codea, 'no', choice)
 
 
-def scode6():   # https://www.cnblogs.com/bjwu/p/9038910.html
+def scode6():  # https://www.cnblogs.com/bjwu/p/9038910.html
     with open('test.txt') as f:
         r = f.read().split('\n')
         r.remove('')  # 删除列表中的空行
     strset = r[0]
     print(strset)
-    remove_digits = str.maketrans('', '', string.digits)   # 删除字符串中的数字
+    remove_digits = str.maketrans('', '', string.digits)  # 删除字符串中的数字
     res_letter = strset.translate(remove_digits)
     print(res_letter)
 
@@ -198,7 +204,7 @@ def scode6():   # https://www.cnblogs.com/bjwu/p/9038910.html
     print(num_letter)
 
 
-def scode8(choice):    # 生成QR二维码链接图片
+def scode8(choice):  # 生成QR二维码链接图片
     incount = inputbox('\033[1;32m 请输入要生成的12位数字二维码数量：\033[0m', 1, 0)
     while incount == 0:
         incount = inputbox('\033[1;32m 请输入要生成的12位数字二维码数量：\033[0m', 1, 0)
@@ -213,7 +219,8 @@ def scode8(choice):    # 生成QR二维码链接图片
         encoder = qrcode.make(url_qr)
         encoder.save('qrcode/' + strone + '.png')
 
-def scode9():    # 粉丝抽奖
+
+def scode9():  # 粉丝抽奖
     with open('lottery.ini') as f:
         r = f.read().split('\n')
     incount = inputbox('\033[1;32m   请输入要生成的抽奖数量：\033[0m', 1, 0)
@@ -230,4 +237,3 @@ def scode9():    # 粉丝抽奖
 
 if __name__ == '__main__':
     scode9()
-

@@ -1,0 +1,6 @@
+2019-05-22 14:24:09,164 [Thread-6:3624 prototype] [BangSo.log:10 prototype] [views:create_log] [ERROR]- Something went wrong!
+2019-05-22 14:24:09,175 [MainThread:11236 prototype] [BangSo.log:10 prototype] [views:create_log] [ERROR]- Something went wrong!
+2019-05-22 14:31:55,203 [Thread-8:13720 prototype] [BangSo.log:14 prototype] [views:get] [ERROR]- Something went wrong!
+2019-05-30 15:03:49,806 [ThreadPoolExecutor-0_0:8252 prototype] [log.log:16 prototype] [views:get] [ERROR]- Something went wrong!
+2019-05-30 15:04:02,828 [ThreadPoolExecutor-0_2:17520 prototype] [log.log:16 prototype] [views:get] [ERROR]- Something went wrong!
+2019-05-30 15:04:10,907 [ThreadPoolExecutor-0_6:8148 prototype] [log.log:16 prototype] [views:get] [ERROR]- Something went wrong!

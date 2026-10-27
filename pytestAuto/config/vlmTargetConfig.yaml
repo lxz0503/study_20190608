@@ -1,0 +1,48 @@
+# vlmTarget.py config file
+
+fsl_imx6_common_config: &fsl_imx6_common_config
+    bootLoader     : uboot
+    autoBootFlag   : 'Hit any key to stop autoboot:'
+    bootPrompt     : 'U-Boot > '
+    osPrompt       : '-> '
+    netDriver      : 'enet(0,0)'
+    imageStartAddr : '0x15000000'
+    dtbStartAddr   : '0x14000000'
+
+fsl_imx6_common_config2: &fsl_imx6_common_config2
+    <<: *fsl_imx6_common_config
+    bootPrompt     : '=>'
+
+vxboot_common_config: &vxboot_common_config
+    bootLoader     : vxboot
+    autoBootFlag   : 'Press any key to stop auto-boot...'
+    bootPrompt     : 'VxWorks Boot]:'   # note the string of "[VxWorks Boot]:" not work
+    osPrompt       : '-> '
+    netDriver      : 'gei(0,0)'
+    imageStartAddr : ~
+    dtbStartAddr   : ~
+
+vxboot_common_config2: &vxboot_common_config2
+    <<: *vxboot_common_config
+    netDriver      : 'gei(2,0)'
+    
+
+# fsl_imx6
+# BeijingCertPlat zone
+'21896' : *fsl_imx6_common_config
+'22478' : *fsl_imx6_common_config
+'22479' : *fsl_imx6_common_config
+# ChengduCertPlat zone
+'25018' : *fsl_imx6_common_config2
+# BeijingVxNwkPerfTest zone
+'25002' : *fsl_imx6_common_config2
+'25003' : *fsl_imx6_common_config2
+
+# itl_generic
+# BeijingVxNwkPerfTest zone
+'28525' : *vxboot_common_config
+'28526' : *vxboot_common_config
+'28527' : *vxboot_common_config
+'28514' : *vxboot_common_config2
+# BejingVxWorksNetworkingDev zone
+'25096' : *vxboot_common_config

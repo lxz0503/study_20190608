@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2017/11/3 13:08
 # @Author  : Fairy Huang
-# @File    : main.py
+# @File    : run.py
 
 from scrapy.cmdline import execute
 

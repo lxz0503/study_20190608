@@ -1,1 +1,2 @@
-SELECT goods_id,goods_name,market_price FROM goods;
+SELECT goods_id,goods_name,market_price
+FROM goods;

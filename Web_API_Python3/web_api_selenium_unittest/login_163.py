@@ -1,4 +1,4 @@
-#this is a test to log in 163 mail box
+#this is a test to Logs in 163 mail box
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 

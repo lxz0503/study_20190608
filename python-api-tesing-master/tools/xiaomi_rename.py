@@ -66,7 +66,7 @@ types = {
     "verify": {
         'name': 'verify',
         'process': 'sample_verify',        
-        'cmd':"nohup ./run -r output/i_enroll.txt output/i_real.txt > verify.log 2>&1 &",
+        'cmd':"nohup ./run -r output/i_enroll.txt output/i_real.txt > verify.Logs 2>&1 &",
         'vivo-verify-100':'/home/andrew/code/data/tof/base_test_data/vivo-verify-100',
         'vivo-verify-452':'/home/andrew/code/data/tof/base_test_data/vivo-verify-452',      
         'vivo-verify-611':'/home/andrew/code/data/tof/base_test_data/vivo-verify-611',
@@ -79,7 +79,7 @@ types = {
         'name': 'gaze_mn',
         'process': 'sample_gaze_mn',        
         'flag':'/gaze/',
-        'cmd':"nohup ./run -f output/files.txt > gaze.log 2>&1 &",
+        'cmd':"nohup ./run -f output/files.txt > gaze.Logs 2>&1 &",
         #'base':'/home/andrew/code/data/tof/base_test_data/vivo-gaze/20180418_a.m.-gaze',
         'base':'/home/andrew/code/data/tof/base_test_data/vivo-gaze',
         'little':'/home/andrew/code/data/tof/little_test_data/little_gaze', 
@@ -94,7 +94,7 @@ types = {
         'name': 'liveness',
         'process': 'sample_liveness',
         'flag':'photo/',
-        'cmd': "nohup ./run -l output/files.txt > live.log 2>&1 & ",
+        'cmd': "nohup ./run -l output/files.txt > live.Logs 2>&1 & ",
         'bug':"/home/andrew/code/data/tof/bug/liveness",
         'base':'/home/andrew/code/data/tof/base_test_data/vivo-liveness',
         'batch1.7.5':'/home/andrew/code/data/tof/vivo3D_batch_test/liveness_batch/demo_1.7.5_test',
@@ -108,7 +108,7 @@ types = {
         'name': 'detect',
         'process': 'sample_align',
         'flag':'/little_photo/',
-        'cmd':"nohup ./run -m output/files.txt > landmark.log 2>&1 &",
+        'cmd':"nohup ./run -m output/files.txt > landmark.Logs 2>&1 &",
         },
 }
 

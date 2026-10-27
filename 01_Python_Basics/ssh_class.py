@@ -16,7 +16,7 @@ class SshTest(object):
         try:
             s = pxssh.pxssh(timeout=60*60)
             s.login(server=self.host_name, username=self.user_name, password=self.password)
-            #f = open("logfile.txt",'w')  # record test log to a file,if run in py3, it should be wb.
+            #f = open("logfile.txt",'w')  # record test Logs to a file,if run in py3, it should be wb.
             #s.logfile = f   
             s.logfile = sys.stdout    
             self.s = s     # 
@@ -45,7 +45,7 @@ class SshTest(object):
         self.s.prompt()
 
     def run_script(self, ip, port):
-        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
+        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.Logs' % (ip, port))
         self.s.prompt()
         res = self.s.before
         print(res)

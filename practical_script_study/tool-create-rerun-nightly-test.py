@@ -32,7 +32,7 @@ def createRerunScript(scriptName, nightlyRecords, gitPath):
         for mod in modTests:
             if mod in needLockMods:
                 fd.write('sudo rm -f /tmp/wrtool_lock' + os.linesep)
-            cmd = './runKong.sh buildTest -g %s -m %s -c %s 2>&1 | tee %s.log' % (gitPath, mod, ','.join(modTests[mod]), mod)
+            cmd = './runKong.sh buildTest -g %s -m %s -c %s 2>&1 | tee %s.Logs' % (gitPath, mod, ','.join(modTests[mod]), mod)
             fd.write(cmd + os.linesep)
             if mod in needLockMods:
                 fd.write('sudo rm -f /tmp/wrtool_lock' + os.linesep*2)

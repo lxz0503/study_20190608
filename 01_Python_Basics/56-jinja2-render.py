@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
-# jinja2可以用来自动修改一个html的模版
+# jinja2可以用来自动修改一个html的模版,下面的例子是针对渲染一个字典，其它类型自己写例子
 import os
 import jinja2
 

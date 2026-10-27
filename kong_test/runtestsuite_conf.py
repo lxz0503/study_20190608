@@ -11,7 +11,7 @@
 #
 #modification history
 #--------------------
-#20may20,ply add firewall log testcase (VXWEXEC-50388)
+#20may20,ply add firewall Logs testcase (VXWEXEC-50388)
 #09apr20,yyl add dynamic helix config for ZCU102 (VXWEXEC-48814)
 #18mar20,rza add SNMP_AGENTX for snmp case
 #03mar20,yyl add to support directly connected boards (VXWEXEC-47902)

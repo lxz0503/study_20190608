@@ -1,0 +1,42 @@
+use dd;
+drop table if exists passing_number;
+CREATE TABLE `passing_number` (
+`id` int(4) NOT NULL,
+`number` int(4) NOT NULL,
+PRIMARY KEY (`id`));
+
+INSERT INTO passing_number VALUES
+(1,4),  --第1行表示id为1的用户通过了4个题目;
+(2,3),
+(3,3),
+(4,2),
+(6,4),  --第6行表示id为6的用户通过了4个题目;
+(5,5);
+==================================================
+请你根据上表，输出通过的题目的排名，通过题目个数相同的，排名相同，此时按照id升序排列
+
+SELECT id,number
+FROM dd.passing_number
+order by number desc;
+=============================
+使用窗口函数
+    row_number() 是没有重复值的排序(即使两个记录相等也是不重复的)，可以利用它来实现分页，如1,2,3,4
+    dense_rank() 是连续排序，两个第二名仍然跟着第三名，如1,2,2,3
+    rank()       是跳跃排序，两个第二名下来就是第四名，如1,2,2,4
+
+select id,number,dense_rank() over(order by number desc) as t_rank
+from passing_number
+order by t_rank,id;
+
+或者：
+使用mysql8.0(我强烈要求升级的mysql8.0，以便大家使用窗口函数)或者sqlite自带的dense_rank()函数，
+由于rank是mysql8.0的关键字，所以不能直接使用rank，要用" ` "号包裹，或者使用t_rank
+
+SELECT
+    id,number,
+    dense_rank ( ) over ( ORDER BY number DESC ) `rank`
+FROM
+    passing_number
+ORDER BY
+    `rank`,
+    id

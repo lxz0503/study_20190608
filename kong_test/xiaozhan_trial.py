@@ -134,7 +134,7 @@ if __name__ == '__main__':
     import optparse,sys
     p = optparse.OptionParser()
     p.add_option('-b', '--break-on-error', dest = 'break_on_fail', action="store_true", default = False, help = '''Exit the test script as soon as there is an error. Otherwise, remaining tests will be run anyways but a report in the end will show the number of failures''')
-    p.add_option('-v', '--verbose', action="store_true", default = False, help = 'Everything that would have been written to the log is printed to screen')
+    p.add_option('-v', '--verbose', action="store_true", default = False, help = 'Everything that would have been written to the Logs is printed to screen')
     #p.add_option('-q', '--quiet',  help = 'Be more quiet')
     quiet = True
     p.add_option('-l', '--list', dest = 'list_prods', action="store_true", default = False, help = 'List available tests. Combine with -v to see descriptions. Add -t prodname[.modulename[.testname]] to list specific products and their tests.')
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     p.add_option('-4', '--only-ipv4', dest = 'test_v6', action="store_false", default = True, help = 'Only run IPv4 versions of tests.')
     p.add_option('-6', '--only-ipv6', dest = 'test_v4', action="store_false", default = True, help = 'Only run IPv6 versions of tests.')
     p.add_option('-f', '--fast', action="store_true", default = False, help = 'Tests with support for this flag will not be run as thoroughly. This also skips process accounting.')
-    p.add_option('-d', '--dry-run', action="store_true", default = False, help = "Don't actually do anything, just log what would've been done to screen. This is only useful sometimes when debugging the test engine. The output looks similar to the old tcl expect engine.")
+    p.add_option('-d', '--dry-run', action="store_true", default = False, help = "Don't actually do anything, just Logs what would've been done to screen. This is only useful sometimes when debugging the test engine. The output looks similar to the old tcl expect engine.")
     p.add_option('-t', '--test', dest = 'what_to_test', default = None, help = 'Run the tests found in product TEST. TEST is chosen as either by its fully qualified name or a set of tests. E.g: ipnet or ipnet.tcp or ipnet.tcp.accept. TEST can also be a comma-separated list without whitespace, e.g.: ipnet.icmp.echo,ipnet.arp (mixing single and sets of tests is ok).')
 
     args = sys.argv[1:]

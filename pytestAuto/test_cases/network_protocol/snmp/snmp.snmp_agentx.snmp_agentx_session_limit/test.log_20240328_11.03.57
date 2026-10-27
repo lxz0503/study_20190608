@@ -1,0 +1,883 @@
+Begin log at GMT: (Thu Mar 28 03:03:57 2024), Localtime: (Thu Mar 28 11:03:57 2024)
+Following timestamps are GMT
+------------------------------ Login to targets ------------------------------
+Logging in to "linux", ip: 192.168.198.8
+Logging in to "linux", ip: 192.168.198.9
+Logging in to "linux", ip: 192.168.198.10
+Logging in to "192.168.198.2", ip: 192.168.198.2
+
+192.168.198.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.198.2_XunXiqX
+
+192.168.198.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:268 mcast:3 errors:0 dropped:0
+	TX packets:273 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:21583 (21 k)  TX bytes:21943 (21 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c6:02
+	inet 192.168.198.2  mask 255.255.255.0  broadcast 192.168.198.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c602%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:46 mcast:0 errors:0 dropped:0
+	TX packets:40 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:2993  TX bytes:5326
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>keyadm flush
+Cmd: 'keyadm' not found.
+192.168.198.2_XunXiqX
+
+192.168.198.2>ipversion
+@(#) IPCOM - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPNET router advertisement daemon - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTCP - Copyright 2006-2014 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTELNETS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPRADIUS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPS - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPSSH - Copyright 2006-2017 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPTFTPC - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+@(#) IPFTPC - Copyright 2006-2013 Wind River (http://www.windriver.com). All rights reserved.
+192.168.198.2_XunXiqX
+
+192.168.198.2>ping
+
+NAME
+     ping - send ICMPv4 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping [-silent] [-ADbnrx] [-I ifname] [-S src_addr] [-T tsonly|tsandaddr|tsprespec]
+          [-Q tos] [-V vr] [-c count] [-s packetsize] [-t ttl] [-w ms] host
+
+DESCRIPTION
+     ping uses the ICMPv4 protocol's mandatory ECHO_REQUEST datagram to
+     elicit an ECHO_REPLY from a host or gateway.
+
+     -A      Add router alert option to each sent ping request.
+     -b      Allow pinging a broadcast address.
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -D      Set the DF (don't fragment) flag on each sent ping request.
+     -F      Do not allow local fragmentation of packets.
+     -I ifname
+             Specify outgoing interface.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tos  Specify the Type of Service field in the IPv4 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -R      Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST
+             packet. IPNET will discard ECHO_REQUEST that contains RECORD_ROUTE
+             Note2: the record route IP option cannot hold more than 9 hops.
+             Many nodes ignore or discard this option.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -N addr Specifies the IP-address of the first hop.
+     -t ttl  Use the specified time-to-live.
+     -T timestamp options
+             Include IP timestamp option. timestamp can be tsonly (only timestamp)
+             tsandaddr (address and timestamp) or
+             tsprespec host1 [host2 [host3 [host4]]] (timestamp specific hops)
+     -x      Send a ICMP timestamp request instead of a ECHO request.
+     -V vr   Specify virtual router. 0 if not specified.
+     -w timeout in milliseconds, default is 1000 ms.
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>ping6
+
+NAME
+     ping6 - send ICMPv6 ECHO_REQUEST packets to network hosts
+
+SYNOPSIS
+     ping6 [-silent] [-Tnrt] [-c count] [-h hoplimit] [-m ifname] [-s packetsize] [-w timeout]
+           [-F label] [-S src_addr] [-Q tclass] [-V vr] [hop ...] host
+
+DESCRIPTION
+     ping6 uses the ICMPv6 protocol's mandatory ICMP6_ECHO_REQUEST datagram to
+     elicit an ICMP6_ECHO_REPLY from a host or gateway.  ICMP6_ECHO_REQUEST
+     datagrams (``pings'') have an IPv6 header, and ICMPv6 header formatted as
+     documented in RFC2463. It is possible to specify additional nodes that the
+     ping request must visit before reaching the final destination.
+     This is accomplished by adding a routing header to the packet.
+
+     -c count
+             Stop after sending count ECHO_RESPONSE packets.
+     -F label
+             Specifcy the flow label in the IPv6 header.
+     -h hoplimit
+             Set the IPv6 hoplimit.
+     -I ifname
+             Forces the packet to be sent on the specified interface.
+     -m <ifname>
+             Name of outgoing interface for multicast addresses.
+     -N addr Uses 'addr' as the first-hop node.
+     -n      Numeric output only. No attempts will be made to look up
+             names for host addresses.
+     -Q tclass
+             Specify the traffic class in the IPv6 header.
+     -r      Bypass the normal routing tables and send directly to a host on
+             an attached network.
+     -S src_addr  Specifies the address to use a source address when sending.
+     -s packetsize
+             Specifies the number of data bytes to be sent. The default is
+             56, which translates into 64 ICMP data bytes when combined with
+             the 8 bytes of ICMP header data.
+     -T Prefer temporary addresses as source.
+     -V vr   Specify virtual router. vr = 0 if not specified.
+     -X ID   Assign the ICMPv6 socket to stack instance ID.
+     -w timeout  Timeout in milliseconds, default is 1000 ms.
+     <hop [nexthop] [...]> Zero or more nodes that the echo request must pass,
+             in order, before reaching the final host node
+             Should set sysvar ifname.inet6.RtHdr0 to 1 to enable processing of IPv6 Routing Header on the nodes
+     -silent no output, returns success or failure.
+             MUST be first argument.
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>cat /ram/default_ipv4_forward
+cat: error opening file '/ram/default_ipv4_forward'.
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysctl net.inet.forwarding > /ram/default_ipv4_forward
+192.168.198.2_XunXiqX
+
+192.168.198.2>cat /ram/default_ipv6_forward
+cat: error opening file '/ram/default_ipv6_forward'.
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysctl net.inet6.forwarding > /ram/default_ipv6_forward
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysctl -w net.inet.forwarding=1
+net.inet.forwarding=1
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysctl -w net.inet6.forwarding=1
+net.inet6.forwarding=1
+192.168.198.2_XunXiqX
+
+192.168.198.2>route -n get 0.0.0.0
+route: failed: S_errno_ENETUNREACH
+
+192.168.198.2> (51)
+192.168.198.2_XunXiqX
+
+192.168.198.2>ifconfig -a
+lo0	Link type:Local loopback
+	inet 127.0.0.1  mask 255.255.255.255
+	inet6 unicast fe80::1%lo0  prefixlen 64  automatic
+	inet6 unicast ::1  prefixlen 128
+	UP RUNNING LOOPBACK MULTICAST NOARP ALLMULTI 
+	MTU:1500  metric:1  VR:0  ifindex:1
+	RX packets:763 mcast:3 errors:0 dropped:0
+	TX packets:763 mcast:3 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:64726 (64 k)  TX bytes:64726 (64 k)
+
+eth0	Link type:Ethernet  HWaddr 7c:7a:c0:a8:c6:02
+	inet 192.168.198.2  mask 255.255.255.0  broadcast 192.168.198.255
+	inet6 unicast fe80::7e7a:c0ff:fea8:c602%eth0  prefixlen 64  automatic
+	UP RUNNING SIMPLEX BROADCAST MULTICAST 
+	MTU:1500  metric:1  VR:0  ifindex:2
+	RX packets:81 mcast:0 errors:0 dropped:0
+	TX packets:82 mcast:6 errors:0
+	collisions:0 unsupported proto:0
+	RX bytes:5606  TX bytes:15298 (15 k)
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>cp /romfs/* /ram/
+copying file /romfs/rsa_key.pem -> /ram//rsa_key.pem
+copying file /romfs/clt_rsa_key.pem -> /ram//clt_rsa_key.pem
+copying file /romfs/clt_rsa_key_768 -> /ram//clt_rsa_key_768
+copying file /romfs/clt_rsa_key_2048 -> /ram//clt_rsa_key_2048
+copying file /romfs/clt_rsa_key_1024_putty -> /ram//clt_rsa_key_1024_putty
+copying file /romfs/clt_rsa_key_2048.pk2 -> /ram//clt_rsa_key_2048.pk2
+copying file /romfs/clt_rsa_key_2048-private -> /ram//clt_rsa_key_2048-private
+copying file /romfs/clt_rsa_key_768-private -> /ram//clt_rsa_key_768-private
+copying file /romfs/clt_rsa_key_1024.pk2 -> /ram//clt_rsa_key_1024.pk2
+copying file /romfs/c_dsa_pk.pem -> /ram//c_dsa_pk.pem
+copying file /romfs/clt_dsa_key_putty.pem -> /ram//clt_dsa_key_putty.pem
+copying file /romfs/clt_rsa_key_1024 -> /ram//clt_rsa_key_1024
+copying file /romfs/clt_dsa_key.pem-private -> /ram//clt_dsa_key.pem-private
+copying file /romfs/clt_rsa_key_768_putty -> /ram//clt_rsa_key_768_putty
+copying file /romfs/c_rsa_pk.pem -> /ram//c_rsa_pk.pem
+copying file /romfs/clt_rsa_key_1024-private -> /ram//clt_rsa_key_1024-private
+copying file /romfs/dsa_key.pem-private -> /ram//dsa_key.pem-private
+copying file /romfs/clt_dsa_key.pem -> /ram//clt_dsa_key.pem
+copying file /romfs/dsa_key.pem -> /ram//dsa_key.pem
+copying file /romfs/clt_dsa_key_1024_putty -> /ram//clt_dsa_key_1024_putty
+copying file /romfs/clt_rsa_key_2048_putty -> /ram//clt_rsa_key_2048_putty
+copying file /romfs/clt_dsa_key_1024-private -> /ram//clt_dsa_key_1024-private
+copying file /romfs/clt_rsa_key_768.pk2 -> /ram//clt_rsa_key_768.pk2
+copying file /romfs/clt_rsa_key_putty.pem -> /ram//clt_rsa_key_putty.pem
+copying file /romfs/clt_dsa_key_1024 -> /ram//clt_dsa_key_1024
+copying file /romfs/clt_dsa_key_1024.pk2 -> /ram//clt_dsa_key_1024.pk2
+copying file /romfs/clt_rsa_key.pem-private -> /ram//clt_rsa_key.pem-private
+192.168.198.2_XunXiqX
+
+192.168.198.2>keydb delete key 1
+Failed
+192.168.198.2_XunXiqX
+
+192.168.198.2>keydb delete key 2
+Failed
+192.168.198.2_XunXiqX
+
+192.168.198.2>  keydb import key default_dsa /romfs/clt_dsa_key_1024-private
+192.168.198.2_XunXiqX
+
+192.168.198.2>  keydb import key default_rsa /romfs/clt_rsa_key_2048-private
+192.168.198.2_XunXiqX
+
+192.168.198.2>date
+Thu Mar 28 11:03:58 2024
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>syslog list
+syslog facility    priority
+ipcom              Error  
+ipcom_telnet       Error  
+ipradius           Error  
+ipssh              Error  
+ipftp              Error  
+ipnet              Error  
+iptftp             Error  
+iptcp              Error  
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>syslog priority all debug2
+syslog: facility ipcom priority set to debug2
+syslog: facility ipcom_telnet priority set to debug2
+syslog: facility ipradius priority set to debug2
+syslog: facility ipssh priority set to debug2
+syslog: facility ipftp priority set to debug2
+syslog: facility ipnet priority set to debug2
+syslog: facility iptftp priority set to debug2
+syslog: facility iptcp priority set to debug2
+192.168.198.2_XunXiqX
+
+192.168.198.2>ipd list
+Services:
+ipnet                started
+ipnet_radvd          killed
+iptcp                started
+iptelnets            started
+ipradius             started
+ipftps               started
+ipssh                killed
+iptftpc              started
+ipftpc               started
+
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysvar get ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' not found
+
+192.168.198.2>
+192.168.198.2_XunXiqX
+
+192.168.198.2>sysvar set -o -c ipnet.inet.IcmpRedirectSend "1"
+sysvar: ipnet.inet.IcmpRedirectSend=1 ok
+
+192.168.198.2>
+192.168.198.2_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether ee:7a:c4:e7:ba:52 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether ea:9b:4e:43:c3:0e brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 76:c4:db:6d:93:da brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 2a:f2:3c:cf:96:9b brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.9_XunXiqX
+
+linux>sudo keyadm flush
+sudo: keyadm: command not found
+linux_192.168.198.8_XunXiqX
+
+linux>sudo keyadm flush
+sudo: keyadm: command not found
+linux_192.168.198.9_XunXiqX
+
+linux>sudo setkey -F
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ipversion
+sudo: ipversion: command not found
+linux_192.168.198.8_XunXiqX
+
+linux>sudo setkey -F
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ping
+Usage: ping [-LRUbdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+            [-p pattern] [-s packetsize] [-t ttl] [-I interface or address]
+            [-M mtu discovery hint] [-S sndbuf]
+            [ -T timestamp option ] [ -Q tos ] [hop1 ...] destination
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ipversion
+sudo: ipversion: command not found
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ping6
+Usage: ping6 [-LUdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+             [-p pattern] [-s packetsize] [-t ttl] [-I interface]
+             [-M mtu discovery hint] [-S sndbuf]
+             [-F flow label] [-Q traffic class] [hop1 ...] destination
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ping
+Usage: ping [-LRUbdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+            [-p pattern] [-s packetsize] [-t ttl] [-I interface or address]
+            [-M mtu discovery hint] [-S sndbuf]
+            [ -T timestamp option ] [ -Q tos ] [hop1 ...] destination
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 66:48:f5:19:bf:21 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 6e:05:bf:f7:d4:10 brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.10_XunXiqX
+
+linux>sudo cat /ram/default_ipv4_forward
+cat: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.8_XunXiqX
+
+linux>sudo keyadm flush
+sudo: keyadm: command not found
+linux_192.168.198.10_XunXiqX
+
+linux>sudo sysctl net.inet.forwarding > /ram/default_ipv4_f orward
+-bash: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ping6
+Usage: ping6 [-LUdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+             [-p pattern] [-s packetsize] [-t ttl] [-I interface]
+             [-M mtu discovery hint] [-S sndbuf]
+             [-F flow label] [-Q traffic class] [hop1 ...] destination
+linux_192.168.198.9_XunXiqX
+
+linux>sudo cat /ram/default_ipv6_forward
+cat: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.8_XunXiqX
+
+linux>sudo setkey -F
+linux_192.168.198.10_XunXiqX
+
+linux>sudo cat /ram/default_ipv4_forward
+cat: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.9_XunXiqX
+
+linux>  sudo sysctl net.inet6.forwarding > /ram/default_ipv 6_forward
+-bash: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ipversion
+sudo: ipversion: command not found
+linux_192.168.198.10_XunXiqX
+
+linux>sudo sysctl net.inet.forwarding > /ram/default_ipv4_f orward
+-bash: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sysctl -w net.inet.forwarding=1
+error: "net.inet.forwarding" is an unknown key
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ping
+Usage: ping [-LRUbdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+            [-p pattern] [-s packetsize] [-t ttl] [-I interface or address]
+            [-M mtu discovery hint] [-S sndbuf]
+            [ -T timestamp option ] [ -Q tos ] [hop1 ...] destination
+linux_192.168.198.10_XunXiqX
+
+linux>sudo cat /ram/default_ipv6_forward
+cat: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sysctl -w net.inet6.forwarding=1
+error: "net.inet6.forwarding" is an unknown key
+linux_192.168.198.8_XunXiqX
+
+linux>  sudo sysctl net.inet6.forwarding > /ram/default_ipv 6_forward
+-bash: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ping6
+Usage: ping6 [-LUdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+             [-p pattern] [-s packetsize] [-t ttl] [-I interface]
+             [-M mtu discovery hint] [-S sndbuf]
+             [-F flow label] [-Q traffic class] [hop1 ...] destination
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip route
+192.168.198.0/24 dev eth0  proto kernel  scope link  src 192.168.198.8 
+default via 192.168.198.1 dev eth0 
+linux_192.168.198.8_XunXiqX
+
+linux>sudo sysctl -w net.inet.forwarding=1
+error: "net.inet.forwarding" is an unknown key
+linux_192.168.198.9_XunXiqX
+
+linux>sudo cat /ram/default_ipv4_forward
+cat: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.10_XunXiqX
+
+linux>sudo sysctl net.inet.forwarding > /ram/default_ipv4_ forward
+-bash: /ram/default_ipv4_forward: No such file or directory
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip route del unicast 0.0.0.0/0 
+linux_192.168.198.8_XunXiqX
+
+linux>sudo sysctl -w net.inet6.forwarding=1
+error: "net.inet6.forwarding" is an unknown key
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether ee:7a:c4:e7:ba:52 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether ea:9b:4e:43:c3:0e brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.8_XunXiqX
+
+linux>sudo cat /ram/default_ipv6_forward
+cat: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.10_XunXiqX
+
+linux>  sudo sysctl net.inet6.forwarding > /ram/default_ip v6_forward
+-bash: /ram/default_ipv6_forward: No such file or directory
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip route
+192.168.198.0/24 dev eth0  proto kernel  scope link  src 192.168.198.9 
+default via 192.168.198.1 dev eth0 
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sysctl -w net.inet.forwarding=1
+error: "net.inet.forwarding" is an unknown key
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip route del unicast 0.0.0.0/0 
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sysctl -w net.inet6.forwarding=1
+error: "net.inet6.forwarding" is an unknown key
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 76:c4:db:6d:93:da brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 2a:f2:3c:cf:96:9b brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip route
+192.168.198.0/24 dev eth0  proto kernel  scope link  src 192.168.198.10 
+default via 192.168.198.1 dev eth0 
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip route del unicast 0.0.0.0/0 
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip -o link
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 66:48:f5:19:bf:21 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 6e:05:bf:f7:d4:10 brd ff:ff:ff:ff:ff:ff
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip -o addr
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+1: lo    inet 127.0.0.1/8 scope host lo
+1: lo    inet6 ::1/128 scope host \       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether ee:7a:c4:e7:ba:52 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether ea:9b:4e:43:c3:0e brd ff:ff:ff:ff:ff:ff
+7: eth0    inet 192.168.198.8/24 brd 192.168.198.255 scope global eth0
+7: eth0    inet6 fe80::e89b:4eff:fe43:c30e/64 scope link \       valid_lft forever preferred_lft forever
+linux_192.168.198.8_XunXiqX
+
+linux>sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+linux_192.168.198.8_XunXiqX
+
+linux>sudo vconfig set_name_type VLAN_PLUS_VID_NO_PAD
+Set name-type for VLAN subsystem. Should be visible in 
+
+linux>/proc/net/vlan/config
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ip -o addr
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+1: lo    inet 127.0.0.1/8 scope host lo
+1: lo    inet6 ::1/128 scope host \       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 76:c4:db:6d:93:da brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 2a:f2:3c:cf:96:9b brd ff:ff:ff:ff:ff:ff
+7: eth0    inet 192.168.198.9/24 brd 192.168.198.255 scope global eth0
+7: eth0    inet6 fe80::28f2:3cff:fecf:969b/64 scope link \       valid_lft forever preferred_lft forever
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip -o addr
+1: lo: <LOOPBACK,UP,10000> mtu 16436 qdisc noqueue \    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+1: lo    inet 127.0.0.1/8 scope host lo
+1: lo    inet6 ::1/128 scope host \       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop \    link/ether 66:48:f5:19:bf:21 brd ff:ff:ff:ff:ff:ff
+3: tunl0: <NOARP> mtu 1480 qdisc noop \    link/ipip 0.0.0.0 brd 0.0.0.0
+4: gre0: <NOARP> mtu 1476 qdisc noop \    link/gre 0.0.0.0 brd 0.0.0.0
+5: sit0: <NOARP> mtu 1480 qdisc noop \    link/sit 0.0.0.0 brd 0.0.0.0
+6: ip6tnl0: <NOARP> mtu 1460 qdisc noop \    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+7: eth0: <BROADCAST,MULTICAST,UP,10000> mtu 1500 qdisc pfifo_fast qlen 1000\    link/ether 6e:05:bf:f7:d4:10 brd ff:ff:ff:ff:ff:ff
+7: eth0    inet 192.168.198.10/24 brd 192.168.198.255 scope global eth0
+7: eth0    inet6 fe80::6c05:bfff:fef7:d410/64 scope link \       valid_lft forever preferred_lft forever
+linux_192.168.198.10_XunXiqX
+
+linux>sudo vconfig set_name_type VLAN_PLUS_VID_NO_PAD
+Set name-type for VLAN subsystem. Should be visible in 
+
+linux>/proc/net/vlan/config
+linux_192.168.198.9_XunXiqX
+
+linux>sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+linux_192.168.198.10_XunXiqX
+
+linux>sudo vconfig set_name_type VLAN_PLUS_VID_NO_PAD
+Set name-type for VLAN subsystem. Should be visible in 
+
+linux>/proc/net/vlan/config
+linux_192.168.198.10_XunXiqX
+
+--------------------------------------------------------------------------------
+------------------------------ Test starts -------------------------------------
+--------------------------------------------------------------------------------
+
+    snmp agentX test.
+snmp.snmp_agentx.snmp_agentx_session_limit - IPv4 ETA: 20s
+
+192.168.198.2>syslog echo warning "test snmp.snmp_agentx.snmp_agentx_session_limit  starts"
+192.168.198.2_XunXiqX
+
+linux>sudo ip addr add 10.26.1.1/24 broadcast + dev eth0
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ip link set eth0 up
+linux_192.168.198.8_XunXiqX
+
+linux>sudo ip addr add 10.26.1.2/24 broadcast + dev eth0
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip link set eth0 up
+linux_192.168.198.9_XunXiqX
+
+linux>sudo ip addr add 10.26.1.3/24 broadcast + dev eth0
+linux_192.168.198.10_XunXiqX
+
+linux>sudo ip link set eth0 up
+linux_192.168.198.10_XunXiqX
+
+192.168.198.2>ifconfig eth0 inet add 10.26.1.4/24
+192.168.198.2_XunXiqX
+
+linux>corktelnet 10.26.1.4 705
+Trying 10.26.1.4...
+Connected to 10.26.1.4.
+
+linux>
+Escape character is '^]'.
+
+linux>
+
+telnet>
+
+linux>corktelnet 10.26.1.4 705
+Trying 10.26.1.4...
+Connected to 10.26.1.4.
+
+linux>
+Escape character is '^]'.
+
+linux>
+Connection closed by foreign host.
+
+linux>
+linux_192.168.198.9_XunXiqX
+
+linux> quit
+Connection closed.
+
+linux>corktelnet 10.26.1.4 705
+Trying 10.26.1.4...
+Connected to 10.26.1.4.
+
+linux>
+Escape character is '^]'.
+
+linux>
+
+telnet>
+
+linux> quit
+Connection closed.
+
+192.168.198.2>syslog echo warning "test snmp.snmp_agentx.snmp_agentx_session_limit  stops"
+192.168.198.2_XunXiqX
+
+snmp.snmp_agentx.snmp_agentx_session_limit Test Passed ----------------------------------------
+OK 16s
+--------------------------------------------------------------------------------
+------------------------------ Test ends ---------------------------------------
+--------------------------------------------------------------------------------
+cleaning up
+cleaning up
+
+linux>sudo ip route add unicast 0.0.0.0/0 via 192.168.198.1 [Alinux_192.168.198.8_XunXiqX
+
+linux>sudo ip route add unicast 0.0.0.0/0 via 192.168.198. 1
+linux_192.168.198.10_XunXiqX
+cleanup done
+
+192.168.198.2>errnos
+EPERM S_errno_EPERM
+ENOENT S_errno_ENOENT
+ESRCH S_errno_ESRCH
+EINTR S_errno_EINTR
+EIO S_errno_EIO
+ENXIO S_errno_ENXIO
+E2BIG S_errno_E2BIG
+ENOEXEC S_errno_ENOEXEC
+EBADF S_errno_EBADF
+ECHILD S_errno_ECHILD
+EAGAIN S_errno_EAGAIN
+ENOMEM S_errno_ENOMEM
+EACCES S_errno_EACCES
+EFAULT S_errno_EFAULT
+ENOTEMPTY S_errno_ENOTEMPTY
+EBUSY S_errno_EBUSY
+EEXIST S_errno_EEXIST
+EXDEV S_errno_EXDEV
+ENODEV S_errno_ENODEV
+ENOTDIR S_errno_ENOTDIR
+EISDIR S_errno_EISDIR
+EINVAL S_errno_EINVAL
+ENFILE S_errno_ENFILE
+EMFILE S_errno_EMFILE
+ENOTTY S_errno_ENOTTY
+ENAMETOOLONG S_errno_ENAMETOOLONG
+EFBIG S_errno_EFBIG
+ENOSPC S_errno_ENOSPC
+ESPIPE S_errno_ESPIPE
+EROFS S_errno_EROFS
+EMLINK S_errno_EMLINK
+EPIPE S_errno_EPIPE
+EDEADLK S_errno_EDEADLK
+ENOLCK S_errno_ENOLCK
+ENOTSUP S_errno_ENOTSUP
+EMSGSIZE S_errno_EMSGSIZE
+EDOM S_errno_EDOM
+ERANGE S_errno_ERANGE
+EDESTADDRREQ S_errno_EDESTADDRREQ
+EPROTOTYPE S_errno_EPROTOTYPE
+ENOPROTOOPT S_errno_ENOPROTOOPT
+EPROTONOSUPPORT S_errno_EPROTONOSUPPORT
+ESOCKTNOSUPPORT S_errno_ESOCKTNOSUPPORT
+EOPNOTSUPP S_errno_EOPNOTSUPP
+EPFNOSUPPORT S_errno_EPFNOSUPPORT
+EAFNOSUPPORT S_errno_EAFNOSUPPORT
+EADDRINUSE S_errno_EADDRINUSE
+EADDRNOTAVAIL S_errno_EADDRNOTAVAIL
+ENOTSOCK S_errno_ENOTSOCK
+ENETUNREACH S_errno_ENETUNREACH
+ENETRESET S_errno_ENETRESET
+ECONNABORTED S_errno_ECONNABORTED
+ECONNRESET S_errno_ECONNRESET
+ENOBUFS S_errno_ENOBUFS
+EISCONN S_errno_EISCONN
+ENOTCONN S_errno_ENOTCONN
+ESHUTDOWN S_errno_ESHUTDOWN
+ETOOMANYREFS S_errno_ETOOMANYREFS
+ETIMEDOUT S_errno_ETIMEDOUT
+ECONNREFUSED S_errno_ECONNREFUSED
+ENETDOWN S_errno_ENETDOWN
+ETXTBSY S_errno_ETXTBSY
+ELOOP S_errno_ELOOP
+EHOSTUNREACH S_errno_EHOSTUNREACH
+ENOTBLK S_errno_ENOTBLK
+EHOSTDOWN S_errno_EHOSTDOWN
+EINPROGRESS S_errno_EINPROGRESS
+EALREADY S_errno_EALREADY
+EWOULDBLOCK S_errno_EWOULDBLOCK
+ENOSYS S_errno_ENOSYS
+ECANCELED S_errno_ECANCELED
+ENOSR S_errno_ENOSR
+ENOSTR S_errno_ENOSTR
+EPROTO S_errno_EPROTO
+EBADMSG S_errno_EBADMSG
+ENODATA S_errno_ENODATA
+ETIME S_errno_ETIME
+ENOMSG S_errno_ENOMSG
+EFPOS S_errno_EFPOS
+EILSEQ S_errno_EILSEQ
+EDQUOT S_errno_EDQUOT
+EIDRM S_errno_EIDRM
+EOVERFLOW S_errno_EOVERFLOW
+192.168.198.2_XunXiqX
+cleaning up
+
+192.168.198.2>sysvar unset ipnet.inet.IcmpRedirectSend
+sysvar: 'ipnet.inet.IcmpRedirectSend' unset ok
+
+192.168.198.2>
+192.168.198.2_XunXiqX
+
+192.168.198.2>ifconfig eth0 inet delete 10.26.1.4/24
+192.168.198.2_XunXiqX
+cleanup done
+cleaning up
+
+linux>sudo ip route add unicast 0.0.0.0/0 via 192.168.198.1 [Alinux_192.168.198.9_XunXiqX
+
+linux>sudo ip addr del 10.26.1.2/24 dev eth0
+linux_192.168.198.9_XunXiqX
+cleanup done
+cleanup done
+------------------------------ Logged out from targets ------------------------------
+20240328_03.04.21 
+rounds: 1.  tests_ok: 1.  tests_fail: 0.  tests_skipped: 0.
+

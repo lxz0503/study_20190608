@@ -30,7 +30,7 @@ class SendMail(object):
         msg.attach(text_plain)
 
         # if use company mail box
-        smtp = smtplib.SMTP(mail_server)              # connect, no log-in step
+        smtp = smtplib.SMTP(mail_server)              # connect, no Logs-in step
         smtp.sendmail(self.sender, self.receiver, msg.as_string())
         smtp.quit()
 

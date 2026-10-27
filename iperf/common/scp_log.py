@@ -36,11 +36,11 @@ def get_log(address, tool, log_path):
 
 	try:
 		if tool == 'sts':
-			src = '/mydisk/F8913/log/sts/{targetAddress}/result.txt'.format(targetAddress=address)
+			src = '/mydisk/F8913/Logs/sts/{targetAddress}/result.txt'.format(targetAddress=address)
 		elif tool == 'dieharder':
-			src = '/mydisk/F8913/log/dieharder/{targetAddress}'.format(targetAddress=address)
+			src = '/mydisk/F8913/Logs/dieharder/{targetAddress}'.format(targetAddress=address)
 		with SCPClient(ssh.get_transport(), progress=progress) as scp_clinet:
-			scp_clinet.get(src, os.path.join(log_path, 'rnd.log'))
+			scp_clinet.get(src, os.path.join(log_path, 'rnd.Logs'))
 		sys.stdout.write('\n')
 		ssh.close()
 	except scp.SCPException as e:

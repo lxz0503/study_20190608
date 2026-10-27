@@ -4,7 +4,7 @@ export PYTHONPATH=/folk/lchen3/try/workspace/PdvTool/vx7tool/new
 
 
 MYSOURCE=/folk/lchen3/try/workspace/PdvTool/vx7tool/new
-#LOGDIR=/net/pek-cc-pb02l.wrs.com/testcloud/svc-cmnet/log
+#LOGDIR=/net/pek-cc-pb02l.wrs.com/testcloud/svc-cmnet/Logs
 LOGDIR=/net/pek-sec-kong-02.wrs.com/workspace/svc-cmnet/log
 
 export PYTHONPATH=$MYSOURCE

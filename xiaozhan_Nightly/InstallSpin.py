@@ -39,7 +39,7 @@ def GetSpinInfo(commit, action):
 def __GetNameValue(name, configFile):
     debug = False
     if debug:
-        configDir = '/net/pek-sec-kong-02/workspace/svc-cmnet/log'
+        configDir = '/net/pek-sec-kong-02/workspace/svc-cmnet/Logs'
     else:
         configDir = '/net/pek-vx-nightly1/buildarea1/pzhang1/jenkinsEnvInjection'
 

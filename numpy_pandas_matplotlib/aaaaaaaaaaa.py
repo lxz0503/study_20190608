@@ -7,7 +7,7 @@ import re
 # python测试开发交流群 683894834
 # python接口测试群：651392041
 
-s = "./IKEMain.log:0xffff8000005b7850 (tLogin55dc70): The task been terminated because it triggered an exception that raised the signal 11"
+s = "./IKEMain.Logs:0xffff8000005b7850 (tLogin55dc70): The task been terminated because it triggered an exception that raised the signal 11"
 
 c = s.count('th')
 
@@ -412,7 +412,7 @@ print(name1)   # root
 
 
 # 内容输出到屏幕的同时，也保存到文件,用下面的命令
-# cat build.sh | tee test.log 2>&1
-# sh batchjob.sh 2>&1 | tee mylog.log
+# cat build.sh | tee test.Logs 2>&1
+# sh batchjob.sh 2>&1 | tee mylog.Logs
 
 

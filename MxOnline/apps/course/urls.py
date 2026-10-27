@@ -1,7 +1,7 @@
 # course/urls.py
 
 from django.urls import path, re_path
-from course.views import CourseListView,CourseDetailView,CourseInfoView,CommentsView,AddCommentsView,VideoPlayView
+from .views import CourseListView,CourseDetailView,CourseInfoView,CommentsView,AddCommentsView,VideoPlayView
 
 # 要写上app的名字
 app_name = "course"

@@ -1,0 +1,4 @@
+# templates/search/indexes/search/poetry_text.txt
+{{ object.name }}
+{{ object.author }}
+{{ object.detail }}

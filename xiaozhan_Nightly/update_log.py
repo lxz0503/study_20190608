@@ -11,7 +11,7 @@ def updateLtaf(dir):
     if os.path.isfile('/home/windriver/SPIN/vip_itl_generic/default/vxWorks'):
         r = calculate(dir)
         if r[1] > 1.0 or r[2] > 1.0:
-            cp_cmd = "cp /home/windriver/ANVL/LTAF/test_result.log" + " " + dir
+            cp_cmd = "cp /home/windriver/ANVL/LTAF/test_result.Logs" + " " + dir
             os.system(cp_cmd)
 
         os.chdir(dir)
@@ -34,7 +34,7 @@ def updateLtaf(dir):
                     function_fail = 1
                 else:
                     print
-                    "Test case result is INCLUSIVE!Please check test log!"
+                    "Test case result is INCLUSIVE!Please check test Logs!"
 
                 # modify  nightly.ini file
                 log = "http://pek-cc-pb08l.wrs.com/vxtest/vxtest1/LOG_VX7/Vx-7_Networking/REGRESSION/vxworks_sandbox/ANVL"
@@ -48,7 +48,7 @@ def updateLtaf(dir):
                 config.set("LTAF", "function_pass", function_pass)
                 config.set("LTAF", "function_fail", function_fail)
                 config.set("LTAF", "spin", spin)
-                config.set("LTAF", "log", log)
+                config.set("LTAF", "Logs", log)
                 config.set("LTAF", "week", nightly_date)
                 config.set("LTAF", "release_name", release_name)
                 config.write(open('/home/windriver/ANVL/nightly.ini', "r+"))

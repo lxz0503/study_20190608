@@ -78,7 +78,7 @@ class SendMail(object):
 
         # if use company mail box
         # mailServer = 'prod-webmail.corp.ad.wrs.com'
-        # smtp = smtplib.SMTP(mailServer)              # connect, no log-in step
+        # smtp = smtplib.SMTP(mailServer)              # connect, no Logs-in step
         # smtp.sendmail(sender, receiver, msg.as_string())
         # smtp.quit()
 

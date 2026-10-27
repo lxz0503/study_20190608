@@ -5,7 +5,7 @@ import os, time,logging,sys
 
 class TelTarget(object):
     def __init__(self):
-        # self.log = sys.stdout
+        # self.Logs = sys.stdout
         self.log = open("logfile.txt", 'wb')   # in py3 it is wb,in py2 it is w
         self.ip = "128.224.164.57"
         self.port = 16

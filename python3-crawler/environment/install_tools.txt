@@ -1,0 +1,116 @@
+1.Install mongodb
+mongodb official site: username:163mailbox,pwd is qq
+
+https://www.mongodb.com/download-center/community
+2.install urllib, urllib.request, requests,selenium,lxml,beautifulsoup4,pyquery,pymysql,pymongo
+https://www.cnblogs.com/zhangxinqi/p/9210211.html          ---this is for lxml
+
+
+3.如果想运行case的时候不显示浏览器，参考下面的方法，chrome实测通过,firefox还没试验
+
+原来Selenium早就准备不支持PhantomJS了。不过作者也说了，可能是因为Firefox和Chrome都带了无头模式，导致PhantomJS的优势瞬间消失了……
+
+这么一说，PhantomJS其实挺惨的……内有内斗，外有打压，搞得众叛亲离（滑稽）。
+
+替代
+CSDN上的孔天逸从Mozilla上提供了Selenium+Headless Firefox在Python上实现的方法：
+
+from selenium.webdriver import Firefox
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support import expected_conditions as expected
+from selenium.webdriver.support.wait import WebDriverWait
+if __name__ == "__main__":
+options = Options()
+options.add_argument('-headless') # 无头参数
+driver = Firefox(executable_path='geckodriver', firefox_options=options) # 配了环境变量第一个参数就可以省了，不然传绝对路径
+wait = WebDriverWait(driver, timeout=10)
+driver.get('http://www.google.com')
+wait.until(expected.visibility_of_element_located((By.NAME, 'q'))).send_keys('headless firefox' + Keys.ENTER)
+wait.until(expected.visibility_of_element_located((By.CSS_SELECTOR, '#ires a'))).click()
+print(driver.page_source)
+driver.quit()
+作者也说了，本地要有Firefox；本地要有geckodriver，最好再配置一下环境变量；别每下载一个网页实例化一个webdriver（Firefox or Chrome）然后就close()掉，实例化webdriver的时间也是时间~推荐将下载器做成单例类或将webdirver做类变量。
+
+对于Chrome，博客园上的zhuxiaoxi提供了解决方案（需要安装chromedriver）：
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+driver = webdriver.Chrome(chrome_options=chrome_options)
+driver.get("https://cnblogs.com/")
+大家可以按需使用。
+
+结语
+我写这篇文章的目的就是想说一下，该换浏览器了。
+
+目前许多关于Python爬虫的教程都还是使用PhantomJS进行讲解的，现在PhantomJS已死，有事请用Chrome或者是Firefox。
+
+4.使用mongodb
+https://blog.csdn.net/qq_35810838/article/details/83548102
+C:\Program Files\MongoDB\Server\4.2\bin       --my home pc for mongodb, 添加此环境变量
+新开一个cmd窗口，进入mongodb的bin目录，输入mongo或者mongo.exe
+在查询结果中不显示ID的方法：具体参考截图
+
+show dbs
+运行"use"命令，可以连接到一个指定的数据库  use taobao
+show tables
+
+如何删除MongoDB中的数据库：
+use quotestutorial;
+db.dropDatabase();
+
+db.runoob.drop()   # 删除了runoob这个set
+
+插入数据
+db.runoob.insert({"name":"菜鸟教程"})
+
+db.createCollection("runoob")  创建集合，也就是表
+
+
+
+db.GPRS_PRODUCT_HIS_FEE.find({"条件字段" : "412171211145135"},{"查询字段1":1,"查询字段2":1,"查询字段3":1,"查询字段4":1,"查询字段5":1,"查询字段6":1},{'_id':0})
+db.runoob.find({"name":"beijing"},{_id:0})
+
+db.users.update({"name":"lecaf"}, {"age":10})    修改name=lecaf的数据为age=10，第一个参数是查找条件，第二个参数是修改内容，除了主键，其他内容会被第二个参数的内容替换，主键不能修改
+
+http://192.168.3.1/html/wan.html                - for huawei router
+
+5. flask,jinjia2
+http://docs.jinkan.org/docs/flask/
+
+6. http request, http response
+http request mainly includes get and post.
+get可以直接通过浏览器提交，通常用于获取内容,参数直接放在url中，有长度限制
+post需要构造一个表单，即form data，通常用于输入用户名密码登录这种
+
+HTTP请求，最初设定了八种方法。这八种方法本质上没有任何区别。只是让请求，更加有语义而已。
+
+OPTIONS 返回服务器所支持的请求方法
+GET 向服务器获取指定资源
+HEAD 与GET一致，只不过响应体不返回，只返回响应头
+POST 向服务器提交数据，数据放在请求体里
+PUT 与POST相似，只是具有幂等特性，一般用于更新
+DELETE 删除服务器指定资源
+TRACE 回显服务器端收到的请求，测试的时候会用到这个
+CONNECT 预留，暂无使用
+
+HTTP协议中提供了好多状态码，列举我们常用的：
+
+200 返回正常
+304 服务端资源无变化，可使用缓存资源
+400 请求参数不合法
+401 未认证
+403 服务端禁止访问该资源
+404 服务端未找到该资源
+500 服务端异常
+
+Request headers
+
+https://www.cnblogs.com/helenMemery/p/7346485.html
+
+7.数据分析，抓取网站信息，自动保存到excel文件里面，推荐使用八爪鱼工具
+https://www.bazhuayu.com/?utm_campaign=baidu&utm_medium=pc17106&utm_source=YTPC5&utm_content=%e5%85%ab%e7%88%aa%e9%b1%bc%2b%e7%b2%be%e7%a1%ae&utm_term=%e5%85%ab%e7%88%aa%e9%b1%bc&bd_vid=7655282016049724306

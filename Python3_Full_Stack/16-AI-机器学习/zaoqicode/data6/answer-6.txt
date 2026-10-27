@@ -1,0 +1,103 @@
+-----
+df[['district','salary']].groupby(by='district').mean()
+
+# df.groupby("district")['salary'].mean()
+-----
+df.groupby("district", as_index=False)['salary'].mean()
+-----
+df[['district','salary']].groupby(by='district').mean().sort_values('salary',ascending=False).head(1)
+-----
+pd.DataFrame(df.groupby("district")['companySize'].value_counts())
+
+# df.groupby(['district','companySize']).size()
+-----
+pd.DataFrame(df.groupby("district")['companySize'].value_counts()).rename_axis(["行政区", "公司规模"])
+-----
+df.groupby("district")['companySize'].count()
+-----
+df.groupby(["district",'salary']).groups
+-----
+df.groupby(["district",'salary']).get_group(("西湖区",30000))
+-----
+pd.DataFrame(df.groupby([df.createTime.apply(lambda x:x.day)])[
+             'district'].value_counts()).rename_axis(["发布日", "行政区"])
+-----
+df.groupby("district", sort=False)["industryField"].apply(
+lambda x: x.str.contains("电商").sum())
+-----
+df.set_index("positionName").groupby(len)['salary'].mean()
+-----
+df.groupby({'salary':'薪资','score':'总分','matchScore':'总分'}, axis=1).sum()
+-----
+pd.DataFrame(df['salary'].groupby([df['workYear'], df['education']]).mean())
+-----
+df['该区平均工资'] = df[['district','salary']].groupby(by='district').transform('mean')
+-----
+df.groupby('district').filter(lambda x: x['salary'].mean() < 30000)
+-----
+import matplotlib.pyplot as plt
+%config InlineBackend.figure_format = 'retina'
+plt.rcParams['font.sans-serif'] = ['Songti SC']
+
+df.groupby("district")['positionName'].count().plot(
+    kind='bar', figsize=(10, 6), color='#5172F0', fontsize=12)
+
+plt.ylabel("公司数量",fontsize = 14)
+plt.xlabel("杭州市各区",fontsize = 14)
+
+plt.show()
+-----
+import numpy as np
+df.groupby('district')['salary'].agg([min, max, np.mean])
+-----
+df.groupby('district').agg(最低工资=('salary', 'min'), 最高工资=(
+    'salary', 'max'), 平均工资=('salary', 'mean')).rename_axis(["行政区"])
+-----
+df.groupby('positionName').agg({'salary': np.median, 'score': np.mean})
+-----
+df.groupby('district').agg(
+    {'salary': [np.mean, np.median, np.std], 'score': np.mean})
+-----
+def myfunc(x):
+
+    return x.max()-x.mean()
+
+df.groupby('district').agg(最低工资=('salary', 'min'), 最高工资=(
+    'salary', 'max'), 平均工资=('salary', 'mean'), 最大值与均值差值=('salary', myfunc)).rename_axis(["行政区"])
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----

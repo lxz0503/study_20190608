@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
 # from above website, you can get below information such as module name and build ID,
 # then you can compose a url: http://pek-testharness-s1.wrs.com:8080/view/KONG-CI/job/ci-build-slave/100030/console
-# to get the console log, and then parser
+# to get the console Logs, and then parser
 
 # java -jar /net/pek-rhfs1.wrs.com/pek-rhfs04/home04/lchen3/package/jenkins-cli.jar -s http://pek-testharness-s1.wrs.com:8080 build ci-build-slave           -p BRANCH=SPIN:/buildarea1/svc-cmnet/SPIN/vx20210120163205_vx_2103 -p NEWCOMMIT=SPIN -p MODULE=CRYPTO -p BSP=vxsim_linux -v -w --username svc-cmnet --password december2012!
 # WARNING: An illegal reflective access operation has occurred

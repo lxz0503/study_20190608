@@ -31,7 +31,7 @@ class Logger(object):
 
 
 if __name__ == '__main__':
-    log = Logger('logging.log', level='debug').logger    # 初始化一个Logger实例，以后直接用这个实例来处理log
+    log = Logger('logging.Logs', level='debug').logger    # 初始化一个Logger实例，以后直接用这个实例来处理log
     log.info('start to test')
     try:
         result = 10 / 0

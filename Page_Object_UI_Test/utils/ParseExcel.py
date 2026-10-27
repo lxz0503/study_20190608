@@ -120,8 +120,8 @@ if __name__ == '__main__':
             print(cell.value, end=' ')    # you can also put them into a list as you like
         print()  # this will help to split each row
 
-    # get values in specific line
-    print(pe.get_each_row_values(sheet, 2))         # [1000, 2000, 3000, None]
+    # get values in specific line,this example is row 2
+    print(f'specific row values: {pe.get_each_row_values(sheet, 2)}')         # [1000, 2000, 3000, None]
     # get value in specific cell
     print(pe.get_cell_value(sheet, 3, 3))
     # write value into specific cell

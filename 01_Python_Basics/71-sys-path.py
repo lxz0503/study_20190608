@@ -4,7 +4,7 @@
 # https://blog.csdn.net/raby_gyl/article/details/82390338
 # python程序中使用 import XXX 时，python解析器会在当前目录、已安装和第三方模块中搜索 xxx，如果都搜索不到就会报错。
 # 使用sys.path.append()方法可以临时添加搜索路径，方便更简洁的import其他包和模块。这种方法导入的路径会在python程序退出后失效。
-
+sys.path.append(’引用模块的地址')
 # 1. 加入上层目录和绝对路径
 # import sys
 # sys.path.append('..') #表示导入当前文件的上层目录到搜索路径中
@@ -39,3 +39,4 @@ import re,sys
 sys.path.insert(0, '../')    # 从上一级目录导入一个包
 import imp
 print('xiaozhan', imp.xiaozhan)
+# 在windows里面如果pycharm因为系统路径报错，即标红，可以忽略， 参考Page_Object_UI_Test下面的case目录里面的test.py

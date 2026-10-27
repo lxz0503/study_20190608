@@ -110,7 +110,7 @@ def HandleBranch(branch, commit):
                     """
                     # remove the local existed branch in case that remote branch re-creates
                     if [ "$BRANCH" != "vx7-net" ]; then
-                        # note: cat has to be added to the end of this pipe, or grep might generate -1 and all script gets exit here
+                        # note.txt: cat has to be added to the end of this pipe, or grep might generate -1 and all script gets exit here
                         BranchName=`git branch -r | grep -w $BRANCH | cat`
                         if [ "$BranchName" != "" ]; then
                             echo "found $BRANCH"

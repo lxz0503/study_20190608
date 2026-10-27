@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 MYSOURCE=/folk/lchen3/try/workspace/PdvTool/vx7tool/new
-#LOGDIR=/net/pek-sec-kong-02.wrs.com/workspace/svc-cmnet/log
+#LOGDIR=/net/pek-sec-kong-02.wrs.com/workspace/svc-cmnet/Logs
 LOGDIR=/net/pek-vx-nwk1.wrs.com/buildarea1/svc-cmnet/log
 
 export PYTHONPATH=$MYSOURCE:/folk/lchen3/try/workspace/PMT/src

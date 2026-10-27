@@ -1,8 +1,8 @@
 """this is for ssh test with spawn """
 # if you want to ssh to another server and run some interactive command like scp, ftp
 # you must use spawn but not pxssh
-# run this like:  python  ssh_spawn.py >> ssh_spawn.log   this can show original output
-# or python  ssh_spawn.py 2>&1 | tee ssh_spawn.log
+# run this like:  python  ssh_spawn.py >> ssh_spawn.Logs   this can show original output
+# or python  ssh_spawn.py 2>&1 | tee ssh_spawn.Logs
 
 # !/usr/bin/env python
 # encoding = utf-8
@@ -63,7 +63,7 @@ class SshTest(object):
                 self.s.expect("00:00")
                 break
             if i == 2:
-                print("copy log timeout!")
+                print("copy Logs timeout!")
                 break
     #
     def mv_file(self, src, dst):
@@ -72,7 +72,7 @@ class SshTest(object):
 
     # ssh
     def run_script(self, ip, port):
-        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.log' % (ip, port))
+        self.s.sendline('python parameter-getopt.py -h -i %s -p %d 2>&1 | tee test.Logs' % (ip, port))
         self.s.expect("windriver@PEK-QCAO1-D2:~")
 
 

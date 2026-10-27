@@ -1,0 +1,87 @@
+# Create relative directories
+clean_up_targets(targets)
+
+(ftpc, ftps) = targets
+
+ftpc.send('ftp -h')
+# ftpc.expect_re_and_wait_prompt(" -s <C|P> Set data session protect mode")
+ftpc.expect_re_and_wait_prompt(" -e Disable command-line editing")
+ftpc.send('ftp -m')
+ftpc.expect_re_and_wait_prompt("ftp: option requires an argument -- m")
+ftpc.send('ftp -m 530')
+ftpc.expect_re_and_wait_prompt("FTP server: Not logged in")
+ftpc.send('ftp -m 226')
+ftpc.expect_re_and_wait_prompt("FTP server: Success, closing data connection")
+ftpc.send('ftp -m 1907')
+ftpc.expect_re_and_wait_prompt("FTP client: No more sessions allowed")
+ftpc.send('ftp -m 1901')
+ftpc.expect_re_and_wait_prompt("FTP client: Session is busy")
+ftpc.send('ftp -m 299')
+ftpc.expect_re_and_wait_prompt("General: Success")
+if v6:
+    portok_or_enter = '200 Extended port OK'
+lines = ftpc.sendAndReturnAll('ftp -P 21 -a 6 -p 0 -x 0 -l 6000 -r 30000 -v 2 -i -e', prompt)
+else:
+    portok_or_enter = '200 Port OK'
+lines = ftpc.sendAndReturnAll('ftp -P 21 -a 4 -p 0 -x 0 -l 6000 -r 30000 -v 2 -i -e', prompt)
+lines = ftpc.sendAndReturnAll('open ' + ftps.ip().addr, prompt = 'User: ', prompt)
+lines = ftpc.sendAndReturnAll('ftp', prompt = 'Password: ', prompt)
+lines = ftpc.sendAndReturnAll('interpeak', prompt)
+
+lines = ftpc.sendAndReturnAll('pwd', prompt)
+_, m = ftp_verify_response(lines, ['257 \"(.*)/?\" is current directory'])
+x = m.groups()[0]
+if x[-1] == '/':
+    fs_root =  x[:-1]
+else:
+    fs_root = x
+
+# Create relative directories
+lines = ftpc.sendAndReturnAll('mkdir dir_ftptest', prompt)
+ftp_verify_response(lines, ['257 \"dir_ftptest\" directory created'])
+lines = ftpc.sendAndReturnAll('mkdir dir_ftptest/dir_subdir', prompt)
+ftp_verify_response(lines, ['257 \"dir_ftptest/dir_subdir\" directory created'])
+lines = ftpc.sendAndReturnAll('cd ' + fs_root + '/dir_ftptest/dir_subdir', prompt)
+ftp_verify_response(lines, ['250 CWD changed'])
+lines = ftpc.sendAndReturnAll('pwd', prompt)
+ftp_verify_response(lines, ['257 \"' + fs_root + '/dir_ftptest/dir_subdir/?\" is current directory'])
+
+# Create files
+size = 1000
+mode = ('binary')
+mode_i = ('I')
+lines = ftpc.sendAndReturnAll(mode, prompt)
+ftp_verify_response(lines, ['200 Type ' + mode_i + ' selected'])
+lines = ftpc.sendAndReturnAll('quote XFTP creat fil_1 ' + str(size), prompt)
+ftp_verify_response(lines, ['200 OK'])
+
+# do cmd
+lines = ftpc.sendAndReturnAll('get fil_1', prompt)
+ftp_verify_response(lines, [portok_or_enter, '150 Opening data connection', '226 Transfer complete'])
+lines = ftpc.sendAndReturnAll('append fil_1 fil_1', prompt)
+ftp_verify_response(lines, [portok_or_enter, '150 Opening data connection', '226 Transfer complete'])
+lines = ftpc.sendAndReturnAll('rhelp', prompt)
+ftp_verify_response(lines, ['211 Use HELP <cmd> for help on cmd'])
+lines = ftpc.sendAndReturnAll('rstatus', prompt)
+ftp_verify_response(lines, ['211 End of status'])
+lines = ftpc.sendAndReturnAll('system', prompt)
+ftp_verify_response(lines, ['215 UNIX Type: L8 Version: IPFTPS 6.8'])
+
+#local cmd
+lines = ftpc.sendAndReturnAll('lpwd', prompt)
+pos = lines[0].find('Current client directory is "')
+if pos == -1:
+    raise test_fail('Can not parse local path')
+fc_root = lines[0][pos+29:-1]
+ftpc.send('lcd ' + fc_root)
+ftpc.expect('Current client directory is \"' + fc_root + '\"')
+ftpc.send('verbose')
+ftpc.expect('Verbose level: 2')
+ftpc.send('help')
+ftpc.expect (' verbose')
+ftpc.send('status')
+ftpc.expect ('Command-line editing: off')
+lines = ftpc.sendAndReturnAll('quote ALLO parameter ', prompt)
+ftpc.expect ('202 Command not implemented')
+
+ftp_logout(ftpc)

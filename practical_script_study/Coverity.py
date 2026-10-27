@@ -110,7 +110,7 @@ def FindWarningFile(preventHtmlFile):
 
 
 def FindBuildLogFile(preventHtmlFile):
-    warnFile = 'build-log.txt'
+    warnFile = 'build-Logs.txt'
     htmlFile = RefinePath(preventHtmlFile)
     return os.path.dirname(preventHtmlFile) + '/' + warnFile
         

@@ -1,3 +1,4 @@
+import unittest
 s = "hello hello beijing "
 print("子串llo出现了%d次" % (s.count("llo")))
 if s.startswith("h"):

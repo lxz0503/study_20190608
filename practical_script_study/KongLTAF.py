@@ -54,7 +54,7 @@ ltafTestRun = {
                              'board' : 'KONG',
                              'build' : 'vx7-net',   # branch
                              'buildoptions' : None, # commit
-                             'log' : '',
+                             'Logs' : '',
                             },
                 'SPIN' :    {
                              'release' : 'vx7-SR0510-features',
@@ -72,7 +72,7 @@ ltafTestRun = {
                              'board': 'KONG',
                              'build' : '',
                              'buildoptions' : '',
-                             'log' : '',
+                             'Logs' : '',
                             },
             }                
  
@@ -385,7 +385,7 @@ def Store2LTAF(modTests, spin_type, branch, commit, ltaf_release, testDate=None,
     if ciWasspReportBuildId:
         log = 'http://pek-testharness-s1.wrs.com:8080/view/KONG-CI/job/ci-wassp-report/{buildId}/console'.format(buildId=ciWasspReportBuildId)
     else:
-        log = ltafTestRun[branch]['log']
+        log = ltafTestRun[branch]['Logs']
                 
     for bsp in modTests.keys():
         for mod in modTests[bsp]:
@@ -453,7 +453,7 @@ def CreateTestCaseFile(testCaseTemplateFile, release, testsuite, component, test
 def CreateTestRunFile(testCaseTemplateFile, spin_type, release, testName, testsuite, component, domain,
                       sprint, week, bsp, spin, testResult, tag, tester, board, build, buildOption, 
                       log, funcPass, funcFail, requirement=None):
-    tempFile = '/tmp/ltaf_' + os.path.basename( testCaseTemplateFile.replace('.template', '.temp') ) 
+    tempFile = '/tmp/ltaf_' + os.path.basename( testCaseTemplateFile.replace('.template', '.temp') )
            
     with open(testCaseTemplateFile, 'r') as fd:
         fc = fd.read()

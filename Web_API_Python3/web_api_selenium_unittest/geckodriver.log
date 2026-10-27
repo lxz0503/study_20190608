@@ -171,3 +171,22 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1660100354223	geckodriver	INFO	Listening on 127.0.0.1:57701
+1660100357293	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57702" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\xli3\\AppData\\Local\\Temp\\rust_mozprofilef2zTnI"
+1660100358139	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\xli3\\AppData\\Local\\Temp\\rust_mozprofilef2zTnI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57702/devtools/browser/3a66b408-e0b8-4839-8421-1200d97cf912
+1660100360058	Marionette	INFO	Listening on port 57709
+1660100360261	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1660100374449	Marionette	INFO	Stopped listening on port 57709
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+!!! error running onStopped callback: TypeError: callback is not a function
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1660100374837	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 64"  data: no] Stack trace: stop()@TargetObserver.jsm:64
+unwatchForTabs()@TargetList.jsm:70
+unwatchForTargets()@TargetList.jsm:37
+destructor()@TargetList.jsm:109
+stop()@CDP.jsm:104
+close()@RemoteAgent.jsm:138

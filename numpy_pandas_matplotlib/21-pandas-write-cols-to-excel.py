@@ -41,9 +41,8 @@ class PandasWriteExcel(object):
     def write_to_excel(self):
         write_file = "test_cols.xlsx"
         df = pd.DataFrame(self.data, self.index)  # 两个参数
-        writer = pd.ExcelWriter(write_file)
-        df.to_excel(writer, sheet_name='release', startrow=2, startcol=2)
-        writer.save()
+        df.to_excel(write_file, sheet_name='release', startrow=2, startcol=2)
+
 
 
 if __name__ == '__main__':

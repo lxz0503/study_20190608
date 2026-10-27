@@ -89,7 +89,7 @@ def get_rerunlog_data(log_path):
 	dict_data = {}
 	for dirpath, dirnames, filenames in os.walk(log_path):
 			for filename in filenames:
-				if fnmatch(filename, 'target.log'):
+				if fnmatch(filename, 'target.Logs'):
 					dict_filter = get_throughput(os.path.join(dirpath, filename))
 					if dict_filter['frame'] == '64':
 						dict_data['TCP_64'] = dict_filter['sender']
@@ -105,7 +105,7 @@ def get_log_data(log_path):
 	dict_data = {}
 	for dirpath, dirnames, filenames in os.walk(log_path):
 			for filename in filenames:
-				if fnmatch(filename, 'target.log'):
+				if fnmatch(filename, 'target.Logs'):
 					dict_filter = get_throughput(os.path.join(dirpath, filename))
 					if dict_filter['frame'] == '64':
 						dict_data['TCP_64'] = dict_filter['sender']

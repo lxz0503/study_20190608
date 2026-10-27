@@ -1,6 +1,8 @@
+======================this is MySQL on workbench======
+
 SELECT cat_id,goods_name,shop_price
-FROM goods
-WHERE shop_price > ANY(
+FROM shop.goods
+WHERE shop_price > any(
     SELECT AVG(shop_price)
-    FROM goods
+    FROM shop.goods
     GROUP BY cat_id);

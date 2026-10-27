@@ -1,0 +1,107 @@
+-----
+df.rename(columns={'Unnamed: 2':'金牌数',
+                  'Unnamed: 3':'银牌数',
+                  'Unnamed: 4':'铜牌数'},inplace=True) 
+-----
+df.set_index("排名",inplace=True)
+-----
+df.rename_axis("金牌排名",inplace=True)
+-----
+df.iloc[4,0] = '俄奥委会'
+-----
+df['金牌数'].replace(0,'无',inplace=True)
+-----
+import numpy as np
+df.replace(['无',0],[np.nan,'None'],inplace = True)
+-----
+df.dtypes
+-----
+df['金牌数'] = df['金牌数'].fillna('0').astype(int)
+
+微信搜索公众号「早起Python」，关注后可以获得更多资源！
+-----
+df['比赛地点'] = '东京'
+-----
+df = df.replace('None',0)
+df['金银牌总数']  = df['金牌数']  + df['银牌数']
+-----
+df['最多奖牌数量'] = df.bfill(1)[["金牌数", "银牌数",'铜牌数']].max(1)
+-----
+df['金牌大于30']  = np.where(df['金牌数'] > 30, '是', '否')
+-----
+df = df.assign(金铜牌总数=df.金牌数 + df.铜牌数,
+         银铜牌总数=df.银牌数+df.铜牌数) 
+-----
+df.eval(f'金牌占比 = 金牌数 / {gold_sum}',inplace=True)
+-----
+df1 = pd.DataFrame([[i for i in range(len(df.columns))]], columns=df.columns)
+df_new = df.append(df1)
+-----
+df1 = df.iloc[:1, :]
+df2 = df.iloc[1:, :]
+df3 = pd.DataFrame([[i for i in range(len(df.columns))]], columns=df.columns)
+df_new = pd.concat([df1, df3, df2], ignore_index=True)
+-----
+df.drop(1)
+-----
+df.drop(df[df.金牌数<20].index)
+-----
+df.drop(columns=['比赛地点'],inplace=True)
+-----
+df.drop(df.columns[[7,8,9,10]], axis=1,inplace=True)
+-----
+import pandas as pd
+
+df = pd.read_html("https://olympics.com/tokyo-2020/olympic-games/zh/results/all-sports/medal-standings.htm")[0]
+
+# df = pd.read_csv("东京奥运会奖牌数据.csv")  # 如果未联网可以使用这条命令加载数据
+
+df.rename(columns={'Unnamed: 2':'金牌数',
+                  'Unnamed: 3':'银牌数',
+                  'Unnamed: 4':'铜牌数'},inplace=True)
+-----
+df.iloc[:,[0,1,2,3]]
+-----
+df[['金牌数','银牌数','铜牌数']]
+-----
+df.iloc[:,[i%2==1 for i in range(len(df.columns))]]
+-----
+df.loc[:, df.columns.str.endswith('数')]
+-----
+df.loc[10:20, '总分':] 
+-----
+df.loc[9:9]
+-----
+df.loc[9:]
+-----
+df[:50:3]
+-----
+df[df['金牌数'] > 30]
+-----
+df.loc[df['金牌数'] == 10]
+-----
+df.loc[~(df['金牌数'] == 10)]
+-----
+df[[i%2==1 for i in range(len(df.index))]]
+-----
+df.loc[df['国家奥委会'].isin(['中国','美国','英国','日本','巴西'])]
+-----
+df.loc[(df['金牌数'] < 30) & (df['国家奥委会'].isin(['中国','美国','英国','日本','巴西']))]
+-----
+df[df.国家奥委会.str.contains('国')]
+-----
+df.iloc[0:1,[1]]
+-----
+df.iloc[0:2,[0,1]]
+-----
+df.iloc[3,3]
+-----
+df.at[4,'金牌数']
+-----
+df.loc[df['国家奥委会'] == '中国'].loc[1].at['金牌数']
+-----
+df.query('金牌数+银牌数 > 15')
+-----
+gold_mean = df['金牌数'].mean()
+df.query(f'金牌数 > {gold_mean}')
+-----

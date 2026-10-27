@@ -45,7 +45,7 @@ def createHelixNightlyRecord(tr, bsp, module):
                  'testSuite' : '',              # must be filled up
                  'runDate' : '',                # must be filled up
                  'status' : '',                 # must be filled up
-                 'log' : '',   
+                 'Logs' : '',
                  'component' : 'networking',   
                  'tester' : 'KONG',
                  'automation' : 'Auto',  

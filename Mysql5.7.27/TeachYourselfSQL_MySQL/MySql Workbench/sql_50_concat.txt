@@ -1,0 +1,4 @@
+将employees表中的所有员工的last_name和first_name通过(')连接起来
+注意：双引号里面可以包含单引号
+select concat(last_name, "'", first_name) as name
+ from employees;

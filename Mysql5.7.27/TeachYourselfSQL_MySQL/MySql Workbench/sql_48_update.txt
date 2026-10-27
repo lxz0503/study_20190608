@@ -1,0 +1,27 @@
+use dd;
+drop table if exists  emp_bonus;
+drop table if exists  `salaries` ;
+
+create table emp_bonus(
+emp_no int not null,
+btype smallint not null);
+
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary`  float(11,1) default NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+insert into emp_bonus values(10001,1);
+
+INSERT INTO salaries VALUES(10001,85097,'2001-06-22','2002-06-22');
+INSERT INTO salaries VALUES(10001,88958,'2002-06-22','9999-01-01');
+========================================================================
+写出更新语句，将所有获取奖金的员工当前的(salaries.to_date='9999-01-01')薪水增加10%。
+(emp_bonus里面的emp_no都是当前获奖的所有员工)
+分析： emp_bonus表里面保存着获奖员工的emp_no
+update salaries    --
+set salary=salary*1.1  --新的字段,修改某一列的数值
+where emp_no in (select emp_no from emp_bonus)   --子查询 获取所有获奖员工的emp_no
+and to_date='9999-01-01';    --- and 字句

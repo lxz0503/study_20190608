@@ -1,6 +1,7 @@
 # chrome driver link: http://chromedriver.storage.googleapis.com/index.html
 # Firefox driver link: https://github.com/mozilla/geckodriver/releases/
 # IE driver link:  http://selenium-release.storage.googleapis.com/index.html
+直接下载相关驱动放到 C:\Users\xli3\AppData\Local\Programs\Python\Python38
 要打开IE浏览器的话，需要在浏览器的Internet选项中的安全页里有4个安全选项，Internet、本地Internet、受信任的站点、受限制的站点，
 这4个里面都有一个启用保护模式，都需要勾选上才可以，
 还得把驱动的路径加入到环境变量中

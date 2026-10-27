@@ -1,0 +1,69 @@
+# network.py default config file
+
+bridge : br-vm-123
+
+QEMU-COMMON: &QEMU-COMMON
+    memory : 2048
+    smp : 4
+    enable-kvm : True
+    serial : stdio
+    monitor : none
+
+# Anchors can be used to duplicate/inherit properties
+QEMU-Q35-COMMON : &QEMU-Q35-COMMON
+    <<: *QEMU-COMMON
+    machine: q35
+    append : sysbootline:gei(0,0)
+
+QEMU-LINUX-COMMON : &QEMU-LINUX-COMMON
+    <<: *QEMU-COMMON
+    cpu : host
+    image : /home/xli3/pytestAuto/config/focal-server-cloudimg-amd64.img
+
+QEMU-Q35-1 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.10/24
+
+QEMU-Q35-2 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.20/24
+
+QEMU-Q35-3 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.30/24
+
+QEMU-Q35-4 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.40/24
+
+QEMU-Q35-5 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.50/24
+
+QEMU-Q35-6 :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.60/24
+
+# The regexp << is called Merge Key Language-Independent Type. It is used to
+# indicate that all the keys of one or more specified maps should be inserted
+# into the current map.
+QEMU-Q35-4Disk :
+    <<: *QEMU-Q35-COMMON
+    ip : 192.168.123.70/24
+    disk :
+        - qemuDisk/disk1.img
+        - qemuDisk/disk2.img
+        - qemuDisk/disk3.img
+        - qemuDisk/disk4.img
+
+QEMU-LX-1 :
+    <<: *QEMU-LINUX-COMMON
+    ip : 192.168.123.108/24
+
+
+LINUX-IMAGE:
+    image  : /home/xli3/pytestAuto/config/focal-server-cloudimg-amd64.img
+    user   : ubuntu
+    passwd : ubuntu
+    prompt : 'ubuntu@ubuntu:~$ '
+    device : ens3

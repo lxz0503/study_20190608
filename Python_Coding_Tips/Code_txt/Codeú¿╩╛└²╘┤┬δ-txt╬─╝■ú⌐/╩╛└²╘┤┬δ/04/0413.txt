@@ -1,0 +1,2 @@
+# ÉèÖÃ×Ô¶¯Ìî³äÈİÆ÷
+self.tableWidget.horizontalHeader().setStretchLastSection(True)

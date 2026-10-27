@@ -1,6 +1,6 @@
 SELECT cat_id,goods_name,shop_price
-FROM goods
+FROM shop.goods
 WHERE shop_price < all(
     SELECT AVG(shop_price)
-    FROM goods
+    FROM shop.goods
     GROUP BY cat_id);

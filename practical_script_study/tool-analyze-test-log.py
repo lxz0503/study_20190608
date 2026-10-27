@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # features:
-#    -analyze rerun test log module.log to display test results 
+#    -analyze rerun test Logs module.Logs to display test results
 
 import argparse
 import os
@@ -185,7 +185,7 @@ def PrintModTestResult(mod, tests):
             print '%s, %s, %s' % (mod, testName, testStatus)
             
 
-def IsLogFile(fileName, extName='.log'):
+def IsLogFile(fileName, extName='.Logs'):
     _, ext = os.path.splitext(fileName)
     return ext == extName
 
@@ -193,8 +193,8 @@ def GetModName(fileName):
     return os.path.basename(fileName).split('.')[0]
         
 def main():
-    parser = argparse.ArgumentParser(description='analyze nightly test log')
-    parser.add_argument('--path', action='store', dest='logPath', help='the path that *.log locates (required)')
+    parser = argparse.ArgumentParser(description='analyze nightly test Logs')
+    parser.add_argument('--path', action='store', dest='logPath', help='the path that *.Logs locates (required)')
     args = parser.parse_args()
 
     if args.logPath is None:

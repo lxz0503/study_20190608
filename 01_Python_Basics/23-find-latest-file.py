@@ -15,8 +15,15 @@ def find_newest_file(file_dir):
     file_newest = os.path.join(file_dir, lists[-1])
     return file_newest
 
+def find_all_files(file_dir):
+    for dirpath, dirnames, filenames in os.walk(file_dir):
+        for filename in filenames:
+            file_name = os.path.join(dirpath, filename)
+            print(os.path.split(file_name)[-1])
+            # print(file_name)
 
 if __name__ == '__main__':
     # file_newest = find_newest_file(r'F:\xiaozhan_git\study_20190608\Web_API_Python3')
-    file_newest = find_newest_file(r'/home/windriver')
-    print('the latest file is', file_newest)
+    # file_newest = find_newest_file(r'/home/windriver')
+    # print('the latest file is', file_newest)
+    find_all_files('D:\\sql_data')

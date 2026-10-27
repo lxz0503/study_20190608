@@ -1,0 +1,103 @@
+-----
+pd.set_option('display.max_columns', None) #显示全部列
+# pd.set_option('display.max_rows', None) # 显示全部行
+-----
+pd.set_option('display.max_columns', 10)  
+pd.set_option('display.max_rows', 7)
+-----
+pd.reset_option("max_rows")
+pd.reset_option("max_columns")
+-----
+pd.set_option ('display.max_colwidth',10)
+-----
+pd.set_option('precision', 5)
+-----
+pd.reset_option("^display")
+-----
+pd.set_option("mode.chained_assignment", None) 
+# 全局取消warning
+# import warnings
+# warnings.filterwarnings('ignore')
+-----
+pd.set_option('chop_threshold', 20) 
+-----
+pd.set_option("display.html.use_mathjax",True)
+-----
+pd.set_option("plotting.backend","plotly")
+-----
+pd.reset_option("all") 
+-----
+data.style.hide_index()
+-----
+data.style.set_precision(2)
+-----
+(data
+.style
+.set_na_rep("数据缺失"))
+-----
+(data
+.style
+.set_na_rep("数据缺失")
+.highlight_null(null_color='skyblue'))
+-----
+data.style.highlight_max()
+-----
+data.style.highlight_min()
+-----
+(data
+.style
+.highlight_max(color='#F77802')
+.highlight_min(color='#26BE49'))
+-----
+(data
+.style
+.highlight_between(left=3000, right=10000, subset=['salary']))
+-----
+import seaborn as sns
+
+cm = sns.light_palette("green", as_cmap=True)
+
+(data
+.style
+.background_gradient(cmap=cm))
+-----
+(data
+.style
+.set_properties(
+    subset=['salary'], **{'color': 'red'}))
+-----
+(data
+.style
+.set_properties(**{'background-color': '#F8F8FF','text-align':'center', 'font-size': '13px'}))
+-----
+(data
+.style
+.set_properties(**{'background-color': '#F8F8FF','text-align':'center', 'font-size': '13px'})
+.set_properties(
+    subset=['salary'], **{'color': 'red'}))
+-----
+(data
+.style
+.set_properties(**{'background-color': '#F8F8FF','text-align':'center', 'font-size': '13px'})
+.set_properties(
+    subset=['salary'], **{'color': 'red'})).to_excel('带有样式导出.xlsx')
+-----
+(data
+.style
+.bar(subset=['salary'],color='skyblue'))
+-----
+def my_style(val):
+
+    color = 'red' if val > 30000 else 'black'
+    return 'color: %s' % color
+
+
+data.style.applymap(my_style, subset="salary")
+-----
+data.style.format({"createTime": lambda t: t.strftime("%Y年%m月%d日")})
+-----
+(data
+.style
+.format("{0:,.2f}分", subset="matchScore")
+.format("{""}元", subset="salary"))
+-----

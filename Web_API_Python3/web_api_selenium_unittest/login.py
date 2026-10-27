@@ -1,4 +1,4 @@
-#this is a test to log in http://www.maiziedu.com
+#this is a test to Logs in http://www.maiziedu.com
 #with independent data stored in dictionary
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait

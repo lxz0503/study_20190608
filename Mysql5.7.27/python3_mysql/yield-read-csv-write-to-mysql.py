@@ -5,8 +5,7 @@ It also supports other database functions like select,insert alter and update re
 # !/usr/bin/python3
 # coding=utf-8
 import pymysql
-import time
-from python3_mysql.operations import *
+from operations import *
 import csv
 from collections import namedtuple
 import configparser
@@ -14,10 +13,6 @@ import configparser
 
 class DatabaseInit(object):
     def __init__(self, sql_conf):
-        # self.host = host
-        # self.dbname = dbname
-        # self.username = username
-        # self.password = password
         self.charset = 'utf8'
         self.host, self.port, self.db_name, self.user, self.password = self.__get_sql_config()
         self.sql_conf = sql_conf
@@ -142,19 +137,19 @@ if __name__ == '__main__':
     db.create()
     # xiaozhan debug, auto generate id.
     for i, t in enumerate(db.get_data('data.csv'), 1):      # the table index always starts from 1
-        args = [(i, t.name, t.status, t.arch, t.sprint)]      # this is to generate parameter for excecutemany
+        args = [(t.name, t.status, t.arch, t.sprint)]      # this is to generate parameter for excecutemany
         db.insert(insert_data, args)    # insert_data is at operations.py
     # xiaozhan debug end
     # this can put failed cases into a dictionary
-    res = db.search_data()
-    print(res)
-    # after rerun, you need to update test result again
-    db.alter_table()   # add date column
-    db.update_data()
-    time.sleep(5)
-    res = db.search_data()  # tuple change to a list
-    if len(res) != 0:
-        print('modify not ok, check log')
+    # res = db.search_data()
+    # print(res)
+    # # after rerun, you need to update test result again
+    # db.alter_table()   # add date column
+    # db.update_data()
+    # time.sleep(5)
+    # res = db.search_data()  # tuple change to a list
+    # if len(res) != 0:
+    #     print('modify not ok, check Logs')
 
 
 

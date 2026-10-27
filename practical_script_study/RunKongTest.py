@@ -268,7 +268,7 @@ class ImageBuilder(object):
         self.testCase = testCase
         
     def Build(self):
-        cmd = './runKong.sh -g %s -m %s buildOnly 2>&1 | tee build.log'
+        cmd = './runKong.sh -g %s -m %s buildOnly 2>&1 | tee build.Logs'
         ret, result = runShCmd(cmd)
         
             

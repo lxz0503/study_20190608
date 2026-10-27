@@ -1,0 +1,50 @@
+-----
+df.shape
+-----
+df.sample(5)
+-----
+df.head()
+# df.tail() # 查看后5行
+-----
+df.info()
+-----
+df.describe()
+
+# df.describe().round(2).T 一般我会这样用
+-----
+df.describe(include=['O'])
+-----
+df.describe(include='all')
+-----
+df.isna().sum().sum()
+-----
+df.isnull().sum()
+-----
+df[df.isnull().T.any() == True]
+
+微信搜索公众号「早起Python」，关注后可以获得更多资源！
+-----
+(df[df.isnull().T.any() == True]
+.style
+.highlight_null(null_color='skyblue'))
+-----
+df = df.dropna()
+-----
+df = df.fillna('*') 
+-----
+df['评分'] = df['评分'].fillna(axis=0,method='ffill')
+-----
+df['评价人数'] = df['评价人数'].fillna(df['评价人数'].mean())
+-----
+df['评价人数'] = df['评价人数'].fillna(df['评价人数'].interpolate())
+-----
+df['语言']=df.groupby('国家/地区').语言.bfill()
+-----
+df[df.duplicated()]
+-----
+df[df.duplicated(['片名'])]
+-----
+df = df.drop_duplicates()
+-----
+df = df.drop_duplicates(keep = 'last')
+-----

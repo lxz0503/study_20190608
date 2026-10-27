@@ -9,3 +9,4 @@ for i in range(5):
     word, count = items[i]     # 每个list元素是一个元组
     # print("{0:<5}->{1:>5}".format(word, count))
     print("%s----%s" % (word, count))
+

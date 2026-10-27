@@ -1,0 +1,6 @@
+import pandas as pd
+aa =r'./data/fl4.xls'
+df = pd.DataFrame(pd.read_excel(aa))
+df2=df[['label1','label2']]
+tuples = [tuple(x) for x in df2.values]	 # 使用列表推导式将转换为元组的DateFrame生成列表
+print(tuples)

@@ -1,0 +1,131 @@
+-----
+pd.Timestamp('now')
+-----
+pd.date_range('1/1/2021','9/11/2021')
+-----
+pd.date_range("2021-01-01", periods=10)
+-----
+pd.date_range("2021-01-01", periods=7, freq="W")
+-----
+pd.bdate_range(start='1/1/2021', end='9/1/2021')
+-----
+(pd.Timestamp('now') - pd.to_datetime('2021-02-14')).days
+-----
+import numpy as np
+(pd.Timestamp('now') - pd.to_datetime('2021-09-01 13:14:00'))/np.timedelta64(1, 'h')
+-----
+(pd.Timestamp('now') - pd.to_timedelta('1 day'))
+-----
+(pd.Timestamp('now') - pd.to_timedelta('1 day')).strftime("%Y年%m月%d日-%H时%M分%S秒")
+-----
+# 日线
+df1 = ak.stock_zh_a_hist(symbol="000001", period="daily", start_date="20170101", end_date='20210914', adjust="qfq")
+# df1 = pd.read_csv("000001_daily.csv")
+# 5min
+df2 = ak.stock_zh_a_hist_min_em(symbol="000001", period='5', adjust='qfq', start_date="2021-08-01 09:32:00", end_date="2021-09-14 09:32:00")
+# df2 = pd.read_csv("000001_5min.csv")
+-----
+df1.info()
+-----
+df1['日期'] = pd.to_datetime(df1['日期'])
+df2['时间'] = pd.to_datetime(df2['时间'])
+# df1['日期'] = df1['日期'].astype('datetime64[ns]')
+-----
+df2[(df2['时间'] > '2021-08-03 09:35:00') & (df['时间'] < '2021-08-04 15:00:00')]
+-----
+df2.set_index('时间').truncate(after=pd.Timestamp('2021-08-04'))
+-----
+df1['涨跌']  = df1.收盘.diff()
+-----
+df1['涨跌变化率'] = (df1.收盘.pct_change()).apply(lambda x: format(x, '.2%'))
+-----
+df1.收盘.rolling(window=5).mean()
+-----
+df1.收盘.rolling(window=5).mean().plot()
+-----
+df1.set_index("日期")['收盘'].plot()
+df1.set_index("日期")['收盘'].rolling(5).mean().plot()
+df1.set_index("日期")['收盘'].rolling(20).mean().plot()
+-----
+df1['EMA20'] = df1['收盘'].ewm(span=20,min_periods=0,adjust=False,ignore_na=False).mean()
+-----
+exp1 = df1['收盘'].ewm(span=12, adjust=False).mean()
+exp2 = df1['收盘'].ewm(span=26, adjust=False).mean()
+df1['MACD'] = exp1 - exp2
+df1['Signal line'] = df1['MACD'].ewm(span=9, adjust=False).mean()
+-----
+df1['former 30 days rolling Close mean'] = df1['收盘'].rolling(20).mean()
+df1['upper bound'] = df1['former 30 days rolling Close mean'] + \
+    2*df1['收盘'].rolling(20).std()  # 在这里我们取20天内的标准差
+df1['lower bound'] = df1['former 30 days rolling Close mean'] - \
+    2*df1['收盘'].rolling(20).std()
+
+import matplotlib.pyplot as plt
+
+plt.rcParams['font.sans-serif'] = ['Songti SC'] #设置中文，如果本句代码导致失效，可以点击https://mp.weixin.qq.com/s/WKOGvQP-6QUAP00ZXjhweg
+
+df1.set_index("日期")[['收盘', 'former 30 days rolling Close mean','upper bound','lower bound' ]].plot(figsize=(16, 6))
+
+plt.show()
+-----
+df1.set_index('日期').shift(1)
+-----
+import datetime
+df1.set_index('日期').shift(freq=datetime.timedelta(1))
+-----
+df1.set_index('日期').resample('W').last()
+-----
+df1.set_index('日期').resample('M').last()
+-----
+df2.set_index('时间').resample('D').last()
+-----
+df_3min = df2.set_index('时间').resample('3min').last()
+df_3min.ffill()
+-----
+df_new = df1[['日期','开盘','最高','最低','收盘','成交量']]
+-----
+df_new.columns = ['Date','Open','High','Low','Close','Volume']
+-----
+df_new.set_index(["Date"], inplace=True)
+-----
+mpf.plot(df_new, type='line')
+-----
+mpf.plot(df_new, type='line',mav=(5,10,15))
+-----
+mpf.plot(df_new, type='line',mav=(5,10,15), volume=True)
+-----
+df_new = df1.set_index('日期').resample('W').last()
+df_new = df_new[['开盘','最高','最低','收盘','成交量']]
+df_new.columns = ['Open','High','Low','Close','Volume']
+mpf.plot(df_new, type='line',mav=(5,10,15), volume=True)
+-----
+df_new = df2[(df2['时间'] > '2021-08-03 09:35:00') & (df['时间'] < '2021-08-03 15:00:00')]
+df_new = df_new[['时间','开盘','最高','最低','收盘','成交量']]
+df_new.columns = ['Date','Open','High','Low','Close','Volume']
+df_new.set_index(["Date"], inplace=True)
+mpf.plot(df_new, type='candle',mav=(3), volume=True)
+-----
+df_new = df2[(df2['时间'] > '2021-08-03 9:00:00') & (df['时间'] < '2021-08-04 15:00:00')]
+df_new = df_new[['时间','开盘','最高','最低','收盘','成交量']]
+df_new.columns = ['Date','Open','High','Low','Close','Volume']
+df_new.set_index(["Date"], inplace=True)
+mpf.plot(df_new,type='candle',show_nontrading=True, volume=True)
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----
+
+-----

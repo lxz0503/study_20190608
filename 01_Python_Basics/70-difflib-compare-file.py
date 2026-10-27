@@ -21,4 +21,4 @@ def compare(file1, file2, result_html):
 
 
 if __name__ == '__main__':
-    compare('test_result_stand.log', 'test_result0604.log', 'diff_result.html')
+    compare('test_result_stand.Logs', 'test_result0604.Logs', 'diff_result.html')

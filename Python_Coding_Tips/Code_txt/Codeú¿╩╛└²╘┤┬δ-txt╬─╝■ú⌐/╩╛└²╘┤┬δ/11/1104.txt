@@ -1,0 +1,13 @@
+python37_32 -m pip install pyinstaller
+
+
+
+
+
+cd C:\Python\Python37-32\Scripts
+
+
+
+
+
+python37_32 pyinstaller-script.py -F E:\studentsystem.py

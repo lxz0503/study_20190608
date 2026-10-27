@@ -1,3 +1,5 @@
+#pip install jsonpath_rw
+# pycharm上面安装pyyaml,同时自己电脑端也用要pip install pyyaml，然后才能import yaml
 # 如果用自己默认安装的Python3，就用pip安装selenium,并且pycharm的python解释器要设置为python安装目录,即F:\Python\python.exe#
 # 如果用anconda,就要进入到dos下面，C盘即可，上来就敲conda，看是否识别，如果不识别，添加环境变量即可 #
 # conda list, conda install selenium， conda upgrade --all #

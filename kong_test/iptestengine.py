@@ -356,14 +356,14 @@ def _eta_str(eta):
     else:
         return '%ss' % eta
 
-class _log(object):        #  xiaozhan, analyze how to capture log
-    #!!! one global and one per object. make each instance call the class method to make the global/merged log
-    def __init__(self, log, verbose):    # xiaozhan,  log is a file handler
+class _log(object):        #  xiaozhan, analyze how to capture Logs
+    #!!! one global and one per object. make each instance call the class method to make the global/merged Logs
+    def __init__(self, log, verbose):    # xiaozhan,  Logs is a file handler
         self.testname = ''
         self.logfile = log
         self.verbose = verbose
         self.context = ''
-        self.logfile.write('Begin log at GMT: (%s), Localtime: (%s)\n' % (time.asctime(time.gmtime()), time.asctime(time.localtime())))
+        self.logfile.write('Begin Logs at GMT: (%s), Localtime: (%s)\n' % (time.asctime(time.gmtime()), time.asctime(time.localtime())))
         self.logfile.write('Following timestamps are GMT\n')
         self.starttime = None
         self.v6 = ''
@@ -400,7 +400,7 @@ class _log(object):        #  xiaozhan, analyze how to capture log
     def start(self, test, quiet, v6, echo):
         newcontext = test.prodname + '.' + test.modname + '.' + test.testname
         if self.context != '':
-            raise engine_error('log.start: new test started without ending the last one. new=%s, old=%s' % (newcontext, self.context))
+            raise engine_error('Logs.start: new test started without ending the last one. new=%s, old=%s' % (newcontext, self.context))
         self('')
         self('-'*80)
         self('-'*30 + ' Test starts ' + '-'*37)
@@ -812,7 +812,7 @@ class ssh(session):
     Expects passwordless sudo unless logged in as root.'''
     def _login(self):
         self.type = 'ssh'
-        #log('Logging in to %s:%s using ssh' % (addr, port))
+        #Logs('Logging in to %s:%s using ssh' % (addr, port))
         s = _dummy()
         if not self.dry:
             try:
@@ -936,7 +936,7 @@ class bash(session):
     def _login(self):
         self.type = 'bash'
 
-        #log('Logging in to %s:%s using ssh' % (addr, port))
+        #Logs('Logging in to %s:%s using ssh' % (addr, port))
         s = _dummy()
         if not self.dry:
             try:
@@ -1029,7 +1029,7 @@ class shell_ops(object):
         (calls pexpect)'''
         def log_command_output():
             self.s.log('\n' + self.s.name + '>' + (str(self.s.s.before) + str(self.s.s.after)).replace('\r',''))
-            #self.s.log.flush()
+            #self.s.Logs.flush()
         
         #print '--- expect %s %s %s' % (time.time(), threading.current_thread(), cmd)
            
@@ -2919,7 +2919,7 @@ class target(object):
         if self.use_sftp == True:
             import paramiko
 
-            #self.sh.log('using get via sftp')
+            #self.sh.Logs('using get via sftp')
             transport = paramiko.Transport((self.login_ip().addr,22))
             transport.connect(username = user, password = passwd)
 
@@ -2952,7 +2952,7 @@ class target(object):
         if self.use_sftp == True:
             import paramiko
 
-            #self.sh.log('using get via sftp')
+            #self.sh.Logs('using get via sftp')
             transport = paramiko.Transport((self.login_ip().addr,22))
             transport.connect(username = user, password = passwd)
 
@@ -2997,7 +2997,7 @@ class target(object):
         if self.use_sftp == True:
             import paramiko
 
-            #self.sh.log('using transfer via sftp')
+            #self.sh.Logs('using transfer via sftp')
             transport = paramiko.Transport((self.login_ip().addr,22))
             transport.connect(username = user, password = passwd)
 
@@ -3096,7 +3096,7 @@ class target(object):
         if self.use_sftp == True:
             import paramiko
 
-            #self.sh.log('using recursive upload via sftp')
+            #self.sh.Logs('using recursive upload via sftp')
             transport = paramiko.Transport((self.login_ip().addr,22))
             transport.connect(username = user, password = passwd)
 
@@ -3777,7 +3777,7 @@ class iptarget(target):
     def empty_log(self):
         self.sh.send('rm syslog')
         self.sh.wait_prompt()
-        self.sh.send('syslog log file syslog')
+        self.sh.send('syslog Logs file syslog')
         #self.sh.expect_exact('syslog: logging to file')
         self.sh.wait_prompt()
 
@@ -5411,10 +5411,10 @@ class fos(linux):
 
     def add_vr(self, nr): #!!! add 127.0.0.1 and v6 (::?) and up() if some flag set, "setup=True"?
         "Add virtual router"
-        raise engine_error('log.start: fos must have VRs pre-added')
+        raise engine_error('Logs.start: fos must have VRs pre-added')
 
     def _del_vr(self, nr, cleanup=False):
-        raise engine_error('log.start: fos cant delete VR')
+        raise engine_error('Logs.start: fos cant delete VR')
 
     def add_fos_vswitch(self, num, vswitch):
         self.fos_vswitch[num] = vswitch
@@ -6540,7 +6540,7 @@ class loginproc(Thread):
             session_type = globals()[session_type_name]
             #print '=== target_type:', target_type
             self.log('Logging in to "%s", ip: %s' % (target_name, login_ip))
-            #a_session = session_type(log, logverbose, login_ip, port, user, passwd, target_name, opt['dry'])
+            #a_session = session_type(Logs, logverbose, login_ip, port, user, passwd, target_name, opt['dry'])
             #!!!todo the session login could examine the prompt or run some command to figure out target type
 
             #a_host = target_type()
@@ -6555,7 +6555,7 @@ class loginproc(Thread):
             #proxied = proxy(a_host, a_session)
 
             ts = target_state()
-            s_args = {'log':self.log,
+            s_args = {'Logs':self.log,
                       'logverbose':self.logverbose,
                       'addr':login_ip,
                       'port':port,
@@ -6853,7 +6853,7 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
     import optparse
     p = optparse.OptionParser()
     p.add_option('-b', '--break-on-error', dest = 'break_on_fail', action="store_true", default = False, help = '''Exit the test script as soon as there is an error. Otherwise, remaining tests will be run anyways but a report in the end will show the number of failures''')
-    p.add_option('-v', '--verbose', action="store_true", default = False, help = 'Everything that would have been written to the log is printed to screen')
+    p.add_option('-v', '--verbose', action="store_true", default = False, help = 'Everything that would have been written to the Logs is printed to screen')
     #p.add_option('-q', '--quiet',  help = 'Be more quiet')
     quiet = True
     p.add_option('-l', '--list', dest = 'list_prods', action="store_true", default = False, help = 'List available tests. Combine with -v to see descriptions. Add -t prodname[.modulename[.testname]] to list specific products and their tests.')
@@ -6861,9 +6861,9 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
     p.add_option('-4', '--only-ipv4', dest = 'test_v6', action="store_false", default = True, help = 'Only run IPv4 versions of tests.')
     p.add_option('-6', '--only-ipv6', dest = 'test_v4', action="store_false", default = True, help = 'Only run IPv6 versions of tests.')
     p.add_option('-f', '--fast', action="store_true", default = False, help = 'Tests with support for this flag will not be run as thoroughly. This also skips process accounting.')
-    p.add_option('-d', '--dry-run', action="store_true", default = False, help = "Don't actually do anything, just log what would've been done to screen. This is only useful sometimes when debugging the test engine. The output looks similar to the old tcl expect engine.")
+    p.add_option('-d', '--dry-run', action="store_true", default = False, help = "Don't actually do anything, just Logs what would've been done to screen. This is only useful sometimes when debugging the test engine. The output looks similar to the old tcl expect engine.")
     p.add_option('-t', '--test', dest = 'what_to_test', default = None, help = 'Run the tests found in product TEST. TEST is chosen as either by its fully qualified name or a set of tests. E.g: ipnet or ipnet.tcp or ipnet.tcp.accept. TEST can also be a comma-separated list without whitespace, e.g.: ipnet.icmp.echo,ipnet.arp (mixing single and sets of tests is ok).')
-    p.add_option('--log-path', help = 'Where log files will be stored. Default from config.py')
+    p.add_option('--Logs-path', help = 'Where Logs files will be stored. Default from config.py')
     p.add_option('--productroot', help = 'The top path from where the productpaths begin. Default from config.py')
     p.add_option('--debug', dest = 'debugme', action="store_true", default = False, help = './iptestengine.py -t ipnet.neigh.dynamic --debug and then hit "s" to step into your specific test. OR just import pdb; pdb.set_trace() whereever you want.')
     p.add_option('--com', help = 'commercial advertising output')
@@ -6967,10 +6967,10 @@ def main(args):     # ./iptestengine.py -t ipipsec.ipipsec.esp_transport_aesctr_
             return
         tests += tests_
 
-    logfile = open(config.logpath + os.path.sep + 'test.log' + '_' + localtime_str(), 'w')
+    logfile = open(config.logpath + os.path.sep + 'test.Logs' + '_' + localtime_str(), 'w')
     if not logverbose:
         logverbose = logfile
-    runlog = _log(logfile, o.verbose)    # xiaozhan, capture log, an log instance of class _log,
+    runlog = _log(logfile, o.verbose)    # xiaozhan, capture Logs, an Logs instance of class _log,
 
     class testscript_logger(object):
         def __init__(self, l):

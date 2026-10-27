@@ -7,10 +7,7 @@ import json
 
 class OperateJson(object):
     def __init__(self, file_path=None):
-        if file_path == None:
-            self.file_path = 'data.json'
-        else:
-            self.file_path = file_path
+        self.file_path = file_path or 'data.json'
         self.data = self.read_data()
 
     # 读取json文件
@@ -21,7 +18,7 @@ class OperateJson(object):
             return res
 
     # 根据关键字获取数据
-    def get_data(self, index):
+    def get_data(self, index):    # index is the key value
         # print(type(self.data))
         return self.data[index]
 
@@ -37,6 +34,6 @@ if __name__ == '__main__':
         'name': 'Runoob',
         'url': 'http://www.runoob.com'
          }
-    op_json = OperateJson()
+    op_json = OperateJson()  # You can set default parameter or no parameter
     op_json.write_data(data)    # write dictionary into a json file
     print(op_json.get_data('name'))

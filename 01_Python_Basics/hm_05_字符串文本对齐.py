@@ -11,7 +11,7 @@ print(s.partition("o"))  # 把字符串拆分成一个3元素的元祖
 print(s.split(" "))    # 以空格拆分成为一个列表
 l = ["aa", "bb", "cc"]
 print("*".join(l))      # 列表通过join方法可以转换成字符串
-print(s[0::2])  # 获取0，2，4，6，8
+print(s[0::2])  # 获取第0，2，4，6，8个元素， 即每隔一个取一个元素
 
 # Sequence[start:end:step] python 的序列切片中，
 # 第一个:隔离了 起始索引 和 结束索引，第二个:隔离了 结束索引 和 步长

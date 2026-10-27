@@ -13,7 +13,7 @@ F1 Web帮助文档主页
 
 Shift + F1 选中对象的Web帮助文档
 
-Ctrl + 悬浮/单击鼠标左键 简介/进入代码定义
+Ctrl + 悬浮/单击鼠标左键 简介/进入代码定义   -----如何退回去呢？cttl+alt + <--
 
 Ctrl + Z 撤销上次操作
 
@@ -143,7 +143,7 @@ Ctrl + G 查看当前行号、字符号
 
 Ctrl + E 在当前文件弹出最近使用的文件列表
 
-Ctrl+Alt+Left/Right 后退、前进
+Ctrl+Alt+Left/Right 后退、前进   -----进入一个函数后，用这个可以退回去
 
 Ctrl+Shift+Backspace 导航到最近编辑区域（差不多就是返回上次编辑的位置）
 

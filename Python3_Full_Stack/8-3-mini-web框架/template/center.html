@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stock data</title>
+</head>
+<body>
+<table border="1px" style="border-collapse:collapse">
+    <thead>
+       <tr>
+           <th>name</th>
+           <th>status</th>
+           <th>arch</th>
+           <th>sprint</th>
+       </tr>
+    </thead>
+    {% for value in result %}
+<!--    <tr>-->
+<!--        <td>{{value['name']}}</td>-->
+<!--        <td>{{value['status']}}</td>-->
+<!--        <td>{{value['arch']}}</td>-->
+<!--        <td>{{value['sprint']}}</td>-->
+<!--    </tr>-->
+<!-- if result is a tuple,use this function:jinja_render-->
+    {% endfor %}
+
+</table>
+</body>
+</html>

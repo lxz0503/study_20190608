@@ -47,9 +47,9 @@ class Xlloginfo(object):
 
 if __name__ == '__main__':
 	'''
-	log = Loginfo()
-	log.log_write('test Loginfo 测试')
-	log.log_close()
+	Logs = Loginfo()
+	Logs.log_write('test Loginfo 测试')
+	Logs.log_close()
 	'''
 	xinfo = Xlloginfo()
 	xinfo.log_init('test', 'name', 'pwd', 'result', 'info')

@@ -15,7 +15,7 @@ def run_anvl_for_one_suite(suite, cfgDir, logDir, case, version):
 
 # logFolder=/root/ANVL-automation/ANVL_Vx7_2019-12-05_19-49-56
 # cmd=sudo /opt/Ixia/IxANVL880/ANVL-SRC/Bin/ix86-Linux/anvl -l low -f /opt/Ixia/IxANVL880/ANVL-SRC/DocUserQ35/anvlrip_SplitHorizon rip 8.17 |
-# tee /root/ANVL-automation/ANVL_Vx7_2019-12-05_19-49-56/RipSplitHorizon.log 2>&1
+# tee /root/ANVL-automation/ANVL_Vx7_2019-12-05_19-49-56/RipSplitHorizon.Logs 2>&1
 # Kernel TCP:
 # sp iperf3,"-c 118.1.1.2 -t 10 -i 10 -f m -l 64 -N"
 # sp iperf3,"-c 118.1.1.2 -t 10 -i 10 -f m -l 1024"

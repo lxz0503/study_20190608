@@ -1,0 +1,71 @@
+-----
+import pandas as pd
+
+df = pd.read_csv("某超市销售数据.csv",thousands=',')
+-----
+pd.pivot_table(df,values = ['销售额'],index = '省/自治区')
+
+# df.groupby("省/自治区")['销售额'].mean() 通过上一章分组
+-----
+pd.pivot_table(df,values = ['销售额'],index = '省/自治区',aggfunc = sum)
+-----
+pd.pivot_table(df,values = ['销售额'],index = '省/自治区',aggfunc = ['mean',sum])
+-----
+pd.pivot_table(df,values = ['销售额','利润','数量'],index = '类别',aggfunc = sum)
+-----
+pd.pivot_table(df,values = ['销售额'],index = ['省/自治区','类别'],aggfunc = sum)
+-----
+pd.pivot_table(df,values = ['销售额'],index = ['省/自治区'], columns='类别',aggfunc = sum)
+-----
+pd.pivot_table(df,values = ['销售额','数量'],index = ['省/自治区','类别'],aggfunc = ['mean',sum],margins=True)
+-----
+table = pd.pivot_table(df,values = ['销售额','数量'],index = ['省/自治区','类别'],aggfunc = ['mean',sum],margins=True)
+table.query('类别 == ["办公用品"]')
+-----
+table = pd.pivot_table(df,values = ['销售额','利润','数量'],index = '类别',aggfunc = sum)
+table.melt(id_vars=['数量'],var_name='分类',value_name='金额')
+-----
+pd.concat([df1, df2])
+-----
+pd.concat([df1, df2, df3])
+-----
+pd.concat([df1, df4], ignore_index=True)
+
+微信搜索公众号「早起Python」，关注后可以获得更多资源！
+-----
+pd.concat([df1,df4],axis=1)
+-----
+pd.concat([df1,df4],axis=1,join='inner')
+-----
+pd.concat([df1, df4], axis=1).reindex(df1.index)
+-----
+pd.concat([df1, df2, df3], keys=['x', 'y', 'z'])
+-----
+pd.merge(left, right, on='key')
+-----
+pd.merge(left, right, on=['key1', 'key2'])
+-----
+pd.merge(left, right, how='left', on=['key1', 'key2'])
+-----
+pd.merge(left, right, how='right', on=['key1', 'key2'])
+-----
+pd.merge(left, right, how='outer', on=['key1', 'key2'])
+-----
+pd.merge(left, right, how='inner', on=['key1', 'key2'])
+-----
+pd.merge(left, right, on='k', suffixes=['_l', '_r'])
+-----
+left.join(right)
+-----
+left.join(right, how='outer')
+
+#pd.merge(left, right, left_index=True, right_index=True, how='outer')
+-----
+left.join(right, how='inner')
+
+#pd.merge(left, right, left_index=True, right_index=True, how='inner')
+-----
+left.join(right, on='key')
+-----
+left.join(right, on=['key1', 'key2'])
+-----
