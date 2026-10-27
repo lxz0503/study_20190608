@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 SELECT b1.id,b1.name,b1.cat_name
 FROM shop.brand b1,shop.brand b2
 WHERE b1.cat_name=b2.cat_name
 AND b2.name='OPPO';
+=======
+SELECT b1.id,b1.name,b1.cat_name
+FROM shop.brand b1,shop.brand b2
+WHERE b1.cat_name=b2.cat_name
+AND b2.name='OPPO';
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

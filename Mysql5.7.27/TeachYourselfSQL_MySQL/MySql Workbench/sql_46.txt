@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 在audit表上创建外键约束，其emp_no对应employees_test表的主键id
 
 CREATE TABLE employees_test(
@@ -16,4 +17,24 @@ create_date datetime NOT NULL
 ALTER TABLE audit
 ADD CONSTRAINT FK_AuditEmployees  ---- name
 FOREIGN KEY (emp_no)    ---foreign key
+=======
+在audit表上创建外键约束，其emp_no对应employees_test表的主键id
+
+CREATE TABLE employees_test(
+ID INT PRIMARY KEY NOT NULL,   ---primary key
+NAME TEXT NOT NULL,
+AGE INT NOT NULL,
+ADDRESS CHAR(50),
+SALARY REAL
+);
+
+CREATE TABLE audit(
+EMP_no INT NOT NULL,     --- foreign key
+create_date datetime NOT NULL
+);
+==================================================
+ALTER TABLE audit
+ADD CONSTRAINT FK_AuditEmployees  ---- name
+FOREIGN KEY (emp_no)    ---foreign key
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9
 REFERENCES employees_test (id);  ----point to another primary key in other table

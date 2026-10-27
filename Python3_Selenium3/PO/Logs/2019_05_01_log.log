@@ -1,0 +1,19 @@
+[2019-05-01 11:55:21,136] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 11:55:21,136] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:30:38,434] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:30:38,434] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:31:35,401] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:31:35,401] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:32:37,033] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:32:37,033] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:38:27,806] base_Update.py->findele line:12 [INFO]通过id定位,元素是notice01
+[2019-05-01 12:38:29,918] base_Update.py->findele line:12 [INFO]通过id定位,元素是notice08
+[2019-05-01 12:38:30,025] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#searchtype > li.current
+[2019-05-01 12:38:30,086] base_Update.py->findele line:12 [INFO]通过id定位,元素是searchbtn
+[2019-05-01 12:38:41,721] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#appd_wrap_close
+[2019-05-01 12:38:41,721] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#appd_wrap_close
+[2019-05-01 12:38:41,777] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:38:41,777] bookPage.py->bookBtn line:29 [ERROR]车次查询失败
+[2019-05-01 12:38:46,788] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#pasglistdiv > div > ul > li:nth-child(2) > input
+[2019-05-01 12:38:46,788] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#pasglistdiv > div > ul > li:nth-child(2) > input
+[2019-05-01 12:38:46,788] base_Update.py->findele line:12 [INFO]通过css selector定位,元素是#pasglistdiv > div > ul > li:nth-child(2) > input

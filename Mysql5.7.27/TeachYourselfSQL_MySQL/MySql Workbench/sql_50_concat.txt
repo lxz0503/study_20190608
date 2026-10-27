@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 将employees表中的所有员工的last_name和first_name通过(')连接起来
 注意：双引号里面可以包含单引号
 select concat(last_name, "'", first_name) as name
+=======
+将employees表中的所有员工的last_name和first_name通过(')连接起来
+注意：双引号里面可以包含单引号
+select concat(last_name, "'", first_name) as name
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9
  from employees;

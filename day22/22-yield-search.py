@@ -35,7 +35,6 @@ for j in res:
     else:
         print("the index of 10 is %d" % i)  # the index is 9
         break
-
 # another method
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 i = 0

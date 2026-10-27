@@ -1,0 +1,60 @@
+=======================================
+hyan1@pek-vx-nwk1:/buildarea1/hyan1/vxworks7$ git bisect help
+usage: git bisect [help|start|bad|good|new|old|terms|skip|next|reset|visualize|view|replay|log|run]
+
+git bisect help
+        print this long help message.
+git bisect start [--term-{old,good}=<term> --term-{new,bad}=<term>]
+                 [--no-checkout] [<bad> [<good>...]] [--] [<pathspec>...]
+        reset bisect state and start bisection.
+git bisect (bad|new) [<rev>]
+        mark <rev> a known-bad revision/
+                a revision after change in a given property.
+git bisect (good|old) [<rev>...]
+        mark <rev>... known-good revisions/
+                revisions before change in a given property.
+git bisect terms [--term-good | --term-bad]
+        show the terms used for old and new commits (default: bad, good)
+git bisect skip [(<rev>|<range>)...]
+        mark <rev>... untestable revisions.
+git bisect next
+        find next bisection to test and check it out.
+git bisect reset [<commit>]
+        finish bisection search and go back to commit.
+git bisect (visualize|view)
+        show bisect status in gitk.
+git bisect replay <logfile>
+        replay bisection log.
+git bisect log
+        show bisect log.
+git bisect run <cmd>...          ----自动化测试，采用这个，直接调用脚本，但是脚本里面必须是完整的测试，包含成功失败判断
+        use <cmd>... to automatically bisect.
+
+==========================================
+
+
+#below is an example about how to use git bisect to find the first bad commit
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect start
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect good 7f0a795f241d31a8aad4d1eead3bf12954ea9214
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect bad 8c6da7358ad1d0651581b94b94c0527578df5bbc
+Bisecting: 17 revisions left to test after this (roughly 4 steps)
+[924b16a18e17644e8744b1afb46cfb5ab4c3234a] Merge commit '282684b984ac7df7321ffe8e4b864849fd5d03bd' into HEAD
+
+924b16a18e17644e8744b1afb46cfb5ab4c3234a     now you are at this commit, and then you run your test.
+if the test failed, then it is still bad commit, otherwise it is good commit.
+
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect bad
+Bisecting: 9 revisions left to test after this (roughly 3 steps)
+[b315f82b237f0a061bc827bfd6dbaf24d37cd7a1] Merge commit 'e1825c4097f756320e45a6c7c9adaa16ca26a2db' into HEAD
+
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect bad    
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[4a2b5b7c9851a7a3f56cc52ee2dbf4f94f2cd532] xml checker: Increase Hardware AddressSpace Size
+
+windriver@PEK-QCAO1-D2:~/Integration/vxworks$ git bisect good
+d86e06bd9f9e209a4314b8e7cbb83e72116cac4e is the first bad commit
+commit d86e06bd9f9e209a4314b8e7cbb83e72116cac4e
+Author: pmitsis <peter.mitsis@windriver.com>
+Date:   Tue Jan 22 22:06:29 2019 -0500
+
+#

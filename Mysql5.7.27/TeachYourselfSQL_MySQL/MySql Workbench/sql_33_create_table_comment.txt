@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 drop table if exists  actor;
 
 CREATE TABLE IF NOT EXISTS actor (
@@ -5,4 +6,13 @@ CREATE TABLE IF NOT EXISTS actor (
   first_name varchar(45)   NOT NULL comment 'mingzi',
   last_name  varchar(45)   NOT NULL comment 'xingshi',
   last_update date         NOT NULL comment  'riqi',
+=======
+drop table if exists  actor;
+
+CREATE TABLE IF NOT EXISTS actor (
+  actor_id   smallint(5)   NOT NULL comment 'id',
+  first_name varchar(45)   NOT NULL comment 'mingzi',
+  last_name  varchar(45)   NOT NULL comment 'xingshi',
+  last_update date         NOT NULL comment  'riqi',
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9
   PRIMARY KEY (actor_id));

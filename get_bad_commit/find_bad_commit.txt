@@ -1,0 +1,84 @@
+SELECT cust_id FROM tysql.orders
+where order_num in 
+(SELECT order_num FROM tysql.orderitems where prod_id='BR03');
+
+rtpSp "/romfs/iperf3.vxe -c 192.168.1.100 -t 20 -R -p 10000 -N -i 20 -l 64 -f m -P 1"
+
+
+
+20210528200052_vx_2107     good
+
+
+SELECT cust_id FROM tysql.orders
+where order_num in 
+(SELECT order_num FROM tysql.orderitems where prod_id='BR03');
+
+
+/folk/hyan1/Nightly/iPerf_up/iPerf_rerun_v2.py --dvd /net/pek-vx-system1/buildarea1/yliu2/nightly/vx20210601200101_vx_2107 --release vx7-2107-features --rundate 2021-06-03
+usage: iPerf_rerun_v2.py [-h] --dvd DVD --rundate RUNDATE --release RELEASE
+                         --vxver VXVER
+iPerf_rerun_v2.py: error: the following arguments are required: --vxver
+
+
+20210601200101_vx_2107   good
+20210603185856_vx_2107   bad
+
+========================================jenkins iperf to find bad commit====
+# run debug
+
+. /buildarea1/hyan1/my_python3.7/bin/activate
+
+cd $DVD
+git bisect start $Bad_commit $Good_commit
+git bisect run python3 /folk/hyan1/Nightly/iPerf_smp/iPerf_run_debug.py --plan $PLAN --dvd $DVD
+git bisect log
+git bisect reset
+==========================================
++ git bisect log
+# bad: [421a957aa52720521f3e2ab2b26c6e819102ecb9] FIX: the next login policy handler is not called when the failed login attempts policy is enabled
+# good: [b66a92b5804ce2596d9c69f95283aa7403c8a529] Merge commit '84cee1455444f8432b6f2ea4b7c66b3a6f4e2c44' into vx7-2107-features
+git bisect start '20210603185856_vx_2107' '20210601200101_vx_2107'
+# good: [c397f559efc31973c6c18cb68236a740582d3445] Merge commit '7738d2db8e68057ce7e3a13ac680e7ed0ee02f81' into vx7-2107-features
+git bisect good c397f559efc31973c6c18cb68236a740582d3445
+# bad: [6fd43636367885feff0689192d05e4eec6c836dd] Merge commit '85e28e0c599eca7c7f6cd90efd4bf5f32c053479' into vx7-2107-features
+git bisect bad 6fd43636367885feff0689192d05e4eec6c836dd
+# good: [4ace9254f8de48ee946cb41ff9ae6e7a3ed6b28b] Fix: Build issues on Windows and between Boost and XRT
+git bisect good 4ace9254f8de48ee946cb41ff9ae6e7a3ed6b28b
+# good: [29fc917bd68d15791e650824bf6334648e673da9] FIX: OPEN62541 always rebuild object files
+git bisect good 29fc917bd68d15791e650824bf6334648e673da9
+# bad: [85e28e0c599eca7c7f6cd90efd4bf5f32c053479]    Improve I/O performance
+git bisect bad 85e28e0c599eca7c7f6cd90efd4bf5f32c053479
+# first bad commit: [85e28e0c599eca7c7f6cd90efd4bf5f32c053479]    Improve I/O performance
++ git bisect reset
+
+
+===================================KONG find bad commit
++ cd /buildarea1/svc-cmnet/vxworks_bisect
++ git bisect start
++ git bisect bad HEAD
++ git bisect good 20210201102107_vx_2103
+Bisecting: 59 revisions left to test after this (roughly 6 steps)
+[7c644d386da70a34aed660a775802ee3c8a69aa4] Fix version in spec files, V7BC-2639
++ git bisect run /buildarea1/svc-cmnet/vxworks_bisect/mybisect/kongtest.sh 
+
+
++ git bisect log
+git bisect start
+# bad: [8e8708ccc7a449dc51dfe9a72e4966bb6a7cfc6a] Merge branch 'vx7-2103-features' into 'vx7-integration' (V7BC-2639
+git bisect bad 8e8708ccc7a449dc51dfe9a72e4966bb6a7cfc6a
+# good: [89d394347ef88ac24a1667746fcb1bbd079de34a] Merge commit '6e29782dae812eda71534f78aa5b173cb50c7b2a' into vx7-integration
+git bisect good 89d394347ef88ac24a1667746fcb1bbd079de34a
+# bad: [7c644d386da70a34aed660a775802ee3c8a69aa4] Fix version in spec files, V7BC-2639
+git bisect bad 7c644d386da70a34aed660a775802ee3c8a69aa4
+# bad: [0affaba10660885f7c6db49d6fcd4ccc19650a8c] Merge commit 'dfc88ff040e512f922fc662084ae336d7968d110' into vx7-integration
+git bisect bad 0affaba10660885f7c6db49d6fcd4ccc19650a8c
+# bad: [51520969fcc155d1a5823bf565f792e47187cfd0] Merge commit '831958c03d95a0b2f6f5b53e5db8aeaf73b0227d' into vx7-integration
+git bisect bad 51520969fcc155d1a5823bf565f792e47187cfd0
+# bad: [c46fc1ba72cf63e55437101df8ddc7b57a2897c5] Merge commit '5c5491143f30f291c4f5c6ee5f6f57486a65f89b' into vx7-integration
+git bisect bad c46fc1ba72cf63e55437101df8ddc7b57a2897c5
+# bad: [5e5349d2325d012957a8f6a99d59ce46ede4e88a] Merge commit 'bc7f693348580a8274b8565ecfbda1c92a9b95e0' into vx7-integration
+git bisect bad 5e5349d2325d012957a8f6a99d59ce46ede4e88a
+# bad: [bc7f693348580a8274b8565ecfbda1c92a9b95e0] rename 'https' to 'web_server' (V7COR-7973)
+git bisect bad bc7f693348580a8274b8565ecfbda1c92a9b95e0
+# first bad commit: [bc7f693348580a8274b8565ecfbda1c92a9b95e0] rename 'https' to 'web_server' (V7COR-7973)
++ git bisect reset

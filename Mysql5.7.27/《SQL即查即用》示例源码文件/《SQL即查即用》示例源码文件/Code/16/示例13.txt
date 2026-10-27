@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SELECT BookName,Writer,Price
 FROM shop.bookinfo
 WHERE Price = 59.80
@@ -5,3 +6,12 @@ UNION
 SELECT BookName,Writer,Price
 FROM shop.bookinfo_zerobasis
 WHERE Price = 69.80;
+=======
+SELECT BookName,Writer,Price
+FROM shop.bookinfo
+WHERE Price = 59.80
+UNION
+SELECT BookName,Writer,Price
+FROM shop.bookinfo_zerobasis
+WHERE Price = 69.80;
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

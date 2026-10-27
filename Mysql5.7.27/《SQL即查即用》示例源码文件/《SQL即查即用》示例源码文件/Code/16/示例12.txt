@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SELECT cat_id,goods_name,shop_price
 FROM shop.goods
 WHERE cat_id IN (123,131);
@@ -13,3 +14,20 @@ UNION
 SELECT cat_id,goods_name,shop_price
 FROM shop.goods
 WHERE goods_name LIKE '%华为%';
+=======
+SELECT cat_id,goods_name,shop_price
+FROM shop.goods
+WHERE cat_id IN (123,131);
+
+SELECT cat_id,goods_name,shop_price
+FROM shop.goods
+WHERE goods_name LIKE '%华为%';
+
+SELECT cat_id,goods_name,shop_price
+FROM shop.goods
+WHERE cat_id IN (123,131)
+UNION
+SELECT cat_id,goods_name,shop_price
+FROM shop.goods
+WHERE goods_name LIKE '%华为%';
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

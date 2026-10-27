@@ -1,0 +1,82 @@
+SELECT tb_book_author,tb_author_department, 
+   (SELECT max(book_price)
+      FROM tb_book 
+      WHERE tb_book_author.tb_book_author=tb_book.tb_book_author) 
+FROM tb_book_author;
+
+查找最大OrderNo的人的名字
+select LastName,FirstName,
+(select max(OrderNo) from dd.orders
+where persons.Id_P=orders.Id_P
+) as max_order_num
+from dd.persons;
+
+根据图书作者，获取不同作者编写的图书中价格最高的信息
+# In my home pc, MySql workbench 子查询
+SELECT tb_book_author,tb_author_department,
+    (SELECT max(book_price)
+    FROM shop.tb_book    # 价格信息存储在其他表tb_book
+    WHERE tb_book_author.tb_book_author=tb_book.tb_book_author  # 两个表中有共同的数据列tb_book_author
+    )  AS max_price
+ FROM shop.tb_book_author;
+
+ # 子查询必须在括号中出现
+ # 子查询必须返回单一数据列
+ # 子查询不能用order by
+ # 子查询必须由一个select语句构成。不能用union组合
+ ====================================================================================
+ # 规律，外层查询是一张表，内层查询是另外一张表,在内层查询中用where语句来关联两张表，两张表肯定有相同的列名称
+ ===================================================================
+SELECT *
+FROM shop.tb_book    -----外查询表
+WHERE EXISTS (
+    SELECT tb_author_department
+    FROM shop.tb_book_author -----内查询表
+    WHERE tb_book.book_sort=tb_book_author.tb_author_department)   ------关联两张表
+ORDER BY tb_book.book_price;
+
+======如何在workbench里面插入数据
+选中table,左键点击，然后右键点击Columns---Send to SQL Editor---Insert
+========================================
+INSERT INTO `dd`.`students`
+(`id`,
+`name`)
+VALUES
+(3, 'hanghia'),
+(4, 'tttt');
+
+=======================================================
+student table:
+id   name
+1	xiaozhan
+2	cal
+3	sam
+
+grade table:
+id   grade
+1	80
+2	90
+3	70
+----输出成绩最高的人的名字和成绩,方法1
+SELECT name,
+(select grade from dd.grade where student.id=grade.id) as max_grade
+from dd.student
+order by max_grade desc
+limit 1;
+==========================方法2
+SELECT name,grade
+from dd.student,dd.grade
+where grade = (select max(grade) from dd.grade)   ---用where字句来限定条件
+and student.id=grade.id;   ---两张表必须关联起来
+===================================方法3
+另外一种方法  ----- inner join
+SELECT a.name,b.grade
+from dd.student a
+inner join dd.grade b
+on a.id=b.id    ----关联两张表
+order by b.grade desc
+limit 1;
+
+
+
+

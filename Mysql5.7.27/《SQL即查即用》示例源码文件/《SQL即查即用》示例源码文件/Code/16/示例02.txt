@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 # goods别名为a
 
 SELECT a.goods_id,a.goods_name
 FROM shop.goods a INNER JOIN (SELECT * FROM shop.goods_type WHERE name='平板电脑') b
 ON a.goods_type!=b.id;
+=======
+# goods别名为a
+
+SELECT a.goods_id,a.goods_name
+FROM shop.goods a INNER JOIN (SELECT * FROM shop.goods_type WHERE name='平板电脑') b
+ON a.goods_type!=b.id;
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

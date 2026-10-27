@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 SELECT a.name,a.cat_name,b.goods_name
 FROM shop.brand a CROSS JOIN shop.goods b;
+=======
+SELECT a.name,a.cat_name,b.goods_name
+FROM shop.brand a CROSS JOIN shop.goods b;
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

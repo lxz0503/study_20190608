@@ -1,0 +1,4 @@
+用26-pandas-yield-read-anvl-log-to-excel.py里面的函数生成csv文件，这是第一步
+然后连接数据库，把数据写入数据库，调用Insert语句
+
+可以调用23-pandas-read-from-mysql-to-excel.py 来从数据库里读出数据 或者其他操作

@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 alter table actor
+=======
+alter table actor
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9
 add create_date datetime NOT NULL default '2020-10-01 00:00:00';

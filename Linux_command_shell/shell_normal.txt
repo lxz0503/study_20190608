@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://www.techonthenet.com/index.php    ---- this is for C，SQL,一个网站，有如何使用word,excel,access,sql
 https://www.processon.com/diagrams     ------免费画图网站，134手机号  Wind123$
 ctrl+a ---光标移动到行首
@@ -2568,3 +2569,2050 @@ local: 1.txt remote: 1.txt
 150 Opening BINARY mode data connection for 1.txt (0 bytes).
 226 Transfer complete.
 ftp>
+=======
+https://www.techonthenet.com/index.php    ---- this is for C，SQL,一个网站，有如何使用word,excel,access,sql
+https://www.processon.com/diagrams     ------免费画图网站，134手机号  Wind123$
+
+The #ifdef directive must be closed by an #endif directive.
+
+xiaozhan@PEK-QCAO1-D2:~/kong_test$ ypcat passwd | grep -i xiaozhan     # 查找一个人账户在Linux下的缩写
+xli3:MSJLHbVMDDYoY:19044:100:Xiaozhan Li:/folk/xli3:/bin/bash
+
+https://docs.python.org/3.5/library/     ---python3 doc dir
+
+# 建议以后在Python3下用paramiko模块来执行SSH相关的操作-----参考我的例子
+
+Ubunt下python的缩进，默认设置为四个空格：
+/etc/vim/vimrc
+set tabstop=4
+
+1.tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内容
+tail -f -20 filename          默认显示后10行
+如何去掉文件每一行后面的^M
+ 1) 使用sed
+
+去掉windows下的回车符 （注意^M 在linux 下写法 按^M 是回车换行符,输入方法是按住CTRL+v,松开v,按m)
+sed -i 's/^M//g' filename
+
+2) 在vim下类似
+在vi里面统一缩进用下面的命令:
+例如从第一行到第20行：   1，20>    表示缩进4个空格    >>表示8个空格
+                       1，20<   表示回退4个空格     <<表示8个空格
+
+:%s/^M//g     ----vi命令去掉每行的回车符
+
+（^M输入方法和上面方法相同）
+
+1.how to configure tftp on ubuntu which version is lower than 18.04
+https://www.iteye.com/blog/xouou-2139332
+
+安装xinetd：
+sudo apt-get install xinetd
+
+安装tftp和tftpd：
+sudo apt-get install tftp tftpd
+
+ 或者安装tftp的增强版本tftp-hpa, tftpd-hpa (推荐)
+sudo apt-get install tftp-hpa tftpd-hpa
+tftp-hpa 这个是客户端
+tftpd-hpa 这个是服务端
+
+ps -ef | grep tftp          能看到tftpd－hpa进程
+netstat -a | grep tftp 成功显示正在运行
+不行的话试试/etc/init.d/xinetd start
+
+sudo service tftpd-hpa restart -----sometimes you need to restart
+
+=============for my environment,Ubuntu version is lower than 18.04========
+apt-get install tftpd-hpa
+
+apt-get install xinetd    (vi /etc/xinetd.d/tftp)
+
+enter /etc/xinetd.d and touch tftp, chmod -R 777 tftp
+
+modify the content in tftp:
+service tftp
+    {
+       disable = no
+       socket_type = dgram
+       protocol = udp
+       wait = yes
+       user = root
+       server = /usr/sbin/in.tftpd
+       server_args = -s /tftpboot -c
+       per_source = 11
+       cps = 100 2
+       flags =IPv4
+    }
+
+sudo service xinetd restart
+
+and then: sudo service tftpd-hpa restart
+sudo /etc/init.d/xinetd reload
+
+sudo /etc/init.d/xinetd restart
+
+mkdir  /tftpboot
+
+sudo chmod -R 777 /tftpboot
+=========================for centos,I did not try it==============================
+yum install xinetd tftp tftp-server
+/etc/init.d/xinetd start
+=====for centos
+
+===========================================for Ubuntu18.04 tftp config in my environment==
+
+https://blog.csdn.net/zidixia/article/details/106608487?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo apt-get install tftp-hpa tftpd-hpa
+其中 tftp-hpa 是客户端， tftpd-hpa 是服务端。
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo chmod -R 777 /etc/default/tftpd-hpa
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ vi /etc/default/tftpd-hpa
+# /etc/default/tftpd-hpa
+
+TFTP_USERNAME="windriver"          ----- set a user name,you can use default
+TFTP_DIRECTORY="/"         -- this is my tftp root dir
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ sudo service tftpd-hpa restart
+wrsadmin@pek-vx-nwk1:/tftpboot/zcu_image$ netstat -a | grep tftp
+udp        0      0 0.0.0.0:tftp            0.0.0.0:*
+udp6       0      0 [::]:tftp               [::]:*
+
+=================================================================
+
+echo要支持同C语言一样的\转义功能，只需要加上参数-e，如下所示：
+shell echo打印换行的方法
+
+[~]#echo -e "Hello world.\nHello sea"
+Hello world.
+Hello sea
+
+grep -n 'beijing' xiaozhan.txt   输出所在行号
+grep bash$ xiaozhan.txt    查找以bash为结尾的行
+
+vi +20 xiaozhan.txt  可以直接跳转到所在行
+
+cat xiaozhan.txt | grep ^# -v 表示过滤掉以#开始的行
+
+grep -v ^$  过滤掉空行
+
+cat xiaozhan.txt | grep ^# -v | grep ^$ -v
+也可以这样操作: cat xiaozhan.txt | grep -Ev  '^(#|$)'
+
+实际当中要把文件修改后保存到另外一个文件的方法：
+cat xiaozhan.txt | grep -Ev  '^(#|$)' > xiaozhan.tmp; cat xiaozhan.tmp > xiaozhan_2.txt; rm -f xiaozhan.tmp
+
+1. cat test.txt | sed 's/^/#/g' > new.txt --------用#替代每行的开头，即把#加在每行开头
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat new.txt
+#ssss
+#aaaaa
+#ddddd
+#ffffff
+#--------------------空行
+#cccccc
+#vvvvvv
+
+sed -i 就是直接对文本文件进行操作的,会直接修改文件的内容
+
+cat xiaozhan.txt | sed  '21,24 s/beijing/captical/'    不会修改源文件，只是在内存里修改
+
+
+sed -i '/^#/d' xiaozhan.txt
+删除空行   sed -i '/^$/d' xiaozhan.txt
+
+sed  -i '/Ethernet/r myfile' test  匹配Ethernet的行，读进来另一个文件myfile的内容，读进来的文件的内容会插入到匹配Ethernet的行后
+
+如果要执行多个sed命令可以用sed -e
+sed -e '/^#/d' -e '/^#/d' xiaozhan.txt
+
+sed -i 's/^@//' file      去掉 “行首” 带“@”的首字母@
+
+sed -i 's/^#//' file---------去掉python注释的时候用
+特定字符串的删除
+sed -i '5,6 s/^#//g' sub.py      指定删除第5到第6行的开头的#
+
+sed -i '/字符串/d' file----删除所有符合条件的行
+
+如果是不规则的文件，可以基于关键字来替换,看下面的例子
+表示从遇到aaa那行开始，直到遇见ttt那行，把beijing都替换为capital
+如果遇到aaa后，下面的行没有遇见ttt，但是遇见beijing，依然替换
+
+cat xiaozhan.txt | sed '/aaa/,/ttt/ s/beijing/capital/'
+
+# 可以把sed规则写在一个文件里  myrule.txt
+/^#/d
+/^$/d
+s/shanghai/finace/i
+/aaa/,/ttt/ s/beijing/capital/
+
+然后执行sed -f myrule.txt < xiaozhan_1.txt     不会修改源文件
+
+重定向到另外一个文件 sed -f myrule.txt < xiaozhan_1.txt > test.txt
+
+cat a b c > file -----把文件a,b,c的内容合并到file里，同时也创建了文件file
+
+2.Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat test.txt | sed '/^$/d' > new.txt ------------删除空行，保存新文件到new.txt 
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ cat new.txt
+ssss
+aaaaa
+ddddd
+ffffff
+cccccc
+vvvvvv
+3. sort -u 能够移除重复的行
+  sort | uniq -c    可以统计重复的次数
+
+ps | awk '{print $8}' | sort | uniq -c
+      2 /usr/bin/bash
+      1 /usr/bin/mintty
+      1 /usr/bin/ps
+      1 COMMAND
+
+4.Li xiaozhan@DESKTOP-JFCIJJF ~
+$ tar -czvf  file.tar.gz  file1  file2 ----tar包，压缩成tar.gz格式
+
+tar -xzvf  file.tar.gz  ---------解压缩tar.gz包
+
+5.$ gunzip  new.tar.gz
+
+Li xiaozhan@DESKTOP-JFCIJJF ~
+$ ls
+aaa  bbbbb  new.tar  old.txt  rename.txt  test.sh  test.txt
+                                                                                                                                                   
+6. grep -rI "xiaozhan" ./  (在当前目录递归查找所有包含xiaozhan字样的文本)
+
+7. find . -name "*xiaozhan*“ -print (在当前目录查找包含xiaozhan字样的目录或者文件)
+
+搜索最近七天内被访问过的所有文件
+find . -type f -atime -7
+find . -type d -atime -7 ------搜索目录
+-mtime means modified file
+
+find . -type f -mtime -7  -name "*.txt" -delete
+# 下面命令，相当于只保留最近7天的日志
+find . -type f -mtime +7  -name "*.log" | xargs rm -f &>/dev/null
+find . -type f -mtime +7  -name "*.log" -delete     # 7 days ago，7天前的文件
+find . -type f -mtime +7  -name "*.log" -exec rm -f {} \;     # there must be ; at the end
+
+
+find . -type f -size +10k ---搜索大于10K的文件
+find . -type d -size +10k -----搜索大于10K的目录
+
+find . -type f -name "*.txt" -delete  -----删除当前目录下所有txt后缀的文件
+
+find ./ -type d -name 'fsl_imx6_platform_up'
+
+或者rm -rf $(find . -type f -name "*.txt")
+或者find . -type f -name "*.txt" -ok rm {} \;      此命令必须以\;作为结尾
+
+{} 用于与-exec选项结合使用来匹配所有文件，然后会被替换为相应的文件名，也就是说{}代表着匹配的所有文件名
+
+将30天前的.log文件拷贝到old目录中
+find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
+
+# 将匹配到的文件移动到其他目录,注意xargs -i 命令
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -name "*.txt" | xargs -i mv {} test/
+
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find ./test -name "*.txt" | xargs -i cp {} ../xiaozhan
+
+
+# find files and tar, you must have xargs
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -type f -name "*.txt" | xargs tar zcvf test.tar.gz
+./a.txt
+
+8. vi test.txt
+ :set number ----显示行号
+ :10 按回车 ---------表示直接跳转到第10行
+ 
+9：vi test.txt
+:set number
+:10,20y ----表示复制第10到第20行
+在需要粘贴的地方输入P，表示粘贴到此处
+
+shell中替换字符串, s代表替换
+:10,20s/#/    /g -----用4个空格替换开头的#
+
+:10,20s/^/    /g----在每行行首添加4个空格
+:0,$s/a/b/g
+
+二、利用正则表达式删除代码段每行的行号
+
+:%s/^\s*[0-9]*\s*//g
+
+删除多行行尾指定字符串 :%s/#$//g
+
+:%s/^[0-9][0-9]* // 去掉行首的所有数字字符。
+:%s/ */ /g 把一个或者多个空格替换为一个空格。
+:g/^\s*$/d " 删除只有空白的行
+
+
+其中，^表示行首，$表示行尾，\s表示空格，[0-9]表示0~9的数字，*表示0或多个，%s/^\s*[0-9]*\s*//gc的意思是将每行以0或多个空格开始中间包含0或多个数字并以0或多个空格结束的字符串替换为空。
+
+
+10. scp -r a.txt /home/windriver/ ----拷贝文件
+    scp -r a.txt windriver@128.224.166.46:/home/windriver/ ---拷贝文件到此目录下面
+	scp -r a.txt windriver@128.224.166.46:/home/windriver/a.txt.bak ---拷贝文件到此目录下面，并修改名字
+
+11. ssh windriver@128.224.166.46  ---ssh登陆某台服务器
+
+12. telnet 192.168.195.2 2323 ----telnet登陆某台虚拟机，端口号是2323
+13. ftp 128.224.167.168 -----ftp登陆某台服务器
+
+14. ls -l >> log.txt (把ls -l的命令输出结果追加到文件log.txt)  ---相当于ls -l | tee log.txt
+
+15. run command & -----后台操作
+
+./test.sh > res2.log 2>&1 ----标准输出，标准错误  这里&相当于等效于标准输出。 
+
+ ./test.sh 2>&1 | tee  res2.log   ------可以把log打印到屏幕上同时也保存到文件里
+
+# 多条命令放一行执行，中间用分号来隔开即可， 分号可以连接几条linux命令
+# ls -l 2> err.log 
+# ls /etc/aa /tc/b &> all.log   保存所有的信息,重定向所有输出
+#(ls -al;cat /etc/passwd)| less  组合两条命令的输出
+
+Linux：cut命令详解
+1.例如有一个学生报表信息，包含No、Name、Mark、Percent：
+
+复制代码
+cat test.txt
+
+No Name Mark Percent
+01 tom 69 91
+02 jack 71 87
+03 alex 68 98
+
+cut -f 2,3 test.txt
+结果：
+Name Mark
+tom 69
+jack 71
+alex 68
+---------------
+
+
+复制代码
+cat test2.txt
+
+No;Name;Mark;Percent
+01;tom;69;91
+02;jack;71;87
+03;alex;68;98
+
+使用 -d 选项指定字段分隔符,默认分隔符是 TAB键，
+如果实际文本不是tab键，必须用-d 来指明分隔符，例如空格分隔的话就是用" "
+cut  -d ; -f 2 test2.txt
+结果：
+Name
+tom
+jack
+alex
+
+下面的cut和grep命令可以切分出ip地址
+
+-f2  ---it can show the second column(start from 1 column)
+# ifconfig eth0 | grep "inet addr:" | cut -d : -f 2 | cut -d " " -f 1
+
+windriver@PEK-QCAO1-D2:~/test_rsync$ ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $1}'
+128.224.159.79
+or use below line:
+ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{print "{\"HOSTIP\": \""$1"\"}"}'
+{"HOSTIP": "128.224.159.79"}
+
+# 利用windows下安装的git来练习linux shell命令
+# 用下面的方法可以编辑一个文本，把里面的多行内容输出到另外一个文件
+cat << ENDOFLINE >> xiaozhan.txt
+>beijing 100000
+>shangahi 20000
+>ENDOFLINE       表示结束符
+------------------------------------
+#  只查看文本的特定行
+cat xiaozhan.txt | head      看前10行   或者直接用    head xiaozhan.txt
+cat xiaozhan.txt | tail      看后10行                tail xiaozhan.txt
+cat xiaozhan.txt | head -n 3  前3行                  head -n 3 xiaozhan.txt
+cat xiaozhan.txt | tail -n 3   后3行                 tail -n 3 xiaozhan.txt
+
+===========================================
+vi 多窗口编辑命令： vi -o file1 file2
+
+纵向显示多个文件，窗口间切快捷键：ctrl+w（需要按两次w）
+
+保存并退出全部窗口：wqa
+
+退出全部窗口：qa
+
+------------------------------------------------------------------
+vim -O file1 file2 横向显示  是大写的字母O
+
+窗口间切快捷键：ctrl+w（需要按两次w）
+
+保存并退出全部窗口：wqa
+
+退出全部窗口：qa
+------------------------------------------------------------------
+切换到root的身份的命令即为：su -root或是直接 su -
+通过命令exit或logout，或者是快捷键Cry+D即可返回原用户身份
+for example:
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ su -
+Password:
+root@PEK-QCAO1-D2:~# exit
+logout
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$
+------------------------------------------------------------------
+Linux下环境变量设置的三种方法：
+
+$PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。
+
+如想将一个路径加入到$PATH中，可以像下面这样做：
+
+1、控制台中设置，不赞成这种方式，因为他只对当前的shell 起作用，换一个shell设置就无效了：
+
+$PATH=$PATH:/NEW_PATH (关闭shell Path会还原为原来的path)
+
+2、修改 /etc/profile 文件，如果你的计算机仅仅作为开发使用时推存使用这种方法，
+因为所有用户的shell都有权使用这个环境变量，可能会给系统带来安全性问题。这里是针对所有的用户的，所有的shell
+
+在/etc/profile的最下面添加： export PATH=$PATH:/NEW_PATH
+
+3、修改bashrc文件，这种方法更为安全，它可以把使用这些环境变量的权限控制到用户级别，
+这里是针对某一特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目录下的 .bashrc文件就可以了。
+---------------------------------------
+
+linux中如何设置能使一个脚本在任意目录下都可直接运行，不要非到这个脚本所在目录下运行？
+方法如下3种:    其实安装python或者tcl等后都是这么做的
+
+
+1.把这个脚本所在目录加入PATH环境变量中。for instance:     /home/windriver/anyrun.sh
+PATH=$PATH:/etc/apache/bin
+使用这种方法,只对当前会话有效，也就是说每当登出或注销系统以后，PATH 设置就会失效
+for example:
+windriver@PEK-QCAO1-D2:~$ echo $PATH      # 查看系统的环境变量，以冒号作为分割
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+windriver@PEK-QCAO1-D2:~$ PATH=$PATH:/home/windriver      # add new path， export PATH=$PATH:/home/windriver
+windriver@PEK-QCAO1-D2:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cd pexpect-4.6.0/
+windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$ anyrun.sh      ---you can also run this at other directory not limited to
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~/xiaozhan/pexpect-4.6.0$
+----------------------- anyrun.sh is at /home/windriver but can run anywhere due to PATH   /home/windriver
+windriver@PEK-QCAO1-D2:/usr/bin$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
+windriver@PEK-QCAO1-D2:/usr/bin$ cd /home/windriver/
+windriver@PEK-QCAO1-D2:~$ an
+anacron    anyrun     anyrun.sh
+windriver@PEK-QCAO1-D2:~$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~$ cd ANVL/
+windriver@PEK-QCAO1-D2:~/ANVL$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+
+----------
+
+2.vi /etc/profile
+for example
+在/etc/profile的最下面添加： PATH=$PATH:/home/windriver
+
+如果修改了/etc/profile，那么编辑结束后执行source profile 或 执行点命令 ./profile, PATH的值就会立即生效了
+实测如下：
+一个窗口修改/etc/profile，另外一个窗口：
+windriver@PEK-QCAO1-D2:~$ cd xiaozhan/
+windriver@PEK-QCAO1-D2:~/xiaozhan$ anyrun.sh
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+3.vi ~/.bash_profile
+  it should be vi ~/.bashrc    if you are Ubuntu            ----I did not try this method
+
+修改PATH行,把/etc/apache/bin添加进去
+
+这种方法是针对用户起作用的
+
+注意：想改变PATH，必须重新登陆才能生效，以下方法可以简化工作：
+
+如果修改了/etc/profile，那么编辑结束后执行source profile 或 执行点命令 ./profile, PATH的值就会立即生效了。
+
+这个方法的原理就是再执行一次/etc/profile shell脚本，注意如果用sh /etc/profile是不行的，
+因为sh是在子shell进程中执行的，即使PATH改变了也不会反应到当前环境中，
+但是source是在当前 shell进程中执行的，所以我们能看到PATH的改变。
+
+方法二：
+软连接到/bin目录下
+
+2.编译生成可执行文件，my_cmd
+
+3.复制到/bin/目录下
+
+4.创建软连接  soft link：
+
+ln -s my_cmd mycmd1
+
+5.在任意目录中，输入mycmd1，即可打印"hello,world!cmd1."。
+
+实测如下:  用的是创建软连接的方法
+
+windriver@PEK-QCAO1-D2:/bin$ sudo cp /home/windriver/anyrun.sh /bin/        (copy to /bin)
+
+windriver@PEK-QCAO1-D2:/bin$ sudo ln -s anyrun.sh anyrun   (set script as an execuable file)
+windriver@PEK-QCAO1-D2:/bin$
+
+在另外一个窗口：
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ anyrun
++ echo 'xiaozhan anywhere'
+xiaozhan anywhere
+windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+hostname ----
+windriver@PEK-QCAO1-D2:~/xiaozhan$ hostname -I         # 可以获取Linux server所有的IP地址
+128.224.159.79
+
+If you are using CentOS, then you can edit this file to change the hostname:
+/etc/sysconfig/network
+For my environment:
+NETWORKING=yes
+NETWORKING_IPV6=yes
+HOSTNAME=pek-xli3-d2.wrs.com
+NISDOMAIN=swamp
+
+In my Ubuntu, cat /proc/sys/kernel/hostname
+
+修改了hostname后，如何使其立即生效而不用重启操作系统:
+method 1: 使用echo  servername > /proc/sys/kernel/hostname
+method 2: sysctl kernel.hostname=servername
+method 3: hostname servername
+
+====================================================
+Linux系统在向DNS服务器发出域名解析请求之前会查询/etc/hosts文件.if it does not include the hostname,just add it
+For my environment:
+127.0.0.1   localhost
+127.0.0.1   PEK-QCAO1-D2
+128.224.160.17 pek-cc-vb01s
+128.224.166.46 pek-xli3-d2.wrs.com
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+================================================
+=======scp or rsync  without password========例如备份文件，从主机A定期往主机B备份
+场景 A主机往B主机传文件
+原文链接：https://blog.csdn.net/u010670151/article/details/86649803
+
+1.A主机下执行 (I did not try this)
+
+ssh-keygen -t rsa
+默认回车跳过即可
+or ssh-keygen   (input 2 enter)  on this server: pek-vx-system1
+
+note: root用户名字有的机器是wrsadmin
+这时会在 /root/.ssh/目录下产生两个文件，id_rsa，id_rsa.pub，注意 .ssh/文件为隐藏目录，直接进入即可?
+
+2.将A中生成的id_rsa.pub文件拷贝到B主机的root用户主目录下的.ssh目录下,并且改名为authorized_keys
+
+[xli3@pek-vx-system1 ~]$ ssh-copy-id -i ~/.ssh/id_rsa.pub wrsadmin@128.224.162.222
+or you can use scp -r  (scp ~/.ssh/id_rsa.pub root@YOUR-REMOTE-SERVER-IP:~/.ssh/authorized_keys)
+
+提前查看一下远程备份服务器的authorized_keys中是否有其他人的密钥，如果有则把自己的密钥粘贴在下面，没有的话则覆盖就好
+for example:
+wrsadmin@pek-xsun1-d2:~$ cd .ssh/
+wrsadmin@pek-xsun1-d2:~/.ssh$ ll
+total 16
+drwx------  2 wrsadmin wrsadmin 4096 Aug 19 15:50 ./
+drwxr-xr-x 25 wrsadmin wrsadmin 4096 Aug 19 15:35 ../
+-rw-------  1 wrsadmin wrsadmin  400 Aug 19 15:50 authorized_keys  ----------this is the new key file,name is auto generated
+-rw-r--r--  1 wrsadmin wrsadmin 1554 Jul 11 12:22 known_hosts
+
+这时候用rsync或者scp 命令移动文件不需要输入密码
+
+实际测试如下，在我的环境，从pek-vx-system1往128.224.162.222上拷贝文件
+
+[xli3@pek-vx-system1 default]$ scp -r xlnx-zcu102-rev-1.1.dtb  wrsadmin@128.224.162.222:/tftpboot
+xlnx-zcu102-rev-1.1.dtb                                                                    100%   19KB  19.3KB/s   00:00
+
+[xli3@pek-vx-system1 default]$ rsync -r xlnx-zcu102-rev-1.1.dtb  wrsadmin@128.224.162.222:/tftpboot
+[xli3@pek-vx-system1 default]$
+=============================================================
+====rsync     without password
+https://www.cnblogs.com/felixzh/p/4950049.html
+
+rsync 可以快速同步两个机器上的文件，因为只传输不同的部分，所以当传输很多文件的时候，尤其有些没有改动，
+尽量用rsync不要用scp，
+
+自动备份，可以在服务器上配置定时任务crontab,参照我的实际使用例子:
+windriver@PEK-QCAO1-D2:~/.ssh$ crontab -l
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcvf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+#* 10 * * * python /home/windriver/ANVL/anvl_install_kong.py > /home/windriver/ANVL/nightly.log
+#10 16 * * * /home/windriver/ANVL/buildRTNet.sh > build.log
+#* * * * * echo a >> /home/windriver/ANVL/cron.log
+#* * * * * python /home/windriver/ANVL/test.py >> /home/windriver/ANVL/cron.log
+30 10 * * * python /home/windriver/ANVL/scp_dir_test.py
+30 8 * * * python /home/windriver/ANVL/cp.py
+-----------------------------
+crontab -e可以修改定时
+CTRL +x, YES, 然后Enter即可保存
+一些实际案例：
+30 6 */10 * * find /home "*.xxx" -mtime +4 -exec rm {} \;  意思是每月的1、11、21、31日的6：30，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件
+00 03 * * 1-5  每周一到周五的3点钟
+0 17 * * 1-5  mail -s "hi" alex@domain.name < /tmp/maildata    定时写邮件
+-------------------------------------------
+
+
+===============================Linux系统自动发送邮件
+https://www.runoob.com/w3cnote/centos-mail-command-sendmail.html ---配置
+https://blog.csdn.net/youmatterhsp/article/details/80207914
+----------------例子
+Centos、RedHat 系统 mail 命令
+1、关闭本机的sendmail服务或者postfix服务
+#执行下面的命令，各位大侠都对号入座吧
+#sendmial
+service sendmail stop
+chkconfig sendmail off
+#postfix
+service postfix stop
+chkconfig postfix off
+
+#再狠一点就直接卸载吧..
+yum remove sendmail
+yum remove postfix
+2、然后修改/etc/mail.rc，在文件末尾增加以下内容，指定外部的smtp服务器地址、帐号密码等
+$ vi /etc/mail.rc
+set from=123456@qq.com
+set smtp=smtp.qq.com
+set smtp-auth-user=123456
+set smtp-auth-password=runoob
+set smtp-auth=login
+
+-----Ubuntu例子
+Ubuntu 系统 heirloom-mailx 命令
+1、安装heirloom-mailx
+sudo apt-get install heirloom-mailx
+2、配置
+vi /etc/nail.rc 添加 QQ 邮箱开放的需要认证的smtp服务器:
+
+set from=429240967@qq.com
+set smtp=smtp.qq.com
+set smtp-auth-user=429240967@qq.com
+set smtp-auth-password=runoob
+set smtp-auth=login
+3、在命令行发邮件给QQ邮箱用户
+echo "邮件内容" | heirloom-mailx -s "邮件标题" 123@qq.com
+=================================
+chown can modify the group and user
+
+windriver@PEK-QCAO1-D2:~/test_rsync$ ll a.txt
+-rw-rw-r-- 1 windriver windriver 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 windriver windriver 0 Aug 20 14:05 a.txt
+
+The first windriver is the user, and the second windriver is the user group.
+
+-----change the user-----
+chown可以更改权限用户
+实际测试如下:
+sudo chown windriver a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ sudo chown wrsadmin a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 wrsadmin windriver 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$
+
+if you want to modify whole directory, you can use -R
+[xli3@pek-vx-nightly1 buildarea2]$ sudo chown -R xli3:users mw
+
+chgrp可以更改权限组
+sudo chgrp wrsadmin a.txt
+实际测试如下:
+windriver@PEK-QCAO1-D2:~/test_rsync$ sudo chgrp wrsadmin a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$ ls -l
+total 0
+-rw-rw-r-- 1 wrsadmin wrsadmin 0 Aug 20 14:05 a.txt
+windriver@PEK-QCAO1-D2:~/test_rsync$
+==================================================
+linux里面用来从网络上下载东西的命令
+使用wget -O下载并以不同的文件名保存
+使用wget -b后台下载
+wget --no-check-certificate  -O test.html https://www.centos.bz/2016/10/download-compile-install-nginx/
+
+==================================
+xmanager, to show GUI
+export display=192.168.1.1:0.0    the IP of windows machine
+==========================================
+vi /net/pek-vx-nightly1/buildarea1/pzhang1/jenkinsEnvInjection/vx7_nightly_spin.config
+NIGHTLYSPIN=vx20191112061605_vx7-native
+lastS=vx20191111061605_vx7-native
+LTAFRELEASE=vx7-integration-native
+timestamp=20191113170215
+PatchBranch=vx7-integration
+
+=================================================
+#!/bin/bash
+date
+#get spin name
+source /net/pek-vx-nightly1/buildarea1/pzhang1/jenkinsEnvInjection/vx7_nightly_spin.config
+Spin_name=$NIGHTLYSPIN
+Branch_name=$LTAFRELEASE
+time=$timestamp
+patch_branch=$PatchBranch
+
+#Spin_name=vx20191007122204_vx7-SR0630-native
+Branch_name=vx7-SR0630-features
+#time=20190702170214
+
+
+installpath=/buildarea2/mw/spin
+profile=VxWorks_7_Plus_Platform__Time_Based_BASE
+
+year=`echo $time| cut -c-4`
+month=`echo $time| cut -c5-6`
+day=`echo $time| cut -c7-8`
+week=$year-$month-$day
+echo $week
+===================================================
+
+Shell获取字符串长度的多种方法总结
+方法一】:利用${#str}来获取字符串的长度
+windriver@PEK-QCAO1-D2:~/test_rsync$ str="abc"
+windriver@PEK-QCAO1-D2:~/test_rsync$ echo ${#str}
+3
+windriver@PEK-QCAO1-D2:~/test_rsync$
+
+方法2】:利用awk的length方法
+str="abc"
+echo ${str} | awk '{print length($0)}'
+最好用{}来放置变量
+     2) 也可以用length($0)来统计文件中每行的长度
+for example:
+awk '{print length($0)}' /etc/passwd
+
+利用awk的NF项来获取字符串长度:
+str="abcd"
+echo $str | awk -F "" '{print NF}'
+备注: -F为分隔符，NF为域的个数，即单行字符串的长度
+
+【方法四】:利用wc的-L参数来获取字符串的长度
+备注: -L参数
+1) 对多行文件来说，表示打印最长行的长度！ 82，表示/etc/passwd文件最长行的长度为82
+2) 对单行字符串而言，表示当前行字符串的长度！
+str="abcd"
+echo $str | wc -L
+
+cat /etc/passwd | wc -L
+
+【方法五】:利用wc的-l参数，结合echo -n参数
+备注:
+1) -c参数: 统计字符的个数
+2) -n参数: 去除"\n"换行符，不去除的话，默认带换行符，字符个数就成了7
+
+echo -n $str | wc -l
+
+【方法六】:利用expr的length方法
+str="abc"
+expr length ${str}
+
+============================================================ configure Ubuntu static ip===============
+
+打开一个终端，在超级用户下使用如下命令(only when configuring static ip address)
+current static ip for anvl automation server:
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ vim /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+auto eth1
+iface eth1 inet static
+    address 128.224.163.8
+    netmask 255.255.254.0
+    gateway 128.224.162.1
+    dns-nameservers 128.224.160.11 147.11.100.30 147.11.1.11
+    dns-search wrs.com corp.ad.wrs.com windriver.com
+
+然后修改/etc/resolv.conf文件，添加dns命令
+# Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
+#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
+nameserver 128.224.160.11
+nameserver 147.11.100.30
+nameserver 147.11.1.11
+search wrs.com corp.ad.wrs.com windriver.com
+
+之后运行
+
+/etc/init.d/networking restart
+
+重启网卡，可得到的ipv4地址，永久性的
+====================================================
+set the background color as green on linux
+
+Default Foregroung  Red 15 Green 15 Blue 15
+Default Backgroung  Red 199 Green 237 Blue 204
+Cursor Color        Red 255
+=========================================================== U盘恢复到原始大小
+how to solve U disk space issue----64G is just showing 70M
+
+https://blog.csdn.net/suiyuehuimou/article/details/82809203
+step 1:cmd-----然后输入diskpart，按下回车键；再输入list disk 回车 查看当前有的存储设备，必须记住自己的U盘排序号
+step 2:输入select disk X（X是你U盘的排序号），回车后继续输入clean命令进行回车就可以取消u盘原有的分区，
+让他重新变成一个未分区的状态；这时u盘的大小已经恢复了，但是u盘是处于未分区状态
+step 3:must have this step接着，在我的电脑右键-->管理-->磁盘管理中选择你刚刚的那个U盘，
+右键，新建简单卷，大小自己分配成你U盘本身的大小（也就是U盘的最多容量）。
+这个相当于重新分区，并且格式化。至此U盘就恢复了原来的容量了
+=========================================================================
+install python3 in centos:
+
+download package from https://www.python.org/downloads/release/python-375/
+3、编译安装
+
+进入解压的python安装包      tar -xvzf Python-3.7.5.tgz
+
+1、[admin@ ~] cd Python-3.6.0a1
+2、[admin@ ~] ./configure #有个点
+
+**若执行./configure报错gcc no … **
+可执行命令:
+
+ [admin@ ~] yum install gcc  #安装gcc编译环境即可
+1
+1、[admin@ ~] ./configure #安装完gcc再次执行，如上一步未报错忽略这一步
+2、[admin@ ~] make && make install #编译python
+
+4、查看是否成功
+
+[admin@ ~] python3
+————————————————
+版权声明：本文为CSDN博主「(.*)释然」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zha6476003/article/details/79282996
+
+安装selenium
+安装selenium前先安装setuptools 和pip
+
+请按以下顺序不然可能遇到更多坑
+
+安装setuptools
+
+cd setuptools-38.2.3
+
+python3 setup.py install
+
+如报错：RuntimeError: Compression requires the (missing) zlib module
+
+我们需要在linux中安装zlib-devel包，进行支持。
+
+[admin@ ~] yum install zlib
+[admin@ ~] yum install zlib-devel
+
+安装完成后须重新编译安装python
+进入我们前面解压的python3.6安装目录执行：
+
+[admin@ ~] make && make install
+
+重新编译后再次安装setuptools
+
+cd setuptools-38.2.3
+
+python3 setup.py install
+————————————————
+
+安装pip
+admin@ ~] tar -xvzf pip-9.0.1.tar.gz //解压
+[admin@ ~] cd pip-9.0.1 //进入安装文件
+[admin@ ~] python3 setup.py build
+[admin@ ~] python3 setup.py install //安装pip
+
+报错：
+
+ImportError: No module named '_ssl'
+或
+ImportError: cannot import name 'HTTPSHandler'
+或
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not availa............Could not find a version that satisfies the requirement xxx (from versions: )
+No matching distribution found for xxx..
+
+多方查找缺少openssl-devel 我们继续安装
+
+[admin@ ~] yum install openssl-devel
+
+安装完成后须重新编译安装python
+进入我们前面解压的python3.6安装目录执行：
+
+[admin@ ~] make && make install
+
+我们使用pip安装selenium：
+
+[admin@ ~] pip3 install -U selenium
+#注意linux一般带两个版本python所以这里python3安装的pip要使用pip3命令来使用，如系统只有一个版本python可忽略直接使用pip命令
+
+=========================set python environment variable========================
+这是在python3安装目录下运行的，然后还将其添加到PATH，查询PATH echo $PATH
+
+windriver@PEK-QCAO1-D2:/usr/bin$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/windriver
+
+使用如下命令：
+
+ln -s /usr/local/python32/bin/python3 /usr/bin/python（如果ln -s /usr/local/python32/bin/python3 /usr/bin/python3 则python还是启动2.7 python3 则启动3.*版）
+
+这里我用的是后者。
+
+接下来在随便路径都可以使用python3命令了。
+
+
+=======================================执行linux命令或者脚本，抓取输出信息==========
+./ANVL.py -t %s -c all -s %s -l %s -v %s | tee anvl.log 2>&1
+
+2>&1，意思是错误输出等同于标准输出。所以使得./test.sh >test.log，可以把标准输出和错误输出全部导入日志test.log里。
+注意：2>&1，中间不能有空格。
+注意：2>&1，必须写在最后，否则会失去原有意义
+
+=======================================================run shell script or linux command====
+$?最后运行的命令的结束代码（返回值),0 is ok,1 is failure.
+
+$# 是传给脚本的参数个数
+$0 是脚本本身的名字
+$1是传递给该shell脚本的第一个参数
+$2是传递给该shell脚本的第二个参数
+$@ 是传给脚本的所有参数的列表
+
+if [ -d $root_vip_dir ];then
+    rm -fr $root_vip_dir
+fi
+===============查看环境变量
+printenv
+====Ubuntu上卸载软件iperf3
+check your installed software:
+dpkg --list
+
+sudo apt-get --purge remove iperf3
+sudo apt autoremove libiperf0
+sudo apt-get --purge remove iperf  ---this is a must.Otherwise it still shows old version
+
+Install iper3.6 version:
+
+tar -xzvf iperf-3.6.tar.gz
+cd iperf-3.6
+./configure
+make
+make install
+check version: iperf3 -v
+========================
+
+安装pip on centos5.7, download pip-19.3.1.tar.gz
+[root@pek-xli3-d2] tar -xvzf pip-19.3.1.tar.gz //解压
+[[root@pek-xli3-d2] cd pip-19.3.1 //进入安装文件
+[[root@pek-xli3-d2] python3 setup.py build
+[[root@pek-xli3-d2] python3 setup.py install //安装pip
+使用python3安装，所以默认pip安装到了/usr/local/python3/bin
+[root@pek-xli3-d2 bin]# cd /usr/local/python3/bin/
+[root@pek-xli3-d2 bin]# ll
+total 14396
+lrwxrwxrwx 1 root root       8 Jun 12  2018 2to3 -> 2to3-3.6
+-rwxr-xr-x 1 root root     109 Jun 12  2018 2to3-3.6
+-rwxr-xr-x 1 root root     250 Jun 12  2018 easy_install-3.6
+lrwxrwxrwx 1 root root       7 Jun 12  2018 idle3 -> idle3.6
+-rwxr-xr-x 1 root root     107 Jun 12  2018 idle3.6
+-rwxr-xr-x 1 root root     365 Dec 19 15:20 pip
+-rwxr-xr-x 1 root root     367 Dec 19 15:20 pip3
+-rwxr-xr-x 1 root root     371 Dec 19 15:20 pip3.6
+lrwxrwxrwx 1 root root       8 Jun 12  2018 pydoc3 -> pydoc3.6
+-rwxr-xr-x 1 root root      92 Jun 12  2018 pydoc3.6
+lrwxrwxrwx 1 root root       9 Jun 12  2018 python3 -> python3.6
+-rwxr-xr-x 2 root root 7339126 Jun 12  2018 python3.6
+lrwxrwxrwx 1 root root      17 Jun 12  2018 python3.6-config -> python3.6m-config
+-rwxr-xr-x 2 root root 7339126 Jun 12  2018 python3.6m
+-rwxr-xr-x 1 root root    3128 Jun 12  2018 python3.6m-config
+lrwxrwxrwx 1 root root      16 Jun 12  2018 python3-config -> python3.6-config
+lrwxrwxrwx 1 root root      10 Jun 12  2018 pyvenv -> pyvenv-3.6
+-rwxr-xr-x 1 root root     449 Jun 12  2018 pyvenv-3.6
+[root@pek-xli3-d2 bin]# ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3         -----------创建软连接，然后在任何地方都可以执行pip3命令
+[root@pek-xli3-d2 bin]# pip3 -V
+pip 19.3.1 from /usr/local/python3/lib/python3.6/site-packages/pip-19.3.1-py3.6.egg/pip (python 3.6)
+
+
+===================================python  virtualenv====
+virtualenv，对于在同一台机子上搭建便捷的不同版本python开发环境，具有非常重要的作用。它能够使你现在要处理操作的环境与其他使用不同版本、不同模块的python项目分割开来。
+
+  一、如何安装virtualenv
+
+在本机安装virtualenv，可以使用pip install virtualenv 命令
+pip install virtualenv
+
+ 二、创建虚拟目录
+
+   第一步：进入工作目录 mkdir youdir(即项目目录)
+                      cd workdir
+　　第二步：创建虚拟环境 virtualenv yourdir
+cd workdir
+virtualenv yourdir  # yourdir就是虚拟环境的名字，现在系统就会在你当前工作目录下新建一个名为yourdir的文件夹，
+它保存了一个全新的虚拟环境。另外，在使用virtualenv创建python环境时，默认创建的是python2.7的环境。
+如果你想创建其他版本的python，只需要在创建时指定python的版本即可。像输入下面的命令：
+
+virtualenv yourdir python=python3.6
+
+virtualenv yourdir python=python3.6 --no-site-packages ----干净的目录，不会读取系统包,即不带第三方库,需要时才安装
+
+　　三、激活（使用）虚拟环境
+
+　　使用命令：source yourdir/bin/activate（Linux和OS X）
+
+　　　　　　　source  yourdir\Scripts\activate（Windows）
+
+　　四、退出环境
+
+　　命令：deactivate
+
+=======================Ubuntu ftp =======
+if you want root user have ftp service
+https://www.cnblogs.com/Dreamcho/p/10805690.html
+安装vsftp服务器
+
+一、在终端上输入 sudo apt-get install vsftpd 命令，等待安装完成
+查询:  service vsftpd status
+二、修改vsftpd.conf文件：sudo vim /etc/vsftpd.conf，将 #write_enable=YES 前面的注释#去掉
+三、更改/etc/ftpusers，注释掉root用户：sudo vim /etc/ftpusers
+四、在终端中重启FTP服务：sudo /etc/init.d/vsftpd restart
+CuteFTP建立连接：
+-----Ubuntu 18.04配置ftp，在家里虚拟机试验成功==========================
+1.安装vsftpd(终端执行)
+? ??sudo?apt-get install?vsftpd
+
+2.配置vsftpd(终端执行)
+? ?sudo gedit?/etc/vsftpd.conf
+
+? ?找到:listen=YES ?#将NO改为YES
+
+? ?找到:listen_ipv6=NO?#将YES改为NO
+          local_umask=022
+  试验自己的虚拟机,在windows端用Filezila,选择FTP登录，sam   123456
+————————————————
+版权声明：本文为CSDN博主「神奇程序员」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_37581115/article/details/84849434
+====================================================================
+在Linux系统里执行多条命令，每个命令用分号分隔
+cmd = 'cd {fromDir}/bootstrap_installer; ./setup_linux -installerUpdateURLs none -productUpdateURLs none -silent -installPath {toDir}  -yum -y install'.format(fromDir=fromDir, profile=profile, toDir=toDir + '/' + spin)
+
+=====================win7 安装Ubuntu虚拟机
+本地用virtualbox，下载Ubuntu18.04的镜像，基本一路默认即可
+选择桥接模式,即bridge模式,使用和本地windows主机同一网段的地址
+设置静态IP:
+sudo vi /etc/network/interfaces
+
+auto enp0s3
+iface enp0s3 inet static
+address 192.168.3.48
+netmastk 255.255.255.0
+gateway 192.168.3.1
+
+
+
+在Ubuntu的网络设置里面(右上角图标的网络设置)
+在IPv4设置里面设置地址和DNS服务器（192.168.3.1）
+
+
+wired消失后：
+sudo gedit /etc/NetworkManager/NetworkManager.conf
+修改false   true
+sudo service network-manager restart
+
+DNS设置为：
+211.142.211.124，8.8.8.8，8.8.8.4
+ping www.baidu.com
+==================================================================
+从windows上通过ssh连接虚拟机：
+sudo apt-get install openssh-server
+/etc/init.d/ssh restart
+ps -e | grep ssh
+vim /etc/ssh/sshd_config
+#PermitRootLogin prohibit-password
+添加下面的:
+PermitRootLogin yes
+/etc/init.d/ssh restart
+=============================================
+这两天重新装的ubuntu系统，发觉使用VI时，方向键按下去后变成ABCD，删除键无效。网上搜寻一番，应该是VI软件本身的问题，顾卸载重装即可，步骤如下：
+
+    1、执行命令 sudo apt-get remove vim-common
+
+    2、执行命令 sudo apt-get install vim
+putty中小数字键盘在vim中的使用：
+选项Terminal->Features里，找到Disable application keypad mode，选上就可以了
+===============================================================================================
+如何解决“Offending key in ~/.ssh/known_hosts” file
+
+[xli3@pek-vx-system1 default]$ scp -r uVxWorks windriver@128.224.166.211:/Jenkins/workspace/19-Vx7_Nig/vxworks_7/mefa_platform/logs/mefaImage/28572/images/image/
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b4:44:1f:95:6e:77:b3:05:fb:19:b2:58:b9:b6:56:d4.
+Please contact your system administrator.
+Add correct host key in /folk/xli3/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /folk/xli3/.ssh/known_hosts:2
+  remove with: ssh-keygen -f "/folk/xli3/.ssh/known_hosts" -R 128.224.166.211
+RSA host key for 128.224.166.211 has changed and you have requested strict checking.
+Host key verification failed.
+lost connection
+--------按照提示去操作
+vi /folk/xli3/.ssh/known_hosts
+remove the second line   删除掉对应的第二行，然后重新执行scp命令即可
+====================================================================================
+在代码里面用4个空格替代TAB键的方法：
+:set ts=4
+:set expandtab
+:%retab!
+退出后保存即可
+====================================================================
+su root
+
+sudo shutdown -h now      # this is to shutdown linux server
+sudo shutdown -h +1
+sudo shutdown -r 11:00    # reboot     or use  sudo reboot
+关机命令：
+1、halt 立刻关机
+2、poweroff 立刻关机
+3、shutdown -h now 立刻关机(root用户使用)
+4、shutdown -h 10 10分钟后自动关机
+
+==========================how to use nmap -==============================
+https://www.cnblogs.com/LyShark/p/10637507.html
+
+Install nmap in my Ubuntu 14.04:    sudo apt-get install nmap
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ nmap -v
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2020-05-19 16:09 CST
+Read data files from: /usr/bin/../share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.03 seconds
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ nmap 128.224.166.211
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2020-05-19 16:19 CST
+Nmap scan report for 128.224.166.211
+Host is up (0.00038s latency).
+Not shown: 986 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+2001/tcp open  dc
+2002/tcp open  globe
+2003/tcp open  finger
+2004/tcp open  mailbox
+2005/tcp open  deslogin
+2006/tcp open  invokator
+6000/tcp open  X11
+9090/tcp open  zeus-admin
+
+Nmap done: 1 IP address (1 host up) scanned in 5.91 seconds
+
+====================================================================
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sudo apt-get install sysstat
+windriver@PEK-QCAO1-D2:~/xiaozhan$ vi /etc/default/sysstat   ------ set it to True
+==============================================================================
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sudo apt-get install python-scapy
+=============================================================
+键盘同时按组合键Ctrl+Alt+Shift+F即tightvnc可退出全屏
+
+---------------------alias-------------------
+windriver@PEK-QCAO1-D2:~/xiaozhan$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+test for alias on my server:
+windriver@PEK-QCAO1-D2:~$ alias loo='cd /home/windriver;ls -l'
+windriver@PEK-QCAO1-D2:~$ loo
+total 318060
+-r-xr--r--  1 windriver windriver     29184 Nov 26 11:22 11_ia_28512_Q170.xls
+-rw-r--r--  1 root      root       27328266 Aug  2  2019 1.cap
+drwxr-xr-x  2 windriver windriver      4096 Dec  6  2018 2018.3-zcu102-release
+-rwxr--r--  1 windriver windriver 104448000 May 29  2019 2018.3-zcu102-release.tar
+-rw-rw-r--  1 windriver windriver       523 Aug 21  2019 23-find-latest-file.py
+-rw-rw-r--  1 windriver windriver         0 Aug  7  2019 2.txt
+drwx------  2 windriver windriver      4096 Jun  1  2018 aaa
+-rw-r--r--  1 root      root         153021 Aug 27  2018 a.cap
+drwxrwxrwx 13 windriver windriver      4096 Apr  7 11:52 ANVL
+
+If you want to cancel the alias:
+unalias loo
+--------------------------------------------------------------------------tree----
+Install tree in my Ubuntu server as below:
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-05-25_19-52-42$ sudo apt-get install tree
+Reading package lists... Done
+
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result$ tree -d      # only show directories
+
+├── ANVL_Vxhelix_2018-09-06_17-18-04
+├── ANVL_Vxhelix_2018-09-07_09-21-56
+├── bak
+├── Vx7AerospaceProfile
+└── Vx7GitAug04
+
+663 directories
+
+mkdir -p a/b     # create parent and child dirs
+tree -d a/b
+----you can create many files with different names at the same time:批量创建文件,用一对大括号来实现
+touch stu{1,2,3,4}    # this can create stu1,stu2,stu3 and stu4
+mkdir -p data/{dir1,dir2,dir3}     # 批量创建目录
+-----------------------------------------------------------------------------------------
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -l --time-style=long-iso       # this can show specific time
+total 134192
+-rwxrwxrwx  1 windriver windriver       714 2020-05-13 14:51 68-multi-thread-subprocess-ping.py
+-rwxrwxrwx  1 windriver windriver      2073 2019-08-30 15:01 7-pexpect-4.6-telnet.py
+drwxrwxr-x  2 windriver windriver      4096 2020-04-29 13:00 blast
+-rwxrwxrwx  1 windriver windriver      1597 2018-11-20 13:45 build.
+==========================================this can filter all directories
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -F | grep /
+blast/
+home/
+pexpect-4.6.0/
+Python-3.6.5/
+
+================================this can filter all files
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -F | grep -v /
+68-multi-thread-subprocess-ping.py*
+7-pexpect-4.6-telnet.py*
+build.py*
+config.ini
+
+============================export -p     can check all environment variables,查看所有环境变量 也可以用export
+useradd ?Cd  /home/sam -m sam
+Linux中让alias设置永久生效的方法详解:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat /home/windriver/.bashrc
+
+add your new alias like:   alias loo = 'cd /home/windriver;ls -l'
+
+source /home/windriver/.bashrc
+===========================================================================
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls -lhi          # this  can show full file size like K or M (you can remove i,just ls -lh)
+total 132M
+ 6954699 -rwxrwxrwx  1 windriver windriver  714 May 13 14:51 68-multi-thread-subprocess-ping.py
+ 6954694 -rwxrwxrwx  1 windriver windriver 2.1K Aug 30  2019 7-pexpect-4.6-telnet.py
+ 6954691 -rwxrwxrwx  1 windriver windriver 109M Oct 19  2019 For_Brandon_Beijing.zip
+ =====================================================================================
+copy and backup files:   you can use below command:
+windriver@PEK-QCAO1-D2:~/xiaozhan/blast$ cp blasteeUDPvx.c{,.bak}
+-rw-r--r-- 1 windriver windriver 7002 Apr 29 12:10 blasteeUDPvx.c
+-rw-r--r-- 1 windriver windriver 7002 May 28 16:42 blasteeUDPvx.c.bak
+=========================================you can use find to replace rm
+u can use mv to replace rm, first you can mv file to /tmp
+backup before remove.
+
+# 使用find + xargs的组合来执行命令
+find . -type f -name '.txt' -mtime +7 | xargs rm -f
+rm filename
+--------------tar command 用来打包文件 =============================
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ tar zcvf test.tar.gz a.txt
+
+# 用反引号来执行find
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ tar zcvf test.tar.gz `find . -type f -name "*.txt"`
+# 找到目录下所有文件，删除里面以xiaozhan开头的行
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -type f | xargs sed -i '/xiaozhan*/d'
+
+tar -ztvf  test.tar.gz      # 查看压缩包里面的内容，例如包含什么文件
+
+
+=================================source  =============
+windriver@PEK-QCAO1-D2:~/xiaozhan$ vi source_test.sh
+#!/bin/bash
+source /net/pek-vx-system1/buildarea1/hyan1/wassp/nightly_config.ini
+#. /net/pek-vx-system1/buildarea1/hyan1/wassp/nightly_config.ini    # . has the same as source
+echo $DVD      # DVD is in the nightly_config.ini, refer to below, after run source, you can use variables in the nightly_config.ini
+
+# vi nightly_config.ini
+DVD=/net/pek-vx-system1/buildarea1/yliu2/nightly/vx20200601153139_mmadhava-sr0650-fc_vx7-host-SR0650-features
+LTAFRELEASE=vx7-integration-native
+RUNDATE=2020-06-03
+===========================================================basename dirname
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50$ basename /home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50/test_result.log
+test_result.log
+
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50$ dirname /home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50/test_result.log
+/home/windriver/ANVL/ANVL_Result/ANVL_Vx7_2020-06-03_10-47-50
+
+grep -rI "FAILED" ./
+==============================================chown   user right====
+
+-rw-rw-r--  1 windriver      windriver    129562 Aug 16  2019 test.log
+after run this: sudo chown root test.log    # this can modify the user that can view the file
+it will be:
+-rw-rw-r--  1 root      windriver    129562 Aug 16  2019 test.log
+sudo chown .root test.log   or sudo chown :root test.log =====this can modify the user group
+
+or you can use:
+sudo chown root:root test.log      # modify user and user group at the same time
+=============================================================
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ cat -n test.log     # you can also use cat -b
+  3809  === nightly release name is:vx7-integration
+  3810  ====nightly spin is
+# you can use below command to remove all empty lines.过滤空行
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ grep -v "^$" xiaozhan_new_dir.py | cat -n
+     1  #!/usr/bin/env python
+     2  import os,sys,time,string,ConfigParser
+     3  import resultDir
+     4  import sys
+
+more test.log     # you can use 空格键查看下一页，b可以回看上一页，用/来搜索
+more -5 test.log   # 只显示前5行内容
+more +5 test.log    # 从第5行开始显示内容
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ ls /etc/ | more -5    # 每按一次空格键，就显示5行内容
+
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ ls /etc/ | less -N     # 可以显示行号
+      1 acpi
+      2 adduser.conf
+      3 adjtime
+      4 aliases
+      5 alternatives
+
+head test.log   # default is 显示10行内容, head -n 5 or head -5
+tail head.log   #
+tail -f test.log     # 可以实时查看文件的变化
+==============================================================================cut
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d : -f 1 /etc/passwd    # 以冒号作为分隔符,-f 1表示只显示第一列
+root
+daemon
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d : -f 3-5 /etc/passwd
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ wc -l submodule_repo.sh   # 23 lines
+23 submodule_repo.sh
+
+===============================sort
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort ips.txt
+128.224.153.138
+128.224.153.34
+128.224.159.79
+128.224.163.8
+128.224.166.211
+128.224.167.175
+
+sort -u  ips.txt    # 去掉重复行 等同于unique命令
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat sort.txt
+ab-cd-rc-ab 3.2.3.46
+ab-cd-cc-ee 1.2.3.41
+ab-cd-cc-aa 3.2.3.42
+fd-fe-er-fe 2.3.4.51
+aa-er-vd-cd 3.4.5.61
+ee-ad-df-fc 4.5.5.21
+# -n表示按数字排序
+# -t "."表示以.作为分割域
+# -k3,3  按第3个字段开始到第3个个字段结束作为排序
+# -k4.1,4.3   按第4个字段第一个字符开始到第4个字段第3个字符结束排序
+
+# 以aa-cd-dd-xx中的最后一列xx进行分组，再对每组中的IP:2.2.3.xxx中的最后一列xxx进行排序
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort -t "." -k 1.10,1.11 -k 4,4 sort.txt
+ab-cd-cc-aa 3.2.3.42
+ab-cd-rc-ab 3.2.3.30     # 注意30
+ab-cd-rc-ab 3.2.3.46     # 注意46
+aa-er-vd-cd 3.4.5.61
+ab-cd-cc-ee 1.2.3.41
+ee-ad-df-fc 4.5.5.21
+fd-fe-er-fe 2.3.4.51
+==================================uniq
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uniq -c ips.txt
+      1 128.224.159.79
+      2 128.224.163.8               # 出现了两次
+      1 128.224.166.211
+      1 128.224.153.34
+      1 128.224.153.138
+      1 128.224.167.175
+实际当中通常结合sort使用来去重:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sort -n ips.txt | uniq -c
+      1 128.224.153.138
+      1 128.224.153.34
+      1 128.224.159.79
+      2 128.224.163.8
+      1 128.224.166.211
+      1 128.224.167.175
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt
+http://www.aaa.org/index.html
+http://www.aaa.org/index.html
+# 以/作为分割，取第三列
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "/" '{print $3}' url.txt
+www.aaa.org
+www.aaa.org
+www.aab.org
+www.bbb.org
+www.aaa.org
+# 统计域名被访问的次数
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "/" '{print $3}' url.txt | sort | uniq -c
+      3 www.aaa.org
+      1 www.aab.org
+      1 www.bbb.org
+# 用cut实现相同功能
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cut -d '/' -f 3 url.txt | sort | uniq -c
+      3 www.aaa.org
+      1 www.aab.org
+      1 www.bbb.org
+================================wc ===
+wc -l   统计文本行数
+wc -L   最长那行的长度
+wc -w    统计单词数
+wc -c    统计字节数
+wc -m    统计字符数
+查看登陆系统的用户数:    who | wc -l
+windriver@PEK-QCAO1-D2:~/xiaozhan$ who
+windriver pts/0        2020-06-02 16:05 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/2        2020-06-02 16:07 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/4        2020-06-01 09:40 (pek-lwang7-d1.corp.ad.wrs.com)
+windriver pts/5        2020-06-01 10:04 (pek-lwang7-d1.corp.ad.wrs.com)
+=======================================
+Dos下的文本是以\r\n作为换行标志，linux下是以\n作为换行标志
+如果在windosw下写了shell脚本，上传到linux机器，就需要转换
+dos2unix  url.txt     # 执行即可
+======================================diff ======
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt
+     1  http://www.aaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  http://www.aab.org/index.html
+     4  http://www.bbb.org/index.html
+     5  hattp://www.aaa.org/index.html
+     6  北京
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url_cp.txt
+     1  http://www.aaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  http://www.aab.ddd/index.html
+     4  http://www.bbb.org/bbbb
+     5  hattp://www.aaa.org/index.html
+     6  北京
+     7  aaa
+#  a----add, d---delete, c---change
+# <开头的行属于文件1，>开头的属于文件2
+# 字母a,c,d前面的数字是文本1的行号，字母后面的数字是文本2的行号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ diff url.txt url_cp.txt
+3,4c3,4
+< http://www.aab.org/index.html
+< http://www.bbb.org/index.html
+---
+> http://www.aab.ddd/index.html
+> http://www.bbb.org/bbbb
+6a7     # 表示文件1的第6行增加下面一行内容aaa,即对应文件2的第7行
+> aaa
+==========
+# -表示文件2比文件1少的行， + 表示文件2比文件1多的行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ diff -u url.txt url_cp.txt
+--- url.txt     2020-06-10 17:15:06.759173822 +0800
++++ url_cp.txt  2020-06-11 11:02:36.429817632 +0800
+@@ -1,6 +1,7 @@
+ http://www.aaa.org/index.html
+ http://www.aaa.org/index.html
+-http://www.aab.org/index.html
+-http://www.bbb.org/index.html
++http://www.aab.ddd/index.html
++http://www.bbb.org/bbbb
+ hattp://www.aaa.org/index.html
+ 北京
++aaa
+==========================================================
+vimdiff url.txt url_cp.txt     可以打开最多4个文件来对比，用不同颜色
+
+======rev 可以反向输出文本内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rev url.txt
+lmth.xedni/gro.aaa.www//:ptth
+lmth.xedni/gro.aaa.www//:ptth
+lmth.xedni/gro.baa.www//:ptth
+lmth.xedni/gro.bbb.www//:ptth
+lmth.xedni/gro.aaa.www//:pttah
+京北
+======================================tr 可以替换删除修改文本
+# 下面的表示把a替换为x,b替换为y，c替换为z，< url.txt 表示接受重定向文本
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr 'abc' 'xyz' < url.txt     # 只是在内存中修改，并没有真正修改文件
+http://www.xxx.org/index.html
+http://www.xxx.org/index.html
+http://www.xxy.org/index.html
+http://www.yyy.org/index.html
+hxttp://www.xxx.org/index.html
+北京
+
+# 统一把小写字母转换为大写字母,  重定向新的文件才是真正修改文件
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt > aaaa.txt   生成新的文件
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr '[a-z]' '[A-Z]' < url.txt
+HTTP://WWW.AAA.ORG/INDEX.HTML
+HTTP://WWW.AAA.ORG/INDEX.HTML
+HTTP://WWW.AAB.ORG/INDEX.HTML
+HTTP://WWW.BBB.ORG/INDEX.HTML
+HATTP://WWW.AAA.ORG/INDEX.HTML
+北京
+# 删除文件中的abc字符
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tr -d 'abc' < url.txt
+http://www..org/index.html
+http://www..org/index.html
+===========================================tee
+把数据重定向到屏幕和文本里   -a 表示在文本后面追加内容,否则就是覆盖
+windriver@PEK-QCAO1-D2:~/xiaozhan$ ls | tee -a ls.txt
+68-multi-thread-subprocess-ping.py
+7-pexpect-4.6-telnet.py
+aaaa.txt
+
+=========================================vi vim
+u 可以回复或者回滚前一个操作，如果有操作失误就执行u
+/a   搜索a，  按n逐个往下搜索，按N往上搜索
+d1G   表示删除当前行到第一行（包括当前行和第一行）
+dG    表示删除当前行到最后一行
+d0    表示删除当前光标所在文本到行首
+d$    表示删除当前光标所在文本到行尾
+0     表示光标移动到当前行的行首
+$     表示光标移动到当前行的行尾
+gg     将光标移动到文件第一行
+G       光标移动到文件末尾
+n<Enter>   光标向下移动n行
+ngg      光标移动到第n行
+:n1,n2 co n3   n1到n2行的内容复制到n3行之后
+:n1,n2 m  n3   n1到n2行的内容剪切到n3行之后
+=============================================grep  =====文本处理
+windriver@PEK-QCAO1-D2:~/xiaozhan$ grep -in 'a' url.txt       # -n 可以添加行号, -i 不区分大小写,即匹配a或者A
+1:http://www.aAa.org/index.html
+2:http://www.aaa.org/index.html
+3:http://www.aab.org/index.html
+
+# 下面的表示过滤掉空行和以#开头的行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ grep -v "^$\|#" url.txt
+http://www.aAaa.org/index.html
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt | grep -v "^($|#)"
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+
+=======================================sed ======
+sed -i         #表示直接修改文件内容，否则只是在内存中修改
+sed -i  s/reg/replace/g      # 用replace来替换reg正则匹配到的文本
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -i '2a xiaozhan' url.txt     # 2a表示在第2行后追加内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+xiaozhan                        #
+http://www.aab.org/index.html
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed  '4i xiaozhan2' url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+xiaozhan
+xiaozhan2                       # 在第4行插入内容，原来的第4行变成了第5行
+
+如果要增加多行文本，就用\n,例子： sed  '4i xiaozhan2\nbeijing' url.txt
+# 表示删除第3行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed '3d' url.txt
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed '3,5d' url.txt    # 删除第3行到第5行，包括第5行
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed 's/xiaozhan/beijing/g' url.txt
+http://www.aAaa.org/index.html
+http://www.aaa.org/index.html
+beijing                 # 用beijing来替换xiaozhan
+
+# 如果只显示某一行，必须结合-n,否则回全部打印
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '2p' url.txt
+http://www.aaa.org/index.html
+
+备份文件到相同的目录下:注意下面的写法,优点是不用重复写很常的路径
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cp url.txt{,.bak}
+
+============================================awk ===============
+NR表示行号，$0表示一整行的内容
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk 'NR==3' url.txt   # 只打印第3行
+xiaozhan
+
+# 下面都能实现相同功能，即打印第3行到第5行
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk 'NR==3,NR==5' url.txt
+xiaozhan
+http://www.aab.org/index.html
+http://www.bbb.org/index.html
+windriver@PEK-QCAO1-D2:~/xiaozhan$ sed -n '3,5p' url.txt     # this is recommended
+xiaozhan
+http://www.aab.org/index.html
+http://www.bbb.org/index.html
+windriver@PEK-QCAO1-D2:~/xiaozhan$
+
+# 下面都是先相同功能，即给每行文本添加行号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk '{print NR,$0}' url.txt
+1 http://www.aAaa.org/index.html
+2 http://www.aaa.org/index.html
+3 xiaozhan
+4 http://www.aab.org/index.html
+5 http://www.bbb.org/index.html
+6
+7 #hattp://www.aaa.org/index.html
+8 北京
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat -n url.txt     # this is recommended
+     1  http://www.aAaa.org/index.html
+     2  http://www.aaa.org/index.html
+     3  xiaozhan
+     4  http://www.aab.org/index.html
+     5  http://www.bbb.org/index.html
+     6
+     7  #hattp://www.aaa.org/index.html
+     8  北京
+# 显示文件的第2到第6行，并添加行号
+# awk后面的参数必须放在单引号里面，print语句必须放在一对大括号里面
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx6.9_2019-08-19_14-36-45$ awk 'NR==2,NR==6 {print NR,$0}' test_result.log
+2 DHCP-SERVER-1.2:Passed
+3 DHCP-SERVER-2.1:Passed
+4 DHCP-SERVER-2.2:Passed
+5 DHCP-SERVER-2.3:Passed
+6 DHCP-SERVER-2.4:Passed
+
+# 打印第1，2和最后一列,只显示前两行
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx6.9_2019-08-19_14-36-45$ awk -F '-' '{print $1,$2,$NF}' test_result.log | head -2
+DHCP SERVER 1.1:Passed
+DHCP SERVER 1.2:Passed
+
+# 用awk里面的gsub函数来查找替换
+# 注意严格按照下面的写法，gsub和后面的小括号之间不能有空格，查找和替换内容要用双引号
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ awk '{gsub("/sbin/nologin","/bin/bash",$0);print $0}' test.log | head -10
+=== nightly test date is:2018-12-03
+/bin/bashg/aa/bbb
+/bin/bash/ccc
+
+# 用sed命令实现相同的查找替换功能，只不过每个/前要加\来取消转义
+windriver@PEK-QCAO1-D2:~/ANVL/xiaozhan$ sed 's/\/sbin\/nologin/\/bin\/bash/g' test.log | head -10
+=== nightly test date is:2018-12-03
+=
+/bin/bashg/aa/bbb
+/bin/bash/ccc
+
+
+=========================================光标移动到行首和行尾
+ctrl+a移到行首
+ctrl+e移到行尾
+
+=================================================uname    查询一些基本信息
+uname -a     可以显示所有信息
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -m      uname -p
+x86_64                # 64位操作系统
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -i
+x86_64
+windriver@PEK-QCAO1-D2:~/xiaozhan$ uname -r
+3.2.0-23-generic
+========================================du    查看磁盘使用情况
+-h   会自动转换位K,M,G等格式
+-s   显示当前目录所有文件大小
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -sh
+318M    .
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -sh blast/
+128K    blast/
+
+windriver@PEK-QCAO1-D2:~/ANVL$ du -h ANVL_Result
+41M     ANVL_Result/ANVL_Vx6.9_2020-06-12_16-13-55
+8.0K    ANVL_Result/ANVL_Vx7_2018-11-02_16-51-53
+14G     ANVL_Result
+
+# 显示目录下所有文件的大小    du -ah
+windriver@PEK-QCAO1-D2:~/ANVL/ANVL_Result/ANVL_Vx7_2020-06-10_19-51-30$ du -ah
+200K    ./ICMPv4.log
+1.5M    ./DHCPS.log
+92K     ./IPv6FlowLevelDisable.log
+2.1M    ./IKEAggressive.log
+5.4M    ./IKEMain.log
+
+# 如果想跳过某个目录，用参数  --exclude
+windriver@PEK-QCAO1-D2:~/xiaozhan$ du -ah --exclude home
+
+====================================== date     显示系统时间
+
+# 在shell脚本里显示时间
+date -d "2 second" +"%Y-%m-%d %H:%M.%S"
+echo $(date +"now time is %Y-%m-%d %H:%M.%S")    # 注意+必须紧跟着后面的格式化字符串
+2020-06-11 17:11.25
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +"%Y-%m-%d %H:%M:%S"
+2020-06-16 16:08:08
+
+# 显示详细的系统时间
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +"%F %T"
+2020-06-16 16:12:04
+
+# -d   可以在当前日期基础上加减一定时间显示其他时间   year,month,day,hour,minute,second
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +%F -d "-1day"
+2020-06-15
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date +%F -d "+1day"
+2020-06-17
+
+
+# 转换时间格式   -d 后面跟上需要转换的时间，  然后跟上需要转成的时间格式
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date -d "Sat May 19 13:40:02 CST 2015" "+%F %T"
+2015-05-19 13:40:02
+# 实战训练，把文本里面的日期转换为其他时间格式
+windriver@PEK-QCAO1-D2:~/xiaozhan$ cat time.txt
+Sat May 19 13:40:02 CST 2015 is 13213213
+Sat May 19 13:41:03 CST 2015 is 13213213
+Sat May 19 13:42:04 CST 2015 is 13213213
+# print语句打印了两个参数，$2表示第2列
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "is" '{print "echo $(date -d \""$1"\" \"+%F %T\")",$2}' time.txt
+echo $(date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T")  13213213
+echo $(date -d "Sat May 19 13:41:03 CST 2015 " "+%F %T")  13213213
+echo $(date -d "Sat May 19 13:42:04 CST 2015 " "+%F %T")  13213213
+windriver@PEK-QCAO1-D2:~/xiaozhan$ date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T"
+2015-05-19 13:40:02
+windriver@PEK-QCAO1-D2:~/xiaozhan$ echo $(date -d "Sat May 19 13:40:02 CST 2015 " "+%F %T")  13213213
+2015-05-19 13:40:02 13213213
+--------------一条命令就是，  用bash来执行shell命令
+# 难点是双引号的使用  \""$1"\", "$1" 外面还包着一层双引号
+windriver@PEK-QCAO1-D2:~/xiaozhan$ awk -F "is" '{print "echo $(date -d \""$1"\" \"+%F %T\")",$2}' time.txt | bash
+2015-05-19 13:40:02 13213213
+2015-05-19 13:41:03 13213213
+2015-05-19 13:42:04 13213213
+
+# 设置系统时间
+# date -s "10:10:10 2020-06-18"
+# date -s "10:10:10 2020/06/18"
+
+# 每隔1秒执行一次netstat -an，并且高亮显示变化，例如有新的端口连接
+windriver@PEK-QCAO1-D2:~/xiaozhan$ watch -n 1 -d netstat -an
+
+# which 显示命令的全路径
+windriver@PEK-QCAO1-D2:~/xiaozhan$ which python3
+/usr/local/bin/python3
+
+# locate  blast        查找所有的文件或者目录,只要包含blast名字的都会列出来
+windriver@PEK-QCAO1-D2:~/xiaozhan$ locate blast
+/home/windriver/xiaozhan/blast
+/home/windriver/xiaozhan/blast/blasteeTCP
+/home/windriver/xiaozhan/blast/blasteeTCPux.c
+========================================================
+
+1）压缩 tar打包、gzip压缩
+tar -czvf 压缩文件名 目录名
+如： tar czvf dira.tar.gz dira
+注意：tar -czvf与tar czvf是一样的效果，所以说，后面统一取消-
+实战如下: windriver@PEK-QCAO1-D2:~/xiaozhan$
+tar zcvf logfile.txt.targ.gz /home/windriver/xiaozhan  ---压缩了整个目录
+压缩的时候要使用相对路径，否则报错，但是可以通过参数添加-P，例如tar zcvfP
+windriver@PEK-QCAO1-D2:~$ tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt
+./xiaozhan/logfile.txt
+或者:
+windriver@PEK-QCAO1-D2:~/xiaozhan$ tar zcvfP /home/windriver/log.tar.gz logfile.txt
+logfile.txt
+
+如果压缩的时候要排除某个目录:
+tar zcvf ./xiaozhan/log.tar.gz ./xiaozhan/logfile.txt   --exclude=/home/windriver/xiaozhan  --exclude==/home/aaa
+
+# 实战训练，先找到对应文件，再打包
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ find . -type f -name "*.txt" | xargs tar zcvf test.tar.gz
+
+或者   tar zcvf test.tar.gz `find /etc -type f -name "*.txt"`       用一对反引号来执行shell命令
+
+2）解压
+tar xzvf 压缩文件名
+tar xzvf 压缩文件名 -C 指定目录
+如： tar xzvf dira.tar.gz 解压到当前目录
+如： tar xzvf dira.tar.gz -C /home/book 解压到/home/book
+
+==================================================================
+
+gzip 会删除源文件，同时压缩源文件
+zip不会删除源文件，同时压缩源文件
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ zip aaaa.txt.zip aaaa.txt
+  adding: aaaa.txt (deflated 66%)
+# unzip
+windriver@PEK-QCAO1-D2:~/xiaozhan$ unzip aaaa.txt.zip
+Archive:  aaaa.txt.zip
+replace aaaa.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename: y
+  inflating: aaaa.txt
+====================================rsync 可以替代cp,rsync只会拷贝变化的部分，效率高====
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av xiaozhan.txt root@128.224.166.46:/root    # 把文件push到其他服务器
+root@128.224.166.46's password:
+sending incremental file list
+xiaozhan.txt
+
+sent 99 bytes  received 31 bytes  37.14 bytes/sec
+total size is 0  speedup is 0.00
+
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av root@128.224.166.46:/root/xiaozhan.txt /home/xiaozhan/    # 从其他服务器拉取文件到本地
+root@128.224.166.46's password:
+receiving incremental file list
+xiaozhan.txt
+
+sent 30 bytes  received 94 bytes  27.56 bytes/sec
+total size is 0  speedup is 0.00
+
+# 也可以用参数-e 来使用SSH隧道加密传输
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av -e 'ssh -p 22' root@128.224.166.46:/root/xiaozhan.txt .
+root@128.224.166.46's password:
+receiving incremental file list
+xiaozhan.txt
+
+sent 30 bytes  received 110 bytes  40.00 bytes/sec
+total size is 12  speedup is 0.09
+
+# 快速清空一个非常大的目录，可以使用rsync， 即快速删除大量文件
+sudo mkdir /null; rsync -av --delete /null /home/xiaozhan
+实测如下：
+windriver@PEK-QCAO1-D2:~/xiaozhan/home/windriver/xiaozhan$ sudo mkdir /null;rsync -av --delete /null/ /home/windriver/xiaozhan/home/windriver/xiaozhan/;sudo rm -rf /null
+sending incremental file list
+./
+deleting test/b.txt
+deleting test/a.txt
+deleting test/
+deleting test.tar.gz
+deleting b.txt
+deleting a.txt
+
+sent 29 bytes  received 15 bytes  88.00 bytes/sec
+total size is 0  speedup is 0.00
+
+# 本地拷贝，或者同步文件
+windriver@PEK-QCAO1-D2:~/xiaozhan$ rsync -av xiaozhan.txt  home/windriver/xiaozhan/
+sending incremental file list
+xiaozhan.txt
+
+sent 99 bytes  received 31 bytes  260.00 bytes/sec
+total size is 0  speedup is 0.00
+==================================================================================
+mac切换大小写：ctrl+caps
+caps切换中英文
+再按caps切换到英文小写字母
+========================================useradd=====用户添加 删除, 需要root用户权限来操作
+useradd    adduser两条命令类似，添加用户信息,同时也会添加和用户名相同的用户组
+usermod    修改用户信息
+
+userdel -f xiaozhan            -----删除这条用户信息
+rm -rf /home/xiaozhan/
+
+下面这条命令谨慎使用，建议采用直接注释/etc/passwd下面相关用户
+或者userdel -r xiaozhan         ----会删除所有与用户xiaozhan有关的信息，包括home目录
+
+root@PEK-QCAO1-D2:/home# adduser xiaozhan        ----- 实际用这条命令，同时创建密码
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  xiaozhan   4096 Jun 29 14:56 xiaozhan/    -------新用户的home目录
+
+root@PEK-QCAO1-D2:/home# usermod -g windriver xiaozhan   ------修改用户xiaozhan属于用户组windriver
+root@PEK-QCAO1-D2:/home# ll
+total 28
+drwxr-xr-x   5 root      root       4096 Jun 29 15:03 ./
+drwxr-xr-x  30 root      root       4096 Jun 18 13:57 ../
+drwxrwxrwx 102 windriver windriver 12288 Jun 29 14:46 windriver/
+drwxr-xr-x  26 wrsadmin  wrsadmin   4096 Feb 14  2011 wrsadmin/
+drwxr-xr-x   2 xiaozhan  windriver  4096 Jun 29 15:03 xiaozhan/
+root@PEK-QCAO1-D2:/home#
+
+直接注释/etc/passwd下面相关用户   #xiaozhan:x:1002:1002:,,,:/home/xiaozhan:/bin/bash
+root@PEK-QCAO1-D2:/home# userdel -r xiaozhan
+userdel: user 'xiaozhan' does not exist
+root@PEK-QCAO1-D2:/home# su xiaozhan   -----这样相当于这个用户不可用
+Unknown id: xiaozhan
+
+=================================================passwd   修改用户密码========================
+root@PEK-QCAO1-D2:/home# passwd    表示修改当前用户密码
+Enter new UNIX password:
+Retype new UNIX password:
+Sorry, passwords do not match
+passwd: Authentication token manipulation error
+passwd: password unchanged
+
+passwd xiaozhan   ---修改用户xiaozhan的密码
+
+root@PEK-QCAO1-D2:/home# echo stu{1,2,3} | tr " " "\n"     批量生成文件，用换行来替代空格
+stu1
+stu2
+stu3
+====================================================  显示用户与用户组信息  id
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# id
+uid=0(root) gid=0(root) groups=0(root)
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# id windriver
+uid=1001(windriver) gid=1001(windriver) groups=1001(windriver),999(docker)
+
+===================================================w 可以查看当前的所有用户及其在执行的命令
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# w
+ 14:23:27 up 71 days,  4:55,  2 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+windrive pts/0    pek-xli3-d2.corp 19Jun20  0.00s  1.02s  1.34s sshd: windriver [priv]
+windrive pts/2    pek-vx-system1.w 14:19    4.00s  0.30s  0.00s ping 127.0.0.1
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# who
+windriver pts/0        2020-06-19 09:17 (pek-xli3-d2.corp.ad.wrs.com)
+windriver pts/2        2020-06-30 14:19 (pek-vx-system1.wrs.com)
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# who -H -a
+NAME       LINE         TIME             IDLE          PID COMMENT  EXIT
+           system boot  2020-04-20 09:28
+           run-level 2  2020-04-20 09:28
+LOGIN      tty4         2020-04-20 09:28               861 id=4
+LOGIN      tty5         2020-04-20 09:28               865 id=5
+LOGIN      tty2         2020-04-20 09:28               875 id=2
+windriver + pts/0        2020-06-19 09:17   .          4230 (pek-xli3-d2.corp.ad.wrs.com)
+windriver + pts/2        2020-06-30 14:19 00:02        3260 (pek-vx-system1.wrs.com)
+           pts/4        2020-06-18 16:20              6514 id=ts/4  term=0 exit=0
+           pts/5        2020-06-12 17:03             20662 id=ts/5  term=0 exit=0
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# last   ---显示最近登陆的用户信息
+windrive pts/2        pek-vx-system1.w Tue Jun 30 14:19   still logged in
+windrive pts/0        pek-xli3-d2.corp Fri Jun 19 09:17   still logged in
+windrive pts/4        pek-xli3-d2.corp Wed Jun 17 15:40 - 16:20 (1+00:40)
+windrive pts/4        pek-xli3-d2.wrs. Wed Jun 17 14:40 - 14:40  (00:00)
+windrive pts/10       pek-xli3-d2.corp Fri Jun 12 15:58 - 16:20 (6+00:22)
+windrive pts/7        pek-cye-d1.corp. Fri Jun 12 15:37 - 16:23  (00:46)
+windrive pts/2        pek-xli3-d2.corp Tue Jun  2 16:07 - 16:20 (16+00:13)
+windrive pts/0        pek-xli3-d2.corp Tue Jun  2 16:05 - 16:20 (16+00:15)
+windrive pts/5        pek-lwang7-d1.co Mon Jun  1 10:04 - 17:03 (11+06:58)
+windrive pts/5        pek-lwang7-d1.co Mon Jun  1 09:46 - 10:04  (00:18)
+windrive pts/4        pek-lwang7-d1.co Mon Jun  1 09:40 - 17:03 (11+07:22)
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# last xiaozhan -n 5     ----显示指定用户的登陆信息,显示5行
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# lastb -n 5            ----显示登陆失败的用户信息
+windrivr ssh:notty    pek-xli3-d2.corp Fri Jun 19 09:17 - 09:17  (00:00)
+windrivr ssh:notty    pek-xli3-d2.corp Fri Jun 19 09:17 - 09:17  (00:00)
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# lastlog -u xiaozhan    ----显示所有或者指定用户的登陆记录，查看是否有入侵
+Username         Port     From             Latest
+xiaozhan                                   **Never logged in**
+
+========================================磁盘分区  fdisk只适用于小于2T的磁盘
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# fdisk -l
+
+Disk /dev/sda: 500.1 GB, 500107862016 bytes
+255 heads, 63 sectors/track, 60801 cylinders, total 976773168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes     每个扇区的字节数
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x939b939b
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048      391167      194560   83  Linux
+/dev/sda2          391168     4390911     1999872   82  Linux swap / Solaris
+/dev/sda3         4390912   976771071   486190080   83  Linux
+#
+Device  分区，这里有3个分区
+Boot    启动分区，用*来表示启动分区
+Start    表示开始的柱面
+Cylinder   柱面
+===============================磁盘分区  parted=======================================
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# parted -l       ---- 显示磁盘分区信息
+Model: ATA ST3500413AS (scsi)
+Disk /dev/sda: 500GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+
+Number  Start   End     Size    Type     File system     Flags
+ 1      1049kB  200MB   199MB   primary  ext3            boot
+ 2      200MB   2248MB  2048MB  primary  linux-swap(v1)
+ 3      2248MB  500GB   498GB   primary  ext4
+# 3个分区，
+
+parted /dev/sdb mkpart primary 0 500        创建主分区，大小500MB
+parted /dev/sdb mkpart primary 500 1000    第二个主分区，大小500MB
+
+分区之后，要格式化
+mkfs -t ext4 -v /dev/sdb
+或者mkfs.ext4 /dev/sdb
+
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda3       464G   98G  343G  23% /
+udev            1.9G   12K  1.9G   1% /dev
+tmpfs           759M  1.1M  758M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+/dev/sda1       184M   30M  145M  18% /boot
+cgroup          1.9G     0  1.9G   0% /sys/fs/cgroup
+
+mount  /dev/sdba1/ /mnt/data1
+========================================fsck   检查修复linux文件系统
+只有提示磁盘错误的时候，才用这个命令
+必须卸载文件系统 unmount
+
+Linux在开机时会自动调用fsck命令对磁盘进行检查
+
+====================================mount       ============
+mount可以将指定的文件系统挂载到指定目录，在Linux必须先挂载设备，然后才能访问
+root@PEK-QCAO1-D2:/home/xiaozhan/c_test# mount
+/dev/sda3 on / type ext4 (rw,errors=remount-ro)
+/dev/sda1 on /boot type ext3 (rw)
+
+挂载的目录必须事先存在且最好为空
+mount -o remount,rw /     尝试重新挂载根目录为可读写
+umount -f /mnt     强制卸载
+
+在定时任务后面加上00 00 * * * /home/windriver/1.sh  > /dev/null 2>&1 可避免产生很多小文件
+
+====================================================ps  pkill sudo kill -9
+ps -ef | grep ping
+xiaozhan   974 30597  0 16:14 pts/0    00:00:00 ping 128.224.159.79
+xiaozhan   980 30597  0 16:14 pts/0    00:00:00 grep --color=auto ping
+
+# 用pkill来杀掉进程，后面跟进程名字
+xiaozhan@PEK-QCAO1-D2:~/kong_test$ pkill ping
+[1]+  Terminated              ping 128.224.159.79
+
+#查看定时任务用命令
+/etc/init.d/cron status
+
+=======================top 之后再输入1，可以查看每个逻辑CPU的状态
+
+cat /proc/version ------查看linux版本信息
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/version
+Linux version 4.15.0-54-generic (buildd@lgw01-amd64-014) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #58-Ubuntu SMP M
+
+cat /proc/cpuinfo-------------查看系统cpu信息
+
+processor从0开始     逻辑cpu的数量
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$ cat /proc/cpuinfo | grep name | cut -d: -f2 | uniq -c
+     72  Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
+hyan1@pek-vx-nwk1:/buildarea1/lwan1/miniKong_tsn$
+=======================================================================
+查看子目录大小，占用磁盘空间
+[xli3@pek-vx-nightly1 wassp-repos]$ du -ah --max-depth=1
+490M    ./workspace_bak
+1.4G    ./Logs
+173M    ./Log_simics
+518M    ./Log_openssl_vxtestfull_pass
+6.9G    ./vxTestCurl
+706M    ./.install_files
+455M    ./wassp-nest
+7.1G    ./Workspace
+============================================
+du -sh : 查看当前目录总共占的容量。而不单独列出各子项占用的容量
+
+du -lh --max-depth=1 : 查看当前目录下一级子文件和子目录占用的磁盘容量。
+du -ah --max-depth=1 ：显示当前目录的占用磁盘容量
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

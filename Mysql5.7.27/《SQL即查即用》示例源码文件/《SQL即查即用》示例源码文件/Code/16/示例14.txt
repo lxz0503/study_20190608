@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SELECT BookName,Writer,Price,pDate
 FROM shop.bookinfo_zerobasis
 WHERE Price = 69.80
@@ -5,3 +6,12 @@ UNION ALL
 SELECT BookName,Writer,Price,pDate
 FROM shop.bookinfo_zerobasis
 WHERE pDate = '2017年9月';
+=======
+SELECT BookName,Writer,Price,pDate
+FROM shop.bookinfo_zerobasis
+WHERE Price = 69.80
+UNION ALL
+SELECT BookName,Writer,Price,pDate
+FROM shop.bookinfo_zerobasis
+WHERE pDate = '2017年9月';
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9

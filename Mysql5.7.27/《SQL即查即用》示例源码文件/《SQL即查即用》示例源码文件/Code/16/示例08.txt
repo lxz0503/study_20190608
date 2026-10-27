@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 SELECT goods_id,goods_name,name
 FROM shop.goods FULL JOIN shop.goods_type
 ON goods.goods_type=goods_type.id
 ORDER BY goods_id;
+=======
+SELECT goods_id,goods_name,name
+FROM shop.goods FULL JOIN shop.goods_type
+ON goods.goods_type=goods_type.id
+ORDER BY goods_id;
+>>>>>>> 47c37798140883b8d6dc21ec5da5bc7a20988ce9
