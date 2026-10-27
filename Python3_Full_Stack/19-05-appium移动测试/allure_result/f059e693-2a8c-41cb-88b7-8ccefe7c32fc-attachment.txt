@@ -1,2 +1,0 @@
-('beijing', 20)
-teardown_class
