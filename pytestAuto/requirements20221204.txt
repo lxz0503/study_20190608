@@ -17,7 +17,7 @@ openpyxl==3.0.9
 pandas==1.4.1
 pandas-profiling==3.3.0
 
-Pillow==9.1.0
+Pillow==13.0.0
 PyJWT==1.7.1
 PyMySQL==1.0.2
 pyOpenSSL==19.1.0
