@@ -205,7 +205,7 @@ class Git(object):
         
 class VxWorksGit(Git):
     def __init__(self, gitDir):
-        super(VxWorksGit,self).__init__(gitDir)
+        super().__init__(gitDir)
             
     def NeedSetuptool(self):
         cmd = 'git status | grep "modified:" | grep "new commits"'
