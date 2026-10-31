@@ -10,7 +10,7 @@ import pexpect
 # refer to https://mail.python.org/pipermail/python-list/2004-August/263556.html
 # import telnetlib
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.shellUtils import run_cmd
 # Below line is for debug
 #from shellUtils import run_cmd

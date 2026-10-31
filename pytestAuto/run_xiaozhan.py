@@ -8,8 +8,13 @@
 """
 import pytest
 import sys
+import os
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+# modify sys.path to avoid module import error
+project_root_dir = os.path.dirname(os.path.realpath(__file__))
+if project_root_dir not in sys.path:
+    sys.path.insert(0, project_root_dir)
+
 from utils.nightlyInfo import nightlyInfo
 from utils.read_yaml import read_yaml
 

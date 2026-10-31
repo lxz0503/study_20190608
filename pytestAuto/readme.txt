@@ -1,6 +1,9 @@
 conftest.py只负责一些前置或者后置工作--但是不作为test case
 
-最外层的conftest.py ---session级别-----只负责检测，安装spin
+最外层的conftest.py---最先被执行--修改了系统的sys.path ---导入了工程根目录
+-接下来在每个测试目录里面都不需要再手动执行sys.path.insert(0,'root_dir')
+入口函数run_xiaozhan.py  ---也可以在里面添加寻找工程根目录的代码，然后直接修改sys.path.insert(0,root_dir)
+ ---session级别-----只负责检测，安装spin
 
 
 ARM包里面的conftest.py------module级别--只负责检查ARM的image是否编成功
@@ -137,7 +140,7 @@ with open(logfile, 'wb') as fdw:   # must be 'wb' 必须是字节形式 即二�
 需要disconnect或者offline这个节点，然后重新launch这个节点即可
 ============================================================================
 在linux机器上，没有安装pycharm，类似于命令行，所以系统不会自动设置工程路径，需要自己添加
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.nightlyInfo import nightlyInfo
 但是在windows的pycharm上是不需要上面的设置的，
 即用 from pytestAuto.utils.nightlyInfo import nightlyInfo

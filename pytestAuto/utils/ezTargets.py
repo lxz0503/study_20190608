@@ -10,7 +10,7 @@ import time
 
 import pexpect
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.ezTestEngine import ip, ShellOperations, telnet, shell_ops, session
 from utils.ezUtils import checkPath, runCmd, shCmd, readYaml, readYamlConfig
 from utils.util import IF, abnet, abnet6

@@ -12,7 +12,7 @@ import config
 import time
 import pexpect
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.log_record import log
 from test_cases.network_protocol.firewall.boot_qemu import BootQemu
 from utils.util import IF

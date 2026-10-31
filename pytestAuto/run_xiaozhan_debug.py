@@ -8,7 +8,7 @@
 """
 import pytest
 import sys
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.nightlyInfo import nightlyInfo
 
 if __name__ == '__main__':

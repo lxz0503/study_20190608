@@ -1,9 +1,6 @@
 #!/usr/bin/env python
-import sys, os
-
-sys.path.insert(0, '/home/xli3/pytestAuto/utils')
-from InstallSpin import GetSpinInfo
-from spin import get_spin_type
+from utils.InstallSpin import GetSpinInfo
+from utils.spin import get_spin_type
 
 
 def nightlyInfo():
