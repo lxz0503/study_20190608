@@ -11,7 +11,7 @@ import pytest
 import allure
 import sys
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.log_record import log  # xiaozhan, this is my log module not old kong
 from test_cases.network_protocol.core_safety.boot_qemu import BootQemu
 

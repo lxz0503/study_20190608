@@ -7,9 +7,7 @@
 import pytest
 import allure
 import os
-import sys
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
 from utils.image import image_type
 from utils.hm_21_paramiko_class_ssh import client_cmd_29075
 from utils.read_yaml import read_yaml
@@ -33,17 +31,18 @@ def fixture_image_28610():
         # check what will happen if assert fails
         assert image == 'ZCU102'
     yield image
-    pass
+    pass   # It is just a placeholder
 
 
 @pytest.fixture(scope='session', autouse=True)
 def fixture_iperf():
-    # Start IPERF on Ubuntu server
+    # Start IPERF on Ubuntu server. Setup before test starts
     cmd_input = 'pkill iperf3'
     client_cmd_29075.run_ssh(cmd_input)
     cmd_input = 'iperf3 -s -p 10000 &'
     client_cmd_29075.run_ssh(cmd_input)
     yield
+    # Teardown after test session finishes
     cmd_input = 'pkill iperf3'
     client_cmd_29075.run_ssh(cmd_input)
     client_cmd_29075.close()

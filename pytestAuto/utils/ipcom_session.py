@@ -9,7 +9,7 @@ import time
 import sys
 import re
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.log_record import log
 from utils.case_record import record_result, record_result_expect
 from utils.ezTargets import QemuTarget, VxWorksImage, LinuxImage

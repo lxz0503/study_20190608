@@ -7,7 +7,7 @@
 import allure
 import pytest
 import sys
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.vlmTarget import boot_target_28610
 from utils.parser_iperf import parser_iperf
 

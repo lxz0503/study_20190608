@@ -9,7 +9,7 @@
 import yaml
 import os
 import sys
-#sys.path.insert(0, '/home/xli3/pytestAuto')
+#
 
 def get_prj_path():
     return os.path.dirname(os.path.dirname(__file__)) + '/'

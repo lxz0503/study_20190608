@@ -10,7 +10,7 @@ import allure
 import os
 import sys
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.image import image_type
 from utils.read_yaml import read_yaml
 from utils.vxBuild import buildVxworks, copyVxImage
@@ -18,7 +18,7 @@ from utils.vxBuild import buildVxworks, copyVxImage
 
 @pytest.fixture(scope='session', autouse=True)
 def fixture_image_8201x(spin=False, build_image=False):
-    if spin is True:
+    if spin:
         installPath = '/home/xli3/SPIN/vx20240206035228_vx_2403'      # xiaozhan, this is only for SPIN
     else:
         installPath = '/home/xli3/vxworks'      # xiaozhan debug, this is for branch

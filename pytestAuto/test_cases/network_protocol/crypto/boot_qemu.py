@@ -7,7 +7,7 @@
 """
 import sys
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.log_record import log
 from utils.ezTargets import QemuTarget, VxWorksImage
 

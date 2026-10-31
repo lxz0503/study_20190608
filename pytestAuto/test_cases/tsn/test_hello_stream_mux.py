@@ -10,7 +10,7 @@ import allure
 import pytest
 import pandas as pd
 import sys
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.vlmTarget import boot_target_16278, boot_target_18290
 
 

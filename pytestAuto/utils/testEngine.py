@@ -6,7 +6,7 @@ import re
 import sys
 import collections
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.util import shCmd
 
 

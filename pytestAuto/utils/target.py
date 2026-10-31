@@ -9,7 +9,7 @@ from abc import ABCMeta, abstractmethod
 from io import IOBase
 import sys
 
-sys.path.insert(0, '/home/xli3/pytestAuto')
+
 from utils.testEngine import ip, ShellOperations
 from utils.util import readYaml, checkPath, copyTree, shellCmd, run_cmd
 

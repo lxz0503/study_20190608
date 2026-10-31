@@ -2,11 +2,9 @@
 import os
 import re
 import time
-import sys
-sys.path.insert(0,'/home/xli3/pytestAuto/utils')
 
-import KongConfig
-from Action import ExecCmd
+from utils import KongConfig
+from utils.Action import ExecCmd
 
 
 # interface for vx7_nightly_spin.config, vx7_ci_nightly_spin.config and vx7_vx653_nightly_spin.config

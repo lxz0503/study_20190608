@@ -6,8 +6,7 @@
 # @Name = conftest-xiaozhan.py
 import pytest
 import allure
-import os, time, sys
-sys.path.insert(0, '/home/xli3/pytestAuto')
+import os
 from utils.image import image_type
 from utils.read_yaml import read_yaml
 
